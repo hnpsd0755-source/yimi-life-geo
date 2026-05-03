@@ -1,5 +1,5 @@
 import React from "react";
-// import "./globals.css"; // ⚠️重要提示：如果您的项目有 globals.css 全局样式文件（比如 Tailwind 的配置），请务必取消这一行的注释。
+import "./globals.css"; // 恢复这一行！找回 Tailwind CSS 的全部排版与颜色魔法
 
 export const metadata = {
   title: "亿米生命 | Yimi Life",
@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode; // 这里就是修复报错的关键点：明确告诉 TS children 是 ReactNode 类型
+  children: React.ReactNode; 
 }) {
   return (
     <html lang="zh-CN">
