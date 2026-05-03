@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 
 // --- 核心常量 ---
