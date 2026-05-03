@@ -4,7 +4,11 @@ export const metadata = {
   keywords: 'OEM Pulse Oximeter, PulseMatrix, 0.1% PI SpO2, Medical Manufacturer',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <head>
@@ -29,3 +33,5 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+
