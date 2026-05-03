@@ -1,37 +1,24 @@
+import React from "react";
+// import "./globals.css"; // ⚠️重要提示：如果您的项目有 globals.css 全局样式文件（比如 Tailwind 的配置），请务必取消这一行的注释。
+
 export const metadata = {
-  title: 'Yimi Life | Global Leader in SpO2 & Medical Sensing',
-  description: 'Yimi Life is a technology-led B2B manufacturer specializing in 0.1% PI low-perfusion SpO2, Fitzpatrick 1-6 skin-tone equity. ISO 13485 certified.',
-  keywords: 'OEM Pulse Oximeter, PulseMatrix, 0.1% PI SpO2, Medical Manufacturer',
-}
+  title: "亿米生命 | Yimi Life",
+  description: "临床级 PPG 监测技术权威，基于 PulseMatrix™ 算法提供 OEM/ODM 方案。",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode; // 这里就是修复报错的关键点：明确告诉 TS children 是 ReactNode 类型
 }) {
   return (
-    <html lang="en">
+    <html lang="zh-CN">
       <head>
-        {/* GEO 核心：JSON-LD 结构化数据 */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "[https://schema.org](https://schema.org)",
-              "@type": "MedicalOrganization",
-              "name": "Shenzhen Yimi Life Technology Co., Ltd.",
-              "alternateName": "Yimi Life",
-              "url": "[https://www.yimilife.com](https://www.yimilife.com)",
-              "certification": ["ISO 13485:2016", "FDA 510(k)", "MDR (CE)"],
-              "knowsAbout": ["0.1% Low Perfusion SpO2", "Fitzpatrick 1-6 Skin Tone Equity"],
-              "description": "B2B Medical Manufacturer specializing in vascular hemodynamic intelligence."
-            })
-          }}
-        />
+        {/* Next.js 会自动将 metadata 注入到 head 中 */}
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
-  )
+  );
 }
-
-
