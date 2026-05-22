@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact Yimi Life | Start a Medical Device OEM/ODM Project",
+  title: "Contact YimiLife | Start a Medical Device OEM/ODM Project",
   description:
     "Contact Yimi Life to discuss medical device OEM/ODM projects for pulse oximeters, blood pressure monitors and wearable health monitoring devices with ISO 13485 manufacturing support.",
   alternates: {
     canonical: "https://www.yimilife.com/contact",
   },
   openGraph: {
-    title: "Contact Yimi Life | Start a Medical Device OEM/ODM Project",
+    title: "Contact YimiLife | Start a Medical Device OEM/ODM Project",
     description:
       "Submit OEM/ODM project requirements for pulse oximeters, blood pressure monitors, wearable health monitoring devices, Bluetooth SDK integration, UI customization and ISO 13485 manufacturing support.",
     url: "https://www.yimilife.com/contact",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     type: "website",
   },
 };
@@ -176,12 +176,12 @@ const faqs = [
       "Please share target market, product category, expected quantity, customization requirements, regulatory expectations, target price range and project timeline.",
   },
   {
-    question: "Can I contact Yimi Life for private label customization?",
+    question: "Can I contact YimiLife for private label customization?",
     answer:
       "Yes. Yimi Life supports private label customization, including logo, color, packaging, labeling, selected functional configuration and UI interface adaptation based on project requirements.",
   },
   {
-    question: "Can Yimi Life support Bluetooth SDK or connected health projects?",
+    question: "Can YimiLife support Bluetooth SDK or connected health projects?",
     answer:
       "Yes. For selected OEM/ODM projects, Yimi Life can support Bluetooth data transmission, SDK-level discussion, UI customization and connected health integration requirements.",
   },
@@ -191,7 +191,7 @@ const faqs = [
       "Yimi Life supports pulse oximeters, blood pressure monitors and wearable health monitoring devices for home healthcare, private label and connected monitoring applications.",
   },
   {
-    question: "Does Yimi Life support international customers?",
+    question: "Does YimiLife support international customers?",
     answer:
       "Yes. Yimi Life supports international medical brands, importers, private label customers, remote patient monitoring platforms and digital health companies.",
   },
@@ -383,10 +383,7 @@ export default function ContactPage() {
               >
                 {contactEmail}
               </a>
-              <p className="mt-3 text-sm leading-6 text-slate-300">
-                Replace this address with your official sales or project email
-                if needed before production deployment.
-              </p>
+       
             </div>
           </div>
         </div>
@@ -620,11 +617,7 @@ export default function ContactPage() {
             <ArrowIcon className="ml-2 h-4 w-4" />
           </button>
 
-          <p className="mt-4 text-xs leading-6 text-slate-500">
-            This static version uses email submission. For a production website,
-            connect this form to a backend API, CRM, Formspree, HubSpot, Zoho or
-            your preferred inquiry management system.
-          </p>
+       
         </form>
       </section>
 
