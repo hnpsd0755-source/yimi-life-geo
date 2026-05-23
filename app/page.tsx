@@ -431,7 +431,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+          
             <p className="text-sm font-semibold uppercase tracking-wider text-cyan-200">
               Trust anchors
             </p>
