@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact YimiLife | Start a Medical Device OEM/ODM Project",
   description:
-    "Contact Yimi Life to discuss medical device OEM/ODM projects for pulse oximeters, blood pressure monitors and wearable health monitoring devices with ISO 13485 manufacturing support.",
+    "Contact YimiLife to discuss medical device OEM/ODM projects for pulse oximeters, blood pressure monitors and wearable health monitoring devices with ISO 13485 manufacturing support.",
   alternates: {
     canonical: "https://www.yimilife.com/contact",
   },
@@ -154,12 +154,12 @@ const requirementChecklist = [
 const contactReasons = [
   {
     title: "OEM/ODM Project Evaluation",
-    text: "Share product type, target market, quantity, customization needs and timeline for project feasibility review.",
+    text: "Share your product type, target market, expected quantity, customization needs and project timeline for feasibility review.",
     icon: DocumentIcon,
   },
   {
     title: "Manufacturing and Quality Discussion",
-    text: "Discuss ISO 13485 manufacturing support, production verification, batch traceability and quality documentation.",
+    text: "Discuss ISO 13485 manufacturing support, production verification, batch traceability and quality documentation needs.",
     icon: FactoryIcon,
   },
   {
@@ -169,31 +169,54 @@ const contactReasons = [
   },
 ];
 
+const relatedPages = [
+  {
+    title: "OEM/ODM Service Workflow",
+    href: "/oem-odm",
+    text: "Understand how YimiLife supports projects from requirement review to mass production.",
+  },
+  {
+    title: "Product Categories",
+    href: "/products",
+    text: "Explore pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+  },
+  {
+    title: "PulseMatrix™ Technology",
+    href: "/technology",
+    text: "Learn about low perfusion SpO2 monitoring, motion artifact rejection and skin tone fairness.",
+  },
+  {
+    title: "ISO 13485 Quality System",
+    href: "/quality",
+    text: "Review YimiLife’s quality system, manufacturing control, calibration and batch traceability.",
+  },
+];
+
 const faqs = [
   {
-    question: "What information should I provide when contacting Yimi Life?",
+    question: "What information should I provide when contacting YimiLife?",
     answer:
-      "Please share target market, product category, expected quantity, customization requirements, regulatory expectations, target price range and project timeline.",
+      "Please share your target market, product category, expected quantity, customization requirements, regulatory expectations, target price range and project timeline.",
   },
   {
     question: "Can I contact YimiLife for private label customization?",
     answer:
-      "Yes. Yimi Life supports private label customization, including logo, color, packaging, labeling, selected functional configuration and UI interface adaptation based on project requirements.",
+      "Yes. YimiLife supports private label customization, including logo, color, packaging, labeling, selected functional configuration and UI interface adaptation based on project requirements.",
   },
   {
     question: "Can YimiLife support Bluetooth SDK or connected health projects?",
     answer:
-      "Yes. For selected OEM/ODM projects, Yimi Life can support Bluetooth data transmission, SDK-level discussion, UI customization and connected health integration requirements.",
+      "Yes. For selected OEM/ODM projects, YimiLife can support Bluetooth data transmission, SDK-level discussion, UI customization and connected health integration requirements.",
   },
   {
-    question: "What product categories can Yimi Life support?",
+    question: "What product categories can YimiLife support?",
     answer:
-      "Yimi Life supports pulse oximeters, blood pressure monitors and wearable health monitoring devices for home healthcare, private label and connected monitoring applications.",
+      "YimiLife supports pulse oximeters, blood pressure monitors and wearable health monitoring devices for home healthcare, private label and connected monitoring applications.",
   },
   {
     question: "Does YimiLife support international customers?",
     answer:
-      "Yes. Yimi Life supports international medical brands, importers, private label customers, remote patient monitoring platforms and digital health companies.",
+      "Yes. YimiLife supports international medical brands, importers, private label customers, remote patient monitoring platforms and digital health companies.",
   },
 ];
 
@@ -203,8 +226,8 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
-      alternateName: "Yimi Life",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
+      alternateName: "YimiLife",
       url: "https://www.yimilife.com/",
       email: contactEmail,
       address: {
@@ -213,7 +236,7 @@ const jsonLd = {
         addressCountry: "CN",
       },
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
       contactPoint: {
         "@type": "ContactPoint",
         email: contactEmail,
@@ -226,9 +249,9 @@ const jsonLd = {
       "@type": "ContactPage",
       "@id": "https://www.yimilife.com/contact#webpage",
       url: "https://www.yimilife.com/contact",
-      name: "Contact Yimi Life",
+      name: "Contact YimiLife",
       description:
-        "Contact page for Yimi Life medical device OEM/ODM project inquiries.",
+        "Contact page for YimiLife medical device OEM/ODM project inquiries.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -291,7 +314,7 @@ export default function ContactPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              Contact Yimi Life
+              Contact YimiLife
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -299,7 +322,7 @@ export default function ContactPage() {
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              Contact Yimi Life to discuss OEM/ODM projects for{" "}
+              Contact YimiLife to discuss OEM/ODM projects for{" "}
               <Link
                 href="/products/pulse-oximeter"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
@@ -375,7 +398,7 @@ export default function ContactPage() {
 
             <div className="mt-6 rounded-2xl bg-slate-950/40 p-5">
               <p className="text-sm font-medium text-cyan-100">
-                Email Yimi Life
+                Email YimiLife
               </p>
               <a
                 href={`mailto:${contactEmail}`}
@@ -383,7 +406,11 @@ export default function ContactPage() {
               >
                 {contactEmail}
               </a>
-       
+              <p className="mt-3 text-sm leading-6 text-slate-300">
+                Send your OEM/ODM project brief by email. Our team will review
+                your product category, target market, customization needs and
+                production expectations.
+              </p>
             </div>
           </div>
         </div>
@@ -392,15 +419,16 @@ export default function ContactPage() {
       <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-            Project inquiry form
+            Project inquiry
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
             Submit your OEM/ODM project requirements
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-700">
-            This form is designed as a structured project brief for B2B medical
-            device OEM/ODM inquiries. Before production deployment, connect it
-            to your preferred email system, CRM or backend form handler.
+            Use the form to share your initial project brief. The more clearly
+            you describe your target market, product type, customization scope
+            and expected quantity, the faster our team can evaluate the next
+            steps.
           </p>
 
           <div className="mt-8 grid gap-5">
@@ -616,8 +644,6 @@ export default function ContactPage() {
             Send Project Inquiry
             <ArrowIcon className="ml-2 h-4 w-4" />
           </button>
-
-       
         </form>
       </section>
 
@@ -628,7 +654,7 @@ export default function ContactPage() {
               Requirement checklist
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              What to prepare before contacting Yimi Life
+              What to prepare before contacting YimiLife
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
               A clear project brief helps our team evaluate product feasibility,
@@ -659,33 +685,12 @@ export default function ContactPage() {
             Related pages
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-            Explore Yimi Life before submitting your project
+            Explore YimiLife before submitting your project
           </h2>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          {[
-            {
-              title: "OEM/ODM Service Workflow",
-              href: "/oem-odm",
-              text: "Understand how Yimi Life supports projects from requirement review to mass production.",
-            },
-            {
-              title: "Product Categories",
-              href: "/products",
-              text: "Explore pulse oximeters, blood pressure monitors and wearable health monitoring products.",
-            },
-            {
-              title: "PulseMatrix™ Technology",
-              href: "/technology",
-              text: "Learn about low perfusion SpO2 monitoring, motion artifact rejection and skin tone fairness.",
-            },
-            {
-              title: "ISO 13485 Quality System",
-              href: "/quality",
-              text: "Review Yimi Life’s quality system, manufacturing control, calibration and batch traceability.",
-            },
-          ].map((item) => (
+          {relatedPages.map((item) => (
             <Link
               key={item.title}
               href={item.href}
@@ -713,7 +718,7 @@ export default function ContactPage() {
               FAQ
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Frequently asked questions about contacting Yimi Life
+              Frequently asked questions about contacting YimiLife
             </h2>
           </div>
 
@@ -742,7 +747,7 @@ export default function ContactPage() {
             Ready to discuss your OEM/ODM medical device project?
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Send your project requirements to Yimi Life and our team will review
+            Send your project requirements to YimiLife and our team will review
             the product category, customization needs, target market, production
             expectations and next steps.
           </p>
@@ -752,7 +757,7 @@ export default function ContactPage() {
               href={`mailto:${contactEmail}`}
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Email Yimi Life
+              Email YimiLife
               <ArrowIcon className="ml-2 h-4 w-4" />
             </a>
 
