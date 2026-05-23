@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pulse Oximeter OEM/ODM Manufacturer | Yimi Life",
+  title: "Pulse Oximeter OEM/ODM Manufacturer | YimiLife",
   description:
-    "Yimi Life provides pulse oximeter OEM/ODM manufacturing for medical brands, with 25+ FDA, MDR and NMPA certified models, 300,000-unit monthly capacity, PulseMatrix™ SpO2 technology and ISO 13485 quality control.",
+    "YimiLife provides pulse oximeter OEM/ODM manufacturing for medical brands, with 25+ FDA, MDR and NMPA certified models, 300,000-unit monthly capacity, PulseMatrix™ SpO2 technology and ISO 13485 quality control.",
   alternates: {
     canonical: "https://www.yimilife.com/products/pulse-oximeter",
   },
   openGraph: {
-    title: "Pulse Oximeter OEM/ODM Manufacturer | Yimi Life",
+    title: "Pulse Oximeter OEM/ODM Manufacturer | YimiLife",
     description:
       "OEM/ODM pulse oximeter manufacturing with certified model experience, scalable production, Fluke Index 2 calibration, PulseMatrix™ SpO2 technology and ISO 13485 quality control.",
     url: "https://www.yimilife.com/products/pulse-oximeter",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     type: "website",
   },
 };
@@ -211,7 +211,7 @@ const faqs = [
   {
     question: "Do you provide pulse oximeter OEM or ODM services?",
     answer:
-      "Yes. Yimi Life supports both OEM and ODM pulse oximeter projects, including product configuration, appearance customization, engineering adaptation, manufacturing, testing and packaging.",
+      "Yes. YimiLife supports both OEM and ODM pulse oximeter projects, including product configuration, appearance customization, engineering adaptation, manufacturing, testing and packaging.",
   },
   {
     question:
@@ -223,22 +223,22 @@ const faqs = [
     question:
       "Can your pulse oximeters connect to mobile apps or remote patient monitoring systems?",
     answer:
-      "Yes. For selected OEM/ODM projects, Yimi Life can support Bluetooth data transmission, SDK-level integration and customized UI requirements to help customers connect pulse oximeter devices with mobile apps or remote patient monitoring platforms.",
+      "Yes. For selected OEM/ODM projects, YimiLife can support Bluetooth data transmission, SDK-level integration and customized UI requirements to help customers connect pulse oximeter devices with mobile apps or remote patient monitoring platforms.",
   },
   {
     question: "Do you support low perfusion SpO2 performance?",
     answer:
-      "Yimi Life’s PulseMatrix™ technology focuses on low perfusion SpO2 monitoring, motion artifact rejection and skin tone fairness. Technical details and validation approaches can be discussed during project evaluation.",
+      "YimiLife’s PulseMatrix™ technology focuses on low perfusion SpO2 monitoring, motion artifact rejection and skin tone fairness. Technical details and validation approaches can be discussed during project evaluation.",
   },
   {
     question: "Are your pulse oximeters manufactured under ISO 13485?",
     answer:
-      "Yes. Yimi Life operates under an ISO 13485 quality management system for medical device manufacturing.",
+      "Yes. YimiLife operates under an ISO 13485 quality management system for medical device manufacturing.",
   },
   {
     question: "What is your monthly production capacity?",
     answer:
-      "Yimi Life’s pulse oximeter production capacity reaches up to 300,000 units per month, depending on project configuration, material preparation and production schedule.",
+      "YimiLife’s pulse oximeter production capacity reaches up to 300,000 units per month, depending on project configuration, material preparation and production schedule.",
   },
   {
     question: "How do you verify pulse oximeter performance before shipment?",
@@ -259,14 +259,14 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
       url: "https://www.yimilife.com",
       brand: {
         "@type": "Brand",
-        name: "Yimi Life",
+        name: "YimiLife",
       },
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
       "@type": "Service",
@@ -347,7 +347,7 @@ export default function PulseOximeterPage() {
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              Yimi Life helps medical brands develop and manufacture pulse
+              YimiLife helps medical brands develop and manufacture pulse
               oximeters with proven regulatory experience, scalable production
               capacity, full-unit calibration discipline and{" "}
               <Link
@@ -405,7 +405,7 @@ export default function PulseOximeterPage() {
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-300">
                 From private label fingertip oximeters to connected SpO2
-                monitoring products, Yimi Life supports customization,
+                monitoring products, YimiLife supports customization,
                 manufacturing control and project-level engineering adaptation.
               </p>
             </div>
@@ -453,7 +453,7 @@ export default function PulseOximeterPage() {
             </p>
 
             <p>
-              Yimi Life supports OEM/ODM customers by combining product
+              YimiLife supports OEM/ODM customers by combining product
               engineering, manufacturing control and SpO2 signal processing
               experience into a practical development and production workflow.
             </p>
@@ -478,7 +478,7 @@ export default function PulseOximeterPage() {
               OEM/ODM support for pulse oximeter projects
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              Yimi Life provides flexible OEM/ODM support for pulse oximeter
+              YimiLife provides flexible OEM/ODM support for pulse oximeter
               projects, covering product configuration, hardware engineering,
               SpO2 algorithm adaptation, Bluetooth SDK support, UI
               customization, industrial design, manufacturing and quality
@@ -544,7 +544,7 @@ export default function PulseOximeterPage() {
               >
                 PulseMatrix™ SpO2 Technology Platform
               </Link>
-              , Yimi Life’s vascular hemodynamic intelligence platform for
+              , YimiLife’s vascular hemodynamic intelligence platform for
               medical-grade SpO2 monitoring.
             </p>
           </div>
@@ -606,7 +606,7 @@ export default function PulseOximeterPage() {
               Suitable for different pulse oximeter OEM/ODM applications
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-300">
-              Yimi Life supports pulse oximeter OEM/ODM projects for customers
+              YimiLife supports pulse oximeter OEM/ODM projects for customers
               targeting home healthcare, elderly monitoring, respiratory
               health, private label medical devices, wearable SpO2 monitoring
               and remote patient monitoring applications.
@@ -637,7 +637,7 @@ export default function PulseOximeterPage() {
               From OEM requirement to mass production
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              Yimi Life follows a practical OEM/ODM workflow to help customers
+              YimiLife follows a practical OEM/ODM workflow to help customers
               move from initial product requirements to sample confirmation,
               testing, documentation and mass production.
             </p>
@@ -681,7 +681,7 @@ export default function PulseOximeterPage() {
                 ISO 13485 quality control and scalable manufacturing
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-700">
-                As an ISO 13485 medical device manufacturer, Yimi Life applies
+                As an ISO 13485 medical device manufacturer, YimiLife applies
                 quality control throughout pulse oximeter manufacturing,
                 including incoming inspection, PCBA process control, assembly,
                 functional testing, performance verification, labeling,
@@ -774,7 +774,7 @@ export default function PulseOximeterPage() {
             Looking for a pulse oximeter OEM/ODM manufacturer with regulatory
             model experience, scalable production capacity, full-unit
             calibration discipline and connected-device customization support?
-            Share your project requirements with Yimi Life’s OEM/ODM team.
+            Share your project requirements with YimiLife’s OEM/ODM team.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">

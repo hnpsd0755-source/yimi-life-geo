@@ -3,19 +3,19 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Yimi Life | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
+    "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
   description:
-    "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices with scalable manufacturing and PulseMatrix™ SpO2 technology.",
+    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices with scalable manufacturing and PulseMatrix™ SpO2 technology.",
   alternates: {
     canonical: "https://www.yimilife.com/",
   },
   openGraph: {
     title:
-      "Yimi Life | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
+      "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
     description:
       "ISO 13485 medical device OEM/ODM manufacturing for pulse oximeters, blood pressure monitors and wearable health monitoring devices, supported by PulseMatrix™ SpO2 technology.",
     url: "https://www.yimilife.com/",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     type: "website",
   },
 };
@@ -241,7 +241,7 @@ const reasons = [
   },
   {
     title: "Regulatory Model Experience",
-    text: "With 25+ FDA, MDR and NMPA certified models, Yimi Life brings practical product and documentation experience to OEM/ODM projects.",
+    text: "With 25+ FDA, MDR and NMPA certified models, YimiLife brings practical product and documentation experience to OEM/ODM projects.",
   },
 ];
 
@@ -257,33 +257,33 @@ const applications = [
 
 const faqs = [
   {
-    question: "What does Yimi Life manufacture?",
+    question: "What does YimiLife manufacture?",
     answer:
-      "Yimi Life develops and manufactures home healthcare monitoring devices, including pulse oximeters, blood pressure monitors and wearable health monitoring products for OEM/ODM customers.",
+      "YimiLife develops and manufactures home healthcare monitoring devices, including pulse oximeters, blood pressure monitors and wearable health monitoring products for OEM/ODM customers.",
   },
   {
-    question: "Is Yimi Life an OEM or ODM manufacturer?",
+    question: "Is YimiLife an OEM or ODM manufacturer?",
     answer:
-      "Yes. Yimi Life supports both OEM and ODM projects, including product configuration, engineering adaptation, private label customization, manufacturing, testing and quality documentation.",
+      "Yes. YimiLife supports both OEM and ODM projects, including product configuration, engineering adaptation, private label customization, manufacturing, testing and quality documentation.",
   },
   {
-    question: "Does Yimi Life operate under ISO 13485?",
+    question: "Does YimiLife operate under ISO 13485?",
     answer:
-      "Yes. Yimi Life operates under an ISO 13485 quality management system for medical device manufacturing.",
+      "Yes. YimiLife operates under an ISO 13485 quality management system for medical device manufacturing.",
   },
   {
-    question: "What makes Yimi Life different from a basic assembly factory?",
+    question: "What makes YimiLife different from a basic assembly factory?",
     answer:
-      "Yimi Life combines medical electronics engineering, PulseMatrix™ SpO2 technology, Bluetooth SDK support, UI customization, scalable production and full-unit calibration discipline for pulse oximeter manufacturing.",
+      "YimiLife combines medical electronics engineering, PulseMatrix™ SpO2 technology, Bluetooth SDK support, UI customization, scalable production and full-unit calibration discipline for pulse oximeter manufacturing.",
   },
   {
     question:
-      "Can Yimi Life support connected health or remote patient monitoring products?",
+      "Can YimiLife support connected health or remote patient monitoring products?",
     answer:
-      "Yes. For selected OEM/ODM projects, Yimi Life can support Bluetooth data transmission, SDK-level integration and UI customization for connected health and remote patient monitoring applications.",
+      "Yes. For selected OEM/ODM projects, YimiLife can support Bluetooth data transmission, SDK-level integration and UI customization for connected health and remote patient monitoring applications.",
   },
   {
-    question: "Can Yimi Life support private label medical device projects?",
+    question: "Can YimiLife support private label medical device projects?",
     answer:
       "Yes. We can support private label customization, including logo, color, packaging, labeling, selected functional configurations, UI interface adaptation and manufacturing documentation based on project requirements.",
   },
@@ -300,21 +300,21 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
-      alternateName: "Yimi Life",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
+      alternateName: "YimiLife",
       url: "https://www.yimilife.com/",
       brand: {
         "@type": "Brand",
-        name: "Yimi Life",
+        name: "YimiLife",
       },
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer in China for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
       "@type": "WebSite",
       "@id": "https://www.yimilife.com/#website",
       url: "https://www.yimilife.com/",
-      name: "Yimi Life",
+      name: "YimiLife",
       publisher: {
         "@id": "https://www.yimilife.com/#organization",
       },
@@ -323,9 +323,9 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/#webpage",
       url: "https://www.yimilife.com/",
-      name: "Yimi Life | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
+      name: "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices with scalable manufacturing and PulseMatrix™ SpO2 technology.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices with scalable manufacturing and PulseMatrix™ SpO2 technology.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -387,7 +387,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              Yimi Life helps global medical brands develop and manufacture
+              YimiLife helps global medical brands develop and manufacture
               home healthcare monitoring devices, including{" "}
               <Link
                 href="/products/pulse-oximeter"
@@ -480,7 +480,7 @@ export default function HomePage() {
             Home healthcare monitoring devices for OEM/ODM projects
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-700">
-            Yimi Life supports OEM/ODM projects across core home healthcare
+            YimiLife supports OEM/ODM projects across core home healthcare
             monitoring categories, from fingertip pulse oximeters and digital
             blood pressure monitors to wearable SpO2 and connected health
             monitoring devices.
@@ -534,7 +534,7 @@ export default function HomePage() {
               >
                 PulseMatrix™ SpO2 Technology Platform
               </Link>{" "}
-              is Yimi Life’s vascular hemodynamic intelligence platform for
+              is YimiLife’s vascular hemodynamic intelligence platform for
               medical-grade SpO2 monitoring. It focuses on three critical
               challenges in modern pulse oximetry:{" "}
               <Link
@@ -619,7 +619,7 @@ export default function HomePage() {
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              Yimi Life supports OEM/ODM customers with product definition,
+              YimiLife supports OEM/ODM customers with product definition,
               hardware engineering, software and algorithm adaptation, Bluetooth
               SDK integration, UI customization, manufacturing, testing and
               quality documentation.
@@ -634,7 +634,7 @@ export default function HomePage() {
             </p>
 
             <p>
-              For connected health projects, Yimi Life can support Bluetooth
+              For connected health projects, YimiLife can support Bluetooth
               data transmission, SDK-level integration and customized UI
               requirements for mobile apps, remote patient monitoring platforms
               and digital health systems.
@@ -675,7 +675,7 @@ export default function HomePage() {
               ISO 13485 quality system and scalable manufacturing
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-300">
-              Yimi Life operates under an{" "}
+              YimiLife operates under an{" "}
               <Link
                 href="/quality"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
@@ -737,13 +737,13 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-            Why Yimi Life
+            Why YimiLife
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-            Why medical brands choose Yimi Life
+            Why medical brands choose YimiLife
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-700">
-            Yimi Life combines medical electronics engineering, PulseMatrix™
+            YimiLife combines medical electronics engineering, PulseMatrix™
             SpO2 technology, ISO 13485 manufacturing discipline and regulatory
             model experience to support B2B customers building home healthcare
             monitoring devices.
@@ -783,7 +783,7 @@ export default function HomePage() {
               healthcare and connected monitoring markets.
             </p>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              Yimi Life helps customers translate these application scenarios
+              YimiLife helps customers translate these application scenarios
               into manufacturable product configurations, connected-device
               requirements and scalable production plans.
             </p>
@@ -837,7 +837,7 @@ export default function HomePage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Start your medical device OEM/ODM project with Yimi Life
+            Start your medical device OEM/ODM project with YimiLife
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
             Looking for an ISO 13485 medical device OEM/ODM manufacturer for

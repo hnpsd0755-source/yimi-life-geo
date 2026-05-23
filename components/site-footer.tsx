@@ -40,7 +40,7 @@ const footerColumns = [
     links: [
       ["OEM/ODM Services", "/oem-odm"],
       ["ISO 13485 Quality System", "/quality"],
-      ["About Yimi Life", "/about"],
+      ["About YimiLife", "/about"],
       ["Contact", "/contact"],
     ],
   },
@@ -72,7 +72,7 @@ export function SiteFooter() {
 
               <div>
                 <p className="text-base font-semibold tracking-tight">
-                  Yimi Life
+                  YimiLife
                 </p>
                 <p className="text-xs font-medium text-slate-400">
                   Medical Device OEM/ODM Manufacturer
@@ -81,7 +81,7 @@ export function SiteFooter() {
             </Link>
 
             <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">
-              Shenzhen Yimi Life Technology Co., Ltd. is an ISO 13485 medical
+              Shenzhen YimiLife Technology Co., Ltd. is an ISO 13485 medical
               device OEM/ODM manufacturer supporting pulse oximeters, blood
               pressure monitors and wearable health monitoring devices.
             </p>
@@ -139,7 +139,7 @@ export function SiteFooter() {
         <div className="mt-12 border-t border-white/10 pt-8">
           <div className="grid gap-4 text-xs leading-6 text-slate-400 md:grid-cols-[1fr_auto]">
             <p>
-              © {new Date().getFullYear()} Shenzhen Yimi Life Technology Co.,
+              © {new Date().getFullYear()} Shenzhen YimiLife Technology Co.,
               Ltd. All rights reserved.
             </p>
 

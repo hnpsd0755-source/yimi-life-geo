@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Motion Artifact Rejection Pulse Oximeter Technology | PulseMatrix™",
     description:
-      "Explore Yimi Life’s motion artifact rejection approach for medical-grade SpO2 monitoring, elderly tremor, home healthcare and OEM/ODM pulse oximeter projects.",
+      "Explore YimiLife’s motion artifact rejection approach for medical-grade SpO2 monitoring, elderly tremor, home healthcare and OEM/ODM pulse oximeter projects.",
     url: "https://www.yimilife.com/technology/motion-artifact-rejection",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     type: "website",
   },
 };
@@ -207,9 +207,9 @@ const faqs = [
       "No. Motion artifact rejection depends on optical design, mechanical fit, analog front-end quality, sampling strategy, waveform assessment, algorithm processing and product-level verification.",
   },
   {
-    question: "Can Yimi Life support motion-resistant SpO2 OEM/ODM projects?",
+    question: "Can YimiLife support motion-resistant SpO2 OEM/ODM projects?",
     answer:
-      "Yes. Yimi Life can discuss motion-resistant SpO2 design requirements during OEM/ODM project evaluation, including target use scenarios, product form factor, connected device requirements and validation approach.",
+      "Yes. YimiLife can discuss motion-resistant SpO2 design requirements during OEM/ODM project evaluation, including target use scenarios, product form factor, connected device requirements and validation approach.",
   },
 ];
 
@@ -219,14 +219,14 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
       url: "https://www.yimilife.com",
       brand: {
         "@type": "Brand",
-        name: "Yimi Life",
+        name: "YimiLife",
       },
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
       "@type": "TechArticle",
@@ -572,7 +572,7 @@ export default function MotionArtifactRejectionPage() {
             </p>
 
             <p>
-              Yimi Life connects motion artifact rejection with the broader{" "}
+              YimiLife connects motion artifact rejection with the broader{" "}
               <Link
                 href="/technology"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
@@ -659,7 +659,7 @@ export default function MotionArtifactRejectionPage() {
             </p>
 
             <p>
-              Yimi Life’s pulse oximeter manufacturing is supported by the{" "}
+              YimiLife’s pulse oximeter manufacturing is supported by the{" "}
               <Link
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"

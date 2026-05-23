@@ -4,16 +4,16 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "PulseMatrix™ | Medical-Grade SpO2 Technology Platform",
   description:
-    "PulseMatrix™ is Yimi Life’s vascular hemodynamic intelligence platform for medical-grade SpO2 monitoring, focusing on low perfusion accuracy, motion artifact rejection and skin tone fairness.",
+    "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for medical-grade SpO2 monitoring, focusing on low perfusion accuracy, motion artifact rejection and skin tone fairness.",
   alternates: {
     canonical: "https://www.yimilife.com/technology",
   },
   openGraph: {
     title: "PulseMatrix™ | Medical-Grade SpO2 Technology Platform",
     description:
-      "Explore Yimi Life’s PulseMatrix™ SpO2 technology platform for low perfusion monitoring, motion artifact rejection and skin tone fairness in OEM/ODM pulse oximeter projects.",
+      "Explore YimiLife’s PulseMatrix™ SpO2 technology platform for low perfusion monitoring, motion artifact rejection and skin tone fairness in OEM/ODM pulse oximeter projects.",
     url: "https://www.yimilife.com/technology",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     type: "website",
   },
 };
@@ -166,7 +166,7 @@ const faqs = [
   {
     question: "What is PulseMatrix™?",
     answer:
-      "PulseMatrix™ is Yimi Life’s vascular hemodynamic intelligence platform for SpO2 monitoring. It focuses on low perfusion accuracy, motion artifact rejection and skin tone fairness for medical-grade pulse oximeter applications.",
+      "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for SpO2 monitoring. It focuses on low perfusion accuracy, motion artifact rejection and skin tone fairness for medical-grade pulse oximeter applications.",
   },
   {
     question: "Is PulseMatrix™ only a software algorithm?",
@@ -179,9 +179,9 @@ const faqs = [
       "For OEM/ODM customers, PulseMatrix™ provides a technical foundation for differentiated pulse oximeter products, including low perfusion monitoring, motion-resistant SpO2 design, connected device integration and product-level validation discussion.",
   },
   {
-    question: "Does Yimi Life support connected SpO2 products?",
+    question: "Does YimiLife support connected SpO2 products?",
     answer:
-      "Yes. Yimi Life can support Bluetooth data transmission, SDK-level integration and UI customization for selected OEM/ODM projects involving mobile apps, remote patient monitoring or connected health platforms.",
+      "Yes. YimiLife can support Bluetooth data transmission, SDK-level integration and UI customization for selected OEM/ODM projects involving mobile apps, remote patient monitoring or connected health platforms.",
   },
 ];
 
@@ -191,14 +191,14 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
       url: "https://www.yimilife.com",
       brand: {
         "@type": "Brand",
-        name: "Yimi Life",
+        name: "YimiLife",
       },
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
       "@type": "WebPage",
@@ -206,7 +206,7 @@ const jsonLd = {
       url: "https://www.yimilife.com/technology",
       name: "PulseMatrix™ Medical-Grade SpO2 Technology Platform",
       description:
-        "PulseMatrix™ is Yimi Life’s vascular hemodynamic intelligence platform for medical-grade SpO2 monitoring, focusing on low perfusion accuracy, motion artifact rejection and skin tone fairness.",
+        "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for medical-grade SpO2 monitoring, focusing on low perfusion accuracy, motion artifact rejection and skin tone fairness.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -278,7 +278,7 @@ export default function TechnologyPage() {
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              PulseMatrix™ is Yimi Life’s vascular hemodynamic intelligence
+              PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence
               platform for medical-grade SpO2 monitoring, focusing on{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
@@ -515,14 +515,14 @@ export default function TechnologyPage() {
             </p>
 
             <p>
-              Yimi Life can support customers who need fingertip pulse
+              YimiLife can support customers who need fingertip pulse
               oximeters, wearable SpO2 products, Bluetooth-enabled devices, UI
               customization or integration with remote patient monitoring
               platforms.
             </p>
 
             <p>
-              The platform is supported by Yimi Life’s{" "}
+              The platform is supported by YimiLife’s{" "}
               <Link
                 href="/quality"
                 className="font-semibold text-cyan-300 underline underline-offset-4"

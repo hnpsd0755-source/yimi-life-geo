@@ -8,19 +8,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.yimilife.com"),
   title: {
     default:
-      "Yimi Life | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
+      "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
     template: "%s",
   },
   description:
-    "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices with scalable manufacturing and PulseMatrix™ SpO2 technology.",
-  applicationName: "Yimi Life",
+    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices with scalable manufacturing and PulseMatrix™ SpO2 technology.",
+  applicationName: "YimiLife",
   authors: [
     {
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
     },
   ],
-  creator: "Shenzhen Yimi Life Technology Co., Ltd.",
-  publisher: "Shenzhen Yimi Life Technology Co., Ltd.",
+  creator: "Shenzhen YimiLife Technology Co., Ltd.",
+  publisher: "Shenzhen YimiLife Technology Co., Ltd.",
   keywords: [
     "medical device OEM/ODM manufacturer",
     "medical device manufacturer China",
@@ -44,10 +44,10 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     url: "https://www.yimilife.com",
     title:
-      "Yimi Life | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
+      "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
     description:
       "ISO 13485 medical device OEM/ODM manufacturing for pulse oximeters, blood pressure monitors and wearable health monitoring devices, supported by PulseMatrix™ SpO2 technology.",
   },
@@ -65,15 +65,15 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://www.yimilife.com/#organization",
-  name: "Shenzhen Yimi Life Technology Co., Ltd.",
-  alternateName: "Yimi Life",
+  name: "Shenzhen YimiLife Technology Co., Ltd.",
+  alternateName: "YimiLife",
   url: "https://www.yimilife.com",
   brand: {
     "@type": "Brand",
-    name: "Yimi Life",
+    name: "YimiLife",
   },
   description:
-    "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Shenzhen",
@@ -98,7 +98,7 @@ const websiteJsonLd = {
   "@type": "WebSite",
   "@id": "https://www.yimilife.com/#website",
   url: "https://www.yimilife.com",
-  name: "Yimi Life",
+  name: "YimiLife",
   publisher: {
     "@id": "https://www.yimilife.com/#organization",
   },

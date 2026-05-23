@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Wearable Health Monitoring Device OEM/ODM | Yimi Life",
+  title: "Wearable Health Monitoring Device OEM/ODM | YimiLife",
   description:
-    "Yimi Life provides wearable health monitoring device OEM/ODM support for medical brands, including wearable SpO2 devices, Bluetooth data integration, UI customization, remote patient monitoring and ISO 13485 manufacturing.",
+    "YimiLife provides wearable health monitoring device OEM/ODM support for medical brands, including wearable SpO2 devices, Bluetooth data integration, UI customization, remote patient monitoring and ISO 13485 manufacturing.",
   alternates: {
     canonical: "https://www.yimilife.com/products/wearable-monitoring",
   },
   openGraph: {
-    title: "Wearable Health Monitoring Device OEM/ODM | Yimi Life",
+    title: "Wearable Health Monitoring Device OEM/ODM | YimiLife",
     description:
       "Wearable SpO2 and connected health monitoring device OEM/ODM support with Bluetooth SDK integration, UI customization, PulseMatrix™ SpO2 technology and ISO 13485 manufacturing.",
     url: "https://www.yimilife.com/products/wearable-monitoring",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     type: "website",
   },
 };
@@ -227,19 +227,19 @@ const workflow = [
 
 const faqs = [
   {
-    question: "Does Yimi Life provide wearable health monitoring OEM/ODM services?",
+    question: "Does YimiLife provide wearable health monitoring OEM/ODM services?",
     answer:
-      "Yes. Yimi Life supports wearable health monitoring OEM/ODM projects, especially wearable SpO2 and connected health monitoring devices for home healthcare, remote patient monitoring and digital health applications.",
+      "Yes. YimiLife supports wearable health monitoring OEM/ODM projects, especially wearable SpO2 and connected health monitoring devices for home healthcare, remote patient monitoring and digital health applications.",
   },
   {
-    question: "Can Yimi Life support wearable SpO2 devices?",
+    question: "Can YimiLife support wearable SpO2 devices?",
     answer:
-      "Yes. Yimi Life can support wearable SpO2 product projects, including product definition, PulseMatrix™ SpO2 technology discussion, Bluetooth data integration, UI customization, manufacturing and documentation support.",
+      "Yes. YimiLife can support wearable SpO2 product projects, including product definition, PulseMatrix™ SpO2 technology discussion, Bluetooth data integration, UI customization, manufacturing and documentation support.",
   },
   {
     question: "Can wearable devices connect to mobile apps or RPM platforms?",
     answer:
-      "For selected OEM/ODM projects, Yimi Life can support Bluetooth data transmission, SDK-level integration and protocol discussion to help connect wearable devices with mobile apps, remote patient monitoring platforms or digital health systems.",
+      "For selected OEM/ODM projects, YimiLife can support Bluetooth data transmission, SDK-level integration and protocol discussion to help connect wearable devices with mobile apps, remote patient monitoring platforms or digital health systems.",
   },
   {
     question: "Can the UI interface be customized?",
@@ -249,7 +249,7 @@ const faqs = [
   {
     question: "Is wearable monitoring only a consumer electronics product?",
     answer:
-      "No. Yimi Life positions wearable health monitoring as part of its medical electronics OEM/ODM portfolio, with attention to SpO2 performance, quality control, documentation and manufacturing consistency.",
+      "No. YimiLife positions wearable health monitoring as part of its medical electronics OEM/ODM portfolio, with attention to SpO2 performance, quality control, documentation and manufacturing consistency.",
   },
   {
     question: "What information should customers provide for a wearable project?",
@@ -264,15 +264,15 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
-      alternateName: "Yimi Life",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
+      alternateName: "YimiLife",
       url: "https://www.yimilife.com/",
       brand: {
         "@type": "Brand",
-        name: "Yimi Life",
+        name: "YimiLife",
       },
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer in China for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
       "@type": "Service",
@@ -294,7 +294,7 @@ const jsonLd = {
       url: "https://www.yimilife.com/products/wearable-monitoring",
       name: "Wearable Health Monitoring Device OEM/ODM",
       description:
-        "Yimi Life wearable health monitoring OEM/ODM page for wearable SpO2 devices, Bluetooth data integration, UI customization and connected health applications.",
+        "YimiLife wearable health monitoring OEM/ODM page for wearable SpO2 devices, Bluetooth data integration, UI customization and connected health applications.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -373,7 +373,7 @@ export default function WearableMonitoringPage() {
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              Yimi Life supports medical brands with wearable SpO2 and connected
+              YimiLife supports medical brands with wearable SpO2 and connected
               health monitoring device OEM/ODM projects, including Bluetooth
               data integration, UI customization, remote patient monitoring
               scenarios and ISO 13485 manufacturing support.
@@ -382,7 +382,7 @@ export default function WearableMonitoringPage() {
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
               For connected health products, wearable devices must connect
               sensor performance, user interaction, data transmission, app
-              integration and manufacturing consistency. Yimi Life helps
+              integration and manufacturing consistency. YimiLife helps
               customers evaluate these requirements from product definition to
               mass production.
             </p>
@@ -465,7 +465,7 @@ export default function WearableMonitoringPage() {
             </p>
 
             <p>
-              Yimi Life supports OEM/ODM customers by combining medical
+              YimiLife supports OEM/ODM customers by combining medical
               electronics engineering, wearable SpO2 product discussion,
               Bluetooth SDK support, UI customization and ISO 13485
               manufacturing discipline.
@@ -484,7 +484,7 @@ export default function WearableMonitoringPage() {
               OEM/ODM support for wearable health monitoring projects
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              Yimi Life supports wearable monitoring projects from early product
+              YimiLife supports wearable monitoring projects from early product
               definition to engineering evaluation, sample confirmation,
               testing, documentation and mass production.
             </p>
@@ -518,7 +518,7 @@ export default function WearableMonitoringPage() {
               Designed for app-connected and RPM product strategies
             </h3>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-300">
-              For selected OEM/ODM projects, Yimi Life can support Bluetooth
+              For selected OEM/ODM projects, YimiLife can support Bluetooth
               data transmission, SDK-level integration and customized UI
               requirements to help customers connect wearable devices with
               mobile apps, remote patient monitoring platforms or digital health
@@ -547,7 +547,7 @@ export default function WearableMonitoringPage() {
             </p>
 
             <p>
-              Yimi Life’s{" "}
+              YimiLife’s{" "}
               <Link
                 href="/technology"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
@@ -630,7 +630,7 @@ export default function WearableMonitoringPage() {
                 From wearable concept to manufacturable device
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-700">
-                Yimi Life follows a practical{" "}
+                YimiLife follows a practical{" "}
                 <Link
                   href="/oem-odm"
                   className="font-semibold text-cyan-700 underline underline-offset-4"
@@ -679,7 +679,7 @@ export default function WearableMonitoringPage() {
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
               Wearable health monitoring OEM/ODM projects require controlled
-              manufacturing and clear documentation. Yimi Life’s manufacturing
+              manufacturing and clear documentation. YimiLife’s manufacturing
               process is supported by the{" "}
               <Link
                 href="/quality"
@@ -720,7 +720,7 @@ export default function WearableMonitoringPage() {
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
               Wearable monitoring can be part of a broader home healthcare
-              product portfolio. Yimi Life also supports{" "}
+              product portfolio. YimiLife also supports{" "}
               <Link
                 href="/products/pulse-oximeter"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
@@ -784,7 +784,7 @@ export default function WearableMonitoringPage() {
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
             Looking for an ISO 13485 OEM/ODM partner for wearable SpO2 devices,
             connected health products or remote patient monitoring applications?
-            Share your project requirements with Yimi Life.
+            Share your project requirements with YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">

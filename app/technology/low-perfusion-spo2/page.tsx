@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Low Perfusion SpO2 Monitoring at 0.1% PI | PulseMatrix™",
     description:
-      "Explore Yimi Life’s low perfusion SpO2 technology approach for weak signal scenarios, elderly users, poor peripheral circulation and OEM/ODM pulse oximeter projects.",
+      "Explore YimiLife’s low perfusion SpO2 technology approach for weak signal scenarios, elderly users, poor peripheral circulation and OEM/ODM pulse oximeter projects.",
     url: "https://www.yimilife.com/technology/low-perfusion-spo2",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     type: "website",
   },
 };
@@ -201,9 +201,9 @@ const faqs = [
       "No. Low perfusion performance depends on hardware, optical design, analog front-end quality, PCB layout, signal processing, calibration, verification and manufacturing consistency. It should be treated as a full-system engineering challenge.",
   },
   {
-    question: "Can Yimi Life support low perfusion requirements in OEM/ODM projects?",
+    question: "Can YimiLife support low perfusion requirements in OEM/ODM projects?",
     answer:
-      "Yes. Yimi Life can discuss low perfusion SpO2 requirements during OEM/ODM project evaluation, including product configuration, target use scenarios, validation approach and manufacturing control expectations.",
+      "Yes. YimiLife can discuss low perfusion SpO2 requirements during OEM/ODM project evaluation, including product configuration, target use scenarios, validation approach and manufacturing control expectations.",
   },
 ];
 
@@ -213,14 +213,14 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
       url: "https://www.yimilife.com",
       brand: {
         "@type": "Brand",
-        name: "Yimi Life",
+        name: "YimiLife",
       },
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
       "@type": "TechArticle",
@@ -524,7 +524,7 @@ export default function LowPerfusionSpo2Page() {
             </p>
 
             <p>
-              Yimi Life uses the 0.1% PI low perfusion scenario as an
+              YimiLife uses the 0.1% PI low perfusion scenario as an
               engineering anchor for product discussion, performance evaluation
               and differentiated SpO2 technology positioning.
             </p>
@@ -636,7 +636,7 @@ export default function LowPerfusionSpo2Page() {
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
               For OEM/ODM projects, low perfusion performance must be supported
-              by product-level testing and manufacturing control. Yimi Life
+              by product-level testing and manufacturing control. YimiLife
               connects SpO2 technology discussion with production verification,
               calibration and batch consistency.
             </p>

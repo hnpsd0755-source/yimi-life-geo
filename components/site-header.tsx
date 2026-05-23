@@ -87,7 +87,7 @@ export function SiteHeader() {
           <LogoMark />
           <div>
             <p className="text-base font-semibold tracking-tight text-slate-950">
-              Yimi Life
+              YimiLife
             </p>
             <p className="text-xs font-medium text-slate-500">
               Medical Device OEM/ODM

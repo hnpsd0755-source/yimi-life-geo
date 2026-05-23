@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Skin Tone Fairness in Pulse Oximeter Accuracy | PulseMatrix™",
     description:
-      "Explore Yimi Life’s skin tone fairness approach for pulse oximeter accuracy, Fitzpatrick skin types, SpO2 validation strategy and OEM/ODM medical device projects.",
+      "Explore YimiLife’s skin tone fairness approach for pulse oximeter accuracy, Fitzpatrick skin types, SpO2 validation strategy and OEM/ODM medical device projects.",
     url: "https://www.yimilife.com/technology/skin-tone-fairness",
-    siteName: "Yimi Life",
+    siteName: "YimiLife",
     type: "website",
   },
 };
@@ -200,9 +200,9 @@ const faqs = [
       "No. Skin tone fairness should be considered at the system level, including optical design, sensor configuration, signal processing, validation population planning, documentation and manufacturing consistency.",
   },
   {
-    question: "Can Yimi Life support skin tone validation discussions for OEM/ODM projects?",
+    question: "Can YimiLife support skin tone validation discussions for OEM/ODM projects?",
     answer:
-      "Yes. Yimi Life can discuss skin tone fairness requirements during OEM/ODM project evaluation, including target market expectations, product configuration, validation strategy and documentation needs.",
+      "Yes. YimiLife can discuss skin tone fairness requirements during OEM/ODM project evaluation, including target market expectations, product configuration, validation strategy and documentation needs.",
   },
 ];
 
@@ -212,14 +212,14 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
       url: "https://www.yimilife.com",
       brand: {
         "@type": "Brand",
-        name: "Yimi Life",
+        name: "YimiLife",
       },
       description:
-        "Yimi Life is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
       "@type": "TechArticle",
@@ -529,7 +529,7 @@ export default function SkinToneFairnessPage() {
             </p>
 
             <p>
-              Yimi Life can support project-level discussion around validation
+              YimiLife can support project-level discussion around validation
               approach, documentation needs and how skin tone fairness connects
               with the broader{" "}
               <Link
@@ -565,7 +565,7 @@ export default function SkinToneFairnessPage() {
             </p>
 
             <p>
-              Yimi Life connects skin tone fairness with{" "}
+              YimiLife connects skin tone fairness with{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
@@ -645,7 +645,7 @@ export default function SkinToneFairnessPage() {
             </p>
 
             <p>
-              Yimi Life’s pulse oximeter manufacturing is supported by the{" "}
+              YimiLife’s pulse oximeter manufacturing is supported by the{" "}
               <Link
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
