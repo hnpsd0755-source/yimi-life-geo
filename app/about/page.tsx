@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About YimiLife | ISO 13485 Medical Device OEM/ODM Manufacturer",
     description:
-      "YimiLife is a Shenzhen-based medical electronics OEM/ODM manufacturer with ISO 13485 quality control, 12,000 m² facility, scalable manufacturing and PulseMatrix™ SpO2 technology.",
+      "YimiLife is a Shenzhen-based medical electronics OEM/ODM manufacturer with ISO 13485 quality control, 3,000 m² facility, scalable manufacturing and PulseMatrix™ SpO2 technology.",
     url: "https://www.yimilife.com/about",
     siteName: "YimiLife",
     type: "website",
@@ -130,7 +130,7 @@ function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
 
 const companyFacts = [
   "ISO 13485 Quality Management System",
-  "12,000 m² Manufacturing Facility",
+  "3,000 m² Manufacturing Facility",
   "25+ FDA / MDR / NMPA Certified Models",
   "300,000 Units Monthly Pulse Oximeter Capacity",
   "PulseMatrix™ SpO2 Technology Platform",
@@ -488,13 +488,13 @@ export default function AboutPage() {
               Manufacturing base
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              12,000 m² facility with scalable production capability
+              3,000 m² facility with scalable production capability
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              YimiLife operates a 12,000 m² manufacturing facility in Shenzhen,
+              YimiLife operates a 3,000 m² Manufacturing Facility in Shenzhen,
               supporting medical electronic device OEM/ODM projects from sample
               confirmation and pilot production to scalable mass production.
             </p>
@@ -523,7 +523,7 @@ export default function AboutPage() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            "12,000 m² Manufacturing Facility",
+            "3,000 m² Manufacturing Facility",
             "300,000 Units Monthly Pulse Oximeter Capacity",
             "100% Fluke Index 2 Calibration & Verification",
             "Batch Traceability and Quality Records",

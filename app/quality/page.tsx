@@ -131,7 +131,7 @@ function CalibrationIcon({ className = "h-6 w-6" }: IconProps) {
 
 const trustAnchors = [
   "ISO 13485 Quality Management System",
-  "12,000 m² Manufacturing Facility",
+  "3,000 m² Manufacturing Facility",
   "25+ FDA / MDR / NMPA Certified Models",
   "300,000 Units Monthly Pulse Oximeter Capacity",
   "100% Fluke Index 2 Calibration & Verification",
@@ -171,7 +171,7 @@ const qualityControls = [
 ];
 
 const manufacturingHighlights = [
-  "12,000 m² manufacturing facility",
+  "3,000 m² Manufacturing Facility",
   "Up to 300,000 units monthly pulse oximeter capacity",
   "100% Fluke Index 2 calibration and verification for pulse oximeters",
   "Batch traceability and production records",
@@ -572,7 +572,7 @@ export default function QualityPage() {
               Manufacturing capacity with batch traceability
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-300">
-              YimiLife’s 12,000 m² facility and scalable pulse oximeter
+              YimiLife’s 3,000 m² facility and scalable pulse oximeter
               production capacity support OEM/ODM customers from sample
               confirmation to pilot production and mass production.
             </p>
