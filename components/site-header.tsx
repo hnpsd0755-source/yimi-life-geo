@@ -30,6 +30,20 @@ function ArrowIcon() {
   );
 }
 
+function ChevronIcon() {
+  return (
+    <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path
+        d="M5 7.5l5 5 5-5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 const productLinks = [
   {
     label: "Product Categories",
@@ -37,19 +51,19 @@ const productLinks = [
     description: "Pulse oximeters, BP monitors and wearable monitoring",
   },
   {
-    label: "Pulse Oximeter OEM/ODM",
+    label: "Pulse Oximeter OEM/ODM Manufacturer",
     href: "/products/pulse-oximeter",
-    description: "SpO2 devices supported by PulseMatrix™ technology",
+    description: "Private label fingertip SpO2 devices with PulseMatrix™ support",
   },
   {
-    label: "Blood Pressure Monitor OEM/ODM",
+    label: "Blood Pressure Monitor OEM Manufacturer",
     href: "/products/blood-pressure-monitor",
-    description: "Home BP monitor manufacturing support",
+    description: "Digital upper arm BP monitor manufacturing support",
   },
   {
-    label: "Wearable Health Monitoring",
+    label: "Wearable Health Monitoring Device OEM",
     href: "/products/wearable-monitoring",
-    description: "Wearable SpO2 and connected health devices",
+    description: "Wearable SpO2 and connected health monitoring devices",
   },
 ];
 
@@ -60,14 +74,14 @@ const technologyLinks = [
     description: "Vascular hemodynamic intelligence platform",
   },
   {
-    label: "Low Perfusion SpO2",
+    label: "Low Perfusion SpO2 Technology",
     href: "/technology/low-perfusion-spo2",
     description: "0.1% PI low perfusion monitoring focus",
   },
   {
     label: "Motion Artifact Rejection",
     href: "/technology/motion-artifact-rejection",
-    description: "SpO2 stability during movement and tremor",
+    description: "SpO2 stability during movement and elderly tremor",
   },
   {
     label: "Skin Tone Fairness",
@@ -75,6 +89,65 @@ const technologyLinks = [
     description: "Validation-aware SpO2 design across skin tones",
   },
 ];
+
+function DropdownMenu({
+  triggerLabel,
+  triggerHref,
+  links,
+  widthClass,
+}: {
+  triggerLabel: string;
+  triggerHref: string;
+  links: {
+    label: string;
+    href: string;
+    description: string;
+  }[];
+  widthClass: string;
+}) {
+  return (
+    <div className="group relative">
+      <Link
+        href={triggerHref}
+        aria-haspopup="menu"
+        className="inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-300"
+      >
+        {triggerLabel}
+        <ChevronIcon />
+      </Link>
+
+      {/*
+        The wrapper below starts immediately at top-full and uses pt-3 as a hover bridge.
+        This removes the small gap between the navigation button and dropdown menu,
+        so the menu will not disappear when the mouse moves from the button to the submenu.
+      */}
+      <div
+        className={`invisible absolute left-0 top-full z-50 ${widthClass} pt-3 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100`}
+      >
+        <div
+          role="menu"
+          className="rounded-3xl border border-slate-200 bg-white p-3 shadow-xl ring-1 ring-black/5"
+        >
+          {links.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              role="menuitem"
+              className="block rounded-2xl p-4 transition hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+            >
+              <p className="text-sm font-semibold text-slate-950">
+                {item.label}
+              </p>
+              <p className="mt-1 text-xs leading-5 text-slate-500">
+                {item.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function SiteHeader() {
   return (
@@ -96,75 +169,37 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
-          <div className="group relative">
-            <Link
-              href="/products"
-              className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
-            >
-              Products
-            </Link>
+          <DropdownMenu
+            triggerLabel="Products"
+            triggerHref="/products"
+            links={productLinks}
+            widthClass="w-[390px]"
+          />
 
-            <div className="invisible absolute left-0 top-full w-[360px] translate-y-3 rounded-3xl border border-slate-200 bg-white p-3 opacity-0 shadow-xl transition group-hover:visible group-hover:translate-y-2 group-hover:opacity-100">
-              {productLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block rounded-2xl p-4 transition hover:bg-slate-50"
-                >
-                  <p className="text-sm font-semibold text-slate-950">
-                    {item.label}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">
-                    {item.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="group relative">
-            <Link
-              href="/technology"
-              className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
-            >
-              Technology
-            </Link>
-
-            <div className="invisible absolute left-0 top-full w-[380px] translate-y-3 rounded-3xl border border-slate-200 bg-white p-3 opacity-0 shadow-xl transition group-hover:visible group-hover:translate-y-2 group-hover:opacity-100">
-              {technologyLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block rounded-2xl p-4 transition hover:bg-slate-50"
-                >
-                  <p className="text-sm font-semibold text-slate-950">
-                    {item.label}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">
-                    {item.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
+          <DropdownMenu
+            triggerLabel="Technology"
+            triggerHref="/technology"
+            links={technologyLinks}
+            widthClass="w-[400px]"
+          />
 
           <Link
             href="/oem-odm"
-            className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
+            className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
             OEM/ODM
           </Link>
 
           <Link
             href="/quality"
-            className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
+            className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
             Quality
           </Link>
 
           <Link
             href="/about"
-            className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
+            className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
             About
           </Link>
@@ -173,9 +208,9 @@ export function SiteHeader() {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="inline-flex items-center rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
-            Start a Project
+            Submit OEM/ODM Requirements
             <span className="ml-2">
               <ArrowIcon />
             </span>
@@ -187,7 +222,7 @@ export function SiteHeader() {
             Menu
           </summary>
 
-          <div className="absolute right-0 top-12 w-[300px] rounded-3xl border border-slate-200 bg-white p-4 shadow-xl">
+          <div className="absolute right-0 top-12 z-50 w-[300px] rounded-3xl border border-slate-200 bg-white p-4 shadow-xl">
             <div className="grid gap-2">
               <Link
                 href="/products"
