@@ -145,7 +145,7 @@ function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
 const trustAnchors = [
   "ISO 13485 Quality Management System",
   "25+ FDA / MDR / NMPA Certified Models",
-  "12,000 m² Manufacturing Facility",
+  "3,000 m² Manufacturing Facility",
   "300,000 Units Monthly Pulse Oximeter Capacity",
   "Bluetooth SDK & UI Customization Support",
 ];
@@ -727,7 +727,7 @@ export default function OemOdmPage() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            "12,000 m² Manufacturing Facility",
+            "3,000 m² Manufacturing Facility",
             "ISO 13485 Quality Management System",
             "300,000 Units Monthly Pulse Oximeter Capacity",
             "100% Fluke Index 2 Calibration & Verification",

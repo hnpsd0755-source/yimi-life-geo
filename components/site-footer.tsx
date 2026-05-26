@@ -88,7 +88,7 @@ export function SiteFooter() {
 
             <div className="mt-6 grid gap-3 text-sm text-slate-300">
               <p>ISO 13485 Quality Management System</p>
-              <p>12,000 m² Manufacturing Facility</p>
+              <p>3,000 m² Manufacturing Facility</p>
               <p>25+ FDA / MDR / NMPA Certified Models</p>
               <p>300,000 Units Monthly Pulse Oximeter Capacity</p>
             </div>
