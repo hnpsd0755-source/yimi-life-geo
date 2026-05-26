@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "ISO 13485 Medical Device Manufacturer | YimiLife",
   description:
-    "YimiLife operates under an ISO 13485 quality system, with certified model experience, production process control and Fluke Index 2 pulse oximeter verification.",
+    "YimiLife is an ISO 13485 medical device manufacturer with certified model experience, production process control, batch traceability and Fluke Index 2 pulse oximeter production verification.",
   alternates: {
     canonical: "https://www.yimilife.com/quality",
   },
   openGraph: {
     title: "ISO 13485 Medical Device Manufacturer | YimiLife",
     description:
-      "ISO 13485 quality system, certified model experience, production process control and Fluke Index 2 pulse oximeter verification.",
+      "ISO 13485 medical device manufacturing quality, certified model experience, production process control, batch traceability and Fluke Index 2 pulse oximeter production verification.",
     url: "https://www.yimilife.com/quality",
     siteName: "YimiLife",
     type: "website",
@@ -130,22 +130,22 @@ function CalibrationIcon({ className = "h-6 w-6" }: IconProps) {
 }
 
 const trustAnchors = [
-  "ISO 13485 Quality Management System",
+  "ISO 13485 Medical Device Manufacturer",
   "3,000 m² Manufacturing Facility",
-  "25+ FDA / MDR / NMPA Certified Models",
+  "25+ FDA / MDR / NMPA Certified Model Experience",
   "300,000 Units Monthly Pulse Oximeter Capacity",
-  "100% Fluke Index 2 Calibration & Verification",
+  "100% Fluke Index 2 Production Verification",
 ];
 
 const qualityControls = [
   {
     title: "Incoming Inspection",
-    text: "Material and component inspection supports stable supply quality before production begins.",
+    text: "Incoming material and component inspection supports stable supply quality before medical device production begins.",
     icon: CheckIcon,
   },
   {
     title: "PCBA Process Control",
-    text: "PCBA manufacturing is controlled through process checkpoints, functional inspection and production records.",
+    text: "PCBA manufacturing is controlled through process checkpoints, functional inspection and production records for OEM/ODM projects.",
     icon: FactoryIcon,
   },
   {
@@ -154,8 +154,8 @@ const qualityControls = [
     icon: ShieldIcon,
   },
   {
-    title: "Calibration and Verification",
-    text: "Pulse oximeter units are calibrated and verified using Fluke Index 2 clinical simulators before shipment.",
+    title: "Fluke Index 2 Production Verification",
+    text: "Pulse oximeter units are calibrated and verified using Fluke Index 2 clinical simulators before shipment as part of production control.",
     icon: CalibrationIcon,
   },
   {
@@ -165,15 +165,15 @@ const qualityControls = [
   },
   {
     title: "Batch Traceability",
-    text: "Production records and batch traceability help OEM/ODM customers manage regulated medical device supply.",
+    text: "Production records and batch traceability help OEM/ODM customers manage regulated medical device supply and shipment consistency.",
     icon: ShieldIcon,
   },
 ];
 
 const manufacturingHighlights = [
-  "3,000 m² Manufacturing Facility",
+  "3,000 m² manufacturing facility",
   "Up to 300,000 units monthly pulse oximeter capacity",
-  "100% Fluke Index 2 calibration and verification for pulse oximeters",
+  "100% Fluke Index 2 production calibration and verification for pulse oximeters",
   "Batch traceability and production records",
   "Incoming inspection and process quality control",
   "Packaging, labeling and shipment inspection",
@@ -186,39 +186,45 @@ const documentationItems = [
   "Packaging and labeling control records",
   "Batch traceability records",
   "OEM/ODM project communication records",
+  "Certified model experience and project documentation support",
   "Quality and manufacturing documentation support",
 ];
 
 const faqs = [
   {
-    question: "Does YimiLife operate under ISO 13485?",
+    question: "Is YimiLife an ISO 13485 medical device manufacturer?",
     answer:
       "Yes. YimiLife operates under an ISO 13485 quality management system for medical device manufacturing and OEM/ODM project support.",
   },
   {
-    question: "What quality controls are applied during manufacturing?",
+    question: "What quality controls are applied during medical device manufacturing?",
     answer:
-      "YimiLife applies quality control across incoming inspection, PCBA process control, assembly, functional testing, calibration, packaging, labeling and batch traceability.",
+      "YimiLife applies quality control across incoming inspection, PCBA process control, assembly, functional testing, calibration, packaging, labeling, shipment inspection and batch traceability.",
   },
   {
-    question: "How are pulse oximeters verified before shipment?",
+    question: "How does YimiLife verify pulse oximeter production quality?",
     answer:
-      "Each pulse oximeter unit is calibrated and verified using Fluke Index 2 clinical simulators before shipment to support consistent product output and batch discipline.",
+      "Pulse oximeter units are calibrated and verified using Fluke Index 2 clinical simulators before shipment to support consistent product output and production release discipline.",
   },
   {
-    question: "Does Fluke Index 2 calibration mean clinical validation?",
+    question: "Does Fluke Index 2 production verification mean clinical validation?",
     answer:
-      "No. Fluke Index 2 is used for calibration and performance verification as part of production control. It should not be described as human clinical validation.",
+      "No. Fluke Index 2 is used for production calibration and performance verification. It should not be described as human clinical validation or clinical proof.",
+  },
+  {
+    question: "Can YimiLife support certified model experience for OEM/ODM projects?",
+    answer:
+      "YimiLife has experience with 25+ FDA / MDR / NMPA certified pulse oximeter models and can support OEM/ODM customers with product documentation and project discussion for target market requirements.",
   },
   {
     question: "Can YimiLife support OEM/ODM documentation needs?",
     answer:
-      "Yes. Depending on project scope, YimiLife can support product configuration records, testing records, calibration records, packaging and labeling control records and batch traceability documentation.",
+      "Yes. Depending on project scope, YimiLife can support product configuration records, testing records, calibration records, packaging and labeling control records, batch traceability records and manufacturing documentation support.",
   },
   {
     question: "Why is quality control important for OEM/ODM medical device projects?",
     answer:
-      "For OEM/ODM customers, quality control supports product consistency, regulated market expectations, shipment reliability and long-term brand trust.",
+      "For OEM/ODM customers, quality control supports product consistency, regulated market expectations, shipment reliability, private label brand trust and long-term supply cooperation.",
   },
 ];
 
@@ -242,15 +248,15 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/quality#webpage",
       url: "https://www.yimilife.com/quality",
-      name: "ISO 13485 Quality System for Medical Device Manufacturing",
+      name: "ISO 13485 Medical Device Manufacturer",
       description:
-        "YimiLife quality system page covering ISO 13485 manufacturing control, calibration, testing, batch traceability and OEM/ODM documentation support.",
+        "YimiLife quality page covering ISO 13485 medical device manufacturing quality, production process control, certified model experience, Fluke Index 2 production verification, batch traceability and OEM/ODM documentation support.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
       about: {
         "@type": "Thing",
-        name: "ISO 13485 medical device quality system",
+        name: "ISO 13485 medical device manufacturer",
       },
       publisher: {
         "@id": "https://www.yimilife.com/#organization",
@@ -259,14 +265,14 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": "https://www.yimilife.com/quality#quality-service",
-      name: "Medical Device Manufacturing Quality Control",
+      name: "ISO 13485 Medical Device Manufacturing Quality Control",
       provider: {
         "@id": "https://www.yimilife.com/#organization",
       },
       serviceType: "ISO 13485 Medical Device Manufacturing Quality Control",
       areaServed: "Global",
       description:
-        "Quality control support for medical device OEM/ODM manufacturing, including incoming inspection, PCBA control, assembly testing, calibration, labeling, packaging and batch traceability.",
+        "Quality control support for medical device OEM/ODM manufacturing, including incoming inspection, PCBA control, assembly testing, Fluke Index 2 production verification, labeling, packaging and batch traceability.",
     },
     {
       "@type": "FAQPage",
@@ -320,18 +326,18 @@ export default function QualityPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.12fr_0.88fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              ISO 13485 Medical Device Quality System
+              ISO 13485 Medical Device Manufacturer
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              ISO 13485 Quality System for Medical Device Manufacturing
+              ISO 13485 Medical Device Manufacturer
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife operates under an ISO 13485 quality management system
-              and applies manufacturing control across incoming inspection,
-              PCBA process control, assembly, functional testing, calibration,
-              packaging, labeling and batch traceability.
+              YimiLife is an ISO 13485 medical device manufacturer in
+              Shenzhen, applying production process control across incoming
+              inspection, PCBA control, assembly, functional testing,
+              calibration, packaging, labeling and batch traceability.
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
@@ -340,11 +346,11 @@ export default function QualityPage() {
                 href="/oem-odm"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                OEM/ODM medical device manufacturing
+                medical device OEM/ODM manufacturing
               </Link>
               , quality is not only a compliance requirement. It is the
-              foundation for product consistency, shipment reliability and
-              long-term brand trust.
+              foundation for product consistency, shipment reliability,
+              certified model experience and long-term brand trust.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -352,7 +358,7 @@ export default function QualityPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                Request Quality Documents
+                Request Quality Documentation
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
 
@@ -360,7 +366,7 @@ export default function QualityPage() {
                 href="/oem-odm"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                View OEM/ODM Workflow
+                View Medical Device OEM/ODM Services
               </Link>
             </div>
           </div>
@@ -391,8 +397,8 @@ export default function QualityPage() {
               <p className="mt-2 text-sm leading-6 text-slate-300">
                 For pulse oximeters, each unit is calibrated and verified using
                 Fluke Index 2 clinical simulators before shipment. This is
-                production verification, not a substitute for human clinical
-                validation.
+                production calibration and verification, not a substitute for
+                human clinical validation.
               </p>
             </div>
           </div>
@@ -406,16 +412,17 @@ export default function QualityPage() {
               Why quality matters
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Medical device OEM/ODM projects require controlled manufacturing
+              ISO 13485 medical device manufacturing requires controlled production
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
               For medical brands, selecting an OEM/ODM partner is not only about
-              product appearance, cost or delivery speed. A reliable partner
-              must control materials, production process, functional testing,
-              calibration, labeling, packaging and shipment release.
+              product appearance, cost or delivery speed. A reliable ISO
+              13485 medical device manufacturing partner must control materials,
+              production process, functional testing, calibration, labeling,
+              packaging and shipment release.
             </p>
 
             <p>
@@ -424,9 +431,16 @@ export default function QualityPage() {
                 href="/products/pulse-oximeter"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                pulse oximeters
+                pulse oximeter OEM/ODM manufacturing
               </Link>
-              , blood pressure monitors and{" "}
+              ,{" "}
+              <Link
+                href="/products/blood-pressure-monitor"
+                className="font-semibold text-cyan-700 underline underline-offset-4"
+              >
+                blood pressure monitor OEM manufacturing
+              </Link>{" "}
+              and{" "}
               <Link
                 href="/products/wearable-monitoring"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
@@ -440,7 +454,8 @@ export default function QualityPage() {
             <p>
               The goal is to help customers move from project requirements to
               consistent production output with practical engineering,
-              manufacturing and documentation discipline.
+              manufacturing, certified model experience and documentation
+              discipline.
             </p>
           </div>
         </div>
@@ -453,12 +468,12 @@ export default function QualityPage() {
               Quality control scope
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Manufacturing quality control across the product lifecycle
+              Medical device quality management system across the product lifecycle
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife applies quality control from incoming materials to final
-              shipment, helping OEM/ODM customers manage consistency across
-              production batches.
+              YimiLife applies medical device quality management system
+              controls from incoming materials to final shipment, helping
+              OEM/ODM customers manage consistency across production batches.
             </p>
           </div>
 
@@ -494,16 +509,16 @@ export default function QualityPage() {
               Pulse oximeter verification
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Full-unit calibration and verification before shipment
+              Fluke Index 2 pulse oximeter production verification before shipment
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
               For pulse oximeter manufacturing, YimiLife applies full-unit
-              calibration and verification using Fluke Index 2 clinical
-              simulators before shipment. This supports consistent SpO2
-              performance output and production discipline across batches.
+              production calibration and verification using Fluke Index 2
+              clinical simulators before shipment. This supports consistent
+              SpO2 performance output and production discipline across batches.
             </p>
 
             <p>
@@ -512,16 +527,16 @@ export default function QualityPage() {
                 href="/technology"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                PulseMatrix™ SpO2 Technology Platform
+                PulseMatrix™ SpO2 technology platform
               </Link>
               , which focuses on low perfusion SpO2 monitoring, motion artifact
               rejection and skin tone fairness.
             </p>
 
             <p>
-              The wording is important: Fluke Index 2 is used for calibration
-              and production verification. It should not be described as human
-              clinical validation.
+              The wording is important: Fluke Index 2 is used for production
+              calibration and verification. It should not be described as
+              human clinical validation or clinical proof.
             </p>
           </div>
         </div>
@@ -530,11 +545,11 @@ export default function QualityPage() {
           <div className="rounded-3xl bg-slate-950 p-7 text-white">
             <p className="text-4xl font-semibold">100%</p>
             <p className="mt-2 text-sm font-medium text-cyan-200">
-              Fluke Index 2 calibration and verification
+              Fluke Index 2 production verification
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-300">
-              Each pulse oximeter unit is verified before shipment as part of
-              production release control.
+              Each pulse oximeter unit is calibrated and verified before
+              shipment as part of production release control.
             </p>
           </div>
 
@@ -544,8 +559,8 @@ export default function QualityPage() {
               Certified model experience
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700">
-              Model experience across FDA, MDR and NMPA pathways supports
-              OEM/ODM project discussions.
+              Experience with 25+ FDA / MDR / NMPA certified pulse oximeter
+              models supports OEM/ODM project discussions.
             </p>
           </div>
 
@@ -569,12 +584,12 @@ export default function QualityPage() {
               Scalable manufacturing
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Manufacturing capacity with batch traceability
+              3,000 m² manufacturing facility with batch traceability
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-300">
-              YimiLife’s 3,000 m² facility and scalable pulse oximeter
-              production capacity support OEM/ODM customers from sample
-              confirmation to pilot production and mass production.
+              YimiLife’s 3,000 m² manufacturing facility and scalable pulse
+              oximeter production capacity support OEM/ODM customers from
+              sample confirmation to pilot production and mass production.
             </p>
           </div>
 
@@ -599,7 +614,7 @@ export default function QualityPage() {
               Documentation support
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Quality documentation for OEM/ODM project communication
+              Quality documentation for medical device OEM/ODM communication
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
               For OEM/ODM customers, quality documentation helps connect product
@@ -632,7 +647,7 @@ export default function QualityPage() {
               OEM/ODM value
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Quality system as a foundation for long-term cooperation
+              ISO 13485 quality system as a foundation for long-term cooperation
             </h2>
           </div>
 
@@ -650,7 +665,7 @@ export default function QualityPage() {
                 href="/oem-odm"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                OEM/ODM service workflow
+                private label medical device manufacturing workflow
               </Link>
               ,{" "}
               <Link
@@ -679,7 +694,7 @@ export default function QualityPage() {
               FAQ
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Frequently asked questions about quality and manufacturing
+              Frequently asked questions about ISO 13485 medical device manufacturing
             </h2>
           </div>
 
@@ -704,12 +719,13 @@ export default function QualityPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Build your OEM/ODM project with ISO 13485 manufacturing support
+            Build your OEM/ODM project with an ISO 13485 medical device manufacturer
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for a medical device OEM/ODM partner with quality system
-            discipline, scalable manufacturing, production verification and
-            batch traceability? Share your project requirements with YimiLife.
+            Looking for an ISO 13485 medical device manufacturer with quality
+            system discipline, scalable manufacturing, Fluke Index 2 production
+            verification and batch traceability? Share your project
+            requirements with YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -717,7 +733,7 @@ export default function QualityPage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Request Quality Documents
+              Request Quality Documentation
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
 
