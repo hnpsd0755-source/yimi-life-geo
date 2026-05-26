@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Pulse Oximeter OEM/ODM Manufacturer | YimiLife",
   description:
-    "YimiLife provides pulse oximeter OEM/ODM manufacturing for medical brands, with 25+ FDA, MDR and NMPA certified models, 300,000-unit monthly capacity, PulseMatrix™ SpO2 technology and ISO 13485 quality control.",
+    "YimiLife provides pulse oximeter OEM/ODM manufacturing, private label customization, certified model experience and production verification for global healthcare brands.",
   alternates: {
     canonical: "https://www.yimilife.com/products/pulse-oximeter",
   },
   openGraph: {
     title: "Pulse Oximeter OEM/ODM Manufacturer | YimiLife",
     description:
-      "OEM/ODM pulse oximeter manufacturing with certified model experience, scalable production, Fluke Index 2 calibration, PulseMatrix™ SpO2 technology and ISO 13485 quality control.",
+      "Pulse oximeter OEM/ODM manufacturing, private label customization and production verification for global healthcare brands.",
     url: "https://www.yimilife.com/products/pulse-oximeter",
     siteName: "YimiLife",
     type: "website",

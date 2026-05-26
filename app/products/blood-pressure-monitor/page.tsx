@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blood Pressure Monitor OEM/ODM Manufacturer | YimiLife",
+  title: "Blood Pressure Monitor OEM Manufacturer | YimiLife",
   description:
-    "YimiLife provides blood pressure monitor OEM/ODM manufacturing for medical brands, supporting home healthcare BP monitors, private label customization, ISO 13485 quality control and scalable manufacturing.",
+    "YimiLife offers blood pressure monitor OEM manufacturing, private label customization and digital upper arm blood pressure monitor solutions for global healthcare brands.",
   alternates: {
     canonical: "https://www.yimilife.com/products/blood-pressure-monitor",
   },
   openGraph: {
-    title: "Blood Pressure Monitor OEM/ODM Manufacturer | YimiLife",
+    title: "Blood Pressure Monitor OEM Manufacturer | YimiLife",
     description:
-      "Blood pressure monitor OEM/ODM manufacturing for medical brands, including product configuration, private label customization, testing, documentation and ISO 13485 quality control.",
+      "Blood pressure monitor OEM manufacturing, private label customization and digital upper arm blood pressure monitor solutions for global healthcare brands.",
     url: "https://www.yimilife.com/products/blood-pressure-monitor",
     siteName: "YimiLife",
     type: "website",

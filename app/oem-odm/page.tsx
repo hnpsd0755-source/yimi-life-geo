@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "OEM/ODM Medical Device Manufacturing Services | YimiLife",
+  title: "Private Label Medical Device Manufacturing | YimiLife OEM/ODM",
   description:
-    "YimiLife provides OEM/ODM services for medical electronic devices, supporting pulse oximeters, blood pressure monitors and wearable health monitoring products with ISO 13485 quality control, Bluetooth SDK integration and scalable manufacturing.",
+    "YimiLife provides private label medical device manufacturing and OEM/ODM services for pulse oximeters, blood pressure monitors and home healthcare monitoring products.",
   alternates: {
     canonical: "https://www.yimilife.com/oem-odm",
   },
   openGraph: {
-    title: "OEM/ODM Medical Device Manufacturing Services | YimiLife",
+    title: "Private Label Medical Device Manufacturing | YimiLife OEM/ODM",
     description:
-      "Medical device OEM/ODM services from product definition to mass production, including engineering adaptation, UI customization, Bluetooth SDK integration, ISO 13485 quality control and scalable manufacturing.",
+      "OEM/ODM and private label medical device manufacturing for pulse oximeters, blood pressure monitors and home healthcare monitoring products.",
     url: "https://www.yimilife.com/oem-odm",
     siteName: "YimiLife",
     type: "website",

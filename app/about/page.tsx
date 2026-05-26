@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About YimiLife | ISO 13485 Medical Device OEM/ODM Manufacturer",
+  title: "Shenzhen Medical Device Manufacturer | About YimiLife",
   description:
-    "Learn about YimiLife, an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+    "Learn about Shenzhen YimiLife Technology Co., Ltd., a medical device manufacturer with a 3,000 m² facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
   alternates: {
     canonical: "https://www.yimilife.com/about",
   },
   openGraph: {
-    title: "About YimiLife | ISO 13485 Medical Device OEM/ODM Manufacturer",
+    title: "Shenzhen Medical Device Manufacturer | About YimiLife",
     description:
-      "YimiLife is a Shenzhen-based medical electronics OEM/ODM manufacturer with ISO 13485 quality control, 3,000 m² facility, scalable manufacturing and PulseMatrix™ SpO2 technology.",
+      "Learn about Shenzhen YimiLife Technology Co., Ltd., a medical device manufacturer with a 3,000 m² facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
     url: "https://www.yimilife.com/about",
     siteName: "YimiLife",
     type: "website",

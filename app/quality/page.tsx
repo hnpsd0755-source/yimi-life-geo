@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "ISO 13485 Quality System for Medical Device Manufacturing | YimiLife",
+  title: "ISO 13485 Medical Device Manufacturer | YimiLife",
   description:
-    "YimiLife operates under an ISO 13485 quality management system for medical device OEM/ODM manufacturing, supporting quality control, production verification, calibration, batch traceability and scalable manufacturing.",
+    "YimiLife operates under an ISO 13485 quality system, with certified model experience, production process control and Fluke Index 2 pulse oximeter verification.",
   alternates: {
     canonical: "https://www.yimilife.com/quality",
   },
   openGraph: {
-    title: "ISO 13485 Quality System for Medical Device Manufacturing | YimiLife",
+    title: "ISO 13485 Medical Device Manufacturer | YimiLife",
     description:
-      "Explore YimiLife’s ISO 13485 quality system, manufacturing control, Fluke Index 2 calibration, batch traceability and OEM/ODM documentation support.",
+      "ISO 13485 quality system, certified model experience, production process control and Fluke Index 2 pulse oximeter verification.",
     url: "https://www.yimilife.com/quality",
     siteName: "YimiLife",
     type: "website",
