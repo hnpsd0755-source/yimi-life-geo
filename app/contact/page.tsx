@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Medical Device OEM Inquiry | Contact YimiLife",
   description:
-    "Contact YimiLife for medical device OEM/ODM inquiries, private label pulse oximeter projects, blood pressure monitor customization and healthcare device manufacturing support.",
+    "Submit a medical device OEM inquiry to YimiLife for pulse oximeter OEM/ODM, blood pressure monitor OEM manufacturing, private label customization and healthcare device manufacturing support.",
   alternates: {
     canonical: "https://www.yimilife.com/contact",
   },
@@ -132,91 +132,101 @@ function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
 const contactEmail = "info@yimilife.com";
 
 const projectTypes = [
-  "Pulse Oximeter OEM/ODM",
-  "Blood Pressure Monitor OEM/ODM",
-  "Wearable Health Monitoring",
-  "Bluetooth SDK / App Integration",
-  "Private Label Customization",
+  "Pulse Oximeter OEM/ODM Inquiry",
+  "Blood Pressure Monitor OEM Manufacturing Inquiry",
+  "Private Label Medical Device Project",
+  "Custom Home Healthcare Device Manufacturing",
+  "Bluetooth SDK / UI Customization",
+  "Wearable Health Monitoring Device OEM",
   "Other Medical Device OEM/ODM Project",
 ];
 
 const requirementChecklist = [
   "Target market and sales region",
   "Product category and application scenario",
-  "Expected annual or monthly quantity",
-  "Logo, packaging and labeling requirements",
-  "UI interface and interaction requirements",
-  "Bluetooth SDK or data integration needs",
-  "Regulatory or certification expectations",
+  "Pulse oximeter or blood pressure monitor model preference",
+  "Expected monthly or annual quantity",
+  "Logo, packaging and private label requirements",
+  "UI interface, Bluetooth SDK or data integration needs",
+  "Regulatory, certification or documentation expectations",
   "Target price range and project timeline",
 ];
 
 const contactReasons = [
   {
-    title: "OEM/ODM Project Evaluation",
-    text: "Share your product type, target market, expected quantity, customization needs and project timeline for feasibility review.",
+    title: "Medical Device OEM Inquiry Review",
+    text: "Share your product category, target market, expected quantity, customization needs and project timeline for OEM/ODM feasibility evaluation.",
     icon: DocumentIcon,
   },
   {
-    title: "Manufacturing and Quality Discussion",
-    text: "Discuss ISO 13485 manufacturing support, production verification, batch traceability and quality documentation needs.",
+    title: "Private Label and Custom Manufacturing Discussion",
+    text: "Discuss private label medical device manufacturing, logo, packaging, labeling, UI adaptation and custom home healthcare device requirements.",
     icon: FactoryIcon,
   },
   {
-    title: "Technical and Connected Device Requirements",
-    text: "Discuss PulseMatrix™ SpO2 technology, Bluetooth SDK support, UI customization and app integration requirements.",
+    title: "Quality, Documentation and Connected Device Support",
+    text: "Discuss ISO 13485 manufacturing support, production verification, batch traceability, Bluetooth SDK support and quality documentation needs.",
     icon: ShieldIcon,
   },
 ];
 
 const relatedPages = [
   {
-    title: "OEM/ODM Service Workflow",
+    title: "Private Label Medical Device Manufacturing",
     href: "/oem-odm",
-    text: "Understand how YimiLife supports projects from requirement review to mass production.",
+    text: "Review YimiLife’s OEM/ODM service workflow for private label medical device manufacturing projects.",
+    cta: "View OEM/ODM services",
   },
   {
-    title: "Product Categories",
-    href: "/products",
-    text: "Explore pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+    title: "Pulse Oximeter OEM/ODM Manufacturer",
+    href: "/products/pulse-oximeter",
+    text: "Explore fingertip pulse oximeter OEM/ODM manufacturing, private label customization, Bluetooth SDK support and production verification.",
+    cta: "View pulse oximeter OEM/ODM",
   },
   {
-    title: "PulseMatrix™ Technology",
-    href: "/technology",
-    text: "Learn about low perfusion SpO2 monitoring, motion artifact rejection and skin tone fairness.",
+    title: "Blood Pressure Monitor OEM Manufacturer",
+    href: "/products/blood-pressure-monitor",
+    text: "Review blood pressure monitor OEM manufacturing, private label customization and digital upper arm blood pressure monitor solutions.",
+    cta: "View blood pressure monitor OEM",
   },
   {
-    title: "ISO 13485 Quality System",
+    title: "ISO 13485 Medical Device Manufacturer",
     href: "/quality",
-    text: "Review YimiLife’s quality system, manufacturing control, calibration and batch traceability.",
+    text: "Review YimiLife’s ISO 13485 quality system, certified model experience, production verification and batch traceability.",
+    cta: "View quality system",
   },
 ];
 
 const faqs = [
   {
-    question: "What information should I provide when contacting YimiLife?",
+    question: "What information should I provide for a medical device OEM inquiry?",
     answer:
-      "Please share your target market, product category, expected quantity, customization requirements, regulatory expectations, target price range and project timeline.",
+      "Please share your target market, product category, expected quantity, customization requirements, regulatory expectations, target price range and project timeline so YimiLife can evaluate OEM/ODM feasibility.",
   },
   {
-    question: "Can I contact YimiLife for private label customization?",
+    question: "Can I request a private label pulse oximeter project?",
     answer:
-      "Yes. YimiLife supports private label customization, including logo, color, packaging, labeling, selected functional configuration and UI interface adaptation based on project requirements.",
+      "Yes. YimiLife supports private label pulse oximeter projects, including logo, color, packaging, labeling, selected UI interface adaptation, Bluetooth data integration and manufacturing documentation based on project requirements.",
   },
   {
-    question: "Can YimiLife support Bluetooth SDK or connected health projects?",
+    question: "Can I request blood pressure monitor OEM manufacturing?",
     answer:
-      "Yes. For selected OEM/ODM projects, YimiLife can support Bluetooth data transmission, SDK-level discussion, UI customization and connected health integration requirements.",
+      "Yes. YimiLife supports blood pressure monitor OEM manufacturing and private label customization for digital upper arm blood pressure monitor projects serving home healthcare markets.",
   },
   {
-    question: "What product categories can YimiLife support?",
+    question: "Can YimiLife support Bluetooth SDK or UI customization?",
     answer:
-      "YimiLife supports pulse oximeters, blood pressure monitors and wearable health monitoring devices for home healthcare, private label and connected monitoring applications.",
+      "Yes. For selected OEM/ODM projects, YimiLife can support Bluetooth SDK discussion, data transmission requirements, UI interface adaptation and connected health integration based on project scope.",
   },
   {
-    question: "Does YimiLife support international customers?",
+    question: "Does YimiLife support international OEM/ODM customers?",
     answer:
-      "Yes. YimiLife supports international medical brands, importers, private label customers, remote patient monitoring platforms and digital health companies.",
+      "Yes. YimiLife supports international medical brands, importers, private label customers, e-commerce healthcare brands, regional distributors and connected health companies.",
+  },
+  {
+    question: "How fast can YimiLife evaluate my OEM/ODM project?",
+    answer:
+      "A clear project brief helps YimiLife review the product type, customization depth, documentation needs, production expectations and next-step feasibility more efficiently.",
   },
 ];
 
@@ -236,7 +246,7 @@ const jsonLd = {
         addressCountry: "CN",
       },
       description:
-        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeter OEM/ODM, blood pressure monitor OEM manufacturing and private label home healthcare monitoring projects.",
       contactPoint: {
         "@type": "ContactPoint",
         email: contactEmail,
@@ -249,9 +259,9 @@ const jsonLd = {
       "@type": "ContactPage",
       "@id": "https://www.yimilife.com/contact#webpage",
       url: "https://www.yimilife.com/contact",
-      name: "Contact YimiLife",
+      name: "Medical Device OEM Inquiry | Contact YimiLife",
       description:
-        "Contact page for YimiLife medical device OEM/ODM project inquiries.",
+        "Contact YimiLife for medical device OEM/ODM inquiries, private label pulse oximeter projects and blood pressure monitor OEM manufacturing support.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -318,39 +328,40 @@ export default function ContactPage() {
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Start Your Medical Device OEM/ODM Project
+              Start Your Medical Device OEM Inquiry
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              Contact YimiLife to discuss OEM/ODM projects for{" "}
+              Contact YimiLife for medical device OEM/ODM inquiries, including{" "}
               <Link
                 href="/products/pulse-oximeter"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                pulse oximeters
+                pulse oximeter OEM/ODM manufacturing
               </Link>
               ,{" "}
               <Link
                 href="/products/blood-pressure-monitor"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                blood pressure monitors
+                blood pressure monitor OEM manufacturing
               </Link>{" "}
               and{" "}
               <Link
-                href="/products/wearable-monitoring"
+                href="/oem-odm"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                wearable health monitoring devices
+                private label medical device manufacturing
               </Link>
               .
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              Share your target market, product type, customization needs,
+              Share your target market, product category, customization needs,
               expected quantity, regulatory expectations and project timeline.
-              Our team will review your requirements for OEM/ODM feasibility,
-              engineering adaptation, manufacturing and quality documentation.
+              Our team will review your medical device OEM inquiry for
+              feasibility, engineering adaptation, private label customization,
+              manufacturing and quality documentation.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -358,7 +369,7 @@ export default function ContactPage() {
                 href={`mailto:${contactEmail}`}
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                Email Project Requirements
+                Email OEM/ODM Requirements
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </a>
 
@@ -366,7 +377,7 @@ export default function ContactPage() {
                 href="/oem-odm"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                View OEM/ODM Workflow
+                View Private Label Manufacturing Workflow
               </Link>
             </div>
           </div>
@@ -378,11 +389,11 @@ export default function ContactPage() {
 
             <div className="mt-5 grid gap-4">
               {[
-                "OEM/ODM Project Evaluation",
-                "Private Label Customization",
-                "Bluetooth SDK & UI Requirements",
+                "Medical Device OEM Inquiry Review",
+                "Private Label Pulse Oximeter Projects",
+                "Blood Pressure Monitor OEM Manufacturing",
+                "Bluetooth SDK & UI Customization",
                 "ISO 13485 Manufacturing Support",
-                "Quality Documentation Discussion",
               ].map((item) => (
                 <div
                   key={item}
@@ -398,7 +409,7 @@ export default function ContactPage() {
 
             <div className="mt-6 rounded-2xl bg-slate-950/40 p-5">
               <p className="text-sm font-medium text-cyan-100">
-                Email YimiLife
+                Email OEM/ODM Requirements
               </p>
               <a
                 href={`mailto:${contactEmail}`}
@@ -408,8 +419,8 @@ export default function ContactPage() {
               </a>
               <p className="mt-3 text-sm leading-6 text-slate-300">
                 Send your OEM/ODM project brief by email. Our team will review
-                your product category, target market, customization needs and
-                production expectations.
+                your product category, target market, private label requirements,
+                customization needs and production expectations.
               </p>
             </div>
           </div>
@@ -422,13 +433,13 @@ export default function ContactPage() {
             Project inquiry
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-            Submit your OEM/ODM project requirements
+            Submit your medical device OEM inquiry
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-700">
-            Use the form to share your initial project brief. The more clearly
-            you describe your target market, product type, customization scope
-            and expected quantity, the faster our team can evaluate the next
-            steps.
+            Use the form to share your initial OEM/ODM project brief. The more
+            clearly you describe your target market, product category,
+            customization scope and expected quantity, the faster our team can
+            evaluate feasibility, documentation needs and next steps.
           </p>
 
           <div className="mt-8 grid gap-5">
@@ -616,7 +627,7 @@ export default function ContactPage() {
               name="Customization Requirements"
               rows={4}
               className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-              placeholder="Logo, packaging, UI, Bluetooth SDK, app integration, ID/mechanical changes, labeling, etc."
+              placeholder="Logo, packaging, UI, Bluetooth SDK, app integration, ID/mechanical changes, labeling, documentation needs, etc."
             />
           </div>
 
@@ -633,7 +644,7 @@ export default function ContactPage() {
               required
               rows={6}
               className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-              placeholder="Tell us about your project requirements, product goals, current stage and key concerns."
+              placeholder="Tell us about your medical device OEM inquiry, product goals, current stage, target market and key concerns."
             />
           </div>
 
@@ -641,7 +652,7 @@ export default function ContactPage() {
             type="submit"
             className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-auto"
           >
-            Send Project Inquiry
+            Send Medical Device OEM Inquiry
             <ArrowIcon className="ml-2 h-4 w-4" />
           </button>
         </form>
@@ -654,12 +665,12 @@ export default function ContactPage() {
               Requirement checklist
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              What to prepare before contacting YimiLife
+              What to prepare for an OEM/ODM project review
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              A clear project brief helps our team evaluate product feasibility,
-              customization depth, regulatory needs, production planning and
-              cost expectations more efficiently.
+              A clear project brief helps our team evaluate OEM/ODM feasibility,
+              customization depth, regulatory needs, production planning,
+              quality documentation and cost expectations more efficiently.
             </p>
           </div>
 
@@ -685,7 +696,7 @@ export default function ContactPage() {
             Related pages
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-            Explore YimiLife before submitting your project
+            Explore YimiLife before submitting your OEM/ODM inquiry
           </h2>
         </div>
 
@@ -703,7 +714,7 @@ export default function ContactPage() {
                 {item.text}
               </p>
               <div className="mt-5 inline-flex items-center text-sm font-semibold text-cyan-700">
-                View page
+                {item.cta}
                 <ArrowIcon className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
               </div>
             </Link>
@@ -718,7 +729,7 @@ export default function ContactPage() {
               FAQ
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Frequently asked questions about contacting YimiLife
+              Medical device OEM inquiry FAQ
             </h2>
           </div>
 
@@ -744,12 +755,12 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <MailIcon className="mx-auto h-10 w-10 text-cyan-300" />
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Ready to discuss your OEM/ODM medical device project?
+            Ready to discuss your medical device OEM/ODM project?
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Send your project requirements to YimiLife and our team will review
-            the product category, customization needs, target market, production
-            expectations and next steps.
+            Send your medical device OEM inquiry to YimiLife and our team will
+            review the product category, customization needs, target market,
+            production expectations, documentation needs and next steps.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -757,7 +768,7 @@ export default function ContactPage() {
               href={`mailto:${contactEmail}`}
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Email YimiLife
+              Email OEM/ODM Requirements
               <ArrowIcon className="ml-2 h-4 w-4" />
             </a>
 

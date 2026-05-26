@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Shenzhen Medical Device Manufacturer | About YimiLife",
   description:
-    "Learn about Shenzhen YimiLife Technology Co., Ltd., a medical device manufacturer with a 3,000 m² facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
+    "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with a 3,000 m² facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
   alternates: {
     canonical: "https://www.yimilife.com/about",
   },
   openGraph: {
     title: "Shenzhen Medical Device Manufacturer | About YimiLife",
     description:
-      "Learn about Shenzhen YimiLife Technology Co., Ltd., a medical device manufacturer with a 3,000 m² facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
+      "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with a 3,000 m² facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
     url: "https://www.yimilife.com/about",
     siteName: "YimiLife",
     type: "website",
@@ -130,21 +130,21 @@ function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
 
 const companyFacts = [
   "ISO 13485 Quality Management System",
-  "3,000 m² Manufacturing Facility",
-  "25+ FDA / MDR / NMPA Certified Models",
+  "3,000 m² Medical Device Manufacturing Facility",
+  "25+ FDA / MDR / NMPA Certified Model Experience",
   "300,000 Units Monthly Pulse Oximeter Capacity",
   "PulseMatrix™ SpO2 Technology Platform",
 ];
 
 const strengths = [
   {
-    title: "Medical Electronics Focus",
-    text: "YimiLife focuses on home healthcare monitoring devices, including pulse oximeters, blood pressure monitors and wearable health monitoring products.",
+    title: "Medical Device OEM/ODM Focus",
+    text: "YimiLife focuses on home healthcare monitoring devices for OEM/ODM and private label customers, including pulse oximeters, blood pressure monitors and wearable health monitoring products.",
     icon: ShieldIcon,
   },
   {
     title: "Engineering and Manufacturing Integration",
-    text: "We connect product definition, electronics engineering, software adaptation, UI customization, manufacturing and quality documentation.",
+    text: "We connect product definition, electronics engineering, software adaptation, Bluetooth SDK support, UI customization, manufacturing and quality documentation.",
     icon: FactoryIcon,
   },
   {
@@ -161,30 +161,30 @@ const strengths = [
 
 const productLines = [
   {
-    title: "Pulse Oximeters",
+    title: "Pulse Oximeter OEM/ODM",
     href: "/products/pulse-oximeter",
-    text: "Fingertip and wearable SpO2 devices supported by PulseMatrix™ technology, certified model experience and full-unit Fluke Index 2 calibration and verification.",
+    text: "Fingertip pulse oximeter OEM/ODM manufacturing supported by PulseMatrix™ technology, certified model experience and full-unit Fluke Index 2 production calibration and verification.",
   },
   {
-    title: "Blood Pressure Monitors",
+    title: "Blood Pressure Monitor OEM",
     href: "/products/blood-pressure-monitor",
-    text: "Digital blood pressure monitor OEM/ODM support for home healthcare, private label and regulated medical device projects.",
+    text: "Digital and upper arm blood pressure monitor OEM manufacturing support for home healthcare, private label and regulated medical device projects.",
   },
   {
-    title: "Wearable Health Monitoring",
+    title: "Wearable Health Monitoring Device OEM",
     href: "/products/wearable-monitoring",
-    text: "Wearable SpO2 and connected health monitoring device support for Bluetooth data integration, UI customization and remote patient monitoring scenarios.",
+    text: "Wearable SpO2 and connected health monitoring device OEM support for Bluetooth data integration, UI customization and remote patient monitoring scenarios.",
   },
 ];
 
 const customers = [
-  "Medical device brands",
+  "Overseas medical device brands",
+  "Private label healthcare companies",
   "OEM/ODM project buyers",
   "Healthcare product importers",
-  "Private label medical device companies",
+  "Amazon and independent website sellers",
+  "Regional home healthcare distributors",
   "Remote patient monitoring platforms",
-  "Digital health companies",
-  "Home healthcare distributors",
   "Connected health solution providers",
 ];
 
@@ -192,32 +192,37 @@ const faqs = [
   {
     question: "Who is YimiLife?",
     answer:
-      "YimiLife is a Shenzhen-based medical electronic device OEM/ODM manufacturer supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices for global B2B customers.",
+      "YimiLife is a Shenzhen medical device manufacturer supporting home healthcare monitoring device OEM/ODM projects for global B2B customers.",
   },
   {
     question: "What does YimiLife manufacture?",
     answer:
-      "YimiLife manufactures home healthcare monitoring devices, including pulse oximeters, blood pressure monitors and wearable health monitoring products for OEM/ODM projects.",
+      "YimiLife manufactures pulse oximeters, blood pressure monitors and wearable health monitoring devices for OEM/ODM and private label medical device projects.",
   },
   {
     question: "Does YimiLife operate under ISO 13485?",
     answer:
-      "Yes. YimiLife operates under an ISO 13485 quality management system for medical device manufacturing and OEM/ODM project support.",
+      "Yes. YimiLife operates under an ISO 13485 quality management system for medical device manufacturing, production process control and OEM/ODM project support.",
   },
   {
     question: "What makes YimiLife different from a basic assembly factory?",
     answer:
-      "YimiLife combines medical electronics engineering, PulseMatrix™ SpO2 technology, ISO 13485 manufacturing control, Bluetooth SDK support, UI customization and scalable production capacity.",
+      "YimiLife combines medical electronics engineering, PulseMatrix™ SpO2 technology, Bluetooth SDK support, UI customization, ISO 13485 manufacturing control and scalable production capability.",
   },
   {
     question: "Where is YimiLife located?",
     answer:
-      "YimiLife is based in Shenzhen, China, a major electronics and medical device manufacturing center.",
+      "YimiLife is based in Shenzhen, China, a major electronics and medical device manufacturing center, with a 3,000 m² medical device manufacturing facility.",
+  },
+  {
+    question: "Can YimiLife support private label medical device customers?",
+    answer:
+      "Yes. YimiLife supports private label customers with model selection, logo and packaging coordination, labeling discussion, selected UI adaptation, documentation support and controlled manufacturing.",
   },
   {
     question: "Can YimiLife support international OEM/ODM customers?",
     answer:
-      "Yes. YimiLife supports international medical brands, private label customers, importers and connected health companies with OEM/ODM project evaluation, manufacturing and documentation support.",
+      "Yes. YimiLife supports international medical brands, importers, distributors and connected health companies with OEM/ODM project evaluation, manufacturing and quality documentation support.",
   },
 ];
 
@@ -235,7 +240,7 @@ const jsonLd = {
         name: "YimiLife",
       },
       description:
-        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is a Shenzhen medical device OEM/ODM manufacturer operating under an ISO 13485 quality system and supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Shenzhen",
@@ -248,7 +253,7 @@ const jsonLd = {
       url: "https://www.yimilife.com/about",
       name: "About YimiLife",
       description:
-        "About YimiLife, an ISO 13485 medical electronics OEM/ODM manufacturer for home healthcare monitoring devices.",
+        "About YimiLife, a Shenzhen medical device manufacturer for home healthcare monitoring device OEM/ODM projects.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -315,7 +320,7 @@ export default function AboutPage() {
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              ISO 13485 Medical Device OEM/ODM Manufacturer in Shenzhen
+              Shenzhen Medical Device Manufacturer for Home Healthcare OEM/ODM
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
@@ -326,9 +331,7 @@ export default function AboutPage() {
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              We focus on home healthcare monitoring products and combine
-              medical electronics engineering, ISO 13485 manufacturing control,
-              scalable production, quality documentation and{" "}
+              We focus on home healthcare monitoring products and combine medical electronics engineering, ISO 13485 manufacturing control, scalable production, private label project support, quality documentation and{" "}
               <Link
                 href="/technology"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
@@ -343,7 +346,7 @@ export default function AboutPage() {
                 href="/oem-odm"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                View OEM/ODM Services
+                View Private Label Medical Device Manufacturing
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
 
@@ -351,7 +354,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Contact YimiLife
+                Contact YimiLife for OEM/ODM inquiries
               </Link>
             </div>
           </div>
@@ -395,15 +398,13 @@ export default function AboutPage() {
               Company positioning
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              A medical electronics manufacturing partner for home healthcare
+              Shenzhen medical device manufacturer focused on OEM/ODM cooperation
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              YimiLife supports medical brands, importers, private label
-              customers and connected health companies that need a reliable
-              manufacturing partner for home healthcare monitoring products.
+              YimiLife supports medical brands, importers, private label customers and connected health companies that need a reliable Shenzhen medical device manufacturer for home healthcare monitoring products.
             </p>
 
             <p>
@@ -432,9 +433,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Our goal is to help B2B customers move from product requirements
-              and customization needs to controlled manufacturing, quality
-              documentation and scalable production.
+              Our goal is to help B2B customers move from product requirements and customization needs to controlled manufacturing, quality documentation, private label medical device manufacturing and scalable production.
             </p>
           </div>
         </div>
@@ -447,12 +446,10 @@ export default function AboutPage() {
               Core strengths
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Why YimiLife is built for OEM/ODM medical device projects
+              Why YimiLife is built for medical device OEM/ODM projects
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife combines engineering capability, manufacturing
-              discipline and quality system thinking to support practical B2B
-              medical device projects.
+              YimiLife combines engineering capability, manufacturing discipline and ISO 13485 quality system thinking to support practical B2B medical device OEM/ODM projects.
             </p>
           </div>
 
@@ -488,22 +485,17 @@ export default function AboutPage() {
               Manufacturing base
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              3,000 m² facility with scalable production capability
+              3,000 m² medical device manufacturing facility in Shenzhen
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              YimiLife operates a 3,000 m² Manufacturing Facility in Shenzhen,
-              supporting medical electronic device OEM/ODM projects from sample
-              confirmation and pilot production to scalable mass production.
+              YimiLife operates a 3,000 m² medical device manufacturing facility in Shenzhen, supporting medical electronic device OEM/ODM projects from sample confirmation and pilot production to scalable mass production.
             </p>
 
             <p>
-              For pulse oximeter manufacturing, monthly capacity reaches up to
-              300,000 units. Each pulse oximeter unit is calibrated and verified
-              using Fluke Index 2 clinical simulators before shipment to support
-              consistent production output.
+              For pulse oximeter manufacturing, monthly capacity reaches up to 300,000 units. Each pulse oximeter unit is calibrated and verified using Fluke Index 2 clinical simulators before shipment to support consistent production output.
             </p>
 
             <p>
@@ -512,7 +504,7 @@ export default function AboutPage() {
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                ISO 13485 Quality System
+                ISO 13485 medical device manufacturing quality system
               </Link>
               , including incoming inspection, PCBA process control, assembly,
               functional testing, calibration, packaging, labeling and batch
@@ -523,7 +515,7 @@ export default function AboutPage() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            "3,000 m² Manufacturing Facility",
+            "3,000 m² Medical Device Manufacturing Facility",
             "300,000 Units Monthly Pulse Oximeter Capacity",
             "100% Fluke Index 2 Calibration & Verification",
             "Batch Traceability and Quality Records",
@@ -548,11 +540,10 @@ export default function AboutPage() {
               Product portfolio
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Focused on home healthcare monitoring devices
+              Pulse oximeters, blood pressure monitors and wearable monitoring devices
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-300">
-              YimiLife’s product portfolio is organized around practical home
-              healthcare monitoring categories for OEM/ODM customers.
+              YimiLife’s product portfolio is organized around practical home healthcare monitoring categories for OEM/ODM and private label customers.
             </p>
           </div>
 
@@ -570,7 +561,7 @@ export default function AboutPage() {
                   {item.text}
                 </p>
                 <div className="mt-5 inline-flex items-center text-sm font-semibold text-cyan-300">
-                  Explore product line
+                  Explore OEM/ODM product line
                   <ArrowIcon className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
                 </div>
               </Link>
@@ -586,20 +577,19 @@ export default function AboutPage() {
               Technology platform
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              PulseMatrix™ supports differentiated SpO2 products
+              PulseMatrix™ technology supports differentiated SpO2 products
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
               PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence
-              platform for medical-grade SpO2 monitoring. It helps position Yimi
-              Life beyond basic product assembly and supports stronger technical
+              platform for medical-grade SpO2 monitoring. It helps position YimiLife beyond basic product assembly and supports stronger technical
               differentiation for SpO2-related OEM/ODM projects.
             </p>
 
             <p>
-              The platform focuses on{" "}
+              The platform supports OEM/ODM customers with{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
@@ -647,13 +637,10 @@ export default function AboutPage() {
               Who we serve
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Built for global B2B medical device customers
+              Built for global B2B medical device and private label customers
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife supports customers that need more than a product
-              supplier. We work with teams that require engineering discussion,
-              manufacturing reliability, quality documentation and long-term
-              OEM/ODM cooperation.
+              YimiLife supports customers that need more than a product supplier. We work with teams that require engineering discussion, manufacturing reliability, quality documentation and long-term OEM/ODM cooperation with a Shenzhen medical device manufacturer.
             </p>
           </div>
 
@@ -691,7 +678,7 @@ export default function AboutPage() {
                 href="/oem-odm"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                OEM/ODM service workflow
+                private label medical device manufacturing workflow
               </Link>{" "}
               helps customers move from initial product requirements to
               engineering evaluation, sample confirmation, testing,
@@ -699,10 +686,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Project discussions may include product configuration, private
-              label customization, Bluetooth SDK support, UI interface
-              adaptation, packaging, labeling, regulatory expectations and
-              production volume.
+              Project discussions may include product configuration, private label customization, Bluetooth SDK support, UI interface adaptation, packaging, labeling, regulatory expectations and production volume.
             </p>
 
             <p>
@@ -746,12 +730,10 @@ export default function AboutPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Work with YimiLife on your next OEM/ODM medical device project
+            Work with a Shenzhen medical device OEM/ODM manufacturer
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for an ISO 13485 medical electronics manufacturer for pulse
-            oximeters, blood pressure monitors or wearable health monitoring
-            devices? Share your project requirements with YimiLife.
+            Looking for an ISO 13485 Shenzhen medical device manufacturer for pulse oximeters, blood pressure monitors or wearable health monitoring devices? Share your OEM/ODM project requirements with YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -759,7 +741,7 @@ export default function AboutPage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Contact YimiLife
+              Contact YimiLife for OEM/ODM inquiries
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
 
@@ -767,7 +749,7 @@ export default function AboutPage() {
               href="/oem-odm"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              View OEM/ODM Services
+              View Private Label Medical Device Manufacturing
             </Link>
           </div>
         </div>
