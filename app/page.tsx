@@ -1,23 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
-  title:
-    "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
+  title: "Medical Device OEM/ODM Manufacturer | YimiLife",
   description:
-    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices with scalable manufacturing and PulseMatrix™ SpO2 technology.",
-  alternates: {
-    canonical: "https://www.yimilife.com/",
-  },
-  openGraph: {
-    title:
-      "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
-    description:
-      "ISO 13485 medical device OEM/ODM manufacturing for pulse oximeters, blood pressure monitors and wearable health monitoring devices, supported by PulseMatrix™ SpO2 technology.",
-    url: "https://www.yimilife.com/",
-    siteName: "YimiLife",
-    type: "website",
-  },
+    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, specializing in pulse oximeters, blood pressure monitors and home healthcare monitoring devices for global brands.",
 };
 
 type IconProps = {
