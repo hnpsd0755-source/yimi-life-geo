@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "YimiLife",
     type: "website",
   },
-
+}
 type IconProps = {
   className?: string;
 };
