@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Private Label Medical Device Manufacturing | YimiLife OEM/ODM",
   description:
-    "YimiLife provides private label medical device manufacturing and OEM/ODM services for pulse oximeters, blood pressure monitors and home healthcare monitoring products.",
+    "YimiLife provides private label medical device manufacturing, medical device OEM services and custom home healthcare device manufacturing for pulse oximeters, blood pressure monitors and connected health monitoring products.",
   alternates: {
     canonical: "https://www.yimilife.com/oem-odm",
   },
   openGraph: {
     title: "Private Label Medical Device Manufacturing | YimiLife OEM/ODM",
     description:
-      "OEM/ODM and private label medical device manufacturing for pulse oximeters, blood pressure monitors and home healthcare monitoring products.",
+      "Private label medical device manufacturing and OEM/ODM services for pulse oximeters, blood pressure monitors and connected home healthcare monitoring products.",
     url: "https://www.yimilife.com/oem-odm",
     siteName: "YimiLife",
     type: "website",
@@ -144,35 +144,35 @@ function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
 
 const trustAnchors = [
   "ISO 13485 Quality Management System",
-  "25+ FDA / MDR / NMPA Certified Models",
+  "Private Label Medical Device Manufacturing",
+  "25+ FDA / MDR / NMPA Certified Model Experience",
   "3,000 m² Manufacturing Facility",
-  "300,000 Units Monthly Pulse Oximeter Capacity",
   "Bluetooth SDK & UI Customization Support",
 ];
 
 const projectTypes = [
   {
     title: "Private Label Medical Devices",
-    text: "Logo, color, packaging, labeling and selected configuration customization for medical brands and distribution channels.",
+    text: "Logo, color, packaging, labeling and selected configuration customization for medical brands, distributors and e-commerce healthcare channels.",
   },
   {
-    title: "ODM Engineering Adaptation",
-    text: "Product configuration, hardware adaptation, UI interface adjustment, software behavior and manufacturing documentation support.",
+    title: "Medical Device OEM Services",
+    text: "Standard model configuration, manufacturing preparation, packaging coordination and production documentation support for OEM customers.",
+  },
+  {
+    title: "Custom Health Monitor ODM",
+    text: "Product configuration, hardware adaptation, UI interface adjustment, software behavior discussion and manufacturability evaluation.",
   },
   {
     title: "Connected Health Integration",
     text: "Bluetooth data transmission, SDK-level support and UI customization for mobile apps, RPM platforms and digital health systems.",
-  },
-  {
-    title: "Regulated Market Projects",
-    text: "Project discussion supported by certified model experience, ISO 13485 quality control and documentation discipline.",
   },
 ];
 
 const capabilities = [
   {
     title: "Product Definition",
-    text: "Clarify product type, target market, user scenario, feature set, cost target, certification expectation and production volume.",
+    text: "Clarify product category, target market, user scenario, feature set, cost target, certification expectation and production volume.",
     icon: DocumentIcon,
   },
   {
@@ -204,19 +204,19 @@ const capabilities = [
 
 const productLinks = [
   {
-    title: "Pulse Oximeter OEM/ODM",
+    title: "Pulse Oximeter OEM/ODM Manufacturer",
     href: "/products/pulse-oximeter",
-    text: "Fingertip and wearable SpO2 products supported by PulseMatrix™ technology, full-unit Fluke Index 2 calibration and scalable manufacturing.",
+    text: "Fingertip pulse oximeter OEM/ODM manufacturing, private label customization, Bluetooth SDK support, UI adaptation and production verification.",
   },
   {
-    title: "Blood Pressure Monitor OEM/ODM",
+    title: "Blood Pressure Monitor OEM Manufacturer",
     href: "/products/blood-pressure-monitor",
-    text: "Digital blood pressure monitor development and manufacturing support for home healthcare and private label projects.",
+    text: "Digital and upper arm blood pressure monitor OEM manufacturing support for private label, home healthcare and connected monitoring projects.",
   },
   {
-    title: "Wearable Health Monitoring",
+    title: "Wearable Health Monitoring Device OEM",
     href: "/products/wearable-monitoring",
-    text: "Wearable SpO2 and connected monitoring device support for Bluetooth data integration, mobile apps and RPM scenarios.",
+    text: "Wearable SpO2 and connected health monitoring device support for Bluetooth data integration, mobile apps and remote monitoring scenarios.",
   },
 ];
 
@@ -264,14 +264,19 @@ const requirementItems = [
 
 const faqs = [
   {
-    question: "What OEM/ODM services does YimiLife provide?",
+    question: "What private label medical device manufacturing services does YimiLife provide?",
     answer:
-      "YimiLife provides OEM/ODM support for medical electronic devices, including product definition, engineering adaptation, private label customization, Bluetooth SDK support, UI customization, manufacturing, testing and quality documentation.",
+      "YimiLife provides private label medical device manufacturing and OEM/ODM support for home healthcare monitoring products, including product definition, engineering adaptation, logo and packaging customization, UI customization, Bluetooth SDK support, manufacturing, testing and quality documentation.",
   },
   {
-    question: "Can YimiLife support private label medical device projects?",
+    question: "Can YimiLife support private label pulse oximeter projects?",
     answer:
-      "Yes. We can support logo, color, packaging, labeling, selected functional configuration, UI interface adaptation and manufacturing documentation based on project requirements.",
+      "Yes. YimiLife supports private label pulse oximeter projects, including model selection, logo, color, packaging, labeling, selected UI interface adaptation, Bluetooth data integration and production documentation based on customer requirements.",
+  },
+  {
+    question: "Can YimiLife support blood pressure monitor OEM projects?",
+    answer:
+      "Yes. YimiLife supports blood pressure monitor OEM manufacturing for home healthcare brands, including product configuration, private label customization, packaging and labeling coordination, testing and manufacturing documentation.",
   },
   {
     question: "Can you support Bluetooth SDK or app integration?",
@@ -281,22 +286,22 @@ const faqs = [
   {
     question: "Do you only provide standard models, or can you support deeper ODM work?",
     answer:
-      "YimiLife can support both standard model customization and deeper ODM engineering adaptation, depending on product definition, target market, technical requirements and project volume.",
+      "YimiLife can support both standard model customization and deeper ODM engineering adaptation, depending on product definition, target market, technical requirements, documentation needs and project volume.",
   },
   {
     question: "What product categories can YimiLife support?",
     answer:
-      "YimiLife supports pulse oximeters, blood pressure monitors and wearable health monitoring products for home healthcare, private label, connected monitoring and remote patient monitoring applications.",
+      "YimiLife currently focuses on pulse oximeters and blood pressure monitors as core OEM/ODM product categories, with wearable health monitoring as a connected monitoring capability direction.",
   },
   {
-    question: "How does YimiLife control manufacturing quality?",
+    question: "How does YimiLife control OEM/ODM manufacturing quality?",
     answer:
       "YimiLife operates under an ISO 13485 quality management system and applies manufacturing control across incoming inspection, PCBA process control, assembly, functional testing, calibration, packaging, labeling and batch traceability.",
   },
   {
     question: "What information should customers provide for project evaluation?",
     answer:
-      "Customers are encouraged to provide target market, product type, expected quantity, customization requirements, Bluetooth or UI requirements, regulatory expectations, target price range and project timeline.",
+      "Customers are encouraged to provide target market, product category, expected quantity, customization requirements, Bluetooth or UI requirements, regulatory expectations, target price range and project timeline.",
   },
 ];
 
@@ -314,15 +319,15 @@ const jsonLd = {
         name: "YimiLife",
       },
       description:
-        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/oem-odm#webpage",
       url: "https://www.yimilife.com/oem-odm",
-      name: "OEM/ODM Medical Device Manufacturing Services",
+      name: "Private Label Medical Device Manufacturing",
       description:
-        "OEM/ODM services for medical electronic devices, including product definition, engineering adaptation, Bluetooth SDK integration, UI customization, ISO 13485 quality control and scalable manufacturing.",
+        "Private label medical device manufacturing and OEM/ODM services for pulse oximeters, blood pressure monitors and connected home healthcare monitoring products.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -333,14 +338,14 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": "https://www.yimilife.com/oem-odm#service",
-      name: "OEM/ODM Medical Device Manufacturing Services",
+      name: "Private Label Medical Device Manufacturing",
       provider: {
         "@id": "https://www.yimilife.com/#organization",
       },
       serviceType: "Medical Device OEM/ODM Manufacturing",
       areaServed: "Global",
       description:
-        "OEM/ODM manufacturing support for pulse oximeters, blood pressure monitors and wearable health monitoring devices, including private label customization, engineering adaptation, Bluetooth SDK support, UI customization, testing and quality documentation.",
+        "Medical device OEM/ODM services for pulse oximeters, blood pressure monitors and wearable health monitoring devices, including private label customization, engineering adaptation, Bluetooth SDK support, UI customization, testing and quality documentation.",
     },
     {
       "@type": "FAQPage",
@@ -394,39 +399,40 @@ export default function OemOdmPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.12fr_0.88fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              Medical Device OEM/ODM Services
+              Private Label Medical Device Manufacturing
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              OEM/ODM Services for Medical Electronic Devices
+              Private Label Medical Device Manufacturing for Global Healthcare Brands
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife supports global medical brands with OEM/ODM services
-              for{" "}
+              YimiLife provides{" "}
+              <strong>private label medical device manufacturing</strong> and{" "}
+              <strong>medical device OEM services</strong> for global healthcare
+              brands, including{" "}
               <Link
                 href="/products/pulse-oximeter"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                pulse oximeters
+                pulse oximeter OEM/ODM manufacturing
               </Link>
-              , blood pressure monitors and{" "}
+              ,{" "}
               <Link
-                href="/products/wearable-monitoring"
+                href="/products/blood-pressure-monitor"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                wearable health monitoring devices
-              </Link>
-              , from product definition and engineering adaptation to controlled
-              manufacturing and mass production.
+                blood pressure monitor OEM manufacturing
+              </Link>{" "}
+              and connected home healthcare monitoring products.
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              With an ISO 13485 quality management system, 25+ certified models
-              across FDA, MDR and NMPA pathways, Bluetooth SDK support, UI
-              customization capability and scalable production capacity, we help
-              OEM/ODM customers turn product requirements into manufacturable
-              medical device projects.
+              With an ISO 13485 quality management system, 25+ FDA / MDR / NMPA
+              certified model experience, Bluetooth SDK support, UI
+              customization capability and a 3,000 m² manufacturing facility,
+              we help OEM/ODM customers turn project requirements into scalable,
+              manufacturable medical device programs.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -490,9 +496,9 @@ export default function OemOdmPage() {
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-700">
             YimiLife supports both standard private label customization and
-            deeper ODM engineering adaptation. Our goal is to help medical
+            deeper ODM engineering adaptation. Our goal is to help healthcare
             brands define, evaluate and manufacture products that fit their
-            target markets and commercial requirements.
+            target markets, regulatory expectations and commercial requirements.
           </p>
         </div>
 
@@ -517,16 +523,17 @@ export default function OemOdmPage() {
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Customization capability
+              Custom manufacturing capability
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              From product configuration to connected device integration
+              Custom home healthcare device manufacturing beyond logo and packaging
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              OEM/ODM customization should not stop at logo and packaging. Yimi
-              Life can support project discussion across product definition,
-              hardware engineering, software behavior, Bluetooth data workflow,
-              UI interface and manufacturing documentation.
+              Private label projects often start with logo, packaging and
+              labeling, but successful custom home healthcare device
+              manufacturing also depends on product configuration, UI behavior,
+              Bluetooth data workflow, manufacturing documentation and quality
+              control.
             </p>
           </div>
 
@@ -577,9 +584,9 @@ export default function OemOdmPage() {
               Home healthcare monitoring products for OEM/ODM projects
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife’s OEM/ODM services cover core home healthcare monitoring
-              categories, including SpO2 monitoring, blood pressure monitoring
-              and connected wearable health monitoring products.
+              YimiLife’s OEM/ODM services focus on core home healthcare
+              monitoring products that customers can discuss, customize and
+              scale through practical project evaluation.
             </p>
           </div>
 
@@ -614,11 +621,12 @@ export default function OemOdmPage() {
                 Project workflow
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-                From OEM requirement to mass production
+                From private label requirement to mass production
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-300">
-                YimiLife follows a practical OEM/ODM workflow to help customers
-                move from initial product requirements to sample confirmation,
+                YimiLife follows a practical OEM/ODM service workflow to help
+                customers move from initial project requirements to product
+                configuration, engineering evaluation, sample confirmation,
                 testing, documentation, pilot production and mass production.
               </p>
             </div>
@@ -651,7 +659,7 @@ export default function OemOdmPage() {
               Requirement checklist
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              What customers should prepare before starting an OEM/ODM project
+              What customers should prepare before starting a private label project
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
               A clear project brief helps our engineering and OEM/ODM team
@@ -692,7 +700,7 @@ export default function OemOdmPage() {
               Quality and manufacturing
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              ISO 13485 quality control for OEM/ODM manufacturing
+              ISO 13485 medical device manufacturing quality
             </h2>
           </div>
 
@@ -703,7 +711,7 @@ export default function OemOdmPage() {
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                ISO 13485 Quality System
+                ISO 13485 medical device manufacturing quality system
               </Link>{" "}
               and applies manufacturing control across incoming inspection, PCBA
               process control, assembly, functional testing, calibration,
@@ -752,7 +760,7 @@ export default function OemOdmPage() {
               FAQ
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Frequently asked questions about OEM/ODM cooperation
+              Frequently asked questions about private label medical device manufacturing
             </h2>
           </div>
 
@@ -777,12 +785,13 @@ export default function OemOdmPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Start your OEM/ODM medical device project with YimiLife
+            Start your private label medical device project with YimiLife
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for an ISO 13485 OEM/ODM partner for pulse oximeters, blood
-            pressure monitors or wearable health monitoring products? Share your
-            project requirements with YimiLife’s engineering and OEM/ODM team.
+            Looking for an ISO 13485 medical device OEM/ODM manufacturer for
+            pulse oximeters, blood pressure monitors or connected home
+            healthcare monitoring products? Share your project requirements
+            with YimiLife’s engineering and OEM/ODM team.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
