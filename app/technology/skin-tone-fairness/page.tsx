@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Skin Tone Fairness in Pulse Oximeter Accuracy | PulseMatrix™",
+  title: "Skin Tone Accuracy Pulse Oximeter | YimiLife PulseMatrix™",
   description:
-    "PulseMatrix™ supports skin tone fairness in SpO2 monitoring by considering signal response, validation strategy and performance consistency across different skin pigmentation conditions.",
+    "Explore YimiLife’s skin tone accuracy pulse oximeter approach, including Fitzpatrick I–VI validation planning, optical signal response and PulseMatrix™ SpO2 technology for OEM/ODM projects.",
   alternates: {
     canonical: "https://www.yimilife.com/technology/skin-tone-fairness",
   },
   openGraph: {
-    title: "Skin Tone Fairness in Pulse Oximeter Accuracy | PulseMatrix™",
+    title: "Skin Tone Accuracy Pulse Oximeter | YimiLife PulseMatrix™",
     description:
-      "Explore YimiLife’s skin tone fairness approach for pulse oximeter accuracy, Fitzpatrick skin types, SpO2 validation strategy and OEM/ODM medical device projects.",
+      "YimiLife explains skin tone accuracy in pulse oximeter development, including optical design, Fitzpatrick I–VI validation planning and OEM/ODM SpO2 product support.",
     url: "https://www.yimilife.com/technology/skin-tone-fairness",
     siteName: "YimiLife",
     type: "website",
@@ -129,37 +129,37 @@ function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
 const fairnessChallenges = [
   {
     title: "Different Optical Responses",
-    text: "Skin pigmentation can influence how red and infrared light interact with tissue, which makes signal response an important consideration in pulse oximeter design.",
+    text: "Skin pigmentation can influence how red and infrared light interact with tissue, which makes optical signal response an important consideration for skin tone accuracy pulse oximeter development.",
   },
   {
-    title: "Validation Population Design",
-    text: "Performance evaluation should consider different skin pigmentation conditions, including how subjects are grouped and how data is reviewed.",
+    title: "Fitzpatrick I–VI Validation Planning",
+    text: "Performance evaluation should consider different skin pigmentation conditions, including Fitzpatrick I–VI distribution planning, subject grouping and how SpO2 data is reviewed.",
   },
   {
     title: "Regulated Market Expectations",
-    text: "For medical brands targeting international markets, skin tone fairness has become an important technical and quality discussion point.",
+    text: "For medical brands targeting international markets, pulse oximeter skin tone accuracy has become an important technical, quality and documentation discussion point.",
   },
 ];
 
 const engineeringLayers = [
   {
     title: "Optical Path Awareness",
-    text: "LED wavelength selection, optical coupling, photodiode response and mechanical fit all influence signal acquisition across different skin pigmentation conditions.",
+    text: "LED wavelength selection, optical coupling, photodiode response and mechanical fit all influence weak PPG signal acquisition across different skin pigmentation conditions.",
     icon: LightIcon,
   },
   {
     title: "Signal Response Assessment",
-    text: "PulseMatrix™ considers signal quality, waveform stability and response differences as part of SpO2 performance discussion.",
+    text: "PulseMatrix™ considers signal quality, waveform stability and skin-related response differences as part of SpO2 accuracy and OEM/ODM performance discussion.",
     icon: SignalIcon,
   },
   {
     title: "Validation Strategy",
-    text: "Skin tone fairness requires thoughtful validation planning, including subject distribution, test condition definition and data review approach.",
+    text: "Skin tone accuracy requires thoughtful validation planning, including Fitzpatrick I–VI subject distribution, test condition definition and data review approach.",
     icon: SkinToneIcon,
   },
   {
     title: "Quality and Documentation",
-    text: "For OEM/ODM projects, technical claims should be supported by manufacturing control, documentation discipline and project-specific validation discussion.",
+    text: "For pulse oximeter OEM/ODM projects, technical claims should be supported by manufacturing control, documentation discipline and project-specific validation discussion.",
     icon: ShieldIcon,
   },
 ];
@@ -171,13 +171,15 @@ const useCases = [
   "Elderly SpO2 Monitoring",
   "Wearable SpO2 Devices",
   "Remote Patient Monitoring Platforms",
+  "Private Label Pulse Oximeter Projects",
+  "Connected Health Monitoring Programs",
 ];
 
 const faqs = [
   {
-    question: "What does skin tone fairness mean in pulse oximeter accuracy?",
+    question: "What does skin tone accuracy mean in pulse oximeter development?",
     answer:
-      "Skin tone fairness means considering whether a pulse oximeter can maintain appropriate SpO2 performance across users with different skin pigmentation conditions. It is a technical, validation and quality consideration for modern pulse oximeter design.",
+      "Skin tone accuracy means considering whether a pulse oximeter can maintain appropriate SpO2 performance across users with different skin pigmentation conditions. It is a technical, validation and quality consideration for modern pulse oximeter design.",
   },
   {
     question: "Why can skin pigmentation affect pulse oximeter performance?",
@@ -185,24 +187,24 @@ const faqs = [
       "Pulse oximeters use red and infrared light to estimate SpO2. Differences in skin pigmentation may influence optical signal response, so device design and validation should consider how signals behave across different skin tone conditions.",
   },
   {
-    question: "What are Fitzpatrick skin types?",
+    question: "What are Fitzpatrick skin types in SpO2 validation planning?",
     answer:
-      "Fitzpatrick skin types are commonly used categories for describing skin tone and skin response. In pulse oximeter validation discussions, they can be used as one reference when considering diversity across skin pigmentation conditions.",
+      "Fitzpatrick skin types are commonly used categories for describing skin tone and skin response. In pulse oximeter validation discussions, Fitzpatrick I–VI can be used as one reference when considering diversity across skin pigmentation conditions.",
   },
   {
-    question: "How does PulseMatrix™ support skin tone fairness?",
+    question: "How does PulseMatrix™ support skin tone accuracy in pulse oximeters?",
     answer:
-      "PulseMatrix™ supports skin tone fairness by connecting optical signal acquisition, signal response assessment, waveform quality evaluation, validation strategy and manufacturing quality discussion for OEM/ODM pulse oximeter projects.",
+      "PulseMatrix™ supports skin tone accuracy by connecting optical signal acquisition, signal response assessment, waveform quality evaluation, validation strategy and manufacturing quality discussion for OEM/ODM pulse oximeter projects.",
   },
   {
-    question: "Is skin tone fairness only an algorithm issue?",
+    question: "Is skin tone accuracy only an algorithm issue?",
     answer:
-      "No. Skin tone fairness should be considered at the system level, including optical design, sensor configuration, signal processing, validation population planning, documentation and manufacturing consistency.",
+      "No. Skin tone accuracy should be considered at the system level, including optical design, sensor configuration, signal processing, validation population planning, documentation and manufacturing consistency.",
   },
   {
     question: "Can YimiLife support skin tone validation discussions for OEM/ODM projects?",
     answer:
-      "Yes. YimiLife can discuss skin tone fairness requirements during OEM/ODM project evaluation, including target market expectations, product configuration, validation strategy and documentation needs.",
+      "Yes. YimiLife can discuss skin tone accuracy requirements during OEM/ODM project evaluation, including target market expectations, product configuration, validation strategy and documentation needs.",
   },
 ];
 
@@ -225,9 +227,9 @@ const jsonLd = {
       "@type": "TechArticle",
       "@id":
         "https://www.yimilife.com/technology/skin-tone-fairness#article",
-      headline: "Skin Tone Fairness in Pulse Oximeter Accuracy",
+      headline: "Skin Tone Accuracy Pulse Oximeter Technology",
       description:
-        "A technical overview of skin tone fairness in pulse oximeter accuracy, including optical signal response, Fitzpatrick skin types, validation strategy and PulseMatrix™ support for OEM/ODM projects.",
+        "A technical overview of skin tone accuracy in pulse oximeter development, including optical signal response, Fitzpatrick I–VI validation planning and PulseMatrix™ support for OEM/ODM projects.",
       author: {
         "@id": "https://www.yimilife.com/#organization",
       },
@@ -244,15 +246,15 @@ const jsonLd = {
       "@id":
         "https://www.yimilife.com/technology/skin-tone-fairness#webpage",
       url: "https://www.yimilife.com/technology/skin-tone-fairness",
-      name: "Skin Tone Fairness in Pulse Oximeter Accuracy",
+      name: "Skin Tone Accuracy Pulse Oximeter Technology",
       description:
-        "Skin tone fairness technology page for PulseMatrix™ and OEM/ODM pulse oximeter projects.",
+        "Skin tone accuracy technology page for PulseMatrix™ and OEM/ODM pulse oximeter development projects.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
       about: {
         "@type": "Thing",
-        name: "Skin tone fairness pulse oximeter accuracy",
+        name: "Skin tone accuracy pulse oximeter",
       },
       publisher: {
         "@id": "https://www.yimilife.com/#organization",
@@ -317,17 +319,17 @@ export default function SkinToneFairnessPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              PulseMatrix™ Skin Tone Fairness
+              PulseMatrix™ Skin Tone Accuracy
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Skin Tone Fairness in Pulse Oximeter Accuracy
+              Skin Tone Accuracy Pulse Oximeter Technology
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              PulseMatrix™ supports skin tone fairness in SpO2 monitoring by
+              PulseMatrix™ supports skin tone accuracy in pulse oximeter development by
               considering optical signal response, waveform quality, validation
-              strategy and performance consistency across different skin
+              strategy and performance consistency across Fitzpatrick I–VI skin
               pigmentation conditions.
             </p>
 
@@ -339,7 +341,7 @@ export default function SkinToneFairnessPage() {
               >
                 pulse oximeter OEM/ODM manufacturing
               </Link>
-              , skin tone fairness is an important technical and quality topic
+              , skin tone accuracy is an important technical and quality topic
               for medical brands targeting international markets.
             </p>
 
@@ -348,7 +350,7 @@ export default function SkinToneFairnessPage() {
                 href="/products/pulse-oximeter"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                Explore Pulse Oximeter OEM/ODM
+                Explore Pulse Oximeter OEM/ODM Manufacturing
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
 
@@ -356,7 +358,7 @@ export default function SkinToneFairnessPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Request Skin Tone Validation Approach
+                Request Skin Tone Accuracy Discussion
               </Link>
             </div>
           </div>
@@ -369,9 +371,9 @@ export default function SkinToneFairnessPage() {
             <div className="mt-5 grid gap-4">
               {[
                 "Skin Pigmentation Awareness",
-                "Fitzpatrick I–VI Consideration",
+                "Fitzpatrick I–VI Validation Planning",
                 "Optical Signal Response",
-                "Validation Strategy Discussion",
+                "Pulse Oximeter Accuracy Review",
                 "OEM/ODM Documentation Support",
               ].map((item) => (
                 <div
@@ -413,7 +415,7 @@ export default function SkinToneFairnessPage() {
               Technical challenge
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Why skin tone fairness matters in SpO2 monitoring
+              Why skin tone accuracy matters in SpO2 monitoring
             </h2>
           </div>
 
@@ -422,7 +424,7 @@ export default function SkinToneFairnessPage() {
               Pulse oximeters estimate SpO2 by analyzing red and infrared light
               signals passing through tissue. Because optical signal response
               may vary under different skin pigmentation conditions, skin tone
-              fairness has become an important topic in pulse oximeter design
+              accuracy has become an important topic in pulse oximeter design
               and validation.
             </p>
 
@@ -434,7 +436,7 @@ export default function SkinToneFairnessPage() {
             </p>
 
             <p>
-              Skin tone fairness should not be treated as a simple marketing
+              Skin tone accuracy should not be treated as a simple marketing
               claim. It requires system-level thinking across optical design,
               sensor configuration, waveform quality assessment, signal
               processing, validation population planning and manufacturing
@@ -467,10 +469,10 @@ export default function SkinToneFairnessPage() {
               PulseMatrix™ approach
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              A system-level approach to skin tone fairness
+              A system-level approach to skin tone accuracy
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              PulseMatrix™ treats skin tone fairness as a combined optical,
+              PulseMatrix™ treats skin tone accuracy as a combined optical,
               signal processing, validation and quality control challenge. The
               goal is to help OEM/ODM customers build stronger technical
               confidence for SpO2 products used across diverse populations.
@@ -509,13 +511,13 @@ export default function SkinToneFairnessPage() {
               Validation perspective
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Skin tone fairness starts with thoughtful validation planning
+              Skin tone accuracy starts with thoughtful validation planning
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              Skin tone fairness cannot be demonstrated by a single claim. It
+              Skin tone accuracy cannot be demonstrated by a single claim. It
               should be considered in the way products are evaluated, including
               subject distribution, skin tone grouping, test condition
               definition, data review and documentation strategy.
@@ -530,7 +532,7 @@ export default function SkinToneFairnessPage() {
 
             <p>
               YimiLife can support project-level discussion around validation
-              approach, documentation needs and how skin tone fairness connects
+              approach, documentation needs and how skin tone accuracy connects
               with the broader{" "}
               <Link
                 href="/technology"
@@ -551,33 +553,33 @@ export default function SkinToneFairnessPage() {
               OEM/ODM value
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Skin tone fairness strengthens trust for international SpO2
+              Skin tone accuracy strengthens trust for international SpO2
               products
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-300">
             <p>
-              For OEM/ODM customers, skin tone fairness helps create a stronger
+              For OEM/ODM customers, skin tone accuracy helps create a stronger
               technical and compliance-oriented story for pulse oximeter
               products. It is especially relevant for brands entering diverse
               international markets.
             </p>
 
             <p>
-              YimiLife connects skin tone fairness with{" "}
+              YimiLife connects skin tone accuracy with{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                low perfusion SpO2 monitoring
+                low perfusion SpO2 technology
               </Link>{" "}
               and{" "}
               <Link
                 href="/technology/motion-artifact-rejection"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                motion artifact rejection
+                motion artifact rejection pulse oximeter technology
               </Link>{" "}
               to form a more complete medical-grade SpO2 technology narrative.
             </p>
@@ -602,7 +604,7 @@ export default function SkinToneFairnessPage() {
                 Suitable for diverse-market SpO2 monitoring applications
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-700">
-                Skin tone fairness is especially relevant for medical brands
+                Skin tone accuracy is especially relevant for medical brands
                 serving diverse populations and regulated international markets.
               </p>
             </div>
@@ -631,13 +633,13 @@ export default function SkinToneFairnessPage() {
               Verification and quality
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              From fairness discussion to manufacturing consistency
+              From skin tone accuracy discussion to manufacturing consistency
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              Skin tone fairness should be connected with product-level
+              Skin tone accuracy should be connected with product-level
               validation and manufacturing control. For OEM/ODM projects, this
               means discussing target markets, product configuration, validation
               expectations, documentation and production consistency from the
@@ -650,7 +652,7 @@ export default function SkinToneFairnessPage() {
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                ISO 13485 Quality System
+                ISO 13485 medical device manufacturing quality
               </Link>
               . Each unit is calibrated and verified using Fluke Index 2
               clinical simulators before shipment to support consistent
@@ -658,7 +660,7 @@ export default function SkinToneFairnessPage() {
             </p>
 
             <p>
-              This helps customers treat skin tone fairness not as a separate
+              This helps customers treat skin tone accuracy not as a separate
               marketing topic, but as part of a structured engineering,
               validation and manufacturing workflow.
             </p>
@@ -674,7 +676,7 @@ export default function SkinToneFairnessPage() {
                 FAQ
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                Frequently asked questions about skin tone fairness
+                Frequently asked questions about skin tone accuracy
               </h2>
             </div>
 
@@ -700,13 +702,12 @@ export default function SkinToneFairnessPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Build skin tone fairness into your next SpO2 product strategy
+            Build skin tone accuracy into your next SpO2 product strategy
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
             Looking for a pulse oximeter OEM/ODM partner with skin tone
-            fairness awareness, PulseMatrix™ SpO2 technology and ISO 13485
-            manufacturing support? Share your project requirements with Yimi
-            Life.
+            accuracy awareness, PulseMatrix™ SpO2 technology and ISO 13485
+            manufacturing support? Share your project requirements with YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -722,7 +723,7 @@ export default function SkinToneFairnessPage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Request Skin Tone Validation Approach
+              Request Skin Tone Accuracy Discussion
             </Link>
           </div>
         </div>
