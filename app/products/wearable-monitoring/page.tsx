@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Wearable Health Monitoring Device OEM | YimiLife",
+  title: "Medical Device OEM/ODM Product Categories | YimiLife",
   description:
-    "YimiLife supports wearable health monitoring device OEM projects for medical brands, including wearable SpO2 monitoring, Bluetooth SDK integration, UI customization, remote monitoring and ISO 13485 manufacturing.",
+    "Explore YimiLife’s medical device OEM/ODM product categories, including pulse oximeter OEM/ODM manufacturing, blood pressure monitor OEM manufacturing and wearable health monitoring device OEM support.",
   alternates: {
-    canonical: "https://www.yimilife.com/products/wearable-monitoring",
+    canonical: "https://www.yimilife.com/products",
   },
   openGraph: {
-    title: "Wearable Health Monitoring Device OEM | YimiLife",
+    title: "Medical Device OEM/ODM Product Categories | YimiLife",
     description:
-      "Wearable SpO2 and connected health monitoring device OEM support with Bluetooth SDK integration, UI customization, PulseMatrix™ SpO2 technology and ISO 13485 manufacturing.",
-    url: "https://www.yimilife.com/products/wearable-monitoring",
+      "Medical device OEM/ODM product categories for pulse oximeters, blood pressure monitors and wearable health monitoring devices, supported by ISO 13485 manufacturing and PulseMatrix™ SpO2 technology.",
+    url: "https://www.yimilife.com/products",
     siteName: "YimiLife",
     type: "website",
   },
@@ -50,6 +50,43 @@ function CheckIcon({ className = "h-5 w-5" }: IconProps) {
   );
 }
 
+function WaveIcon({ className = "h-6 w-6" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M3 14c2 0 2-8 4-8s2 8 4 8 2-8 4-8 2 8 4 8 2-8 4-8"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M4 20h16"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function PressureIcon({ className = "h-6 w-6" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 21a8 8 0 100-16 8 8 0 000 16z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M12 13l4-4M8 17h8M12 5V3"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 function WearableIcon({ className = "h-6 w-6" }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -65,39 +102,6 @@ function WearableIcon({ className = "h-6 w-6" }: IconProps) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function BluetoothIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M7 7l10 10-5 4V3l5 4L7 17"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function WaveIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M3 14c2 0 2-8 4-8s2 8 4 8 2-8 4-8 2 8 4 8 2-8 4-8"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M4 20h16"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
       />
     </svg>
   );
@@ -123,35 +127,11 @@ function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
   );
 }
 
-function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
+function BluetoothIcon({ className = "h-6 w-6" }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
-        d="M7 3h7l5 5v13H7V3z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M14 3v5h5M10 13h6M10 17h6M10 9h1"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function AppIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M8 2h8a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2z"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <path
-        d="M10 6h4M11 18h2M9 10h6v5H9v-5z"
+        d="M7 7l10 10-5 4V3l5 4L7 17"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
@@ -161,100 +141,118 @@ function AppIcon({ className = "h-6 w-6" }: IconProps) {
   );
 }
 
-const highlights = [
-  "Wearable Health Monitoring Device OEM",
-  "Wearable SpO2 Monitoring Support",
-  "Bluetooth SDK & Data Integration",
-  "Mobile App and RPM Platform Discussion",
-  "PulseMatrix™ SpO2 Technology Support",
-  "ISO 13485 Manufacturing Support",
+const productCategories = [
+  {
+    title: "Pulse Oximeter OEM/ODM Manufacturer",
+    href: "/products/pulse-oximeter",
+    icon: WaveIcon,
+    label: "Core SpO2 OEM product line",
+    text: "Fingertip pulse oximeter OEM/ODM manufacturing for global healthcare brands, supported by PulseMatrix™ SpO2 technology, private label customization, Bluetooth SDK and UI support, certified model experience and Fluke Index 2 production verification.",
+    highlights: [
+      "Fingertip pulse oximeter manufacturer",
+      "Private label pulse oximeter projects",
+      "0.1% PI low perfusion focus",
+      "Motion artifact rejection",
+      "Skin tone fairness strategy",
+      "Bluetooth SDK and UI customization",
+    ],
+  },
+  {
+    title: "Blood Pressure Monitor OEM Manufacturer",
+    href: "/products/blood-pressure-monitor",
+    icon: PressureIcon,
+    label: "Digital upper arm BP monitoring",
+    text: "Blood pressure monitor OEM manufacturing support for home healthcare brands, including private label blood pressure monitor projects, custom blood pressure monitor supplier requirements and digital upper arm product configurations.",
+    highlights: [
+      "Upper arm blood pressure monitor OEM",
+      "Digital blood pressure monitor manufacturer support",
+      "Private label blood pressure monitor projects",
+      "Manufacturing and testing support",
+      "Packaging and labeling control",
+      "Quality documentation support",
+    ],
+  },
+  {
+    title: "Wearable Health Monitoring Device OEM",
+    href: "/products/wearable-monitoring",
+    icon: WearableIcon,
+    label: "Connected health device direction",
+    text: "Wearable health monitoring device OEM support for wearable SpO2 monitoring, Bluetooth data integration, connected health applications and remote patient monitoring scenarios.",
+    highlights: [
+      "Wearable SpO2 monitoring",
+      "Bluetooth data transmission",
+      "Mobile app integration support",
+      "Remote patient monitoring scenarios",
+      "Customized UI requirements",
+      "Future wearable monitoring roadmap",
+    ],
+  },
 ];
 
-const supportCards = [
+const productValues = [
   {
-    title: "Wearable SpO2 Product Definition",
-    text: "Support for wearable SpO2 monitoring product definition, application scenario review, display requirements, battery strategy and functional configuration.",
-    icon: WearableIcon,
-  },
-  {
-    title: "Bluetooth SDK & Data Integration",
-    text: "Bluetooth data transmission, SDK-level discussion and protocol adaptation for mobile apps, connected health platforms and remote patient monitoring systems.",
-    icon: BluetoothIcon,
-  },
-  {
-    title: "PulseMatrix™ SpO2 Technology",
-    text: "SpO2 technology support focused on low perfusion monitoring, motion artifact rejection pulse oximeter technology and skin tone accuracy considerations for wearable monitoring scenarios.",
-    icon: WaveIcon,
-  },
-  {
-    title: "UI and Interaction Customization",
-    text: "Support for display layout, UI interface, user interaction logic, notification behavior and selected software configuration based on project scope.",
-    icon: AppIcon,
-  },
-  {
-    title: "Mechanical and ID Customization",
-    text: "Support for wearable form factor discussion, enclosure design, color, logo, packaging, labeling and user comfort considerations.",
+    title: "Medical Electronics Focus",
+    text: "YimiLife focuses on medical device OEM/ODM product categories for home healthcare monitoring, including SpO2, blood pressure and wearable health monitoring products.",
     icon: ShieldIcon,
   },
   {
-    title: "Manufacturing and Documentation",
-    text: "Support for assembly, functional testing, packaging, labeling, batch traceability and project documentation under ISO 13485 manufacturing control.",
-    icon: DocumentIcon,
+    title: "OEM/ODM Customization",
+    text: "Support ranges from private label medical device customization to deeper engineering adaptation, UI configuration, Bluetooth SDK discussion and connected-device data integration.",
+    icon: BluetoothIcon,
+  },
+  {
+    title: "ISO 13485 Manufacturing",
+    text: "Manufacturing is supported by ISO 13485 medical device manufacturing quality controls, process inspection, calibration, packaging control and batch traceability.",
+    icon: ShieldIcon,
   },
 ];
 
-const connectedScenarios = [
-  "Wearable SpO2 Monitoring",
-  "Bluetooth Health Data Transmission",
-  "Mobile App Integration",
-  "Remote Patient Monitoring",
-  "Sleep and Respiratory Health Tracking",
+const applications = [
+  "Home Healthcare Monitoring",
   "Elderly Health Monitoring",
-  "Connected Home Healthcare",
-  "Digital Health Platforms",
-];
-
-const workflow = [
-  "Requirement Review",
-  "Wearable Product Definition",
-  "Engineering Evaluation",
-  "Bluetooth and UI Discussion",
-  "Sample or Prototype Confirmation",
-  "Testing and Documentation",
-  "Pilot Production",
-  "Mass Production",
+  "Respiratory Health Management",
+  "Private Label Medical Devices",
+  "Remote Patient Monitoring",
+  "Connected Health Platforms",
+  "Wearable SpO2 Monitoring",
+  "Retail and Distribution Channels",
 ];
 
 const faqs = [
   {
-    question: "Does YimiLife provide wearable health monitoring device OEM support?",
+    question: "Which medical device OEM/ODM product categories does YimiLife support?",
     answer:
-      "Yes. YimiLife supports wearable health monitoring device OEM projects, especially wearable SpO2 and connected health monitoring devices for home healthcare, remote patient monitoring and digital health applications.",
+      "YimiLife supports OEM/ODM projects for pulse oximeters, blood pressure monitors and wearable health monitoring devices for home healthcare, private label and connected monitoring applications.",
   },
   {
-    question: "Can YimiLife support wearable SpO2 monitoring devices?",
+    question: "Is YimiLife a pulse oximeter OEM/ODM manufacturer?",
     answer:
-      "Yes. YimiLife can support wearable SpO2 monitoring projects, including product definition, PulseMatrix™ SpO2 technology discussion, Bluetooth data integration, UI customization, manufacturing and documentation support.",
+      "Yes. YimiLife supports pulse oximeter OEM/ODM manufacturing for global healthcare brands, including fingertip pulse oximeter model selection, private label customization, Bluetooth SDK support, UI adaptation and production verification.",
   },
   {
-    question: "Can wearable devices connect to mobile apps or RPM platforms?",
+    question: "Can YimiLife support blood pressure monitor OEM manufacturing?",
     answer:
-      "For selected OEM/ODM projects, YimiLife can support Bluetooth data transmission, SDK-level integration and protocol discussion to help connect wearable devices with mobile apps, remote patient monitoring platforms or digital health systems.",
+      "Yes. YimiLife supports blood pressure monitor OEM manufacturing, including digital upper arm blood pressure monitor configurations, private label customization, packaging, labeling and quality documentation support.",
   },
   {
-    question: "Can the UI interface be customized?",
+    question: "Does YimiLife support private label medical device products?",
     answer:
-      "Yes. UI interface, display layout, interaction logic and selected software behavior can be discussed based on product definition, hardware platform and project requirements.",
+      "Yes. YimiLife can support private label medical device customization such as logo, color, packaging, labeling, selected functional configuration and UI interface adaptation based on project requirements.",
   },
   {
-    question: "Is wearable health monitoring treated as medical electronics or consumer electronics?",
+    question: "Which product line is most strongly supported by PulseMatrix™?",
     answer:
-      "YimiLife positions wearable health monitoring within its medical electronics OEM/ODM portfolio, with attention to SpO2 performance, quality control, documentation and manufacturing consistency rather than consumer-gadget styling only.",
+      "PulseMatrix™ is YimiLife’s SpO2 technology platform and is most directly connected with pulse oximeter and wearable SpO2 monitoring products, focusing on low perfusion, motion artifact rejection pulse oximeter technology and skin tone accuracy considerations.",
   },
   {
-    question: "What information should customers provide for a wearable project?",
+    question: "Can product categories support connected health applications?",
     answer:
-      "Customers are encouraged to provide target market, application scenario, wearable form factor, measurement parameters, Bluetooth or app integration needs, expected quantity, regulatory expectations, target price range and project timeline.",
+      "Yes. For selected OEM/ODM projects, YimiLife can support Bluetooth data transmission, SDK-level discussion and UI customization for mobile apps, remote patient monitoring platforms and digital health systems.",
+  },
+  {
+    question: "How should customers choose the right product category?",
+    answer:
+      "Customers can start by defining the target market, use scenario, product type, expected quantity, customization scope, regulatory expectations and timeline. YimiLife can then support project evaluation.",
   },
 ];
 
@@ -275,40 +273,33 @@ const jsonLd = {
         "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
     },
     {
-      "@type": "Service",
-      "@id":
-        "https://www.yimilife.com/products/wearable-monitoring#wearable-health-monitoring-oem-odm",
-      name: "Wearable Health Monitoring Device OEM",
-      provider: {
-        "@id": "https://www.yimilife.com/#organization",
-      },
-      serviceType: "Wearable Health Monitoring Device OEM",
-      areaServed: "Global",
+      "@type": "CollectionPage",
+      "@id": "https://www.yimilife.com/products#webpage",
+      url: "https://www.yimilife.com/products",
+      name: "Medical Device OEM/ODM Product Categories",
       description:
-        "Wearable health monitoring device OEM support for medical brands, including wearable SpO2 devices, Bluetooth SDK integration, UI customization, remote patient monitoring applications and ISO 13485 manufacturing.",
-    },
-    {
-      "@type": "WebPage",
-      "@id":
-        "https://www.yimilife.com/products/wearable-monitoring#webpage",
-      url: "https://www.yimilife.com/products/wearable-monitoring",
-      name: "Wearable Health Monitoring Device OEM",
-      description:
-        "YimiLife wearable health monitoring device OEM page for wearable SpO2 devices, Bluetooth data integration, UI customization and connected health applications.",
+        "Product category page for YimiLife medical device OEM/ODM manufacturing, including pulse oximeter OEM/ODM manufacturing, blood pressure monitor OEM manufacturing and wearable health monitoring device OEM support.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
-      },
-      about: {
-        "@type": "Thing",
-        name: "Wearable health monitoring device OEM",
       },
       publisher: {
         "@id": "https://www.yimilife.com/#organization",
       },
     },
     {
+      "@type": "ItemList",
+      "@id": "https://www.yimilife.com/products#product-categories",
+      name: "YimiLife Medical Device OEM/ODM Product Categories",
+      itemListElement: productCategories.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.title,
+        url: `https://www.yimilife.com${item.href}`,
+      })),
+    },
+    {
       "@type": "FAQPage",
-      "@id": "https://www.yimilife.com/products/wearable-monitoring#faq",
+      "@id": "https://www.yimilife.com/products#faq",
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -320,8 +311,7 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id":
-        "https://www.yimilife.com/products/wearable-monitoring#breadcrumb",
+      "@id": "https://www.yimilife.com/products#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
@@ -335,18 +325,12 @@ const jsonLd = {
           name: "Products",
           item: "https://www.yimilife.com/products",
         },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Wearable Health Monitoring",
-          item: "https://www.yimilife.com/products/wearable-monitoring",
-        },
       ],
     },
   ],
 };
 
-export default function WearableMonitoringPage() {
+export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       <script
@@ -365,26 +349,45 @@ export default function WearableMonitoringPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.12fr_0.88fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              Wearable Health Monitoring Device OEM
+              Medical Device OEM/ODM Product Categories
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Wearable Health Monitoring Device OEM
+              Medical Device OEM/ODM Product Categories
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife supports medical brands with wearable SpO2 and connected
-              health monitoring device OEM projects, including Bluetooth SDK
-              integration, UI customization, remote patient monitoring scenarios
-              and ISO 13485 manufacturing support.
+              YimiLife supports medical device OEM/ODM product categories for
+              home healthcare monitoring, from{" "}
+              <Link
+                href="/products/pulse-oximeter"
+                className="font-semibold text-cyan-200 underline underline-offset-4"
+              >
+                pulse oximeter OEM/ODM manufacturing
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/products/blood-pressure-monitor"
+                className="font-semibold text-cyan-200 underline underline-offset-4"
+              >
+                blood pressure monitor OEM manufacturing
+              </Link>{" "}
+              to{" "}
+              <Link
+                href="/products/wearable-monitoring"
+                className="font-semibold text-cyan-200 underline underline-offset-4"
+              >
+                wearable health monitoring device OEM
+              </Link>{" "}
+              support for connected health applications.
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              For connected health products, wearable devices must connect sensor
-              performance, user interaction, Bluetooth data transmission, app
-              integration and manufacturing consistency. YimiLife helps
-              customers evaluate these requirements from product definition to
-              controlled manufacturing.
+              Our product categories are built for medical brands, private label
+              customers, importers and digital health companies that need ISO
+              13485 medical device manufacturing quality, engineering
+              adaptation, scalable production and reliable project
+              documentation.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -392,26 +395,32 @@ export default function WearableMonitoringPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                Submit Wearable OEM Requirements
+                Submit Product OEM/ODM Requirements
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
 
               <Link
-                href="/technology"
+                href="/oem-odm"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Explore PulseMatrix™ SpO2 Technology
+                View Private Label Manufacturing Services
               </Link>
             </div>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
             <p className="text-sm font-semibold uppercase tracking-wider text-cyan-200">
-              Project highlights
+              Product focus
             </p>
 
             <div className="mt-5 grid gap-4">
-              {highlights.map((item) => (
+              {[
+                "Pulse Oximeter OEM/ODM Manufacturer",
+                "Blood Pressure Monitor OEM Manufacturer",
+                "Wearable Health Monitoring Device OEM",
+                "Bluetooth SDK & UI Customization",
+                "ISO 13485 Manufacturing Support",
+              ].map((item) => (
                 <div
                   key={item}
                   className="flex items-start gap-4 rounded-2xl bg-white/10 p-4 text-white"
@@ -426,12 +435,18 @@ export default function WearableMonitoringPage() {
 
             <div className="mt-6 rounded-2xl bg-slate-950/40 p-5">
               <p className="text-sm font-medium text-cyan-100">
-                Connected health integration
+                Product + technology + quality
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-300">
-                Wearable monitoring projects can connect with mobile apps,
-                digital health systems and remote patient monitoring workflows
-                through Bluetooth data transmission and SDK-level support.
+                Product development is supported by{" "}
+                <Link
+                  href="/technology"
+                  className="font-semibold text-cyan-200 underline underline-offset-4"
+                >
+                  PulseMatrix™ SpO2 technology
+                </Link>
+                , OEM/ODM engineering adaptation and ISO 13485 manufacturing
+                control.
               </p>
             </div>
           </div>
@@ -439,91 +454,107 @@ export default function WearableMonitoringPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Connected health value
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Wearable health monitoring device OEM projects require more than a sensor module
-            </h2>
-          </div>
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
+            Product categories
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+            Product lines for home healthcare medical device OEM/ODM projects
+          </h2>
+          <p className="mt-5 text-base leading-8 text-slate-700">
+            YimiLife organizes product development around clear B2B categories,
+            so customers can evaluate the right product direction according to
+            target market, user scenario, customization depth, regulatory
+            expectations and manufacturing requirements.
+          </p>
+        </div>
 
-          <div className="space-y-5 text-base leading-8 text-slate-700">
-            <p>
-              Wearable health monitoring products require coordination between
-              physiological sensing, device form factor, user interface,
-              Bluetooth data transmission, app integration, power strategy and
-              manufacturing control.
-            </p>
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {productCategories.map((item) => {
+            const Icon = item.icon;
 
-            <p>
-              For medical brands, the challenge is not only to collect a signal,
-              but to create a stable, manufacturable and connected product that
-              fits home healthcare, elderly monitoring, respiratory health or
-              remote patient monitoring scenarios.
-            </p>
+            return (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="mb-6 inline-flex rounded-2xl bg-cyan-100 p-3 text-cyan-800">
+                  <Icon />
+                </div>
+                <p className="text-sm font-medium text-cyan-700">
+                  {item.label}
+                </p>
+                <h3 className="mt-2 text-xl font-semibold text-slate-950">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-700">
+                  {item.text}
+                </p>
 
-            <p>
-              YimiLife supports OEM/ODM customers by combining medical
-              electronics engineering, wearable SpO2 product discussion,
-              Bluetooth SDK support, UI customization and ISO 13485
-              medical device manufacturing discipline.
-            </p>
-          </div>
+                <div className="mt-6 grid gap-3">
+                  {item.highlights.slice(0, 4).map((highlight) => (
+                    <div key={highlight} className="flex items-start gap-2">
+                      <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-cyan-700" />
+                      <span className="text-sm leading-6 text-slate-700">
+                        {highlight}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-7 inline-flex items-center text-sm font-semibold text-cyan-700">
+                  Explore product category
+                  <ArrowIcon className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              OEM/ODM support
+              Product strategy
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Wearable health monitoring device OEM support
+              From private label medical device products to connected health solutions
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife supports wearable health monitoring projects from early
-              product definition to engineering evaluation, sample confirmation,
-              testing, documentation and production transfer.
+              YimiLife supports customers at different project depths, from
+              standard private label medical device customization to engineering
+              adaptation, Bluetooth data integration, UI customization and
+              manufacturing documentation.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {supportCards.map((card) => {
-              const Icon = card.icon;
+          <div className="grid gap-5">
+            {productValues.map((item) => {
+              const Icon = item.icon;
 
               return (
                 <div
-                  key={card.title}
-                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+                  key={item.title}
+                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
                 >
-                  <div className="mb-5 inline-flex rounded-2xl bg-cyan-100 p-3 text-cyan-800">
-                    <Icon />
+                  <div className="flex gap-5">
+                    <div className="h-fit rounded-2xl bg-cyan-100 p-3 text-cyan-800">
+                      <Icon />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-950">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-7 text-slate-700">
+                        {item.text}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-950">
-                    {card.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-700">
-                    {card.text}
-                  </p>
                 </div>
               );
             })}
-          </div>
-
-          <div className="mt-10 rounded-3xl bg-slate-950 p-8 text-white">
-            <h3 className="text-xl font-semibold">
-              Designed for app-connected wearable SpO2 and RPM product strategies
-            </h3>
-            <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-300">
-              For selected OEM/ODM projects, YimiLife can support Bluetooth
-              data transmission, SDK-level integration and customized UI
-              requirements to help customers connect wearable devices with
-              mobile apps, remote patient monitoring platforms or digital health
-              systems.
-            </p>
           </div>
         </div>
       </section>
@@ -535,31 +566,30 @@ export default function WearableMonitoringPage() {
               SpO2 technology
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Wearable SpO2 products supported by PulseMatrix™
+              PulseMatrix™ technology for differentiated SpO2 products
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              Wearable SpO2 monitoring is more challenging than simple spot-check
-              measurement because real-world use involves motion, varying skin
-              contact, weak perfusion and longer monitoring scenarios.
-            </p>
-
-            <p>
-              YimiLife’s{" "}
+              YimiLife’s SpO2 product categories are supported by the{" "}
               <Link
                 href="/technology"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                PulseMatrix™ SpO2 Technology Platform
-              </Link>{" "}
-              focuses on{" "}
+                PulseMatrix™ vascular hemodynamic intelligence platform
+              </Link>
+              , a vascular hemodynamic intelligence platform for medical-grade
+              pulse oximetry.
+            </p>
+
+            <p>
+              PulseMatrix™ focuses on{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                low perfusion SpO2 monitoring
+                low perfusion SpO2 technology
               </Link>
               ,{" "}
               <Link
@@ -575,14 +605,14 @@ export default function WearableMonitoringPage() {
               >
                 skin tone accuracy in pulse oximeter development
               </Link>
-              , helping wearable projects build stronger technical
-              differentiation.
+              , helping OEM/ODM customers build stronger product differentiation
+              beyond basic hardware configuration.
             </p>
 
             <p>
-              For OEM/ODM customers, this technology narrative can support
-              product positioning in home healthcare, respiratory health,
-              connected monitoring and digital health applications.
+              This is especially relevant for pulse oximeters, wearable SpO2
+              devices, connected health monitoring products and remote patient
+              monitoring applications.
             </p>
           </div>
         </div>
@@ -592,21 +622,21 @@ export default function WearableMonitoringPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">
-              Application scenarios
+              Applications
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Suitable for connected health and remote monitoring applications
+              Built for home healthcare, connected monitoring and private label
+              medical devices
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-300">
-              Wearable health monitoring devices can be relevant for
-              customers building connected home healthcare, respiratory health
-              tracking, elderly monitoring and remote patient monitoring
-              solutions.
+              YimiLife’s product categories support medical brands, importers,
+              private label customers and digital health companies serving home
+              healthcare and connected monitoring markets.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {connectedScenarios.map((item) => (
+            {applications.map((item) => (
               <div
                 key={item}
                 className="flex items-center gap-3 rounded-2xl bg-white/10 p-4"
@@ -620,128 +650,51 @@ export default function WearableMonitoringPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-                Project workflow
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                From wearable concept to manufacturable device
-              </h2>
-              <p className="mt-5 text-base leading-8 text-slate-700">
-                YimiLife follows a practical{" "}
-                <Link
-                  href="/oem-odm"
-                  className="font-semibold text-cyan-700 underline underline-offset-4"
-                >
-                  private label medical device manufacturing workflow
-                </Link>{" "}
-                to help customers move from wearable product concept to
-                engineering evaluation, testing, documentation and production.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <div className="grid gap-5">
-                {workflow.map((step, index) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-sm font-semibold text-cyan-800">
-                      {index + 1}
-                    </div>
-                    <div className="border-b border-slate-200 pb-4">
-                      <h3 className="font-semibold text-slate-950">{step}</h3>
-                      <p className="mt-1 text-sm leading-6 text-slate-700">
-                        {index === 0
-                          ? "Review target market, wearable form factor, measurement parameters, Bluetooth requirements, UI expectations, cost target and timeline."
-                          : "Move the project forward with engineering, testing, documentation and manufacturing controls according to agreed requirements."}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Quality and manufacturing
+              OEM/ODM cooperation
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              ISO 13485 manufacturing support for wearable projects
+              Choose the right product category, then define the project scope
             </h2>
+            <p className="mt-5 text-base leading-8 text-slate-700">
+              Product category selection is only the first step. A successful
+              OEM/ODM project also requires clear target market definition,
+              customization scope, regulatory expectations, production volume
+              and cost structure discussion.
+            </p>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              Wearable health monitoring OEM/ODM projects require controlled
-              manufacturing and clear documentation. YimiLife’s manufacturing
-              process is supported by the{" "}
+              YimiLife’s{" "}
+              <Link
+                href="/oem-odm"
+                className="font-semibold text-cyan-700 underline underline-offset-4"
+              >
+                private label medical device manufacturing workflow
+              </Link>{" "}
+              helps customers move from initial requirements to engineering
+              evaluation, sample confirmation, testing, documentation, pilot
+              production and mass production.
+            </p>
+
+            <p>
+              Manufacturing is supported by the{" "}
               <Link
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 ISO 13485 medical device manufacturing quality
               </Link>
-              , including incoming inspection, PCBA process control, assembly,
-              functional testing, packaging, labeling and batch traceability.
+              , including incoming inspection, process control, functional
+              testing, calibration, packaging, labeling and batch traceability.
             </p>
 
             <p>
-              For wearable SpO2 projects, product verification should connect
-              sensor behavior, signal quality, Bluetooth data output, UI
-              interaction and production consistency.
-            </p>
-
-            <p>
-              This helps customers evaluate wearable monitoring projects not as
-              isolated hardware concepts, but as complete product systems ready
-              for controlled manufacturing.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Product portfolio
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Connect wearable monitoring with broader home healthcare products
-            </h2>
-          </div>
-
-          <div className="space-y-5 text-base leading-8 text-slate-700">
-            <p>
-              Wearable monitoring can be part of a broader home healthcare
-              product portfolio. YimiLife also supports{" "}
-              <Link
-                href="/products/pulse-oximeter"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                pulse oximeter OEM/ODM manufacturing
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/products/blood-pressure-monitor"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                blood pressure monitor OEM manufacturing
-              </Link>{" "}
-              for medical brands building multi-device health monitoring
-              strategies.
-            </p>
-
-            <p>
-              Customers can start from one product category and expand into
-              connected health product portfolios based on target market,
-              regulatory expectations, platform strategy and production volume.
+              For connected products, Bluetooth SDK support and UI customization
+              can be discussed based on customer requirements and project scope.
             </p>
           </div>
         </div>
@@ -754,7 +707,7 @@ export default function WearableMonitoringPage() {
               FAQ
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Frequently asked questions about wearable health monitoring device OEM
+              Frequently asked questions about product categories
             </h2>
           </div>
 
@@ -779,13 +732,12 @@ export default function WearableMonitoringPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Start your wearable health monitoring device OEM project
+            Find the right product direction for your OEM/ODM project
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for an ISO 13485 OEM/ODM partner for wearable SpO2 devices,
-            connected health products or remote patient monitoring applications?
-            Share your project requirements with YimiLife for technical and
-            manufacturing evaluation.
+            Looking for an OEM/ODM partner for pulse oximeters, blood pressure
+            monitors or wearable health monitoring products? Share your product
+            category, target market and customization requirements with YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -793,15 +745,15 @@ export default function WearableMonitoringPage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Submit Wearable OEM Requirements
+              Submit Product OEM/ODM Requirements
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
 
             <Link
-              href="/products"
+              href="/oem-odm"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              View Medical Device OEM/ODM Product Categories
+              View Private Label Manufacturing Services
             </Link>
           </div>
         </div>

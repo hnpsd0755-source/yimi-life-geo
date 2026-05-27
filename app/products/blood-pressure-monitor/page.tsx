@@ -143,41 +143,42 @@ function BluetoothIcon({ className = "h-6 w-6" }: IconProps) {
 
 const highlights = [
   "ISO 13485 Quality Management System",
-  "Digital Blood Pressure Monitor OEM/ODM",
-  "Private Label Customization Support",
+  "Blood Pressure Monitor OEM Manufacturer",
+  "Private Label Blood Pressure Monitor Support",
+  "Custom Digital Upper Arm BP Monitor Projects",
   "Manufacturing, Testing and Documentation",
-  "Connected Health Project Discussion",
+  "Connected Health and Bluetooth Project Discussion",
 ];
 
 const supportCards = [
   {
     title: "Product Configuration",
-    text: "Support for home-use digital blood pressure monitor project definition, product configuration, display requirements and functional options.",
+    text: "Support for digital blood pressure monitor manufacturer projects, including upper arm BP monitor configuration, display requirements, memory options and functional positioning.",
     icon: PressureIcon,
   },
   {
     title: "Private Label Customization",
-    text: "Logo, color, packaging, labeling, IFU coordination and selected configuration customization for medical brands and distribution channels.",
+    text: "Private label blood pressure monitor customization for logo, color, packaging, labeling, IFU coordination and selected project-specific configurations.",
     icon: DocumentIcon,
   },
   {
     title: "Hardware and Mechanical Support",
-    text: "Engineering discussion around electronics, cuff interface, display, enclosure, buttons, power design and manufacturability.",
+    text: "Engineering discussion for custom blood pressure monitor supplier projects, including electronics, cuff interface, display, enclosure, buttons, power design and manufacturability.",
     icon: ShieldIcon,
   },
   {
     title: "Connected Device Integration",
-    text: "Bluetooth data transmission, app integration discussion and UI requirements can be evaluated for selected connected health projects.",
+    text: "Bluetooth data transmission, app integration discussion and UI requirements can be evaluated for selected connected blood pressure monitor OEM projects.",
     icon: BluetoothIcon,
   },
   {
     title: "Manufacturing and Assembly",
-    text: "Support from production preparation and assembly to functional testing, packaging, labeling and shipment release.",
+    text: "Blood pressure monitor OEM manufacturing support from production preparation and assembly to functional testing, packaging, labeling and shipment release.",
     icon: FactoryIcon,
   },
   {
     title: "Quality Documentation",
-    text: "Project documentation support can include configuration records, testing records, manufacturing records, packaging control and batch traceability.",
+    text: "Quality documentation support can include configuration records, testing records, manufacturing records, packaging control and batch traceability.",
     icon: DocumentIcon,
   },
 ];
@@ -205,22 +206,32 @@ const workflow = [
 
 const faqs = [
   {
-    question: "Do you provide blood pressure monitor OEM or ODM services?",
+    question: "Is YimiLife a blood pressure monitor OEM manufacturer?",
     answer:
-      "Yes. YimiLife supports blood pressure monitor OEM/ODM projects, including product configuration, private label customization, manufacturing, testing, packaging and quality documentation.",
+      "Yes. YimiLife supports blood pressure monitor OEM manufacturing for global healthcare brands, including product configuration, private label customization, manufacturing, testing, packaging and quality documentation.",
   },
   {
-    question: "Can YimiLife customize blood pressure monitors for private label brands?",
+    question: "Can YimiLife support private label blood pressure monitor projects?",
     answer:
-      "Yes. We can support private label customization such as logo, color, packaging, labeling, IFU coordination and selected functional configurations based on project requirements.",
+      "Yes. YimiLife supports private label blood pressure monitor projects, including logo, color, packaging, labeling, IFU coordination, selected functional configurations and project-specific manufacturing documentation.",
   },
   {
-    question: "Can you support connected blood pressure monitor projects?",
+    question: "Can YimiLife work as a custom blood pressure monitor supplier?",
     answer:
-      "For selected OEM/ODM projects, YimiLife can discuss Bluetooth data transmission, app integration requirements and UI customization for connected health or remote patient monitoring applications.",
+      "Yes. For suitable OEM/ODM projects, YimiLife can evaluate custom blood pressure monitor supplier requirements such as display configuration, button layout, cuff requirements, packaging, labeling, UI requirements and connected-device features.",
   },
   {
-    question: "What information should customers provide for a BP monitor project?",
+    question: "What blood pressure monitor types can be discussed?",
+    answer:
+      "YimiLife focuses on home-use digital blood pressure monitor projects, especially upper arm blood pressure monitor OEM configurations for home healthcare, retail, distribution and connected health scenarios.",
+  },
+  {
+    question: "Can YimiLife support connected blood pressure monitor projects?",
+    answer:
+      "For selected projects, YimiLife can discuss Bluetooth data transmission, app integration requirements and UI customization for connected health or remote patient monitoring applications.",
+  },
+  {
+    question: "What information should customers provide for a BP monitor OEM project?",
     answer:
       "Customers are encouraged to provide target market, product type, cuff requirements, expected quantity, customization scope, regulatory expectations, target price range and project timeline.",
   },
@@ -228,11 +239,6 @@ const faqs = [
     question: "Does YimiLife operate under ISO 13485?",
     answer:
       "Yes. YimiLife operates under an ISO 13485 quality management system for medical device manufacturing and OEM/ODM project support.",
-  },
-  {
-    question: "Can YimiLife support documentation for OEM/ODM projects?",
-    answer:
-      "Yes. Depending on project scope, YimiLife can support configuration records, testing records, manufacturing records, packaging and labeling control records and batch traceability documentation.",
   },
 ];
 
@@ -256,29 +262,29 @@ const jsonLd = {
       "@type": "Service",
       "@id":
         "https://www.yimilife.com/products/blood-pressure-monitor#blood-pressure-monitor-oem-odm",
-      name: "Blood Pressure Monitor OEM/ODM Manufacturing",
+      name: "Blood Pressure Monitor OEM Manufacturing",
       provider: {
         "@id": "https://www.yimilife.com/#organization",
       },
-      serviceType: "Blood Pressure Monitor OEM/ODM Manufacturing",
+      serviceType: "Blood Pressure Monitor OEM Manufacturing",
       areaServed: "Global",
       description:
-        "Blood pressure monitor OEM/ODM manufacturing for medical brands, including product configuration, private label customization, connected health discussion, manufacturing, testing and quality documentation.",
+        "Blood pressure monitor OEM manufacturing for medical brands, including digital upper arm BP monitor configuration, private label customization, connected health discussion, manufacturing, testing and quality documentation.",
     },
     {
       "@type": "WebPage",
       "@id":
         "https://www.yimilife.com/products/blood-pressure-monitor#webpage",
       url: "https://www.yimilife.com/products/blood-pressure-monitor",
-      name: "Blood Pressure Monitor OEM/ODM Manufacturer",
+      name: "Blood Pressure Monitor OEM Manufacturer",
       description:
-        "YimiLife blood pressure monitor OEM/ODM page for home healthcare BP monitor projects, private label customization and ISO 13485 manufacturing support.",
+        "YimiLife blood pressure monitor OEM manufacturer page for home healthcare BP monitor projects, private label customization, custom BP monitor requirements and ISO 13485 manufacturing support.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
       about: {
         "@type": "Thing",
-        name: "Blood pressure monitor OEM/ODM manufacturing",
+        name: "Blood pressure monitor OEM manufacturing",
       },
       publisher: {
         "@id": "https://www.yimilife.com/#organization",
@@ -316,7 +322,7 @@ const jsonLd = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Blood Pressure Monitor OEM/ODM",
+          name: "Blood Pressure Monitor OEM Manufacturer",
           item: "https://www.yimilife.com/products/blood-pressure-monitor",
         },
       ],
@@ -343,17 +349,19 @@ export default function BloodPressureMonitorPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.12fr_0.88fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              Blood Pressure Monitor OEM/ODM for Medical Brands
+              Blood Pressure Monitor OEM Manufacturer for Medical Brands
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Blood Pressure Monitor OEM/ODM Manufacturing
+              Blood Pressure Monitor OEM Manufacturer
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife supports medical brands with blood pressure monitor
-              OEM/ODM manufacturing for home healthcare, private label,
-              connected health and regulated medical device projects.
+              YimiLife supports global healthcare brands with blood pressure
+              monitor OEM manufacturing, including private label blood pressure
+              monitor customization, digital upper arm BP monitor configuration,
+              connected health project discussion and custom BP monitor
+              manufacturing support.
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
@@ -362,7 +370,7 @@ export default function BloodPressureMonitorPage() {
                 href="/quality"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                ISO 13485 Quality System
+                ISO 13485 medical device manufacturing quality
               </Link>
               , medical electronics engineering experience and scalable
               manufacturing support, we help customers move from product
@@ -375,7 +383,7 @@ export default function BloodPressureMonitorPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                Start a BP Monitor Project
+                Start a Blood Pressure Monitor OEM Project
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
 
@@ -383,7 +391,7 @@ export default function BloodPressureMonitorPage() {
                 href="/oem-odm"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                View OEM/ODM Workflow
+                View Private Label Medical Device Manufacturing
               </Link>
             </div>
           </div>
@@ -434,25 +442,25 @@ export default function BloodPressureMonitorPage() {
               Commercial value
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Blood pressure monitor OEM projects need more than standard
-              assembly
+              Blood Pressure Monitor OEM Manufacturing for Healthcare Brands
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              For medical brands, a blood pressure monitor project requires more
-              than basic electronic assembly. Key concerns include measurement
-              experience, product configuration, cuff compatibility, user
-              interface, manufacturing quality, packaging control and
-              documentation support.
+              For medical brands, a blood pressure monitor OEM project requires
+              more than basic electronic assembly. Key concerns include product
+              configuration, cuff compatibility, user interface, manufacturing
+              quality, packaging control, documentation support and supplier
+              responsiveness.
             </p>
 
             <p>
               YimiLife helps OEM/ODM customers evaluate blood pressure monitor
               projects from product definition to mass production, with support
-              for private label customization, engineering discussion,
-              manufacturing control and quality documentation.
+              for private label blood pressure monitor customization, custom
+              blood pressure monitor supplier requirements, engineering
+              discussion, manufacturing control and quality documentation.
             </p>
 
             <p>
@@ -471,13 +479,13 @@ export default function BloodPressureMonitorPage() {
               OEM/ODM support
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              OEM/ODM support for blood pressure monitor projects
+              Private Label Blood Pressure Monitor and Custom OEM Support
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife provides flexible project support for home-use blood
-              pressure monitors, covering product configuration, private label
-              customization, engineering adaptation, manufacturing, testing,
-              packaging and documentation.
+              YimiLife provides flexible support for home-use digital blood
+              pressure monitors, covering upper arm blood pressure monitor OEM
+              configuration, private label customization, engineering
+              adaptation, manufacturing, testing, packaging and documentation.
             </p>
           </div>
 
@@ -506,14 +514,14 @@ export default function BloodPressureMonitorPage() {
 
           <div className="mt-10 rounded-3xl bg-slate-950 p-8 text-white">
             <h3 className="text-xl font-semibold">
-              From private label to connected monitoring
+              From private label blood pressure monitor to connected monitoring
             </h3>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-300">
-              Blood pressure monitor projects can range from standard private
-              label customization to connected health devices with Bluetooth
-              data transmission and app integration discussion. YimiLife
-              evaluates customization depth based on product definition, target
-              market, regulatory expectations and production volume.
+              Blood pressure monitor projects can range from private label
+              customization to connected health devices with Bluetooth data
+              transmission and app integration discussion. YimiLife evaluates
+              customization depth based on product definition, target market,
+              regulatory expectations and production volume.
             </p>
           </div>
         </div>
@@ -526,12 +534,13 @@ export default function BloodPressureMonitorPage() {
               Application scenarios
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Suitable for home healthcare and chronic disease management
+              Home Blood Pressure Monitor Manufacturer Application Scenarios
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              Blood pressure monitors are core home healthcare devices for
+              Home blood pressure monitors are core healthcare devices for
               medical brands, distribution channels, private label programs and
-              connected health platforms.
+              connected health platforms serving chronic disease management and
+              elderly health monitoring scenarios.
             </p>
           </div>
 
@@ -559,7 +568,7 @@ export default function BloodPressureMonitorPage() {
                 Project workflow
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-                From blood pressure monitor requirements to mass production
+                From Custom Blood Pressure Monitor Requirements to Mass Production
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-300">
                 YimiLife follows a practical{" "}
@@ -567,7 +576,7 @@ export default function BloodPressureMonitorPage() {
                   href="/oem-odm"
                   className="font-semibold text-cyan-300 underline underline-offset-4"
                 >
-                  OEM/ODM service workflow
+                  private label medical device manufacturing workflow
                 </Link>{" "}
                 to help customers move from initial product requirements to
                 engineering evaluation, sample confirmation, testing,
@@ -605,20 +614,20 @@ export default function BloodPressureMonitorPage() {
               Quality and documentation
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              ISO 13485 manufacturing support for BP monitor projects
+              ISO 13485 Manufacturing Support for Blood Pressure Monitor OEM Projects
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              Blood pressure monitor OEM/ODM projects require controlled
-              manufacturing and clear documentation. YimiLife’s manufacturing
-              process is supported by the{" "}
+              Blood pressure monitor OEM manufacturing projects require
+              controlled manufacturing and clear documentation. YimiLife’s
+              manufacturing process is supported by the{" "}
               <Link
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                ISO 13485 Quality System
+                ISO 13485 medical device manufacturing quality
               </Link>
               , including incoming inspection, PCBA process control, assembly,
               functional testing, packaging, labeling and batch traceability.
@@ -646,7 +655,7 @@ export default function BloodPressureMonitorPage() {
               Product portfolio
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Combine BP monitors with broader home healthcare products
+              Combine Blood Pressure Monitor OEM Projects with Broader Home Healthcare Products
             </h2>
           </div>
 
@@ -692,7 +701,7 @@ export default function BloodPressureMonitorPage() {
               FAQ
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Frequently asked questions about blood pressure monitor OEM/ODM
+              Blood Pressure Monitor OEM Manufacturer FAQ
             </h2>
           </div>
 
@@ -717,12 +726,13 @@ export default function BloodPressureMonitorPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Start your blood pressure monitor OEM/ODM project
+            Start your blood pressure monitor OEM manufacturing project
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for an ISO 13485 OEM/ODM partner for home blood pressure
-            monitors, private label projects or connected health monitoring
-            applications? Share your project requirements with YimiLife.
+            Looking for an ISO 13485 blood pressure monitor OEM manufacturer
+            for home BP monitors, private label projects or connected health
+            monitoring applications? Share your project requirements with
+            YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -730,7 +740,7 @@ export default function BloodPressureMonitorPage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Submit BP Monitor Requirements
+              Submit Blood Pressure Monitor OEM Requirements
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
 
@@ -738,7 +748,7 @@ export default function BloodPressureMonitorPage() {
               href="/products"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              View Product Categories
+              View Home Healthcare Product Categories
             </Link>
           </div>
         </div>
