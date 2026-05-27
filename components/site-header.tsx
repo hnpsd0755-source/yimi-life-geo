@@ -90,6 +90,24 @@ const technologyLinks = [
   },
 ];
 
+const aboutLinks = [
+  {
+    label: "Company Overview",
+    href: "/about",
+    description: "Shenzhen YimiLife Technology Co., Ltd. overview",
+  },
+  {
+    label: "Quality & Regulatory",
+    href: "/quality",
+    description: "ISO 13485 quality system and certified model experience",
+  },
+  {
+    label: "Manufacturing Capability",
+    href: "/about",
+    description: "3,000 m² facility, production capacity and OEM/ODM support",
+  },
+];
+
 function DropdownMenu({
   triggerLabel,
   triggerHref,
@@ -116,11 +134,6 @@ function DropdownMenu({
         <ChevronIcon />
       </Link>
 
-      {/*
-        The wrapper below starts immediately at top-full and uses pt-3 as a hover bridge.
-        This removes the small gap between the navigation button and dropdown menu,
-        so the menu will not disappear when the mouse moves from the button to the submenu.
-      */}
       <div
         className={`invisible absolute left-0 top-full z-50 ${widthClass} pt-3 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100`}
       >
@@ -176,13 +189,6 @@ export function SiteHeader() {
             widthClass="w-[390px]"
           />
 
-          <DropdownMenu
-            triggerLabel="Technology"
-            triggerHref="/technology"
-            links={technologyLinks}
-            widthClass="w-[400px]"
-          />
-
           <Link
             href="/oem-odm"
             className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-300"
@@ -190,19 +196,33 @@ export function SiteHeader() {
             OEM/ODM
           </Link>
 
+          <DropdownMenu
+            triggerLabel="Technology"
+            triggerHref="/technology"
+            links={technologyLinks}
+            widthClass="w-[420px]"
+          />
+
           <Link
-            href="/quality"
+            href="/case-studies"
             className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
-            Quality
+            Case Studies
           </Link>
 
           <Link
-            href="/about"
+            href="/news"
             className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
-            About
+            News & Insights
           </Link>
+
+          <DropdownMenu
+            triggerLabel="About"
+            triggerHref="/about"
+            links={aboutLinks}
+            widthClass="w-[360px]"
+          />
         </div>
 
         <div className="hidden lg:block">
@@ -222,7 +242,7 @@ export function SiteHeader() {
             Menu
           </summary>
 
-          <div className="absolute right-0 top-12 z-50 w-[300px] rounded-3xl border border-slate-200 bg-white p-4 shadow-xl">
+          <div className="absolute right-0 top-12 z-50 max-h-[80vh] w-[320px] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-4 shadow-xl">
             <div className="grid gap-2">
               <Link
                 href="/products"
@@ -244,6 +264,13 @@ export function SiteHeader() {
               <div className="my-2 border-t border-slate-200" />
 
               <Link
+                href="/oem-odm"
+                className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+              >
+                OEM/ODM
+              </Link>
+
+              <Link
                 href="/technology"
                 className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
               >
@@ -263,9 +290,10 @@ export function SiteHeader() {
               <div className="my-2 border-t border-slate-200" />
 
               {[
-                ["OEM/ODM", "/oem-odm"],
-                ["Quality", "/quality"],
+                ["Case Studies", "/case-studies"],
+                ["News & Insights", "/news"],
                 ["About", "/about"],
+                ["Quality & Regulatory", "/quality"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <Link
