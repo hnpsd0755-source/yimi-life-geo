@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -48,6 +49,7 @@ type Audience = {
 };
 
 type Product = {
+  eyebrow: string;
   title: string;
   text: string;
   href: string;
@@ -56,11 +58,15 @@ type Product = {
   icon: IconName;
   image: string;
   featured: boolean;
+  highlights: string[];
 };
 
 type ProcessStep = {
+  number: string;
   title: string;
-  text: string;
+  summary: string;
+  bullets: string[];
+  output: string;
 };
 
 type Technology = {
@@ -146,6 +152,7 @@ const audiences: Audience[] = [
 
 const products: Product[] = [
   {
+    eyebrow: "Core product",
     title: "Pulse Oximeter",
     text: "Private-label pulse oximeter OEM/ODM support with branding, UI adaptation, Bluetooth-related discussion, and production-oriented verification workflow.",
     href: "/products/pulse-oximeter",
@@ -154,8 +161,10 @@ const products: Product[] = [
     icon: "activity",
     image: "/homepage/pulse-oximeter.png",
     featured: true,
+    highlights: ["Private label", "Bluetooth discussion", "Production verification"],
   },
   {
+    eyebrow: "Core product",
     title: "Blood Pressure Monitor",
     text: "Upper-arm digital blood pressure monitor OEM programs with private-label adaptation, packaging, labeling, and clinical accuracy documentation discussion.",
     href: "/products/blood-pressure-monitor",
@@ -164,8 +173,10 @@ const products: Product[] = [
     icon: "shield",
     image: "/homepage/blood-pressure-monitor.png",
     featured: false,
+    highlights: ["Upper-arm BPM", "Private label", "Accuracy documentation"],
   },
   {
+    eyebrow: "Capability direction",
     title: "Wearable Monitoring Direction",
     text: "Wearable SpO2, Bluetooth data transmission, connected health, and future remote monitoring device opportunities.",
     href: "/products/wearable-monitoring",
@@ -174,25 +185,54 @@ const products: Product[] = [
     icon: "bluetooth",
     image: "/homepage/wearable-monitoring.png",
     featured: false,
+    highlights: ["Wearable SpO2", "Bluetooth data", "Connected health"],
   },
 ];
 
 const processSteps: ProcessStep[] = [
   {
+    number: "1",
     title: "Requirement Review",
-    text: "Product type, target market, volume, customization scope, and documentation expectations.",
+    summary: "Align the project scope before technical or commercial decisions begin.",
+    bullets: [
+      "Product category and target market",
+      "Estimated volume and timeline",
+      "Certification and documentation expectations",
+    ],
+    output: "Initial project brief",
   },
   {
+    number: "2",
     title: "Evaluation & Customization",
-    text: "Product selection, branding, packaging, firmware/UI adaptation, and project-specific requirements.",
+    summary: "Define the most suitable product path and customization scope.",
+    bullets: [
+      "Model selection and feasibility review",
+      "Branding, packaging, and labeling options",
+      "UI, firmware, and Bluetooth-related discussion",
+    ],
+    output: "Proposed solution scope",
   },
   {
+    number: "3",
     title: "Sample & Verification",
-    text: "Sample preparation and validation planning aligned with the selected product path.",
+    summary: "Prepare samples and confirm key verification items before mass production.",
+    bullets: [
+      "Sample preparation",
+      "Functional and visual review",
+      "Validation planning and feedback loop",
+    ],
+    output: "Sample package & review plan",
   },
   {
+    number: "4",
     title: "Production & Delivery",
-    text: "Production preparation, quality execution, batch traceability, and delivery coordination.",
+    summary: "Move the approved project into controlled manufacturing and shipment.",
+    bullets: [
+      "Production preparation and quality execution",
+      "Batch traceability and inspection flow",
+      "Delivery coordination and shipment support",
+    ],
+    output: "Production-ready delivery",
   },
 ];
 
@@ -371,7 +411,7 @@ function SectionTitle({ eyebrow, title, align = "center" }: { eyebrow: string; t
   );
 }
 
-function PrimaryLink({ href, children }: { href: string; children: React.ReactNode }) {
+function PrimaryLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
@@ -383,7 +423,7 @@ function PrimaryLink({ href, children }: { href: string; children: React.ReactNo
   );
 }
 
-function SecondaryDarkLink({ href, children }: { href: string; children: React.ReactNode }) {
+function SecondaryDarkLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
@@ -483,20 +523,37 @@ export default function HomePage() {
                 <Link
                   key={product.title}
                   href={product.href}
-                  className={`group overflow-hidden rounded-[2rem] border transition hover:-translate-y-1 hover:shadow-lg ${
+                  className={`group overflow-hidden rounded-[2rem] border transition duration-200 hover:-translate-y-1 hover:shadow-xl ${
                     featured ? "border-slate-900 bg-slate-950 text-white" : "border-slate-200 bg-slate-50 text-slate-950 hover:bg-white"
                   }`}
                 >
-                  <div className="overflow-hidden">
-                    <Image src={product.image} alt={product.title} width={1200} height={900} className="h-auto w-full object-cover" />
+                  <div className="relative h-64 overflow-hidden">
+                    <Image src={product.image} alt={product.title} width={1200} height={900} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
+                    <div className={`absolute left-5 top-5 rounded-full px-3 py-1.5 text-xs font-semibold ${featured ? "bg-cyan-400 text-slate-950" : "bg-white/85 text-cyan-800 shadow-sm backdrop-blur"}`}>
+                      {product.eyebrow}
+                    </div>
+                    <div className={`absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t ${featured ? "from-slate-950" : "from-white/80"} to-transparent`} />
                   </div>
                   <div className="p-6">
-                    <div className={`inline-flex rounded-2xl p-3 ${featured ? "bg-cyan-300/15 text-cyan-300" : "bg-cyan-100 text-cyan-800"}`}>
-                      <Icon name={product.icon} className="h-6 w-6" />
+                    <div className="flex items-start gap-4">
+                      <div className={`inline-flex shrink-0 rounded-2xl p-3 ${featured ? "bg-cyan-300/15 text-cyan-300" : "bg-cyan-100 text-cyan-800"}`}>
+                        <Icon name={product.icon} className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-semibold tracking-tight">{product.title}</h3>
+                        <p className={`mt-3 text-sm leading-7 ${featured ? "text-slate-300" : "text-slate-600"}`}>{product.text}</p>
+                      </div>
                     </div>
-                    <h3 className="mt-5 text-2xl font-semibold tracking-tight">{product.title}</h3>
-                    <p className={`mt-4 text-sm leading-7 ${featured ? "text-slate-300" : "text-slate-600"}`}>{product.text}</p>
-                    <div className="mt-5 flex flex-wrap gap-3">
+
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {product.highlights.map((item) => (
+                        <span key={item} className={`rounded-full px-3 py-1.5 text-xs font-semibold ${featured ? "bg-white/10 text-cyan-100" : "bg-white text-slate-700 ring-1 ring-slate-200"}`}>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 flex flex-wrap gap-3">
                       <span className={`rounded-full px-4 py-2 text-xs font-semibold ${featured ? "bg-cyan-400 text-slate-950" : "bg-slate-950 text-white"}`}>
                         {product.cta1}
                       </span>
@@ -513,32 +570,59 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr]">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">OEM/ODM Support</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">Structured support from requirement review to production delivery</h2>
-            <p className="mt-5 text-base leading-8 text-slate-600">
-              YimiLife supports private-label and custom medical device projects through a structured path from requirement review to sample preparation, validation planning, and production delivery.
+            <h2 className="mt-3 max-w-xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-5xl">
+              Structured support from requirement review to production delivery
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-9 text-slate-600">
+              YimiLife supports private-label and custom medical device projects through a proven, end-to-end development path.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/contact" className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-slate-800">
                 Submit Project Requirements
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>
-              <Link href="/oem-odm" className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100">
+              <Link href="/oem-odm" className="inline-flex items-center justify-center rounded-full border border-cyan-600 px-6 py-3.5 text-base font-semibold text-cyan-700 transition hover:bg-cyan-50">
                 Explore OEM/ODM
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>
             </div>
-            <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
+            <div className="mt-10 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
               <Image src="/homepage/oem-packaging.png" alt="OEM packaging and customization" width={1200} height={900} className="h-auto w-full object-cover" />
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {processSteps.map((step, index) => (
-              <div key={step.title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-cyan-100 text-sm font-bold text-cyan-800">{index + 1}</div>
-                <h3 className="mt-4 text-lg font-semibold text-slate-950">{step.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{step.text}</p>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {processSteps.map((step) => (
+              <div key={step.number} className="flex min-h-[380px] flex-col rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-100 text-xl font-semibold text-cyan-800">{step.number}</div>
+                <h3 className="mt-6 text-[1.85rem] font-semibold leading-tight tracking-tight text-slate-950">{step.title}</h3>
+                <div className="mt-5 h-[3px] w-14 rounded-full bg-cyan-600" />
+                <p className="mt-5 text-base leading-7 text-slate-700">{step.summary}</p>
+                <div className="mt-5 border-t border-slate-200" />
+                <ul className="mt-5 space-y-3.5">
+                  {step.bullets.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-2 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-600" />
+                      <span className="text-base leading-7 text-slate-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-6">
+                  <div className="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-4">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0 text-cyan-700" aria-hidden="true">
+                      <path d="M8 3H14L19 8V21H8C6.89543 21 6 20.1046 6 19V5C6 3.89543 6.89543 3 8 3Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M14 3V8H19" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M9.5 12H15.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                      <path d="M9.5 16H14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    </svg>
+                    <p className="text-sm leading-6 text-slate-700">
+                      <span className="font-semibold text-cyan-800">Output:</span> {step.output}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
