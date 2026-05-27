@@ -1,782 +1,649 @@
-import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import {
+  ArrowRight,
+  ShieldCheck,
+  Factory,
+  ClipboardCheck,
+  ServerCog,
+  Cpu,
+  Users,
+  Globe2,
+  Microscope,
+  Activity,
+  Gauge,
+  Bluetooth,
+  CheckCircle2,
+} from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Medical Device OEM/ODM Manufacturer | YimiLife",
-  description:
-    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, specializing in pulse oximeters, blood pressure monitors and home healthcare monitoring devices for global brands.",
-  alternates: {
-    canonical: "https://www.yimilife.com/",
-  },
-  openGraph: {
-    title:
-      "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
-    description:
-      "ISO 13485 medical device OEM/ODM manufacturing for pulse oximeters, blood pressure monitors and wearable health monitoring devices, supported by PulseMatrix™ SpO2 technology.",
-    url: "https://www.yimilife.com/",
-    siteName: "YimiLife",
-    type: "website",
-  },
-};
-
-type IconProps = {
-  className?: string;
-};
-
-function ArrowIcon({ className = "h-4 w-4" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function CheckIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M20 6L9 17l-5-5"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function FactoryIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M3 21h18M5 21V9l5 3V9l5 3V5h4v16"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 17h1M12 17h1M16 17h1"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M12 3l7 3v5c0 4.8-2.9 8.3-7 10-4.1-1.7-7-5.2-7-10V6l7-3z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M9 12l2 2 4-5"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function WaveIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M3 14c2 0 2-8 4-8s2 8 4 8 2-8 4-8 2 8 4 8 2-8 4-8"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M4 20h16"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M7 3h7l5 5v13H7V3z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M14 3v5h5M10 13h6M10 17h6M10 9h1"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-const companyFacts = [
-  "ISO 13485 Quality Management System",
-  "3,000 m² Manufacturing Facility",
-  "25+ FDA / MDR / NMPA Certified Models",
-  "300,000 Units Monthly Pulse Oximeter Capacity",
-  "PulseMatrix™ SpO2 Technology Platform",
-];
-
-const strengths = [
+const trustAnchors = [
   {
-    title: "OEM/ODM Manufacturing Focus",
-    text: "YimiLife is built for private label medical device manufacturing and OEM/ODM projects, not for consumer retail sales.",
-    icon: ShieldIcon,
+    title: "ISO 13485 Manufacturing System",
+    text: "Structured quality management for medical device manufacturing and project execution.",
+    icon: ShieldCheck,
+    href: "/about",
   },
   {
-    title: "Engineering and Manufacturing Integration",
-    text: "We connect product definition, electronics engineering, software adaptation, Bluetooth SDK support, UI customization, manufacturing and quality documentation.",
-    icon: FactoryIcon,
+    title: "3,000㎡ Production Facility",
+    text: "Stable manufacturing space for private-label and OEM/ODM project delivery.",
+    icon: Factory,
+    href: "/about",
   },
   {
-    title: "PulseMatrix™ SpO2 Technology",
-    text: "Our SpO2 technology platform supports low perfusion SpO2 monitoring, motion artifact rejection and skin tone accuracy considerations for differentiated pulse oximeter OEM/ODM projects.",
-    icon: WaveIcon,
+    title: "Certified-Model Project Experience",
+    text: "Certified-model-based support for target-market-oriented projects.",
+    icon: ClipboardCheck,
+    href: "/quality",
   },
   {
-    title: "Quality and Project Discipline",
-    text: "We support B2B customers from requirement review and sample confirmation to testing, documentation, pilot production, batch traceability and mass production.",
-    icon: DocumentIcon,
+    title: "Engineering-Driven OEM/ODM",
+    text: "Product, firmware, packaging, labeling, and project coordination support.",
+    icon: ServerCog,
+    href: "/oem-odm",
+  },
+  {
+    title: "PulseMatrix™ Technology Platform",
+    text: "PPG signal acquisition and SpO2 algorithm platform for pulse oximeter programs.",
+    icon: Cpu,
+    href: "/technology",
   },
 ];
 
-const productLines = [
+const audiences = [
   {
-    title: "Pulse Oximeters",
+    title: "Brand Owners",
+    text: "Launch private-label home healthcare monitoring devices with product selection, branding adaptation, and OEM/ODM support.",
+    primary: "Submit Project Requirements",
+    secondary: "Contact Us",
+    icon: Users,
+    href: "/contact",
+  },
+  {
+    title: "Regional Distributors",
+    text: "Source certified-model-based products with private-label configuration and documentation-oriented supplier evaluation.",
+    primary: "Request Quote",
+    secondary: "View Products",
+    icon: Globe2,
+    href: "/products",
+  },
+  {
+    title: "Product & R&D Teams",
+    text: "Evaluate technical feasibility, SpO2 performance direction, connected monitoring fit, and OEM development scope.",
+    primary: "Request Technical Discussion",
+    secondary: "Explore Technology",
+    icon: Microscope,
+    href: "/technology",
+  },
+];
+
+const products = [
+  {
+    title: "Pulse Oximeter",
+    text: "Private-label pulse oximeter OEM/ODM support with branding, UI adaptation, Bluetooth-related discussion, and production-oriented verification workflow.",
     href: "/products/pulse-oximeter",
-    cta: "Explore pulse oximeter OEM/ODM manufacturing",
-    text: "Fingertip and wearable SpO2 devices supported by PulseMatrix™ technology, private label customization, certified model experience and full-unit Fluke Index 2 production verification.",
+    cta1: "View Details",
+    cta2: "Get Specs",
+    icon: Activity,
+    image: "/homepage/pulse-oximeter.png",
+    featured: true,
   },
   {
-    title: "Blood Pressure Monitors",
+    title: "Blood Pressure Monitor",
+    text: "Upper-arm digital blood pressure monitor OEM programs with private-label adaptation, packaging, labeling, and clinical accuracy documentation discussion.",
     href: "/products/blood-pressure-monitor",
-    cta: "Explore blood pressure monitor OEM manufacturing",
-    text: "Digital and upper arm blood pressure monitor OEM manufacturing support for home healthcare brands, private label customers and regulated medical device projects.",
+    cta1: "View Details",
+    cta2: "Get Specs",
+    icon: Gauge,
+    image: "/homepage/blood-pressure-monitor.png",
+    featured: false,
   },
   {
-    title: "Wearable Health Monitoring",
+    title: "Wearable Monitoring Direction",
+    text: "Wearable SpO2, Bluetooth data transmission, connected health, and future remote monitoring device opportunities.",
     href: "/products/wearable-monitoring",
-    cta: "Explore wearable health monitoring device OEM",
-    text: "Wearable SpO2 and connected health monitoring device support for Bluetooth data integration, UI customization and remote patient monitoring scenarios.",
+    cta1: "Discuss Opportunities",
+    cta2: "Explore Technology",
+    icon: Bluetooth,
+    image: "/homepage/wearable-monitoring.png",
+    featured: false,
   },
 ];
 
-const customers = [
-  "Medical device brands",
-  "Private label medical device companies",
-  "OEM/ODM project buyers",
-  "Healthcare product importers",
-  "Home healthcare distributors",
-  "Amazon and independent store sellers",
-  "Remote patient monitoring platforms",
-  "Digital health companies",
+const processSteps = [
+  {
+    title: "Requirement Review",
+    text: "Product type, target market, volume, customization scope, and documentation expectations.",
+  },
+  {
+    title: "Evaluation & Customization",
+    text: "Product selection, branding, packaging, firmware/UI adaptation, and project-specific requirements.",
+  },
+  {
+    title: "Sample & Verification",
+    text: "Sample preparation and validation planning aligned with the selected product path.",
+  },
+  {
+    title: "Production & Delivery",
+    text: "Production preparation, quality execution, batch traceability, and delivery coordination.",
+  },
+];
+
+const technologies = [
+  {
+    title: "Low Perfusion SpO2",
+    text: "Signal acquisition and algorithm handling in weak-signal monitoring conditions.",
+    href: "/technology/low-perfusion-spo2",
+  },
+  {
+    title: "Motion Artifact Rejection",
+    text: "Interference reduction for finger movement and unstable measurement conditions.",
+    href: "/technology/motion-artifact-rejection",
+  },
+  {
+    title: "Skin Tone Accuracy",
+    text: "Optical response and engineering validation planning across diverse skin tone conditions.",
+    href: "/technology/skin-tone-fairness",
+  },
+];
+
+const cases = [
+  {
+    outcome: "Pilot-to-production support established",
+    title: "Private-Label Pulse Oximeter Project",
+    text: "Product selection, logo and packaging adaptation, and project coordination for a healthcare brand.",
+    image: "/homepage/case-project-1.png",
+  },
+  {
+    outcome: "Production verification workflow established",
+    title: "Blood Pressure Monitor OEM Support",
+    text: "Private-label adaptation, supply alignment, and documentation-oriented communication for regional distribution.",
+    image: "/homepage/case-project-2.png",
+  },
+  {
+    outcome: "Customization path aligned",
+    title: "Connected Monitoring Project Discussion",
+    text: "Project evaluation, product direction alignment, and engineering communication for connected monitoring opportunities.",
+    image: "/homepage/case-project-3.png",
+  },
 ];
 
 const faqs = [
   {
-    question: "What type of medical device OEM/ODM projects does YimiLife support?",
-    answer:
-      "YimiLife supports home healthcare monitoring device OEM/ODM projects, especially pulse oximeters, blood pressure monitors and selected wearable health monitoring devices for global B2B customers.",
+    q: "What products does YimiLife currently support for OEM/ODM?",
+    a: "YimiLife focuses on pulse oximeters, blood pressure monitors, and selected wearable monitoring directions for connected health discussions.",
   },
   {
-    question: "Can YimiLife support private label medical device manufacturing?",
-    answer:
-      "Yes. YimiLife supports private label medical device manufacturing, including logo, color, packaging, labeling, selected UI interface adaptation, Bluetooth data integration and manufacturing documentation based on project requirements.",
+    q: "Can YimiLife support private label and customization?",
+    a: "Yes. Depending on the project type, support may include branding, packaging, labeling, UI adaptation, and other customization items subject to project evaluation.",
   },
   {
-    question: "Is YimiLife a pulse oximeter OEM/ODM manufacturer?",
-    answer:
-      "Yes. Pulse oximeters are one of YimiLife’s core product categories, with fingertip pulse oximeter model experience, PulseMatrix™ SpO2 technology support, scalable production capacity and Fluke Index 2 production verification.",
+    q: "Can you support certification and target-market documentation discussion?",
+    a: "YimiLife can support project discussions around certification direction, documentation expectations, and target-market compliance requirements based on project scope and product path.",
   },
   {
-    question: "Does YimiLife support blood pressure monitor OEM manufacturing?",
-    answer:
-      "Yes. YimiLife supports digital and upper arm blood pressure monitor OEM manufacturing for home healthcare brands, private label customers and regulated medical device projects.",
-  },
-  {
-    question: "Does YimiLife operate under ISO 13485?",
-    answer:
-      "Yes. YimiLife operates under an ISO 13485 quality management system for medical device manufacturing, production process control, quality documentation and batch traceability.",
-  },
-  {
-    question: "How should customers start an OEM/ODM inquiry?",
-    answer:
-      "Customers can share their target market, product category, expected quantity, customization requirements, regulatory expectations, target price range and project timeline through the contact page for project evaluation.",
+    q: "What information should we prepare before starting a project?",
+    a: "The most helpful inputs are product category, target market, estimated quantity, customization requirements, documentation expectations, and project timeline.",
   },
 ];
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen YimiLife Technology Co., Ltd.",
-      alternateName: "YimiLife",
-      url: "https://www.yimilife.com/",
-      brand: {
-        "@type": "Brand",
-        name: "YimiLife",
-      },
-      description:
-        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Shenzhen",
-        addressCountry: "CN",
-      },
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.yimilife.com/#website",
-      url: "https://www.yimilife.com/",
-      name: "YimiLife",
-      publisher: {
-        "@id": "https://www.yimilife.com/#organization",
-      },
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://www.yimilife.com/#webpage",
-      url: "https://www.yimilife.com/",
-      name: "Medical Device OEM/ODM Manufacturer | YimiLife",
-      description:
-        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and home healthcare monitoring devices.",
-      isPartOf: {
-        "@id": "https://www.yimilife.com/#website",
-      },
-      about: {
-        "@id": "https://www.yimilife.com/#organization",
-      },
-      publisher: {
-        "@id": "https://www.yimilife.com/#organization",
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.yimilife.com/#medical-device-oem-odm-service",
-      name: "Medical Device OEM/ODM Manufacturing",
-      provider: {
-        "@id": "https://www.yimilife.com/#organization",
-      },
-      serviceType: "Medical Device OEM/ODM Manufacturing",
-      areaServed: "Global",
-      description:
-        "OEM/ODM manufacturing support for home healthcare monitoring devices, including pulse oximeters, blood pressure monitors and wearable health monitoring products.",
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.yimilife.com/#faq",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    },
-  ],
-};
+function SectionTitle({
+  eyebrow,
+  title,
+  align = "center",
+}: {
+  eyebrow: string;
+  title: string;
+  align?: "left" | "center";
+}) {
+  return (
+    <div className={align === "left" ? "max-w-3xl" : "mx-auto max-w-3xl text-center"}>
+      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">
+        {eyebrow}
+      </p>
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+        {title}
+      </h2>
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
-        }}
-      />
-
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute -left-24 top-24 h-80 w-80 rounded-full bg-cyan-500 blur-3xl" />
-          <div className="absolute bottom-[-120px] right-[-40px] h-96 w-96 rounded-full bg-blue-600 blur-3xl" />
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.22),_transparent_28%),linear-gradient(135deg,#020617,#0f172a_48%,#164e63)]">
+        <div className="absolute inset-0 opacity-25">
+          <div className="absolute left-8 top-16 h-48 w-48 rounded-full bg-cyan-300 blur-3xl" />
+          <div className="absolute bottom-0 right-10 h-72 w-72 rounded-full bg-blue-500 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.12fr_0.88fr] lg:px-8 lg:py-28">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
           <div>
-            <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              Medical Device OEM/ODM Manufacturer
+            <div className="inline-flex rounded-full border border-cyan-200/25 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
+              R&D-Driven Medical Device OEM/ODM Manufacturer
             </div>
 
-            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring
+            <h1 className="mt-6 max-w-5xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
+              Private-Label Pulse Oximeter and Blood Pressure Monitor OEM/ODM
+              for Global Healthcare Brands
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife helps global healthcare brands develop and manufacture
-              home healthcare monitoring devices, including pulse oximeters,
-              blood pressure monitors and wearable health monitoring devices
-              for OEM/ODM and private label projects.
+              YimiLife develops and manufactures home healthcare monitoring
+              devices for global brand owners, distributors, and project teams
+              seeking reliable OEM/ODM support. Our core focus includes pulse
+              oximeters, blood pressure monitors, and selected connected
+              monitoring projects backed by engineering, quality systems, and
+              manufacturing execution.
             </p>
 
-            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              Backed by an ISO 13485 quality management system, a 3,000 m²
-              manufacturing facility, 25+ FDA / MDR / NMPA certified model
-              experience and up to 300,000 units monthly pulse oximeter
-              capacity, we support customers from product definition to
-              controlled mass production.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
                 Submit OEM/ODM Requirements
-                <ArrowIcon className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-
               <Link
-                href="/technology"
-                className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                href="/products"
+                className="inline-flex items-center justify-center rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Explore PulseMatrix™ SpO2 Technology
+                Get Product Overview
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-200">
-              Trust anchors
-            </p>
+          <div className="relative">
+            <div className="rounded-[2rem] border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur">
+              <div className="overflow-hidden rounded-[1.5rem] bg-white/90 shadow-xl">
+                <Image
+                  src="/homepage/hero-devices.png"
+                  alt="Pulse oximeter and blood pressure monitor"
+                  width={1200}
+                  height={960}
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-5 grid gap-4">
-              {companyFacts.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-4 rounded-2xl bg-white/10 p-4 text-white"
-                >
-                  <div className="mt-1 rounded-full bg-cyan-300/20 p-1 text-cyan-200">
-                    <CheckIcon className="h-4 w-4" />
-                  </div>
-                  <p className="text-sm font-medium leading-6">{item}</p>
+      {/* Trust anchors */}
+      <section className="mx-auto -mt-7 max-w-7xl px-6 lg:px-8">
+        <div className="relative grid gap-3 rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-xl md:grid-cols-5">
+          {trustAnchors.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-3xl p-4 transition hover:bg-cyan-50"
+              >
+                <Icon className="h-6 w-6 text-cyan-700" />
+                <p className="mt-4 text-base font-semibold leading-6 text-slate-950">
+                  {item.title}
+                </p>
+                <p className="mt-2 text-xs leading-5 text-slate-500">
+                  {item.text}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Audience */}
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <SectionTitle
+          eyebrow="Who We Work With"
+          title="Designed for the teams behind real OEM/ODM decisions"
+        />
+        <div className="mt-9 grid gap-5 lg:grid-cols-3">
+          {audiences.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="inline-flex rounded-2xl bg-cyan-100 p-3 text-cyan-800">
+                  <Icon className="h-6 w-6" />
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-2xl bg-slate-950/40 p-5">
-              <p className="text-sm font-medium text-cyan-100">
-                Built for private label and OEM/ODM customers
-              </p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
-                YimiLife is positioned as a medical device OEM/ODM
-                manufacturing partner for global brands, importers,
-                distributors and connected health companies.
-              </p>
-            </div>
-          </div>
+                <h3 className="mt-5 text-xl font-semibold text-slate-950">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {item.text}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <Link
+                    href={item.href}
+                    className="rounded-full bg-slate-950 px-4 py-2 text-xs font-semibold text-white transition hover:bg-slate-800"
+                  >
+                    {item.primary}
+                  </Link>
+                  <Link
+                    href={item.secondary === "Explore Technology" ? "/technology" : item.secondary === "View Products" ? "/products" : "/contact"}
+                    className="rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:border-cyan-300 hover:text-cyan-700"
+                  >
+                    {item.secondary}
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              B2B positioning
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Medical device OEM/ODM manufacturing for home healthcare brands
-            </h2>
-          </div>
-
-          <div className="space-y-5 text-base leading-8 text-slate-700">
-            <p>
-              YimiLife supports medical brands, importers, private label
-              customers and connected health companies that need a reliable
-              medical device OEM/ODM manufacturer for home healthcare
-              monitoring products.
-            </p>
-
-            <p>
-              Our work covers product categories such as{" "}
-              <Link
-                href="/products/pulse-oximeter"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                pulse oximeter OEM/ODM manufacturer
-              </Link>
-              ,{" "}
-              <Link
-                href="/products/blood-pressure-monitor"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                blood pressure monitor OEM manufacturer
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/products/wearable-monitoring"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                wearable health monitoring device OEM
-              </Link>
-              .
-            </p>
-
-            <p>
-              Our goal is to help B2B customers move from product requirements
-              and private label customization needs to controlled manufacturing,
-              quality documentation and scalable production.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Why YimiLife
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Why medical brands choose YimiLife
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife combines medical electronics engineering, private label
-              medical device manufacturing, PulseMatrix™ SpO2 technology and
-              ISO 13485 manufacturing discipline to support practical B2B
-              medical device projects.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {strengths.map((item) => {
-              const Icon = item.icon;
-
+      {/* Products */}
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionTitle
+            eyebrow="Core Product Categories"
+            title="Pulse oximeters, blood pressure monitors, and connected monitoring directions"
+          />
+          <div className="mt-9 grid gap-6 lg:grid-cols-3">
+            {products.map((product) => {
+              const Icon = product.icon;
+              const featured = product.featured;
               return (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+                <Link
+                  key={product.title}
+                  href={product.href}
+                  className={`group overflow-hidden rounded-[2rem] border transition hover:-translate-y-1 hover:shadow-lg ${
+                    featured
+                      ? "border-slate-900 bg-slate-950 text-white"
+                      : "border-slate-200 bg-slate-50 text-slate-950 hover:bg-white"
+                  }`}
                 >
-                  <div className="mb-5 inline-flex rounded-2xl bg-cyan-100 p-3 text-cyan-800">
-                    <Icon />
+                  <div className="overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      width={1200}
+                      height={900}
+                      className="h-auto w-full object-cover"
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-950">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-700">
-                    {item.text}
-                  </p>
-                </div>
+
+                  <div className="p-6">
+                    <div
+                      className={`inline-flex rounded-2xl p-3 ${
+                        featured
+                          ? "bg-cyan-300/15 text-cyan-300"
+                          : "bg-cyan-100 text-cyan-800"
+                      }`}
+                    >
+                      <Icon className="h-6 w-6" />
+                    </div>
+
+                    <h3 className="mt-5 text-2xl font-semibold tracking-tight">
+                      {product.title}
+                    </h3>
+                    <p
+                      className={`mt-4 text-sm leading-7 ${
+                        featured ? "text-slate-300" : "text-slate-600"
+                      }`}
+                    >
+                      {product.text}
+                    </p>
+
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      <span
+                        className={`rounded-full px-4 py-2 text-xs font-semibold ${
+                          featured
+                            ? "bg-cyan-400 text-slate-950"
+                            : "bg-slate-950 text-white"
+                        }`}
+                      >
+                        {product.cta1}
+                      </span>
+                      <span
+                        className={`rounded-full border px-4 py-2 text-xs font-semibold ${
+                          featured
+                            ? "border-white/20 text-white"
+                            : "border-slate-200 text-slate-700"
+                        }`}
+                      >
+                        {product.cta2}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               );
             })}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      {/* OEM/ODM */}
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Manufacturing base
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              OEM/ODM Support
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              3,000 m² facility with scalable production capability
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              Structured support from requirement review to production delivery
             </h2>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              YimiLife supports private-label and custom medical device projects
+              through a structured path from requirement review to sample
+              preparation, validation planning, and production delivery.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              >
+                Submit Project Requirements
+              </Link>
+              <Link
+                href="/oem-odm"
+                className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
+              >
+                Explore OEM/ODM
+              </Link>
+            </div>
+
+            <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
+              <Image
+                src="/homepage/oem-packaging.png"
+                alt="OEM packaging and customization"
+                width={1200}
+                height={900}
+                className="h-auto w-full object-cover"
+              />
+            </div>
           </div>
 
-          <div className="space-y-5 text-base leading-8 text-slate-700">
-            <p>
-              YimiLife operates a 3,000 m² manufacturing facility in Shenzhen,
-              supporting medical electronic device OEM/ODM projects from sample
-              confirmation and pilot production to scalable mass production.
-            </p>
-
-            <p>
-              For pulse oximeter manufacturing, monthly capacity reaches up to
-              300,000 units. Each pulse oximeter unit is calibrated and verified
-              using Fluke Index 2 clinical simulators before shipment to support
-              consistent manufacturing quality.
-            </p>
-
-            <p>
-              Manufacturing control is supported by the{" "}
-              <Link
-                href="/quality"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
+          <div className="grid gap-4 sm:grid-cols-2">
+            {processSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                ISO 13485 medical device manufacturing quality
-              </Link>
-              , including incoming inspection, PCBA process control, assembly,
-              functional testing, calibration, packaging, labeling and batch
-              traceability.
-            </p>
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-cyan-100 text-sm font-bold text-cyan-800">
+                  {index + 1}
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-slate-950">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {step.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "3,000 m² Manufacturing Facility",
-            "300,000 Units Monthly Pulse Oximeter Capacity",
-            "100% Fluke Index 2 Calibration & Verification",
-            "Batch Traceability and Quality Records",
-          ].map((item) => (
-            <div
-              key={item}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-            >
-              <CheckIcon className="h-5 w-5 text-cyan-700" />
-              <p className="mt-4 text-sm font-semibold leading-6 text-slate-900">
-                {item}
+      {/* Technology */}
+      <section className="bg-slate-950 py-16 text-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">
+                PulseMatrix™ Technology
               </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+                PPG signal acquisition and SpO2 algorithm platform
+              </h2>
+              <p className="mt-5 text-base leading-8 text-slate-300">
+                PulseMatrix™ is YimiLife’s proprietary PPG signal acquisition
+                and SpO2 algorithm platform, designed to support low perfusion
+                monitoring, motion artifact rejection, and skin tone accuracy in
+                pulse oximeter development.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                >
+                  Request Technical Discussion
+                </Link>
+                <Link
+                  href="/technology"
+                  className="rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Explore Technology
+                </Link>
+              </div>
             </div>
+
+            <div className="rounded-[2rem] border border-white/10 bg-white/10 p-5 backdrop-blur">
+              <div className="overflow-hidden rounded-[1.5rem]">
+                <Image
+                  src="/homepage/technology-visual.png"
+                  alt="PulseMatrix technology visual"
+                  width={1600}
+                  height={900}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+
+              <div className="mt-4 grid gap-4 md:grid-cols-3">
+                {technologies.map((tech) => (
+                  <Link
+                    key={tech.title}
+                    href={tech.href}
+                    className="rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:bg-white/15"
+                  >
+                    <h3 className="text-sm font-semibold text-white">
+                      {tech.title}
+                    </h3>
+                    <p className="mt-2 text-xs leading-5 text-slate-300">
+                      {tech.text}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case studies */}
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionTitle
+            eyebrow="Selected OEM/ODM Project Snapshots"
+            title="Project outcomes, summarized for fast supplier evaluation"
+          />
+          <div className="mt-9 grid gap-6 lg:grid-cols-3">
+            {cases.map((item) => (
+              <div
+                key={item.title}
+                className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-md"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={1200}
+                  height={900}
+                  className="h-auto w-full object-cover"
+                />
+                <div className="p-6">
+                  <p className="rounded-full bg-cyan-50 px-4 py-2 text-xs font-semibold leading-5 text-cyan-800">
+                    {item.outcome}
+                  </p>
+                  <h3 className="mt-5 text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {item.text}
+                  </p>
+                  <div className="mt-5">
+                    <Link
+                      href="/case-studies"
+                      className="inline-flex items-center text-sm font-semibold text-cyan-700 transition hover:text-cyan-900"
+                    >
+                      View Case Studies
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-5xl px-6 py-14 lg:px-8">
+        <SectionTitle
+          eyebrow="Frequently Asked Questions"
+          title="Short answers for early OEM/ODM evaluation"
+        />
+        <div className="mt-9 grid gap-4">
+          {faqs.map((faq) => (
+            <details
+              key={faq.q}
+              className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-slate-950">
+                {faq.q}
+                <CheckCircle2 className="h-5 w-5 flex-none text-cyan-700" />
+              </summary>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{faq.a}</p>
+            </details>
           ))}
         </div>
       </section>
 
-      <section className="bg-slate-900">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">
-              Product portfolio
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Core home healthcare monitoring device OEM/ODM categories
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">
-              YimiLife’s product portfolio is organized around practical home
-              healthcare monitoring categories for OEM/ODM customers, with
-              pulse oximeters and blood pressure monitors as the current
-              primary product SEO and commercial focus.
-            </p>
-          </div>
-
-          <div className="grid gap-5">
-            {productLines.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="group rounded-3xl bg-white/10 p-6 transition hover:bg-white/15"
-              >
-                <h3 className="text-lg font-semibold text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
-                  {item.text}
-                </p>
-                <div className="mt-5 inline-flex items-center text-sm font-semibold text-cyan-300">
-                  {item.cta}
-                  <ArrowIcon className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Technology platform
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              PulseMatrix™ SpO2 technology supports differentiated pulse oximeter products
-            </h2>
-          </div>
-
-          <div className="space-y-5 text-base leading-8 text-slate-700">
-            <p>
-              PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence
-              platform for medical-grade SpO2 monitoring. It helps position
-              YimiLife beyond basic product assembly and supports stronger
-              technical differentiation for SpO2-related OEM/ODM projects.
-            </p>
-
-            <p>
-              The platform focuses on{" "}
-              <Link
-                href="/technology/low-perfusion-spo2"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                low perfusion SpO2 technology
-              </Link>
-              ,{" "}
-              <Link
-                href="/technology/motion-artifact-rejection"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                motion artifact rejection pulse oximeter technology
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/technology/skin-tone-fairness"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                skin tone accuracy in pulse oximeter development
-              </Link>
-              .
-            </p>
-
-            <p>
-              This technology platform supports both fingertip pulse oximeter
-              projects and wearable SpO2 monitoring projects for connected
-              health applications.
-            </p>
-
-            <Link
-              href="/technology"
-              className="inline-flex items-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-            >
-              Explore PulseMatrix™ SpO2 Technology
-              <ArrowIcon className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Who we serve
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Built for global B2B medical device and private label customers
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife supports customers that need more than a product
-              supplier. We work with teams that require engineering discussion,
-              private label medical device manufacturing, manufacturing
-              reliability, quality documentation and long-term OEM/ODM
-              cooperation.
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {customers.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4"
-              >
-                <CheckIcon className="h-4 w-4 text-cyan-700" />
-                <span className="text-sm font-medium text-slate-800">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              OEM/ODM cooperation
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              From requirement review to controlled mass production
-            </h2>
-          </div>
-
-          <div className="space-y-5 text-base leading-8 text-slate-700">
-            <p>
-              YimiLife’s{" "}
-              <Link
-                href="/oem-odm"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                private label medical device manufacturing workflow
-              </Link>{" "}
-              helps customers move from initial product requirements to
-              engineering evaluation, sample confirmation, testing,
-              documentation, pilot production and mass production.
-            </p>
-
-            <p>
-              Project discussions may include product configuration, private
-              label customization, Bluetooth SDK support, UI interface
-              adaptation, packaging, labeling, regulatory expectations, target
-              price range and production volume.
-            </p>
-
-            <p>
-              This structured approach helps customers evaluate feasibility,
-              customization depth, manufacturing readiness and long-term supply
-              cooperation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              FAQ
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Frequently asked questions about medical device OEM/ODM manufacturing
-            </h2>
-          </div>
-
-          <div className="grid gap-5">
-            {faqs.map((faq) => (
-              <div
-                key={faq.question}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-base font-semibold text-slate-950">
-                  {faq.question}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* CTA */}
       <section className="bg-slate-950">
-        <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Start your medical device OEM/ODM project with YimiLife
+        <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">
+            Start Your OEM/ODM Discussion
+          </p>
+          <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
+            Submit your target product, market plan, or private-label requirement
+            for project evaluation.
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for an ISO 13485 medical device OEM/ODM manufacturer for
-            pulse oximeters, blood pressure monitors or wearable health
-            monitoring devices? Share your project requirements with YimiLife’s
-            engineering and OEM/ODM team.
+            Include product type, target market, estimated annual quantity,
+            customization requirements, certification expectations, timeline,
+            and any available specification files.
           </p>
-
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
+              className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
               Submit OEM/ODM Requirements
-              <ArrowIcon className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-
             <Link
-              href="/oem-odm"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              View private label medical device manufacturing services
+              Contact YimiLife
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
         </div>
