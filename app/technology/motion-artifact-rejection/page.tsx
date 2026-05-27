@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Motion Artifact Rejection Pulse Oximeter Technology | PulseMatrix™",
+  title: "Motion Artifact Rejection Pulse Oximeter | YimiLife",
   description:
-    "PulseMatrix™ motion artifact rejection supports more stable SpO2 monitoring during finger movement, elderly tremor and low perfusion combined with motion disturbance for OEM/ODM pulse oximeter projects.",
+    "YimiLife explains motion artifact rejection pulse oximeter technology for finger movement, elderly tremor, low perfusion combined with motion and OEM/ODM SpO2 product development.",
   alternates: {
     canonical: "https://www.yimilife.com/technology/motion-artifact-rejection",
   },
   openGraph: {
-    title: "Motion Artifact Rejection Pulse Oximeter Technology | PulseMatrix™",
+    title: "Motion Artifact Rejection Pulse Oximeter | YimiLife",
     description:
-      "Explore YimiLife’s motion artifact rejection approach for medical-grade SpO2 monitoring, elderly tremor, home healthcare and OEM/ODM pulse oximeter projects.",
+      "Explore YimiLife’s motion artifact rejection pulse oximeter technology for medical-grade SpO2 monitoring, elderly tremor, home healthcare and OEM/ODM product development.",
     url: "https://www.yimilife.com/technology/motion-artifact-rejection",
     siteName: "YimiLife",
     type: "website",
@@ -232,7 +232,7 @@ const jsonLd = {
       "@type": "TechArticle",
       "@id":
         "https://www.yimilife.com/technology/motion-artifact-rejection#article",
-      headline: "Motion Artifact Rejection for Medical-Grade SpO2 Monitoring",
+      headline: "Motion Artifact Rejection Pulse Oximeter Technology",
       description:
         "A technical overview of motion artifact rejection in pulse oximetry, including elderly tremor, low perfusion combined with motion, waveform quality assessment and PulseMatrix™ support for OEM/ODM projects.",
       author: {
@@ -251,9 +251,9 @@ const jsonLd = {
       "@id":
         "https://www.yimilife.com/technology/motion-artifact-rejection#webpage",
       url: "https://www.yimilife.com/technology/motion-artifact-rejection",
-      name: "Motion Artifact Rejection for Medical-Grade SpO2 Monitoring",
+      name: "Motion Artifact Rejection Pulse Oximeter Technology",
       description:
-        "Motion artifact rejection technology page for PulseMatrix™ and OEM/ODM pulse oximeter projects.",
+        "Motion artifact rejection pulse oximeter technology page for PulseMatrix™ and OEM/ODM product development.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -328,11 +328,11 @@ export default function MotionArtifactRejectionPage() {
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Motion Artifact Rejection for Medical-Grade SpO2 Monitoring
+              Motion Artifact Rejection Pulse Oximeter Technology
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              PulseMatrix™ supports motion artifact rejection by combining
+              PulseMatrix™ supports motion artifact rejection pulse oximeter technology by combining
               motion-aware signal acquisition, waveform quality assessment,
               artifact screening and SpO2 signal processing for more stable
               monitoring behavior.
@@ -356,7 +356,7 @@ export default function MotionArtifactRejectionPage() {
                 href="/products/pulse-oximeter"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                Explore Pulse Oximeter OEM/ODM
+                Explore Pulse Oximeter OEM/ODM Manufacturing
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
 
@@ -364,7 +364,7 @@ export default function MotionArtifactRejectionPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Discuss Motion-Resistant SpO2 Design
+                Submit Motion-Resistant SpO2 OEM Inquiry
               </Link>
             </div>
           </div>
@@ -406,7 +406,7 @@ export default function MotionArtifactRejectionPage() {
                 >
                   PulseMatrix™ SpO2 Technology Platform
                 </Link>
-                , together with low perfusion monitoring and skin tone fairness.
+                , together with low perfusion monitoring and skin tone accuracy in pulse oximeter development.
               </p>
             </div>
           </div>
@@ -565,8 +565,9 @@ export default function MotionArtifactRejectionPage() {
 
           <div className="space-y-5 text-base leading-8 text-slate-300">
             <p>
-              For OEM/ODM customers, motion artifact rejection creates a
-              stronger product story than basic SpO2 measurement. It is relevant
+              For OEM/ODM and private label medical device manufacturing customers,
+              motion artifact rejection creates a stronger product story than
+              basic SpO2 measurement. It is relevant
               for elderly monitoring, home healthcare, wearable SpO2 devices and
               remote patient monitoring solutions.
             </p>
@@ -591,7 +592,7 @@ export default function MotionArtifactRejectionPage() {
                 href="/technology/skin-tone-fairness"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                skin tone fairness
+                skin tone accuracy in pulse oximeter development
               </Link>
               .
             </p>
@@ -664,7 +665,7 @@ export default function MotionArtifactRejectionPage() {
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                ISO 13485 Quality System
+                ISO 13485 medical device manufacturing quality
               </Link>
               . Each unit is calibrated and verified using Fluke Index 2
               clinical simulators before shipment to support consistent
@@ -720,8 +721,7 @@ export default function MotionArtifactRejectionPage() {
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
             Looking for a pulse oximeter OEM/ODM partner with motion artifact
             rejection technology, low perfusion experience and connected-device
-            customization support? Share your project requirements with Yimi
-            Life.
+            customization support? Share your project requirements with YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -729,7 +729,7 @@ export default function MotionArtifactRejectionPage() {
               href="/products/pulse-oximeter"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Explore Pulse Oximeter OEM/ODM
+              Explore Pulse Oximeter OEM/ODM Manufacturing
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
 
@@ -737,7 +737,7 @@ export default function MotionArtifactRejectionPage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Discuss Motion-Resistant SpO2 Design
+              Submit Motion-Resistant SpO2 OEM Inquiry
             </Link>
           </div>
         </div>
