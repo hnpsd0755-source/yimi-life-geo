@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Low Perfusion SpO2 Monitoring at 0.1% PI | PulseMatrix™",
+  title: "Low Perfusion SpO2 Technology | YimiLife PulseMatrix™",
   description:
-    "Learn how PulseMatrix™ supports low perfusion SpO2 monitoring at 0.1% PI through weak-signal acquisition, waveform quality assessment, signal processing and OEM/ODM validation support.",
+    "Explore YimiLife’s low perfusion SpO2 technology for 0.1% PI weak-signal monitoring, pulse oximeter OEM/ODM development and PulseMatrix™ engineering support.",
   alternates: {
     canonical: "https://www.yimilife.com/technology/low-perfusion-spo2",
   },
   openGraph: {
-    title: "Low Perfusion SpO2 Monitoring at 0.1% PI | PulseMatrix™",
+    title: "Low Perfusion SpO2 Technology | YimiLife PulseMatrix™",
     description:
-      "Explore YimiLife’s low perfusion SpO2 technology approach for weak signal scenarios, elderly users, poor peripheral circulation and OEM/ODM pulse oximeter projects.",
+      "Low perfusion SpO2 technology for 0.1% PI weak-signal monitoring, OEM/ODM pulse oximeter development and PulseMatrix™ engineering support.",
     url: "https://www.yimilife.com/technology/low-perfusion-spo2",
     siteName: "YimiLife",
     type: "website",
@@ -130,37 +130,37 @@ function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
 const challengeCards = [
   {
     title: "Weak Pulsatile Signal",
-    text: "Low perfusion reduces the AC component of the PPG waveform, making the useful pulsatile signal harder to separate from noise and baseline variation.",
+    text: "Low perfusion reduces the AC component of the PPG waveform, making useful pulsatile information harder to separate from noise, baseline variation and unstable contact.",
   },
   {
     title: "Poor Peripheral Circulation",
-    text: "Cold fingers, elderly users, vascular conditions or low blood flow can make fingertip SpO2 measurement more challenging in real-world use.",
+    text: "Cold fingers, elderly users, vascular conditions and reduced peripheral blood flow can make fingertip SpO2 measurement more challenging in real-world home healthcare use.",
   },
   {
     title: "Motion + Low Perfusion",
-    text: "When weak perfusion is combined with finger movement or tremor, the device must assess signal quality before presenting a stable SpO2 reading.",
+    text: "When weak perfusion is combined with finger movement or tremor, the device must screen waveform quality before presenting a stable SpO2 reading.",
   },
 ];
 
 const engineeringLayers = [
   {
     title: "Optical and Analog Front-End Design",
-    text: "LED drive, photodiode response, analog gain, filtering and PCB layout all influence the quality of weak PPG signal acquisition.",
+    text: "LED drive, photodiode response, analog gain, filtering and PCB layout all influence weak PPG signal acquisition under low perfusion conditions.",
     icon: CircuitIcon,
   },
   {
     title: "Waveform Quality Assessment",
-    text: "PulseMatrix™ evaluates waveform stability, perfusion strength and signal confidence to support more reliable SpO2 reading decisions.",
+    text: "PulseMatrix™ evaluates waveform stability, perfusion strength and signal confidence to support more reliable SpO2 reading decisions in weak-signal scenarios.",
     icon: WaveIcon,
   },
   {
     title: "Low Perfusion Signal Processing",
-    text: "Signal processing strategies focus on weak-signal extraction, noise control, baseline stability and reading consistency under low PI conditions.",
+    text: "Signal processing strategies focus on weak-signal extraction, noise control, baseline stability and reading consistency under low PI conditions such as 0.1% PI.",
     icon: SignalIcon,
   },
   {
     title: "Verification and Manufacturing Control",
-    text: "Low perfusion performance must be connected with device-level testing, production calibration and batch consistency control.",
+    text: "Low perfusion performance must be connected with device-level testing, production calibration, Fluke Index 2 production verification and batch consistency control.",
     icon: ShieldIcon,
   },
 ];
@@ -172,6 +172,8 @@ const useCases = [
   "Cold Finger or Poor Circulation Scenarios",
   "Wearable SpO2 Monitoring",
   "Remote Patient Monitoring Devices",
+  "Private Label Pulse Oximeter Projects",
+  "Connected Health Monitoring Devices",
 ];
 
 const faqs = [
@@ -183,27 +185,32 @@ const faqs = [
   {
     question: "Why does low perfusion affect SpO2 accuracy?",
     answer:
-      "SpO2 algorithms rely on stable red and infrared pulsatile signals. Under low perfusion conditions, the signal amplitude is reduced, so the device must manage weak-signal acquisition, waveform quality assessment and signal processing more carefully.",
+      "SpO2 algorithms rely on stable red and infrared pulsatile signals. Under low perfusion conditions, signal amplitude is reduced, so the device must manage weak-signal acquisition, waveform quality assessment and signal processing more carefully.",
   },
   {
     question: "What does 0.1% PI low perfusion mean?",
     answer:
-      "0.1% PI refers to a very weak perfusion index level used to describe challenging low perfusion measurement conditions. For OEM/ODM customers, it is an important engineering reference when evaluating pulse oximeter performance in weak-signal scenarios.",
+      "0.1% PI refers to a very weak perfusion index condition used to describe a challenging low perfusion measurement scenario. For pulse oximeter OEM/ODM customers, it is a useful engineering reference when evaluating weak-signal SpO2 performance.",
   },
   {
-    question: "How does PulseMatrix™ support low perfusion SpO2 monitoring?",
+    question: "How does PulseMatrix™ support low perfusion SpO2 technology?",
     answer:
-      "PulseMatrix™ supports low perfusion SpO2 monitoring through system-level engineering, including optical signal acquisition, analog front-end design, waveform quality assessment, weak-signal processing and validation discussion for OEM/ODM projects.",
+      "PulseMatrix™ supports low perfusion SpO2 technology through system-level engineering, including optical signal acquisition, analog front-end design, waveform quality assessment, weak-signal processing and validation discussion for OEM/ODM projects.",
   },
   {
     question: "Is low perfusion performance only an algorithm issue?",
     answer:
-      "No. Low perfusion performance depends on hardware, optical design, analog front-end quality, PCB layout, signal processing, calibration, verification and manufacturing consistency. It should be treated as a full-system engineering challenge.",
+      "No. Low perfusion performance depends on hardware, optical design, analog front-end quality, PCB layout, signal processing, calibration, production verification and manufacturing consistency. It should be treated as a full-system engineering challenge.",
   },
   {
     question: "Can YimiLife support low perfusion requirements in OEM/ODM projects?",
     answer:
-      "Yes. YimiLife can discuss low perfusion SpO2 requirements during OEM/ODM project evaluation, including product configuration, target use scenarios, validation approach and manufacturing control expectations.",
+      "Yes. YimiLife can discuss low perfusion SpO2 requirements during pulse oximeter OEM/ODM project evaluation, including product configuration, target use scenarios, testing approach and manufacturing control expectations.",
+  },
+  {
+    question: "How is low perfusion performance connected to manufacturing quality?",
+    answer:
+      "Low perfusion technology must be supported by production discipline. YimiLife connects SpO2 technology discussion with functional testing, production calibration, Fluke Index 2 production verification and batch traceability.",
   },
 ];
 
@@ -225,9 +232,9 @@ const jsonLd = {
     {
       "@type": "TechArticle",
       "@id": "https://www.yimilife.com/technology/low-perfusion-spo2#article",
-      headline: "Low Perfusion SpO2 Monitoring at 0.1% PI",
+      headline: "Low Perfusion SpO2 Technology for 0.1% PI Weak-Signal Monitoring",
       description:
-        "A technical overview of low perfusion SpO2 monitoring, weak-signal acquisition, waveform quality assessment and PulseMatrix™ support for OEM/ODM pulse oximeter projects.",
+        "A technical overview of low perfusion SpO2 technology, weak-signal acquisition, waveform quality assessment and PulseMatrix™ support for OEM/ODM pulse oximeter projects.",
       author: {
         "@id": "https://www.yimilife.com/#organization",
       },
@@ -242,9 +249,9 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/technology/low-perfusion-spo2#webpage",
       url: "https://www.yimilife.com/technology/low-perfusion-spo2",
-      name: "Low Perfusion SpO2 Monitoring at 0.1% PI",
+      name: "Low Perfusion SpO2 Technology",
       description:
-        "Low perfusion SpO2 monitoring technology page for PulseMatrix™ and OEM/ODM pulse oximeter projects.",
+        "Low perfusion SpO2 technology page for PulseMatrix™ and OEM/ODM pulse oximeter projects.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -314,18 +321,18 @@ export default function LowPerfusionSpo2Page() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              PulseMatrix™ Low Perfusion Technology
+              PulseMatrix™ Low Perfusion SpO2 Technology
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Low Perfusion SpO2 Monitoring at 0.1% PI
+              Low Perfusion SpO2 Technology for 0.1% PI Weak-Signal Monitoring
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              PulseMatrix™ supports low perfusion SpO2 monitoring by connecting
+              PulseMatrix™ supports low perfusion SpO2 technology by connecting
               weak-signal acquisition, waveform quality assessment, signal
-              processing and manufacturing verification into a system-level
-              engineering approach.
+              processing and production verification into a system-level
+              engineering approach for pulse oximeter OEM/ODM development.
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
@@ -337,8 +344,8 @@ export default function LowPerfusionSpo2Page() {
                 pulse oximeter OEM/ODM manufacturing
               </Link>
               , low perfusion performance is a key differentiator in elderly
-              monitoring, home healthcare, respiratory health and connected SpO2
-              applications.
+              monitoring, home healthcare, respiratory health, connected SpO2
+              applications and private label pulse oximeter projects.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -346,7 +353,7 @@ export default function LowPerfusionSpo2Page() {
                 href="/products/pulse-oximeter"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                Explore Pulse Oximeter OEM/ODM
+                Explore Pulse Oximeter OEM/ODM Manufacturing Manufacturing
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
 
@@ -354,7 +361,7 @@ export default function LowPerfusionSpo2Page() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Request Low Perfusion Test Data
+                Discuss Low Perfusion SpO2 Requirements
               </Link>
             </div>
           </div>
@@ -370,7 +377,7 @@ export default function LowPerfusionSpo2Page() {
                 "Weak PPG Signal Acquisition",
                 "Waveform Quality Assessment",
                 "SpO2 Reading Stability",
-                "OEM/ODM Validation Support",
+                "OEM/ODM Validation and Testing Support",
               ].map((item) => (
                 <div
                   key={item}
@@ -396,8 +403,21 @@ export default function LowPerfusionSpo2Page() {
                 >
                   PulseMatrix™ SpO2 Technology Platform
                 </Link>
-                , together with motion artifact rejection and skin tone
-                fairness.
+                , together with{" "}
+                <Link
+                  href="/technology/motion-artifact-rejection"
+                  className="font-semibold text-cyan-200 underline underline-offset-4"
+                >
+                  motion artifact rejection pulse oximeter technology
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/technology/skin-tone-fairness"
+                  className="font-semibold text-cyan-200 underline underline-offset-4"
+                >
+                  skin tone accuracy in pulse oximeter development
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -463,13 +483,14 @@ export default function LowPerfusionSpo2Page() {
               PulseMatrix™ approach
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              A system-level approach to low perfusion SpO2 monitoring
+              A system-level approach to low perfusion SpO2 technology
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
               PulseMatrix™ treats low perfusion as a full-system engineering
               challenge, not only a software feature. The platform connects
-              signal acquisition, waveform evaluation, algorithmic processing
-              and product-level verification.
+              optical signal acquisition, waveform evaluation, algorithmic
+              processing, product-level verification and manufacturing
+              consistency.
             </p>
           </div>
 
@@ -539,8 +560,7 @@ export default function LowPerfusionSpo2Page() {
               OEM/ODM value
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Low perfusion technology helps create differentiated SpO2
-              products
+              Low perfusion SpO2 technology helps create differentiated products
             </h2>
           </div>
 
@@ -554,8 +574,7 @@ export default function LowPerfusionSpo2Page() {
             </p>
 
             <p>
-              This low perfusion technology page connects directly with Yimi
-              Life’s broader{" "}
+              This low perfusion SpO2 technology page connects directly with YimiLife’s broader{" "}
               <Link
                 href="/technology"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
@@ -567,14 +586,14 @@ export default function LowPerfusionSpo2Page() {
                 href="/technology/motion-artifact-rejection"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                motion artifact rejection
+                motion artifact rejection pulse oximeter technology
               </Link>{" "}
               and{" "}
               <Link
                 href="/technology/skin-tone-fairness"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                skin tone fairness
+                skin tone accuracy in pulse oximeter development
               </Link>
               .
             </p>
@@ -647,11 +666,11 @@ export default function LowPerfusionSpo2Page() {
                 href="/quality"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                ISO 13485 Quality System
+                ISO 13485 medical device manufacturing quality
               </Link>
-              . Each unit is calibrated and verified using Fluke Index 2
-              clinical simulators before shipment to support consistent
-              production output.
+              . Each pulse oximeter unit is calibrated and verified using
+              Fluke Index 2 clinical simulators during production before
+              shipment to support consistent production output.
             </p>
 
             <p>
@@ -702,8 +721,8 @@ export default function LowPerfusionSpo2Page() {
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
             Looking for a pulse oximeter OEM/ODM partner with low perfusion
             SpO2 technology, scalable manufacturing capacity and full-unit
-            calibration discipline? Share your project requirements with Yimi
-            Life.
+            production calibration discipline? Share your project requirements
+            with YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -711,7 +730,7 @@ export default function LowPerfusionSpo2Page() {
               href="/products/pulse-oximeter"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Explore Pulse Oximeter OEM/ODM
+              Explore Pulse Oximeter OEM/ODM Manufacturing
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
 
@@ -719,7 +738,7 @@ export default function LowPerfusionSpo2Page() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Request Low Perfusion Test Data
+              Discuss Low Perfusion SpO2 Requirements
             </Link>
           </div>
         </div>
