@@ -20,28 +20,34 @@ const footerColumns = [
   {
     title: "Products",
     links: [
-      ["Product Categories", "/products"],
-      ["Pulse Oximeter OEM/ODM", "/products/pulse-oximeter"],
-      ["Blood Pressure Monitor OEM/ODM", "/products/blood-pressure-monitor"],
-      ["Wearable Health Monitoring", "/products/wearable-monitoring"],
+      ["Medical Device OEM/ODM Product Categories", "/products"],
+      ["Pulse Oximeter OEM/ODM Manufacturer", "/products/pulse-oximeter"],
+      ["Blood Pressure Monitor OEM Manufacturer", "/products/blood-pressure-monitor"],
+      ["Wearable Health Monitoring Device OEM", "/products/wearable-monitoring"],
     ],
   },
   {
     title: "Technology",
     links: [
-      ["PulseMatrix™ Platform", "/technology"],
-      ["Low Perfusion SpO2", "/technology/low-perfusion-spo2"],
-      ["Motion Artifact Rejection", "/technology/motion-artifact-rejection"],
-      ["Skin Tone Fairness", "/technology/skin-tone-fairness"],
+      ["PulseMatrix™ Vascular Hemodynamic Intelligence", "/technology"],
+      ["Low Perfusion SpO2 Technology", "/technology/low-perfusion-spo2"],
+      [
+        "Motion Artifact Rejection Pulse Oximeter Technology",
+        "/technology/motion-artifact-rejection",
+      ],
+      [
+        "Skin Tone Accuracy Pulse Oximeter Technology",
+        "/technology/skin-tone-fairness",
+      ],
     ],
   },
   {
-    title: "Company",
+    title: "OEM/ODM & Quality",
     links: [
-      ["OEM/ODM Services", "/oem-odm"],
-      ["ISO 13485 Quality System", "/quality"],
-      ["About YimiLife", "/about"],
-      ["Contact", "/contact"],
+      ["Private Label Medical Device Manufacturing", "/oem-odm"],
+      ["ISO 13485 Medical Device Manufacturer", "/quality"],
+      ["Shenzhen Medical Device Manufacturer", "/about"],
+      ["Medical Device OEM Inquiry", "/contact"],
     ],
   },
 ];
@@ -52,7 +58,11 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.15fr_1.85fr]">
           <div>
-            <Link href="/" className="inline-flex items-center gap-3">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-3"
+              aria-label="YimiLife homepage"
+            >
               <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400 text-slate-950">
                 <svg
                   viewBox="0 0 24 24"
@@ -82,14 +92,34 @@ export function SiteFooter() {
 
             <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">
               Shenzhen YimiLife Technology Co., Ltd. is an ISO 13485 medical
-              device OEM/ODM manufacturer supporting pulse oximeters, blood
-              pressure monitors and wearable health monitoring devices.
+              device OEM/ODM manufacturer supporting{" "}
+              <Link
+                href="/products/pulse-oximeter"
+                className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
+              >
+                pulse oximeter OEM/ODM manufacturing
+              </Link>
+              ,{" "}
+              <Link
+                href="/products/blood-pressure-monitor"
+                className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
+              >
+                blood pressure monitor OEM manufacturing
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/products/wearable-monitoring"
+                className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
+              >
+                wearable health monitoring device OEM
+              </Link>{" "}
+              projects for global healthcare brands.
             </p>
 
             <div className="mt-6 grid gap-3 text-sm text-slate-300">
               <p>ISO 13485 Quality Management System</p>
               <p>3,000 m² Manufacturing Facility</p>
-              <p>25+ FDA / MDR / NMPA Certified Models</p>
+              <p>25+ FDA / MDR / NMPA Certified Model Experience</p>
               <p>300,000 Units Monthly Pulse Oximeter Capacity</p>
             </div>
 
@@ -98,7 +128,7 @@ export function SiteFooter() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
               >
-                Start an OEM/ODM Project
+                Submit OEM/ODM Requirements
                 <span className="ml-2">
                   <ArrowIcon />
                 </span>
@@ -156,8 +186,11 @@ export function SiteFooter() {
           <p className="mt-4 max-w-4xl text-xs leading-6 text-slate-500">
             Product information on this website is intended for B2B OEM/ODM
             project communication. Specific product configuration, certification
-            scope, technical documentation and regulatory responsibilities should
-            be confirmed according to each project agreement and target market.
+            scope, technical documentation, production verification and
+            regulatory responsibilities should be confirmed according to each
+            project agreement and target market. Fluke Index 2 references on
+            this website refer to pulse oximeter production calibration and
+            verification, not a clinical validation claim.
           </p>
         </div>
       </div>
