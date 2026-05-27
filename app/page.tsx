@@ -570,13 +570,13 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
+        <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-stretch">
+          <div className="flex h-full flex-col rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">OEM/ODM Support</p>
-            <h2 className="mt-3 max-w-xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-5xl">
+            <h2 className="mt-3 text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-5xl">
               Structured support from requirement review to production delivery
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-9 text-slate-600">
+            <p className="mt-6 text-lg leading-9 text-slate-600">
               YimiLife supports private-label and custom medical device projects through a proven, end-to-end development path.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -589,28 +589,37 @@ export default function HomePage() {
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>
             </div>
-            <div className="mt-10 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-              <Image src="/homepage/oem-packaging.png" alt="OEM packaging and customization" width={1200} height={900} className="h-auto w-full object-cover" />
+
+            <div className="mt-auto pt-8">
+              <div className="relative h-[340px] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-50 shadow-sm">
+                <Image
+                  src="/homepage/oem-packaging.png"
+                  alt="OEM packaging and customization"
+                  width={1200}
+                  height={900}
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid h-full gap-5 sm:grid-cols-2">
             {processSteps.map((step) => (
-              <div key={step.number} className="flex min-h-[380px] flex-col rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div key={step.number} className="flex min-h-[360px] flex-col rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md md:p-7">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-100 text-xl font-semibold text-cyan-800">{step.number}</div>
-                <h3 className="mt-6 text-[1.85rem] font-semibold leading-tight tracking-tight text-slate-950">{step.title}</h3>
-                <div className="mt-5 h-[3px] w-14 rounded-full bg-cyan-600" />
-                <p className="mt-5 text-base leading-7 text-slate-700">{step.summary}</p>
-                <div className="mt-5 border-t border-slate-200" />
-                <ul className="mt-5 space-y-3.5">
+                <h3 className="mt-6 text-[1.65rem] font-semibold leading-tight tracking-tight text-slate-950">{step.title}</h3>
+                <div className="mt-4 h-[3px] w-14 rounded-full bg-cyan-600" />
+                <p className="mt-4 text-base leading-7 text-slate-700">{step.summary}</p>
+                <div className="mt-4 border-t border-slate-200" />
+                <ul className="mt-4 space-y-3">
                   {step.bullets.map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="mt-2 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-600" />
-                      <span className="text-base leading-7 text-slate-700">{item}</span>
+                      <span className="text-[0.95rem] leading-7 text-slate-700">{item}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pt-5">
                   <div className="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-4">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0 text-cyan-700" aria-hidden="true">
                       <path d="M8 3H14L19 8V21H8C6.89543 21 6 20.1046 6 19V5C6 3.89543 6.89543 3 8 3Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
