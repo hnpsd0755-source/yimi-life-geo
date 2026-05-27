@@ -27,8 +27,19 @@ const footerColumns = [
     ],
   },
   {
-    title: "Technology",
+    title: "OEM/ODM",
     links: [
+      ["Private Label Medical Device Manufacturing", "/oem-odm"],
+      ["Medical Device OEM Inquiry", "/contact"],
+      ["Pulse Oximeter OEM/ODM Inquiry", "/contact"],
+      ["Blood Pressure Monitor OEM Inquiry", "/contact"],
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      ["Medical Device OEM/ODM Case Studies", "/case-studies"],
+      ["Medical Device OEM/ODM Insights", "/news"],
       ["PulseMatrix™ Vascular Hemodynamic Intelligence", "/technology"],
       ["Low Perfusion SpO2 Technology", "/technology/low-perfusion-spo2"],
       [
@@ -42,12 +53,12 @@ const footerColumns = [
     ],
   },
   {
-    title: "OEM/ODM & Quality",
+    title: "Company",
     links: [
-      ["Private Label Medical Device Manufacturing", "/oem-odm"],
+      ["About YimiLife", "/about"],
+      ["Quality & Regulatory", "/quality"],
       ["ISO 13485 Medical Device Manufacturer", "/quality"],
-      ["Shenzhen Medical Device Manufacturer", "/about"],
-      ["Medical Device OEM Inquiry", "/contact"],
+      ["Contact YimiLife", "/contact"],
     ],
   },
 ];
@@ -56,7 +67,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-slate-950 text-white">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.15fr_1.85fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_1.95fr]">
           <div>
             <Link
               href="/"
@@ -143,7 +154,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((column) => (
               <div key={column.title}>
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-cyan-300">

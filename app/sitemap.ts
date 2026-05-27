@@ -38,7 +38,12 @@ const routes: SitemapRoute[] = [
   },
   {
     path: "/products/wearable-monitoring",
-    priority: 0.85,
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
+  {
+    path: "/oem-odm",
+    priority: 0.9,
     changeFrequency: "monthly",
   },
   {
@@ -62,9 +67,14 @@ const routes: SitemapRoute[] = [
     changeFrequency: "monthly",
   },
   {
-    path: "/oem-odm",
-    priority: 0.9,
+    path: "/case-studies",
+    priority: 0.75,
     changeFrequency: "monthly",
+  },
+  {
+    path: "/news",
+    priority: 0.75,
+    changeFrequency: "weekly",
   },
   {
     path: "/quality",
