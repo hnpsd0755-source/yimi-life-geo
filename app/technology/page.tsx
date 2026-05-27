@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "PulseMatrix™ | Medical-Grade SpO2 Technology Platform",
+  title: "PulseMatrix™ Vascular Hemodynamic Intelligence | YimiLife",
   description:
-    "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for medical-grade SpO2 monitoring, focusing on low perfusion accuracy, motion artifact rejection and skin tone fairness.",
+    "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for medical-grade SpO2 technology, low perfusion SpO2 monitoring, motion artifact rejection pulse oximeter technology and skin tone accuracy in pulse oximeter OEM/ODM projects.",
   alternates: {
     canonical: "https://www.yimilife.com/technology",
   },
   openGraph: {
-    title: "PulseMatrix™ | Medical-Grade SpO2 Technology Platform",
+    title: "PulseMatrix™ Vascular Hemodynamic Intelligence | YimiLife",
     description:
-      "Explore YimiLife’s PulseMatrix™ SpO2 technology platform for low perfusion monitoring, motion artifact rejection and skin tone fairness in OEM/ODM pulse oximeter projects.",
+      "Explore PulseMatrix™ vascular hemodynamic intelligence for low perfusion SpO2 technology, motion artifact rejection pulse oximeter technology and skin tone accuracy in OEM/ODM pulse oximeter development.",
     url: "https://www.yimilife.com/technology",
     siteName: "YimiLife",
     type: "website",
@@ -121,36 +121,39 @@ function SkinToneIcon({ className = "h-6 w-6" }: IconProps) {
 
 const technologyPillars = [
   {
-    title: "Low Perfusion SpO2 Monitoring",
-    label: "0.1% PI Low Perfusion",
+    title: "Low Perfusion SpO2 Technology",
+    label: "0.1% PI Low Perfusion Focus",
     href: "/technology/low-perfusion-spo2",
     icon: WaveIcon,
-    text: "Focused on weak pulsatile signals, poor peripheral circulation and low perfusion scenarios where stable SpO2 readings are more difficult to maintain.",
+    cta: "Explore low perfusion SpO2 technology",
+    text: "Focused on weak pulsatile signals, poor peripheral circulation and low perfusion SpO2 monitoring scenarios where stable oxygen saturation readings are more difficult to maintain.",
   },
   {
-    title: "Motion Artifact Rejection",
+    title: "Motion Artifact Rejection Pulse Oximeter",
     label: "Motion + Tremor Resistance",
     href: "/technology/motion-artifact-rejection",
     icon: MotionIcon,
+    cta: "Explore motion artifact rejection pulse oximeter technology",
     text: "Designed to improve signal quality assessment and reading stability during finger movement, elderly tremor and motion combined with low perfusion.",
   },
   {
-    title: "Skin Tone Fairness",
+    title: "Skin Tone Accuracy Pulse Oximeter",
     label: "Fitzpatrick I–VI Awareness",
     href: "/technology/skin-tone-fairness",
     icon: SkinToneIcon,
-    text: "Built around the growing need to consider signal response and validation strategies across different skin pigmentation conditions.",
+    cta: "Explore skin tone accuracy",
+    text: "Built around the growing need to consider optical signal response and validation planning across different skin pigmentation conditions.",
   },
 ];
 
 const platformLayers = [
   {
     title: "Optical Signal Acquisition",
-    text: "LED/PD configuration, analog front-end design, sampling strategy and hardware consistency provide the foundation for reliable SpO2 signal capture.",
+    text: "LED/PD configuration, analog front-end design, sampling strategy and hardware consistency provide the foundation for reliable medical-grade SpO2 signal capture.",
   },
   {
     title: "Waveform Quality Assessment",
-    text: "Pulse waveform quality, perfusion strength and signal stability are assessed to support more reliable reading decisions in challenging conditions.",
+    text: "Pulse waveform quality, perfusion strength and signal stability are assessed to support more reliable reading decisions in low perfusion and motion scenarios.",
   },
   {
     title: "Algorithmic Signal Processing",
@@ -158,30 +161,35 @@ const platformLayers = [
   },
   {
     title: "Validation and Manufacturing Control",
-    text: "Technology performance is connected with testing, calibration, batch consistency and ISO 13485 manufacturing discipline for OEM/ODM projects.",
+    text: "Technology performance is connected with testing, production verification, batch consistency and ISO 13485 medical device manufacturing discipline for OEM/ODM projects.",
   },
 ];
 
 const faqs = [
   {
-    question: "What is PulseMatrix™?",
+    question: "What is PulseMatrix™ vascular hemodynamic intelligence?",
     answer:
-      "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for SpO2 monitoring. It focuses on low perfusion accuracy, motion artifact rejection and skin tone fairness for medical-grade pulse oximeter applications.",
+      "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for medical-grade SpO2 technology. It focuses on low perfusion SpO2 monitoring, motion artifact rejection pulse oximeter technology and skin tone accuracy for pulse oximeter OEM/ODM development.",
   },
   {
     question: "Is PulseMatrix™ only a software algorithm?",
     answer:
-      "No. PulseMatrix™ is positioned as a system-level technology platform that connects optical signal acquisition, analog front-end design, waveform quality assessment, algorithmic signal processing, validation and manufacturing control.",
+      "No. PulseMatrix™ is positioned as a system-level technology platform that connects optical signal acquisition, analog front-end design, waveform quality assessment, algorithmic signal processing, validation planning and manufacturing control.",
   },
   {
-    question: "How does PulseMatrix™ support OEM/ODM customers?",
+    question: "How does PulseMatrix™ support pulse oximeter OEM/ODM customers?",
     answer:
-      "For OEM/ODM customers, PulseMatrix™ provides a technical foundation for differentiated pulse oximeter products, including low perfusion monitoring, motion-resistant SpO2 design, connected device integration and product-level validation discussion.",
+      "For OEM/ODM customers, PulseMatrix™ provides a technical foundation for differentiated pulse oximeter products, including low perfusion SpO2 technology, motion-resistant SpO2 design, connected device integration and product-level verification discussion.",
   },
   {
-    question: "Does YimiLife support connected SpO2 products?",
+    question: "Can PulseMatrix™ support Bluetooth and UI customization projects?",
     answer:
       "Yes. YimiLife can support Bluetooth data transmission, SDK-level integration and UI customization for selected OEM/ODM projects involving mobile apps, remote patient monitoring or connected health platforms.",
+  },
+  {
+    question: "How is PulseMatrix™ connected with ISO 13485 manufacturing quality?",
+    answer:
+      "PulseMatrix™ is not separated from manufacturing. YimiLife connects SpO2 technology with production verification, batch consistency, documentation control and ISO 13485 medical device manufacturing discipline.",
   },
 ];
 
@@ -204,15 +212,15 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/technology#webpage",
       url: "https://www.yimilife.com/technology",
-      name: "PulseMatrix™ Medical-Grade SpO2 Technology Platform",
+      name: "PulseMatrix™ Vascular Hemodynamic Intelligence",
       description:
-        "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for medical-grade SpO2 monitoring, focusing on low perfusion accuracy, motion artifact rejection and skin tone fairness.",
+        "PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence platform for medical-grade SpO2 technology, low perfusion SpO2 monitoring, motion artifact rejection pulse oximeter technology and skin tone accuracy in pulse oximeter OEM/ODM projects.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
       about: {
         "@type": "Thing",
-        name: "Medical-grade SpO2 technology",
+        name: "PulseMatrix™ vascular hemodynamic intelligence",
       },
       publisher: {
         "@id": "https://www.yimilife.com/#organization",
@@ -274,40 +282,40 @@ export default function TechnologyPage() {
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              PulseMatrix™ Vascular Hemodynamic Intelligence Platform
+              PulseMatrix™ Vascular Hemodynamic Intelligence
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
               PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence
-              platform for medical-grade SpO2 monitoring, focusing on{" "}
+              platform for medical-grade SpO2 technology, focusing on{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                low perfusion accuracy
+                low perfusion SpO2 technology
               </Link>
               ,{" "}
               <Link
                 href="/technology/motion-artifact-rejection"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                motion artifact rejection
+                motion artifact rejection pulse oximeter technology
               </Link>{" "}
               and{" "}
               <Link
                 href="/technology/skin-tone-fairness"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                skin tone fairness
+                skin tone accuracy in pulse oximeter development
               </Link>
               .
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              Built for OEM/ODM pulse oximeter projects, PulseMatrix™ connects
+              Built for pulse oximeter OEM/ODM projects, PulseMatrix™ connects
               optical signal acquisition, analog front-end design, waveform
               quality assessment, algorithmic signal processing and
-              manufacturing-level verification into one technology narrative.
+              production verification, Bluetooth-enabled product integration and manufacturing quality into one technology narrative.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -315,7 +323,7 @@ export default function TechnologyPage() {
                 href="/products/pulse-oximeter"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
               >
-                Explore Pulse Oximeter OEM/ODM
+                Explore Pulse Oximeter OEM/ODM Manufacturing
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
 
@@ -323,7 +331,7 @@ export default function TechnologyPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Request Technical Brief
+                Request PulseMatrix™ Technical Brief
               </Link>
             </div>
           </div>
@@ -351,9 +359,9 @@ export default function TechnologyPage() {
                         <p className="text-sm font-medium text-cyan-100">
                           {pillar.label}
                         </p>
-                        <h2 className="mt-1 text-lg font-semibold">
+                        <h3 className="mt-1 text-lg font-semibold">
                           {pillar.title}
-                        </h2>
+                        </h3>
                         <p className="mt-2 text-sm leading-6 text-slate-300">
                           {pillar.text}
                         </p>
@@ -374,7 +382,7 @@ export default function TechnologyPage() {
               Why it matters
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Medical-grade SpO2 monitoring requires more than basic PPG
+              Medical-grade SpO2 technology requires more than basic PPG
               detection
             </h2>
           </div>
@@ -403,9 +411,9 @@ export default function TechnologyPage() {
             </p>
 
             <p>
-              Instead of presenting SpO2 as a simple measurement function, Yimi
-              Life positions PulseMatrix™ as a practical engineering framework
-              for building more differentiated medical device products.
+              Instead of presenting SpO2 as a simple measurement function, YimiLife
+              positions PulseMatrix™ as a practical engineering framework for
+              building differentiated pulse oximeter OEM/ODM products.
             </p>
           </div>
         </div>
@@ -418,7 +426,7 @@ export default function TechnologyPage() {
               Platform architecture
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              From optical signal to OEM/ODM product integration
+              From optical signal acquisition to OEM/ODM product integration
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
               PulseMatrix™ connects multiple engineering layers so that SpO2
@@ -485,7 +493,7 @@ export default function TechnologyPage() {
                   {pillar.text}
                 </p>
                 <div className="mt-6 inline-flex items-center text-sm font-semibold text-cyan-700">
-                  Learn more
+                  {pillar.cta}
                   <ArrowIcon className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
                 </div>
               </Link>
@@ -527,9 +535,9 @@ export default function TechnologyPage() {
                 href="/quality"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                ISO 13485 Quality System
+                ISO 13485 medical device manufacturing quality
               </Link>{" "}
-              and practical medical device manufacturing experience.
+              and practical pulse oximeter OEM/ODM manufacturing experience.
             </p>
           </div>
         </div>
@@ -569,13 +577,13 @@ export default function TechnologyPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Build your next SpO2 product with PulseMatrix™
+            Build your next pulse oximeter OEM/ODM product with PulseMatrix™
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for a pulse oximeter OEM/ODM partner with SpO2 technology
-            depth, connected-device customization capability and ISO 13485
-            manufacturing support? Share your project requirements with Yimi
-            Life.
+            Looking for a pulse oximeter OEM/ODM manufacturer with SpO2 technology
+            depth, Bluetooth and UI customization capability and ISO 13485
+            manufacturing support? Share your project requirements with
+            YimiLife.
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
@@ -583,7 +591,7 @@ export default function TechnologyPage() {
               href="/products/pulse-oximeter"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
             >
-              Explore Pulse Oximeter OEM/ODM
+              Explore Pulse Oximeter OEM/ODM Manufacturing
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
 
@@ -591,7 +599,7 @@ export default function TechnologyPage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Request Technical Brief
+              Request PulseMatrix™ Technical Brief
             </Link>
           </div>
         </div>
