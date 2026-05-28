@@ -46,53 +46,48 @@ function ChevronIcon() {
 
 const productLinks = [
   {
-    label: "Product Categories",
-    href: "/products",
-    description: "Pulse oximeters, BP monitors and wearable monitoring",
-  },
-  {
-    label: "Pulse Oximeter OEM/ODM Manufacturer",
+    label: "Pulse Oximeters",
     href: "/products/pulse-oximeter",
-    description: "Private label fingertip SpO2 devices with PulseMatrix™ support",
+    description: "Private-label fingertip SpO2 devices with PulseMatrix™ support",
   },
   {
-    label: "Blood Pressure Monitor OEM Manufacturer",
+    label: "Blood Pressure Monitors",
     href: "/products/blood-pressure-monitor",
-    description: "Digital upper arm BP monitor manufacturing support",
+    description: "Digital upper-arm blood pressure monitor OEM support",
   },
   {
-    label: "Wearable Health Monitoring Device OEM",
+    label: "Wearable Monitoring",
     href: "/products/wearable-monitoring",
-    description: "Wearable SpO2 and connected health monitoring devices",
+    description: "Wearable SpO2 and connected health monitoring directions",
   },
 ];
 
 const technologyLinks = [
   {
-    label: "PulseMatrix™ Platform",
+    label: "PulseMatrix™ Technology",
     href: "/technology",
-    description: "Vascular hemodynamic intelligence platform",
+    description: "PPG signal acquisition and SpO2 algorithm platform",
   },
   {
-    label: "Low Perfusion SpO2 Technology",
+    label: "Low Perfusion SpO2",
     href: "/technology/low-perfusion-spo2",
-    description: "0.1% PI low perfusion monitoring focus",
+    description: "Low perfusion monitoring and weak-signal handling",
   },
   {
     label: "Motion Artifact Rejection",
     href: "/technology/motion-artifact-rejection",
-    description: "SpO2 stability during movement and elderly tremor",
+    description: "SpO2 stability during movement and unstable contact",
   },
   {
-    label: "Skin Tone Fairness",
+    label: "Skin Tone Accuracy",
     href: "/technology/skin-tone-fairness",
-    description: "Validation-aware SpO2 design across skin tones",
+    description: "Engineering validation planning across diverse skin tones",
   },
 ];
 
 const aboutLinks = [
   {
-    label: "Company Overview",
+    label: "About YimiLife",
     href: "/about",
     description: "Shenzhen YimiLife Technology Co., Ltd. overview",
   },
@@ -102,9 +97,27 @@ const aboutLinks = [
     description: "ISO 13485 quality system and certified model experience",
   },
   {
-    label: "Manufacturing Capability",
-    href: "/about",
-    description: "3,000 m² facility, production capacity and OEM/ODM support",
+    label: "Contact",
+    href: "/contact",
+    description: "Start an OEM/ODM project discussion with YimiLife",
+  },
+];
+
+const oemOdmLinks = [
+  {
+    label: "OEM/ODM Services",
+    href: "/oem-odm",
+    description: "Private-label and custom medical device manufacturing support",
+  },
+  {
+    label: "Customization Process",
+    href: "/oem-odm",
+    description: "Requirement review, sample preparation and production delivery",
+  },
+  {
+    label: "Submit Requirements",
+    href: "/contact",
+    description: "Send project information for OEM/ODM evaluation",
   },
 ];
 
@@ -143,7 +156,7 @@ function DropdownMenu({
         >
           {links.map((item) => (
             <Link
-              key={item.href}
+              key={`${item.label}-${item.href}`}
               href={item.href}
               role="menuitem"
               className="block rounded-2xl p-4 transition hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
@@ -186,21 +199,21 @@ export function SiteHeader() {
             triggerLabel="Products"
             triggerHref="/products"
             links={productLinks}
-            widthClass="w-[390px]"
+            widthClass="w-[330px]"
           />
 
-          <Link
-            href="/oem-odm"
-            className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-cyan-300"
-          >
-            OEM/ODM
-          </Link>
+          <DropdownMenu
+            triggerLabel="OEM/ODM"
+            triggerHref="/oem-odm"
+            links={oemOdmLinks}
+            widthClass="w-[320px]"
+          />
 
           <DropdownMenu
             triggerLabel="Technology"
             triggerHref="/technology"
             links={technologyLinks}
-            widthClass="w-[420px]"
+            widthClass="w-[380px]"
           />
 
           <Link
@@ -251,9 +264,9 @@ export function SiteHeader() {
                 Products
               </Link>
 
-              {productLinks.slice(1).map((item) => (
+              {productLinks.map((item) => (
                 <Link
-                  key={item.href}
+                  key={`${item.label}-${item.href}`}
                   href={item.href}
                   className="rounded-2xl px-4 py-2 text-sm text-slate-600 hover:bg-slate-50"
                 >
@@ -270,6 +283,16 @@ export function SiteHeader() {
                 OEM/ODM
               </Link>
 
+              {oemOdmLinks.slice(1).map((item) => (
+                <Link
+                  key={item.href + item.label}
+                  href={item.href}
+                  className="rounded-2xl px-4 py-2 text-sm text-slate-600 hover:bg-slate-50"
+                >
+                  {item.label}
+                </Link>
+              ))}
+
               <Link
                 href="/technology"
                 className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
@@ -279,7 +302,7 @@ export function SiteHeader() {
 
               {technologyLinks.slice(1).map((item) => (
                 <Link
-                  key={item.href}
+                  key={`${item.label}-${item.href}`}
                   href={item.href}
                   className="rounded-2xl px-4 py-2 text-sm text-slate-600 hover:bg-slate-50"
                 >

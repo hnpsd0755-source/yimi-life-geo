@@ -20,36 +20,24 @@ const footerColumns = [
   {
     title: "Products",
     links: [
-      ["Medical Device OEM/ODM Product Categories", "/products"],
-      ["Pulse Oximeter OEM/ODM Manufacturer", "/products/pulse-oximeter"],
-      ["Blood Pressure Monitor OEM Manufacturer", "/products/blood-pressure-monitor"],
-      ["Wearable Health Monitoring Device OEM", "/products/wearable-monitoring"],
+      ["Pulse Oximeters", "/products/pulse-oximeter"],
+      ["Blood Pressure Monitors", "/products/blood-pressure-monitor"],
+      ["Wearable Monitoring", "/products/wearable-monitoring"],
     ],
   },
   {
     title: "OEM/ODM",
     links: [
-      ["Private Label Medical Device Manufacturing", "/oem-odm"],
-      ["Medical Device OEM Inquiry", "/contact"],
-      ["Pulse Oximeter OEM/ODM Inquiry", "/contact"],
-      ["Blood Pressure Monitor OEM Inquiry", "/contact"],
+      ["Private Label Manufacturing", "/oem-odm"],
+      ["OEM/ODM Services", "/oem-odm"],
+      ["Submit Requirements", "/contact"],
     ],
   },
   {
     title: "Resources",
     links: [
-      ["Medical Device OEM/ODM Case Studies", "/case-studies"],
-      ["Medical Device OEM/ODM Insights", "/news"],
-      ["PulseMatrix™ Vascular Hemodynamic Intelligence", "/technology"],
-      ["Low Perfusion SpO2 Technology", "/technology/low-perfusion-spo2"],
-      [
-        "Motion Artifact Rejection Pulse Oximeter Technology",
-        "/technology/motion-artifact-rejection",
-      ],
-      [
-        "Skin Tone Accuracy Pulse Oximeter Technology",
-        "/technology/skin-tone-fairness",
-      ],
+      ["Case Studies", "/case-studies"],
+      ["News & Insights", "/news"],
     ],
   },
   {
@@ -57,8 +45,8 @@ const footerColumns = [
     links: [
       ["About YimiLife", "/about"],
       ["Quality & Regulatory", "/quality"],
-      ["ISO 13485 Medical Device Manufacturer", "/quality"],
-      ["Contact YimiLife", "/contact"],
+      ["ISO 13485 Manufacturing", "/quality"],
+      ["Contact", "/contact"],
     ],
   },
 ];
@@ -108,23 +96,17 @@ export function SiteFooter() {
                 href="/products/pulse-oximeter"
                 className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
               >
-                pulse oximeter OEM/ODM manufacturing
+                pulse oximeter
               </Link>
               ,{" "}
               <Link
                 href="/products/blood-pressure-monitor"
                 className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
               >
-                blood pressure monitor OEM manufacturing
+                blood pressure monitor
               </Link>{" "}
-              and{" "}
-              <Link
-                href="/products/wearable-monitoring"
-                className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
-              >
-                wearable health monitoring device OEM
-              </Link>{" "}
-              projects for global healthcare brands.
+              and connected home healthcare monitoring projects for global
+              healthcare brands.
             </p>
 
             <div className="mt-6 grid gap-3 text-sm text-slate-300">
@@ -164,7 +146,7 @@ export function SiteFooter() {
                 <div className="mt-5 grid gap-3">
                   {column.links.map(([label, href]) => (
                     <Link
-                      key={href}
+                      key={`${column.title}-${label}-${href}`}
                       href={href}
                       className="text-sm leading-6 text-slate-300 transition hover:text-white"
                     >
