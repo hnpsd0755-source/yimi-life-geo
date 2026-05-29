@@ -646,99 +646,6 @@ export default function PulseOximeterProductPage() {
         </div>
       </section>
 
-      {/* Handheld spotlight */}
-      <section
-        id="handheld-section"
-        className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12 lg:px-8"
-      >
-        <div className="grid gap-8 overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div>
-            <Badge tone="emerald">Professional Product Line</Badge>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-              Handheld Pulse Oximeter Models
-            </h2>
-            <p className="mt-5 text-lg leading-9 text-slate-600">
-              Handheld pulse oximeters are a focused professional supplement to
-              the broader fingertip product family. YimiLife currently positions
-              this line around two models, YH01 and YH02, with differences mainly in display, BLE option and dry-battery or lithium-battery configuration.
-            </p>
-
-            <div className="mt-7 rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
-                Model configuration comparison
-              </p>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                {handheldModels.map((model) => (
-                  <div key={model.model} className="rounded-2xl bg-white p-5 shadow-sm">
-                    <div className="flex items-center justify-between gap-3">
-                      <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
-                        {model.model}
-                      </h3>
-                      <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                        Handheld
-                      </span>
-                    </div>
-                    <p className="mt-2 text-sm font-semibold text-slate-700">
-                      {model.role}
-                    </p>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">
-                      {model.description}
-                    </p>
-                    <div className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
-                      <p><span className="font-semibold text-slate-950">Display:</span> {model.display}</p>
-                      <p><span className="font-semibold text-slate-950">BLE:</span> {model.ble}</p>
-                      <p><span className="font-semibold text-slate-950">Power:</span> {model.power}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-6 rounded-2xl border border-emerald-100 bg-emerald-50 px-5 py-4 text-sm leading-7 text-slate-700">
-              <span className="font-semibold text-emerald-800">
-                Project fit:
-              </span>{" "}
-              YH01 and YH02 belong to the same focused handheld SpO2 family. The
-              purchasing decision is mainly driven by configuration differences
-              such as display, BLE and battery architecture rather than a large
-              model pool.
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-100 via-white to-emerald-50 p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
-              Two-model visual combination
-            </p>
-            <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-              YH01 + YH02 Handheld Model Combination
-            </h3>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              {handheldModels.map((model, index) => (
-                <div
-                  key={model.model}
-                  className="flex h-72 items-center justify-center rounded-[1.5rem] border border-white/80 bg-white/75 p-5 shadow-inner"
-                >
-                  <div
-                    className={`relative rounded-[2rem] border border-slate-200 bg-slate-950 p-5 text-white shadow-xl ${
-                      index === 0 ? "h-48 w-40" : "h-52 w-52"
-                    }`}
-                  >
-                    <div className="mb-4 h-24 rounded-2xl bg-emerald-300/20" />
-                    <p className="text-xs uppercase tracking-[0.18em] text-emerald-300">
-                      {model.model}
-                    </p>
-                    <p className="mt-2 text-xl font-semibold">98% / 72</p>
-                    <div className="absolute -right-3 -top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white text-xs font-semibold text-emerald-700 shadow-md">
-                      H{index + 1}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Fingertip selector */}
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="max-w-3xl">
@@ -811,6 +718,118 @@ export default function PulseOximeterProductPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Handheld spotlight */}
+      <section
+        id="handheld-section"
+        className="mx-auto max-w-7xl scroll-mt-24 px-6 py-10 lg:px-8"
+      >
+        <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm md:p-6 lg:p-7">
+          <div className="grid gap-5 lg:grid-cols-[0.56fr_0.44fr] lg:items-stretch">
+            <div className="flex h-full flex-col justify-between rounded-[1.5rem] border border-emerald-100 bg-emerald-50/45 p-5 md:p-6">
+              <div>
+                <Badge tone="emerald">Professional Product Line</Badge>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                  Handheld Pulse Oximeter Models
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
+                  YH01 and YH02 belong to the same focused handheld SpO2 family.
+                  They are not a broad model pool; the main selection logic is
+                  configuration-based.
+                </p>
+              </div>
+
+              <div className="mt-5 grid gap-3">
+                {handheldModels.map((model) => (
+                  <div
+                    key={model.model}
+                    className="rounded-[1.25rem] border border-white bg-white/90 p-4 shadow-sm"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                          {model.model}
+                        </h3>
+                        <p className="mt-1 text-sm font-semibold text-emerald-700">
+                          {model.role}
+                        </p>
+                      </div>
+                      <span className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                        Handheld SpO2
+                      </span>
+                    </div>
+
+                    <div className="mt-4 grid gap-2 text-sm leading-6 text-slate-700 sm:grid-cols-3">
+                      <p>
+                        <span className="font-semibold text-slate-950">Display:</span>{" "}
+                        {model.display}
+                      </p>
+                      <p>
+                        <span className="font-semibold text-slate-950">BLE:</span>{" "}
+                        {model.ble}
+                      </p>
+                      <p>
+                        <span className="font-semibold text-slate-950">Power:</span>{" "}
+                        {model.power}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 rounded-[1.25rem] border border-emerald-100 bg-white/80 px-4 py-3 text-sm leading-6 text-slate-700">
+                <span className="font-semibold text-emerald-800">Selection logic:</span>{" "}
+                choose YH01 or YH02 by display, BLE and battery configuration
+                rather than by a large number of cosmetic variants.
+              </div>
+            </div>
+
+            <div className="flex h-full flex-col rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-slate-100 via-white to-emerald-50 p-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+                    Model visuals
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">
+                    YH01 + YH02
+                  </h3>
+                </div>
+                <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-600 shadow-sm">
+                  2 models
+                </span>
+              </div>
+
+              <div className="mt-5 grid flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                {handheldModels.map((model, index) => (
+                  <div
+                    key={model.model}
+                    className="flex min-h-[220px] flex-col justify-between rounded-[1.35rem] border border-white/80 bg-white/80 p-4 shadow-inner"
+                  >
+                    <div className="mx-auto flex h-32 w-full max-w-[180px] items-center justify-center rounded-[1.25rem] border border-slate-200 bg-slate-950 p-4 text-white shadow-lg">
+                      <div className="w-full">
+                        <div className="mb-3 h-14 rounded-xl bg-emerald-300/20" />
+                        <p className="text-[10px] uppercase tracking-[0.18em] text-emerald-300">
+                          {model.model}
+                        </p>
+                        <p className="mt-1 text-lg font-semibold">98% / 72</p>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 text-center">
+                      <p className="text-sm font-semibold text-slate-950">
+                        {model.model}
+                      </p>
+                      <p className="mt-1 text-xs leading-5 text-slate-500">
+                        Display / BLE / battery configuration option
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
