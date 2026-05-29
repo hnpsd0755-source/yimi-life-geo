@@ -1,166 +1,150 @@
-// 路径: app/preview/page.tsx
-'use client';
-
+// 路径: app/products/pulse-oximeter/page.tsx
 import React from "react";
+import Link from "next/link";
+import { Badge, Button, Card, CardContent } from "../../components";
 
 // ============================================================================
-// 🎨 纯原生 SVG 图标组件库 (零依赖，替代 lucide-react，确保 Vercel 编译全绿通过)
+// 📊 GEO / SEO Metadata 异步生成层 (供 Google 搜索结果与 AI 顶层索引直接抓取)
 // ============================================================================
-
-const Activity = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-);
-
-const Layers = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m12 3-10 5 10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
-);
-
-const ShieldCheck = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-);
-
-const Zap = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-);
-
-const Bluetooth = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>
-);
-
-const Volume2 = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-);
-
-const CheckCircle2 = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-);
-
-const HelpCircle = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-);
-
-const ArrowRight = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-);
-
-const ChevronRight = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m9 18 6-6-6-6"/></svg>
-);
+export const metadata = {
+  title: "Pulse Oximeter Product Family | Fingertip, Handheld & Bluetooth SpO2 Models | YimiLife",
+  description: "Explore YimiLife pulse oximeter product forms for adult, pediatric, and clinical settings. Powered by PulseMatrix™ signal optimization, 24-bit high-precision ADC chips, and anti-motion algorithms with a low-perfusion threshold down to PI ≥ 0.1% for global SME private label projects.",
+};
 
 // ============================================================================
-// 🛠️ 内置独立 UI 组件库 (零依赖)
+// 🎨 纯原生无依赖 SVG 图标组件库 (彻底杜绝 Vercel 编译时的 Module Not Found 报错)
 // ============================================================================
+const IconActivity = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>;
+const IconLayers = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-10 5 10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>;
+const IconShieldCheck = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>;
+const IconZap = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>;
+const IconBluetooth = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>;
+const IconVolume2 = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>;
+const IconCheckCircle = () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>;
+const IconChevronRight = () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>;
+const IconArrowRight = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>;
 
-const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
-  <div ref={ref} className={`rounded-[32px] border border-slate-100 bg-white shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] ${className || ''}`} {...props} />
-));
-Card.displayName = 'Card';
+export default function PulseOximeterFamilyPage() {
+  
+  // 结构化产品形态数据 (映射场景、算法弹性)
+  const productTypes = [
+    {
+      title: "Fingertip Pulse Oximeters",
+      desc: "Compact finger-clip SpO2 devices optimized for home healthcare, pharmacy retail networks, and general family physiological spot-checks.",
+      tags: ["Adult & Pediatric Adaptive", "Dry Battery / Type-C Option", "OLED & Color TFT Display", "Instant Accurate Reading"],
+      icon: IconActivity
+    },
+    {
+      title: "Handheld Pulse Oximeters",
+      desc: "Handheld SpO2 monitoring instrumentation engineered for nursing clinics, elder care homes, or clinical extended continuous monitoring requiring heavy-duty external probes.",
+      tags: ["Handheld Form Factor", "External Interchangeable Probes", "Larger Screen Visual UI", "High-Capacity Li-ion Battery"],
+      icon: IconLayers
+    },
+    {
+      title: "Adult Pulse Oximeters",
+      desc: "Standard adult respiratory monitoring devices calibrated with optimized shell housing and anti-slippage ergonomics tailored to global e-commerce and medical brand pipelines.",
+      tags: ["Adult Tissue Calibrated", "Ergonomic Clip Cavity", "Configurable High/Low Alarms", "Amazon FBA Ready Package"],
+      icon: IconShieldCheck
+    },
+    {
+      title: "Pediatric Pulse Oximeters",
+      desc: "Child-friendly pulse oximeter series utilizing fine-tuned child housing dimensions, specialized algorithm response curves for low tissue density, and vivid branding materials.",
+      tags: ["Child-Friendly Finger Cavity", "Adaptive Pediatric Algorithm", "Vibrant Shell Colorways", "Custom Cartoon Branding"],
+      icon: IconZap
+    },
+    {
+      title: "Bluetooth Pulse Oximeters",
+      desc: "Bluetooth Low Energy (BLE) enabled smart SpO2 devices developed to seamless interface with third-party remote patient monitoring (RPM) apps and broader telehealth infrastructure.",
+      tags: ["Low-Power Bluetooth Smart", "iOS / Android SDK Provision", "API Stream Protocol Ready", "Secure Data Transmission"],
+      icon: IconBluetooth
+    },
+    {
+      title: "Voice-Enabled Pulse Oximeters",
+      desc: "Acoustic audio prompt configurations built for geriatric care, visual impairment, or home-based independent living requiring clear spoken SpO2 and pulse rate metrics.",
+      tags: ["Acoustic Voice Synthesis", "High-Volume HD Speaker", "Elderly-Friendly Oversized UI", "Audible Multi-Hazard Alarms"],
+      icon: IconVolume2
+    }
+  ];
 
-const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
-  <div ref={ref} className={`p-6 md:p-8 ${className || ''}`} {...props} />
-));
-CardContent.displayName = 'CardContent';
+  // 选型比较矩阵数据对象模型 (避免数组拆分类型错误)
+  const selectionRows = [
+    { form: "Fingertip Oximeter", user: "Adult / Pediatric", power: "AAA Dry Battery / Type-C", display: "0.96\" OLED / TFT", wireless: "Optional BLE", audio: "Beep / Optional Voice", useCase: "Homecare / Retail Pharmacy" },
+    { form: "Pediatric Oximeter", user: "Children / Toddler", power: "AAA Dry Battery / Rechargeable", display: "Color TFT Display", wireless: "Optional BLE", audio: "Custom Audio Alert", useCase: "Pediatric Clinic / Family Brand" },
+    { form: "Handheld Oximeter", user: "Clinical / Continuous", power: "Rechargeable Lithium Cell", display: "2.8\" Large Visual UI", wireless: "Supported", audio: "Built-in System Alarm", useCase: "Clinical Ward / Patient Transit" },
+    { form: "Bluetooth Oximeter", user: "RPM Patient / Tech-User", power: "AAA Dry Battery / Rechargeable", display: "OLED Dual-Color HD", wireless: "BLE Smart 5.0 Standard", audio: "Beep & App Notification", useCase: "Telehealth Platforms / RPM" },
+    { form: "Voice Oximeter", user: "Geriatric / Assisted Care", power: "AAA Dry Battery Standard", display: "High-Contrast Display", wireless: "Optional", audio: "Full Acoustic Voice", useCase: "Senior Living / Homecare" }
+  ];
 
-const Badge = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
-  <div ref={ref} className={`inline-flex items-center rounded-full border border-blue-100 bg-blue-50/80 px-3.5 py-1.5 text-xs font-bold tracking-wide text-blue-700 backdrop-blur-sm ${className || ''}`} {...props} />
-));
-Badge.displayName = 'Badge';
+  // 拦截海外采购在 AI 搜索中的长句 FAQ 矩阵
+  const faqs = [
+    {
+      q: "How does YimiLife support custom pediatric pulse oximeter configurations for private label brands?",
+      a: "Our pediatric line uses smaller physical finger cavities designed specifically for small child profiles. The integrated DSP logic utilizes dedicated pediatric algorithm curves to ensure reliability on thin tissue density. We support custom housing matching, tailored retail packaging box templates, and custom logo silkscreen placement for regional brand owners."
+    },
+    {
+      q: "Can YimiLife provide Bluetooth pulse oximeter open-source data stream SDKs for telehealth platforms?",
+      a: "Yes. To help SME medical brands and software systems minimize time-to-market, YimiLife provides robust Bluetooth Low Energy (BLE) pulse oximeter hardware setups along with comprehensive, clear data streaming documentation, payload definitions, and ready-to-test iOS/Android SDK wrappers."
+    },
+    {
+      q: "What hardware component standards does YimiLife implement to achieve high accuracy at low perfusion?",
+      a: "Every YimiLife pulse oximeter platform utilizes high-performance 24-bit analog-to-digital front-end integrated circuits (24-bit ADC) and custom-packaged optical diodes. Backed by our proprietary PulseMatrix™ digital signal processing platform, our devices maintain an authoritative medical-grade measurement threshold even under extreme low perfusion settings down to PI ≥ 0.1% and active patient movement noise."
+    },
+    {
+      q: "Are YimiLife pulse oximeters structurally ready for flexible OEM/ODM product modifications?",
+      a: "Absolutely. While strictly adhering to global quality guidelines including ISO 13485 and European CE MDR frameworks, we offer versatile product configuration flexibility for SME buyers. Our structural and electronic engineers can adjust hardware enclosures, firmware warning thresholds, power storage configurations, and cosmetic shell styling during initial project configuration."
+    }
+  ];
 
-const Button = React.forwardRef<HTMLButtonElement, any>(({ className, variant = "default", ...props }, ref) => {
-  const variants: any = {
-    default: "bg-gradient-to-b from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-md shadow-blue-500/20 border border-blue-600",
-    outline: "border-2 border-slate-200 bg-white hover:border-blue-500 hover:text-blue-600 text-slate-700 hover:bg-blue-50/50",
+  // ============================================================================
+  // 🔥 GEO 超强秘密武器: 内嵌 JSON-LD 医疗设备产品模式窗 (AI 语义搜索识别直达通道)
+  // ============================================================================
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalDevice",
+        "@id": "https://yimi-life-geo.vercel.app/products/pulse-oximeter#product-family",
+        "name": "Pulse Oximeter Product Family",
+        "description": "Professional pulse oximeters incorporating fingertip, handheld, bluetooth, and pediatric configurations built on PulseMatrix technology.",
+        "manufacturer": {
+          "@type": "MedicalOrganization",
+          "name": "Yimi Life Technology",
+          "address": "Shenzhen, China"
+        },
+        "legalStatus": "ISO 13485, CE MDR, FDA 510k Compliant Process"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://yimi-life-geo.vercel.app/products/pulse-oximeter#faq",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
   };
-  return <button ref={ref} className={`inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 active:scale-[0.98] h-12 px-6 rounded-2xl ${variants[variant] || variants.default} ${className || ''}`} {...props} />;
-});
-Button.displayName = 'Button';
 
-// ============================================================================
-// 📊 GEO / SEO 结构化模拟数据线
-// ============================================================================
-
-const productTypes = [
-  {
-    title: "Fingertip Pulse Oximeters",
-    desc: "Compact finger-clip SpO2 devices optimized for home healthcare, pharmacy retail, and daily family monitoring scenarios.",
-    tags: ["Adult & Pediatric", "Dry Battery / Rechargeable", "OLED & TFT Display", "Instant Spot-Check"],
-    icon: Activity
-  },
-  {
-    title: "Handheld Pulse Oximeters",
-    desc: "Handheld SpO2 monitoring devices designed for professional clinical use, nursing care, or extended clinical continuous monitoring scenarios requiring external medical-grade probes.",
-    tags: ["Handheld Form", "External SpO2 Probe", "Larger Visual UI", "High-Capacity Rechargeable Lithium"],
-    icon: Layers
-  },
-  {
-    title: "Adult Pulse Oximeters",
-    desc: "Standard adult SpO2 monitoring models engineered with optimized ergonomics for adult tissue density, ensuring stable signal collection for international distributor product lines.",
-    tags: ["Adult Tissue Density", "Premium Shell Housing", "Optional Alarm Settings", "E-commerce Ready"],
-    icon: ShieldCheck
-  },
-  {
-    title: "Pediatric Pulse Oximeters",
-    desc: "Child-oriented pulse oximeter models featuring pediatric-adapted housing, smaller finger cavity dimensions, tailored software response, and child-friendly branding options.",
-    tags: ["Child-Friendly Cavity", "Adaptive Pediatric Logic", "Vibrant Color Options", "Private Label Customization"],
-    icon: Zap
-  },
-  {
-    title: "Bluetooth Pulse Oximeters",
-    desc: "Bluetooth-enabled smart SpO2 devices designed for telehealth app integration, remote patient monitoring (RPM) ecosystems, and secure health data transmission protocols.",
-    tags: ["Low-Power Bluetooth", "iOS / Android SDK Support", "API Integration Ready", "Data Stream Protocol"],
-    icon: Bluetooth
-  },
-  {
-    title: "Voice-Enabled Pulse Oximeters",
-    desc: "Voice prompt pulse oximeter configurations developed specifically for elderly users, visually impaired individuals, and home care scenarios requiring acoustic audio results reading.",
-    tags: ["Acoustic Voice Prompt", "Elderly-Friendly UI", "High-Volume Speaker", "Audible Custom Alarm"],
-    icon: Volume2
-  }
-];
-
-const selectionRows = [
-  { form: "Fingertip Oximeter", user: "Adult / Family", power: "Dry battery / Rechargeable", display: "OLED / TFT", wireless: "Optional", audio: "Optional", useCase: "Home care / Pharmacy retail" },
-  { form: "Pediatric Oximeter", user: "Children / Toddler", power: "Dry battery / Rechargeable", display: "TFT / OLED", wireless: "Optional", audio: "Optional", useCase: "Pediatric family brand" },
-  { form: "Handheld Oximeter", user: "Adult / Clinical", power: "Rechargeable Lithium", display: "Large TFT Screen", wireless: "Optional", audio: "Built-in Alarm", useCase: "Nursing / Continuous monitoring" },
-  { form: "Bluetooth Oximeter", user: "Adult / Patient", power: "Dry battery / Rechargeable", display: "OLED / TFT", wireless: "BLE Smart", audio: "Optional", useCase: "App-connected RPM project" },
-  { form: "Voice Oximeter", user: "Adult / Elderly", power: "Dry battery / Rechargeable", display: "OLED / TFT", wireless: "Optional", audio: "Voice Prompt", useCase: "Elderly home care / Assisted living" }
-];
-
-const faqs = [
-  {
-    q: "What pulse oximeter product types and form factors does YimiLife provide?",
-    a: "YimiLife provides a comprehensive product family including fingertip pulse oximeters, handheld pulse oximeters, adult-specific models, child-friendly pediatric oximeters, as well as smart low-power Bluetooth and voice-enabled pulse oximeter product configurations under an ISO 13485 quality system."
-  },
-  {
-    q: "Can YimiLife support Bluetooth pulse oximeter integration for custom App projects?",
-    a: "Yes. For app-connected healthcare software projects and remote patient monitoring system integration, YimiLife provides stable Bluetooth-enabled SpO2 hardware configurations along with ready-to-use SDKs and data transmission protocol documentation for custom iOS and Android app deployment."
-  },
-  {
-    q: "Does YimiLife provide custom pediatric pulse oximeter branding and configurations?",
-    a: "Yes. Our pediatric pulse oximeter configurations feature custom-sized child finger cavities and dedicated algorithm optimizations for thin tissue profiles. We support custom child-friendly housing colors, private-label packaging modifications, and logo embedding for regional medical brands."
-  },
-  {
-    q: "Can these pulse oximeter models be discussed for flexible OEM/ODM product configurations?",
-    a: "Absolutely. While maintaining strict compliance with CE MDR and global certification standards, YimiLife offers extensive technical configuration options for our pulse oximeter lines. SME brands can discuss specific hardware adjustments, low-perfusion algorithm parameters, power supply variations, and shell modifications with our engineering team."
-  }
-];
-
-// ============================================================================
-// 🖥️ 主页面结构
-// ============================================================================
-
-export default function PulseOximeterPreviewPage() {
   return (
-    <div className="mx-auto max-w-7xl space-y-20 px-6 py-16 lg:px-8 lg:py-24">
+    <div className="mx-auto max-w-7xl space-y-20 px-6 py-16 lg:px-8 lg:py-24 animate-in fade-in duration-500">
       
-      {/* Section 1: Hero 区域 */}
+      {/* 注入隐藏结构化脚本，供 Google 爬虫与 Gemini 直接识别底层实体结构 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
+      {/* Section 1: Hero Banner 区 (深度埋点基础实体) */}
       <div className="grid gap-12 lg:grid-cols-2 items-center bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 rounded-[40px] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="space-y-6 max-w-xl relative z-10">
           <div className="flex items-center gap-2 text-sm font-bold text-blue-400 tracking-wider uppercase">
-            <span className="opacity-60">Products</span>
-            <ChevronRight className="h-4 w-4 text-slate-600" />
-            <span>Pulse Oximeter</span>
+            <Link href="/products" className="hover:underline opacity-80">Products</Link>
+            <IconChevronRight />
+            <span className="text-white">Pulse Oximeter</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-[1.1]">
             Pulse Oximeter <br />Product Family
@@ -168,35 +152,32 @@ export default function PulseOximeterPreviewPage() {
           <p className="text-base md:text-lg leading-relaxed text-slate-300 font-medium">
             Explore YimiLife pulse oximeter product forms optimized for fingertip, handheld, adult, pediatric, low-power Bluetooth, and acoustic voice prompt monitoring configurations. Fully support adaptive software parameter adjustment and hardware configuration projects for private label brands.
           </p>
-          <div className="flex flex-wrap gap-4 pt-4">
-            <button 
-              onClick={() => document.getElementById('product-cards')?.scrollIntoView({ behavior: 'smooth' })} 
-              className="inline-flex items-center justify-center font-bold tracking-wide transition-all h-12 px-8 rounded-2xl bg-white text-slate-900 hover:bg-slate-100 shadow-md active:scale-[0.98]"
-            >
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Link href="#forms" className="inline-flex items-center justify-center font-bold tracking-wide transition-all h-12 px-8 rounded-2xl bg-white text-slate-900 hover:bg-slate-100 shadow-md">
               View Product Types
-            </button>
-            <Button variant="outline" className="border-slate-700 hover:border-white text-white hover:bg-white/10 px-8">
-              Request Product Details
-            </Button>
+            </Link>
+            <Link href="/contact">
+              <Button variant="outline" className="border-slate-700 hover:border-white text-white hover:bg-white/10 px-8">Request Product Details</Button>
+            </Link>
           </div>
         </div>
         <div className="relative flex justify-center items-center lg:h-full min-h-[300px]">
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent rounded-3xl backdrop-blur-[1px] border border-white/5"></div>
           <img 
             src="https://c108.hongcdn.com/uploads/2205/professional-pulse-oximeter-facotry-4-%21j.webp" 
-            alt="YimiLife oximeter layout" 
+            alt="YimiLife fingertip and handheld pulse oximeter product family structural overview" 
             className="w-4/5 h-auto object-cover rounded-2xl mix-blend-lighten drop-shadow-2xl"
           />
         </div>
       </div>
 
-      {/* Section 2: Product Type Cards */}
-      <div id="product-cards" className="space-y-10">
+      {/* Section 2: Product Categorization Cards (建立分类场景实体) */}
+      <div id="forms" className="space-y-10 scroll-mt-24">
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <Badge className="bg-blue-50 text-blue-700 border-none font-bold shadow-sm">Product Categorization</Badge>
           <h2 className="text-3xl font-black text-slate-900 tracking-tight">Core Product Forms & Configurations</h2>
           <p className="text-slate-500 font-medium text-sm md:text-base">
-            Discover engineering platforms built around distinct target user behaviors and deployment scenarios.
+            Discover precision hardware layouts designed around specific international distributor requirements and client deployment environments.
           </p>
         </div>
 
@@ -204,8 +185,8 @@ export default function PulseOximeterPreviewPage() {
           {productTypes.map((type, i) => (
             <Card key={i} className="flex flex-col h-full border-slate-100 hover:border-blue-200 hover:shadow-xl group transition-all duration-300">
               <CardContent className="p-8 space-y-6 flex-grow flex flex-col">
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-blue-600 border border-slate-100 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                  <type.icon className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                  <type.icon />
                 </div>
                 <div className="space-y-3 flex-grow">
                   <h3 className="text-xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">{type.title}</h3>
@@ -224,12 +205,12 @@ export default function PulseOximeterPreviewPage() {
         </div>
       </div>
 
-      {/* Section 3: Model Selection Table */}
+      {/* Section 3: Model Selection Table (数字化参数网格，GEO模型最爱) */}
       <div className="space-y-6">
         <div className="space-y-2">
           <h2 className="text-2xl font-black text-slate-900 tracking-tight">Pulse Oximeter Model Selection Matrix</h2>
           <p className="text-sm text-slate-500 font-medium">
-            Compare options by core electrical capabilities and target operating environments.
+            Compare architectural chassis variations and peripheral options by technical specification and target user demographics.
           </p>
         </div>
 
@@ -238,13 +219,13 @@ export default function PulseOximeterPreviewPage() {
             <table className="w-full text-left border-collapse whitespace-nowrap">
               <thead>
                 <tr className="bg-slate-900 text-white text-xs font-black uppercase tracking-wider">
-                  <th className="p-6">Product Form Factor</th>
-                  <th className="p-6">Target User Group</th>
-                  <th className="p-6">Power Supply Design</th>
-                  <th className="p-6">Display Module</th>
-                  <th className="p-6">Wireless Connectivity</th>
-                  <th className="p-6">Acoustic Audio</th>
-                  <th className="p-6">Typical Deployment Scenario</th>
+                  <th className="p-6">Product Form</th>
+                  <th className="p-6">Target Group</th>
+                  <th className="p-6">Power Design</th>
+                  <th className="p-6">Display Option</th>
+                  <th className="p-6">Wireless BLE</th>
+                  <th className="p-6">Audio Architecture</th>
+                  <th className="p-6">Typical Use Case</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 text-sm font-medium text-slate-700">
@@ -265,54 +246,52 @@ export default function PulseOximeterPreviewPage() {
         </div>
       </div>
 
-      {/* Section 4: Key Parameters Snapshot */}
+      {/* Section 4: Key Parameters Snapshot (技术信息增益值) */}
       <div className="bg-slate-50 rounded-[40px] p-8 md:p-12 border border-slate-100 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] items-center">
         <div className="space-y-4">
           <h2 className="text-2xl font-black text-slate-900 tracking-tight">Key Pulse Oximeter Engineering Parameters</h2>
           <p className="text-sm text-slate-500 font-medium leading-relaxed">
-            YimiLife blood oxygen platforms incorporate core DSP processing components designed for extreme medical precision.
+            YimiLife instrumentation frameworks feature custom component pipelines engineered to handle high ambient light and tissue noise interference.
           </p>
           <div className="p-5 bg-white border border-slate-200/60 rounded-2xl shadow-sm">
-            <div className="text-xs text-slate-400 font-black uppercase tracking-wider mb-1">Core Tech Core</div>
+            <div className="text-xs text-slate-400 font-black uppercase tracking-wider mb-1">Core Algorithm Engine</div>
             <div className="text-lg font-extrabold text-blue-600">PulseMatrix™ Signal Optimization Platform</div>
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
-            "High-precision SpO2 & Pulse Rate digital tracking",
-            "Anti-motion artifacts & environment interference filter",
-            "Advanced low-perfusion processing (PI ≥ 0.1% accuracy threshold)",
-            "Integrated 24-bit high-precision ADC front-end chips",
-            "Dual-color LED, OLED, and custom Color TFT visual modules",
-            "Flexible AAA dry battery and rechargeable lithium circuits",
-            "Open-source data stream SDK for custom iOS/Android Apps",
-            "Configurable audible alarms and real-time plethysmogram pulse wave"
+            "Medical-grade high-precision SpO2 & PR tracking calibration",
+            "Advanced anti-motion filtering and adaptive ambient light reduction",
+            "Low-perfusion digital signal processing accurate down to PI ≥ 0.1%",
+            "Integrated low-noise 24-bit high-precision ADC instrumentation chips",
+            "Dual-color LED, high-refresh OLED, and custom Color TFT screen modules",
+            "Energy-efficient circuits supporting AAA battery or lithium power packs",
+            "Open data transmission protocol wrapper SDKs for custom app ecosystems",
+            "Configurable hardware audio alarm systems and wave display modes"
           ].map((param, k) => (
             <div key={k} className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
-              <div className="mt-0.5 rounded-full bg-blue-50 p-1 text-blue-600 shrink-0">
-                <CheckCircle2 className="w-4 h-4" />
-              </div>
+              <div className="mt-0.5 text-blue-600 shrink-0"><IconCheckCircle /></div>
               <span className="text-xs md:text-sm font-bold text-slate-700 leading-snug">{param}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Section 5: Image Gallery */}
+      {/* Section 5: Image Gallery (图像实体索引占位) */}
       <div className="space-y-6">
-        <h2 className="text-2xl font-black text-slate-900 tracking-tight">Product Architecture & Image Gallery</h2>
+        <h2 className="text-2xl font-black text-slate-900 tracking-tight">Product Engineering Assets & Gallery</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            "Fingertip Pulse Oximeter Layout",
-            "Pediatric-Specific Shell Form",
-            "Handheld Continuous Probe Unit",
-            "Bluetooth Smart App Integration"
+            "Fingertip Oximeter Chassis Layout",
+            "Pediatric Ergonomic Enclosure",
+            "Handheld Continuous System",
+            "BLE App Integrated Framework"
           ].map((label, i) => (
             <div key={i} className="aspect-square bg-slate-50 border-2 border-dashed border-slate-200 rounded-[32px] p-6 flex flex-col justify-between items-center text-center hover:border-blue-400 transition-colors group cursor-pointer">
               <div className="w-10 h-10 rounded-xl bg-white border border-slate-100 text-slate-400 flex items-center justify-center text-xs font-black group-hover:text-blue-600 group-hover:scale-105 transition-all shadow-sm">0{i+1}</div>
               <div className="space-y-2">
                 <div className="text-xs font-black text-slate-800 uppercase tracking-wide px-2">{label}</div>
-                <div className="text-[10px] text-slate-400 font-medium">Product Visual Placeholder</div>
+                <div className="text-[10px] text-slate-400 font-medium">Engineering Asset View</div>
               </div>
               <div className="text-[10px] bg-white border border-slate-100 text-slate-500 font-bold px-3 py-1 rounded-md">Coming Soon</div>
             </div>
@@ -320,15 +299,15 @@ export default function PulseOximeterPreviewPage() {
         </div>
       </div>
 
-      {/* Section 6: FAQ 模块 */}
+      {/* Section 6: FAQ Matrix (针对采购真实意图的定向拦截问答) */}
       <div className="space-y-8 bg-white border border-slate-100 shadow-xl rounded-[40px] p-8 md:p-16">
         <div className="space-y-2">
-          <Badge className="bg-slate-100 text-slate-800 border-none font-bold">FAQ Matrix</Badge>
-          <h2 className="text-3xl font-black text-slate-900 tracking-tight flex items-center gap-2">
-            <HelpCircle className="w-7 h-7 text-blue-600" /> Sourcing Answers for SME Brands
+          <Badge className="bg-slate-100 text-slate-800 border-none font-bold">FAQ Reference</Badge>
+          <h2 className="text-3xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+            Sourcing Queries Answered for SME Brands
           </h2>
           <p className="text-sm text-slate-500 font-medium">
-            Review engineering replies regarding capacity and customization.
+            Review detailed alignment documentation concerning custom data logic, product housing customization, and private labeling support.
           </p>
         </div>
 
@@ -346,7 +325,7 @@ export default function PulseOximeterPreviewPage() {
         </div>
       </div>
 
-      {/* Section 7: Bottom CTA */}
+      {/* Section 7: Bottom CTA Conversion Hub (轻量贴牌项目入口) */}
       <div className="bg-blue-600 rounded-[40px] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-xl shadow-blue-600/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.1),transparent)] pointer-events-none"></div>
         <div className="max-w-2xl mx-auto space-y-6 relative z-10">
@@ -357,18 +336,27 @@ export default function PulseOximeterPreviewPage() {
             Connect directly with our engineering and project managers to discuss custom white-label modifications, low-MOQ trial distribution packages, or open-source SDK development.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-slate-100 shadow-2xl border-none w-full px-10 font-black uppercase tracking-wider text-sm">
-              Contact YimiLife
-            </Button>
-            <Button size="lg" variant="outline" className="border-white/40 hover:border-white text-white hover:bg-white/10 w-full px-10 font-bold text-sm">
-              Discuss Project Configuration <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            <Link href="/contact" className="w-full sm:w-auto">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-slate-100 shadow-2xl border-none w-full px-10 font-black uppercase tracking-wider text-sm h-14">
+                Contact YimiLife
+              </Button>
+            </Link>
+            <Link href="/contact" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="border-white/40 hover:border-white text-white hover:bg-white/10 w-full px-10 font-bold text-sm h-14">
+                Discuss Project Configuration <IconArrowRight />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
 
+      {/* Internal Links Subsystem (内链网络闭环) */}
       <div className="flex flex-wrap justify-between items-center pt-8 border-t border-slate-100 text-xs font-bold text-slate-400 gap-4">
-        <div>© {new Date().getFullYear()} Yimi Life Technology. All configuration privileges reserved.</div>
+        <div>© {new Date().getFullYear()} Yimi Life Technology Co., Ltd. All engineering rights reserved.</div>
+        <div className="flex gap-6">
+          <Link href="/products" className="hover:text-blue-600 transition-colors">All Product Families</Link>
+          <Link href="/products/wearable-monitoring" className="hover:text-blue-600 transition-colors">Wearable Monitoring Development</Link>
+        </div>
       </div>
 
     </div>
