@@ -554,95 +554,97 @@ export default function PulseOximeterProductPage() {
         id="fingertip-section"
         className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12 lg:px-8"
       >
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
-            <Badge>Configurable Category</Badge>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-              Fingertip Pulse Oximeter Tracks
-            </h2>
-            <p className="mt-4 text-base leading-8 text-slate-600 md:text-lg">
-              Four compact product tracks connect buyer requirements with representative
-              model directions. Each row keeps the configuration logic on the left and
-              the matching product visuals on the right.
-            </p>
+        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 shadow-xl md:p-8 lg:p-10">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <Badge tone="cyan">Configurable Category</Badge>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+                Fingertip Pulse Oximeter Tracks
+              </h2>
+              <p className="mt-4 text-base leading-8 text-slate-300 md:text-lg">
+                Four compact product tracks connect buyer requirements with representative
+                model directions. Each row keeps the configuration logic on the left and
+                the linked model visuals on the right.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-cyan-300/25 bg-cyan-300/10 px-5 py-4 text-sm leading-6 text-cyan-100 lg:max-w-sm">
+              <span className="font-semibold text-cyan-200">Reading logic:</span> choose the track first,
+              then review the two linked model directions beside it.
+            </div>
           </div>
-          <div className="rounded-3xl border border-cyan-100 bg-cyan-50/60 px-5 py-4 text-sm leading-6 text-cyan-900 lg:max-w-sm">
-            <span className="font-semibold">Reading logic:</span> choose the track first,
-            then review the two linked model directions beside it.
-          </div>
-        </div>
 
-        <div className="mt-8 space-y-3 md:space-y-4">
-          {fingertipTracks.map((track) => {
-            const Icon = track.icon;
-            return (
-              <article
-                key={track.title}
-                className="group grid gap-3 rounded-[1.75rem] border border-slate-200 bg-white p-3 shadow-sm transition duration-300 hover:border-cyan-300 hover:shadow-lg md:p-4 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch"
-              >
-                <div className="rounded-[1.35rem] border border-slate-100 bg-white p-4 transition duration-300 group-hover:border-cyan-200 group-hover:bg-cyan-50/30 md:p-5">
-                  <div className="flex gap-3">
-                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-cyan-50 text-cyan-700 transition duration-300 group-hover:bg-cyan-600 group-hover:text-white">
-                      <Icon />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700">
-                        {track.eyebrow}
-                      </p>
-                      <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-slate-950 md:text-2xl">
-                        {track.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">
-                        {track.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 grid gap-2 sm:grid-cols-2">
-                    {track.keyInfo.map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-xs font-semibold leading-5 text-slate-700 transition duration-300 group-hover:border-cyan-100 group-hover:bg-white"
-                      >
-                        {item}
+          <div className="mt-8 space-y-3 md:space-y-4">
+            {fingertipTracks.map((track) => {
+              const Icon = track.icon;
+              return (
+                <article
+                  key={track.title}
+                  className="group grid gap-3 rounded-[1.75rem] border border-slate-700/80 bg-slate-900/70 p-3 shadow-sm transition duration-300 hover:border-cyan-300 hover:bg-slate-900 hover:shadow-[0_0_0_1px_rgba(103,232,249,0.25),0_24px_55px_-35px_rgba(34,211,238,0.8)] md:p-4 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch"
+                >
+                  <div className="rounded-[1.35rem] border border-slate-700 bg-slate-950/60 p-4 transition duration-300 group-hover:border-cyan-300/80 group-hover:bg-cyan-950/35 md:p-5">
+                    <div className="flex gap-3">
+                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300 transition duration-300 group-hover:bg-cyan-400 group-hover:text-slate-950">
+                        <Icon />
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {track.visuals.map((visual, index) => (
-                    <div
-                      key={visual.model}
-                      className="overflow-hidden rounded-[1.35rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50 shadow-inner transition duration-300 group-hover:border-cyan-300 group-hover:from-cyan-50 group-hover:via-white group-hover:to-cyan-100 group-hover:shadow-md"
-                    >
-                      <div className="flex h-36 items-center justify-center p-4 md:h-full md:min-h-[175px]">
-                        <div
-                          className={`relative rounded-[1.6rem] border border-slate-200 bg-slate-950 shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300 group-hover:shadow-cyan-200/60 ${
-                            visual.shape === "wide" ? "h-24 w-40" : "h-28 w-32"
-                          }`}
-                        >
-                          <div className="absolute left-1/2 top-3 h-9 w-20 -translate-x-1/2 rounded-lg bg-cyan-300/30" />
-                          <div className="absolute bottom-4 left-1/2 h-2.5 w-14 -translate-x-1/2 rounded-full bg-white/20" />
-                          <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[11px] font-semibold text-cyan-700 shadow-md">
-                            {index + 1}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="border-t border-slate-100 bg-white/95 px-4 py-3">
-                        <h4 className="text-base font-semibold tracking-tight text-slate-950">
-                          {visual.model}
-                        </h4>
-                        <p className="mt-0.5 text-xs leading-5 text-slate-600">
-                          {visual.note}
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-300">
+                          {track.eyebrow}
+                        </p>
+                        <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-white md:text-2xl">
+                          {track.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-6 text-slate-300">
+                          {track.description}
                         </p>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </article>
-            );
-          })}
+
+                    <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                      {track.keyInfo.map((item) => (
+                        <div
+                          key={item}
+                          className="rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-xs font-semibold leading-5 text-slate-200 transition duration-300 group-hover:border-cyan-300/45 group-hover:bg-cyan-400/10 group-hover:text-cyan-50"
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {track.visuals.map((visual, index) => (
+                      <div
+                        key={visual.model}
+                        className="overflow-hidden rounded-[1.35rem] border border-slate-700 bg-gradient-to-br from-slate-900 via-slate-950 to-cyan-950/35 shadow-inner transition duration-300 group-hover:border-cyan-300 group-hover:from-cyan-950/60 group-hover:via-slate-950 group-hover:to-cyan-900/45 group-hover:shadow-[0_0_0_1px_rgba(103,232,249,0.16),0_18px_40px_-28px_rgba(34,211,238,0.9)]"
+                      >
+                        <div className="flex h-36 items-center justify-center p-4 md:h-full md:min-h-[175px]">
+                          <div
+                            className={`relative rounded-[1.6rem] border border-slate-600 bg-slate-950 shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300 group-hover:shadow-cyan-300/50 ${
+                              visual.shape === "wide" ? "h-24 w-40" : "h-28 w-32"
+                            }`}
+                          >
+                            <div className="absolute left-1/2 top-3 h-9 w-20 -translate-x-1/2 rounded-lg bg-cyan-300/30" />
+                            <div className="absolute bottom-4 left-1/2 h-2.5 w-14 -translate-x-1/2 rounded-full bg-white/20" />
+                            <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-cyan-300 text-[11px] font-semibold text-slate-950 shadow-md">
+                              {index + 1}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="border-t border-slate-700 bg-slate-950/80 px-4 py-3">
+                          <h4 className="text-base font-semibold tracking-tight text-white">
+                            {visual.model}
+                          </h4>
+                          <p className="mt-0.5 text-xs leading-5 text-slate-300">
+                            {visual.note}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -727,111 +729,87 @@ export default function PulseOximeterProductPage() {
         id="handheld-section"
         className="mx-auto max-w-7xl scroll-mt-24 px-6 py-10 lg:px-8"
       >
-        <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm md:p-6 lg:p-7">
-          <div className="grid gap-5 lg:grid-cols-[0.56fr_0.44fr] lg:items-stretch">
-            <div className="flex h-full flex-col justify-between rounded-[1.5rem] border border-emerald-100 bg-emerald-50/45 p-5 md:p-6">
-              <div>
-                <Badge tone="emerald">Professional Product Line</Badge>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                  Handheld Pulse Oximeter Models
-                </h2>
-                <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
-                  YH01 and YH02 belong to the same focused handheld SpO2 family.
-                  They are not a broad model pool; the main selection logic is
-                  configuration-based.
-                </p>
-              </div>
-
-              <div className="mt-5 grid gap-3">
-                {handheldModels.map((model) => (
-                  <div
-                    key={model.model}
-                    className="rounded-[1.25rem] border border-white bg-white/90 p-4 shadow-sm"
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-3">
-                      <div>
-                        <h3 className="text-xl font-semibold tracking-tight text-slate-950">
-                          {model.model}
-                        </h3>
-                        <p className="mt-1 text-sm font-semibold text-emerald-700">
-                          {model.role}
-                        </p>
-                      </div>
-                      <span className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                        Handheld SpO2
-                      </span>
-                    </div>
-
-                    <div className="mt-4 grid gap-2 text-sm leading-6 text-slate-700 sm:grid-cols-3">
-                      <p>
-                        <span className="font-semibold text-slate-950">Display:</span>{" "}
-                        {model.display}
-                      </p>
-                      <p>
-                        <span className="font-semibold text-slate-950">BLE:</span>{" "}
-                        {model.ble}
-                      </p>
-                      <p>
-                        <span className="font-semibold text-slate-950">Power:</span>{" "}
-                        {model.power}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 rounded-[1.25rem] border border-emerald-100 bg-white/80 px-4 py-3 text-sm leading-6 text-slate-700">
-                <span className="font-semibold text-emerald-800">Selection logic:</span>{" "}
-                choose YH01 or YH02 by display, BLE and battery configuration
-                rather than by a large number of cosmetic variants.
-              </div>
-            </div>
-
-            <div className="flex h-full flex-col rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-slate-100 via-white to-emerald-50 p-5">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
-                    Model visuals
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">
-                    YH01 + YH02
-                  </h3>
-                </div>
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-600 shadow-sm">
-                  2 models
-                </span>
-              </div>
-
-              <div className="mt-5 grid flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                {handheldModels.map((model, index) => (
-                  <div
-                    key={model.model}
-                    className="flex min-h-[220px] flex-col justify-between rounded-[1.35rem] border border-white/80 bg-white/80 p-4 shadow-inner"
-                  >
-                    <div className="mx-auto flex h-32 w-full max-w-[180px] items-center justify-center rounded-[1.25rem] border border-slate-200 bg-slate-950 p-4 text-white shadow-lg">
-                      <div className="w-full">
-                        <div className="mb-3 h-14 rounded-xl bg-emerald-300/20" />
-                        <p className="text-[10px] uppercase tracking-[0.18em] text-emerald-300">
-                          {model.model}
-                        </p>
-                        <p className="mt-1 text-lg font-semibold">98% / 72</p>
-                      </div>
-                    </div>
-
-                    <div className="mt-4 text-center">
-                      <p className="text-sm font-semibold text-slate-950">
-                        {model.model}
-                      </p>
-                      <p className="mt-1 text-xs leading-5 text-slate-500">
-                        Display / BLE / battery configuration option
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <Badge tone="emerald">Professional Product Line</Badge>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Handheld Pulse Oximeter Models
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600 md:text-lg">
+              YH01 and YH02 belong to one focused handheld SpO2 family. The selection
+              difference is mainly display, BLE and battery configuration.
+            </p>
           </div>
         </div>
+
+        <article className="mt-8 grid gap-3 rounded-[1.75rem] border border-slate-200 bg-white p-3 shadow-sm transition duration-300 hover:border-emerald-300 hover:shadow-lg md:p-4 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
+          <div className="rounded-[1.35rem] border border-slate-100 bg-emerald-50/45 p-4 md:p-5">
+            <div className="flex gap-3">
+              <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
+                <PulseIcon />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-700">
+                  Handheld SpO2 family
+                </p>
+                <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-slate-950 md:text-2xl">
+                  YH01 / YH02 Configuration Pair
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  A compact two-model handheld line for customers that need external-probe
+                  SpO2 form factors rather than a broad fingertip product pool.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              {[
+                "Display: standard or larger UI",
+                "Power: dry battery or lithium configuration",
+                "BLE: optional by project",
+                "Probe-based handheld form factor",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-xl border border-emerald-100 bg-white px-3 py-2 text-xs font-semibold leading-5 text-slate-700"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {handheldModels.map((model, index) => (
+              <div
+                key={model.model}
+                className="overflow-hidden rounded-[1.35rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-emerald-50 shadow-inner transition duration-300 hover:border-emerald-300 hover:shadow-md"
+              >
+                <div className="flex h-36 items-center justify-center p-4 md:h-full md:min-h-[175px]">
+                  <div
+                    className={`relative rounded-[1.6rem] border border-slate-200 bg-slate-950 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-emerald-200/60 ${
+                      index === 0 ? "h-28 w-32" : "h-24 w-40"
+                    }`}
+                  >
+                    <div className="absolute left-1/2 top-3 h-9 w-20 -translate-x-1/2 rounded-lg bg-emerald-300/25" />
+                    <div className="absolute bottom-4 left-1/2 h-2.5 w-14 -translate-x-1/2 rounded-full bg-white/20" />
+                    <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[11px] font-semibold text-emerald-700 shadow-md">
+                      H{index + 1}
+                    </div>
+                  </div>
+                </div>
+                <div className="border-t border-slate-100 bg-white/95 px-4 py-3">
+                  <h4 className="text-base font-semibold tracking-tight text-slate-950">
+                    {model.model}
+                  </h4>
+                  <p className="mt-0.5 text-xs leading-5 text-slate-600">
+                    Display / BLE / battery configuration option
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
       </section>
 
       {/* Technical snapshot */}
