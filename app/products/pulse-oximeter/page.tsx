@@ -271,24 +271,28 @@ const fingertipSelector = [
 
 const signalHighlights = [
   {
-    title: "Anti-motion filtering",
+    title: "Motion Artifact Control",
     description:
-      "Helps reduce waveform disturbance caused by finger shake, loose placement or short-term movement during spot-check measurement.",
+      "Actively stabilizes SpO2 waveform capture during finger shake, loose placement and short-term movement, improving real-world spot-check usability.",
+    visual: "ppg",
   },
   {
-    title: "Optical shielding design",
+    title: "Optical Signal Architecture",
     description:
-      "Uses finger-cavity structure, light-path control and low-noise front-end layout to support cleaner PPG signal acquisition.",
+      "Builds cleaner PPG acquisition from the hardware side through finger-cavity shielding, light-path control and low-noise front-end layout.",
+    visual: "trace",
   },
   {
-    title: "Low-perfusion roadmap",
+    title: "Low-Perfusion Optimization",
     description:
-      "Supports a tiered signal path from standard PI 0.3% level to PulseMatrix™ PI 0.1% level, with 24-bit ADC AFE options for selected high-end configurations.",
+      "Pushes selected configurations from standard PI 0.3% tracking toward PulseMatrix™ PI 0.1% low-perfusion performance targets.",
+    visual: "wave",
   },
   {
-    title: "Production verification",
+    title: "Production Verification",
     description:
-      "Uses simulator-oriented production calibration and verification workflows, including Fluke Index 2 clinical simulators where applicable.",
+      "Drives 100% production-line calibration and batch consistency using Fluke Index 2 clinical simulators where applicable.",
+    visual: "grid",
   },
 ];
 
@@ -794,47 +798,72 @@ export default function PulseOximeterProductPage() {
       </section>
 
       {/* Technical snapshot */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+      <section
+        className="mx-auto max-w-7xl px-6 py-12 lg:px-8"
+        aria-label="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 low perfusion tracking, and Fluke Index 2 calibration workflow."
+      >
         <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-xl md:p-10 lg:p-12">
-          <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:items-stretch">
-            <div className="flex h-full flex-col justify-between rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
-              <div>
-                <Badge tone="cyan">Technical Highlights</Badge>
-                <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
-                  PulseMatrix™ Signal Platform
-                </h2>
-                <p className="mt-5 text-base leading-8 text-slate-300">
-                  Focused on cleaner SpO2 waveform capture under weak perfusion,
-                  finger movement and optical-noise conditions.
-                </p>
-              </div>
+          <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-stretch">
+            <div className="flex h-full flex-col justify-center rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+              <Badge tone="cyan">Technical Highlights</Badge>
+              <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
+                PulseMatrix™ Signal Platform
+              </h2>
+              <p className="mt-6 max-w-md text-base leading-8 text-slate-300">
+                A focused signal platform for extracting cleaner PPG waveforms
+                under low perfusion, finger movement and optical-noise
+                conditions.
+              </p>
               <div className="mt-8 rounded-[1.5rem] border border-amber-300/35 bg-gradient-to-br from-amber-300/10 via-white/[0.04] to-cyan-300/5 p-5 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.08)]">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
-                  Platform Role
+                  Core Anchor
                 </p>
-                <p className="mt-3 text-sm font-medium leading-7 text-slate-300">
-                  A signal-processing layer used to support selected low-perfusion,
-                  anti-motion and high-end AFE configurations across YimiLife SpO2
-                  product development.
+                <p className="mt-3 text-xl font-semibold leading-8 text-white">
+                  Low-perfusion extraction, anti-motion filtering and
+                  production verification in one signal architecture.
                 </p>
               </div>
             </div>
 
             <div className="grid h-full gap-4 sm:grid-cols-2">
-              {signalHighlights.map((item) => (
+              {signalHighlights.map((item, index) => (
                 <article
                   key={item.title}
-                  className="flex min-h-[220px] flex-col rounded-[1.75rem] border border-amber-300/45 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-6 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_18px_45px_-32px_rgba(251,191,36,0.8)]"
+                  className="relative flex min-h-[230px] flex-col overflow-hidden rounded-[1.75rem] border border-amber-300/45 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-6 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_18px_45px_-32px_rgba(251,191,36,0.8)]"
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 flex h-6 w-6 flex-none items-center justify-center rounded-full border border-amber-300/50 bg-amber-300/10 text-amber-200">
+                  <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(90deg,rgba(148,163,184,0.38)_1px,transparent_1px),linear-gradient(0deg,rgba(148,163,184,0.28)_1px,transparent_1px)] [background-size:24px_24px]" />
+                  <svg
+                    className="pointer-events-none absolute bottom-4 right-4 h-24 w-40 text-cyan-200/25"
+                    viewBox="0 0 180 90"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    {index === 1 ? (
+                      <>
+                        <path d="M18 20H72C92 20 88 48 110 48H162" stroke="currentColor" strokeWidth="2" />
+                        <path d="M18 44H58C84 44 86 68 118 68H162" stroke="currentColor" strokeWidth="2" />
+                        <circle cx="72" cy="20" r="4" fill="currentColor" />
+                        <circle cx="110" cy="48" r="4" fill="currentColor" />
+                      </>
+                    ) : index === 3 ? (
+                      <>
+                        <path d="M20 22H160M20 46H160M20 70H160" stroke="currentColor" strokeWidth="1.5" />
+                        <path d="M42 12V78M82 12V78M122 12V78" stroke="currentColor" strokeWidth="1.5" />
+                        <path d="M24 66C42 38 54 36 68 54C86 78 98 74 112 40C122 18 138 20 158 44" stroke="currentColor" strokeWidth="2.4" />
+                      </>
+                    ) : (
+                      <path d="M16 58C28 58 30 42 42 42C56 42 56 72 70 72C86 72 84 18 100 18C116 18 114 58 130 58C146 58 148 42 164 42" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+                    )}
+                  </svg>
+                  <div className="relative z-10 flex items-start gap-3">
+                    <div className="mt-1 flex h-7 w-7 flex-none items-center justify-center rounded-full border border-amber-300/50 bg-amber-300/10 text-amber-200">
                       <CheckIcon className="h-3.5 w-3.5" />
                     </div>
                     <h3 className="text-xl font-semibold leading-tight tracking-tight text-white">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="mt-5 flex-1 text-sm leading-7 text-slate-300">
+                  <p className="relative z-10 mt-5 flex-1 text-sm leading-7 text-slate-300">
                     {item.description}
                   </p>
                 </article>
