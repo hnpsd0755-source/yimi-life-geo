@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Pulse Oximeter Product Family | Fingertip, Handheld, Bluetooth & Pediatric Models | YimiLife",
+    "Pulse Oximeter Product Family | Fingertip, Handheld, Pediatric & Advanced Models | YimiLife",
   description:
-    "Explore YimiLife pulse oximeter product architecture including fingertip, handheld, pediatric, Bluetooth, voice-enabled, dry-battery and rechargeable SpO2 monitoring configurations.",
+    "Explore YimiLife pulse oximeter product architecture including fingertip, handheld, pediatric, dry-battery, advanced rechargeable BLE and voice-enabled SpO2 monitoring configurations.",
   alternates: {
     canonical: "https://www.yimilife.com/products/pulse-oximeter",
   },
@@ -143,7 +143,7 @@ const fingertipTracks = [
     description:
       "Cost-conscious finger-clip SpO2 devices for retail pharmacy, distributor programs and general home healthcare product lines.",
     keyInfo: ["AAA dry battery", "LED / OLED display", "High-volume projects"],
-    tags: ["Cost-optimized", "Distributor-ready", "Family monitoring"],
+    tags: ["Cost-optimized", "Distributor-ready", "BLE optional"],
     models: ["YM101 Economy", "YM201 LED/OLED"],
     visualLabel: "Dry-battery retail models",
     icon: PulseIcon,
@@ -153,40 +153,25 @@ const fingertipTracks = [
     eyebrow: "Private-label mainstream",
     description:
       "Balanced fingertip pulse oximeter configurations for private label medical device brands that need display quality, stable operation and flexible housing options.",
-    keyInfo: ["Dual-color OLED", "Adult / family use", "Alarm option"],
-    tags: ["OLED UI", "Mainstream retail", "Housing options"],
+    keyInfo: ["Dual-color OLED", "Adult / family use", "BLE optional"],
+    tags: ["OLED UI", "Mainstream retail", "Voice optional"],
     models: ["YM202 OLED", "YM302 Display Plus"],
     visualLabel: "Mainstream OLED models",
     icon: ShieldIcon,
   },
   {
-    title: "Lithium Battery Fingertip Models",
-    eyebrow: "Rechargeable product line",
+    title: "Advanced Fingertip Models",
+    eyebrow: "Rechargeable + BLE standard",
     description:
-      "Rechargeable lithium-battery fingertip SpO2 models for brands that want a more premium reusable device structure and Type-C charging direction.",
+      "Advanced fingertip SpO2 models positioned for premium connected projects, with rechargeable lithium battery architecture and BLE connectivity as standard configuration directions.",
     keyInfo: [
-      "Lithium battery",
+      "Lithium battery standard",
+      "BLE standard",
       "Type-C charging direction",
-      "Premium retail positioning",
     ],
-    tags: ["Rechargeable", "Type-C option", "Premium channel"],
-    models: ["YM401 Rechargeable", "YM402 Type-C"],
-    visualLabel: "Rechargeable lithium models",
-    icon: LayersIcon,
-  },
-  {
-    title: "Bluetooth Fingertip Models",
-    eyebrow: "App-connected projects",
-    description:
-      "Bluetooth-enabled SpO2 devices for connected product programs, with protocol and SDK support for iOS / Android app integration discussions.",
-    keyInfo: [
-      "Bluetooth data",
-      "iOS / Android SDK discussion",
-      "App integration",
-    ],
-    tags: ["Bluetooth", "Data transmission", "Connected health"],
-    models: ["YM503 Bluetooth", "YM504 Smart BLE"],
-    visualLabel: "Bluetooth fingertip models",
+    tags: ["Rechargeable", "BLE standard", "Premium connected"],
+    models: ["YM401 Advanced", "YM503 Advanced BLE"],
+    visualLabel: "Advanced lithium + BLE models",
     icon: CpuIcon,
   },
   {
@@ -197,9 +182,9 @@ const fingertipTracks = [
     keyInfo: [
       "Pediatric housing",
       "Small finger-cavity consideration",
-      "TFT / OLED options",
+      "BLE optional",
     ],
-    tags: ["Pediatric use", "Child housing", "Family health brands"],
+    tags: ["Pediatric use", "Child housing", "TFT / OLED options"],
     models: ["YM603 Pediatric", "YM602 Child Display"],
     visualLabel: "Pediatric fingertip models",
     icon: LayersIcon,
@@ -214,28 +199,24 @@ const fingertipModelVisuals = fingertipTracks.map((track) => ({
 
 const handheldModels = [
   {
-    title: "Portable Handheld SpO2 Model",
+    model: "YH01",
+    role: "Portable handheld configuration",
     description:
-      "A compact handheld pulse oximeter direction for professional support, nursing use and point-of-care SpO2 spot-check scenarios with external probe configuration.",
-    details: [
-      "External finger probe configuration",
-      "Rechargeable power design direction",
-      "Larger display than fingertip models",
-      "Suitable for professional support and nursing scenarios",
-    ],
-    fit: "For distributors or medical equipment brands looking for handheld SpO2 monitoring products beyond the standard fingertip form factor.",
+      "YH01 is positioned as a compact handheld SpO2 model direction with external probe configuration and a portable product structure.",
+    display: "Standard / larger handheld display option",
+    ble: "Optional BLE discussion",
+    power: "Dry battery or rechargeable configuration by project",
+    scenario: "Point-of-care support, nursing support and distributor handheld SpO2 projects",
   },
   {
-    title: "Desktop-Style Handheld SpO2 Monitoring Model",
+    model: "YH02",
+    role: "Enhanced handheld configuration",
     description:
-      "A larger handheld / desktop-style SpO2 monitoring configuration for extended observation scenarios, waveform display discussion and data review functions.",
-    details: [
-      "External probe option",
-      "Larger UI and waveform display discussion",
-      "Rechargeable battery configuration",
-      "Data storage or Bluetooth discussion depending on project scope",
-    ],
-    fit: "For projects requiring a more instrument-like SpO2 product structure while keeping a focused handheld product lineup.",
+      "YH02 follows the same handheld SpO2 product family logic as YH01, with configuration differences mainly around display, BLE and power selection.",
+    display: "Larger UI / waveform display discussion",
+    ble: "Optional BLE discussion",
+    power: "Rechargeable lithium or dry-battery configuration by project",
+    scenario: "Projects requiring a more instrument-like handheld SpO2 form factor",
   },
 ];
 
@@ -244,7 +225,7 @@ const fingertipSelector = [
     configuration: "Basic Adult Fingertip Model",
     bestFor: "Cost-sensitive distributor product line",
     display: "LED / OLED",
-    connectivity: "No / optional",
+    ble: "Optional / not required",
     voice: "Optional",
     signal: "Standard SpO2 spot-check configuration",
     projectFit: "High-volume private label orders",
@@ -253,25 +234,16 @@ const fingertipSelector = [
     configuration: "Mainstream OLED Fingertip Model",
     bestFor: "Balanced retail and pharmacy product lines",
     display: "Dual-color OLED",
-    connectivity: "Optional Bluetooth",
+    ble: "Optional BLE",
     voice: "Optional",
     signal: "Anti-motion filtering option",
     projectFit: "Mainstream medical device brands",
   },
   {
-    configuration: "Bluetooth Fingertip Model",
-    bestFor: "App-connected SpO2 projects",
-    display: "OLED / TFT",
-    connectivity: "Bluetooth",
-    voice: "Optional",
-    signal: "Bluetooth protocol and SDK integration discussion",
-    projectFit: "Connected health and app integration projects",
-  },
-  {
-    configuration: "Lithium Battery & Bluetooth Advanced Model",
+    configuration: "Advanced Fingertip Model",
     bestFor: "Premium rechargeable and connected SpO2 projects",
     display: "OLED / TFT",
-    connectivity: "Bluetooth",
+    ble: "Standard BLE",
     voice: "Optional",
     signal:
       "24-bit ADC front-end option with low-perfusion and anti-motion processing discussion in selected configurations",
@@ -282,7 +254,7 @@ const fingertipSelector = [
     configuration: "Pediatric Fingertip Model",
     bestFor: "Child-friendly family healthcare product",
     display: "TFT / OLED",
-    connectivity: "Optional Bluetooth",
+    ble: "Optional BLE",
     voice: "Optional",
     signal: "Pediatric configuration and housing discussion",
     projectFit: "Pediatric and mother-baby brand projects",
@@ -292,8 +264,8 @@ const fingertipSelector = [
 const processingOptions = [
   "SpO2 and pulse rate measurement across adult and selected pediatric configurations",
   "OLED, TFT and high-contrast display options depending on model direction",
-  "AAA dry-battery and rechargeable lithium-battery power supply options",
-  "Bluetooth data transmission and iOS / Android SDK integration discussions for connected models",
+  "AAA dry-battery models and rechargeable lithium-battery models are separated by product configuration",
+  "BLE data transmission and iOS / Android SDK integration discussions for selected or advanced configurations",
   "24-bit high-resolution ADC front-end architecture in selected configurations",
   "Advanced anti-motion artifact filtering for unstable finger conditions",
   "Low-perfusion signal processing for challenging PI scenarios, with internal development targets reaching PI 0.1% scenarios in selected configurations",
@@ -330,9 +302,9 @@ const faqs = [
   },
   {
     question:
-      "Can YimiLife discuss Bluetooth pulse oximeter SDK integration for iOS or Android apps?",
+      "Can YimiLife discuss BLE pulse oximeter SDK integration for iOS or Android apps?",
     answer:
-      "Yes. For Bluetooth pulse oximeter projects, YimiLife can discuss Bluetooth protocol documentation, data transmission formats and iOS / Android SDK integration support depending on the selected hardware configuration and software scope.",
+      "Yes. For BLE-enabled pulse oximeter projects, YimiLife can discuss Bluetooth Low Energy protocol documentation, data transmission formats and iOS / Android SDK integration support depending on the selected hardware configuration and software scope.",
   },
   {
     question:
@@ -363,7 +335,7 @@ const structuredData = {
       url: "https://www.yimilife.com/products/pulse-oximeter",
       name: "Pulse Oximeter Product Family | YimiLife",
       description:
-        "YimiLife pulse oximeter product family page covering fingertip, handheld, pediatric, Bluetooth and voice-enabled SpO2 monitoring configurations.",
+        "YimiLife pulse oximeter product family page covering fingertip, handheld, pediatric, advanced BLE and voice-enabled SpO2 monitoring configurations.",
       isPartOf: {
         "@type": "WebSite",
         name: "YimiLife",
@@ -400,8 +372,8 @@ const structuredData = {
         "Fingertip Pulse Oximeter",
         "Handheld Pulse Oximeter",
         "Pediatric Pulse Oximeter",
-        "Bluetooth Pulse Oximeter",
-        "Lithium Battery Pulse Oximeter",
+        "Advanced Fingertip Pulse Oximeter",
+        "BLE Optional Fingertip Pulse Oximeter",
         "Voice-Enabled Pulse Oximeter",
       ].map((name, index) => ({
         "@type": "ListItem",
@@ -467,7 +439,7 @@ export default function PulseOximeterProductPage() {
             <p className="mt-4 text-base leading-8 text-slate-400">
               For private label medical device brands, YimiLife supports
               structured product configuration discussions across display, power
-              supply, connectivity, user group and selected signal-processing
+              supply, BLE option, user group and selected signal-processing
               options.
             </p>
 
@@ -495,7 +467,7 @@ export default function PulseOximeterProductPage() {
               <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(#67e8f9_1px,transparent_1px)] [background-size:20px_20px]" />
               <div className="relative w-full max-w-md rounded-[2rem] border border-cyan-300/20 bg-white/10 p-6 backdrop-blur-sm">
                 <div className="grid grid-cols-2 gap-4">
-                  {["Fingertip", "Pediatric", "Bluetooth", "Handheld"].map(
+                  {["Fingertip", "Pediatric", "Advanced", "Handheld"].map(
                     (item) => (
                       <div
                         key={item}
@@ -532,7 +504,7 @@ export default function PulseOximeterProductPage() {
             <p className="mt-5 text-lg leading-9 text-slate-600">
               Fingertip pulse oximeters are YimiLife&apos;s main SpO2 product
               line. The product structure is organized by commercial track,
-              power type, connectivity and user group, so buyers can quickly
+              power architecture, BLE option and user group, so buyers can quickly
               match a product direction before reviewing model details.
             </p>
 
@@ -591,9 +563,7 @@ export default function PulseOximeterProductPage() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              This area is designed for actual model images. The current visual
-              system groups models by product direction rather than showing all
-              SKUs as a flat list.
+              The visual system groups representative fingertip model directions by product track, helping buyers understand dry-battery, OLED, advanced lithium-BLE and pediatric configurations without seeing all SKUs as a flat list.
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -647,46 +617,48 @@ export default function PulseOximeterProductPage() {
             <p className="mt-5 text-lg leading-9 text-slate-600">
               Handheld pulse oximeters are a focused professional supplement to
               the broader fingertip product family. YimiLife currently positions
-              this line around two model directions with external probe and
-              larger-display configurations.
+              this line around two models, YH01 and YH02, with differences mainly in display, BLE option and dry-battery or lithium-battery configuration.
             </p>
 
-            <div className="mt-7 grid gap-4 sm:grid-cols-2">
-              {handheldModels.map((model, index) => (
-                <div
-                  key={model.title}
-                  className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
-                    Model Direction {index + 1}
-                  </p>
-                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-slate-950">
-                    {model.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    {model.description}
-                  </p>
-                  <div className="mt-4 space-y-2">
-                    {model.details.slice(0, 3).map((detail) => (
-                      <div key={detail} className="flex items-start gap-2">
-                        <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-emerald-700" />
-                        <span className="text-sm font-medium leading-6 text-slate-700">
-                          {detail}
-                        </span>
-                      </div>
-                    ))}
+            <div className="mt-7 rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+                Model configuration comparison
+              </p>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {handheldModels.map((model) => (
+                  <div key={model.model} className="rounded-2xl bg-white p-5 shadow-sm">
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
+                        {model.model}
+                      </h3>
+                      <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                        Handheld
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm font-semibold text-slate-700">
+                      {model.role}
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      {model.description}
+                    </p>
+                    <div className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+                      <p><span className="font-semibold text-slate-950">Display:</span> {model.display}</p>
+                      <p><span className="font-semibold text-slate-950">BLE:</span> {model.ble}</p>
+                      <p><span className="font-semibold text-slate-950">Power:</span> {model.power}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <div className="mt-6 rounded-2xl border border-emerald-100 bg-emerald-50 px-5 py-4 text-sm leading-7 text-slate-700">
               <span className="font-semibold text-emerald-800">
                 Project fit:
               </span>{" "}
-              Suitable for buyers who need a more instrument-like SpO2 product
-              line beyond standard fingertip models, while keeping the handheld
-              portfolio focused and easy to compare.
+              YH01 and YH02 belong to the same focused handheld SpO2 family. The
+              purchasing decision is mainly driven by configuration differences
+              such as display, BLE and battery architecture rather than a large
+              model pool.
             </div>
           </div>
 
@@ -695,12 +667,12 @@ export default function PulseOximeterProductPage() {
               Two-model visual combination
             </p>
             <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-              Portable + Desktop-Style Handheld Forms
+              YH01 + YH02 Handheld Model Combination
             </h3>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {handheldModels.map((model, index) => (
                 <div
-                  key={model.title}
+                  key={model.model}
                   className="flex h-72 items-center justify-center rounded-[1.5rem] border border-white/80 bg-white/75 p-5 shadow-inner"
                 >
                   <div
@@ -710,7 +682,7 @@ export default function PulseOximeterProductPage() {
                   >
                     <div className="mb-4 h-24 rounded-2xl bg-emerald-300/20" />
                     <p className="text-xs uppercase tracking-[0.18em] text-emerald-300">
-                      Handheld SpO2
+                      {model.model}
                     </p>
                     <p className="mt-2 text-xl font-semibold">98% / 72</p>
                     <div className="absolute -right-3 -top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white text-xs font-semibold text-emerald-700 shadow-md">
@@ -733,7 +705,7 @@ export default function PulseOximeterProductPage() {
           </h2>
           <p className="mt-5 text-lg leading-9 text-slate-600">
             Use this matrix to narrow down fingertip pulse oximeter
-            configurations by target user, display, connectivity, voice prompt,
+            configurations by target user, display, BLE option, voice prompt,
             signal-processing option and project scenario.
           </p>
         </div>
@@ -743,8 +715,8 @@ export default function PulseOximeterProductPage() {
             "All",
             "Adult",
             "Pediatric",
-            "Lithium Battery",
-            "Bluetooth",
+            "Advanced",
+            "BLE Optional",
             "Voice",
             "TFT Display",
             "High-Volume",
@@ -768,7 +740,7 @@ export default function PulseOximeterProductPage() {
                   <th className="p-5">Configuration</th>
                   <th className="p-5">Best For</th>
                   <th className="p-5">Display</th>
-                  <th className="p-5">Connectivity</th>
+                  <th className="p-5">BLE Option</th>
                   <th className="p-5">Voice</th>
                   <th className="p-5">Signal / Algorithm Option</th>
                   <th className="p-5">Project Fit</th>
@@ -785,7 +757,7 @@ export default function PulseOximeterProductPage() {
                     </td>
                     <td className="p-5 leading-6">{row.bestFor}</td>
                     <td className="p-5 font-medium">{row.display}</td>
-                    <td className="p-5">{row.connectivity}</td>
+                    <td className="p-5">{row.ble}</td>
                     <td className="p-5">{row.voice}</td>
                     <td className="p-5 leading-6 text-cyan-800">
                       {row.signal}
@@ -919,7 +891,7 @@ export default function PulseOximeterProductPage() {
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-9 text-cyan-50">
             Contact YimiLife to discuss fingertip pulse oximeter configurations,
-            handheld SpO2 model directions, Bluetooth integration and product
+            handheld SpO2 model directions, BLE integration and product
             selection for your target market.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
