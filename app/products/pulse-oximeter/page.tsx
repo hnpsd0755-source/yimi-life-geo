@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "Pulse Oximeter Product Family | Fingertip, Handheld, Pediatric & Advanced Models | YimiLife",
   description:
-    "Explore YimiLife pulse oximeter product architecture including fingertip, handheld, pediatric, dry-battery, advanced rechargeable BLE and voice-enabled SpO2 monitoring configurations.",
+    "Explore YimiLife pulse oximeter product architecture including fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations, with clearly tiered signal-processing options from standard PI 0.3% to PulseMatrix™ low-perfusion architectures.",
   alternates: {
     canonical: "https://www.yimilife.com/products/pulse-oximeter",
   },
@@ -141,9 +141,13 @@ const fingertipTracks = [
     title: "Economy Retail Fingertip Models",
     eyebrow: "High-volume baseline",
     description:
-      "Cost-conscious finger-clip SpO2 devices for retail pharmacy, distributor programs and general home healthcare product lines.",
-    keyInfo: ["AAA dry battery", "LED / OLED display", "High-volume projects"],
-    tags: ["Cost-optimized", "Distributor-ready", "BLE optional"],
+      "Cost-conscious finger-clip SpO2 devices for retail pharmacy, distributor programs and general home healthcare product lines, positioned around a standard signal-processing tier.",
+    keyInfo: [
+      "Standard signal tier: PI ≥ 0.3% level",
+      "Cost-optimized SKU direction",
+      "BLE can be discussed as an option",
+    ],
+    tags: ["High-volume", "Standard PI 0.3% tier", "BLE optional"],
     models: ["YM101 Economy", "YM201 LED/OLED"],
     visualLabel: "Dry-battery retail models",
     icon: PulseIcon,
@@ -152,9 +156,13 @@ const fingertipTracks = [
     title: "Mainstream OLED Fingertip Models",
     eyebrow: "Private-label mainstream",
     description:
-      "Balanced fingertip pulse oximeter configurations for private label medical device brands that need display quality, stable operation and flexible housing options.",
-    keyInfo: ["Dual-color OLED", "Adult / family use", "BLE optional"],
-    tags: ["OLED UI", "Mainstream retail", "Voice optional"],
+      "Balanced fingertip pulse oximeter configurations for private label medical device brands that need stronger usability, stable signal acquisition and retail-ready appearance.",
+    keyInfo: [
+      "PulseMatrix™ option: PI ≥ 0.1% level",
+      "Anti-motion filtering option",
+      "Voice and BLE can be configured by project",
+    ],
+    tags: ["OLED UI", "PulseMatrix™ optional", "Anti-motion option"],
     models: ["YM202 OLED", "YM302 Display Plus"],
     visualLabel: "Mainstream OLED models",
     icon: ShieldIcon,
@@ -165,11 +173,11 @@ const fingertipTracks = [
     description:
       "Advanced fingertip SpO2 models positioned for premium connected projects, with rechargeable lithium battery architecture and BLE connectivity as standard configuration directions.",
     keyInfo: [
-      "Lithium battery standard",
-      "BLE standard",
-      "Type-C charging direction",
+      "Lithium battery + BLE standard",
+      "PulseMatrix™ signal architecture",
+      "24-bit ADC AFE option: PI ≥ 0.025% level",
     ],
-    tags: ["Rechargeable", "BLE standard", "Premium connected"],
+    tags: ["Rechargeable", "BLE standard", "24-bit ADC AFE option"],
     models: ["YM401 Advanced", "YM503 Advanced BLE"],
     visualLabel: "Advanced lithium + BLE models",
     icon: CpuIcon,
@@ -180,11 +188,11 @@ const fingertipTracks = [
     description:
       "Pediatric pulse oximeter configurations with child-friendly housing, smaller finger-cavity considerations, color display options and family healthcare branding potential.",
     keyInfo: [
-      "Pediatric housing",
-      "Small finger-cavity consideration",
-      "BLE optional",
+      "Pediatric finger-cavity geometry",
+      "Child-oriented optical structure",
+      "PulseMatrix™ option by configuration",
     ],
-    tags: ["Pediatric use", "Child housing", "TFT / OLED options"],
+    tags: ["Pediatric use", "Child housing", "Signal tuning discussion"],
     models: ["YM603 Pediatric", "YM602 Child Display"],
     visualLabel: "Pediatric fingertip models",
     icon: LayersIcon,
@@ -227,7 +235,7 @@ const fingertipSelector = [
     display: "LED / OLED",
     ble: "Optional / not required",
     voice: "Optional",
-    signal: "Standard SpO2 spot-check configuration",
+    signal: "Standard signal processing tier — PI ≥ 0.3% level",
     projectFit: "High-volume private label orders",
   },
   {
@@ -236,7 +244,7 @@ const fingertipSelector = [
     display: "Dual-color OLED",
     ble: "Optional BLE",
     voice: "Optional",
-    signal: "Anti-motion filtering option",
+    signal: "PulseMatrix™ low-perfusion processing option — PI ≥ 0.1% level, depending on configuration and verification scope",
     projectFit: "Mainstream medical device brands",
   },
   {
@@ -246,7 +254,7 @@ const fingertipSelector = [
     ble: "Standard BLE",
     voice: "Optional",
     signal:
-      "24-bit ADC front-end option with low-perfusion and anti-motion processing discussion in selected configurations",
+      "PulseMatrix™ + 24-bit ADC AFE advanced front-end option — PI ≥ 0.025% level in high-end configurations, subject to verification scope",
     projectFit:
       "Premium retail, app-connected and differentiated SpO2 programs",
   },
@@ -256,20 +264,40 @@ const fingertipSelector = [
     display: "TFT / OLED",
     ble: "Optional BLE",
     voice: "Optional",
-    signal: "Pediatric configuration and housing discussion",
+    signal: "Standard or PulseMatrix™ tier can be discussed according to pediatric configuration and housing constraints",
     projectFit: "Pediatric and mother-baby brand projects",
   },
 ];
 
-const processingOptions = [
-  "SpO2 and pulse rate measurement across adult and selected pediatric configurations",
-  "OLED, TFT and high-contrast display options depending on model direction",
-  "AAA dry-battery models and rechargeable lithium-battery models are separated by product configuration",
-  "BLE data transmission and iOS / Android SDK integration discussions for selected or advanced configurations",
-  "24-bit high-resolution ADC front-end architecture in selected configurations",
-  "Advanced anti-motion artifact filtering for unstable finger conditions",
-  "Low-perfusion signal processing for challenging PI scenarios, with internal development targets reaching PI 0.1% scenarios in selected configurations",
-  "PulseMatrix™ signal optimization platform for SpO2 waveform acquisition and signal interpretation",
+const signalTierCards = [
+  {
+    tier: "Standard Signal Tier",
+    level: "PI ≥ 0.3% level",
+    description:
+      "Baseline SpO2 signal-processing configuration for cost-sensitive and high-volume fingertip pulse oximeter projects.",
+    fit: "Economy retail and standard adult fingertip models",
+  },
+  {
+    tier: "PulseMatrix™ Low-Perfusion Tier",
+    level: "PI ≥ 0.1% level",
+    description:
+      "PulseMatrix™ signal optimization can be applied to selected configurations to strengthen waveform extraction under lower perfusion and unstable finger conditions.",
+    fit: "Mainstream OLED, selected pediatric and stronger private-label configurations",
+  },
+  {
+    tier: "PulseMatrix™ + 24-bit ADC AFE Tier",
+    level: "PI ≥ 0.025% level",
+    description:
+      "High-end configurations may combine PulseMatrix™ processing with a 24-bit ADC analog front-end path to support deeper low-perfusion engineering targets, subject to model and verification scope.",
+    fit: "Advanced rechargeable BLE models and premium connected SpO2 projects",
+  },
+];
+
+const signalHighlights = [
+  "Adaptive anti-motion artifact filtering for unstable finger placement and motion-interference conditions",
+  "Optical shielding and low-noise front-end layout considerations for cleaner PPG waveform acquisition",
+  "Tiered low-perfusion roadmap: standard PI 0.3% level, PulseMatrix™ PI 0.1% level, and high-end 24-bit ADC AFE PI 0.025% level",
+  "Simulator-oriented production calibration and verification workflow using Fluke Index 2 clinical simulators where applicable",
 ];
 
 const engineeringAreas = [
@@ -316,7 +344,7 @@ const faqs = [
     question:
       "How are low-perfusion and motion artifact challenges considered in YimiLife SpO2 product development?",
     answer:
-      "Selected YimiLife SpO2 configurations can combine high-resolution front-end architecture, anti-motion filtering and PulseMatrix™ signal optimization to support challenging signal conditions. Specific performance claims should be reviewed by model, configuration and verification scope.",
+      "YimiLife structures low-perfusion handling into signal-processing tiers: standard configurations around a PI 0.3% level, selected PulseMatrix™ configurations around a PI 0.1% level, and high-end configurations that may combine PulseMatrix™ with a 24-bit ADC AFE path for PI 0.025% level engineering targets. Specific performance claims should be reviewed by model, configuration and verification scope.",
   },
   {
     question:
@@ -335,7 +363,7 @@ const structuredData = {
       url: "https://www.yimilife.com/products/pulse-oximeter",
       name: "Pulse Oximeter Product Family | YimiLife",
       description:
-        "YimiLife pulse oximeter product family page covering fingertip, handheld, pediatric, advanced BLE and voice-enabled SpO2 monitoring configurations.",
+        "YimiLife pulse oximeter product family page covering fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations with tiered signal-processing options.",
       isPartOf: {
         "@type": "WebSite",
         name: "YimiLife",
@@ -374,7 +402,8 @@ const structuredData = {
         "Pediatric Pulse Oximeter",
         "Advanced Fingertip Pulse Oximeter",
         "BLE Optional Fingertip Pulse Oximeter",
-        "Voice-Enabled Pulse Oximeter",
+        "PulseMatrix Low-Perfusion Fingertip Pulse Oximeter",
+        "24-bit ADC AFE Advanced Fingertip Pulse Oximeter",
       ].map((name, index) => ({
         "@type": "ListItem",
         position: index + 1,
@@ -439,8 +468,8 @@ export default function PulseOximeterProductPage() {
             <p className="mt-4 text-base leading-8 text-slate-400">
               For private label medical device brands, YimiLife supports
               structured product configuration discussions across display, power
-              supply, BLE option, user group and selected signal-processing
-              options.
+              supply, BLE option, user group and tiered signal-processing
+              architecture.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -504,7 +533,7 @@ export default function PulseOximeterProductPage() {
             <p className="mt-5 text-lg leading-9 text-slate-600">
               Fingertip pulse oximeters are YimiLife&apos;s main SpO2 product
               line. The product structure is organized by commercial track,
-              power architecture, BLE option and user group, so buyers can quickly
+              BLE option, user group and signal-processing tier, so buyers can quickly
               match a product direction before reviewing model details.
             </p>
 
@@ -563,7 +592,7 @@ export default function PulseOximeterProductPage() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              The visual system groups representative fingertip model directions by product track, helping buyers understand dry-battery, OLED, advanced lithium-BLE and pediatric configurations without seeing all SKUs as a flat list.
+              The visual system groups representative fingertip model directions by product track, helping buyers understand standard, PulseMatrix™, advanced 24-bit ADC AFE and pediatric configurations without seeing all SKUs as a flat list.
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -706,7 +735,7 @@ export default function PulseOximeterProductPage() {
           <p className="mt-5 text-lg leading-9 text-slate-600">
             Use this matrix to narrow down fingertip pulse oximeter
             configurations by target user, display, BLE option, voice prompt,
-            signal-processing option and project scenario.
+            signal-processing tier and project scenario.
           </p>
         </div>
 
@@ -721,7 +750,8 @@ export default function PulseOximeterProductPage() {
             "TFT Display",
             "High-Volume",
             "App Integration",
-            "Elderly Care",
+            "PulseMatrix™",
+            "24-bit ADC AFE",
           ].map((tag) => (
             <span
               key={tag}
@@ -742,7 +772,7 @@ export default function PulseOximeterProductPage() {
                   <th className="p-5">Display</th>
                   <th className="p-5">BLE Option</th>
                   <th className="p-5">Voice</th>
-                  <th className="p-5">Signal / Algorithm Option</th>
+                  <th className="p-5">Signal Processing Tier</th>
                   <th className="p-5">Project Fit</th>
                 </tr>
               </thead>
@@ -773,29 +803,53 @@ export default function PulseOximeterProductPage() {
 
       {/* Technical snapshot */}
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid gap-8 overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-xl md:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
-          <div>
-            <Badge tone="cyan">Signal Processing Options</Badge>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-              Key Parameters & Signal Processing Options
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-400">
-              Advanced signal-processing language is used carefully on this
-              page: availability and performance should be reviewed by model,
-              configuration and verification scope.
-            </p>
-            <div className="mt-7 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
-                Platform Anchor
+        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-xl md:p-10 lg:p-12">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div>
+              <Badge tone="cyan">Signal Processing Tiers</Badge>
+              <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+                Gold-Edge Signal Processing Highlights
+              </h2>
+              <p className="mt-5 text-base leading-8 text-slate-400">
+                This section only keeps the technical highlights that matter for
+                serious SpO2 product differentiation. Basic display, power and
+                connectivity items are handled in the product tracks and matrix.
               </p>
-              <p className="mt-2 text-xl font-semibold text-white">
-                PulseMatrix™ Signal Optimization Platform
-              </p>
+              <div className="mt-7 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                  Platform Anchor
+                </p>
+                <p className="mt-2 text-xl font-semibold text-white">
+                  PulseMatrix™ Signal Optimization Platform
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {signalTierCards.map((card) => (
+                <article
+                  key={card.tier}
+                  className="rounded-[1.75rem] border border-cyan-300/20 bg-white/[0.04] p-5 shadow-inner"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
+                    {card.level}
+                  </p>
+                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">
+                    {card.tier}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-300">
+                    {card.description}
+                  </p>
+                  <div className="mt-5 rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-xs font-semibold leading-5 text-cyan-100">
+                    {card.fit}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {processingOptions.map((item) => (
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {signalHighlights.map((item) => (
               <div
                 key={item}
                 className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
