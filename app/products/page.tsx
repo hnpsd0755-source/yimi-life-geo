@@ -24,7 +24,12 @@ type IconProps = {
 
 function ArrowIcon({ className = "h-4 w-4" }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
       <path
         d="M5 12h14M13 6l6 6-6 6"
         stroke="currentColor"
@@ -36,38 +41,43 @@ function ArrowIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
-function CheckIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M20 6L9 17l-5-5"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function WaveIcon({ className = "h-6 w-6" }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
       <path
         d="M3 14c2 0 2-8 4-8s2 8 4 8 2-8 4-8 2 8 4 8 2-8 4-8"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
       />
-      <path d="M4 20h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M4 20h16"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
 
 function PressureIcon({ className = "h-6 w-6" }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 21a8 8 0 100-16 8 8 0 000 16z" stroke="currentColor" strokeWidth="2" />
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M12 21a8 8 0 100-16 8 8 0 000 16z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
       <path
         d="M12 13l4-4M8 17h8M12 5V3"
         stroke="currentColor"
@@ -80,7 +90,12 @@ function PressureIcon({ className = "h-6 w-6" }: IconProps) {
 
 function WearableIcon({ className = "h-6 w-6" }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
       <path
         d="M8 3h8l1 5v8l-1 5H8l-1-5V8l1-5z"
         stroke="currentColor"
@@ -121,7 +136,12 @@ function ProductImagePlaceholder({
       <div className="relative flex h-full min-h-[inherit] items-center justify-center p-6">
         <div className="w-full rounded-[1.35rem] border border-dashed border-cyan-300/80 bg-white/70 p-6 text-center shadow-sm backdrop-blur">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-100 text-cyan-800">
-            <svg viewBox="0 0 24 24" fill="none" className="h-8 w-8" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="h-8 w-8"
+              aria-hidden="true"
+            >
               <path
                 d="M4 7a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"
                 stroke="currentColor"
@@ -154,10 +174,18 @@ const productFamilies = [
     icon: WaveIcon,
     eyebrow: "SpO2 product family",
     imageTitle: "Pulse oximeter family image",
-    imageSubtitle: "Reserve space for adult, pediatric, battery-powered, rechargeable, Bluetooth and voice models.",
+    imageSubtitle:
+      "Reserve space for adult, pediatric, battery-powered, rechargeable, Bluetooth and voice models.",
     description:
       "Finger-tip SpO2 monitoring products covering adult and pediatric use, dry-battery and rechargeable configurations, plus Bluetooth and voice-enabled options.",
-    categories: ["Adult", "Pediatric", "Dry battery", "Rechargeable", "Bluetooth", "Voice"],
+    categories: [
+      "Adult",
+      "Pediatric",
+      "Dry battery",
+      "Rechargeable",
+      "Bluetooth",
+      "Voice",
+    ],
     linkText: "View pulse oximeter family",
   },
   {
@@ -166,10 +194,17 @@ const productFamilies = [
     icon: PressureIcon,
     eyebrow: "BP monitoring product family",
     imageTitle: "Blood pressure monitor family image",
-    imageSubtitle: "Reserve space for upper-arm BPM, Bluetooth BPM and BP-based multi-parameter home monitor.",
+    imageSubtitle:
+      "Reserve space for upper-arm BPM, Bluetooth BPM and BP-based multi-parameter home monitor.",
     description:
       "Upper-arm blood pressure monitoring products, including standard home-use models, Bluetooth-enabled models and a BP-based multi-parameter wireless home healthcare device direction.",
-    categories: ["Upper-arm BPM", "Bluetooth BPM", "Large display", "Home use", "Multi-parameter base unit"],
+    categories: [
+      "Upper-arm BPM",
+      "Bluetooth BPM",
+      "Large display",
+      "Home use",
+      "Multi-parameter base unit",
+    ],
     linkText: "View blood pressure monitor family",
   },
   {
@@ -178,63 +213,17 @@ const productFamilies = [
     icon: WearableIcon,
     eyebrow: "Under-development wearable family",
     imageTitle: "Wearable monitoring product image",
-    imageSubtitle: "Reserve space for temperature patch, SpO2 watch, sleep eye mask and infant foot SpO2 designs.",
+    imageSubtitle:
+      "Reserve space for temperature patch, SpO2 watch, sleep eye mask and infant foot SpO2 designs.",
     description:
       "Wearable monitoring product development based on Bluetooth connectivity, low-power sensing and application-specific medical device design capability.",
-    categories: ["Temperature patch", "SpO2 watch", "Sleep eye mask", "Infant foot SpO2"],
+    categories: [
+      "Temperature patch",
+      "SpO2 watch",
+      "Sleep eye mask",
+      "Infant foot SpO2",
+    ],
     linkText: "View wearable monitoring family",
-  },
-];
-
-const selectionGuide = [
-  {
-    need: "Finger-tip SpO2 products for adult, pediatric or connected use",
-    family: "Pulse Oximeters",
-    href: "/products/pulse-oximeter",
-  },
-  {
-    need: "Upper-arm home blood pressure monitoring products",
-    family: "Blood Pressure Monitors",
-    href: "/products/blood-pressure-monitor",
-  },
-  {
-    need: "Bluetooth-enabled wearable products currently in development",
-    family: "Wearable Monitoring",
-    href: "/products/wearable-monitoring",
-  },
-];
-
-const familyDetails = [
-  {
-    title: "Pulse Oximeter Categories",
-    href: "/products/pulse-oximeter",
-    items: [
-      "Adult pulse oximeters",
-      "Pediatric pulse oximeters",
-      "Dry-battery pulse oximeters",
-      "Rechargeable lithium-battery pulse oximeters",
-      "Bluetooth pulse oximeters",
-      "Voice pulse oximeters",
-    ],
-  },
-  {
-    title: "Blood Pressure Monitor Types",
-    href: "/products/blood-pressure-monitor",
-    items: [
-      "Standard upper-arm blood pressure monitor",
-      "Bluetooth blood pressure monitor",
-      "BP-based multi-parameter wireless home healthcare monitor",
-    ],
-  },
-  {
-    title: "Wearable Products Under Development",
-    href: "/products/wearable-monitoring",
-    items: [
-      "Wearable temperature patch",
-      "Wearable SpO2 watch",
-      "Respiratory sleep monitoring eye mask with SpO2 nasal clip",
-      "Infant foot SpO2 monitor",
-    ],
   },
 ];
 
@@ -373,9 +362,9 @@ export default function ProductsPage() {
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              This page is designed as a product navigation hub. Choose a product
-              family to review product forms, key categories and the next-level
-              product information.
+              This page is designed as a product navigation hub. Choose a
+              product family to review product forms, key categories and the
+              next-level product information.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -405,7 +394,10 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section id="product-families" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <section
+        id="product-families"
+        className="mx-auto max-w-7xl px-6 py-20 lg:px-8"
+      >
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
             Product families
@@ -414,9 +406,9 @@ export default function ProductsPage() {
             Three product directions for home healthcare monitoring
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-700">
-            The product overview page focuses on clear product classification,
-            not cooperation workflow. Each family card reserves a dedicated image
-            area for future product visuals.
+            This overview page keeps the structure simple: three product family
+            entrances with reserved visual space, representative categories and
+            direct links to the next-level product pages.
           </p>
         </div>
 
@@ -441,7 +433,9 @@ export default function ProductsPage() {
                     <Icon />
                   </div>
 
-                  <p className="text-sm font-medium text-cyan-700">{item.eyebrow}</p>
+                  <p className="text-sm font-medium text-cyan-700">
+                    {item.eyebrow}
+                  </p>
                   <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">
                     {item.title}
                   </h3>
@@ -472,124 +466,6 @@ export default function ProductsPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-                Quick selection guide
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                Help customers enter the right product family quickly
-              </h2>
-              <p className="mt-5 text-base leading-8 text-slate-700">
-                The goal is to reduce decision friction. Visitors can identify
-                the correct product direction before reviewing the detailed
-                family page.
-              </p>
-            </div>
-
-            <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50">
-              {selectionGuide.map((item, index) => (
-                <Link
-                  key={item.need}
-                  href={item.href}
-                  className={`group grid gap-4 p-6 transition hover:bg-white sm:grid-cols-[1.2fr_0.8fr] ${
-                    index !== selectionGuide.length - 1 ? "border-b border-slate-200" : ""
-                  }`}
-                >
-                  <div>
-                    <p className="text-sm font-semibold text-slate-950">Looking for</p>
-                    <p className="mt-2 text-sm leading-7 text-slate-700">{item.need}</p>
-                  </div>
-                  <div className="flex items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 shadow-sm">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">
-                        Recommended
-                      </p>
-                      <p className="mt-1 text-base font-semibold text-slate-950">{item.family}</p>
-                    </div>
-                    <ArrowIcon className="h-4 w-4 text-cyan-700 transition group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Product classification
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Product details are organized by family, form and use scenario
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-700">
-              Each product family page should continue with image-led product
-              cards, quick parameter summaries and clear product categories.
-            </p>
-          </div>
-
-          <div className="grid gap-5">
-            {familyDetails.map((group) => (
-              <Link
-                key={group.title}
-                href={group.href}
-                className="group rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-              >
-                <div className="flex items-start justify-between gap-6">
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-950">{group.title}</h3>
-                    <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                      {group.items.map((item) => (
-                        <div key={item} className="flex items-start gap-3">
-                          <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-cyan-700" />
-                          <span className="text-sm leading-6 text-slate-700">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <ArrowIcon className="mt-1 h-5 w-5 shrink-0 text-cyan-700 transition group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-900">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">
-              Image planning
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Product visuals can be added without changing the page structure
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">
-              This version reserves image space in the hero and in every product
-              family card. Later, the placeholders can be replaced by real product
-              photos or rendered product visuals.
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-3">
-            {productFamilies.map((item) => (
-              <div key={item.title} className="rounded-[1.5rem] bg-white/10 p-4">
-                <ProductImagePlaceholder
-                  title={item.title}
-                  subtitle="Reserved visual slot"
-                  compact
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
@@ -606,8 +482,12 @@ export default function ProductsPage() {
                 key={faq.question}
                 className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6"
               >
-                <h3 className="text-base font-semibold text-slate-950">{faq.question}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700">{faq.answer}</p>
+                <h3 className="text-base font-semibold text-slate-950">
+                  {faq.question}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>
