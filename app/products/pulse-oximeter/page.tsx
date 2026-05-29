@@ -143,9 +143,8 @@ const fingertipTracks = [
     description:
       "Cost-conscious finger-clip SpO2 models for pharmacy retail, distributor programs and high-volume private-label product lines.",
     keyInfo: [
-      "Signal technology: Standard Signal",
-      "Cost-optimized housing and display direction",
-      "BLE can be discussed as an optional configuration",
+      "Standard Signal",
+      "AAA dry battery / BLE optional",
     ],
     tags: ["High-volume", "Standard Signal", "BLE optional"],
     models: ["YM101 Economy", "YM201 Retail"],
@@ -169,9 +168,8 @@ const fingertipTracks = [
     description:
       "Balanced OLED fingertip configurations for medical device brands that need stronger usability, stable signal acquisition and retail-ready appearance.",
     keyInfo: [
-      "Signal technology: Standard Signal / PulseMatrix™ option",
-      "OLED UI with alarm and voice configuration options",
-      "BLE can be configured by project requirement",
+      "OLED UI + voice option",
+      "Standard Signal / PulseMatrix™ option",
     ],
     tags: ["OLED UI", "PulseMatrix™ optional", "Voice option"],
     models: ["YM202 OLED", "YM302 Display Plus"],
@@ -196,8 +194,7 @@ const fingertipTracks = [
       "Advanced fingertip SpO2 models for premium connected projects, with rechargeable lithium battery architecture and BLE connectivity as the standard direction.",
     keyInfo: [
       "Lithium battery + BLE standard",
-      "Signal technology: PulseMatrix™ / 24-bit ADC AFE option",
-      "Positioned for connected SpO2 and app-integration projects",
+      "PulseMatrix™ / 24-bit ADC AFE option",
     ],
     tags: ["Rechargeable", "BLE standard", "24-bit ADC AFE option"],
     models: ["YM401 Advanced", "YM503 Advanced BLE"],
@@ -221,9 +218,8 @@ const fingertipTracks = [
     description:
       "Pediatric pulse oximeter configurations with child-friendly housing, smaller finger-cavity considerations, color display options and family healthcare branding potential.",
     keyInfo: [
-      "Pediatric finger-cavity geometry",
-      "Child-oriented optical structure",
-      "Signal tuning can be discussed by configuration",
+      "Child housing + smaller cavity",
+      "TFT / OLED + signal tuning option",
     ],
     tags: ["Pediatric use", "Child housing", "Color display"],
     models: ["YM603 Pediatric", "YM602 Child Display"],
@@ -558,92 +554,86 @@ export default function PulseOximeterProductPage() {
         id="fingertip-section"
         className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12 lg:px-8"
       >
-        <div className="max-w-3xl">
-          <Badge>Configurable Category</Badge>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-            Fingertip Pulse Oximeter Tracks
-          </h2>
-          <p className="mt-5 text-lg leading-9 text-slate-600">
-            Fingertip pulse oximeters are the main YimiLife SpO2 product line.
-            Each track below pairs the product logic with two representative
-            model directions, so buyers can connect configuration choices with
-            the actual product forms more quickly.
-          </p>
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <Badge>Configurable Category</Badge>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Fingertip Pulse Oximeter Tracks
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600 md:text-lg">
+              Four compact product tracks connect buyer requirements with representative
+              model directions. Each row keeps the configuration logic on the left and
+              the matching product visuals on the right.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-cyan-100 bg-cyan-50/60 px-5 py-4 text-sm leading-6 text-cyan-900 lg:max-w-sm">
+            <span className="font-semibold">Reading logic:</span> choose the track first,
+            then review the two linked model directions beside it.
+          </div>
         </div>
 
-        <div className="mt-10 space-y-6">
+        <div className="mt-8 space-y-3 md:space-y-4">
           {fingertipTracks.map((track) => {
             const Icon = track.icon;
             return (
               <article
                 key={track.title}
-                className="group grid gap-4 rounded-[2.25rem] border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-cyan-200 hover:shadow-xl md:p-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch"
+                className="group grid gap-3 rounded-[1.75rem] border border-slate-200 bg-white p-3 shadow-sm transition duration-300 hover:border-cyan-300 hover:shadow-lg md:p-4 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch"
               >
-                <div className="rounded-[1.75rem] border border-slate-100 bg-white p-5 transition duration-300 group-hover:border-cyan-200 group-hover:bg-cyan-50/30 md:p-6">
-                  <div className="flex gap-4">
-                    <div className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700 transition duration-300 group-hover:bg-cyan-600 group-hover:text-white">
+                <div className="rounded-[1.35rem] border border-slate-100 bg-white p-4 transition duration-300 group-hover:border-cyan-200 group-hover:bg-cyan-50/30 md:p-5">
+                  <div className="flex gap-3">
+                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-cyan-50 text-cyan-700 transition duration-300 group-hover:bg-cyan-600 group-hover:text-white">
                       <Icon />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700">
                         {track.eyebrow}
                       </p>
-                      <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">
+                      <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-slate-950 md:text-2xl">
                         {track.title}
                       </h3>
-                      <p className="mt-4 text-sm leading-7 text-slate-600">
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
                         {track.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-5 grid gap-2 sm:grid-cols-3">
+                  <div className="mt-4 grid gap-2 sm:grid-cols-2">
                     {track.keyInfo.map((item) => (
                       <div
                         key={item}
-                        className="rounded-2xl border border-slate-100 bg-slate-50 px-3 py-2 text-xs font-semibold leading-5 text-slate-700 transition duration-300 group-hover:border-cyan-100 group-hover:bg-white"
+                        className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-xs font-semibold leading-5 text-slate-700 transition duration-300 group-hover:border-cyan-100 group-hover:bg-white"
                       >
                         {item}
                       </div>
                     ))}
                   </div>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {track.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 transition duration-300 group-hover:bg-cyan-100 group-hover:text-cyan-800"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-3 sm:grid-cols-2">
                   {track.visuals.map((visual, index) => (
                     <div
                       key={visual.model}
-                      className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50 shadow-inner transition duration-300 group-hover:border-cyan-300 group-hover:from-cyan-50 group-hover:via-white group-hover:to-cyan-100 group-hover:shadow-lg"
+                      className="overflow-hidden rounded-[1.35rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50 shadow-inner transition duration-300 group-hover:border-cyan-300 group-hover:from-cyan-50 group-hover:via-white group-hover:to-cyan-100 group-hover:shadow-md"
                     >
-                      <div className="flex h-52 items-center justify-center p-5 md:h-full md:min-h-[230px]">
+                      <div className="flex h-36 items-center justify-center p-4 md:h-full md:min-h-[175px]">
                         <div
-                          className={`relative rounded-[2rem] border border-slate-200 bg-slate-950 shadow-xl transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300 group-hover:shadow-cyan-200/60 ${
-                            visual.shape === "wide" ? "h-28 w-44" : "h-32 w-36"
+                          className={`relative rounded-[1.6rem] border border-slate-200 bg-slate-950 shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300 group-hover:shadow-cyan-200/60 ${
+                            visual.shape === "wide" ? "h-24 w-40" : "h-28 w-32"
                           }`}
                         >
-                          <div className="absolute left-1/2 top-4 h-11 w-24 -translate-x-1/2 rounded-xl bg-cyan-300/30" />
-                          <div className="absolute bottom-5 left-1/2 h-3 w-16 -translate-x-1/2 rounded-full bg-white/20" />
-                          <div className="absolute -right-3 -top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white text-xs font-semibold text-cyan-700 shadow-md">
+                          <div className="absolute left-1/2 top-3 h-9 w-20 -translate-x-1/2 rounded-lg bg-cyan-300/30" />
+                          <div className="absolute bottom-4 left-1/2 h-2.5 w-14 -translate-x-1/2 rounded-full bg-white/20" />
+                          <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[11px] font-semibold text-cyan-700 shadow-md">
                             {index + 1}
                           </div>
                         </div>
                       </div>
-                      <div className="border-t border-slate-100 bg-white/90 p-4">
-                        <h4 className="text-lg font-semibold tracking-tight text-slate-950">
+                      <div className="border-t border-slate-100 bg-white/95 px-4 py-3">
+                        <h4 className="text-base font-semibold tracking-tight text-slate-950">
                           {visual.model}
                         </h4>
-                        <p className="mt-1 text-sm leading-6 text-slate-600">
+                        <p className="mt-0.5 text-xs leading-5 text-slate-600">
                           {visual.note}
                         </p>
                       </div>
