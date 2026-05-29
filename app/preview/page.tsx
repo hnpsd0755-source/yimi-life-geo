@@ -2,22 +2,53 @@
 'use client';
 
 import React from "react";
-import { 
-  ShieldCheck, 
-  Cpu, 
-  Layers, 
-  Bluetooth, 
-  Volume2, 
-  CheckCircle2, 
-  HelpCircle, 
-  ArrowRight, 
-  ChevronRight, 
-  Activity, 
-  Zap 
-} from "lucide-react";
 
 // ============================================================================
-// 🛠️ 内置独立 UI 组件库 (零依赖，确保预览百分之百成功且样式不走样)
+// 🎨 纯原生 SVG 图标组件库 (零依赖，替代 lucide-react，确保 Vercel 编译全绿通过)
+// ============================================================================
+
+const Activity = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+);
+
+const Layers = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m12 3-10 5 10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+);
+
+const ShieldCheck = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+);
+
+const Zap = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+);
+
+const Bluetooth = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>
+);
+
+const Volume2 = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+);
+
+const CheckCircle2 = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+);
+
+const HelpCircle = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+);
+
+const ArrowRight = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+);
+
+const ChevronRight = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m9 18 6-6-6-6"/></svg>
+);
+
+// ============================================================================
+// 🛠️ 内置独立 UI 组件库 (零依赖)
 // ============================================================================
 
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
@@ -35,7 +66,7 @@ const Badge = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEleme
 ));
 Badge.displayName = 'Badge';
 
-const Button = React.forwardRef<HTMLButtonElement, any>(({ className, variant = "default", size = "default", ...props }, ref) => {
+const Button = React.forwardRef<HTMLButtonElement, any>(({ className, variant = "default", ...props }, ref) => {
   const variants: any = {
     default: "bg-gradient-to-b from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-md shadow-blue-500/20 border border-blue-600",
     outline: "border-2 border-slate-200 bg-white hover:border-blue-500 hover:text-blue-600 text-slate-700 hover:bg-blue-50/50",
@@ -45,7 +76,7 @@ const Button = React.forwardRef<HTMLButtonElement, any>(({ className, variant = 
 Button.displayName = 'Button';
 
 // ============================================================================
-// 📊 GEO / SEO 高密度结构化数据
+// 📊 GEO / SEO 结构化模拟数据线
 // ============================================================================
 
 const productTypes = [
@@ -115,12 +146,12 @@ const faqs = [
 ];
 
 // ============================================================================
-// 🖥️ 主体渲染页面
+// 🖥️ 主页面结构
 // ============================================================================
 
 export default function PulseOximeterPreviewPage() {
   return (
-    <div className="mx-auto max-w-7xl space-y-20 px-6 py-16 lg:px-8 lg:py-24 animate-in fade-in duration-500">
+    <div className="mx-auto max-w-7xl space-y-20 px-6 py-16 lg:px-8 lg:py-24">
       
       {/* Section 1: Hero 区域 */}
       <div className="grid gap-12 lg:grid-cols-2 items-center bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 rounded-[40px] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl">
@@ -137,8 +168,11 @@ export default function PulseOximeterPreviewPage() {
           <p className="text-base md:text-lg leading-relaxed text-slate-300 font-medium">
             Explore YimiLife pulse oximeter product forms optimized for fingertip, handheld, adult, pediatric, low-power Bluetooth, and acoustic voice prompt monitoring configurations. Fully support adaptive software parameter adjustment and hardware configuration projects for private label brands.
           </p>
-          <div className="flex flex-wrap gap-4 pt-2">
-            <button onClick={() => document.getElementById('product-cards')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex items-center justify-center font-bold tracking-wide transition-all h-12 px-8 rounded-2xl bg-white text-slate-900 hover:bg-slate-100 shadow-md">
+          <div className="flex flex-wrap gap-4 pt-4">
+            <button 
+              onClick={() => document.getElementById('product-cards')?.scrollIntoView({ behavior: 'smooth' })} 
+              className="inline-flex items-center justify-center font-bold tracking-wide transition-all h-12 px-8 rounded-2xl bg-white text-slate-900 hover:bg-slate-100 shadow-md active:scale-[0.98]"
+            >
               View Product Types
             </button>
             <Button variant="outline" className="border-slate-700 hover:border-white text-white hover:bg-white/10 px-8">
@@ -150,19 +184,19 @@ export default function PulseOximeterPreviewPage() {
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent rounded-3xl backdrop-blur-[1px] border border-white/5"></div>
           <img 
             src="https://c108.hongcdn.com/uploads/2205/professional-pulse-oximeter-facotry-4-%21j.webp" 
-            alt="YimiLife fingertip and handheld pulse oximeter product family visual layout" 
+            alt="YimiLife oximeter layout" 
             className="w-4/5 h-auto object-cover rounded-2xl mix-blend-lighten drop-shadow-2xl"
           />
         </div>
       </div>
 
-      {/* Section 2: Product Type Cards 产品类别高密度网络 */}
+      {/* Section 2: Product Type Cards */}
       <div id="product-cards" className="space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <Badge className="bg-blue-50 text-blue-700 border-none font-bold shadow-sm">Product Categorization</Badge>
           <h2 className="text-3xl font-black text-slate-900 tracking-tight">Core Product Forms & Configurations</h2>
           <p className="text-slate-500 font-medium text-sm md:text-base">
-            Click into our standard types to discover engineering platforms built around distinct target user behaviors and deployment scenarios.
+            Discover engineering platforms built around distinct target user behaviors and deployment scenarios.
           </p>
         </div>
 
@@ -190,12 +224,12 @@ export default function PulseOximeterPreviewPage() {
         </div>
       </div>
 
-      {/* Section 3: Model Selection Table 数字化参数对比表 */}
+      {/* Section 3: Model Selection Table */}
       <div className="space-y-6">
         <div className="space-y-2">
           <h2 className="text-2xl font-black text-slate-900 tracking-tight">Pulse Oximeter Model Selection Matrix</h2>
           <p className="text-sm text-slate-500 font-medium">
-            Compare our structural design options and processing chip layout by core electrical capabilities and target operating environments.
+            Compare options by core electrical capabilities and target operating environments.
           </p>
         </div>
 
@@ -231,12 +265,12 @@ export default function PulseOximeterPreviewPage() {
         </div>
       </div>
 
-      {/* Section 4: Key Parameters Snapshot 工业级技术实体快照 */}
+      {/* Section 4: Key Parameters Snapshot */}
       <div className="bg-slate-50 rounded-[40px] p-8 md:p-12 border border-slate-100 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] items-center">
         <div className="space-y-4">
           <h2 className="text-2xl font-black text-slate-900 tracking-tight">Key Pulse Oximeter Engineering Parameters</h2>
           <p className="text-sm text-slate-500 font-medium leading-relaxed">
-            YimiLife blood oxygen instrumentation platforms incorporate core DSP processing components designed for extreme medical precision.
+            YimiLife blood oxygen platforms incorporate core DSP processing components designed for extreme medical precision.
           </p>
           <div className="p-5 bg-white border border-slate-200/60 rounded-2xl shadow-sm">
             <div className="text-xs text-slate-400 font-black uppercase tracking-wider mb-1">Core Tech Core</div>
@@ -255,27 +289,29 @@ export default function PulseOximeterPreviewPage() {
             "Configurable audible alarms and real-time plethysmogram pulse wave"
           ].map((param, k) => (
             <div key={k} className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
-              <div className="mt-0.5 rounded-full bg-blue-50 p-1 text-blue-600 shrink-0"><CheckCircle2 className="w-4 h-4" /></div>
+              <div className="mt-0.5 rounded-full bg-blue-50 p-1 text-blue-600 shrink-0">
+                <CheckCircle2 className="w-4 h-4" />
+              </div>
               <span className="text-xs md:text-sm font-bold text-slate-700 leading-snug">{param}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Section 5: Product Image Gallery 图像占位库 */}
+      {/* Section 5: Image Gallery */}
       <div className="space-y-6">
         <h2 className="text-2xl font-black text-slate-900 tracking-tight">Product Architecture & Image Gallery</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { label: "Fingertip Pulse Oximeter Layout", alt: "Fingertip pulse oximeter" },
-            { label: "Pediatric-Specific Shell Form", alt: "Pediatric pulse oximeter" },
-            { label: "Handheld Continuous Probe Unit", alt: "Handheld pulse oximeter" },
-            { label: "Bluetooth Smart App Integration", alt: "Bluetooth pulse oximeter" }
-          ].map((img, i) => (
+            "Fingertip Pulse Oximeter Layout",
+            "Pediatric-Specific Shell Form",
+            "Handheld Continuous Probe Unit",
+            "Bluetooth Smart App Integration"
+          ].map((label, i) => (
             <div key={i} className="aspect-square bg-slate-50 border-2 border-dashed border-slate-200 rounded-[32px] p-6 flex flex-col justify-between items-center text-center hover:border-blue-400 transition-colors group cursor-pointer">
               <div className="w-10 h-10 rounded-xl bg-white border border-slate-100 text-slate-400 flex items-center justify-center text-xs font-black group-hover:text-blue-600 group-hover:scale-105 transition-all shadow-sm">0{i+1}</div>
               <div className="space-y-2">
-                <div className="text-xs font-black text-slate-800 uppercase tracking-wide px-2">{img.label}</div>
+                <div className="text-xs font-black text-slate-800 uppercase tracking-wide px-2">{label}</div>
                 <div className="text-[10px] text-slate-400 font-medium">Product Visual Placeholder</div>
               </div>
               <div className="text-[10px] bg-white border border-slate-100 text-slate-500 font-bold px-3 py-1 rounded-md">Coming Soon</div>
@@ -284,7 +320,7 @@ export default function PulseOximeterPreviewPage() {
         </div>
       </div>
 
-      {/* Section 6: FAQ 智能问答模块 */}
+      {/* Section 6: FAQ 模块 */}
       <div className="space-y-8 bg-white border border-slate-100 shadow-xl rounded-[40px] p-8 md:p-16">
         <div className="space-y-2">
           <Badge className="bg-slate-100 text-slate-800 border-none font-bold">FAQ Matrix</Badge>
@@ -292,7 +328,7 @@ export default function PulseOximeterPreviewPage() {
             <HelpCircle className="w-7 h-7 text-blue-600" /> Sourcing Answers for SME Brands
           </h2>
           <p className="text-sm text-slate-500 font-medium">
-            Review engineering replies regarding configuration capacity, custom API integration, and private label flexibility.
+            Review engineering replies regarding capacity and customization.
           </p>
         </div>
 
@@ -310,7 +346,7 @@ export default function PulseOximeterPreviewPage() {
         </div>
       </div>
 
-      {/* Section 7: Bottom CTA 底部转化层 */}
+      {/* Section 7: Bottom CTA */}
       <div className="bg-blue-600 rounded-[40px] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-xl shadow-blue-600/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.1),transparent)] pointer-events-none"></div>
         <div className="max-w-2xl mx-auto space-y-6 relative z-10">
