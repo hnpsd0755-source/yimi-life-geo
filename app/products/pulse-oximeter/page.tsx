@@ -808,18 +808,26 @@ export default function PulseOximeterProductPage() {
             <div>
               <Badge tone="cyan">Technical Highlights</Badge>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-                Advanced Signal Processing Highlights
+                PulseMatrix™ Signal Optimization Platform
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-400">
-                This section focuses on signal-processing differentiation rather than basic product specifications. Basic display, power and connectivity items are handled in the product tracks and selector.
+                A tiered SpO2 signal architecture for standard, low-perfusion
+                and high-end 24-bit ADC AFE configurations.
               </p>
-              <div className="mt-7 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
-                  Platform Anchor
-                </p>
-                <p className="mt-2 text-xl font-semibold text-white">
-                  PulseMatrix™ Signal Optimization Platform
-                </p>
+
+              <div className="mt-7 grid gap-3">
+                {[
+                  "Standard Signal — PI ≥ 0.3% level",
+                  "PulseMatrix™ — PI ≥ 0.1% level",
+                  "PulseMatrix™ + 24-bit ADC AFE — PI ≥ 0.025% level",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-amber-300/25 bg-white/[0.04] px-5 py-4 text-sm font-semibold leading-6 text-amber-50 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.08)]"
+                  >
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
 
