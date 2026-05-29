@@ -3,211 +3,366 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Pulse Oximeter Product Family | Fingertip Configuration Selector & Handheld Models | YimiLife",
+    "Pulse Oximeter Product Family | Fingertip, Handheld, Bluetooth & Pediatric Models | YimiLife",
   description:
-    "Explore YimiLife pulse oximeter product forms with a fingertip pulse oximeter configuration selector, handheld SpO2 models, Bluetooth, voice, pediatric and rechargeable options.",
+    "Explore YimiLife pulse oximeter product architecture including fingertip, handheld, pediatric, Bluetooth, voice-enabled, dry-battery and rechargeable SpO2 monitoring configurations.",
+  alternates: {
+    canonical: "https://www.yimilife.com/products/pulse-oximeter",
+  },
 };
 
-const fingertipHighlights = [
-  "Adult and pediatric fingertip product forms",
-  "Dry battery and rechargeable lithium battery options",
-  "OLED / TFT display configurations",
-  "Bluetooth and iOS / Android SDK discussion",
-  "Voice prompt and elderly-care reading support",
-  "Multiple housing, color and packaging directions",
-];
+type IconProps = {
+  className?: string;
+};
 
-const handheldHighlights = [
-  "Two focused handheld SpO2 model directions",
-  "External probe configuration for professional scenarios",
-  "Rechargeable power design",
-  "Larger display and extended monitoring layout",
-  "Data storage or Bluetooth discussion by project",
-];
+const CheckIcon = ({ className = "h-4 w-4" }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+);
 
-const filterTags = [
-  "All fingertip models",
-  "Adult",
-  "Pediatric",
-  "Dry Battery",
-  "Rechargeable",
-  "Bluetooth",
-  "Voice",
-  "TFT Display",
-  "High-Volume",
-  "App Integration",
-  "Elderly Care",
-];
+const ArrowIcon = ({ className = "h-4 w-4" }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </svg>
+);
 
-const fingertipSelectorRows = [
+const PulseIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M2 12h4l2.5-7 5 14 2.5-7h6" />
+  </svg>
+);
+
+const LayersIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="m12 3 9 5-9 5-9-5 9-5Z" />
+    <path d="m3 13 9 5 9-5" />
+    <path d="m3 18 9 5 9-5" />
+  </svg>
+);
+
+const CpuIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <rect x="5" y="5" width="14" height="14" rx="2" />
+    <rect x="9" y="9" width="6" height="6" rx="1" />
+    <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" />
+  </svg>
+);
+
+const ShieldIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.1 6.2-2.6a1.2 1.2 0 0 1 1.6 0C14.5 3.9 17 5 19 5a1 1 0 0 1 1 1v7Z" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+);
+
+const Badge = ({
+  children,
+  tone = "blue",
+}: {
+  children: React.ReactNode;
+  tone?: "blue" | "slate" | "cyan" | "emerald";
+}) => {
+  const toneClass = {
+    blue: "border-blue-100 bg-blue-50 text-blue-700",
+    cyan: "border-cyan-100 bg-cyan-50 text-cyan-700",
+    slate: "border-slate-200 bg-slate-50 text-slate-700",
+    emerald: "border-emerald-100 bg-emerald-50 text-emerald-700",
+  }[tone];
+
+  return (
+    <span
+      className={`inline-flex items-center rounded-full border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${toneClass}`}
+    >
+      {children}
+    </span>
+  );
+};
+
+const fingertipTracks = [
   {
-    type: "Basic Adult Fingertip Model",
-    bestFor: "Cost-sensitive distributor product line",
-    user: "Adult / family",
-    power: "Dry battery",
-    display: "OLED",
-    connectivity: "No / optional",
-    voice: "Optional",
-    direction: "Standard adult fingertip model",
-    fit: "High-volume private label orders",
+    title: "Economy Retail Fingertip Models",
+    eyebrow: "High-volume baseline",
+    description:
+      "Cost-conscious finger-clip SpO2 devices for retail pharmacy, distributor programs and general home healthcare product lines.",
+    tags: [
+      "AAA dry battery",
+      "LED / OLED options",
+      "High-volume projects",
+      "Cost-optimized configuration",
+    ],
+    icon: PulseIcon,
   },
   {
-    type: "Pediatric Fingertip Model",
-    bestFor: "Child-friendly family healthcare product",
-    user: "Children",
-    power: "Dry battery / rechargeable",
-    display: "TFT / OLED",
-    connectivity: "Optional",
-    voice: "Optional",
-    direction: "Pediatric housing model",
-    fit: "Pediatric or family health brands",
+    title: "Mainstream OLED Fingertip Models",
+    eyebrow: "Private-label mainstream",
+    description:
+      "Balanced fingertip pulse oximeter configurations for private label medical device brands that need display quality, stable operation and flexible housing options.",
+    tags: [
+      "Dual-color OLED",
+      "Adult / family use",
+      "Alarm option",
+      "Rechargeable option",
+    ],
+    icon: ShieldIcon,
   },
   {
-    type: "Rechargeable Fingertip Model",
-    bestFor: "Reusable home healthcare product",
-    user: "Adult / family",
-    power: "Lithium battery",
-    display: "OLED / TFT",
-    connectivity: "Optional",
-    voice: "Optional",
-    direction: "Rechargeable fingertip model",
-    fit: "Premium retail / pharmacy channel",
+    title: "Bluetooth Connected Fingertip Models",
+    eyebrow: "App-connected projects",
+    description:
+      "Bluetooth-enabled SpO2 devices for connected product programs, with protocol and SDK support for iOS / Android app integration discussions.",
+    tags: [
+      "Bluetooth data",
+      "iOS / Android SDK discussion",
+      "App integration",
+      "Connected health projects",
+    ],
+    icon: CpuIcon,
   },
   {
-    type: "Bluetooth Fingertip Model",
-    bestFor: "App-connected SpO2 product project",
-    user: "Adult / family",
-    power: "Dry battery / rechargeable",
-    display: "OLED / TFT",
-    connectivity: "Bluetooth",
-    voice: "Optional",
-    direction: "Bluetooth-enabled fingertip model",
-    fit: "Connected health / app integration",
-  },
-  {
-    type: "Voice-Enabled Fingertip Model",
-    bestFor: "Elderly users and home care reading support",
-    user: "Elderly / adult",
-    power: "Dry battery / rechargeable",
-    display: "OLED / TFT",
-    connectivity: "Optional",
-    voice: "Recommended",
-    direction: "Voice prompt fingertip model",
-    fit: "Elderly care / accessible home use",
-  },
-  {
-    type: "Color Display Fingertip Model",
-    bestFor: "Differentiated product appearance",
-    user: "Adult / pediatric",
-    power: "Dry battery / rechargeable",
-    display: "TFT",
-    connectivity: "Optional",
-    voice: "Optional",
-    direction: "TFT display fingertip model",
-    fit: "Brand differentiation projects",
+    title: "Pediatric Fingertip Models",
+    eyebrow: "Child-oriented design",
+    description:
+      "Pediatric pulse oximeter configurations with child-friendly housing, smaller finger-cavity considerations, color display options and family healthcare branding potential.",
+    tags: [
+      "Pediatric use",
+      "Child housing",
+      "TFT / OLED",
+      "Family health brands",
+    ],
+    icon: LayersIcon,
   },
 ];
 
 const handheldModels = [
   {
-    model: "Handheld SpO2 Model A",
-    probe: "External finger probe",
-    display: "Large display",
-    power: "Rechargeable",
-    data: "Basic data review",
-    scenario: "Nursing / clinical-support scenario",
+    title: "Portable Handheld SpO2 Model",
+    description:
+      "A compact handheld pulse oximeter direction for professional support, nursing use and point-of-care SpO2 spot-check scenarios with external probe configuration.",
+    details: [
+      "External finger probe configuration",
+      "Rechargeable power design direction",
+      "Larger display than fingertip models",
+      "Suitable for professional support and nursing scenarios",
+    ],
+    fit: "For distributors or medical equipment brands looking for handheld SpO2 monitoring products beyond the standard fingertip form factor.",
   },
   {
-    model: "Handheld SpO2 Model B",
-    probe: "External probe option",
-    display: "Larger UI layout",
-    power: "Rechargeable",
-    data: "Data storage / Bluetooth discussion",
-    scenario: "Extended monitoring project",
+    title: "Desktop-Style Handheld SpO2 Monitoring Model",
+    description:
+      "A larger handheld / desktop-style SpO2 monitoring configuration for extended observation scenarios, waveform display discussion and data review functions.",
+    details: [
+      "External probe option",
+      "Larger UI and waveform display discussion",
+      "Rechargeable battery configuration",
+      "Data storage or Bluetooth discussion depending on project scope",
+    ],
+    fit: "For projects requiring a more instrument-like SpO2 product structure while keeping a focused handheld product lineup.",
   },
 ];
 
-const basicParameters = [
-  "SpO2 measurement and pulse rate measurement",
-  "Adult and pediatric fingertip configurations",
-  "OLED / TFT display options",
-  "Dry battery and rechargeable lithium battery options",
-  "Bluetooth data transmission option",
-  "Voice prompt option for elderly users",
-  "Alarm and display configuration options",
-  "Handheld SpO2 models with external probe configuration",
+const fingertipSelector = [
+  {
+    configuration: "Basic Adult Fingertip Model",
+    bestFor: "Cost-sensitive distributor product line",
+    display: "LED / OLED",
+    power: "AAA dry battery",
+    connectivity: "No / optional",
+    voice: "Optional",
+    signal: "Standard SpO2 spot-check configuration",
+    projectFit: "High-volume private label orders",
+  },
+  {
+    configuration: "Mainstream OLED Fingertip Model",
+    bestFor: "Balanced retail and pharmacy product lines",
+    display: "Dual-color OLED",
+    power: "AAA or rechargeable option",
+    connectivity: "Optional Bluetooth",
+    voice: "Optional",
+    signal: "Anti-motion filtering option",
+    projectFit: "Mainstream medical device brands",
+  },
+  {
+    configuration: "Bluetooth Fingertip Model",
+    bestFor: "App-connected SpO2 projects",
+    display: "OLED / TFT",
+    power: "AAA or lithium battery",
+    connectivity: "Bluetooth",
+    voice: "Optional",
+    signal: "Bluetooth protocol and SDK integration discussion",
+    projectFit: "Connected health and app integration projects",
+  },
+  {
+    configuration: "Pediatric Fingertip Model",
+    bestFor: "Child-friendly family healthcare product",
+    display: "TFT / OLED",
+    power: "AAA or rechargeable option",
+    connectivity: "Optional Bluetooth",
+    voice: "Optional",
+    signal: "Pediatric configuration and housing discussion",
+    projectFit: "Pediatric and mother-baby brand projects",
+  },
+  {
+    configuration: "Voice / Elderly-Friendly Fingertip Model",
+    bestFor: "Elderly users and home care reading support",
+    display: "High-contrast OLED / TFT",
+    power: "AAA or lithium battery",
+    connectivity: "Optional",
+    voice: "Recommended",
+    signal: "Accessible result-reading configuration",
+    projectFit: "Elderly care and accessible home-use products",
+  },
+  {
+    configuration: "Advanced Signal Fingertip Model",
+    bestFor: "Projects requiring stronger signal-processing positioning",
+    display: "OLED / TFT",
+    power: "Rechargeable option",
+    connectivity: "Optional Bluetooth",
+    voice: "Optional",
+    signal:
+      "24-bit ADC front-end and low-perfusion processing option in selected configurations",
+    projectFit: "Differentiated SpO2 product programs",
+  },
 ];
 
-const signalOptions = [
+const processingOptions = [
+  "SpO2 and pulse rate measurement across adult and selected pediatric configurations",
+  "OLED, TFT and high-contrast display options depending on model direction",
+  "AAA dry-battery and rechargeable lithium-battery power supply options",
+  "Bluetooth data transmission and iOS / Android SDK integration discussions for connected models",
   "24-bit high-resolution ADC front-end architecture in selected configurations",
   "Advanced anti-motion artifact filtering for unstable finger conditions",
-  "Low-perfusion signal processing for challenging PI scenarios",
+  "Low-perfusion signal processing for challenging PI scenarios, with internal development targets reaching PI 0.1% scenarios in selected configurations",
   "PulseMatrix™ signal optimization platform for SpO2 waveform acquisition and signal interpretation",
-  "Bluetooth protocol and SDK support for iOS/Android app integration discussions",
 ];
 
-const gallerySlots = [
+const engineeringAreas = [
   {
-    title: "Fingertip Pulse Oximeter Models",
-    caption: "Adult and family SpO2 product forms with multiple display and power options.",
+    title: "Optical & Structural Design",
+    description:
+      "Finger-cavity geometry, optical shielding, silicone contact structure and ambient-light reduction are considered during product configuration reviews.",
+    label: "Structure",
   },
   {
-    title: "Pediatric Pulse Oximeter Models",
-    caption: "Child-oriented housing, display and product appearance directions.",
+    title: "Hardware Front-End Architecture",
+    description:
+      "Selected SpO2 configurations may use high-resolution analog front-end architecture, photodiode signal conditioning and low-noise PCB layout considerations.",
+    label: "Hardware",
   },
   {
-    title: "Bluetooth / Voice-Enabled Fingertip Models",
-    caption: "Connected and accessible-reading configurations for app or elderly-care projects.",
+    title: "Signal Processing Verification",
+    description:
+      "Motion interference, low-perfusion signal handling and simulator-based production verification can be reviewed as part of project-specific product planning.",
+    label: "Signal",
   },
-  {
-    title: "Handheld Pulse Oximeter Models",
-    caption: "Professional SpO2 monitoring forms with external probe configuration.",
-  },
+];
+
+const galleryItems = [
+  "Fingertip pulse oximeter models",
+  "Pediatric pulse oximeter models",
+  "Bluetooth and voice-enabled fingertip models",
+  "Handheld pulse oximeter models",
 ];
 
 const faqs = [
   {
     question:
-      "How should a private label medical brand choose between fingertip pulse oximeter configurations?",
+      "How does YimiLife support pediatric pulse oximeter configurations for private label medical device brands?",
     answer:
-      "The selection usually depends on target user group, expected price tier, power supply, display type, Bluetooth requirement and whether voice prompt is needed. YimiLife uses configuration discussions to narrow the options before moving into product samples or specifications.",
-  },
-  {
-    question:
-      "What is the difference between fingertip and handheld pulse oximeter models?",
-    answer:
-      "Fingertip pulse oximeters are compact finger-clip devices suitable for home healthcare, pharmacy retail and high-volume product lines. Handheld pulse oximeters are more suitable for professional or nursing scenarios where an external probe, larger display or extended monitoring layout may be required.",
+      "YimiLife can discuss pediatric pulse oximeter configurations including child-friendly housing, smaller finger-cavity considerations, display options, packaging direction and project-specific labeling needs. Final specifications should be confirmed according to the selected model and target market requirements.",
   },
   {
     question:
       "Can YimiLife discuss Bluetooth pulse oximeter SDK integration for iOS or Android apps?",
     answer:
-      "Yes. For Bluetooth fingertip pulse oximeter projects, YimiLife can discuss Bluetooth protocol, data transmission format and SDK integration requirements for iOS or Android app-connected product development.",
+      "Yes. For Bluetooth pulse oximeter projects, YimiLife can discuss Bluetooth protocol documentation, data transmission formats and iOS / Android SDK integration support depending on the selected hardware configuration and software scope.",
   },
   {
     question:
-      "How does YimiLife support pediatric pulse oximeter configurations for private label medical brands?",
+      "What is the difference between fingertip and handheld pulse oximeter product forms?",
     answer:
-      "Pediatric pulse oximeter configurations can be discussed around child-friendly housing, display format, packaging presentation, labeling requirements and target market positioning. Final specifications should be reviewed according to the product model and market requirement.",
+      "Fingertip pulse oximeters are compact, high-volume product forms for home healthcare, pharmacy and private label retail programs. Handheld pulse oximeters are more professional-oriented configurations with external probe options, larger displays and extended monitoring or data-review discussions.",
   },
   {
     question:
       "How are low-perfusion and motion artifact challenges considered in YimiLife SpO2 product development?",
     answer:
-      "Selected YimiLife SpO2 configurations may include low-perfusion signal processing, anti-motion artifact filtering and PulseMatrix™ signal optimization concepts. The exact configuration should be evaluated according to product form, hardware architecture and application scenario.",
+      "Selected YimiLife SpO2 configurations can combine high-resolution front-end architecture, anti-motion filtering and PulseMatrix™ signal optimization to support challenging signal conditions. Specific performance claims should be reviewed by model, configuration and verification scope.",
+  },
+  {
+    question:
+      "What fingertip pulse oximeter configuration is suitable for elderly users?",
+    answer:
+      "For elderly users, projects can consider high-contrast display options, voice prompt configurations, accessible result reading and optional alarm settings. These choices can help improve readability and usability in home care scenarios.",
   },
 ];
 
-const jsonLd = {
+const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/products/pulse-oximeter#webpage",
-      name: "Pulse Oximeter Product Family",
       url: "https://www.yimilife.com/products/pulse-oximeter",
+      name: "Pulse Oximeter Product Family | YimiLife",
       description:
-        "YimiLife pulse oximeter product family page covering fingertip configuration selection, handheld SpO2 models, Bluetooth, voice, pediatric and rechargeable options.",
+        "YimiLife pulse oximeter product family page covering fingertip, handheld, pediatric, Bluetooth and voice-enabled SpO2 monitoring configurations.",
       isPartOf: {
         "@type": "WebSite",
         name: "YimiLife",
@@ -239,14 +394,13 @@ const jsonLd = {
     },
     {
       "@type": "ItemList",
-      name: "YimiLife pulse oximeter product forms and configurations",
+      name: "Pulse Oximeter Product Types",
       itemListElement: [
         "Fingertip Pulse Oximeter",
-        "Pediatric Fingertip Pulse Oximeter",
-        "Rechargeable Fingertip Pulse Oximeter",
-        "Bluetooth Fingertip Pulse Oximeter",
-        "Voice-Enabled Fingertip Pulse Oximeter",
         "Handheld Pulse Oximeter",
+        "Pediatric Pulse Oximeter",
+        "Bluetooth Pulse Oximeter",
+        "Voice-Enabled Pulse Oximeter",
       ].map((name, index) => ({
         "@type": "ListItem",
         position: index + 1,
@@ -257,8 +411,7 @@ const jsonLd = {
             "@type": "Organization",
             name: "YimiLife",
           },
-          description:
-            "SpO2 and pulse rate monitoring product configuration for home healthcare, professional support or private label medical device brand discussions.",
+          description: `${name} product configuration for SpO2 and pulse rate monitoring discussions under the YimiLife pulse oximeter product family.`,
           purpose: "SpO2 and pulse rate monitoring",
         },
       })),
@@ -277,363 +430,470 @@ const jsonLd = {
   ],
 };
 
-function PlaceholderVisual({ label, compact = false }: { label: string; compact?: boolean }) {
+export default function PulseOximeterProductPage() {
   return (
-    <div
-      aria-label={`YimiLife ${label}`}
-      className={`relative flex overflow-hidden rounded-[1.75rem] border border-cyan-100 bg-gradient-to-br from-white via-cyan-50 to-sky-100 shadow-sm ${
-        compact ? "aspect-[5/3] min-h-[150px]" : "aspect-[4/3] min-h-[220px]"
-      }`}
-    >
-      <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-cyan-200/40 blur-3xl" />
-      <div className="absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-sky-200/50 blur-3xl" />
-      <div className="absolute inset-x-8 bottom-8 h-20 rounded-full bg-white/50 blur-xl" />
-      <div className="relative m-auto flex h-28 w-44 flex-col items-center justify-center rounded-[1.5rem] border border-white/70 bg-white/75 px-5 text-center shadow-lg backdrop-blur">
-        <div className="mb-3 h-2 w-24 rounded-full bg-cyan-500/70" />
-        <div className="text-sm font-semibold text-slate-800">{label}</div>
-        <div className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-cyan-700">YimiLife</div>
-      </div>
-    </div>
-  );
-}
-
-function SectionHeader({
-  eyebrow,
-  title,
-  description,
-  align = "center",
-}: {
-  eyebrow: string;
-  title: string;
-  description?: string;
-  align?: "center" | "left";
-}) {
-  return (
-    <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">{title}</h2>
-      {description ? <p className="mt-5 text-lg leading-8 text-slate-600">{description}</p> : null}
-    </div>
-  );
-}
-
-export default function PulseOximeterProductFamilyPage() {
-  return (
-    <main className="bg-white text-slate-950">
+    <main className="bg-slate-50 text-slate-950">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-cyan-50/70 to-slate-50">
-        <div className="absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-cyan-200/30 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-24">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-700">Products / Pulse Oximeters</p>
-            <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-slate-950 md:text-7xl">
-              Pulse Oximeter Product Family
+      {/* Hero */}
+      <section className="mx-auto max-w-7xl px-6 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-16">
+        <div className="grid items-center gap-10 overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-2xl shadow-slate-900/20 md:p-12 lg:grid-cols-[1.02fr_0.98fr] lg:p-16">
+          <div className="relative z-10 max-w-2xl">
+            <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-400">
+              <Link href="/products" className="hover:text-white">
+                Products
+              </Link>
+              <span>/</span>
+              <span className="text-cyan-300">
+                Pulse Oximeter Product Architecture
+              </span>
+            </div>
+
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white md:text-6xl">
+              Pulse Oximeter Product Architecture
             </h1>
-            <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-700">
-              Explore YimiLife pulse oximeter product forms with a deeper focus on fingertip pulse
-              oximeter configurations and a dedicated professional handheld SpO2 model line.
+
+            <p className="mt-6 text-lg leading-9 text-slate-300">
+              Explore YimiLife pulse oximeter categories across two product
+              disciplines: highly configurable fingertip pulse oximeter models
+              and focused handheld SpO2 monitoring instruments.
             </p>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-              The page is designed to help private label medical device brands quickly understand
-              user groups, power options, display types, Bluetooth integration, voice prompts and
-              key SpO2 signal-processing considerations.
+
+            <p className="mt-4 text-base leading-8 text-slate-400">
+              For private label medical device brands, YimiLife supports
+              structured product configuration discussions across display, power
+              supply, connectivity, user group and selected signal-processing
+              options.
             </p>
+
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a
-                href="#configuration-selector"
-                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-4 text-base font-semibold text-white transition hover:bg-slate-800"
+                href="#fingertip-section"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-base font-semibold text-slate-950 transition hover:bg-slate-100"
               >
-                Find Fingertip Configuration
-                <span className="ml-2">›</span>
+                Fingertip Matrix
+                <ArrowIcon className="ml-2 h-4 w-4" />
               </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-cyan-600 px-7 py-4 text-base font-semibold text-cyan-700 transition hover:bg-cyan-50"
+              <a
+                href="#handheld-section"
+                className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3.5 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
               >
-                Request Product Details
-                <span className="ml-2">›</span>
-              </Link>
+                Handheld Spotlight
+              </a>
             </div>
           </div>
 
-          <div className="rounded-[2.25rem] border border-white bg-white/70 p-4 shadow-xl shadow-cyan-900/10 backdrop-blur">
-            <PlaceholderVisual label="Fingertip + Handheld SpO2 Product Family" />
-          </div>
-        </div>
-      </section>
-
-      <section id="product-lines" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <SectionHeader
-          eyebrow="Product family overview"
-          title="Main fingertip product line and focused handheld models"
-          description="Fingertip pulse oximeters are the main product line with multiple configurations. Handheld pulse oximeters are presented separately as professional models with external probe options."
-        />
-
-        <div className="mt-12 grid gap-7 lg:grid-cols-[1.35fr_0.85fr] lg:items-stretch">
-          <article className="overflow-hidden rounded-[2.25rem] border border-cyan-200 bg-gradient-to-br from-white via-cyan-50/60 to-white shadow-sm">
-            <div className="grid gap-8 p-6 md:grid-cols-[0.95fr_1.05fr] md:p-8">
-              <PlaceholderVisual label="Fingertip Pulse Oximeters" />
-              <div className="flex flex-col justify-center">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">Main product line</p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                  Fingertip Pulse Oximeters
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-slate-700">
-                  The fingertip line covers the widest range of SpO2 product configurations, from
-                  basic adult models to pediatric, rechargeable, Bluetooth, voice-enabled and
-                  color-display directions.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {fingertipHighlights.map((item) => (
-                    <span key={item} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-cyan-800 shadow-sm">
-                      {item}
-                    </span>
-                  ))}
+          <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
+            <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl" />
+            <div className="absolute -bottom-20 -left-12 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
+            <div className="relative flex h-full min-h-[320px] items-center justify-center rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
+              <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(#67e8f9_1px,transparent_1px)] [background-size:20px_20px]" />
+              <div className="relative w-full max-w-md rounded-[2rem] border border-cyan-300/20 bg-white/10 p-6 backdrop-blur-sm">
+                <div className="grid grid-cols-2 gap-4">
+                  {["Fingertip", "Pediatric", "Bluetooth", "Handheld"].map(
+                    (item) => (
+                      <div
+                        key={item}
+                        className="rounded-2xl border border-white/10 bg-white/10 p-4"
+                      >
+                        <div className="mb-4 h-24 rounded-xl bg-gradient-to-br from-white/70 to-cyan-100/40 shadow-inner" />
+                        <p className="text-sm font-semibold text-white">
+                          {item}
+                        </p>
+                        <p className="mt-1 text-xs text-slate-400">
+                          SpO2 product form
+                        </p>
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
             </div>
-          </article>
-
-          <article className="flex flex-col rounded-[2.25rem] border border-slate-200 bg-white p-7 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">Professional models</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Handheld Pulse Oximeters
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              Two focused handheld SpO2 model directions are positioned for professional,
-              nursing or extended monitoring scenarios.
-            </p>
-            <div className="mt-6">
-              <PlaceholderVisual label="Handheld SpO2 Models" compact />
-            </div>
-            <ul className="mt-6 space-y-3">
-              {handheldHighlights.map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-6 text-slate-700">
-                  <span className="mt-2 h-2 w-2 flex-none rounded-full bg-cyan-600" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+          </div>
         </div>
       </section>
 
-      <section id="configuration-selector" className="bg-slate-50 py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Fingertip selector"
-            title="Fingertip pulse oximeter configuration selector"
-            description="Use this selector to narrow down fingertip pulse oximeter configurations by target user, power supply, display, connectivity and project scenario."
-          />
+      {/* Fingertip tracks */}
+      <section
+        id="fingertip-section"
+        className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12 lg:px-8"
+      >
+        <div className="max-w-3xl">
+          <Badge>Configurable Category</Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+            Fingertip Pulse Oximeter Tracks
+          </h2>
+          <p className="mt-5 text-lg leading-9 text-slate-600">
+            Fingertip pulse oximeters are YimiLife&apos;s main SpO2 product
+            line, covering multiple user groups, display types, power options
+            and connected configurations.
+          </p>
+        </div>
 
-          <div className="mt-9 flex flex-wrap justify-center gap-2">
-            {filterTags.map((tag, index) => (
-              <span
-                key={tag}
-                className={`rounded-full px-4 py-2 text-sm font-semibold ${
-                  index === 0 ? "bg-slate-950 text-white" : "bg-white text-slate-700 shadow-sm ring-1 ring-slate-200"
-                }`}
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {fingertipTracks.map((track) => {
+            const Icon = track.icon;
+            return (
+              <article
+                key={track.title}
+                className="group flex min-h-[360px] flex-col rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl hover:shadow-slate-200/80"
               >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-10 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-            <div className="overflow-x-auto">
-              <table className="min-w-[1380px] w-full border-collapse text-left text-sm">
-                <thead className="bg-slate-950 text-white">
-                  <tr>
-                    {[
-                      "Configuration Type",
-                      "Best For",
-                      "Target User",
-                      "Power Supply",
-                      "Display",
-                      "Connectivity",
-                      "Voice Prompt",
-                      "Typical Model Direction",
-                      "Project Fit",
-                    ].map((header) => (
-                      <th key={header} className="px-5 py-4 font-semibold">
-                        {header}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {fingertipSelectorRows.map((row, index) => (
-                    <tr key={row.type} className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}>
-                      <td className="px-5 py-5 font-semibold text-slate-950">{row.type}</td>
-                      <td className="px-5 py-5 text-slate-700">{row.bestFor}</td>
-                      <td className="px-5 py-5 text-slate-700">{row.user}</td>
-                      <td className="px-5 py-5 text-slate-700">{row.power}</td>
-                      <td className="px-5 py-5 text-slate-700">{row.display}</td>
-                      <td className="px-5 py-5 text-slate-700">{row.connectivity}</td>
-                      <td className="px-5 py-5 text-slate-700">{row.voice}</td>
-                      <td className="px-5 py-5 text-slate-700">{row.direction}</td>
-                      <td className="px-5 py-5 text-slate-700">{row.fit}</td>
-                    </tr>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700 transition group-hover:bg-cyan-600 group-hover:text-white">
+                  <Icon />
+                </div>
+                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                  {track.eyebrow}
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+                  {track.title}
+                </h3>
+                <p className="mt-4 flex-1 text-base leading-7 text-slate-600">
+                  {track.description}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2 border-t border-slate-100 pt-5">
+                  {track.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600"
+                    >
+                      {tag}
+                    </span>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <SectionHeader
-            eyebrow="Handheld models"
-            title="Handheld pulse oximeter mini comparison"
-            description="Handheld SpO2 products are handled as a focused professional line instead of being mixed into the richer fingertip selector."
-            align="left"
-          />
+      {/* Handheld spotlight */}
+      <section
+        id="handheld-section"
+        className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12 lg:px-8"
+      >
+        <div className="max-w-3xl">
+          <Badge tone="emerald">Professional Product Line</Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+            Handheld Pulse Oximeter Models
+          </h2>
+          <p className="mt-5 text-lg leading-9 text-slate-600">
+            Handheld pulse oximeters are presented as a focused professional
+            product line, separate from the broader fingertip product family.
+          </p>
+        </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            {handheldModels.map((item) => (
-              <article key={item.model} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-                <PlaceholderVisual label={item.model} compact />
-                <h3 className="mt-6 text-2xl font-semibold tracking-tight text-slate-950">{item.model}</h3>
-                <dl className="mt-5 space-y-3 text-sm leading-6">
-                  {[
-                    ["Probe", item.probe],
-                    ["Display", item.display],
-                    ["Power", item.power],
-                    ["Data Function", item.data],
-                    ["Scenario", item.scenario],
-                  ].map(([label, value]) => (
-                    <div key={label} className="grid grid-cols-[110px_1fr] gap-3 border-t border-slate-100 pt-3">
-                      <dt className="font-semibold text-slate-950">{label}</dt>
-                      <dd className="text-slate-700">{value}</dd>
+        <div className="mt-10 space-y-6">
+          {handheldModels.map((model, index) => (
+            <article
+              key={model.title}
+              className="grid gap-8 overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
+            >
+              <div
+                className={`${index % 2 === 1 ? "lg:order-last" : ""} rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-slate-100 to-cyan-50 p-6`}
+              >
+                <div className="flex h-72 items-center justify-center rounded-[1.25rem] border border-white/80 bg-white/70 shadow-inner">
+                  <div className="w-full max-w-xs rounded-[2rem] border border-slate-200 bg-slate-950 p-5 text-white shadow-xl">
+                    <div className="mb-4 h-28 rounded-2xl bg-cyan-300/20" />
+                    <div className="flex items-end justify-between">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.18em] text-cyan-300">
+                          Handheld SpO2
+                        </p>
+                        <p className="mt-2 text-xl font-semibold">98% / 72</p>
+                      </div>
+                      <div className="h-12 w-12 rounded-full bg-cyan-400/30" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                  Model Direction {index + 1}
+                </p>
+                <h3 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+                  {model.title}
+                </h3>
+                <p className="mt-4 text-base leading-8 text-slate-600">
+                  {model.description}
+                </p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {model.details.map((detail) => (
+                    <div
+                      key={detail}
+                      className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4"
+                    >
+                      <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-cyan-700" />
+                      <span className="text-sm font-medium leading-6 text-slate-700">
+                        {detail}
+                      </span>
                     </div>
                   ))}
-                </dl>
+                </div>
+                <div className="mt-6 rounded-2xl border border-cyan-100 bg-cyan-50 px-5 py-4 text-sm leading-7 text-slate-700">
+                  <span className="font-semibold text-cyan-800">
+                    Project fit:
+                  </span>{" "}
+                  {model.fit}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Fingertip selector */}
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div className="max-w-3xl">
+          <Badge tone="slate">Selection Matrix</Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+            Fingertip Pulse Oximeter Configuration Selector
+          </h2>
+          <p className="mt-5 text-lg leading-9 text-slate-600">
+            Use this matrix to narrow down fingertip pulse oximeter
+            configurations by target user, display, power supply, connectivity,
+            voice prompt and project scenario.
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-2">
+          {[
+            "All",
+            "Adult",
+            "Pediatric",
+            "Dry Battery",
+            "Rechargeable",
+            "Bluetooth",
+            "Voice",
+            "TFT Display",
+            "High-Volume",
+            "App Integration",
+            "Elderly Care",
+          ].map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-8 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[1120px] border-collapse text-left">
+              <thead>
+                <tr className="bg-slate-950 text-xs font-semibold uppercase tracking-[0.14em] text-white">
+                  <th className="p-5">Configuration</th>
+                  <th className="p-5">Best For</th>
+                  <th className="p-5">Display</th>
+                  <th className="p-5">Power</th>
+                  <th className="p-5">Connectivity</th>
+                  <th className="p-5">Voice</th>
+                  <th className="p-5">Signal / Algorithm Option</th>
+                  <th className="p-5">Project Fit</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-sm text-slate-700">
+                {fingertipSelector.map((row) => (
+                  <tr
+                    key={row.configuration}
+                    className="transition hover:bg-cyan-50/40"
+                  >
+                    <td className="p-5 font-semibold text-slate-950">
+                      {row.configuration}
+                    </td>
+                    <td className="p-5 leading-6">{row.bestFor}</td>
+                    <td className="p-5 font-medium">{row.display}</td>
+                    <td className="p-5">{row.power}</td>
+                    <td className="p-5">{row.connectivity}</td>
+                    <td className="p-5">{row.voice}</td>
+                    <td className="p-5 leading-6 text-cyan-800">
+                      {row.signal}
+                    </td>
+                    <td className="p-5 leading-6">{row.projectFit}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical snapshot */}
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div className="grid gap-8 overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-xl md:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
+          <div>
+            <Badge tone="cyan">Signal Processing Options</Badge>
+            <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+              Key Parameters & Signal Processing Options
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-400">
+              Advanced signal-processing language is used carefully on this
+              page: availability and performance should be reviewed by model,
+              configuration and verification scope.
+            </p>
+            <div className="mt-7 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                Platform Anchor
+              </p>
+              <p className="mt-2 text-xl font-semibold text-white">
+                PulseMatrix™ Signal Optimization Platform
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {processingOptions.map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+              >
+                <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-cyan-300" />
+                <span className="text-sm font-medium leading-6 text-slate-300">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Engineering reference areas */}
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div className="max-w-3xl">
+          <Badge tone="slate">Engineering Reference</Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+            Product Engineering Reference Areas
+          </h2>
+          <p className="mt-5 text-lg leading-9 text-slate-600">
+            These areas help B2B buyers understand how product configuration
+            discussions connect to structure, hardware and signal verification.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {engineeringAreas.map((area) => (
+            <article
+              key={area.title}
+              className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
+            >
+              <div className="relative h-44 bg-slate-950 p-5">
+                <div className="absolute inset-0 opacity-15 [background-image:radial-gradient(#67e8f9_1px,transparent_1px)] [background-size:18px_18px]" />
+                <div className="relative flex h-full flex-col justify-between">
+                  <span className="w-fit rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">
+                    {area.label}
+                  </span>
+                  <div className="h-14 rounded-2xl border border-white/10 bg-white/[0.04]" />
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                  {area.title}
+                </h3>
+                <p className="mt-3 text-base leading-7 text-slate-600">
+                  {area.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Product form gallery */}
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div className="max-w-3xl">
+          <Badge>Product Form Gallery</Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+            Pulse Oximeter Product Form Gallery
+          </h2>
+          <p className="mt-5 text-lg leading-9 text-slate-600">
+            A visual overview of fingertip, pediatric, Bluetooth, voice-enabled
+            and handheld pulse oximeter product forms.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {galleryItems.map((item) => (
+            <div
+              key={item}
+              className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
+            >
+              <div className="h-56 bg-gradient-to-br from-slate-100 via-white to-cyan-50 p-5">
+                <div className="flex h-full items-center justify-center rounded-[1.5rem] border border-slate-200 bg-white/70">
+                  <div className="h-28 w-40 rounded-[2rem] border border-slate-200 bg-slate-950 shadow-xl">
+                    <div className="mx-auto mt-5 h-12 w-24 rounded-xl bg-cyan-300/30" />
+                    <div className="mx-auto mt-4 h-3 w-16 rounded-full bg-white/20" />
+                  </div>
+                </div>
+              </div>
+              <div className="p-5">
+                <p className="text-base font-semibold text-slate-950">{item}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div className="rounded-[2.5rem] border border-slate-200 bg-white p-7 shadow-sm md:p-10 lg:p-12">
+          <div className="max-w-3xl">
+            <Badge tone="slate">FAQ Reference</Badge>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Sourcing Questions for Pulse Oximeter Product Selection
+            </h2>
+            <p className="mt-5 text-lg leading-9 text-slate-600">
+              Practical answers for product managers and private label medical
+              device brands comparing pulse oximeter configurations.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {faqs.map((faq) => (
+              <article
+                key={faq.question}
+                className="rounded-[1.75rem] border border-slate-100 bg-slate-50 p-6"
+              >
+                <h3 className="text-xl font-semibold leading-8 text-slate-950">
+                  {faq.question}
+                </h3>
+                <p className="mt-4 text-base leading-8 text-slate-600">
+                  {faq.answer}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-white via-cyan-50/50 to-white py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Parameters</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                Key pulse oximeter parameters & signal processing options
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
-                This snapshot keeps the page focused on product selection while naturally exposing
-                the SpO2 engineering entities that procurement teams and AI search engines expect
-                to understand.
-              </p>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-2">
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
-                <h3 className="text-2xl font-semibold text-slate-950">Product parameters</h3>
-                <ul className="mt-6 space-y-3">
-                  {basicParameters.map((item) => (
-                    <li key={item} className="flex gap-3 text-base leading-7 text-slate-700">
-                      <span className="mt-2.5 h-2 w-2 flex-none rounded-full bg-cyan-600" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="rounded-[2rem] border border-cyan-200 bg-cyan-50/70 p-7 shadow-sm">
-                <h3 className="text-2xl font-semibold text-slate-950">Signal processing options</h3>
-                <ul className="mt-6 space-y-3">
-                  {signalOptions.map((item) => (
-                    <li key={item} className="flex gap-3 text-base leading-7 text-slate-700">
-                      <span className="mt-2.5 h-2 w-2 flex-none rounded-full bg-cyan-700" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 rounded-2xl bg-white/75 px-4 py-3 text-sm leading-6 text-slate-600">
-                  Exact hardware and signal-processing configuration should be evaluated by product
-                  model, target application and project requirement.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <SectionHeader
-          eyebrow="Product form gallery"
-          title="Pulse oximeter product form gallery"
-          description="A visual overview of fingertip, pediatric, Bluetooth, voice-enabled and handheld pulse oximeter product forms."
-        />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {gallerySlots.map((slot) => (
-            <figure key={slot.title} className="rounded-[2rem] border border-slate-200 bg-white p-4 shadow-sm">
-              <PlaceholderVisual label={slot.title} compact />
-              <figcaption className="mt-5 px-2 pb-2">
-                <h3 className="text-base font-semibold text-slate-950">{slot.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{slot.caption}</p>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
-        <SectionHeader
-          eyebrow="FAQ"
-          title="Questions procurement teams often ask"
-          description="Practical answers for product managers, private label medical device brands and overseas distribution teams evaluating pulse oximeter configurations."
-        />
-        <div className="mt-10 divide-y divide-slate-200 rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-          {faqs.map((faq) => (
-            <details key={faq.question} className="group p-7 open:bg-slate-50/70">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-lg font-semibold text-slate-950">
-                <span>{faq.question}</span>
-                <span className="mt-1 flex h-7 w-7 flex-none items-center justify-center rounded-full bg-cyan-50 text-cyan-700 transition group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-700">{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-        <div className="overflow-hidden rounded-[2.25rem] bg-slate-950 px-7 py-12 text-white md:px-12 lg:flex lg:items-center lg:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Next step</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">
-              Need pulse oximeter product specifications or configuration support?
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">
-              Share the target user group, power supply preference, display type, Bluetooth requirement
-              and expected product scenario you are evaluating.
-            </p>
-          </div>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row lg:mt-0">
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:pb-24">
+        <div className="overflow-hidden rounded-[2.5rem] bg-cyan-700 p-8 text-center text-white shadow-xl shadow-cyan-900/10 md:p-14">
+          <h2 className="mx-auto max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">
+            Need pulse oximeter product specifications or configuration support?
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-9 text-cyan-50">
+            Contact YimiLife to discuss fingertip pulse oximeter configurations,
+            handheld SpO2 model directions, Bluetooth integration and product
+            selection for your target market.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300"
+              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-base font-semibold text-cyan-800 transition hover:bg-cyan-50"
             >
               Contact YimiLife
-              <span className="ml-2">›</span>
             </Link>
             <Link
-              href="/oem-odm"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10"
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full border border-white/40 px-7 py-3.5 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
             >
               Discuss Pulse Oximeter Configuration
-              <span className="ml-2">›</span>
+              <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
           </div>
         </div>
