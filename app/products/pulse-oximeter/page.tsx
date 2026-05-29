@@ -2,252 +2,214 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pulse Oximeter OEM/ODM Manufacturer | YimiLife",
+  title:
+    "Pulse Oximeter Product Family | Fingertip, Handheld, Bluetooth & Pediatric Models | YimiLife",
   description:
-    "YimiLife provides pulse oximeter OEM/ODM manufacturing for global healthcare brands, including private label customization, Bluetooth SDK and UI adaptation, certified model experience and production verification.",
-  alternates: {
-    canonical: "https://www.yimilife.com/products/pulse-oximeter",
-  },
-  openGraph: {
-    title: "Pulse Oximeter OEM/ODM Manufacturer | YimiLife",
+    "Explore YimiLife pulse oximeter product forms including fingertip, handheld, adult, pediatric, dry-battery, rechargeable, Bluetooth and voice-enabled SpO2 monitoring configurations.",
+};
+
+const productTypes = [
+  {
+    title: "Fingertip Pulse Oximeters",
     description:
-      "Pulse oximeter OEM/ODM manufacturing, private label customization, Bluetooth SDK support, UI adaptation and production verification for global healthcare brands.",
-    url: "https://www.yimilife.com/products/pulse-oximeter",
-    siteName: "YimiLife",
-    type: "website",
-  },
-};
-
-type IconProps = {
-  className?: string;
-};
-
-function CheckIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M20 6L9 17l-5-5"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ArrowIcon({ className = "h-4 w-4" }: IconProps) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M12 3l7 3v5c0 4.8-2.9 8.3-7 10-4.1-1.7-7-5.2-7-10V6l7-3z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M9 12l2 2 4-5"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function FactoryIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M3 21h18M5 21V9l5 3V9l5 3V5h4v16"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 17h1M12 17h1M16 17h1"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function SignalIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 16c2.2 0 2.2-8 4.4-8s2.2 8 4.4 8 2.2-8 4.4-8S19.8 16 22 16"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M4 21h16"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function BluetoothIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M7 7l10 10-5 4V3l5 4L7 17"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-const highlights = [
-  "25+ Certified Models across FDA / MDR / NMPA",
-  "300,000 Units Monthly Pulse Oximeter Capacity",
-  "100% Fluke Index 2 Production Verification",
-  "Bluetooth SDK & UI Customization Support",
-  "PulseMatrix™ SpO2 Technology Platform",
-];
-
-const supportCards = [
-  {
-    title: "Fingertip Pulse Oximeter Manufacturing",
-    text: "Fingertip pulse oximeter manufacturer support for healthcare brands, importers and private label customers, covering model selection, production configuration and scalable manufacturing.",
+      "Compact finger-clip SpO2 devices for home healthcare, pharmacy retail and general family monitoring scenarios.",
+    imageLabel: "Fingertip models",
+    tags: [
+      "Adult / Pediatric",
+      "Dry Battery",
+      "Rechargeable Option",
+      "OLED / TFT",
+      "Bluetooth Option",
+      "Voice Option",
+    ],
   },
   {
-    title: "Private Label Customization",
-    text: "Private label pulse oximeter customization for logo, color, packaging, labeling, selected UI interface adaptation and project-specific documentation.",
+    title: "Handheld Pulse Oximeters",
+    description:
+      "Handheld SpO2 monitoring devices for nursing, clinical-support and extended monitoring scenarios where a larger display and external probe configuration may be required.",
+    imageLabel: "Handheld models",
+    tags: [
+      "Handheld Form",
+      "External Probe",
+      "Larger Display",
+      "Rechargeable Battery",
+      "Data Storage Option",
+    ],
   },
   {
-    title: "SpO2 Algorithm & PulseMatrix™ Support",
-    text: "Signal processing support focused on waveform quality, low perfusion SpO2 monitoring, motion artifact rejection and skin tone accuracy considerations.",
+    title: "Adult Pulse Oximeters",
+    description:
+      "Adult SpO2 monitoring models designed for common home healthcare, distributor product lines and private label medical device brands.",
+    imageLabel: "Adult models",
+    tags: [
+      "Adult Use",
+      "Home Healthcare",
+      "OLED / TFT",
+      "Alarm Option",
+      "Family Monitoring",
+    ],
   },
   {
-    title: "Bluetooth SDK & Data Integration",
-    text: "Bluetooth data transmission, SDK-level integration and protocol adaptation for connected health products and remote patient monitoring platforms.",
+    title: "Pediatric Pulse Oximeters",
+    description:
+      "Child-oriented pulse oximeter models with pediatric-friendly housing, color display options and packaging configurations.",
+    imageLabel: "Pediatric models",
+    tags: [
+      "Pediatric Use",
+      "Child Housing",
+      "Color Display",
+      "Family Brands",
+      "Private Label Configuration",
+    ],
   },
   {
-    title: "UI, ID & Mechanical Customization",
-    text: "Customization for UI interface, display layout, interaction logic, logo, color, buttons, housing, packaging and labeling.",
+    title: "Bluetooth Pulse Oximeters",
+    description:
+      "Bluetooth-enabled SpO2 devices for app-connected product projects, with protocol and SDK support for iOS/Android integration discussions.",
+    imageLabel: "Bluetooth models",
+    tags: [
+      "Bluetooth",
+      "App Integration",
+      "iOS / Android SDK Discussion",
+      "Data Transmission",
+      "Connected Health Projects",
+    ],
   },
   {
-    title: "Manufacturing & Quality Control",
-    text: "Support from PCBA production and assembly to functional testing, Fluke Index 2 production verification, packaging and batch traceability.",
+    title: "Voice-Enabled Pulse Oximeters",
+    description:
+      "Voice prompt pulse oximeter options for elderly users and home care scenarios requiring easier result reading.",
+    imageLabel: "Voice models",
+    tags: [
+      "Voice Prompt",
+      "Elderly Users",
+      "Home Care",
+      "Optional Alarm",
+      "Accessible Reading",
+    ],
   },
 ];
 
-const applications = [
-  "Home Healthcare Monitoring",
-  "Elderly SpO2 Monitoring",
-  "Respiratory Health Monitoring",
-  "Private Label Medical Device Projects",
-  "Wearable SpO2 Monitoring",
-  "Remote Patient Monitoring",
-  "Connected Health Platforms",
+const selectionRows = [
+  {
+    form: "Fingertip Pulse Oximeter",
+    user: "Adult / family",
+    power: "Dry battery / rechargeable",
+    display: "OLED / TFT",
+    connectivity: "Optional Bluetooth",
+    voice: "Optional",
+    signal: "24-bit high-resolution ADC front-end option",
+    use: "Home / pharmacy",
+  },
+  {
+    form: "Pediatric Pulse Oximeter",
+    user: "Children",
+    power: "Dry battery / rechargeable",
+    display: "TFT / OLED",
+    connectivity: "Optional Bluetooth",
+    voice: "Optional",
+    signal: "Pediatric signal processing configuration",
+    use: "Children / family",
+  },
+  {
+    form: "Handheld Pulse Oximeter",
+    user: "Adult / professional",
+    power: "Rechargeable lithium battery",
+    display: "Larger display",
+    connectivity: "Optional Bluetooth",
+    voice: "Optional",
+    signal: "External probe and extended monitoring configuration",
+    use: "Nursing / clinical support",
+  },
+  {
+    form: "Bluetooth Pulse Oximeter",
+    user: "Adult / family",
+    power: "Dry battery / rechargeable",
+    display: "OLED / TFT",
+    connectivity: "Bluetooth",
+    voice: "Optional",
+    signal: "Bluetooth protocol and SDK integration discussion",
+    use: "App-connected SpO2 project",
+  },
+  {
+    form: "Voice Pulse Oximeter",
+    user: "Adult / elderly",
+    power: "Dry battery / rechargeable",
+    display: "OLED / TFT",
+    connectivity: "Optional Bluetooth",
+    voice: "Voice prompt",
+    signal: "Accessible result-reading configuration",
+    use: "Home care / elderly users",
+  },
 ];
 
-const workflow = [
-  "Requirement Review",
-  "Product Configuration",
-  "Engineering Evaluation",
-  "Prototype or Sample Confirmation",
-  "Testing and Documentation",
-  "Pilot Production",
-  "Mass Production",
+const basicParameters = [
+  "SpO2 measurement",
+  "Pulse rate measurement",
+  "OLED / TFT display options",
+  "Dry battery and rechargeable lithium battery options",
+  "Adult and pediatric product forms",
+  "Bluetooth data transmission option",
+  "Voice prompt option",
+  "Alarm and display configuration options",
+];
+
+const signalOptions = [
+  "24-bit high-resolution ADC front-end architecture in selected configurations",
+  "Advanced anti-motion artifact filtering for unstable finger conditions",
+  "Low-perfusion signal processing for challenging PI scenarios",
+  "PulseMatrix™ signal optimization platform for SpO2 waveform acquisition and signal interpretation",
+];
+
+const gallerySlots = [
+  {
+    title: "Fingertip pulse oximeter models",
+    alt: "YimiLife fingertip pulse oximeter product image placeholder",
+  },
+  {
+    title: "Pediatric pulse oximeter models",
+    alt: "YimiLife pediatric pulse oximeter product image placeholder",
+  },
+  {
+    title: "Handheld pulse oximeter models",
+    alt: "YimiLife handheld pulse oximeter product image placeholder",
+  },
+  {
+    title: "Bluetooth and voice-enabled pulse oximeter models",
+    alt: "YimiLife Bluetooth voice-enabled pulse oximeter product image placeholder",
+  },
 ];
 
 const faqs = [
   {
-    question: "Can YimiLife support private label pulse oximeter projects?",
+    question:
+      "How does YimiLife support pediatric pulse oximeter configurations for private label medical brands?",
     answer:
-      "Yes. YimiLife supports private label pulse oximeter projects, including logo, color, packaging, labeling, selected UI interface adaptation and manufacturing documentation based on customer requirements.",
+      "YimiLife can discuss pediatric pulse oximeter configurations across housing style, color display options, packaging format and product labeling requirements. Final specifications should be reviewed according to the target market and project scope.",
   },
   {
-    question: "Is YimiLife a fingertip pulse oximeter manufacturer?",
+    question:
+      "What is the difference between fingertip and handheld pulse oximeter product forms?",
     answer:
-      "Yes. YimiLife manufactures fingertip pulse oximeters for OEM/ODM and private label customers, with model selection, production configuration and quality documentation support.",
+      "Fingertip pulse oximeters are compact finger-clip devices for home healthcare, pharmacy retail and general family monitoring. Handheld pulse oximeters are more suitable for nursing, clinical-support or extended monitoring scenarios where a larger display or external probe configuration may be required.",
   },
   {
-    question: "Can YimiLife support Bluetooth SDK and UI customization?",
+    question:
+      "Can YimiLife discuss Bluetooth pulse oximeter SDK integration for iOS or Android apps?",
     answer:
-      "Yes. For selected pulse oximeter OEM/ODM projects, YimiLife can support Bluetooth SDK integration, data transmission requirements and UI interface customization based on project scope.",
+      "Yes. For Bluetooth pulse oximeter projects, YimiLife can discuss Bluetooth protocol, data transmission and SDK integration requirements for iOS or Android app-connected product development.",
   },
   {
-    question: "How does YimiLife verify pulse oximeter production quality?",
+    question:
+      "What pulse oximeter configurations are available for elderly users or home care scenarios?",
     answer:
-      "Pulse oximeter units are calibrated and verified using Fluke Index 2 clinical simulators during production, together with functional testing, visual inspection, packaging control and batch traceability.",
+      "Voice-enabled pulse oximeters, larger display options, optional alarm settings and accessible result-reading configurations may be discussed for elderly users or home care product scenarios.",
   },
   {
-    question: "Can YimiLife support CE, MDR, FDA or NMPA market requirements?",
+    question:
+      "How are low-perfusion and motion artifact challenges considered in YimiLife SpO2 product development?",
     answer:
-      "YimiLife has experience with 25+ FDA / MDR / NMPA certified pulse oximeter models and can support OEM/ODM customers with product documentation and project discussion for target market requirements.",
-  },
-  {
-    question: "What customization options are available for pulse oximeters?",
-    answer:
-      "Customization options may include logo, color, packaging, labeling, selected functional configuration, UI interface adaptation, Bluetooth data integration and documentation support based on project requirements.",
-  },
-  {
-    question: "What is your monthly pulse oximeter production capacity?",
-    answer:
-      "YimiLife’s pulse oximeter production capacity reaches up to 300,000 units per month, depending on project configuration, material preparation and production schedule.",
-  },
-  {
-    question: "What information should customers provide for an OEM/ODM inquiry?",
-    answer:
-      "Customers are encouraged to provide target market, product type, expected annual quantity, customization requirements, regulatory expectations, target price range and project timeline.",
+      "Selected YimiLife SpO2 configurations may include low-perfusion signal processing, anti-motion artifact filtering and PulseMatrix™ signal optimization concepts. The exact configuration should be evaluated according to the product form, hardware architecture and target application.",
   },
 ];
 
@@ -255,45 +217,20 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen YimiLife Technology Co., Ltd.",
-      url: "https://www.yimilife.com",
-      brand: {
-        "@type": "Brand",
+      "@type": "WebPage",
+      "@id": "https://www.yimilife.com/products/pulse-oximeter#webpage",
+      name: "Pulse Oximeter Product Family",
+      url: "https://www.yimilife.com/products/pulse-oximeter",
+      description:
+        "YimiLife pulse oximeter product family page covering fingertip, handheld, adult, pediatric, Bluetooth and voice-enabled SpO2 monitoring configurations.",
+      isPartOf: {
+        "@type": "WebSite",
         name: "YimiLife",
+        url: "https://www.yimilife.com",
       },
-      description:
-        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
-    },
-    {
-      "@type": "Service",
-      "@id":
-        "https://www.yimilife.com/products/pulse-oximeter#pulse-oximeter-oem-odm",
-      name: "Pulse Oximeter OEM/ODM Manufacturing",
-      provider: {
-        "@id": "https://www.yimilife.com/#organization",
-      },
-      serviceType: "Pulse Oximeter OEM/ODM Manufacturing",
-      areaServed: "Global",
-      description:
-        "Pulse oximeter OEM/ODM manufacturing for medical brands, including private label customization, fingertip pulse oximeter model selection, hardware engineering, SpO2 technology support, Bluetooth SDK integration, UI customization, quality control and mass production.",
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.yimilife.com/products/pulse-oximeter#faq",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.yimilife.com/products/pulse-oximeter#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
@@ -310,472 +247,325 @@ const jsonLd = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Pulse Oximeter OEM/ODM",
+          name: "Pulse Oximeters",
           item: "https://www.yimilife.com/products/pulse-oximeter",
         },
       ],
     },
+    {
+      "@type": "ItemList",
+      name: "YimiLife pulse oximeter product types",
+      itemListElement: [
+        "Fingertip Pulse Oximeter",
+        "Handheld Pulse Oximeter",
+        "Pediatric Pulse Oximeter",
+        "Bluetooth Pulse Oximeter",
+        "Voice-Enabled Pulse Oximeter",
+      ].map((name, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "MedicalDevice",
+          name,
+          manufacturer: {
+            "@type": "Organization",
+            name: "YimiLife",
+          },
+          description:
+            "SpO2 and pulse rate monitoring product configuration for home healthcare, professional support or private label medical device brand discussions.",
+          purpose: "SpO2 and pulse rate monitoring",
+        },
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
   ],
 };
 
-export default function PulseOximeterPage() {
+function PlaceholderVisual({ label }: { label: string }) {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+    <div
+      aria-label={label}
+      className="relative flex aspect-[4/3] min-h-[220px] overflow-hidden rounded-[1.75rem] border border-cyan-100 bg-gradient-to-br from-white via-cyan-50 to-sky-100 shadow-sm"
+    >
+      <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-cyan-200/40 blur-3xl" />
+      <div className="absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-sky-200/50 blur-3xl" />
+      <div className="absolute inset-x-8 bottom-8 h-20 rounded-full bg-white/50 blur-xl" />
+      <div className="relative m-auto flex h-32 w-48 flex-col items-center justify-center rounded-[1.5rem] border border-white/70 bg-white/70 px-6 text-center shadow-lg backdrop-blur">
+        <div className="mb-3 h-2 w-24 rounded-full bg-cyan-500/70" />
+        <div className="text-sm font-semibold text-slate-800">{label}</div>
+        <div className="mt-2 text-xs text-slate-500">Product visual slot</div>
+      </div>
+    </div>
+  );
+}
+
+function SectionHeader({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
+  return (
+    <div className="mx-auto max-w-3xl text-center">
+      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">{eyebrow}</p>
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">{title}</h2>
+      {description ? <p className="mt-5 text-lg leading-8 text-slate-600">{description}</p> : null}
+    </div>
+  );
+}
+
+export default function PulseOximeterProductFamilyPage() {
+  return (
+    <main className="bg-white text-slate-950">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-cyan-500 blur-3xl" />
-          <div className="absolute right-0 top-10 h-80 w-80 rounded-full bg-blue-600 blur-3xl" />
-        </div>
-
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-cyan-50/70 to-slate-50">
+        <div className="absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-cyan-200/30 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-24">
           <div>
-            <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              Pulse Oximeter OEM/ODM for Medical Brands
-            </div>
-
-            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Pulse Oximeter OEM/ODM Manufacturer
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-700">Products / Pulse Oximeters</p>
+            <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-slate-950 md:text-7xl">
+              Pulse Oximeter Product Family
             </h1>
-
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife provides pulse oximeter OEM/ODM manufacturing for global
-              healthcare brands, including private label pulse oximeter
-              customization, fingertip pulse oximeter model selection, Bluetooth
-              SDK support, UI adaptation and production verification.
+            <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-650">
+              Explore YimiLife pulse oximeter product forms including fingertip, handheld, adult,
+              pediatric, dry-battery, rechargeable, Bluetooth and voice-enabled SpO2 monitoring
+              configurations.
             </p>
-
-            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              With 25+ certified models across FDA, MDR and NMPA pathways, up
-              to 300,000 units monthly production capacity and an ISO 13485
-              quality management system, we support OEM/ODM customers from
-              product definition and customization to mass production with{" "}
-              <Link
-                href="/technology"
-                className="font-semibold text-cyan-200 underline underline-offset-4"
-              >
-                PulseMatrix™ SpO2 technology
-              </Link>
-              .
+            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+              For private label medical device brands, YimiLife supports structured product
+              configuration discussions across display, power supply, connectivity and user-group
+              requirements.
             </p>
-
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#product-types"
+                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-4 text-base font-semibold text-white transition hover:bg-slate-800"
+              >
+                View Product Types
+                <span className="ml-2">›</span>
+              </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
+                className="inline-flex items-center justify-center rounded-full border border-cyan-600 px-7 py-4 text-base font-semibold text-cyan-700 transition hover:bg-cyan-50"
               >
-                Start a Pulse Oximeter OEM/ODM Inquiry
-                <ArrowIcon className="ml-2 h-4 w-4" />
-              </Link>
-
-              <Link
-                href="/technology"
-                className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Explore PulseMatrix™ Technology
+                Request Product Details
+                <span className="ml-2">›</span>
               </Link>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
-            <div className="grid gap-4">
-              {highlights.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-4 rounded-2xl bg-white/10 p-4 text-white"
-                >
-                  <div className="mt-1 rounded-full bg-cyan-300/20 p-1 text-cyan-200">
-                    <CheckIcon className="h-4 w-4" />
-                  </div>
-                  <p className="text-sm font-medium leading-6">{item}</p>
+          <div className="rounded-[2.25rem] border border-white bg-white/70 p-4 shadow-xl shadow-cyan-900/10 backdrop-blur">
+            <PlaceholderVisual label="Fingertip + Pediatric + Handheld Pulse Oximeters" />
+          </div>
+        </div>
+      </section>
+
+      <section id="product-types" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <SectionHeader
+          eyebrow="Product types"
+          title="Find the right pulse oximeter form factor"
+          description="Compare core pulse oximeter product categories by use scenario, power supply, display type, connectivity and user group."
+        />
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {productTypes.map((item) => (
+            <article
+              key={item.title}
+              className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="p-4 pb-0">
+                <PlaceholderVisual label={item.imageLabel} />
+              </div>
+              <div className="p-7">
+                <h3 className="text-2xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
+                <p className="mt-4 min-h-[88px] text-base leading-7 text-slate-600">{item.description}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-cyan-50 px-3 py-1.5 text-xs font-semibold text-cyan-800"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-2xl bg-slate-950/40 p-5">
-              <p className="text-sm font-medium text-cyan-100">
-                Built for B2B medical device projects
-              </p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
-                From private label fingertip pulse oximeters to connected SpO2
-                monitoring products, YimiLife supports customization beyond
-                logo and packaging, including UI adaptation, Bluetooth SDK
-                support, manufacturing control and project-level engineering.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-18 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Beyond basic assembly
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Fingertip Pulse Oximeter OEM/ODM Manufacturing
-            </h2>
-          </div>
-
-          <div className="space-y-5 text-base leading-8 text-slate-700">
-            <p>
-              As a fingertip pulse oximeter manufacturer for OEM/ODM and
-              private label customers, YimiLife supports model selection,
-              product configuration, manufacturing quality and documentation
-              needs for healthcare brands, importers and regional distributors.
-            </p>
-
-            <p>
-              Beyond logo and packaging, customers can discuss housing color,
-              labeling content, selected UI interface adaptation, Bluetooth data
-              integration, production configuration and project-specific
-              documentation based on target market requirements.
-            </p>
-
-            <p>
-              Our goal is to help customers build pulse oximeter products that
-              are manufacturable, quality-controlled and suitable for real-world
-              home healthcare, elderly monitoring, respiratory health and
-              connected medical device applications.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              OEM/ODM support
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Private Label Pulse Oximeter Customization
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife provides private label pulse oximeter customization and
-              OEM/ODM support for global healthcare brands, covering product
-              configuration, hardware engineering, SpO2 algorithm adaptation,
-              Bluetooth SDK support, UI customization, industrial design,
-              manufacturing and quality control.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {supportCards.map((card) => (
-              <div
-                key={card.title}
-                className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
-              >
-                <div className="mb-5 inline-flex rounded-2xl bg-cyan-100 p-3 text-cyan-800">
-                  {card.title.includes("Bluetooth") ? (
-                    <BluetoothIcon />
-                  ) : card.title.includes("Manufacturing") ? (
-                    <FactoryIcon />
-                  ) : card.title.includes("Algorithm") ? (
-                    <SignalIcon />
-                  ) : (
-                    <ShieldIcon />
-                  )}
-                </div>
-                <h3 className="text-lg font-semibold text-slate-950">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700">
-                  {card.text}
-                </p>
               </div>
-            ))}
-          </div>
-
-          <div className="mt-10 rounded-3xl bg-slate-950 p-8 text-white">
-            <h3 className="text-xl font-semibold">
-              Bluetooth SDK and UI customization beyond logo and packaging
-            </h3>
-            <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-300">
-              For customers developing connected health products or remote
-              patient monitoring solutions, YimiLife can support Bluetooth data
-              integration, SDK-level protocol discussion and customized UI
-              interface requirements based on project specifications.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              PulseMatrix™ technology
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              PulseMatrix™ SpO2 Technology for Low Perfusion and Motion Scenarios
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife’s{" "}
-              <Link
-                href="/technology"
-                className="font-semibold text-cyan-700 underline underline-offset-4"
-              >
-                PulseMatrix™ SpO2 Technology Platform
-              </Link>{" "}
-              supports low perfusion SpO2 technology, motion artifact rejection
-              pulse oximeter performance and skin tone accuracy considerations,
-              helping OEM/ODM customers develop pulse oximeter products beyond
-              basic hardware configuration.
-            </p>
-          </div>
-
-          <div className="grid gap-5">
-            <Link
-              href="/technology/low-perfusion-spo2"
-              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <h3 className="text-lg font-semibold text-slate-950">
-                Low Perfusion SpO2 Technology
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700">
-                PulseMatrix™ supports low perfusion SpO2 technology for weak
-                signal scenarios, including elderly users, poor peripheral
-                circulation and challenging home-use conditions.
-              </p>
-            </Link>
-
-            <Link
-              href="/technology/motion-artifact-rejection"
-              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <h3 className="text-lg font-semibold text-slate-950">
-                Motion Artifact Rejection Pulse Oximeter Technology
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700">
-                Motion artifact rejection pulse oximeter technology helps
-                improve SpO2 reading stability during hand movement, finger
-                tremor and low perfusion combined with motion disturbance.
-              </p>
-            </Link>
-
-            <Link
-              href="/technology/skin-tone-fairness"
-              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <h3 className="text-lg font-semibold text-slate-950">
-                Skin Tone Accuracy in Pulse Oximeter Development
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700">
-                Skin tone accuracy is becoming increasingly important for pulse
-                oximeter performance evaluation. PulseMatrix™ considers signal
-                response and validation strategies across different skin
-                pigmentation conditions.
-              </p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-900">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">
-              Application scenarios
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Pulse Oximeter OEM/ODM Applications for Global Healthcare Brands
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">
-              YimiLife supports pulse oximeter OEM/ODM projects for customers
-              targeting home healthcare, elderly monitoring, respiratory
-              health, private label medical devices, wearable SpO2 monitoring
-              and remote patient monitoring applications.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {applications.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-2xl bg-white/10 p-4 text-white"
-              >
-                <CheckIcon className="h-4 w-4 text-cyan-300" />
-                <span className="text-sm font-medium">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Project workflow
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Pulse Oximeter OEM/ODM Workflow from Inquiry to Mass Production
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife follows a practical OEM/ODM workflow to help customers
-              move from initial product requirements to sample confirmation,
-              testing, documentation and mass production.
-            </p>
-            <p className="mt-4 text-base leading-8 text-slate-700">
-              For customers requiring deeper customization, our team can also
-              discuss Bluetooth data integration, UI interaction logic,
-              SDK-level support and engineering adaptation.
-            </p>
-          </div>
-
-          <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-            <div className="grid gap-4">
-              {workflow.map((step, index) => (
-                <div key={step} className="flex gap-4">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-sm font-semibold text-cyan-800">
-                    {index + 1}
-                  </div>
-                  <div className="border-b border-slate-100 pb-4">
-                    <h3 className="font-semibold text-slate-950">{step}</h3>
-                    <p className="mt-1 text-sm leading-6 text-slate-600">
-                      {index === 0
-                        ? "Evaluate product type, target market, customization scope, expected quantity, regulatory needs, target price range and project timeline."
-                        : "Move the project forward with engineering, testing, documentation and production controls according to agreed requirements."}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-                Quality and manufacturing
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                Production Verification and Certified Model Experience
-              </h2>
-              <p className="mt-5 text-base leading-8 text-slate-700">
-                YimiLife has experience with 25+ FDA / MDR / NMPA certified
-                pulse oximeter models. As an ISO 13485 medical device
-                manufacturer, YimiLife applies quality control throughout pulse
-                oximeter manufacturing, including incoming inspection, PCBA
-                process control, assembly, functional testing, performance
-                verification, labeling, packaging and batch traceability.
-              </p>
-              <p className="mt-4 text-base leading-8 text-slate-700">
-                Learn more about our{" "}
-                <Link
-                  href="/quality"
-                  className="font-semibold text-cyan-700 underline underline-offset-4"
-                >
-                  ISO 13485 medical device manufacturing quality
-                </Link>{" "}
-                and manufacturing control approach.
-              </p>
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="rounded-3xl bg-slate-950 p-6 text-white">
-                <p className="text-4xl font-semibold">300,000</p>
-                <p className="mt-2 text-sm font-medium text-cyan-200">
-                  units monthly capacity
-                </p>
-                <p className="mt-4 text-sm leading-6 text-slate-300">
-                  Scalable production capacity for high-volume private label
-                  and regulated medical device projects.
-                </p>
-              </div>
-
-              <div className="rounded-3xl bg-cyan-50 p-6 text-slate-950">
-                <p className="text-4xl font-semibold">100%</p>
-                <p className="mt-2 text-sm font-medium text-cyan-800">
-                  Fluke Index 2 production verification
-                </p>
-                <p className="mt-4 text-sm leading-6 text-slate-700">
-                  Each pulse oximeter is calibrated and verified using Fluke
-                  Index 2 clinical simulators before shipment.
-                </p>
-              </div>
-
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:col-span-2">
-                <h3 className="text-lg font-semibold text-slate-950">
-                  Batch consistency at scale
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700">
-                  This full-unit calibration and verification process helps
-                  OEM/ODM customers maintain product consistency across
-                  batches, especially for high-volume private label or
-                  regulated medical device projects.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-            FAQ
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-            Frequently asked questions
-          </h2>
-        </div>
-
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          {faqs.map((faq) => (
-            <div
-              key={faq.question}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-            >
-              <h3 className="text-base font-semibold text-slate-950">
-                {faq.question}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700">
-                {faq.answer}
-              </p>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="bg-slate-950">
-        <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Start your pulse oximeter OEM/ODM project
-          </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for a pulse oximeter OEM/ODM manufacturer for private
-            label pulse oximeter projects, custom pulse oximeter supplier
-            support, certified model experience, production verification and
-            connected-device customization? Share your project requirements
-            with YimiLife’s OEM/ODM team.
-          </p>
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Selection table"
+            title="Pulse oximeter model selection table"
+            description="A quick comparison of pulse oximeter product forms by user group, power supply, display, connectivity and signal architecture."
+          />
 
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="min-w-[1120px] w-full border-collapse text-left text-sm">
+                <thead className="bg-slate-950 text-white">
+                  <tr>
+                    {[
+                      "Product Form",
+                      "User Group",
+                      "Power Supply",
+                      "Display",
+                      "Connectivity",
+                      "Voice",
+                      "Signal Architecture",
+                      "Typical Use",
+                    ].map((header) => (
+                      <th key={header} className="px-5 py-4 font-semibold">
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {selectionRows.map((row, index) => (
+                    <tr key={row.form} className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                      <td className="px-5 py-5 font-semibold text-slate-950">{row.form}</td>
+                      <td className="px-5 py-5 text-slate-650">{row.user}</td>
+                      <td className="px-5 py-5 text-slate-650">{row.power}</td>
+                      <td className="px-5 py-5 text-slate-650">{row.display}</td>
+                      <td className="px-5 py-5 text-slate-650">{row.connectivity}</td>
+                      <td className="px-5 py-5 text-slate-650">{row.voice}</td>
+                      <td className="px-5 py-5 text-slate-650">{row.signal}</td>
+                      <td className="px-5 py-5 text-slate-650">{row.use}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Parameters</p>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Key pulse oximeter parameters & signal processing options
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              This snapshot keeps the product page focused on configuration and product selection,
+              while still making core SpO2 engineering entities visible for search engines and
+              procurement teams.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+              <h3 className="text-2xl font-semibold text-slate-950">Basic product parameters</h3>
+              <ul className="mt-6 space-y-3">
+                {basicParameters.map((item) => (
+                  <li key={item} className="flex gap-3 text-base leading-7 text-slate-650">
+                    <span className="mt-2.5 h-2 w-2 flex-none rounded-full bg-cyan-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-[2rem] border border-cyan-200 bg-cyan-50/60 p-7 shadow-sm">
+              <h3 className="text-2xl font-semibold text-slate-950">Advanced signal options</h3>
+              <ul className="mt-6 space-y-3">
+                {signalOptions.map((item) => (
+                  <li key={item} className="flex gap-3 text-base leading-7 text-slate-700">
+                    <span className="mt-2.5 h-2 w-2 flex-none rounded-full bg-cyan-700" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 rounded-2xl bg-white/70 px-4 py-3 text-sm leading-6 text-slate-600">
+                Exact hardware and signal-processing configuration should be evaluated by product
+                model, target application and project requirement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-white via-slate-50 to-cyan-50/70 py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Product visuals"
+            title="Reserved image slots for product families"
+            description="These spaces are prepared for actual product photography, renderings or approved visual assets in the next design stage."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {gallerySlots.map((slot) => (
+              <figure key={slot.title}>
+                <PlaceholderVisual label={slot.title} />
+                <figcaption className="mt-4 text-center text-sm font-medium text-slate-600">
+                  {slot.title}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+        <SectionHeader
+          eyebrow="FAQ"
+          title="Questions procurement teams often ask"
+          description="Practical answers for product managers, private label medical device brands and overseas distribution teams evaluating pulse oximeter configurations."
+        />
+        <div className="mt-10 divide-y divide-slate-200 rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+          {faqs.map((faq) => (
+            <details key={faq.question} className="group p-7 open:bg-slate-50/70">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-lg font-semibold text-slate-950">
+                <span>{faq.question}</span>
+                <span className="mt-1 flex h-7 w-7 flex-none items-center justify-center rounded-full bg-cyan-50 text-cyan-700 transition group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-650">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+        <div className="overflow-hidden rounded-[2.25rem] bg-slate-950 px-7 py-12 text-white md:px-12 lg:flex lg:items-center lg:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Next step</p>
+            <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">
+              Need pulse oximeter product specifications or configuration support?
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">
+              Share the product form, target user group, power supply preference and connectivity
+              requirements you are evaluating.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row lg:mt-0">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
+              className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
-              Submit Pulse Oximeter OEM/ODM Requirements
-              <ArrowIcon className="ml-2 h-4 w-4" />
+              Contact YimiLife
+              <span className="ml-2">›</span>
             </Link>
-
             <Link
-              href="/technology"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              href="/oem-odm"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10"
             >
-              Request Technical Brief
+              Discuss Pulse Oximeter Configuration
+              <span className="ml-2">›</span>
             </Link>
           </div>
         </div>
