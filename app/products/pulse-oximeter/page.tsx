@@ -274,21 +274,21 @@ const signalTierCards = [
     tier: "Standard Signal",
     level: "PI ≥ 0.3% level",
     description:
-      "Baseline SpO2 signal path for cost-sensitive and high-volume fingertip pulse oximeter configurations.",
+      "Baseline signal processing for standard fingertip pulse oximeter configurations.",
     fit: "Economy retail and standard adult fingertip models",
   },
   {
     tier: "PulseMatrix™",
     level: "PI ≥ 0.1% level",
     description:
-      "YimiLife signal optimization platform for selected low-perfusion and motion-interference configurations.",
-    fit: "Mainstream OLED, selected pediatric and stronger private-label configurations",
+      "Low-perfusion and motion-interference processing for selected SpO2 models.",
+    fit: "Mainstream OLED, pediatric and stronger private-label configurations",
   },
   {
     tier: "PulseMatrix™ + 24-bit ADC AFE",
     level: "PI ≥ 0.025% level",
     description:
-      "High-end signal architecture combining PulseMatrix™ processing with a 24-bit ADC analog front-end path, subject to model and verification scope.",
+      "Premium signal architecture with a 24-bit ADC analog front-end path, subject to model and verification scope.",
     fit: "Advanced rechargeable BLE models and premium connected SpO2 projects",
   },
 ];
@@ -804,61 +804,70 @@ export default function PulseOximeterProductPage() {
       {/* Technical snapshot */}
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-xl md:p-10 lg:p-12">
-          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-            <div>
+          <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-stretch">
+            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-7">
               <Badge tone="cyan">Technical Highlights</Badge>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-                PulseMatrix™ Signal Optimization Platform
+                PulseMatrix™ Signal Platform
               </h2>
-              <p className="mt-5 text-base leading-8 text-slate-400">
-                A tiered SpO2 signal architecture for standard, low-perfusion
-                and high-end 24-bit ADC AFE configurations.
+              <p className="mt-5 text-base leading-8 text-slate-300">
+                Built to strengthen SpO2 signal acquisition under low-perfusion,
+                motion-interference and optical-noise conditions.
               </p>
 
-              <div className="mt-7 grid gap-3">
-                {[
-                  "Standard Signal — PI ≥ 0.3% level",
-                  "PulseMatrix™ — PI ≥ 0.1% level",
-                  "PulseMatrix™ + 24-bit ADC AFE — PI ≥ 0.025% level",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-amber-300/25 bg-white/[0.04] px-5 py-4 text-sm font-semibold leading-6 text-amber-50 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.08)]"
-                  >
-                    {item}
+              <div className="mt-auto pt-8">
+                <div className="rounded-[1.5rem] border border-amber-300/35 bg-gradient-to-br from-amber-300/10 via-white/[0.04] to-cyan-300/5 p-5 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.08)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
+                    Platform Focus
+                  </p>
+                  <div className="mt-4 grid gap-3 text-sm font-medium leading-6 text-slate-300">
+                    <div className="flex gap-3">
+                      <CheckIcon className="mt-1 h-4 w-4 flex-none text-amber-200" />
+                      <span>Low-perfusion waveform extraction</span>
+                    </div>
+                    <div className="flex gap-3">
+                      <CheckIcon className="mt-1 h-4 w-4 flex-none text-amber-200" />
+                      <span>Motion-interference filtering</span>
+                    </div>
+                    <div className="flex gap-3">
+                      <CheckIcon className="mt-1 h-4 w-4 flex-none text-amber-200" />
+                      <span>Cleaner optical signal acquisition</span>
+                    </div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid h-full gap-4 md:grid-cols-3">
               {signalTierCards.map((card) => (
                 <article
                   key={card.tier}
-                  className="rounded-[1.75rem] border border-amber-300/55 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-5 shadow-[0_0_0_1px_rgba(251,191,36,0.18),0_18px_45px_-28px_rgba(251,191,36,0.75)]"
+                  className="flex min-h-[310px] flex-col rounded-[1.75rem] border border-amber-300/55 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-5 shadow-[0_0_0_1px_rgba(251,191,36,0.18),0_18px_45px_-28px_rgba(251,191,36,0.75)]"
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">
                     {card.level}
                   </p>
-                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">
+                  <h3 className="mt-4 min-h-[58px] text-xl font-semibold leading-tight tracking-tight text-white">
                     {card.tier}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-slate-300">
                     {card.description}
                   </p>
-                  <div className="mt-5 rounded-2xl border border-amber-300/25 bg-slate-900/70 px-4 py-3 text-xs font-semibold leading-5 text-amber-50">
-                    {card.fit}
+                  <div className="mt-auto pt-6">
+                    <div className="rounded-2xl border border-amber-300/25 bg-slate-900/70 px-4 py-3 text-xs font-semibold leading-5 text-amber-50">
+                      {card.fit}
+                    </div>
                   </div>
                 </article>
               ))}
             </div>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {signalHighlights.map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-2xl border border-amber-300/30 bg-white/[0.04] p-4 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.08)]"
+                className="flex min-h-[132px] items-start gap-3 rounded-2xl border border-amber-300/30 bg-white/[0.04] p-4 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.08)]"
               >
                 <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-amber-200" />
                 <span className="text-sm font-medium leading-6 text-slate-300">
