@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "Pulse Oximeter Product Family | Fingertip, Handheld, Pediatric & Advanced Models | YimiLife",
   description:
-    "Explore YimiLife pulse oximeter product architecture including fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations, with clearly tiered signal-processing options from standard PI 0.3% to PulseMatrix™ low-perfusion architectures.",
+    "Explore YimiLife pulse oximeter product architecture including fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations with a clear fingertip model selection matrix.",
   alternates: {
     canonical: "https://www.yimilife.com/products/pulse-oximeter",
   },
@@ -385,56 +385,6 @@ const fingertipSelector = [
   },
 ];
 
-const pulseMatrixPlatformImage = "/homepage/pulseMatrix-s.jpg";
-
-const signalHighlights = [
-  {
-    title: "Motion Artifact Control",
-    description:
-      "Actively stabilizes SpO2 waveform capture during finger shake, loose placement and short-term movement, improving real-world spot-check usability.",
-    visual: "ppg",
-  },
-  {
-    title: "Optical Signal Architecture",
-    description:
-      "Achieves cleaner raw signals through enhanced structural design. Features ergonomic coupling between the finger, cavity and sensor, combined with physical shielding to reduce ambient light interference.",
-    visual: "trace",
-  },
-  {
-    title: "Low-Perfusion Optimization",
-    description:
-      "Pushes selected configurations from standard PI 0.1% tracking toward PulseMatrix™ PI 0.025% low-perfusion performance targets.",
-    visual: "wave",
-  },
-  {
-    title: "Production Verification",
-    description:
-      "Drives 100% production-line calibration and batch consistency using Fluke Index 2 clinical simulators where applicable.",
-    visual: "grid",
-  },
-];
-
-const engineeringAreas = [
-  {
-    title: "Optical & Structural Design",
-    description:
-      "Finger-cavity geometry, optical shielding, silicone contact structure and ambient-light reduction are considered during product configuration reviews.",
-    label: "Structure",
-  },
-  {
-    title: "Hardware Front-End Architecture",
-    description:
-      "Selected SpO2 configurations may use high-resolution analog front-end architecture, photodiode signal conditioning and low-noise PCB layout considerations.",
-    label: "Hardware",
-  },
-  {
-    title: "Signal Processing Verification",
-    description:
-      "Motion interference, low-perfusion signal handling and simulator-based production verification can be reviewed as part of project-specific product planning.",
-    label: "Signal",
-  },
-];
-
 const faqs = [
   {
     question:
@@ -456,9 +406,9 @@ const faqs = [
   },
   {
     question:
-      "How are low-perfusion and motion artifact challenges considered in YimiLife SpO2 product development?",
+      "Where can buyers learn more about PulseMatrix™ signal technology?",
     answer:
-      "YimiLife structures low-perfusion handling into signal-processing tiers: standard configurations around a PI 0.3% level, selected PulseMatrix™ configurations around a PI 0.1% level, and high-end configurations that may combine PulseMatrix™ with a 24-bit ADC AFE path for PI 0.025% level engineering targets. Specific performance claims should be reviewed by model, configuration and verification scope.",
+      "This product page focuses on pulse oximeter model selection and configuration. Detailed topics such as low-perfusion tracking, motion-interference handling, skin-tone-aware signal design and engineering reference areas are organized under the PulseMatrix™ Signal Platform on the Technology page.",
   },
   {
     question:
@@ -477,7 +427,7 @@ const structuredData = {
       url: "https://www.yimilife.com/products/pulse-oximeter",
       name: "Pulse Oximeter Product Family | YimiLife",
       description:
-        "YimiLife pulse oximeter product family page covering fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations with tiered signal-processing options.",
+        "YimiLife pulse oximeter product family page covering fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations with a product-focused selection matrix.",
       isPartOf: {
         "@type": "WebSite",
         name: "YimiLife",
@@ -516,8 +466,7 @@ const structuredData = {
         "Pediatric Pulse Oximeter",
         "Advanced Fingertip Pulse Oximeter",
         "BLE Optional Fingertip Pulse Oximeter",
-        "PulseMatrix Low-Perfusion Fingertip Pulse Oximeter",
-        "24-bit ADC AFE Advanced Fingertip Pulse Oximeter",
+        "Voice-Enabled Fingertip Pulse Oximeter",
       ].map((name, index) => ({
         "@type": "ListItem",
         position: index + 1,
@@ -896,95 +845,29 @@ export default function PulseOximeterProductPage() {
         </article>
       </section>
 
-      {/* Technical snapshot */}
-      <section
-        className="mx-auto max-w-7xl px-6 py-12 lg:px-8"
-        aria-label="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 and PI 0.025 low perfusion tracking roadmap, and Fluke Index 2 calibration workflow."
-      >
-        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 text-white shadow-xl md:p-8 lg:p-10">
-          <div className="grid gap-6 lg:grid-cols-[0.36fr_0.64fr] lg:items-stretch">
-            <div className="flex h-full flex-col justify-center rounded-[2rem] border border-white/10 bg-white/[0.03] p-5 md:p-6 lg:p-7">
-              <Badge tone="cyan">Technical Highlights</Badge>
-              <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
-                PulseMatrix™ Signal Platform
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-8 text-slate-300 md:text-lg">
-                A focused SpO2 signal platform for low-perfusion waveform
-                extraction, motion-interference control, optical signal
-                acquisition and production-line verification.
-              </p>
-            </div>
-
-            <div className="overflow-hidden rounded-[2rem] border border-cyan-300/25 bg-slate-900/80 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_24px_60px_-42px_rgba(34,211,238,0.95)]">
-              <img
-                src={pulseMatrixPlatformImage}
-                alt="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 and PI 0.025 low perfusion tracking roadmap, and Fluke Index 2 calibration workflow."
-                className="aspect-[2/1] h-full w-full object-cover"
-              />
-            </div>
+      {/* Technology crosslink */}
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div className="grid gap-6 rounded-[2rem] border border-cyan-100 bg-cyan-50/70 p-6 shadow-sm md:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="max-w-3xl">
+            <Badge tone="cyan">Technology Note</Badge>
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              Product selection here, signal platform details in Technology
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-700">
+              This page is kept focused on pulse oximeter product forms, model
+              directions and fingertip configuration selection. Detailed content
+              about low-perfusion tracking, motion-interference handling,
+              skin-tone-aware signal design and engineering reference areas is
+              organized under the PulseMatrix™ Signal Platform.
+            </p>
           </div>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {signalHighlights.map((item) => (
-              <article
-                key={item.title}
-                className="flex min-h-[210px] flex-col rounded-[1.5rem] border border-amber-300/45 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-5 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_18px_45px_-34px_rgba(251,191,36,0.75)]"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex h-9 w-9 flex-none items-center justify-center rounded-2xl border border-amber-300/50 bg-amber-300/10 text-amber-200">
-                    <SignalHighlightIcon kind={item.visual} />
-                  </div>
-                  <h3 className="pt-1 text-base font-semibold leading-tight tracking-tight text-white md:text-lg">
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="mt-4 flex-1 text-sm leading-7 text-slate-300">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Engineering reference areas */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="max-w-3xl">
-          <Badge tone="slate">Engineering Reference</Badge>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-            Product Engineering Reference Areas
-          </h2>
-          <p className="mt-5 text-lg leading-9 text-slate-600">
-            These areas help B2B buyers understand how product configuration
-            discussions connect to structure, hardware and signal verification.
-          </p>
-        </div>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {engineeringAreas.map((area) => (
-            <article
-              key={area.title}
-              className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
-            >
-              <div className="relative h-44 bg-slate-950 p-5">
-                <div className="absolute inset-0 opacity-15 [background-image:radial-gradient(#67e8f9_1px,transparent_1px)] [background-size:18px_18px]" />
-                <div className="relative flex h-full flex-col justify-between">
-                  <span className="w-fit rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">
-                    {area.label}
-                  </span>
-                  <div className="h-14 rounded-2xl border border-white/10 bg-white/[0.04]" />
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold tracking-tight text-slate-950">
-                  {area.title}
-                </h3>
-                <p className="mt-3 text-base leading-7 text-slate-600">
-                  {area.description}
-                </p>
-              </div>
-            </article>
-          ))}
+          <Link
+            href="/technology"
+            className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-slate-800"
+          >
+            Explore PulseMatrix™ Signal Platform
+            <ArrowIcon className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </section>
 
