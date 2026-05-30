@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "PulseMatrix™ Signal Platform | Low-Perfusion, Motion Artifact & Skin-Tone-Aware SpO2 Technology | YimiLife",
   description:
-    "Explore YimiLife PulseMatrix™ Signal Platform for low-perfusion SpO2 tracking, motion artifact rejection, skin-tone-aware signal design, engineering stack and production verification workflows.",
+    "Explore YimiLife PulseMatrix™ Signal Platform for low-perfusion SpO2 tracking, motion artifact rejection, skin-tone-aware signal design and production verification workflows mapped to product families.",
   alternates: {
     canonical: "https://www.yimilife.com/technology",
   },
@@ -191,33 +191,6 @@ const platformAnchors = [
     title: "Skin-Tone-Aware Design",
     short: "Optical and signal considerations across diverse skin tones.",
     href: "#skin-tone-accuracy",
-  },
-];
-
-const engineeringStack = [
-  {
-    title: "Optical Signal Architecture",
-    icon: OpticalIcon,
-    description:
-      "Achieves cleaner raw signals through enhanced structural design. Features ergonomic coupling between the finger, cavity and sensor, combined with physical shielding to eliminate ambient light interference.",
-  },
-  {
-    title: "Signal Processing Logic",
-    icon: WaveIcon,
-    description:
-      "Organizes low-perfusion extraction, anti-motion filtering and waveform quality assessment under one PulseMatrix™ signal workflow.",
-  },
-  {
-    title: "Low-Perfusion Optimization",
-    icon: LowPerfusionIcon,
-    description:
-      "Pushes selected configurations from standard PI 0.1% tracking toward PulseMatrix™ PI 0.025% low-perfusion performance targets.",
-  },
-  {
-    title: "Production Verification Workflow",
-    icon: VerificationIcon,
-    description:
-      "Supports production-line calibration and verification consistency through simulator-based workflows, including Fluke Index 2 where applicable.",
   },
 ];
 
@@ -419,10 +392,10 @@ export default function TechnologyPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="#engineering-stack"
+                  href="#low-perfusion"
                   className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
                 >
-                  Explore Engineering Stack
+                  Explore Technology Pillars
                   <ArrowIcon className="ml-2 h-4 w-4" />
                 </Link>
                 <Link
@@ -459,52 +432,6 @@ export default function TechnologyPage() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Engineering stack */}
-      <section
-        id="engineering-stack"
-        className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12 lg:px-8"
-      >
-        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-xl md:p-10 lg:p-12">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl">
-              <Badge tone="amber">Engineering Stack</Badge>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-                PulseMatrix™ Engineering Stack
-              </h2>
-              <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">
-                A compact view of the optical, hardware, signal-processing and
-                production-verification work behind the PulseMatrix™ signal
-                platform.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {engineeringStack.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article
-                  key={item.title}
-                  className="flex min-h-[245px] flex-col rounded-[1.75rem] border border-amber-300/45 bg-gradient-to-br from-amber-300/10 via-white/[0.04] to-cyan-300/5 p-5 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_18px_45px_-32px_rgba(251,191,36,0.8)]"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-2xl border border-amber-300/50 bg-amber-300/10 text-amber-200">
-                      <Icon />
-                    </div>
-                    <h3 className="text-lg font-semibold leading-tight tracking-tight text-white">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="mt-5 flex-1 text-sm leading-7 text-slate-300">
-                    {item.description}
-                  </p>
-                </article>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -607,10 +534,47 @@ export default function TechnologyPage() {
               How PulseMatrix™ maps to YimiLife product families
             </h2>
             <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
-              The platform is most useful when it is tied back to actual product
-              families, form factors and development directions.
+              PulseMatrix™ is not presented as a standalone claim. It is mapped
+              to product families, form factors and a production-verification
+              layer that supports repeatable manufacturing execution.
             </p>
           </div>
+
+          <div className="border-b border-slate-200 bg-amber-50/60 p-6 md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">
+                  Production verification layer
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+                  Verification follows the product path
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-700">
+                  Production-line calibration and verification are connected to
+                  the selected product configuration. Simulator-based workflows,
+                  including Fluke Index 2 where applicable, support consistent
+                  production execution without turning verification into a
+                  separate technology claim.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-5">
+                {workflowSteps.map((step, index) => (
+                  <div
+                    key={step}
+                    className="rounded-[1.25rem] border border-amber-100 bg-white px-4 py-4 shadow-sm"
+                  >
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-amber-100 text-xs font-semibold text-amber-700">
+                      {index + 1}
+                    </div>
+                    <p className="mt-3 text-xs font-semibold leading-5 text-slate-800">
+                      {step}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-4">
             {productMapping.map((row) => (
               <Link
@@ -629,41 +593,6 @@ export default function TechnologyPage() {
                   <ArrowIcon className="ml-2 h-4 w-4" />
                 </span>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Verification workflow */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <Badge tone="emerald">Verification Flow</Badge>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                From signal design to production verification
-              </h2>
-              <p className="mt-4 text-base leading-8 text-slate-600">
-                Fluke Index 2 clinical simulators are referenced as part of the
-                production calibration and verification workflow where
-                applicable.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-7 grid gap-3 md:grid-cols-5">
-            {workflowSteps.map((step, index) => (
-              <div
-                key={step}
-                className="rounded-[1.35rem] border border-slate-200 bg-slate-50 p-4"
-              >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-sm font-semibold text-emerald-700">
-                  {index + 1}
-                </div>
-                <p className="mt-4 text-sm font-semibold leading-6 text-slate-900">
-                  {step}
-                </p>
-              </div>
             ))}
           </div>
         </div>
