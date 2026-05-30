@@ -32,6 +32,88 @@ const CheckIcon = ({ className = "h-4 w-4" }: IconProps) => (
   </svg>
 );
 
+
+const SignalHighlightIcon = ({ kind }: { kind: string }) => {
+  if (kind === "trace") {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-5 w-5"
+        aria-hidden="true"
+      >
+        <path d="M4 17c3.5 0 3.5-10 7-10s3.5 10 7 10" />
+        <path d="M4 7h3" />
+        <path d="M17 7h3" />
+        <path d="M12 5v14" />
+        <circle cx="12" cy="12" r="2.2" />
+      </svg>
+    );
+  }
+
+  if (kind === "wave") {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-5 w-5"
+        aria-hidden="true"
+      >
+        <path d="M3 13h4l2-6 4 12 2-6h6" />
+        <path d="M18 5v4h4" />
+        <path d="m22 5-4 4" />
+      </svg>
+    );
+  }
+
+  if (kind === "grid") {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-5 w-5"
+        aria-hidden="true"
+      >
+        <rect x="4" y="4" width="16" height="16" rx="3" />
+        <path d="M8 12l2.5 2.5L16 9" />
+        <path d="M8 2v3" />
+        <path d="M16 2v3" />
+        <path d="M8 19v3" />
+        <path d="M16 19v3" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.9"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-5 w-5"
+      aria-hidden="true"
+    >
+      <path d="M3 12h4l2.2-6 4.6 12 2.2-6h5" />
+      <path d="M4 19h16" />
+      <path d="M17 5l3 3-3 3" />
+    </svg>
+  );
+};
+
 const ArrowIcon = ({ className = "h-4 w-4" }: IconProps) => (
   <svg
     viewBox="0 0 24 24"
@@ -302,6 +384,9 @@ const fingertipSelector = [
     projectFit: "Pediatric and mother-baby brand projects",
   },
 ];
+
+const pulseMatrixPlatformImage =
+  "/products/pulse-oximeter/pulsematrix-signal-platform.webp";
 
 const signalHighlights = [
   {
@@ -815,62 +900,45 @@ export default function PulseOximeterProductPage() {
       {/* Technical snapshot */}
       <section
         className="mx-auto max-w-7xl px-6 py-12 lg:px-8"
-        aria-label="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 low perfusion tracking, and Fluke Index 2 calibration workflow."
+        aria-label="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 and PI 0.025 low perfusion tracking roadmap, and Fluke Index 2 calibration workflow."
       >
-        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-xl md:p-10 lg:p-12">
-          <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-stretch">
-            <div className="flex h-full flex-col justify-center rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 text-white shadow-xl md:p-8 lg:p-10">
+          <div className="grid gap-6 lg:grid-cols-[0.46fr_0.54fr] lg:items-stretch">
+            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.03] p-5 md:p-6 lg:p-7">
               <Badge tone="cyan">Technical Highlights</Badge>
               <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
                 PulseMatrix™ Signal Platform
               </h2>
-              <p className="mt-6 max-w-md text-lg leading-9 text-slate-300">
-                YimiLife’s PulseMatrix™ Signal Platform combines low-perfusion
-                waveform extraction, anti-motion filtering, cleaner optical
-                acquisition and production-line verification into one SpO2
-                signal architecture.
+              <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">
+                A focused SpO2 signal platform for low-perfusion waveform
+                extraction, motion-interference control, optical signal
+                acquisition and production-line verification.
               </p>
+
+              <div className="mt-7 overflow-hidden rounded-[1.5rem] border border-cyan-300/25 bg-slate-900/80 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_20px_55px_-40px_rgba(34,211,238,0.9)]">
+                <img
+                  src={pulseMatrixPlatformImage}
+                  alt="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 and PI 0.025 low perfusion tracking roadmap, and Fluke Index 2 calibration workflow."
+                  className="aspect-[2/1] h-auto w-full object-cover"
+                />
+              </div>
             </div>
 
             <div className="grid h-full gap-4 sm:grid-cols-2">
-              {signalHighlights.map((item, index) => (
+              {signalHighlights.map((item) => (
                 <article
                   key={item.title}
-                  className="relative flex min-h-[230px] flex-col overflow-hidden rounded-[1.75rem] border border-amber-300/45 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-6 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_18px_45px_-32px_rgba(251,191,36,0.8)]"
+                  className="flex min-h-[180px] flex-col rounded-[1.5rem] border border-amber-300/45 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-5 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_18px_45px_-34px_rgba(251,191,36,0.75)] md:p-6"
                 >
-                  <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(90deg,rgba(148,163,184,0.38)_1px,transparent_1px),linear-gradient(0deg,rgba(148,163,184,0.28)_1px,transparent_1px)] [background-size:24px_24px]" />
-                  <svg
-                    className="pointer-events-none absolute bottom-4 right-4 h-24 w-40 text-cyan-200/25"
-                    viewBox="0 0 180 90"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    {index === 1 ? (
-                      <>
-                        <path d="M18 20H72C92 20 88 48 110 48H162" stroke="currentColor" strokeWidth="2" />
-                        <path d="M18 44H58C84 44 86 68 118 68H162" stroke="currentColor" strokeWidth="2" />
-                        <circle cx="72" cy="20" r="4" fill="currentColor" />
-                        <circle cx="110" cy="48" r="4" fill="currentColor" />
-                      </>
-                    ) : index === 3 ? (
-                      <>
-                        <path d="M20 22H160M20 46H160M20 70H160" stroke="currentColor" strokeWidth="1.5" />
-                        <path d="M42 12V78M82 12V78M122 12V78" stroke="currentColor" strokeWidth="1.5" />
-                        <path d="M24 66C42 38 54 36 68 54C86 78 98 74 112 40C122 18 138 20 158 44" stroke="currentColor" strokeWidth="2.4" />
-                      </>
-                    ) : (
-                      <path d="M16 58C28 58 30 42 42 42C56 42 56 72 70 72C86 72 84 18 100 18C116 18 114 58 130 58C146 58 148 42 164 42" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-                    )}
-                  </svg>
-                  <div className="relative z-10 flex items-start gap-3">
-                    <div className="mt-1 flex h-7 w-7 flex-none items-center justify-center rounded-full border border-amber-300/50 bg-amber-300/10 text-amber-200">
-                      <CheckIcon className="h-3.5 w-3.5" />
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-2xl border border-amber-300/50 bg-amber-300/10 text-amber-200">
+                      <SignalHighlightIcon kind={item.visual} />
                     </div>
-                    <h3 className="text-xl font-semibold leading-tight tracking-tight text-white">
+                    <h3 className="pt-1 text-lg font-semibold leading-tight tracking-tight text-white md:text-xl">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="relative z-10 mt-5 flex-1 text-sm leading-7 text-slate-300">
+                  <p className="mt-4 flex-1 text-sm leading-7 text-slate-300">
                     {item.description}
                   </p>
                 </article>
