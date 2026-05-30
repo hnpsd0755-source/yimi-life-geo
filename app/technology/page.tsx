@@ -435,60 +435,61 @@ export default function TechnologyPage() {
               id={pillar.id}
               className="scroll-mt-24 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
             >
-              <div className="grid gap-0 lg:grid-cols-[0.38fr_0.62fr]">
-                <div className="bg-slate-950 p-6 text-white md:p-8">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
-                    {pillar.eyebrow}
-                  </p>
-                  <h3 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                    {pillar.title}
-                  </h3>
-                  <p className="mt-5 text-base leading-8 text-slate-300">
-                    {pillar.intro}
-                  </p>
+              <div className="grid gap-0 lg:grid-cols-[0.36fr_0.64fr]">
+                <div className="flex h-full flex-col justify-between bg-slate-950 p-6 text-white md:p-8">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                      {pillar.eyebrow}
+                    </p>
+                    <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-5 text-base leading-8 text-slate-300">
+                      {pillar.intro}
+                    </p>
+                  </div>
+
                   <div className="mt-7 rounded-2xl border border-cyan-300/25 bg-cyan-300/10 px-4 py-3 text-sm font-semibold leading-6 text-cyan-100">
                     {pillar.accent}
                   </div>
                 </div>
 
-                <div className="p-6 md:p-8">
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                <div className="bg-slate-50/50 p-5 md:p-6 lg:p-7">
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <div className="flex min-h-[170px] flex-col rounded-[1.35rem] border border-slate-200 bg-white p-5 shadow-sm">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                         Problem
                       </p>
                       <p className="mt-3 text-sm leading-7 text-slate-700">
                         {pillar.problem}
                       </p>
                     </div>
-                    <div className="rounded-[1.5rem] border border-cyan-100 bg-cyan-50/70 p-5">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">
+
+                    <div className="flex min-h-[170px] flex-col rounded-[1.35rem] border border-cyan-100 bg-cyan-50/80 p-5 shadow-sm">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700">
                         PulseMatrix™ Response
                       </p>
                       <p className="mt-3 text-sm leading-7 text-slate-700">
                         {pillar.response}
                       </p>
                     </div>
-                  </div>
 
-                  <div className="mt-5 grid gap-4 md:grid-cols-[0.58fr_0.42fr]">
-                    <div className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                    <div className="flex min-h-[170px] flex-col rounded-[1.35rem] border border-slate-200 bg-white p-5 shadow-sm">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                         Engineering Controls
                       </p>
-                      <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                      <ul className="mt-3 space-y-2.5">
                         {pillar.controls.map((point) => (
-                          <div
-                            key={point}
-                            className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold leading-6 text-slate-700"
-                          >
-                            {point}
-                          </div>
+                          <li key={point} className="flex items-start gap-2.5 text-sm leading-6 text-slate-700">
+                            <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-cyan-600" />
+                            <span>{point}</span>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
-                    <div className="rounded-[1.5rem] border border-emerald-100 bg-emerald-50/70 p-5">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
+
+                    <div className="flex min-h-[170px] flex-col rounded-[1.35rem] border border-emerald-100 bg-emerald-50/80 p-5 shadow-sm">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-700">
                         Product Relevance
                       </p>
                       <p className="mt-3 text-sm leading-7 text-slate-700">
