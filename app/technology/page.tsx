@@ -377,57 +377,35 @@ export default function TechnologyPage() {
       />
 
       {/* Hero */}
-      <section className="mx-auto max-w-7xl px-6 pt-10 lg:px-8 lg:pt-16">
-        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-xl md:p-10 lg:p-12">
-          <div className="grid gap-10 lg:grid-cols-[0.48fr_0.52fr] lg:items-center">
-            <div>
+      <section className="mx-auto max-w-7xl px-6 pt-10 lg:px-8 lg:pt-14">
+        <div className="overflow-hidden rounded-[2.25rem] bg-slate-950 p-5 text-white shadow-xl md:p-7 lg:p-8">
+          <div className="grid gap-7 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+            <div className="lg:pr-2">
               <Badge tone="amber">YimiLife Technology Platform</Badge>
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white md:text-6xl">
+              <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 PulseMatrix™ Signal Platform
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-9 text-slate-300">
-                A YimiLife signal platform built for cleaner PPG acquisition,
-                low-perfusion SpO2 tracking, motion-interference filtering and
-                skin-tone-aware pulse oximeter development.
+              <p className="mt-5 max-w-xl text-base leading-8 text-slate-300 md:text-lg">
+                A focused PPG signal platform for low-perfusion waveform extraction,
+                motion-interference filtering and skin-tone-aware SpO2 signal design.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="#low-perfusion"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
-                >
-                  Explore Technology Pillars
-                  <ArrowIcon className="ml-2 h-4 w-4" />
-                </Link>
-                <Link
-                  href="/products/pulse-oximeter"
-                  className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  View Pulse Oximeter Products
-                </Link>
-              </div>
             </div>
 
-            <div>
-              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-3 shadow-2xl">
-                <img
-                  src="/homepage/pulseMatrix-s.jpg"
-                  alt="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 low perfusion tracking, and Fluke Index 2 calibration workflow."
-                  className="aspect-[2/1] w-full rounded-[1.5rem] object-cover"
-                />
-              </div>
-              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-[1.8rem] border border-white/10 bg-white/[0.04] p-3 shadow-2xl">
+              <img
+                src="/homepage/pulseMatrix-s.jpg"
+                alt="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 low perfusion tracking, and Fluke Index 2 calibration workflow."
+                className="aspect-[2/1] w-full rounded-[1.35rem] object-cover"
+              />
+
+              <div className="mt-3 grid gap-2 sm:grid-cols-3">
                 {platformAnchors.map((item) => (
                   <a
                     key={item.id}
                     href={item.href}
-                    className="rounded-[1.35rem] border border-white/10 bg-white/[0.04] p-4 text-sm leading-6 text-slate-300 transition hover:border-cyan-300/50 hover:bg-cyan-300/10 hover:text-white"
+                    className="group rounded-full border border-amber-300/45 bg-amber-300/10 px-4 py-2.5 text-center text-xs font-semibold leading-5 text-amber-100 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.06)] transition hover:border-amber-200 hover:bg-amber-300/18 hover:text-white"
                   >
-                    <span className="block font-semibold text-cyan-200">
-                      {item.title}
-                    </span>
-                    <span className="mt-1 block text-xs leading-5 text-slate-400">
-                      {item.short}
-                    </span>
+                    {item.title}
                   </a>
                 ))}
               </div>
