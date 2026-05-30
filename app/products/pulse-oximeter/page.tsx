@@ -824,20 +824,12 @@ export default function PulseOximeterProductPage() {
               <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
                 PulseMatrix™ Signal Platform
               </h2>
-              <p className="mt-6 max-w-md text-base leading-8 text-slate-300">
-                A focused signal platform for extracting cleaner PPG waveforms
-                under low perfusion, finger movement and optical-noise
-                conditions.
+              <p className="mt-6 max-w-md text-lg leading-9 text-slate-300">
+                YimiLife’s PulseMatrix™ Signal Platform combines low-perfusion
+                waveform extraction, anti-motion filtering, cleaner optical
+                acquisition and production-line verification into one SpO2
+                signal architecture.
               </p>
-              <div className="mt-8 rounded-[1.5rem] border border-amber-300/35 bg-gradient-to-br from-amber-300/10 via-white/[0.04] to-cyan-300/5 p-5 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.08)]">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
-                  Core Anchor
-                </p>
-                <p className="mt-3 text-xl font-semibold leading-8 text-white">
-                  Low-perfusion extraction, anti-motion filtering and
-                  production verification in one signal architecture.
-                </p>
-              </div>
             </div>
 
             <div className="grid h-full gap-4 sm:grid-cols-2">
