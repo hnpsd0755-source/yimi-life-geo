@@ -313,13 +313,13 @@ const signalHighlights = [
   {
     title: "Optical Signal Architecture",
     description:
-      "Builds cleaner PPG acquisition from the hardware side through finger-cavity shielding, light-path control and low-noise front-end layout.",
+      "Achieves cleaner raw signals through enhanced structural design. Features ergonomic coupling between the finger, cavity and sensor, combined with physical shielding to reduce ambient light interference.",
     visual: "trace",
   },
   {
     title: "Low-Perfusion Optimization",
     description:
-      "Pushes selected configurations from standard PI 0.3% tracking toward PulseMatrix™ PI 0.1% low-perfusion performance targets.",
+      "Pushes selected configurations from standard PI 0.1% tracking toward PulseMatrix™ PI 0.025% low-perfusion performance targets.",
     visual: "wave",
   },
   {
