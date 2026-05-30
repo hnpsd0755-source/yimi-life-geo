@@ -385,8 +385,7 @@ const fingertipSelector = [
   },
 ];
 
-const pulseMatrixPlatformImage =
-  "/products/pulse-oximeter/pulsematrix-signal-platform.webp";
+const pulseMatrixPlatformImage = "/homepage/pulseMatrix-s.jpg";
 
 const signalHighlights = [
   {
@@ -903,47 +902,47 @@ export default function PulseOximeterProductPage() {
         aria-label="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 and PI 0.025 low perfusion tracking roadmap, and Fluke Index 2 calibration workflow."
       >
         <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 text-white shadow-xl md:p-8 lg:p-10">
-          <div className="grid gap-6 lg:grid-cols-[0.46fr_0.54fr] lg:items-stretch">
-            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.03] p-5 md:p-6 lg:p-7">
+          <div className="grid gap-6 lg:grid-cols-[0.36fr_0.64fr] lg:items-stretch">
+            <div className="flex h-full flex-col justify-center rounded-[2rem] border border-white/10 bg-white/[0.03] p-5 md:p-6 lg:p-7">
               <Badge tone="cyan">Technical Highlights</Badge>
               <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
                 PulseMatrix™ Signal Platform
               </h2>
-              <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">
+              <p className="mt-5 max-w-xl text-base leading-8 text-slate-300 md:text-lg">
                 A focused SpO2 signal platform for low-perfusion waveform
                 extraction, motion-interference control, optical signal
                 acquisition and production-line verification.
               </p>
-
-              <div className="mt-7 overflow-hidden rounded-[1.5rem] border border-cyan-300/25 bg-slate-900/80 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_20px_55px_-40px_rgba(34,211,238,0.9)]">
-                <img
-                  src={pulseMatrixPlatformImage}
-                  alt="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 and PI 0.025 low perfusion tracking roadmap, and Fluke Index 2 calibration workflow."
-                  className="aspect-[2/1] h-auto w-full object-cover"
-                />
-              </div>
             </div>
 
-            <div className="grid h-full gap-4 sm:grid-cols-2">
-              {signalHighlights.map((item) => (
-                <article
-                  key={item.title}
-                  className="flex min-h-[180px] flex-col rounded-[1.5rem] border border-amber-300/45 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-5 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_18px_45px_-34px_rgba(251,191,36,0.75)] md:p-6"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-2xl border border-amber-300/50 bg-amber-300/10 text-amber-200">
-                      <SignalHighlightIcon kind={item.visual} />
-                    </div>
-                    <h3 className="pt-1 text-lg font-semibold leading-tight tracking-tight text-white md:text-xl">
-                      {item.title}
-                    </h3>
+            <div className="overflow-hidden rounded-[2rem] border border-cyan-300/25 bg-slate-900/80 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_24px_60px_-42px_rgba(34,211,238,0.95)]">
+              <img
+                src={pulseMatrixPlatformImage}
+                alt="YimiLife PulseMatrix proprietary signal platform showcasing 24-bit ADC front-end architecture, PI 0.1 and PI 0.025 low perfusion tracking roadmap, and Fluke Index 2 calibration workflow."
+                className="aspect-[2/1] h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {signalHighlights.map((item) => (
+              <article
+                key={item.title}
+                className="flex min-h-[210px] flex-col rounded-[1.5rem] border border-amber-300/45 bg-gradient-to-br from-amber-300/10 via-white/[0.05] to-cyan-300/5 p-5 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_18px_45px_-34px_rgba(251,191,36,0.75)]"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="flex h-9 w-9 flex-none items-center justify-center rounded-2xl border border-amber-300/50 bg-amber-300/10 text-amber-200">
+                    <SignalHighlightIcon kind={item.visual} />
                   </div>
-                  <p className="mt-4 flex-1 text-sm leading-7 text-slate-300">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
+                  <h3 className="pt-1 text-base font-semibold leading-tight tracking-tight text-white md:text-lg">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="mt-4 flex-1 text-sm leading-7 text-slate-300">
+                  {item.description}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
