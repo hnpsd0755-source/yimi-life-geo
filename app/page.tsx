@@ -2,169 +2,112 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Tone = "cyan" | "amber" | "slate" | "emerald";
+type Tone = "cyan" | "amber" | "emerald" | "slate";
 
 export const metadata: Metadata = {
   title:
     "Medical Device OEM/ODM Manufacturing for Pulse Oximeters & Blood Pressure Monitors | YimiLife",
   description:
-    "YimiLife supports overseas healthcare brands with pulse oximeter and blood pressure monitor OEM/ODM manufacturing, private-label customization, production verification and ISO 13485 quality system execution.",
+    "YimiLife is a medical device OEM/ODM manufacturing partner for overseas healthcare brands, focused on pulse oximeters, blood pressure monitors, private-label customization and production verification under an ISO 13485 quality system.",
   alternates: {
     canonical: "https://www.yimilife.com/",
   },
   openGraph: {
     title:
-      "YimiLife Medical Device OEM/ODM Manufacturing for Pulse Oximeters and Blood Pressure Monitors",
+      "YimiLife Medical Device OEM/ODM Manufacturing for Overseas Healthcare Brands",
     description:
-      "Mature product platforms, private-label customization, production verification and ISO 13485 manufacturing support for overseas healthcare brands.",
+      "Pulse oximeter and blood pressure monitor OEM/ODM manufacturing, private-label customization, production verification and project support under an ISO 13485 quality system.",
     url: "https://www.yimilife.com/",
     siteName: "YimiLife",
     type: "website",
   },
 };
 
-const quickAnswers = [
+const trustPoints = [
   {
-    question: "Are you a real manufacturer?",
-    answer:
-      "YimiLife operates a 3,000㎡ production facility in Shenzhen, focused on medical electronic devices such as pulse oximeters and blood pressure monitors.",
-    proof: "Factory-based execution",
+    title: "ISO 13485 Manufacturing System",
+    text: "Structured quality management for medical device manufacturing and project execution.",
+    href: "/about#quality-compliance",
   },
   {
-    question: "Do you follow a medical device quality system?",
-    answer:
-      "Manufacturing and project execution are managed under an ISO 13485 quality system.",
-    proof: "ISO 13485 system",
+    title: "3,000㎡ Production Facility",
+    text: "Focused manufacturing space for pulse oximeter and blood pressure monitor project delivery.",
+    href: "/about",
   },
   {
-    question: "Do you have mature product platforms?",
-    answer:
-      "YimiLife provides mature pulse oximeter and blood pressure monitor product platforms for private-label and OEM/ODM projects.",
-    proof: "Product-platform based",
+    title: "300,000 Units / Month Capacity",
+    text: "Dedicated pulse oximeter production capacity for private-label and OEM/ODM programs.",
+    href: "/about#manufacturing",
   },
   {
-    question: "How do you support production consistency?",
-    answer:
-      "Pulse oximeter production includes 100% production-line calibration and verification using Fluke Index 2 clinical simulators where applicable.",
-    proof: "Production verification",
+    title: "25+ Certified-Model Experience",
+    text: "Certified-model-based project support for target-market-oriented evaluation.",
+    href: "/about#quality-compliance",
   },
   {
-    question: "Can small brands start early discussions?",
-    answer:
-      "YimiLife supports early feasibility discussions, sample evaluation and structured project review for overseas SMEs and healthcare brands.",
-    proof: "SME-friendly intake",
+    title: "Product-Focused OEM/ODM",
+    text: "Pulse oximeters, blood pressure monitors and selected wearable monitoring project directions.",
+    href: "#product-families",
   },
 ];
 
 const productFamilies = [
   {
     title: "Pulse Oximeters",
-    status: "Mature Core Product Line",
-    description:
-      "Fingertip, pediatric, Bluetooth and handheld pulse oximeter directions for private-label and OEM/ODM projects.",
-    bullets: [
-      "Fingertip product tracks",
-      "Bluetooth and lithium battery options",
-      "Handheld YH01 / YH02 directions",
-      "Production-line SpO2 verification",
-    ],
+    status: "Mature core line",
+    text: "Fingertip, pediatric, Bluetooth and handheld SpO2 product directions for private-label and OEM/ODM projects.",
+    details: ["Fingertip model tracks", "Bluetooth / lithium options", "Handheld YH01 / YH02"],
     href: "/products/pulse-oximeter",
-    cta: "View Pulse Oximeter Options",
-    accent: "cyan" as Tone,
+    cta: "View pulse oximeters",
+    tone: "cyan" as Tone,
   },
   {
     title: "Blood Pressure Monitors",
-    status: "Mature / Customizable Product Line",
-    description:
-      "Upper-arm blood pressure monitors, Bluetooth BP models and home healthcare platform directions for brand and distributor projects.",
-    bullets: [
-      "Standard upper-arm BP monitors",
-      "Bluetooth connectivity options",
-      "Cuff, display and packaging customization",
-      "Advanced ODM platform discussion",
-    ],
+    status: "Mature / customizable line",
+    text: "Upper-arm BP monitors, Bluetooth models and home healthcare platform directions for brand and distributor projects.",
+    details: ["Upper-arm BP models", "Cuff / display options", "Advanced ODM discussion"],
     href: "/products/blood-pressure-monitor",
-    cta: "View BP Monitor Options",
-    accent: "amber" as Tone,
+    cta: "View BP monitors",
+    tone: "amber" as Tone,
   },
   {
     title: "Wearable Monitoring",
-    status: "Development-Stage Direction",
-    description:
-      "Wearable temperature, SpO2 watch, infant foot SpO2 and sleep-related monitoring concepts for engineering discussion and software integration projects.",
-    bullets: [
-      "Development-stage project directions",
-      "Engineering sample discussion",
-      "Bluetooth and low-power design",
-      "Software integration feasibility",
-    ],
+    status: "Development-stage direction",
+    text: "Wearable temperature, SpO2 watch, infant foot SpO2 and sleep-related monitoring concepts for engineering discussion.",
+    details: ["Engineering sample discussion", "Bluetooth / low power", "Software integration feasibility"],
     href: "/products/wearable-monitoring",
-    cta: "Discuss Wearable Projects",
-    accent: "emerald" as Tone,
+    cta: "Discuss wearable projects",
+    tone: "emerald" as Tone,
   },
 ];
 
-const oemSteps = [
-  {
-    number: "01",
-    title: "Requirement Review",
-    summary:
-      "Clarify product category, target market, expected quantity, timeline and documentation expectations.",
-    output: "Initial project brief",
-  },
-  {
-    number: "02",
-    title: "Customization Scope",
-    summary:
-      "Confirm whether the project fits private label, UI and firmware settings, Bluetooth / SDK integration, mold update or deeper ODM development.",
-    output: "Proposed customization level",
-  },
-  {
-    number: "03",
-    title: "Sample & Verification",
-    summary:
-      "Prepare samples, confirm visual and functional requirements, and define necessary verification items before mass production.",
-    output: "Sample package and review plan",
-  },
-  {
-    number: "04",
-    title: "Production & Delivery",
-    summary:
-      "Move approved projects into controlled manufacturing with production preparation, inspection, traceability and shipment support.",
-    output: "Production-ready delivery",
-  },
+const customizationLevels = [
+  "Private label",
+  "UI & firmware settings",
+  "Bluetooth / SDK integration",
+  "Mold update",
+  "ODM project",
 ];
 
-const smallBrandSupport = [
+const evidenceItems = [
   {
-    title: "Early feasibility discussion",
-    text: "You can contact YimiLife even if your project is still in the evaluation stage.",
+    title: "Quality system",
+    text: "ISO 13485-based manufacturing and project execution for medical electronic devices.",
   },
   {
-    title: "Sample-first evaluation",
-    text: "Start with existing model review and sample testing before committing to larger customization.",
+    title: "Controlled production",
+    text: "IQC, process control, final inspection and batch traceability support sample-to-production consistency.",
   },
   {
-    title: "Clear customization boundaries",
-    text: "YimiLife separates private label, UI settings, Bluetooth integration, mold update and deeper ODM projects.",
-  },
-  {
-    title: "Documentation-aware support",
-    text: "Available documents, labeling, IFU and target-market requirements can be discussed during project review.",
+    title: "Available documents",
+    text: "Product specifications, IFU / label references, certificates and controlled project records can be discussed by model and project scope.",
   },
 ];
 
 const technologyTags = [
-  "Low-Perfusion SpO2",
-  "Motion Artifact Handling",
-  "Skin-Tone-Aware Signal Design",
-];
-
-const heroTrustTags = [
-  "ISO 13485 Quality System",
-  "3,000㎡ Production Facility",
-  "300,000 Units / Month Pulse Oximeter Capacity",
-  "25+ Certified-Model Project Experience",
+  "Low-perfusion SpO2",
+  "Motion artifact handling",
+  "Skin-tone-aware design",
 ];
 
 const jsonLd = {
@@ -176,21 +119,16 @@ const jsonLd = {
       name: "Shenzhen Yimi Life Technology Co., Ltd.",
       alternateName: "YimiLife",
       url: "https://www.yimilife.com/",
-      brand: {
-        "@type": "Brand",
-        name: "YimiLife",
-      },
+      brand: { "@type": "Brand", name: "YimiLife" },
       description:
-        "YimiLife is a medical device OEM/ODM manufacturing partner for overseas healthcare brands, focused on pulse oximeters, blood pressure monitors and selected wearable monitoring project directions.",
+        "YimiLife is a medical device OEM/ODM manufacturing partner focused on pulse oximeters, blood pressure monitors and selected wearable monitoring project directions.",
     },
     {
       "@type": "WebSite",
       "@id": "https://www.yimilife.com/#website",
       url: "https://www.yimilife.com/",
       name: "YimiLife",
-      publisher: {
-        "@id": "https://www.yimilife.com/#organization",
-      },
+      publisher: { "@id": "https://www.yimilife.com/#organization" },
     },
     {
       "@type": "WebPage",
@@ -198,10 +136,8 @@ const jsonLd = {
       url: "https://www.yimilife.com/",
       name: "YimiLife Medical Device OEM/ODM Manufacturing",
       description:
-        "Homepage for YimiLife medical device OEM/ODM manufacturing, product families, private-label support, production verification and project intake.",
-      isPartOf: {
-        "@id": "https://www.yimilife.com/#website",
-      },
+        "Homepage for YimiLife medical device OEM/ODM manufacturing, product families, production verification, private-label support and project intake.",
+      isPartOf: { "@id": "https://www.yimilife.com/#website" },
     },
     {
       "@type": "ItemList",
@@ -212,12 +148,9 @@ const jsonLd = {
         item: {
           "@type": "Product",
           name: item.title,
-          description: item.description,
+          description: item.text,
           url: `https://www.yimilife.com${item.href}`,
-          brand: {
-            "@type": "Brand",
-            name: "YimiLife",
-          },
+          brand: { "@type": "Brand", name: "YimiLife" },
         },
       })),
     },
@@ -256,62 +189,50 @@ function Badge({ children, tone = "cyan" }: { children: ReactNode; tone?: Tone }
   const toneClass = {
     cyan: "border-cyan-200 bg-cyan-50 text-cyan-800",
     amber: "border-amber-200 bg-amber-50 text-amber-800",
-    slate: "border-slate-200 bg-slate-100 text-slate-700",
     emerald: "border-emerald-200 bg-emerald-50 text-emerald-800",
+    slate: "border-slate-200 bg-white text-slate-700",
   }[tone];
 
   return (
-    <span className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ${toneClass}`}>
+    <span
+      className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] ${toneClass}`}
+    >
       {children}
     </span>
   );
 }
 
-function SectionHeading({
-  eyebrow,
-  title,
-  text,
-  align = "left",
-}: {
-  eyebrow: string;
-  title: string;
-  text: string;
-  align?: "left" | "center";
-}) {
+function SectionHeader({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
   return (
-    <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+    <div className="max-w-3xl">
       <Badge tone="slate">{eyebrow}</Badge>
-      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
         {title}
       </h2>
-      <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">{text}</p>
+      <p className="mt-4 text-base leading-8 text-slate-600">{text}</p>
     </div>
   );
 }
 
-function ProductSignal({ tone }: { tone: Tone }) {
+function ProductIcon({ tone }: { tone: Tone }) {
   const toneClass = {
-    cyan: "from-cyan-500/20 via-cyan-400/10 to-slate-950",
-    amber: "from-amber-500/20 via-amber-400/10 to-slate-950",
-    emerald: "from-emerald-500/20 via-emerald-400/10 to-slate-950",
-    slate: "from-slate-500/20 via-slate-400/10 to-slate-950",
+    cyan: "border-cyan-200 bg-cyan-50 text-cyan-700",
+    amber: "border-amber-200 bg-amber-50 text-amber-700",
+    emerald: "border-emerald-200 bg-emerald-50 text-emerald-700",
+    slate: "border-slate-200 bg-slate-50 text-slate-700",
   }[tone];
 
   return (
-    <div className={`relative overflow-hidden rounded-[1.5rem] bg-gradient-to-br ${toneClass} p-5`}>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(255,255,255,0.24),transparent_26%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.10),transparent_28%)]" />
-      <div className="relative h-36 rounded-[1.1rem] border border-white/10 bg-white/[0.06] p-4 shadow-inner">
-        <div className="grid h-full grid-cols-5 items-end gap-2">
-          {[58, 82, 42, 72, 50].map((height, index) => (
-            <div key={`${height}-${index}`} className="rounded-full bg-white/24" style={{ height: `${height}%` }} />
-          ))}
-        </div>
-        <div className="absolute left-4 right-4 top-1/2 h-px bg-white/20" />
-        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-white/65">
-          <span>OEM</span>
-          <span>ODM</span>
-        </div>
-      </div>
+    <div className={`flex h-11 w-11 items-center justify-center rounded-2xl border ${toneClass}`}>
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M7 8.5h10M7 12h7M8 4.5h8a3.5 3.5 0 0 1 3.5 3.5v8a3.5 3.5 0 0 1-3.5 3.5H8A3.5 3.5 0 0 1 4.5 16V8A3.5 3.5 0 0 1 8 4.5Z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
     </div>
   );
 }
@@ -325,331 +246,233 @@ export default function HomePage() {
       />
 
       {/* Hero */}
-      <section className="mx-auto max-w-7xl px-6 pb-12 pt-10 lg:px-8 lg:pb-16 lg:pt-14">
-        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 text-white shadow-xl">
-          <div className="grid gap-0 lg:grid-cols-[0.56fr_0.44fr]">
-            <div className="p-7 md:p-10 lg:p-12">
-              <Badge tone="cyan">Medical Device OEM/ODM Manufacturer</Badge>
-              <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-                Medical Device OEM/ODM Manufacturing for Pulse Oximeters and Blood Pressure Monitors
-              </h1>
-              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
-                YimiLife supports overseas healthcare brands with mature product platforms,
-                private-label customization, production verification and medical device manufacturing
-                under an ISO 13485 quality system.
-              </p>
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.22),_transparent_28%),linear-gradient(135deg,#020617,#0f172a_48%,#164e63)]">
+        <div className="absolute inset-0 opacity-25" aria-hidden="true">
+          <div className="absolute left-8 top-16 h-48 w-48 rounded-full bg-cyan-300 blur-3xl" />
+          <div className="absolute bottom-0 right-10 h-72 w-72 rounded-full bg-blue-500 blur-3xl" />
+        </div>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
-                >
-                  Submit Project Requirements
-                  <ArrowIcon className="ml-2 h-4 w-4" />
-                </Link>
-                <Link
-                  href="#product-families"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  View Product Families
-                </Link>
-              </div>
-
-              <div className="mt-9 grid gap-3 sm:grid-cols-2">
-                {heroTrustTags.map((item) => (
-                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-300/15 text-cyan-200">
-                      <CheckIcon className="h-3.5 w-3.5" />
-                    </span>
-                    <p className="text-sm font-semibold leading-6 text-slate-100">{item}</p>
-                  </div>
-                ))}
-              </div>
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
+          <div>
+            <div className="inline-flex rounded-full border border-cyan-200/25 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
+              Medical Device OEM/ODM Manufacturer
             </div>
+            <h1 className="mt-6 max-w-5xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
+              Pulse oximeter and blood pressure monitor manufacturing for global healthcare brands
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+              YimiLife develops and manufactures home healthcare monitoring devices for brand owners, distributors and product teams seeking reliable private-label and OEM/ODM support. Our core focus is pulse oximeters and blood pressure monitors, with selected wearable monitoring projects available for engineering discussion.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
+              >
+                Submit Project Requirements
+                <ArrowIcon className="ml-2 h-4 w-4" />
+              </Link>
+              <Link
+                href="#product-families"
+                className="inline-flex items-center justify-center rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                View Product Families
+                <ArrowIcon className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
 
-            <div className="relative min-h-[480px] border-t border-white/10 bg-slate-900 p-6 md:p-8 lg:border-l lg:border-t-0">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.22),transparent_30%),radial-gradient(circle_at_80%_60%,rgba(14,165,233,0.16),transparent_26%)]" />
-              <div className="relative flex h-full flex-col justify-between gap-5">
-                <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
-                    Dedicated category capacity
-                  </p>
-                  <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                    <div className="rounded-[1.5rem] bg-white/[0.08] p-4">
-                      <p className="text-4xl font-semibold tracking-tight text-white">300k</p>
-                      <p className="mt-2 text-xs leading-5 text-slate-300">
-                        units / month pulse oximeter manufacturing capacity
-                      </p>
-                    </div>
-                    <div className="rounded-[1.5rem] bg-white/[0.08] p-4">
-                      <p className="text-4xl font-semibold tracking-tight text-white">25+</p>
-                      <p className="mt-2 text-xs leading-5 text-slate-300">
-                        certified-model project experience across FDA / MDR / NMPA directions
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-semibold text-white">B2B buyer path</p>
-                      <p className="mt-1 text-xs leading-5 text-slate-400">
-                        Product selection → customization scope → sample evaluation → controlled production
-                      </p>
-                    </div>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300 text-slate-950">
-                      <ArrowIcon className="h-5 w-5" />
-                    </div>
-                  </div>
-                  <div className="mt-5 grid gap-2">
-                    {["Product", "OEM/ODM", "Verification", "Delivery"].map((item, index) => (
-                      <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/[0.06] px-4 py-3">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-xs font-semibold text-cyan-200">
-                          {index + 1}
-                        </span>
-                        <span className="text-sm font-semibold text-slate-100">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-[2rem] border border-cyan-300/20 bg-cyan-300/10 p-5">
-                  <p className="text-sm font-semibold text-cyan-100">Early-stage projects are welcome.</p>
-                  <p className="mt-2 text-xs leading-5 text-slate-300">
-                    Use “Just evaluating feasibility” when your team is still comparing product paths, target markets or customization scope.
-                  </p>
-                </div>
+          <div className="relative">
+            <div className="rounded-[2rem] border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur">
+              <div className="overflow-hidden rounded-[1.5rem] bg-white/90 shadow-xl">
+                <img
+                  src="/homepage/hero-devices.png"
+                  alt="YimiLife pulse oximeter and blood pressure monitor product family"
+                  className="h-auto w-full object-cover"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Buyer quick answers */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8" aria-labelledby="quick-answers-title">
-        <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
-          <div>
-            <Badge tone="amber">Buyer Quick Answers</Badge>
-            <h2 id="quick-answers-title" className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-              Quick answers for sourcing and product teams
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-              Before starting an OEM/ODM discussion, buyers need to know whether the supplier is real,
-              focused, capable and structured. YimiLife answers these questions directly.
-            </p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {quickAnswers.map((item, index) => (
-              <article
-                key={item.question}
-                className={`rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm ${index === 4 ? "md:col-span-2" : ""}`}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold tracking-tight text-slate-950">{item.question}</h3>
-                  <span className="shrink-0 rounded-full border border-cyan-100 bg-cyan-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-cyan-700">
-                    {item.proof}
-                  </span>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-slate-600">{item.answer}</p>
-              </article>
-            ))}
-          </div>
+      {/* Trust bar */}
+      <section className="mx-auto -mt-7 max-w-7xl px-6 lg:px-8">
+        <div className="relative grid gap-3 rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-xl md:grid-cols-5">
+          {trustPoints.map((item) => (
+            <Link key={item.title} href={item.href} className="rounded-3xl p-4 transition hover:bg-cyan-50">
+              <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700">
+                <CheckIcon className="h-4 w-4" />
+              </div>
+              <p className="mt-4 text-base font-semibold leading-6 text-slate-950">{item.title}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-500">{item.text}</p>
+            </Link>
+          ))}
         </div>
       </section>
 
       {/* Product families */}
-      <section id="product-families" className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <SectionHeading
-          eyebrow="Product Families"
-          title="Product families for healthcare OEM/ODM projects"
-          text="Start from a mature product platform or discuss a development-stage monitoring project depending on your market, timeline and customization needs."
-          align="center"
-        />
+      <section id="product-families" className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeader
+            eyebrow="Product Families"
+            title="Start from the right product platform."
+            text="Choose a mature product line for faster private-label execution, or discuss a development-stage monitoring direction when your project requires software or platform integration."
+          />
+          <Link
+            href="/contact"
+            className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
+          >
+            Request product specs
+            <ArrowIcon className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        <div className="mt-7 grid gap-5 lg:grid-cols-3">
           {productFamilies.map((item) => (
-            <article key={item.title} className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-              <ProductSignal tone={item.accent} />
-              <div className="flex flex-1 flex-col p-6">
-                <Badge tone={item.accent}>{item.status}</Badge>
-                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                <ul className="mt-5 grid gap-3">
-                  {item.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-cyan-600" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto pt-6">
-                  <Link
-                    href={item.href}
-                    className="inline-flex items-center text-sm font-semibold text-cyan-700 transition group-hover:text-cyan-900"
-                  >
-                    {item.cta}
-                    <ArrowIcon className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
+            <article key={item.title} className="group flex flex-col rounded-[1.8rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+              <div className="flex items-start justify-between gap-4">
+                <ProductIcon tone={item.tone} />
+                <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
+                  {item.status}
+                </span>
+              </div>
+              <h3 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+              <ul className="mt-5 grid gap-2.5">
+                {item.details.map((detail) => (
+                  <li key={detail} className="flex items-center gap-3 text-sm font-medium text-slate-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-600" />
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto pt-6">
+                <Link href={item.href} className="inline-flex items-center text-sm font-semibold text-cyan-700 transition group-hover:text-cyan-900">
+                  {item.cta}
+                  <ArrowIcon className="ml-2 h-4 w-4" />
+                </Link>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* OEM/ODM support */}
-      <section id="oem-odm-support" className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 text-white shadow-xl md:p-8 lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
-            <div>
+      {/* OEM/ODM */}
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+          <div className="grid lg:grid-cols-[0.38fr_0.62fr]">
+            <div className="border-b border-slate-200 bg-slate-950 p-7 text-white md:p-9 lg:border-b-0 lg:border-r">
               <Badge tone="cyan">OEM/ODM Support</Badge>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-                OEM/ODM support from requirement review to production delivery
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+                Clear project paths from private label to ODM.
               </h2>
-              <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">
-                YimiLife supports private-label and custom medical device projects through a structured path covering requirement review,
-                customization scope, sample evaluation and controlled production.
+              <p className="mt-4 text-sm leading-7 text-slate-300">
+                YimiLife separates quick branding work, interface settings, Bluetooth / SDK integration, mold update and deeper ODM development so buyers can understand timeline, risk and engineering involvement early.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <Link
-                  href="/oem-odm"
-                  className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
-                >
-                  Explore OEM/ODM Support
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                <Link href="/oem-odm" className="inline-flex items-center justify-center rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200">
+                  Explore OEM/ODM
                   <ArrowIcon className="ml-2 h-4 w-4" />
                 </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Submit Project Requirements
+                <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                  Submit requirements
                 </Link>
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
-              {oemSteps.map((step) => (
-                <article key={step.title} className="flex min-h-[260px] flex-col rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-5">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-300 text-sm font-semibold text-slate-950">
-                      {step.number}
-                    </span>
-                    <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-300">
-                      Output
-                    </span>
-                  </div>
-                  <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white">{step.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-300">{step.summary}</p>
-                  <div className="mt-auto pt-5">
-                    <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 px-4 py-3">
-                      <p className="text-sm font-semibold leading-6 text-cyan-100">{step.output}</p>
+            <div className="p-6 md:p-8">
+              <div className="grid gap-3 md:grid-cols-5">
+                {customizationLevels.map((level, index) => (
+                  <div key={level} className="rounded-[1.25rem] border border-slate-200 bg-slate-50 p-4">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-xs font-semibold text-slate-800 shadow-sm">
+                      {index + 1}
                     </div>
+                    <p className="mt-3 text-sm font-semibold leading-5 text-slate-950">{level}</p>
                   </div>
+                ))}
+              </div>
+
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                <div className="rounded-[1.5rem] border border-cyan-100 bg-cyan-50/70 p-5">
+                  <h3 className="text-lg font-semibold tracking-tight text-slate-950">Early-stage inquiry is acceptable</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">
+                    The project form includes a feasibility stage option for buyers still comparing models, customization scope or target-market requirements.
+                  </p>
+                </div>
+                <div className="rounded-[1.5rem] border border-amber-100 bg-amber-50/70 p-5">
+                  <h3 className="text-lg font-semibold tracking-tight text-slate-950">Developer documentation on request</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">
+                    Bluetooth, SDK and data-integration discussions can be reviewed with software teams when project requirements are available.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quality and technology */}
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div className="grid gap-5 lg:grid-cols-[0.62fr_0.38fr]">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
+            <Badge tone="slate">Quality & Compliance</Badge>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              Evidence that helps reduce sourcing risk.
+            </h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {evidenceItems.map((item) => (
+                <article key={item.title} className="rounded-[1.35rem] border border-slate-200 bg-slate-50 p-5">
+                  <h3 className="text-base font-semibold tracking-tight text-slate-950">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{item.text}</p>
                 </article>
               ))}
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Small brand support */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
-          <div>
-            <Badge tone="emerald">Small Brand Support</Badge>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-              Built for small and mid-sized healthcare brands
+          <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-7 text-white shadow-sm md:p-8">
+            <Badge tone="amber">Technology Driven</Badge>
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight md:text-3xl">
+              PulseMatrix™ for SpO2 projects.
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-              Not every project starts with a fixed specification or a large order forecast. YimiLife helps buyers move from early feasibility discussion to sample evaluation and production planning.
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              For pulse oximeter programs, PulseMatrix™ supports low-perfusion SpO2 tracking, motion artifact handling and skin-tone-aware signal design under defined product and verification conditions.
             </p>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-800"
-              >
-                Just Evaluating Feasibility? Start Here
-                <ArrowIcon className="ml-2 h-4 w-4" />
-              </Link>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {technologyTags.map((tag) => (
+                <span key={tag} className="rounded-full border border-amber-300/35 bg-amber-300/10 px-3 py-1.5 text-xs font-semibold text-amber-100">
+                  {tag}
+                </span>
+              ))}
             </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {smallBrandSupport.map((item) => (
-              <article key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
-                  <CheckIcon />
-                </div>
-                <h3 className="mt-5 text-xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology hook */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="overflow-hidden rounded-[2.25rem] border border-slate-200 bg-white shadow-sm">
-          <div className="grid gap-0 lg:grid-cols-[0.45fr_0.55fr]">
-            <div className="bg-slate-950 p-7 text-white md:p-9">
-              <Badge tone="amber">Technology Driven</Badge>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-                Technology-driven where signal quality matters
-              </h2>
-              <p className="mt-5 text-base leading-8 text-slate-300">
-                For pulse oximeter projects, YimiLife’s PulseMatrix™ signal platform supports low-perfusion SpO2 tracking,
-                motion artifact handling and skin-tone-aware signal design under defined product and verification conditions.
-              </p>
-              <Link
-                href="/technology"
-                className="mt-8 inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-50"
-              >
-                View PulseMatrix™ Technology
-                <ArrowIcon className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-            <div className="p-7 md:p-9">
-              <div className="grid h-full content-center gap-4 sm:grid-cols-3">
-                {technologyTags.map((tag) => (
-                  <div key={tag} className="rounded-[1.75rem] border border-amber-200 bg-amber-50/70 p-5 text-center">
-                    <p className="text-sm font-semibold leading-6 text-amber-900">{tag}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-6 text-xs leading-6 text-slate-500">
-                Technology content is kept concise on the homepage. Detailed engineering evidence and performance boundaries are explained on the Technology page.
-              </p>
-            </div>
+            <Link href="/technology" className="mt-6 inline-flex items-center text-sm font-semibold text-cyan-200 transition hover:text-cyan-100">
+              View technology page
+              <ArrowIcon className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-8 lg:px-8 lg:pb-24">
-        <div className="rounded-[2.5rem] bg-cyan-700 p-8 text-center text-white shadow-xl md:p-12">
-          <h2 className="mx-auto max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">
-            Ready to discuss a medical device OEM/ODM project?
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-cyan-50">
-            Tell us your target market, product category, customization needs and expected timeline. YimiLife will help review the most suitable product path.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-cyan-800 transition hover:bg-cyan-50"
-            >
-              Submit Project Requirements
-              <ArrowIcon className="ml-2 h-4 w-4" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/35 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Request Product Specs
-            </Link>
+      <section className="mx-auto max-w-7xl px-6 pb-16 pt-8 lg:px-8 lg:pb-20">
+        <div className="rounded-[2rem] bg-cyan-700 p-7 text-white shadow-sm md:p-10">
+          <div className="grid gap-6 lg:grid-cols-[0.66fr_0.34fr] lg:items-center">
+            <div>
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+                Tell us your target product and project stage.
+              </h2>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-cyan-50 md:text-base">
+                Share your product category, target market, expected quantity, customization needs and timeline. YimiLife will review the most suitable product path with your team.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-cyan-800 transition hover:bg-cyan-50">
+                Submit Project Requirements
+                <ArrowIcon className="ml-2 h-4 w-4" />
+              </Link>
+              <Link href="/case-studies" className="inline-flex items-center justify-center rounded-full border border-white/35 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
+                View Case Studies
+              </Link>
+            </div>
           </div>
         </div>
       </section>
