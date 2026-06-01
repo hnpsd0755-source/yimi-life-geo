@@ -535,17 +535,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Buyer quick answers */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8" aria-labelledby="quick-answers-title">
+      {/* Sourcing confidence */}
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8" aria-labelledby="sourcing-confidence-title">
         <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
           <div>
-            <Badge tone="amber">Buyer Quick Answers</Badge>
-            <h2 id="quick-answers-title" className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-              Quick answers for sourcing and product teams
+            <Badge tone="slate">Sourcing Confidence</Badge>
+            <h2 id="sourcing-confidence-title" className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Sourcing confidence before project discussion
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-              Before starting an OEM/ODM discussion, buyers need to know whether the supplier is real,
-              focused, capable and structured. YimiLife answers these questions directly.
+              Before a buyer opens a project discussion, the first questions are simple: is the supplier real,
+              focused, production-ready and prepared to support quality and documentation review.
             </p>
           </div>
 

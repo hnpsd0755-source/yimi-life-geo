@@ -68,7 +68,7 @@ const platformAnchors = [
   },
   {
     id: "skin-tone-accuracy",
-    title: "Skin-Tone-Aware Design",
+    title: "Skin-Tone-Aware Signal Design",
     href: "#skin-tone-accuracy",
   },
 ];
@@ -115,7 +115,7 @@ const technologyPillars = [
   {
     id: "skin-tone-accuracy",
     eyebrow: "Pillar 03",
-    title: "Skin-Tone-Aware SpO2 Signal Design",
+    title: "Skin-Tone-Aware Signal Design",
     intro:
       "PulseMatrix™ incorporates optical and signal-processing considerations for SpO2 measurement across diverse skin tones, supporting YimiLife’s long-term focus on fairer pulse oximeter performance.",
     problem:
@@ -318,7 +318,7 @@ export default function TechnologyPage() {
             Three technology pillars under one signal platform
           </h2>
           <p className="mt-5 text-lg leading-9 text-slate-600">
-            Low perfusion, motion artifact and skin tone accuracy are not three
+            Low perfusion, motion artifact handling and skin-tone-aware signal design are not three
             disconnected claims. They are connected signal challenges under the
             same PPG acquisition and interpretation platform.
           </p>
@@ -542,7 +542,7 @@ export default function TechnologyPage() {
               href="/products/pulse-oximeter"
               className="inline-flex items-center justify-center rounded-full border border-white/35 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              View Pulse Oximeter Products
+              View Pulse Oximeter Product Options
             </Link>
           </div>
         </div>
