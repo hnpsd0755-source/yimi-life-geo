@@ -55,7 +55,7 @@ const quickAnswers = [
   {
     question: "Are you a real manufacturer?",
     answer:
-      "YimiLife operates a 3,000㎡ production facility in Shenzhen, focused on medical electronic devices such as pulse oximeters and blood pressure monitors.",
+      "YimiLife operates a 3,000㎡ production facility in Shenzhen focused on pulse oximeters and blood pressure monitors.",
     proof: "Factory-based execution",
   },
   {
@@ -67,19 +67,19 @@ const quickAnswers = [
   {
     question: "Do you have mature product platforms?",
     answer:
-      "YimiLife provides mature pulse oximeter and blood pressure monitor product platforms for private-label and OEM/ODM projects.",
+      "Mature pulse oximeter and blood pressure monitor platforms support private-label and OEM/ODM projects.",
     proof: "Product-platform based",
   },
   {
     question: "How do you support production consistency?",
     answer:
-      "Pulse oximeter production includes 100% production-line calibration and verification using Fluke Index 2 clinical simulators where applicable.",
+      "Pulse oximeter production includes 100% production-line calibration and verification using Fluke Index 2 where applicable.",
     proof: "Production verification",
   },
   {
     question: "Can small brands start early discussions?",
     answer:
-      "YimiLife supports early feasibility discussions, sample evaluation and structured project review for overseas SMEs and healthcare brands.",
+      "Early feasibility discussions, sample evaluation and structured project review are available for overseas SMEs.",
     proof: "SME-friendly intake",
   },
 ];
@@ -137,28 +137,28 @@ const oemSteps = [
     number: "01",
     title: "Requirement Review",
     summary:
-      "Clarify product category, target market, expected quantity, timeline and documentation expectations.",
+      "Clarify product category, target market, expected quantity, timeline and documentation needs.",
     output: "Initial project brief",
   },
   {
     number: "02",
     title: "Customization Scope",
     summary:
-      "Confirm whether the project fits private label, UI and firmware settings, Bluetooth / SDK integration, mold update or deeper ODM development.",
+      "Define whether the project fits private label, UI settings, Bluetooth integration, mold update or ODM.",
     output: "Proposed customization level",
   },
   {
     number: "03",
     title: "Sample & Verification",
     summary:
-      "Prepare samples, confirm visual and functional requirements, and define necessary verification items before mass production.",
+      "Prepare samples, confirm functional and visual requirements, and define required verification items.",
     output: "Sample package and review plan",
   },
   {
     number: "04",
     title: "Production & Delivery",
     summary:
-      "Move approved projects into controlled manufacturing with production preparation, inspection, traceability and shipment support.",
+      "Move approved projects into controlled manufacturing, inspection, traceability and shipment support.",
     output: "Production-ready delivery",
   },
 ];
@@ -166,19 +166,19 @@ const oemSteps = [
 const smallBrandSupport = [
   {
     title: "Early feasibility discussion",
-    text: "You can contact YimiLife even if your project is still in the evaluation stage.",
+    text: "Discuss the project before a full specification or confirmed order forecast is ready.",
   },
   {
     title: "Sample-first evaluation",
-    text: "Start with existing model review and sample testing before committing to larger customization.",
+    text: "Review existing models and samples before committing to deeper customization.",
   },
   {
     title: "Clear customization boundaries",
-    text: "YimiLife separates private label, UI settings, Bluetooth integration, mold update and deeper ODM projects.",
+    text: "Choose between private label, UI settings, Bluetooth integration, mold update or ODM.",
   },
   {
     title: "Documentation-aware support",
-    text: "Available documents, labeling, IFU and target-market requirements can be discussed during project review.",
+    text: "Discuss available documents, labeling, IFU and target-market requirements early.",
   },
 ];
 
@@ -299,7 +299,7 @@ function SectionHeading({
       <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
         {title}
       </h2>
-      <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">{text}</p>
+      <p className="mt-5 text-base leading-8 text-slate-600">{text}</p>
     </div>
   );
 }
@@ -447,13 +447,13 @@ export default function HomePage() {
       {/* OEM/ODM support */}
       <section id="oem-odm-support" className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 text-white shadow-xl md:p-8 lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
+          <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-start">
             <div>
               <Badge tone="cyan">OEM/ODM Support</Badge>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">
                 OEM/ODM support from requirement review to production delivery
               </h2>
-              <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">
+              <p className="mt-5 text-base leading-8 text-slate-300">
                 YimiLife supports private-label and custom medical device projects through a structured path covering requirement review,
                 customization scope, sample evaluation and controlled production.
               </p>
@@ -476,7 +476,7 @@ export default function HomePage() {
 
             <div className="grid gap-4 md:grid-cols-2">
               {oemSteps.map((step) => (
-                <article key={step.title} className="flex min-h-[260px] flex-col rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-5">
+                <article key={step.title} className="flex min-h-[240px] flex-col rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-5 md:p-6">
                   <div className="flex items-center justify-between gap-4">
                     <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-300 text-sm font-semibold text-slate-950">
                       {step.number}
@@ -485,7 +485,7 @@ export default function HomePage() {
                       Output
                     </span>
                   </div>
-                  <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white">{step.title}</h3>
+                  <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">{step.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-slate-300">{step.summary}</p>
                   <div className="mt-auto pt-5">
                     <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 px-4 py-3">
@@ -501,19 +501,19 @@ export default function HomePage() {
 
       {/* Small brand support */}
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-start">
           <div>
             <Badge tone="emerald">Small Brand Support</Badge>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
               Built for small and mid-sized healthcare brands
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-              Not every project starts with a fixed specification or a large order forecast. YimiLife helps buyers move from early feasibility discussion to sample evaluation and production planning.
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              YimiLife helps early-stage buyers move from feasibility discussion to sample evaluation and production planning without forcing a large-order commitment.
             </p>
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-800"
+                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
               >
                 Just Evaluating Feasibility? Start Here
                 <ArrowIcon className="ml-2 h-4 w-4" />
@@ -523,7 +523,7 @@ export default function HomePage() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {smallBrandSupport.map((item) => (
-              <article key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <article key={item.title} className="flex min-h-[210px] flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm md:p-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
                   <CheckIcon />
                 </div>
@@ -537,15 +537,14 @@ export default function HomePage() {
 
       {/* Sourcing confidence */}
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8" aria-labelledby="sourcing-confidence-title">
-        <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
+        <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-start">
           <div>
             <Badge tone="slate">Sourcing Confidence</Badge>
             <h2 id="sourcing-confidence-title" className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
               Sourcing confidence before project discussion
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-              Before a buyer opens a project discussion, the first questions are simple: is the supplier real,
-              focused, production-ready and prepared to support quality and documentation review.
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              Before project discussion, buyers need quick proof that the supplier is real, focused, production-ready and prepared for documentation review.
             </p>
           </div>
 
@@ -553,10 +552,10 @@ export default function HomePage() {
             {quickAnswers.map((item, index) => (
               <article
                 key={item.question}
-                className={`rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm ${index === 4 ? "md:col-span-2" : ""}`}
+                className={`flex min-h-[210px] flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm md:p-6 ${index === 4 ? "md:col-span-2" : ""}`}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold tracking-tight text-slate-950">{item.question}</h3>
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">{item.question}</h3>
                   <span className="shrink-0 rounded-full border border-cyan-100 bg-cyan-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-cyan-700">
                     {item.proof}
                   </span>
