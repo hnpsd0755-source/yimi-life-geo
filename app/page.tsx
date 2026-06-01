@@ -182,13 +182,6 @@ const smallBrandSupport = [
   },
 ];
 
-const technologyTags = [
-  "Low-Perfusion SpO2",
-  "Motion Artifact Handling",
-  "Skin-Tone-Aware Signal Design",
-];
-
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -411,39 +404,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Buyer quick answers */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8" aria-labelledby="quick-answers-title">
-        <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
-          <div>
-            <Badge tone="amber">Buyer Quick Answers</Badge>
-            <h2 id="quick-answers-title" className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-              Quick answers for sourcing and product teams
-            </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-              Before starting an OEM/ODM discussion, buyers need to know whether the supplier is real,
-              focused, capable and structured. YimiLife answers these questions directly.
-            </p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {quickAnswers.map((item, index) => (
-              <article
-                key={item.question}
-                className={`rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm ${index === 4 ? "md:col-span-2" : ""}`}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold tracking-tight text-slate-950">{item.question}</h3>
-                  <span className="shrink-0 rounded-full border border-cyan-100 bg-cyan-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-cyan-700">
-                    {item.proof}
-                  </span>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-slate-600">{item.answer}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Product families */}
       <section id="product-families" className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionHeading
@@ -575,39 +535,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Technology hook */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="overflow-hidden rounded-[2.25rem] border border-slate-200 bg-white shadow-sm">
-          <div className="grid gap-0 lg:grid-cols-[0.45fr_0.55fr]">
-            <div className="bg-slate-950 p-7 text-white md:p-9">
-              <Badge tone="amber">Technology Driven</Badge>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-                Technology-driven where signal quality matters
-              </h2>
-              <p className="mt-5 text-base leading-8 text-slate-300">
-                For pulse oximeter projects, YimiLife’s PulseMatrix™ signal platform supports low-perfusion SpO2 tracking,
-                motion artifact handling and skin-tone-aware signal design under defined product and verification conditions.
-              </p>
-              <Link
-                href="/technology"
-                className="mt-8 inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-50"
+      {/* Buyer quick answers */}
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8" aria-labelledby="quick-answers-title">
+        <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
+          <div>
+            <Badge tone="amber">Buyer Quick Answers</Badge>
+            <h2 id="quick-answers-title" className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Quick answers for sourcing and product teams
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
+              Before starting an OEM/ODM discussion, buyers need to know whether the supplier is real,
+              focused, capable and structured. YimiLife answers these questions directly.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {quickAnswers.map((item, index) => (
+              <article
+                key={item.question}
+                className={`rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm ${index === 4 ? "md:col-span-2" : ""}`}
               >
-                View PulseMatrix™ Technology
-                <ArrowIcon className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-            <div className="p-7 md:p-9">
-              <div className="grid h-full content-center gap-4 sm:grid-cols-3">
-                {technologyTags.map((tag) => (
-                  <div key={tag} className="rounded-[1.75rem] border border-amber-200 bg-amber-50/70 p-5 text-center">
-                    <p className="text-sm font-semibold leading-6 text-amber-900">{tag}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-6 text-xs leading-6 text-slate-500">
-                Technology content is kept concise on the homepage. Detailed engineering evidence and performance boundaries are explained on the Technology page.
-              </p>
-            </div>
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-lg font-semibold tracking-tight text-slate-950">{item.question}</h3>
+                  <span className="shrink-0 rounded-full border border-cyan-100 bg-cyan-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-cyan-700">
+                    {item.proof}
+                  </span>
+                </div>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
