@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices with scalable manufacturing and PulseMatrix™ SpO2 technology.",
+    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting mature pulse oximeter and blood pressure monitor platforms with private-label customization, production verification and engineering support.",
   applicationName: "YimiLife",
   authors: [
     {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "home healthcare device manufacturer",
     "pulse oximeter OEM manufacturer",
     "blood pressure monitor OEM manufacturer",
-    "wearable health monitoring device OEM",
+    "private label medical device manufacturer",
     "ISO 13485 medical device manufacturer",
     "PulseMatrix SpO2 technology",
   ],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title:
       "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
     description:
-      "ISO 13485 medical device OEM/ODM manufacturing for pulse oximeters, blood pressure monitors and wearable health monitoring devices, supported by PulseMatrix™ SpO2 technology.",
+      "ISO 13485 medical device OEM/ODM manufacturing for pulse oximeters and blood pressure monitors, supported by private-label customization, production verification and engineering execution.",
   },
   icons: {
     icon: "/favicon.ico",
@@ -73,7 +73,7 @@ const organizationJsonLd = {
     name: "YimiLife",
   },
   description:
-    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeters, blood pressure monitors and wearable health monitoring devices.",
+    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting mature pulse oximeter and blood pressure monitor platforms, with selected wearable monitoring project discussions at the engineering-sample stage.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Shenzhen",
@@ -83,11 +83,11 @@ const organizationJsonLd = {
     "Medical device OEM/ODM manufacturing",
     "Pulse oximeter manufacturing",
     "Blood pressure monitor manufacturing",
-    "Wearable health monitoring devices",
+    "Development-stage wearable monitoring projects",
     "SpO2 monitoring",
     "Low perfusion SpO2",
     "Motion artifact rejection",
-    "Skin tone fairness in pulse oximetry",
+    "Skin-tone-aware signal design",
     "Bluetooth SDK integration",
     "ISO 13485 quality management system",
   ],

@@ -501,7 +501,7 @@ export default function AboutPage() {
             <p>
               Manufacturing control is supported by the{" "}
               <Link
-                href="/quality"
+                href="/about#quality-compliance"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 ISO 13485 medical device manufacturing quality system
@@ -591,21 +591,21 @@ export default function AboutPage() {
             <p>
               The platform supports OEM/ODM customers with{" "}
               <Link
-                href="/technology/low-perfusion-spo2"
+                href="/technology#low-perfusion"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 low perfusion SpO2 monitoring
               </Link>
               ,{" "}
               <Link
-                href="/technology/motion-artifact-rejection"
+                href="/technology#motion-artifact"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 motion artifact rejection
               </Link>{" "}
               and{" "}
               <Link
-                href="/technology/skin-tone-fairness"
+                href="/technology#skin-tone-accuracy"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 skin tone fairness

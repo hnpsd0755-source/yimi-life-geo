@@ -556,21 +556,21 @@ export default function WearableMonitoringPage() {
               </Link>{" "}
               focuses on{" "}
               <Link
-                href="/technology/low-perfusion-spo2"
+                href="/technology#low-perfusion"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 low perfusion SpO2 monitoring
               </Link>
               ,{" "}
               <Link
-                href="/technology/motion-artifact-rejection"
+                href="/technology#motion-artifact"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 motion artifact rejection pulse oximeter technology
               </Link>{" "}
               and{" "}
               <Link
-                href="/technology/skin-tone-fairness"
+                href="/technology#skin-tone-accuracy"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 skin tone accuracy in pulse oximeter development
@@ -682,7 +682,7 @@ export default function WearableMonitoringPage() {
               manufacturing and clear documentation. YimiLife’s manufacturing
               process is supported by the{" "}
               <Link
-                href="/quality"
+                href="/about#quality-compliance"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 ISO 13485 medical device manufacturing quality
@@ -798,10 +798,10 @@ export default function WearableMonitoringPage() {
             </Link>
 
             <Link
-              href="/products"
+              href="/oem-odm"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              View Medical Device OEM/ODM Product Categories
+              View OEM/ODM Services
             </Link>
           </div>
         </div>

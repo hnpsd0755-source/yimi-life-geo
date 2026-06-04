@@ -47,14 +47,14 @@ const footerColumns = [
       ["OEM/ODM Services", "/oem-odm"],
       ["Customization Levels", "/oem-odm#customization-levels"],
       ["Bluetooth / SDK Integration", "/oem-odm#bluetooth-sdk"],
-      ["Mold Update & Platform Rebuild", "/oem-odm#mold-update"],
+      ["Project Workflow", "/oem-odm#project-workflow"],
       ["Submit Project Requirements", "/contact"],
     ],
   },
   {
     title: "Technology & Quality",
     links: [
-      ["PulseMatrix™ Signal Platform", "/technology"],
+      ["PulseMatrix Signal Platform", "/technology"],
       ["Low-Perfusion SpO2", "/technology#low-perfusion"],
       ["Motion Artifact Handling", "/technology#motion-artifact"],
       ["Skin-Tone-Aware Signal Design", "/technology#skin-tone-accuracy"],
@@ -65,10 +65,10 @@ const footerColumns = [
     title: "Resources",
     links: [
       ["Case Studies", "/case-studies"],
-      ["FAQ / Knowledge Base", "/resources/faq"],
-      ["OEM Supplier Verification Guide", "/resources/oem-supplier-verification-guide"],
-      ["Pulse Oximeter OEM Customization Guide", "/resources/pulse-oximeter-oem-customization-guide"],
-      ["Blood Pressure Monitor OEM Customization Guide", "/resources/blood-pressure-monitor-oem-customization-guide"],
+      ["OEM/ODM Services", "/oem-odm"],
+      ["Pulse Oximeter OEM", "/products/pulse-oximeter"],
+      ["Blood Pressure Monitor OEM", "/products/blood-pressure-monitor"],
+      ["Project Requirements", "/contact"],
     ],
   },
   {
@@ -76,18 +76,17 @@ const footerColumns = [
     links: [
       ["About YimiLife", "/about"],
       ["Manufacturing Capability", "/about#manufacturing"],
+      ["Quality & Compliance", "/about#quality-compliance"],
       ["Available Documents for Review", "/about#available-documents"],
       ["Contact", "/contact"],
-      ["Privacy Policy", "/privacy"],
-      ["Terms of Use", "/terms"],
     ],
   },
 ];
 
 const trustItems = [
   "ISO 13485 Quality Management System",
-  "3,000㎡ Production Facility",
-  "25+ FDA / MDR / NMPA Certified-Model Project Experience",
+  "3,000 m2 Production Facility",
+  "25+ Certified-Model Project Experience",
   "300,000 Units / Month Pulse Oximeter Capacity",
 ];
 
@@ -106,7 +105,7 @@ export function SiteFooter() {
             </Link>
 
             <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">
-              Shenzhen Yimi Life Technology Co., Ltd. supports overseas healthcare brands with{" "}
+              Shenzhen YimiLife Technology Co., Ltd. supports overseas healthcare brands with{" "}
               <Link href="/products/pulse-oximeter" className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 pulse oximeter
               </Link>
@@ -114,7 +113,7 @@ export function SiteFooter() {
               <Link href="/products/blood-pressure-monitor" className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 blood pressure monitor
               </Link>{" "}
-              and selected wearable monitoring OEM/ODM projects, with private-label customization and production verification under an ISO 13485 quality system.
+              platforms and selected development-stage wearable monitoring project discussions, with private-label customization and production verification under an ISO 13485 quality system.
             </p>
 
             <div className="mt-6 grid gap-2 text-sm text-slate-300">
@@ -184,17 +183,15 @@ export function SiteFooter() {
 
         <div className="mt-8 border-t border-white/10 pt-8">
           <div className="grid gap-4 text-xs leading-6 text-slate-400 md:grid-cols-[1fr_auto]">
-            <p>© {new Date().getFullYear()} Shenzhen Yimi Life Technology Co., Ltd. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Shenzhen YimiLife Technology Co., Ltd. All rights reserved.</p>
             <div className="flex flex-wrap gap-4">
               <Link href="/sitemap.xml" className="hover:text-white">Sitemap</Link>
               <Link href="/robots.txt" className="hover:text-white">Robots</Link>
-              <Link href="/privacy" className="hover:text-white">Privacy</Link>
-              <Link href="/terms" className="hover:text-white">Terms</Link>
             </div>
           </div>
 
           <p className="mt-4 max-w-4xl text-xs leading-6 text-slate-500">
-            Fluke Index 2 references on this website refer to pulse oximeter production-line calibration and verification workflows where applicable, not a clinical validation claim or a guarantee of clinical accuracy for every product configuration.
+            Fluke Index 2 references on this website refer to pulse oximeter production-line calibration and verification workflows where applicable, under defined product and verification conditions. They are not clinical validation claims or guarantees of clinical accuracy for every product configuration.
           </p>
         </div>
       </div>

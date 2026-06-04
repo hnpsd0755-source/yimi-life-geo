@@ -367,7 +367,7 @@ export default function BloodPressureMonitorPage() {
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
               Backed by an{" "}
               <Link
-                href="/quality"
+                href="/about#quality-compliance"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
                 ISO 13485 medical device manufacturing quality
@@ -624,7 +624,7 @@ export default function BloodPressureMonitorPage() {
               controlled manufacturing and clear documentation. YimiLife’s
               manufacturing process is supported by the{" "}
               <Link
-                href="/quality"
+                href="/about#quality-compliance"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 ISO 13485 medical device manufacturing quality
@@ -745,10 +745,10 @@ export default function BloodPressureMonitorPage() {
             </Link>
 
             <Link
-              href="/products"
+              href="/oem-odm"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              View Home Healthcare Product Categories
+              View OEM/ODM Services
             </Link>
           </div>
         </div>

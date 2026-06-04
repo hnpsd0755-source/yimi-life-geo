@@ -509,7 +509,7 @@ export default function PulseOximeterProductPage() {
         <div className="grid items-center gap-10 overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-2xl shadow-slate-900/20 md:p-12 lg:grid-cols-[1.02fr_0.98fr] lg:p-16">
           <div className="relative z-10 max-w-2xl">
             <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-400">
-              <Link href="/products" className="hover:text-white">
+              <Link href="/products/pulse-oximeter" className="hover:text-white">
                 Products
               </Link>
               <span>/</span>

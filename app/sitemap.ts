@@ -22,11 +22,6 @@ const routes: SitemapRoute[] = [
     changeFrequency: "weekly",
   },
   {
-    path: "/products",
-    priority: 0.9,
-    changeFrequency: "monthly",
-  },
-  {
     path: "/products/pulse-oximeter",
     priority: 0.95,
     changeFrequency: "monthly",
@@ -38,31 +33,16 @@ const routes: SitemapRoute[] = [
   },
   {
     path: "/products/wearable-monitoring",
-    priority: 0.8,
+    priority: 0.65,
     changeFrequency: "monthly",
   },
   {
     path: "/oem-odm",
-    priority: 0.9,
+    priority: 0.95,
     changeFrequency: "monthly",
   },
   {
     path: "/technology",
-    priority: 0.9,
-    changeFrequency: "monthly",
-  },
-  {
-    path: "/technology/low-perfusion-spo2",
-    priority: 0.85,
-    changeFrequency: "monthly",
-  },
-  {
-    path: "/technology/motion-artifact-rejection",
-    priority: 0.85,
-    changeFrequency: "monthly",
-  },
-  {
-    path: "/technology/skin-tone-fairness",
     priority: 0.85,
     changeFrequency: "monthly",
   },
@@ -72,23 +52,13 @@ const routes: SitemapRoute[] = [
     changeFrequency: "monthly",
   },
   {
-    path: "/news",
-    priority: 0.75,
-    changeFrequency: "weekly",
-  },
-  {
-    path: "/quality",
-    priority: 0.8,
-    changeFrequency: "monthly",
-  },
-  {
     path: "/about",
-    priority: 0.75,
+    priority: 0.8,
     changeFrequency: "monthly",
   },
   {
     path: "/contact",
-    priority: 0.8,
+    priority: 0.9,
     changeFrequency: "monthly",
   },
 ];

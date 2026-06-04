@@ -240,17 +240,17 @@ const technologies: Technology[] = [
   {
     title: "Low Perfusion SpO2",
     text: "Signal acquisition and algorithm handling in weak-signal monitoring conditions.",
-    href: "/technology/low-perfusion-spo2",
+    href: "/technology#low-perfusion",
   },
   {
     title: "Motion Artifact Rejection",
     text: "Interference reduction for finger movement and unstable measurement conditions.",
-    href: "/technology/motion-artifact-rejection",
+    href: "/technology#motion-artifact",
   },
   {
     title: "Skin Tone Accuracy",
     text: "Optical response and engineering validation planning across diverse skin tone conditions.",
-    href: "/technology/skin-tone-fairness",
+    href: "/technology#skin-tone-accuracy",
   },
 ];
 

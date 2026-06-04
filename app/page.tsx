@@ -188,7 +188,7 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen Yimi Life Technology Co., Ltd.",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
       alternateName: "YimiLife",
       url: "https://www.yimilife.com/",
       brand: {

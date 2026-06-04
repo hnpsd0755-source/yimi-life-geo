@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Medical Device OEM Inquiry | Contact YimiLife",
+  title: "Submit OEM/ODM Project Requirements | Contact YimiLife",
   description:
-    "Submit a medical device OEM inquiry to YimiLife for pulse oximeter OEM/ODM, blood pressure monitor OEM manufacturing, private label customization and healthcare device manufacturing support.",
+    "Submit OEM/ODM project requirements to YimiLife for pulse oximeter, blood pressure monitor, private-label customization, Bluetooth integration and medical device manufacturing feasibility review.",
   alternates: {
     canonical: "https://www.yimilife.com/contact",
   },
   openGraph: {
-    title: "Medical Device OEM Inquiry | Contact YimiLife",
+    title: "Submit OEM/ODM Project Requirements | Contact YimiLife",
     description:
-      "Contact YimiLife for medical device OEM/ODM inquiries, private label pulse oximeter projects, blood pressure monitor customization and healthcare device manufacturing support.",
+      "Start a medical device OEM/ODM inquiry with YimiLife. Share product category, target market, customization scope, quantity, documentation expectations and timeline.",
     url: "https://www.yimilife.com/contact",
     siteName: "YimiLife",
     type: "website",
@@ -40,7 +40,7 @@ function CheckIcon({ className = "h-5 w-5" }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
-        d="M20 6L9 17l-5-5"
+        d="M20 6 9 17l-5-5"
         stroke="currentColor"
         strokeWidth="2.2"
         strokeLinecap="round"
@@ -60,66 +60,7 @@ function MailIcon({ className = "h-6 w-6" }: IconProps) {
         strokeLinejoin="round"
       />
       <path
-        d="M4 7l8 6 8-6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M7 3h7l5 5v13H7V3z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M14 3v5h5M10 13h6M10 17h6M10 9h1"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function FactoryIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M3 21h18M5 21V9l5 3V9l5 3V5h4v16"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 17h1M12 17h1M16 17h1"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M12 3l7 3v5c0 4.8-2.9 8.3-7 10-4.1-1.7-7-5.2-7-10V6l7-3z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M9 12l2 2 4-5"
+        d="m4 7 8 6 8-6"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
@@ -132,101 +73,84 @@ function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
 const contactEmail = "info@yimilife.com";
 
 const projectTypes = [
-  "Pulse Oximeter OEM/ODM Inquiry",
-  "Blood Pressure Monitor OEM Manufacturing Inquiry",
-  "Private Label Medical Device Project",
-  "Custom Home Healthcare Device Manufacturing",
-  "Bluetooth SDK / UI Customization",
-  "Wearable Health Monitoring Device OEM",
-  "Other Medical Device OEM/ODM Project",
+  "Pulse oximeter private-label project",
+  "Pulse oximeter Bluetooth / SDK project",
+  "Blood pressure monitor OEM project",
+  "Packaging, label or IFU customization",
+  "Mold update or product platform refinement",
+  "Development-stage wearable monitoring discussion",
+  "Early supplier feasibility evaluation",
 ];
 
-const requirementChecklist = [
-  "Target market and sales region",
+const readinessCards = [
+  {
+    title: "Already have a product direction",
+    text: "Share the product category, model preference, target market, quantity and customization requirements.",
+  },
+  {
+    title: "Still evaluating supplier fit",
+    text: "Tell us your target market, customer profile and decision concerns. We can help clarify suitable product platforms and risk points.",
+  },
+  {
+    title: "Need connected device support",
+    text: "Describe Bluetooth, SDK, data format, app workflow or integration requirements so feasibility can be reviewed early.",
+  },
+];
+
+const checklist = [
+  "Company type and target sales region",
   "Product category and application scenario",
-  "Pulse oximeter or blood pressure monitor model preference",
   "Expected monthly or annual quantity",
-  "Logo, packaging and private label requirements",
-  "UI interface, Bluetooth SDK or data integration needs",
-  "Regulatory, certification or documentation expectations",
-  "Target price range and project timeline",
-];
-
-const contactReasons = [
-  {
-    title: "Medical Device OEM Inquiry Review",
-    text: "Share your product category, target market, expected quantity, customization needs and project timeline for OEM/ODM feasibility evaluation.",
-    icon: DocumentIcon,
-  },
-  {
-    title: "Private Label and Custom Manufacturing Discussion",
-    text: "Discuss private label medical device manufacturing, logo, packaging, labeling, UI adaptation and custom home healthcare device requirements.",
-    icon: FactoryIcon,
-  },
-  {
-    title: "Quality, Documentation and Connected Device Support",
-    text: "Discuss ISO 13485 manufacturing support, production verification, batch traceability, Bluetooth SDK support and quality documentation needs.",
-    icon: ShieldIcon,
-  },
+  "Private-label, packaging, label and IFU scope",
+  "Bluetooth, SDK or app integration needs",
+  "Certification or documentation expectations",
+  "Target price range and launch timeline",
+  "Main concern: supplier verification, samples, quality, cost or schedule",
 ];
 
 const relatedPages = [
   {
-    title: "Private Label Medical Device Manufacturing",
+    title: "OEM/ODM Services",
     href: "/oem-odm",
-    text: "Review YimiLife’s OEM/ODM service workflow for private label medical device manufacturing projects.",
-    cta: "View OEM/ODM services",
+    text: "Review customization levels, project workflow and OEM/ODM scope before submitting requirements.",
   },
   {
-    title: "Pulse Oximeter OEM/ODM Manufacturer",
+    title: "Pulse Oximeters",
     href: "/products/pulse-oximeter",
-    text: "Explore fingertip pulse oximeter OEM/ODM manufacturing, private label customization, Bluetooth SDK support and production verification.",
-    cta: "View pulse oximeter OEM/ODM",
+    text: "Explore mature pulse oximeter platforms for private-label and connected SpO2 projects.",
   },
   {
-    title: "Blood Pressure Monitor OEM Manufacturer",
+    title: "Blood Pressure Monitors",
     href: "/products/blood-pressure-monitor",
-    text: "Review blood pressure monitor OEM manufacturing, private label customization and digital upper arm blood pressure monitor solutions.",
-    cta: "View blood pressure monitor OEM",
+    text: "Review blood pressure monitor project directions for home healthcare brands.",
   },
   {
-    title: "ISO 13485 Medical Device Manufacturer",
-    href: "/quality",
-    text: "Review YimiLife’s ISO 13485 quality system, certified model experience, production verification and batch traceability.",
-    cta: "View quality system",
+    title: "Quality & Compliance",
+    href: "/about#quality-compliance",
+    text: "Understand ISO 13485-based manufacturing execution, traceability and document support.",
   },
 ];
 
 const faqs = [
   {
-    question: "What information should I provide for a medical device OEM inquiry?",
+    question: "Can I contact YimiLife before my project scope is final?",
     answer:
-      "Please share your target market, product category, expected quantity, customization requirements, regulatory expectations, target price range and project timeline so YimiLife can evaluate OEM/ODM feasibility.",
+      "Yes. Early feasibility discussion is welcome. A rough target market, product category, quantity range and customization idea are enough to start a practical review.",
   },
   {
-    question: "Can I request a private label pulse oximeter project?",
+    question: "What happens after I submit requirements?",
     answer:
-      "Yes. YimiLife supports private label pulse oximeter projects, including logo, color, packaging, labeling, selected UI interface adaptation, Bluetooth data integration and manufacturing documentation based on project requirements.",
+      "The YimiLife team reviews product fit, customization depth, target-market expectations, documentation needs and sample or next-step feasibility.",
   },
   {
-    question: "Can I request blood pressure monitor OEM manufacturing?",
+    question: "Can YimiLife help decide between product platforms?",
     answer:
-      "Yes. YimiLife supports blood pressure monitor OEM manufacturing and private label customization for digital upper arm blood pressure monitor projects serving home healthcare markets.",
+      "Yes. For pulse oximeters and blood pressure monitors, YimiLife can help compare mature platform directions against your market, cost, configuration and documentation needs.",
   },
   {
-    question: "Can YimiLife support Bluetooth SDK or UI customization?",
+    question: "Can I ask about wearable monitoring?",
     answer:
-      "Yes. For selected OEM/ODM projects, YimiLife can support Bluetooth SDK discussion, data transmission requirements, UI interface adaptation and connected health integration based on project scope.",
-  },
-  {
-    question: "Does YimiLife support international OEM/ODM customers?",
-    answer:
-      "Yes. YimiLife supports international medical brands, importers, private label customers, e-commerce healthcare brands, regional distributors and connected health companies.",
-  },
-  {
-    question: "How fast can YimiLife evaluate my OEM/ODM project?",
-    answer:
-      "A clear project brief helps YimiLife review the product type, customization depth, documentation needs, production expectations and next-step feasibility more efficiently.",
+      "Yes, but wearable monitoring is handled as a development-stage project direction or engineering sample discussion, not as a mature ready-for-sale product claim.",
   },
 ];
 
@@ -234,41 +158,16 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://www.yimilife.com/#organization",
-      name: "Shenzhen YimiLife Technology Co., Ltd.",
-      alternateName: "YimiLife",
-      url: "https://www.yimilife.com/",
-      email: contactEmail,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Shenzhen",
-        addressCountry: "CN",
-      },
-      description:
-        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeter OEM/ODM, blood pressure monitor OEM manufacturing and private label home healthcare monitoring projects.",
-      contactPoint: {
-        "@type": "ContactPoint",
-        email: contactEmail,
-        contactType: "OEM/ODM project inquiry",
-        areaServed: "Global",
-        availableLanguage: ["English", "Chinese"],
-      },
-    },
-    {
       "@type": "ContactPage",
       "@id": "https://www.yimilife.com/contact#webpage",
       url: "https://www.yimilife.com/contact",
-      name: "Medical Device OEM Inquiry | Contact YimiLife",
+      name: "Submit OEM/ODM Project Requirements",
       description:
-        "Contact YimiLife for medical device OEM/ODM inquiries, private label pulse oximeter projects and blood pressure monitor OEM manufacturing support.",
+        "Contact page for submitting medical device OEM/ODM project requirements to YimiLife.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
       about: {
-        "@id": "https://www.yimilife.com/#organization",
-      },
-      publisher: {
         "@id": "https://www.yimilife.com/#organization",
       },
     },
@@ -284,24 +183,6 @@ const jsonLd = {
         },
       })),
     },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.yimilife.com/contact#breadcrumb",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://www.yimilife.com/",
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Contact",
-          item: "https://www.yimilife.com/contact",
-        },
-      ],
-    },
   ],
 };
 
@@ -310,441 +191,272 @@ export default function ContactPage() {
     <main className="min-h-screen bg-slate-50 text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute -left-24 top-24 h-80 w-80 rounded-full bg-cyan-500 blur-3xl" />
-          <div className="absolute bottom-[-120px] right-[-40px] h-96 w-96 rounded-full bg-blue-600 blur-3xl" />
-        </div>
-
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
+      <section className="bg-slate-950">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.52fr_0.48fr] lg:px-8 lg:py-20">
           <div>
-            <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              Contact YimiLife
-            </div>
-
-            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Start Your Medical Device OEM Inquiry
+            <p className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100">
+              Project start form
+            </p>
+            <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
+              Submit OEM/ODM project requirements.
             </h1>
-
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              Contact YimiLife for medical device OEM/ODM inquiries, including{" "}
-              <Link
-                href="/products/pulse-oximeter"
-                className="font-semibold text-cyan-200 underline underline-offset-4"
-              >
-                pulse oximeter OEM/ODM manufacturing
-              </Link>
-              ,{" "}
-              <Link
-                href="/products/blood-pressure-monitor"
-                className="font-semibold text-cyan-200 underline underline-offset-4"
-              >
-                blood pressure monitor OEM manufacturing
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/oem-odm"
-                className="font-semibold text-cyan-200 underline underline-offset-4"
-              >
-                private label medical device manufacturing
-              </Link>
-              .
+            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300">
+              Tell YimiLife what you want to build, customize or verify. We will review product fit, customization boundaries, engineering feasibility, documentation expectations and manufacturing next steps for your medical device OEM/ODM project.
             </p>
-
-            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-              Share your target market, product category, customization needs,
-              expected quantity, regulatory expectations and project timeline.
-              Our team will review your medical device OEM inquiry for
-              feasibility, engineering adaptation, private label customization,
-              manufacturing and quality documentation.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href={`mailto:${contactEmail}`}
-                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
               >
-                Email OEM/ODM Requirements
+                Email Requirements
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </a>
-
               <Link
                 href="/oem-odm"
-                className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                View Private Label Manufacturing Workflow
+                Review OEM/ODM Scope
               </Link>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-200">
-              Contact focus
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 shadow-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
+              Best inquiry format
             </p>
-
-            <div className="mt-5 grid gap-4">
+            <div className="mt-5 grid gap-3">
               {[
-                "Medical Device OEM Inquiry Review",
-                "Private Label Pulse Oximeter Projects",
-                "Blood Pressure Monitor OEM Manufacturing",
-                "Bluetooth SDK & UI Customization",
-                "ISO 13485 Manufacturing Support",
+                "Product category and target market",
+                "Expected quantity and launch timeline",
+                "Customization level and documentation needs",
+                "Bluetooth / SDK / app integration expectations",
+                "Main decision concern or supplier verification question",
               ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-4 rounded-2xl bg-white/10 p-4 text-white"
-                >
-                  <div className="mt-1 rounded-full bg-cyan-300/20 p-1 text-cyan-200">
-                    <CheckIcon className="h-4 w-4" />
-                  </div>
-                  <p className="text-sm font-medium leading-6">{item}</p>
+                <div key={item} className="flex gap-3 rounded-3xl bg-white/[0.07] p-4">
+                  <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-cyan-300" />
+                  <p className="text-sm leading-6 text-slate-200">{item}</p>
                 </div>
               ))}
             </div>
-
-            <div className="mt-6 rounded-2xl bg-slate-950/40 p-5">
-              <p className="text-sm font-medium text-cyan-100">
-                Email OEM/ODM Requirements
-              </p>
-              <a
-                href={`mailto:${contactEmail}`}
-                className="mt-2 inline-flex items-center text-sm font-semibold text-cyan-200 underline underline-offset-4"
-              >
-                {contactEmail}
-              </a>
-              <p className="mt-3 text-sm leading-6 text-slate-300">
-                Send your OEM/ODM project brief by email. Our team will review
-                your product category, target market, private label requirements,
-                customization needs and production expectations.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-            Project inquiry
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-            Submit your medical device OEM inquiry
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-700">
-            Use the form to share your initial OEM/ODM project brief. The more
-            clearly you describe your target market, product category,
-            customization scope and expected quantity, the faster our team can
-            evaluate feasibility, documentation needs and next steps.
-          </p>
-
-          <div className="mt-8 grid gap-5">
-            {contactReasons.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="flex gap-5">
-                    <div className="h-fit rounded-2xl bg-cyan-100 p-3 text-cyan-800">
-                      <Icon />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-slate-950">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-700">
-                        {item.text}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <form
-          action={`mailto:${contactEmail}`}
-          method="post"
-          encType="text/plain"
-          className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-        >
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div>
-              <label
-                htmlFor="fullName"
-                className="text-sm font-semibold text-slate-900"
-              >
-                Full Name *
-              </label>
-              <input
-                id="fullName"
-                name="Full Name"
-                required
-                type="text"
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-                placeholder="Your name"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="text-sm font-semibold text-slate-900"
-              >
-                Work Email *
-              </label>
-              <input
-                id="email"
-                name="Work Email"
-                required
-                type="email"
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-                placeholder="name@company.com"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="company"
-                className="text-sm font-semibold text-slate-900"
-              >
-                Company *
-              </label>
-              <input
-                id="company"
-                name="Company"
-                required
-                type="text"
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-                placeholder="Company name"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="country"
-                className="text-sm font-semibold text-slate-900"
-              >
-                Country / Region
-              </label>
-              <input
-                id="country"
-                name="Country / Region"
-                type="text"
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-                placeholder="Target region"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="projectType"
-                className="text-sm font-semibold text-slate-900"
-              >
-                Project Type *
-              </label>
-              <select
-                id="projectType"
-                name="Project Type"
-                required
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-              >
-                <option value="">Select project type</option>
-                {projectTypes.map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label
-                htmlFor="quantity"
-                className="text-sm font-semibold text-slate-900"
-              >
-                Expected Quantity
-              </label>
-              <input
-                id="quantity"
-                name="Expected Quantity"
-                type="text"
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-                placeholder="Monthly / annual estimate"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="targetMarket"
-                className="text-sm font-semibold text-slate-900"
-              >
-                Target Market
-              </label>
-              <input
-                id="targetMarket"
-                name="Target Market"
-                type="text"
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-                placeholder="US / EU / China / other"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="timeline"
-                className="text-sm font-semibold text-slate-900"
-              >
-                Project Timeline
-              </label>
-              <input
-                id="timeline"
-                name="Project Timeline"
-                type="text"
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-                placeholder="Expected launch or delivery schedule"
-              />
-            </div>
-          </div>
-
-          <div className="mt-5">
-            <label
-              htmlFor="customization"
-              className="text-sm font-semibold text-slate-900"
-            >
-              Customization Requirements
-            </label>
-            <textarea
-              id="customization"
-              name="Customization Requirements"
-              rows={4}
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-              placeholder="Logo, packaging, UI, Bluetooth SDK, app integration, ID/mechanical changes, labeling, documentation needs, etc."
-            />
-          </div>
-
-          <div className="mt-5">
-            <label
-              htmlFor="message"
-              className="text-sm font-semibold text-slate-900"
-            >
-              Project Message *
-            </label>
-            <textarea
-              id="message"
-              name="Project Message"
-              required
-              rows={6}
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:bg-white"
-              placeholder="Tell us about your medical device OEM inquiry, product goals, current stage, target market and key concerns."
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-auto"
-          >
-            Send Medical Device OEM Inquiry
-            <ArrowIcon className="ml-2 h-4 w-4" />
-          </button>
-        </form>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.38fr_0.62fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              Requirement checklist
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+              Inquiry stage
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              What to prepare for an OEM/ODM project review
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              You can contact us at different project stages.
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-700">
-              A clear project brief helps our team evaluate OEM/ODM feasibility,
-              customization depth, regulatory needs, production planning,
-              quality documentation and cost expectations more efficiently.
+            <p className="mt-5 text-sm leading-7 text-slate-700">
+              The form is designed for B2B project evaluation, not retail customer support. Clear project context helps the team respond with useful next steps.
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {requirementChecklist.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4"
-              >
-                <CheckIcon className="h-4 w-4 text-cyan-700" />
-                <span className="text-sm font-medium text-slate-800">
-                  {item}
-                </span>
+          <div className="grid gap-4 md:grid-cols-3">
+            {readinessCards.map((item) => (
+              <div key={item.title} className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-            Related pages
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-            Explore YimiLife before submitting your OEM/ODM inquiry
-          </h2>
-        </div>
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[0.38fr_0.62fr] lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+              Project form
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              Share the information needed for feasibility review.
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-slate-700">
+              This temporary form opens your email client with the project details. A direct backend form can be added later when the website content and sales workflow are finalized.
+            </p>
+          </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          {relatedPages.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+          <form
+            action={`mailto:${contactEmail}`}
+            method="post"
+            encType="text/plain"
+            className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-sm"
+          >
+            <div className="grid gap-5 sm:grid-cols-2">
+              <label className="grid gap-2 text-sm font-semibold text-slate-900">
+                Full Name *
+                <input
+                  name="Full Name"
+                  required
+                  type="text"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-normal outline-none transition focus:border-cyan-500"
+                  placeholder="Your name"
+                />
+              </label>
+
+              <label className="grid gap-2 text-sm font-semibold text-slate-900">
+                Work Email *
+                <input
+                  name="Work Email"
+                  required
+                  type="email"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-normal outline-none transition focus:border-cyan-500"
+                  placeholder="name@company.com"
+                />
+              </label>
+
+              <label className="grid gap-2 text-sm font-semibold text-slate-900">
+                Company *
+                <input
+                  name="Company"
+                  required
+                  type="text"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-normal outline-none transition focus:border-cyan-500"
+                  placeholder="Company name"
+                />
+              </label>
+
+              <label className="grid gap-2 text-sm font-semibold text-slate-900">
+                Country / Region
+                <input
+                  name="Country / Region"
+                  type="text"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-normal outline-none transition focus:border-cyan-500"
+                  placeholder="Target sales region"
+                />
+              </label>
+
+              <label className="grid gap-2 text-sm font-semibold text-slate-900">
+                Project Type *
+                <select
+                  name="Project Type"
+                  required
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-normal outline-none transition focus:border-cyan-500"
+                >
+                  <option value="">Select project type</option>
+                  {projectTypes.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className="grid gap-2 text-sm font-semibold text-slate-900">
+                Expected Quantity
+                <input
+                  name="Expected Quantity"
+                  type="text"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-normal outline-none transition focus:border-cyan-500"
+                  placeholder="Monthly or annual estimate"
+                />
+              </label>
+            </div>
+
+            <label className="mt-5 grid gap-2 text-sm font-semibold text-slate-900">
+              Customization Scope
+              <textarea
+                name="Customization Scope"
+                rows={4}
+                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-normal outline-none transition focus:border-cyan-500"
+                placeholder="Logo, packaging, labels, IFU, UI, Bluetooth, SDK, mold update, documentation, sample requirements..."
+              />
+            </label>
+
+            <label className="mt-5 grid gap-2 text-sm font-semibold text-slate-900">
+              Project Message *
+              <textarea
+                name="Project Message"
+                required
+                rows={6}
+                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-normal outline-none transition focus:border-cyan-500"
+                placeholder="Describe target market, use case, current stage, timeline, certification expectations and main concerns."
+              />
+            </label>
+
+            <button
+              type="submit"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-auto"
             >
-              <h3 className="text-lg font-semibold text-slate-950">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700">
-                {item.text}
-              </p>
-              <div className="mt-5 inline-flex items-center text-sm font-semibold text-cyan-700">
-                {item.cta}
-                <ArrowIcon className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
+              Send Project Requirements
+              <ArrowIcon className="ml-2 h-4 w-4" />
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.38fr_0.62fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+              Preparation checklist
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              Useful details to include.
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {checklist.map((item) => (
+              <div key={item} className="flex gap-3 rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm">
+                <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
+                <span className="text-sm font-medium leading-6 text-slate-800">{item}</span>
               </div>
-            </Link>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[0.38fr_0.62fr] lg:px-8">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-              FAQ
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+              Before you submit
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Medical device OEM inquiry FAQ
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              Review the most relevant pages.
             </h2>
           </div>
 
-          <div className="grid gap-5">
-            {faqs.map((faq) => (
-              <div
-                key={faq.question}
-                className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
+          <div className="grid gap-4 sm:grid-cols-2">
+            {relatedPages.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <h3 className="text-base font-semibold text-slate-950">
-                  {faq.question}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700">
-                  {faq.answer}
-                </p>
+                <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">{item.text}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.38fr_0.62fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+              FAQ
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              Project inquiry questions.
+            </h2>
+          </div>
+
+          <div className="grid gap-4">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-base font-semibold text-slate-950">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -752,33 +464,21 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-slate-950">
-        <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-8">
           <MailIcon className="mx-auto h-10 w-10 text-cyan-300" />
-          <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Ready to discuss your medical device OEM/ODM project?
+          <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            Prefer email?
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Send your medical device OEM inquiry to YimiLife and our team will
-            review the product category, customization needs, target market,
-            production expectations, documentation needs and next steps.
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-slate-300">
+            Send your project brief directly to YimiLife. Include target market, product category, expected quantity, customization needs and any certification or documentation expectations.
           </p>
-
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href={`mailto:${contactEmail}`}
-              className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
-            >
-              Email OEM/ODM Requirements
-              <ArrowIcon className="ml-2 h-4 w-4" />
-            </a>
-
-            <Link
-              href="/products"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              View Product Categories
-            </Link>
-          </div>
+          <a
+            href={`mailto:${contactEmail}`}
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+          >
+            {contactEmail}
+            <ArrowIcon className="ml-2 h-4 w-4" />
+          </a>
         </div>
       </section>
     </main>
