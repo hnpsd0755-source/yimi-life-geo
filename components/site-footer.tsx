@@ -146,7 +146,7 @@ export function SiteFooter() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {footerColumns.map((column) => (
               <div key={column.title}>
-                <h2 className="text-sm font-semibold uppercase tracking-wider text-cyan-300">{column.title}</h2>
+                <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">{column.title}</p>
                 <div className="mt-5 grid gap-3">
                   {column.links.map(([label, href]) => (
                     <Link

@@ -7,12 +7,11 @@ import { SiteFooter } from "../components/site-footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.yimilife.com"),
   title: {
-    default:
-      "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
+    default: "Medical Device OEM/ODM Manufacturer | YimiLife",
     template: "%s",
   },
   description:
-    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in China, supporting mature pulse oximeter and blood pressure monitor platforms with private-label customization, production verification and engineering support.",
+    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors, private-label customization and overseas healthcare projects.",
   applicationName: "YimiLife",
   authors: [
     {
@@ -46,10 +45,9 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "YimiLife",
     url: "https://www.yimilife.com",
-    title:
-      "YimiLife | Medical Device OEM/ODM Manufacturer for Home Healthcare Monitoring",
+    title: "Medical Device OEM/ODM Manufacturer | YimiLife",
     description:
-      "ISO 13485 medical device OEM/ODM manufacturing for pulse oximeters and blood pressure monitors, supported by private-label customization, production verification and engineering execution.",
+      "ISO 13485 medical device OEM/ODM manufacturing for pulse oximeters and blood pressure monitors, with private-label customization and production verification.",
   },
   icons: {
     icon: "/favicon.ico",
@@ -61,48 +59,50 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const organizationJsonLd = {
+const siteJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.yimilife.com/#organization",
-  name: "Shenzhen YimiLife Technology Co., Ltd.",
-  alternateName: "YimiLife",
-  url: "https://www.yimilife.com",
-  brand: {
-    "@type": "Brand",
-    name: "YimiLife",
-  },
-  description:
-    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting mature pulse oximeter and blood pressure monitor platforms, with selected wearable monitoring project discussions at the engineering-sample stage.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Shenzhen",
-    addressCountry: "CN",
-  },
-  knowsAbout: [
-    "Medical device OEM/ODM manufacturing",
-    "Pulse oximeter manufacturing",
-    "Blood pressure monitor manufacturing",
-    "Development-stage wearable monitoring projects",
-    "SpO2 monitoring",
-    "Low perfusion SpO2",
-    "Motion artifact rejection",
-    "Skin-tone-aware signal design",
-    "Bluetooth SDK integration",
-    "ISO 13485 quality management system",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.yimilife.com/#organization",
+      name: "Shenzhen YimiLife Technology Co., Ltd.",
+      alternateName: "YimiLife",
+      url: "https://www.yimilife.com",
+      brand: {
+        "@type": "Brand",
+        name: "YimiLife",
+      },
+      description:
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeter, blood pressure monitor and selected wearable monitoring projects for overseas healthcare buyers.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Shenzhen",
+        addressCountry: "CN",
+      },
+      knowsAbout: [
+        "Medical device OEM/ODM manufacturing",
+        "Pulse oximeter manufacturing",
+        "Blood pressure monitor manufacturing",
+        "Development-stage wearable monitoring projects",
+        "SpO2 monitoring",
+        "Low perfusion SpO2",
+        "Motion artifact rejection",
+        "Skin-tone-aware signal design",
+        "Bluetooth SDK integration",
+        "ISO 13485 quality management system",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.yimilife.com/#website",
+      url: "https://www.yimilife.com",
+      name: "YimiLife",
+      publisher: {
+        "@id": "https://www.yimilife.com/#organization",
+      },
+      inLanguage: "en",
+    },
   ],
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://www.yimilife.com/#website",
-  url: "https://www.yimilife.com",
-  name: "YimiLife",
-  publisher: {
-    "@id": "https://www.yimilife.com/#organization",
-  },
-  inLanguage: "en",
 };
 
 export default function RootLayout({
@@ -116,13 +116,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteJsonLd),
+            __html: JSON.stringify(siteJsonLd),
           }}
         />
 

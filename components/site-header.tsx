@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useRef } from "react";
 
 function LogoMark() {
   return (
@@ -176,10 +179,19 @@ function MobileSection({
   );
 }
 
-function MobileLink({ href, children }: { href: string; children: React.ReactNode }) {
+function MobileLink({
+  href,
+  children,
+  onNavigate,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onNavigate?: () => void;
+}) {
   return (
     <Link
       href={href}
+      onClick={onNavigate}
       className="rounded-2xl px-3 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
     >
       {children}
@@ -188,6 +200,14 @@ function MobileLink({ href, children }: { href: string; children: React.ReactNod
 }
 
 export function SiteHeader() {
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+
+  const closeMobileMenu = () => {
+    if (mobileMenuRef.current) {
+      mobileMenuRef.current.open = false;
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/92 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Main navigation">
@@ -250,20 +270,21 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <details className="relative lg:hidden">
+        <details ref={mobileMenuRef} className="relative lg:hidden">
           <summary className="cursor-pointer list-none rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800">
             Menu
           </summary>
 
-          <div className="absolute right-0 top-12 z-50 max-h-[82vh] w-[340px] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-4 shadow-xl">
+          <div className="absolute right-0 top-12 z-50 max-h-[82vh] w-[calc(100vw-3rem)] max-w-[340px] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-4 shadow-xl">
             <div className="grid gap-2">
-              <MobileLink href="/">Home</MobileLink>
+              <MobileLink href="/" onNavigate={closeMobileMenu}>Home</MobileLink>
 
               <MobileSection title="Products">
                 {productLinks.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={closeMobileMenu}
                     className="rounded-2xl px-3 py-3 transition hover:bg-slate-50"
                   >
                     <p className="text-sm font-semibold text-slate-900">{item.label}</p>
@@ -273,19 +294,20 @@ export function SiteHeader() {
               </MobileSection>
 
               <MobileSection title="Main pages">
-                <MobileLink href="/oem-odm">OEM/ODM</MobileLink>
-                <MobileLink href="/technology">Technology</MobileLink>
-                <MobileLink href="/case-studies">Case Studies</MobileLink>
+                <MobileLink href="/oem-odm" onNavigate={closeMobileMenu}>OEM/ODM</MobileLink>
+                <MobileLink href="/technology" onNavigate={closeMobileMenu}>Technology</MobileLink>
+                <MobileLink href="/case-studies" onNavigate={closeMobileMenu}>Case Studies</MobileLink>
               </MobileSection>
 
               <MobileSection title="Company">
-                <MobileLink href="/about">Company Overview</MobileLink>
-                <MobileLink href="/about#quality-compliance">Quality & Compliance</MobileLink>
-                <MobileLink href="/contact">Contact</MobileLink>
+                <MobileLink href="/about" onNavigate={closeMobileMenu}>Company Overview</MobileLink>
+                <MobileLink href="/about#quality-compliance" onNavigate={closeMobileMenu}>Quality & Compliance</MobileLink>
+                <MobileLink href="/contact" onNavigate={closeMobileMenu}>Contact</MobileLink>
               </MobileSection>
 
               <Link
                 href="/contact"
+                onClick={closeMobileMenu}
                 className="mt-3 inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
               >
                 Submit Project Requirements
