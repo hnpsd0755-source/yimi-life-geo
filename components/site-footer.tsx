@@ -42,7 +42,7 @@ const footerColumns = [
     ],
   },
   {
-    title: "OEM/ODM Support",
+    title: "OEM/ODM",
     links: [
       ["OEM/ODM Services", "/oem-odm"],
       ["Customization Levels", "/oem-odm#customization-levels"],
@@ -52,32 +52,20 @@ const footerColumns = [
     ],
   },
   {
-    title: "Technology & Quality",
+    title: "Technology",
     links: [
       ["PulseMatrix Signal Platform", "/technology"],
       ["Low-Perfusion SpO2", "/technology#low-perfusion"],
-      ["Motion Artifact Handling", "/technology#motion-artifact"],
+      ["Motion Artifact Rejection", "/technology#motion-artifact"],
       ["Skin-Tone-Aware Signal Design", "/technology#skin-tone-accuracy"],
-      ["Quality & Compliance", "/about#quality-compliance"],
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      ["Case Studies", "/case-studies"],
-      ["OEM/ODM Services", "/oem-odm"],
-      ["Pulse Oximeter OEM", "/products/pulse-oximeter"],
-      ["Blood Pressure Monitor OEM", "/products/blood-pressure-monitor"],
-      ["Project Requirements", "/contact"],
     ],
   },
   {
     title: "Company",
     links: [
       ["About YimiLife", "/about"],
-      ["Manufacturing Capability", "/about#manufacturing"],
       ["Quality & Compliance", "/about#quality-compliance"],
-      ["Available Documents for Review", "/about#available-documents"],
+      ["Case Studies", "/case-studies"],
       ["Contact", "/contact"],
     ],
   },

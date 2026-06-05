@@ -51,23 +51,14 @@ const productLinks = [
   {
     label: "Pulse Oximeters",
     href: "/products/pulse-oximeter",
-    status: "Mature core product line",
-    description:
-      "Fingertip, pediatric, Bluetooth and handheld SpO2 product platforms for OEM/ODM projects.",
   },
   {
     label: "Blood Pressure Monitors",
     href: "/products/blood-pressure-monitor",
-    status: "Mature / customizable product line",
-    description:
-      "Upper-arm BP monitors, Bluetooth models and home healthcare platform directions.",
   },
   {
     label: "Wearable Monitoring",
     href: "/products/wearable-monitoring",
-    status: "Development-stage direction",
-    description:
-      "Wearable monitoring project directions and engineering sample discussion for software integration.",
   },
 ];
 
@@ -75,14 +66,10 @@ const aboutLinks = [
   {
     label: "Company Overview",
     href: "/about",
-    description:
-      "YimiLife manufacturing background, product focus and project support capability.",
   },
   {
     label: "Quality & Compliance",
     href: "/about#quality-compliance",
-    description:
-      "ISO 13485 system, production verification, traceability and available document support.",
   },
 ];
 
@@ -98,33 +85,16 @@ function ProductsDropdown() {
         <ChevronIcon />
       </button>
 
-      <div className="invisible absolute left-0 top-full z-50 w-[420px] pt-3 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-        <div role="menu" className="rounded-3xl border border-slate-200 bg-white p-3 shadow-xl ring-1 ring-black/5">
-          <div className="px-4 pb-2 pt-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700">
-              Product families
-            </p>
-            <p className="mt-1 text-xs leading-5 text-slate-500">
-              Direct entry to product category pages. No separate products overview page.
-            </p>
-          </div>
-
+      <div className="invisible absolute left-0 top-full z-50 w-[280px] pt-3 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+        <div role="menu" className="rounded-3xl border border-slate-200 bg-white p-2 shadow-xl ring-1 ring-black/5">
           {productLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               role="menuitem"
-              className="block rounded-2xl p-4 transition hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+              className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
             >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-sm font-semibold text-slate-950">{item.label}</p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">{item.description}</p>
-                </div>
-                <span className="shrink-0 rounded-full border border-cyan-100 bg-cyan-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-cyan-700">
-                  {item.status}
-                </span>
-              </div>
+              {item.label}
             </Link>
           ))}
         </div>
@@ -145,17 +115,16 @@ function AboutDropdown() {
         <ChevronIcon />
       </button>
 
-      <div className="invisible absolute right-0 top-full z-50 w-[360px] pt-3 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-        <div role="menu" className="rounded-3xl border border-slate-200 bg-white p-3 shadow-xl ring-1 ring-black/5">
+      <div className="invisible absolute right-0 top-full z-50 w-[260px] pt-3 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+        <div role="menu" className="rounded-3xl border border-slate-200 bg-white p-2 shadow-xl ring-1 ring-black/5">
           {aboutLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               role="menuitem"
-              className="block rounded-2xl p-4 transition hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+              className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
             >
-              <p className="text-sm font-semibold text-slate-950">{item.label}</p>
-              <p className="mt-1 text-xs leading-5 text-slate-500">{item.description}</p>
+              {item.label}
             </Link>
           ))}
         </div>
@@ -281,15 +250,9 @@ export function SiteHeader() {
 
               <MobileSection title="Products">
                 {productLinks.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={closeMobileMenu}
-                    className="rounded-2xl px-3 py-3 transition hover:bg-slate-50"
-                  >
-                    <p className="text-sm font-semibold text-slate-900">{item.label}</p>
-                    <p className="mt-1 text-xs leading-5 text-slate-500">{item.description}</p>
-                  </Link>
+                  <MobileLink key={item.href} href={item.href} onNavigate={closeMobileMenu}>
+                    {item.label}
+                  </MobileLink>
                 ))}
               </MobileSection>
 
