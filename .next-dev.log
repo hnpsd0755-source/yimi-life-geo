@@ -1,0 +1,15 @@
+
+> yimi-life-geo@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://198.18.0.1:3000
+✓ Ready in 12.0s
+
+ GET /preview 200 in 1099ms (next.js: 813ms, application-code: 286ms)
+ GET /preview 200 in 129ms (next.js: 4ms, application-code: 125ms)
+ GET /oem-odm 200 in 372ms (next.js: 336ms, application-code: 36ms)
+ GET /products/blood-pressure-monitor 200 in 567ms (next.js: 514ms, application-code: 53ms)
+ GET /products/blood-pressure-monitor 200 in 34ms (next.js: 4ms, application-code: 31ms)
+✓ Compiled in 1177ms
