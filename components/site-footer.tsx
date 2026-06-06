@@ -57,7 +57,7 @@ const footerColumns = [
       ["PulseMatrix Signal Platform", "/technology"],
       ["Low-Perfusion SpO2", "/technology#low-perfusion"],
       ["Motion Artifact Rejection", "/technology#motion-artifact"],
-      ["Skin-Tone-Aware Signal Design", "/technology#skin-tone-accuracy"],
+      ["SpO2 Performance Across Skin Pigmentation", "/technology#skin-pigmentation"],
     ],
   },
   {
@@ -101,7 +101,7 @@ export function SiteFooter() {
               <Link href="/products/blood-pressure-monitor" className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 blood pressure monitor
               </Link>{" "}
-              platforms and selected wearable monitoring platform discussions, with private-label customization and production verification under an ISO 13485 quality system.
+              platforms and a launch-ready wearable monitoring product line, with private-label customization and production verification under an ISO 13485 quality system.
             </p>
 
             <div className="mt-6 grid gap-2 text-sm text-slate-300">

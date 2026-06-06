@@ -183,7 +183,8 @@ const supportCards = [
   },
   {
     title: "PulseMatrix™ SpO2 Technology",
-    text: "SpO2 technology support focused on low perfusion monitoring, motion artifact rejection pulse oximeter technology and skin tone accuracy considerations for wearable monitoring scenarios.",
+    text: "SpO2 technology support focused on low perfusion monitoring, motion artifact rejection pulse oximeter technology and SpO2 performance across skin pigmentation considerations for wearable monitoring scenarios.",
+
     icon: WaveIcon,
   },
   {
@@ -571,10 +572,10 @@ export default function WearableMonitoringPage() {
               </Link>{" "}
               and{" "}
               <Link
-                href="/technology#skin-tone-accuracy"
+                href="/technology#skin-pigmentation"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                skin tone accuracy in pulse oximeter development
+                SpO2 performance across skin pigmentation in pulse oximeter development
               </Link>
               , helping wearable projects build stronger technical
               differentiation.

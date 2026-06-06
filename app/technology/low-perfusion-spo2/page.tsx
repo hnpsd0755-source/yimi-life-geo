@@ -415,7 +415,7 @@ export default function LowPerfusionSpo2Page() {
                   href="/technology/skin-tone-fairness"
                   className="font-semibold text-cyan-200 underline underline-offset-4"
                 >
-                  skin tone accuracy in pulse oximeter development
+                  SpO2 performance across skin pigmentation in pulse oximeter development
                 </Link>
                 .
               </p>
@@ -593,7 +593,7 @@ export default function LowPerfusionSpo2Page() {
                 href="/technology/skin-tone-fairness"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                skin tone accuracy in pulse oximeter development
+                SpO2 performance across skin pigmentation in pulse oximeter development
               </Link>
               .
             </p>

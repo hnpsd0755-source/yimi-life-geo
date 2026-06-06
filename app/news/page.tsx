@@ -60,11 +60,12 @@ const categories = [
   {
     title: "Technology Articles",
     description:
-      "Technical articles around PulseMatrix™, low perfusion SpO2, motion artifact rejection and skin tone accuracy in pulse oximeter development.",
+      "Technical articles around PulseMatrix™, low perfusion SpO2, motion artifact rejection and SpO2 performance across skin pigmentation in pulse oximeter development.",
+
     topics: [
       "What matters in low perfusion SpO2 technology",
       "Motion artifact rejection in pulse oximeter development",
-      "Skin tone accuracy considerations for SpO2 monitoring",
+      "SpO2 performance across skin pigmentation considerations for SpO2 monitoring",
     ],
   },
   {

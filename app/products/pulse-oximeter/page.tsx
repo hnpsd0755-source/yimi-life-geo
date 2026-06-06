@@ -408,7 +408,8 @@ const faqs = [
     question:
       "Where can buyers learn more about PulseMatrix™ signal technology?",
     answer:
-      "This product page focuses on pulse oximeter model selection and configuration. Detailed topics such as low-perfusion tracking, motion-interference handling, skin-tone-aware signal design and engineering reference areas are organized under the PulseMatrix™ Signal Platform on the Technology page.",
+      "This product page focuses on pulse oximeter model selection and configuration. Detailed topics such as low-perfusion tracking, motion-interference handling, SpO2 performance across skin pigmentation signal design and engineering reference areas are organized under the PulseMatrix™ Signal Platform on the Technology page.",
+
   },
   {
     question:
@@ -857,7 +858,7 @@ export default function PulseOximeterProductPage() {
               This page is kept focused on pulse oximeter product forms, model
               directions and fingertip configuration selection. Detailed content
               about low-perfusion tracking, motion-interference handling,
-              skin-tone-aware signal design and engineering reference areas is
+              SpO2 performance across skin pigmentation signal design and engineering reference areas is
               organized under the PulseMatrix™ Signal Platform.
             </p>
           </div>

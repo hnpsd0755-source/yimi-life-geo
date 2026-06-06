@@ -149,7 +149,7 @@ const strengths = [
   },
   {
     title: "PulseMatrix™ SpO2 Technology",
-    text: "Our SpO2 technology platform focuses on low perfusion monitoring, motion artifact rejection and skin tone fairness for differentiated pulse oximeter projects.",
+    text: "Our SpO2 technology platform focuses on low perfusion monitoring, motion artifact rejection and SpO2 performance across skin pigmentation for differentiated pulse oximeter projects.",
     icon: WaveIcon,
   },
   {
@@ -605,10 +605,10 @@ export default function AboutPage() {
               </Link>{" "}
               and{" "}
               <Link
-                href="/technology#skin-tone-accuracy"
+                href="/technology#skin-pigmentation"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                skin tone fairness
+                SpO2 performance across skin pigmentation
               </Link>
               .
             </p>

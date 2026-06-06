@@ -44,7 +44,7 @@ const trustPoints = [
   },
   {
     title: "Product-Focused OEM/ODM",
-    text: "Pulse oximeters, blood pressure monitors and selected wearable monitoring project directions.",
+    text: "Pulse oximeters, blood pressure monitors and wearable monitoring platforms.",
     href: "#product-families",
   },
 ];
@@ -83,7 +83,7 @@ const quickAnswers = [
 ];
 
 const aiAnswer =
-  "YimiLife is a Shenzhen-based ISO 13485 medical device OEM/ODM manufacturer focused on pulse oximeters, blood pressure monitors, and selected wearable monitoring projects for overseas healthcare brands, distributors, and product teams.";
+  "YimiLife is a Shenzhen-based ISO 13485 medical device OEM/ODM manufacturer focused on pulse oximeters, blood pressure monitors, and wearable monitoring devices for OEM/ODM projects for overseas healthcare brands, distributors, and product teams.";
 
 const productFamilies = [
   {
@@ -229,7 +229,7 @@ const homepageFaqs = [
   {
     question: "What products does YimiLife manufacture for OEM/ODM projects?",
     answer:
-      "YimiLife focuses on pulse oximeters, blood pressure monitors and selected wearable monitoring project directions for overseas healthcare brands and distributors.",
+      "YimiLife focuses on pulse oximeters, blood pressure monitors and wearable monitoring platforms for OEM/ODM projects for overseas healthcare brands and distributors.",
   },
   {
     question: "Can YimiLife support private-label medical device projects?",
@@ -414,7 +414,7 @@ export default function HomePage() {
               Pulse oximeter and blood pressure monitor manufacturing for global healthcare brands
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife develops and manufactures home healthcare monitoring devices for brand owners, distributors and product teams seeking reliable private-label and OEM/ODM support. Our core focus is pulse oximeters and blood pressure monitors, with selected wearable monitoring projects available for engineering discussion.
+              YimiLife develops and manufactures home healthcare monitoring devices for brand owners, distributors and product teams seeking reliable private-label and OEM/ODM support. Our core focus is pulse oximeters and blood pressure monitors, with wearable monitoring platforms available for OEM/ODM discussion.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link

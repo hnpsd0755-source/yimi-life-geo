@@ -73,7 +73,7 @@ const siteJsonLd = {
         name: "YimiLife",
       },
       description:
-        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeter, blood pressure monitor and selected wearable monitoring projects for overseas healthcare buyers.",
+        "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer in Shenzhen, China, supporting pulse oximeter, blood pressure monitor and wearable monitoring platforms for overseas healthcare buyers.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Shenzhen",
@@ -87,7 +87,7 @@ const siteJsonLd = {
         "SpO2 monitoring",
         "Low perfusion SpO2",
         "Motion artifact rejection",
-        "Skin-tone-aware signal design",
+        "SpO2 performance across skin pigmentation",
         "Bluetooth SDK integration",
         "ISO 13485 quality management system",
       ],

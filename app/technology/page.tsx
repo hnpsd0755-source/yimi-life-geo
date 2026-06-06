@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "PulseMatrix™ Signal Platform | YimiLife SpO2 Technology for OEM/ODM Projects",
   description:
-    "YimiLife PulseMatrix™ Signal Platform for low-perfusion SpO2 tracking, motion artifact handling, skin-tone-aware signal design and production verification in pulse oximeter OEM/ODM projects.",
+    "YimiLife PulseMatrix™ Signal Platform for low-perfusion SpO2 tracking, motion artifact handling, SpO2 performance across skin pigmentation and production verification in pulse oximeter OEM/ODM projects.",
   alternates: {
     canonical: "https://www.yimilife.com/technology",
   },
@@ -67,9 +67,9 @@ const platformAnchors = [
     href: "#motion-artifact",
   },
   {
-    id: "skin-tone-accuracy",
-    title: "Skin-Tone-Aware Signal Design",
-    href: "#skin-tone-accuracy",
+    id: "skin-pigmentation",
+    title: "SpO2 Performance Across Skin Pigmentation",
+    href: "#skin-pigmentation",
   },
 ];
 
@@ -113,23 +113,23 @@ const technologyPillars = [
     accent: "Motion-aware PPG filtering",
   },
   {
-    id: "skin-tone-accuracy",
+    id: "skin-pigmentation",
     eyebrow: "Pillar 03",
-    title: "Skin-Tone-Aware Signal Design",
+    title: "SpO2 Performance Across Skin Pigmentation",
     intro:
-      "PulseMatrix™ incorporates optical and signal-processing considerations for SpO2 measurement across diverse skin tones, supporting YimiLife’s long-term focus on fairer pulse oximeter performance.",
+      "PulseMatrix™ incorporates optical sensing and signal-processing considerations for SpO2 measurement across diverse skin pigmentation conditions, supporting YimiLife’s focus on reliable pulse oximeter performance.",
     problem:
       "Melanin-related optical absorption may affect PPG signal quality and SpO2 measurement consistency.",
     response:
-      "Optical path design, signal normalization and fairness-oriented validation planning help guide skin-tone-aware SpO2 development.",
+      "Optical path design, signal normalization and skin-pigmentation-related verification planning help guide SpO2 development.",
     controls: [
-      "Fitzpatrick I–VI consideration",
+      "Skin-pigmentation-related verification planning",
       "Optical-path and signal normalization direction",
       "Validation planning by model and market",
     ],
     productRelevance:
       "Relevant to YimiLife’s long-term SpO2 platform planning and selected pulse oximeter verification programs.",
-    accent: "Fairness-oriented design planning",
+    accent: "SpO2 performance across skin pigmentation",
   },
 ];
 
@@ -190,15 +190,15 @@ const workflowSteps = [
 const faqs = [
   {
     q: "What is the PulseMatrix™ Signal Platform?",
-    a: "PulseMatrix™ is YimiLife’s signal platform for PPG acquisition, SpO2 waveform extraction, low-perfusion signal handling, motion-interference filtering and skin-tone-aware pulse oximeter development.",
+    a: "PulseMatrix™ is YimiLife’s signal platform for PPG acquisition, SpO2 waveform extraction, low-perfusion signal handling, motion-interference filtering and SpO2 performance across skin pigmentation in pulse oximeter development.",
   },
   {
     q: "How does PulseMatrix™ support low-perfusion SpO2 tracking?",
     a: "PulseMatrix™ supports low-perfusion development through waveform extraction, signal filtering and selected hardware front-end configurations. Specific PI targets and performance levels depend on the product model and verification scope.",
   },
   {
-    q: "What does skin-tone-aware SpO2 signal design mean?",
-    a: "It means optical path design, signal normalization and validation planning take diverse skin tones into consideration. YimiLife treats Fitzpatrick I–VI fairness consideration as a long-term engineering and verification direction.",
+    q: "What does SpO2 Performance Across Skin Pigmentation mean?",
+    a: "It means optical path design, signal normalization and validation planning take diverse skin pigmentation conditions into consideration. YimiLife treats Fitzpatrick I–VI fairness consideration as a long-term engineering and verification direction.",
   },
   {
     q: "Does PulseMatrix™ apply to all YimiLife pulse oximeter models?",
@@ -214,7 +214,7 @@ const jsonLd = [
     url: "https://www.yimilife.com/technology",
     image: "https://www.yimilife.com/homepage/pulseMatrix-s.jpg",
     description:
-      "YimiLife PulseMatrix™ Signal Platform for low-perfusion SpO2 tracking, motion artifact handling, skin-tone-aware signal design and production verification workflows.",
+      "YimiLife PulseMatrix™ Signal Platform for low-perfusion SpO2 tracking, motion artifact handling, SpO2 performance across skin pigmentation and production verification workflows.",
     publisher: {
       "@type": "Organization",
       name: "YimiLife",
@@ -284,7 +284,7 @@ export default function TechnologyPage() {
               </h1>
               <p className="mt-5 max-w-xl text-base leading-8 text-slate-300 md:text-lg">
                 A focused PPG signal platform for low-perfusion waveform extraction,
-                motion-interference filtering and skin-tone-aware SpO2 signal design.
+                motion-interference filtering and SpO2 performance across skin pigmentation.
               </p>
             </div>
 
@@ -318,7 +318,7 @@ export default function TechnologyPage() {
             Three technology pillars under one signal platform
           </h2>
           <p className="mt-5 text-lg leading-9 text-slate-600">
-            Low perfusion, motion artifact handling and skin-tone-aware signal design are not three
+            Low perfusion, motion artifact handling and SpO2 performance across skin pigmentation are not three
             disconnected claims. They are connected signal challenges under the
             same PPG acquisition and interpretation platform.
           </p>
@@ -527,7 +527,7 @@ export default function TechnologyPage() {
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-cyan-50">
             Talk with YimiLife about low-perfusion, motion-interference,
-            skin-tone-aware signal design and pulse oximeter product
+            SpO2 performance across skin pigmentation and pulse oximeter product
             configuration.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
