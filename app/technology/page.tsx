@@ -168,13 +168,13 @@ const productMapping = [
   {
     family: "Wearable SpO2 Watch",
     relevance:
-      "PPG sensing, low-power acquisition and Bluetooth wearable monitoring development direction.",
+      "PPG sensing, low-power acquisition and Bluetooth-connected wearable monitoring platform support.",
     href: "/products/wearable-monitoring",
   },
   {
     family: "Infant Foot SpO2 Monitor",
     relevance:
-      "Pediatric and soft-wearable SpO2 signal design consideration for infant foot-worn monitoring concepts under development.",
+      "Pediatric and soft-wearable SpO2 signal design consideration for infant foot-worn monitoring and connected health applications.",
     href: "/products/wearable-monitoring",
   },
 ];

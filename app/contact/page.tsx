@@ -78,7 +78,7 @@ const projectTypes = [
   "Blood pressure monitor OEM project",
   "Packaging, label or IFU customization",
   "Mold update or product platform refinement",
-  "Development-stage wearable monitoring discussion",
+  "Wearable monitoring and Bluetooth-connected device discussion",
   "Early supplier feasibility evaluation",
 ];
 
@@ -150,7 +150,7 @@ const faqs = [
   {
     question: "Can I ask about wearable monitoring?",
     answer:
-      "Yes, but wearable monitoring is handled as a development-stage project direction or engineering sample discussion, not as a mature ready-for-sale product claim.",
+      "Yes. Wearable monitoring inquiries are handled as wearable platform or Bluetooth-connected device discussions, with feasibility review before confirming product scope.",
   },
 ];
 

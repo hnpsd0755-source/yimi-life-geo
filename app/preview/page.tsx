@@ -33,7 +33,7 @@ const heroMetrics = [
 const trustPoints = [
   {
     title: "Medical-device manufacturing focus",
-    text: "Pulse oximeters, blood pressure monitors and selected wearable monitoring project directions.",
+    text: "Pulse oximeters, blood pressure monitors and selected wearable monitoring product directions.",
   },
   {
     title: "Production verification workflow",
@@ -70,9 +70,9 @@ const productFamilies = [
   },
   {
     title: "Wearable Monitoring",
-    status: "Development-stage direction",
-    text: "Wearable temperature, SpO2 watch, infant foot SpO2 and sleep-related monitoring concepts for engineering discussion.",
-    details: ["Engineering sample discussion", "Bluetooth / low power", "Software integration feasibility"],
+    status: "Wearable product platform support",
+    text: "Wearable temperature, SpO2 watch, infant foot SpO2 and sleep-related monitoring support for Bluetooth-connected OEM projects.",
+    details: ["Platform support", "Bluetooth / low power", "Software integration readiness"],
     href: "/products/wearable-monitoring",
     cta: "Discuss wearable projects",
     tone: "emerald" as Tone,
@@ -126,7 +126,7 @@ const jsonLd = {
       url: "https://www.yimilife.com/",
       brand: { "@type": "Brand", name: "YimiLife" },
       description:
-        "YimiLife is a medical device OEM/ODM manufacturing partner focused on pulse oximeters, blood pressure monitors and selected wearable monitoring project directions.",
+        "YimiLife is a medical device OEM/ODM manufacturing partner focused on pulse oximeters, blood pressure monitors and selected wearable monitoring product directions.",
     },
     {
       "@type": "WebSite",
@@ -330,7 +330,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Product Families"
             title="Start from the right product platform."
-            text="Choose a mature product line for faster private-label execution, or discuss a development-stage monitoring direction when your project requires software or platform integration."
+            text="Choose a mature product line for faster private-label execution, or discuss a wearable monitoring direction when your project requires software or platform integration."
           />
           <Link
             href="/contact"

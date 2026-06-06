@@ -84,7 +84,7 @@ const customizationLevels = [
   {
     level: "Level 5",
     title: "Joint Development Discussion",
-    text: "Engineering sample discussion for new directions, including development-stage wearable monitoring concepts and software integration feasibility.",
+    text: "Joint development discussion for wearable platform projects, software integration, sample planning and production readiness evaluation.",
   },
 ];
 
@@ -104,8 +104,8 @@ const productDirections = [
   {
     title: "Wearable Monitoring",
     href: "/products/wearable-monitoring",
-    stage: "Development-stage discussion",
-    text: "Engineering sample and joint development discussion for wearable monitoring concepts, software integration and feasibility review.",
+    stage: "Wearable platform direction",
+    text: "Engineering sample and joint development discussion for wearable monitoring products, software integration and production planning.",
   },
 ];
 
@@ -143,7 +143,7 @@ const faqs = [
   {
     question: "Can wearable monitoring projects be ordered as mature products?",
     answer:
-      "Wearable monitoring is handled as a development-stage project direction or engineering sample discussion. Configuration, software integration and market requirements need to be reviewed before any project scope is confirmed.",
+      "Wearable monitoring is handled as a targeted platform direction or engineering sample discussion. Configuration, software integration and market requirements need to be reviewed before the project scope is confirmed.",
   },
   {
     question: "How does YimiLife discuss production verification?",
@@ -200,7 +200,7 @@ export default function OemOdmPage() {
               Private-label and custom manufacturing support for healthcare brands.
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300">
-              YimiLife helps overseas healthcare brands evaluate, customize and manufacture mature pulse oximeter and blood pressure monitor platforms. We support practical OEM/ODM work from private label setup to selected engineering adaptation, with clear boundaries for development-stage projects.
+              YimiLife helps overseas healthcare brands evaluate, customize and manufacture mature pulse oximeter and blood pressure monitor platforms. We support practical OEM/ODM work from private label setup to selected engineering adaptation, with clear boundaries for concept validation, software integration and production planning.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -345,7 +345,7 @@ export default function OemOdmPage() {
               For selected OEM/ODM projects, YimiLife can discuss Bluetooth data transmission, protocol requirements, SDK-level integration needs and app-side data workflow. Scope depends on the product platform, target use case, software requirements and project feasibility.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700">
-              Development-stage wearable monitoring directions are handled as engineering sample or joint development discussions, not as ready-for-sale mature product claims.
+              Wearable monitoring directions are handled as targeted engineering or joint development discussions, helping customers review product configuration, Bluetooth integration and production readiness without implying a ready-for-sale claim.
             </p>
           </div>
         </div>

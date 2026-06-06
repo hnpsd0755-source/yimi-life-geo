@@ -373,18 +373,19 @@ export default function WearableMonitoringPage() {
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife supports medical brands with wearable SpO2 and connected
-              health monitoring device OEM projects, including Bluetooth SDK
-              integration, UI customization, remote patient monitoring scenarios
-              and ISO 13485 manufacturing support.
+              YimiLife supports medical brands with wearable SpO2, temperature
+              patch, infant/pediatric and connected health monitoring device OEM
+              projects, including Bluetooth SDK integration, UI customization,
+              remote patient monitoring scenarios and ISO 13485 manufacturing
+              support.
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
               For connected health products, wearable devices must connect sensor
-              performance, user interaction, Bluetooth data transmission, app
-              integration and manufacturing consistency. YimiLife helps
-              customers evaluate these requirements from product definition to
-              controlled manufacturing.
+              performance, pediatric or temperature use case, Bluetooth data
+              transmission, app integration and manufacturing consistency.
+              YimiLife helps customers evaluate these requirements from product
+              definition to controlled manufacturing.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -484,9 +485,9 @@ export default function WearableMonitoringPage() {
               Wearable health monitoring device OEM support
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              YimiLife supports wearable health monitoring projects from early
-              product definition to engineering evaluation, sample confirmation,
-              testing, documentation and production transfer.
+              YimiLife supports wearable health monitoring product lines from
+              early product definition to engineering evaluation, sample
+              confirmation, testing, documentation and production transfer.
             </p>
           </div>
 

@@ -101,7 +101,7 @@ export function SiteFooter() {
               <Link href="/products/blood-pressure-monitor" className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 blood pressure monitor
               </Link>{" "}
-              platforms and selected development-stage wearable monitoring project discussions, with private-label customization and production verification under an ISO 13485 quality system.
+              platforms and selected wearable monitoring platform discussions, with private-label customization and production verification under an ISO 13485 quality system.
             </p>
 
             <div className="mt-6 grid gap-2 text-sm text-slate-300">

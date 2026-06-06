@@ -118,14 +118,14 @@ const productFamilies = [
   },
   {
     title: "Wearable Monitoring",
-    status: "Development-Stage Direction",
+    status: "Wearable SpO2 Platform Support",
     description:
-      "Wearable temperature, SpO2 watch, infant foot SpO2 and sleep-related monitoring concepts for engineering discussion and software integration projects.",
+      "Wearable temperature, SpO2 watch, infant foot SpO2 and sleep-related monitoring support for Bluetooth-connected OEM projects and product definition.",
     bullets: [
-      "Development-stage project directions",
-      "Engineering sample discussion",
+      "Wearable product platform support",
+      "Engineering feasibility and sample planning",
       "Bluetooth and low-power design",
-      "Software integration feasibility",
+      "Software integration readiness",
     ],
     href: "/products/wearable-monitoring",
     cta: "Discuss Wearable Projects",
@@ -171,7 +171,7 @@ const comparisonRows = [
     category: "Wearable Monitoring",
     fit: "Selected SpO2 watch, infant foot SpO2, temperature and sleep monitoring concepts.",
     customization: "Engineering feasibility, low-power design, Bluetooth SDK and software integration.",
-    stage: "Development-stage direction",
+    stage: "Wearable platform direction",
   },
 ];
 
@@ -244,7 +244,7 @@ const homepageFaqs = [
   {
     question: "Is wearable monitoring ready for mass OEM production?",
     answer:
-      "Wearable monitoring is handled as a selected development-stage direction, suitable for engineering feasibility and software integration discussion before production planning.",
+      "Wearable monitoring is handled as a targeted OEM platform direction, suitable for engineering feasibility and software integration review before production planning.",
   },
 ];
 
@@ -481,7 +481,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Product Families"
           title="Product families for healthcare OEM/ODM projects"
-          text="Start from a mature product platform or discuss a development-stage monitoring project depending on your market, timeline and customization needs."
+          text="Start from a mature product platform or discuss a wearable monitoring direction depending on your market, timeline and customization needs."
           align="center"
         />
 
@@ -540,7 +540,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Product Comparison"
           title="Choose the right OEM/ODM product direction"
-          text="Compare the three main project paths before submitting requirements, especially if you are deciding between mature private-label platforms and development-stage wearable monitoring."
+          text="Compare the three main project paths before submitting requirements, especially if you are deciding between mature private-label platforms and wearable monitoring integration."
           align="center"
         />
 

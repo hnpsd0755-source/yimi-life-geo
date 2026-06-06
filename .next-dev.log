@@ -13,3 +13,9 @@
  GET /products/blood-pressure-monitor 200 in 567ms (next.js: 514ms, application-code: 53ms)
  GET /products/blood-pressure-monitor 200 in 34ms (next.js: 4ms, application-code: 31ms)
 ✓ Compiled in 1177ms
+✓ Compiled in 84ms
+✓ Compiled in 65ms
+✓ Compiled in 203ms
+✓ Compiled in 124ms
+✓ Compiled in 78ms
+✓ Compiled in 106ms

@@ -83,7 +83,7 @@ const siteJsonLd = {
         "Medical device OEM/ODM manufacturing",
         "Pulse oximeter manufacturing",
         "Blood pressure monitor manufacturing",
-        "Development-stage wearable monitoring projects",
+        "Wearable monitoring and connected health device design",
         "SpO2 monitoring",
         "Low perfusion SpO2",
         "Motion artifact rejection",
