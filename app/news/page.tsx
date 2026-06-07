@@ -60,12 +60,12 @@ const categories = [
   {
     title: "Technology Articles",
     description:
-      "Technical articles around PulseMatrix™, low perfusion SpO2, motion artifact rejection and SpO2 performance across skin pigmentation in pulse oximeter development.",
+      "Technical articles around PulseMatrix™, PI 0.1% low-perfusion, performance under motion conditions and SpO₂ performance across diverse skin pigmentation in pulse oximeter development.",
 
     topics: [
-      "What matters in low perfusion SpO2 technology",
+      "What matters in PI 0.1% low-perfusion technology",
       "Motion artifact rejection in pulse oximeter development",
-      "SpO2 performance across skin pigmentation considerations for SpO2 monitoring",
+      "SpO₂ performance across diverse skin pigmentation considerations for SpO2 monitoring",
     ],
   },
   {
@@ -138,7 +138,7 @@ export default function NewsPage() {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
               Read YimiLife insights on private label medical device
               manufacturing, pulse oximeter OEM/ODM projects, blood pressure
-              monitor OEM manufacturing, PulseMatrix™ SpO2 technology and ISO
+              monitor OEM manufacturing, the PulseMatrix™ Signal Platform and ISO
               13485 quality topics.
             </p>
 
@@ -173,7 +173,7 @@ export default function NewsPage() {
             This section is designed to support long-term SEO and GEO content
             development. Future articles will help buyers evaluate OEM/ODM
             partners, compare product customization options, understand
-            PulseMatrix™ SpO2 technology and prepare better project inquiries.
+            the PulseMatrix™ Signal Platform and prepare better project inquiries.
           </p>
         </div>
 

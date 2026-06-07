@@ -102,10 +102,10 @@ const productDirections = [
     text: "Upper-arm BP monitor project directions for private-label customization, connected health and home healthcare programs.",
   },
   {
-    title: "Wearable Monitoring",
+    title: "Wearable Monitoring Devices",
     href: "/products/wearable-monitoring",
-    stage: "Wearable platform direction",
-    text: "Engineering sample and joint development discussion for wearable monitoring products, software integration and production planning.",
+    stage: "Wearable product options",
+    text: "Wearable monitoring device OEM/ODM projects covering wearable SpO2, temperature monitoring, Bluetooth data workflow, software integration and production support.",
   },
 ];
 
@@ -143,12 +143,12 @@ const faqs = [
   {
     question: "Can wearable monitoring projects be ordered as mature products?",
     answer:
-      "Wearable monitoring is handled as a targeted platform direction or engineering sample discussion. Configuration, software integration and market requirements need to be reviewed before the project scope is confirmed.",
+      "Wearable monitoring device projects can be reviewed as OEM/ODM programs, including sample evaluation, customization, Bluetooth data workflow discussion, software integration, production planning and market-specific registration support.",
   },
   {
     question: "How does YimiLife discuss production verification?",
     answer:
-      "For applicable pulse oximeter projects, production-line calibration and verification workflows can use Fluke Index 2 clinical simulators under defined product and verification conditions. This is not a clinical validation claim.",
+      "For applicable pulse oximeter projects, production-line calibration and verification workflows can use Fluke Index 2 simulator under defined product and verification conditions. This is not a clinical validation claim.",
   },
 ];
 
@@ -345,7 +345,7 @@ export default function OemOdmPage() {
               For selected OEM/ODM projects, YimiLife can discuss Bluetooth data transmission, protocol requirements, SDK-level integration needs and app-side data workflow. Scope depends on the product platform, target use case, software requirements and project feasibility.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700">
-              Wearable monitoring directions are handled as targeted engineering or joint development discussions, helping customers review product configuration, Bluetooth integration and production readiness without implying a ready-for-sale claim.
+              Wearable monitoring device projects can be reviewed as OEM/ODM programs, helping customers review product configuration, Bluetooth integration, software collaboration, sample evaluation, production planning and market-specific registration support without implying a ready-for-sale claim.
             </p>
           </div>
         </div>

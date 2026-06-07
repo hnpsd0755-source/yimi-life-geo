@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Shenzhen Medical Device Manufacturer | About YimiLife",
   description:
-    "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with a 3,000 m² facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
+    "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with a 3,000㎡ facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
   alternates: {
     canonical: "https://www.yimilife.com/about",
   },
   openGraph: {
     title: "Shenzhen Medical Device Manufacturer | About YimiLife",
     description:
-      "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with a 3,000 m² facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
+      "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with a 3,000㎡ facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
     url: "https://www.yimilife.com/about",
     siteName: "YimiLife",
     type: "website",
@@ -130,10 +130,10 @@ function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
 
 const companyFacts = [
   "ISO 13485 Quality Management System",
-  "3,000 m² Medical Device Manufacturing Facility",
-  "25+ FDA / MDR / NMPA Certified Model Experience",
+  "3,000㎡ Medical Device Manufacturing Facility",
+  "25+ FDA / MDR / NMPA certified models",
   "300,000 Units Monthly Pulse Oximeter Capacity",
-  "PulseMatrix™ SpO2 Technology Platform",
+  "PulseMatrix™ Signal Platform",
 ];
 
 const strengths = [
@@ -148,8 +148,8 @@ const strengths = [
     icon: FactoryIcon,
   },
   {
-    title: "PulseMatrix™ SpO2 Technology",
-    text: "Our SpO2 technology platform focuses on low perfusion monitoring, motion artifact rejection and SpO2 performance across skin pigmentation for differentiated pulse oximeter projects.",
+    title: "PulseMatrix™ Signal Platform",
+    text: "Our SpO2 technology platform focuses on PI 0.1% low-perfusion, performance under motion conditions and SpO₂ performance across diverse skin pigmentation for differentiated pulse oximeter projects.",
     icon: WaveIcon,
   },
   {
@@ -163,7 +163,7 @@ const productLines = [
   {
     title: "Pulse Oximeter OEM/ODM",
     href: "/products/pulse-oximeter",
-    text: "Fingertip pulse oximeter OEM/ODM manufacturing supported by PulseMatrix™ technology, certified model experience and full-unit Fluke Index 2 production calibration and verification.",
+    text: "Fingertip pulse oximeter OEM/ODM manufacturing supported by the PulseMatrix™ Signal Platform, certified model experience and full-unit Fluke Index 2 production calibration and verification.",
   },
   {
     title: "Blood Pressure Monitor OEM",
@@ -207,12 +207,12 @@ const faqs = [
   {
     question: "What makes YimiLife different from a basic assembly factory?",
     answer:
-      "YimiLife combines medical electronics engineering, PulseMatrix™ SpO2 technology, Bluetooth SDK support, UI customization, ISO 13485 manufacturing control and scalable production capability.",
+      "YimiLife combines medical electronics engineering, the PulseMatrix™ Signal Platform, Bluetooth SDK support, UI customization, ISO 13485 manufacturing control and scalable production capability.",
   },
   {
     question: "Where is YimiLife located?",
     answer:
-      "YimiLife is based in Shenzhen, China, a major electronics and medical device manufacturing center, with a 3,000 m² medical device manufacturing facility.",
+      "YimiLife is based in Shenzhen, China, a major electronics and medical device manufacturing center, with a 3,000㎡ medical device manufacturing facility.",
   },
   {
     question: "Can YimiLife support private label medical device customers?",
@@ -336,7 +336,7 @@ export default function AboutPage() {
                 href="/technology"
                 className="font-semibold text-cyan-200 underline underline-offset-4"
               >
-                PulseMatrix™ SpO2 technology
+                PulseMatrix™ Signal Platform
               </Link>{" "}
               support.
             </p>
@@ -485,17 +485,17 @@ export default function AboutPage() {
               Manufacturing base
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              3,000 m² medical device manufacturing facility in Shenzhen
+              3,000㎡ medical device manufacturing facility in Shenzhen
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              YimiLife operates a 3,000 m² medical device manufacturing facility in Shenzhen, supporting medical electronic device OEM/ODM projects from sample confirmation and pilot production to scalable mass production.
+              YimiLife operates a 3,000㎡ medical device manufacturing facility in Shenzhen, supporting medical electronic device OEM/ODM projects from sample confirmation and pilot production to scalable mass production.
             </p>
 
             <p>
-              For pulse oximeter manufacturing, monthly capacity reaches up to 300,000 units. Each pulse oximeter unit is calibrated and verified using Fluke Index 2 clinical simulators before shipment to support consistent production output.
+              For pulse oximeter manufacturing, monthly capacity reaches up to 300,000 units. Each pulse oximeter unit is 100% calibrated with Fluke Index 2 simulator before shipment under defined product and verification conditions.
             </p>
 
             <p>
@@ -515,9 +515,9 @@ export default function AboutPage() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            "3,000 m² Medical Device Manufacturing Facility",
+            "3,000㎡ Medical Device Manufacturing Facility",
             "300,000 Units Monthly Pulse Oximeter Capacity",
-            "100% Fluke Index 2 Calibration & Verification",
+            "100% calibrated with Fluke Index 2 simulator",
             "Batch Traceability and Quality Records",
           ].map((item) => (
             <div
@@ -577,14 +577,14 @@ export default function AboutPage() {
               Technology platform
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              PulseMatrix™ technology supports differentiated SpO2 products
+              PulseMatrix™ Signal Platform supports differentiated SpO2 products
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              PulseMatrix™ is YimiLife’s vascular hemodynamic intelligence
-              platform for medical-grade SpO2 monitoring. It helps position YimiLife beyond basic product assembly and supports stronger technical
+              PulseMatrix™ is YimiLife’s signal platform for OEM/ODM
+              pulse oximeter projects. It helps position YimiLife beyond basic product assembly and supports stronger technical
               differentiation for SpO2-related OEM/ODM projects.
             </p>
 
@@ -594,21 +594,21 @@ export default function AboutPage() {
                 href="/technology#low-perfusion"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                low perfusion SpO2 monitoring
+                PI 0.1% low-perfusion
               </Link>
               ,{" "}
               <Link
                 href="/technology#motion-artifact"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                motion artifact rejection
+                performance under motion conditions
               </Link>{" "}
               and{" "}
               <Link
                 href="/technology#skin-pigmentation"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                SpO2 performance across skin pigmentation
+                SpO₂ performance across diverse skin pigmentation
               </Link>
               .
             </p>
@@ -623,7 +623,7 @@ export default function AboutPage() {
               href="/technology"
               className="inline-flex items-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
-              Explore PulseMatrix™ Technology
+              Explore PulseMatrix™ Signal Platform
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
           </div>

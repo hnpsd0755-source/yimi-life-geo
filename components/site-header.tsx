@@ -57,7 +57,7 @@ const productLinks = [
     href: "/products/blood-pressure-monitor",
   },
   {
-    label: "Wearable Monitoring",
+    label: "Wearable Monitoring Devices",
     href: "/products/wearable-monitoring",
   },
 ];

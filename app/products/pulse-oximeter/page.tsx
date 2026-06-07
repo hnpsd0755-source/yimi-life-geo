@@ -1,117 +1,14 @@
-import type { Metadata } from "next";
+"use client";
+
 import type { ReactNode } from "react";
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title:
-    "Pulse Oximeter Product Family | Fingertip, Handheld, Pediatric & Advanced Models | YimiLife",
-  description:
-    "Explore YimiLife pulse oximeter product architecture including fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations with a clear fingertip model selection matrix.",
-  alternates: {
-    canonical: "https://www.yimilife.com/products/pulse-oximeter",
-  },
-};
+const YIMI_STANDARD_BLUE = "#08A8AE";
 
 type IconProps = {
   className?: string;
-};
-
-const CheckIcon = ({ className = "h-4 w-4" }: IconProps) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.3"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <path d="m9 12 2 2 4-4" />
-  </svg>
-);
-
-
-const SignalHighlightIcon = ({ kind }: { kind: string }) => {
-  if (kind === "trace") {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-5 w-5"
-        aria-hidden="true"
-      >
-        <path d="M4 17c3.5 0 3.5-10 7-10s3.5 10 7 10" />
-        <path d="M4 7h3" />
-        <path d="M17 7h3" />
-        <path d="M12 5v14" />
-        <circle cx="12" cy="12" r="2.2" />
-      </svg>
-    );
-  }
-
-  if (kind === "wave") {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-5 w-5"
-        aria-hidden="true"
-      >
-        <path d="M3 13h4l2-6 4 12 2-6h6" />
-        <path d="M18 5v4h4" />
-        <path d="m22 5-4 4" />
-      </svg>
-    );
-  }
-
-  if (kind === "grid") {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-5 w-5"
-        aria-hidden="true"
-      >
-        <rect x="4" y="4" width="16" height="16" rx="3" />
-        <path d="M8 12l2.5 2.5L16 9" />
-        <path d="M8 2v3" />
-        <path d="M16 2v3" />
-        <path d="M8 19v3" />
-        <path d="M16 19v3" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.9"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-5 w-5"
-      aria-hidden="true"
-    >
-      <path d="M3 12h4l2.2-6 4.6 12 2.2-6h5" />
-      <path d="M4 19h16" />
-      <path d="M17 5l3 3-3 3" />
-    </svg>
-  );
 };
 
 const ArrowIcon = ({ className = "h-4 w-4" }: IconProps) => (
@@ -218,16 +115,284 @@ const Badge = ({
   );
 };
 
+type SpecRow = {
+  label: string;
+  value: string;
+};
+
+type SpecRowTone = {
+  category: string;
+  rowClass: string;
+  accentClass: string;
+  labelClass: string;
+  chipClass: string;
+};
+
+const getSpecRowTone = (label: string): SpecRowTone => {
+  const normalized = label.toLowerCase();
+
+  if (["model", "product type"].some((key) => normalized.includes(key))) {
+    return {
+      category: "Identity",
+      rowClass: "bg-slate-50/90 hover:bg-slate-100/90",
+      accentClass: "border-l-slate-400",
+      labelClass: "text-slate-900",
+      chipClass: "border-slate-200 bg-white text-slate-600",
+    };
+  }
+
+  if (
+    ["measurement", "range", "accuracy", "low perfusion"].some((key) =>
+      normalized.includes(key),
+    )
+  ) {
+    return {
+      category: "Performance",
+      rowClass: "bg-cyan-50/70 hover:bg-cyan-100/70",
+      accentClass: "border-l-cyan-500",
+      labelClass: "text-cyan-900",
+      chipClass: "border-cyan-200 bg-white text-cyan-700",
+    };
+  }
+
+  if (
+    [
+      "display",
+      "power",
+      "bluetooth",
+      "voice",
+      "auto power",
+      "housing",
+      "signal platform",
+    ].some((key) => normalized.includes(key))
+  ) {
+    return {
+      category: "Configuration",
+      rowClass: "bg-blue-50/70 hover:bg-blue-100/70",
+      accentClass: "border-l-blue-500",
+      labelClass: "text-blue-900",
+      chipClass: "border-blue-200 bg-white text-blue-700",
+    };
+  }
+
+  if (
+    ["oem", "moq", "lead time", "certification"].some((key) =>
+      normalized.includes(key),
+    )
+  ) {
+    return {
+      category: "Project",
+      rowClass: "bg-emerald-50/70 hover:bg-emerald-100/70",
+      accentClass: "border-l-emerald-500",
+      labelClass: "text-emerald-900",
+      chipClass: "border-emerald-200 bg-white text-emerald-700",
+    };
+  }
+
+  return {
+    category: "General",
+    rowClass: "bg-white hover:bg-slate-50",
+    accentClass: "border-l-slate-300",
+    labelClass: "text-slate-900",
+    chipClass: "border-slate-200 bg-white text-slate-600",
+  };
+};
+
+const SpecDetailModal = ({
+  open,
+  onClose,
+  title,
+  rows,
+}: {
+  open: boolean;
+  onClose: () => void;
+  title: string;
+  rows: SpecRow[];
+}) => {
+  // Close on ESC key
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open, onClose]);
+
+  // Lock body scroll when open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  if (!open) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[80] flex items-center justify-center overflow-y-auto bg-slate-900/45 p-3 backdrop-blur-sm sm:p-4"
+      aria-labelledby="spec-modal-title"
+      role="dialog"
+      aria-modal="true"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div className="relative z-10 flex max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_24px_80px_-44px_rgba(15,23,42,0.6)] sm:rounded-[1.75rem]">
+        <div className="h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400" />
+
+        <div className="flex flex-none items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:px-5">
+          <h3
+            id="spec-modal-title"
+            className="text-base font-semibold tracking-tight text-slate-950 sm:text-lg"
+          >
+            Full Technical Specifications
+            <span className="ml-2 text-sm font-normal text-slate-500">
+              — {title}
+            </span>
+          </h3>
+          <button
+            onClick={onClose}
+            className="flex h-9 w-9 flex-none items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-xl leading-none text-slate-500 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-800"
+            aria-label="Close specification detail"
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="overflow-y-auto bg-slate-50/80 p-3 sm:p-4">
+          <div className="overflow-x-auto">
+            <div className="min-w-[360px] overflow-hidden rounded-[1.1rem] border border-slate-200 bg-white shadow-sm sm:rounded-[1.25rem]">
+              <div
+                className="grid border-b border-slate-200 px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-white sm:px-5 sm:text-[11px] sm:tracking-[0.16em]"
+                style={{
+                  backgroundColor: YIMI_STANDARD_BLUE,
+                  gridTemplateColumns: "40% 60%",
+                }}
+              >
+                <div>Item</div>
+                <div>Specification</div>
+              </div>
+
+              <dl className="divide-y divide-slate-200">
+                {rows.map((row) => {
+                  const tone = getSpecRowTone(row.label);
+                  return (
+                    <div
+                      key={row.label}
+                      className={`grid gap-2 border-l-[3px] px-3 py-3 text-sm transition sm:gap-3 sm:px-5 ${tone.accentClass} ${tone.rowClass}`}
+                      style={{ gridTemplateColumns: "40% 60%" }}
+                    >
+                      <dt
+                        className={`pr-1 text-[10px] font-semibold uppercase leading-5 tracking-[0.06em] sm:pr-2 sm:text-[13px] sm:tracking-[0.06em] ${tone.labelClass}`}
+                      >
+                        {row.label}
+                      </dt>
+                      <dd className="break-words text-[11px] leading-5 text-slate-700 sm:text-[13px] sm:leading-6">
+                        {row.value}
+                      </dd>
+                    </div>
+                  );
+                })}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const keySpecGroups = [
+  {
+    title: "General Specs",
+    items: [
+      {
+        label: "Product type",
+        value:
+          "Fingertip pulse oximeter configurations, with model directions for selected connected, pediatric or project-based options",
+      },
+      {
+        label: "Measurement parameters",
+        value: "SpO₂, pulse rate and PI by selected model",
+      },
+      {
+        label: "Display options",
+        value: "LED, OLED or TFT options depending on model direction",
+      },
+      {
+        label: "Power options",
+        value: "AAA dry battery or rechargeable lithium battery by configuration",
+      },
+      {
+        label: "Connectivity options",
+        value:
+          "Bluetooth / BLE optional or standard on selected connected models",
+      },
+    ],
+  },
+  {
+    title: "OEM/ODM Options",
+    items: [
+      {
+        label: "Logo customization",
+        value: "Logo, color and housing discussion by project",
+      },
+      {
+        label: "Packaging customization",
+        value: "Retail box, label, IFU and private-label packaging support",
+      },
+      {
+        label: "UI / firmware options",
+        value: "UI language, display direction and firmware options by model",
+      },
+      {
+        label: "Bluetooth SDK support",
+        value:
+          "Available for Bluetooth / BLE model projects after technical scope confirmation",
+      },
+    ],
+  },
+  {
+    title: "Commercial & Quality Info",
+    items: [
+      {
+        label: "MOQ",
+        value:
+          "MOQ starts from 500 pcs for selected models; project-based MOQ may vary by configuration",
+      },
+      {
+        label: "Lead time",
+        value:
+          "Typical lead time: 15–30 days after order confirmation, depending on model, customization scope and order quantity",
+      },
+      {
+        label: "Certifications",
+        value:
+          "25+ FDA / MDR / NMPA certified models available; documentation is model- and market-specific",
+      },
+      {
+        label: "Calibration",
+        value: "100% calibrated with Fluke Index 2 simulator",
+      },
+    ],
+    note:
+      "Calibration wording refers to production calibration, not clinical performance or guaranteed accuracy.",
+  },
+];
+
 const fingertipTracks = [
   {
     title: "Economy Retail Fingertip Models",
     eyebrow: "High-volume baseline",
     description:
       "Cost-conscious finger-clip SpO2 models for pharmacy retail, distributor programs and high-volume private-label product lines.",
-    keyInfo: [
-      "Standard Signal",
-      "AAA dry battery / BLE optional",
-    ],
+    keyInfo: ["Standard Signal", "AAA dry battery / BLE optional"],
     tags: ["High-volume", "Standard Signal", "BLE optional"],
     models: ["YM101 Economy", "YM201 Retail"],
     visuals: [
@@ -241,6 +406,29 @@ const fingertipTracks = [
         note: "Retail display variant",
         shape: "wide",
       },
+    ],
+    specId: "spec-economy-retail-fingertip",
+    specSummary:
+      "Compact retail-ready fingertip SpO2 specification reference for YM101-type high-volume private-label programs.",
+    specRows: [
+      { label: "Model", value: "YM101 / YM201 series" },
+      { label: "Product Type", value: "Fingertip Pulse Oximeter" },
+      { label: "Measurement", value: "SpO₂, PR, PI" },
+      { label: "Measurement Method", value: "Dual-wavelength optical PPG" },
+      { label: "SpO₂ Range", value: "70–100%" },
+      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
+      { label: "Pulse Rate Range", value: "30–250 bpm" },
+      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
+      { label: "Perfusion Index", value: "Supported by selected model" },
+      { label: "PI 0.1% Low-Perfusion", value: "Selected configuration discussion" },
+      { label: "Display", value: "OLED / LCD by selected model" },
+      { label: "Connectivity", value: "Bluetooth optional" },
+      { label: "Power Supply", value: "AAA battery / rechargeable option by model" },
+      { label: "Data Output", value: "Spot-check data / app data by Bluetooth model" },
+      { label: "OEM Options", value: "Logo / color / packaging / IFU" },
+      { label: "MOQ", value: "From 500 pcs" },
+      { label: "Lead Time", value: "15–30 days" },
+      { label: "Certification", value: "Model-dependent certification documentation review" },
     ],
     icon: PulseIcon,
   },
@@ -267,6 +455,29 @@ const fingertipTracks = [
         shape: "compact",
       },
     ],
+    specId: "spec-mainstream-oled-fingertip",
+    specSummary:
+      "Mainstream OLED fingertip SpO2 specification reference for retail-ready private-label programs requiring stronger usability.",
+    specRows: [
+      { label: "Model", value: "YM202 / YM302 series" },
+      { label: "Product Type", value: "OLED Fingertip Pulse Oximeter" },
+      { label: "Measurement", value: "SpO₂, PR, PI" },
+      { label: "Measurement Method", value: "Dual-wavelength optical PPG" },
+      { label: "SpO₂ Range", value: "70–100%" },
+      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
+      { label: "Pulse Rate Range", value: "30–250 bpm" },
+      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
+      { label: "Perfusion Index", value: "Supported by selected model" },
+      { label: "PI 0.1% Low-Perfusion", value: "Selected configuration discussion" },
+      { label: "Display", value: "Dual-color OLED / display-enhanced options" },
+      { label: "Connectivity", value: "Bluetooth optional" },
+      { label: "Power Supply", value: "2 × AAA batteries or rechargeable option by project" },
+      { label: "Data Output", value: "Spot-check data / app data by Bluetooth model" },
+      { label: "OEM Options", value: "Logo / color / packaging / IFU / UI language" },
+      { label: "MOQ", value: "From 500 pcs" },
+      { label: "Lead Time", value: "15–30 days" },
+      { label: "Certification", value: "Model-dependent certification documentation review" },
+    ],
     icon: ShieldIcon,
   },
   {
@@ -274,11 +485,8 @@ const fingertipTracks = [
     eyebrow: "Lithium battery + BLE standard",
     description:
       "Advanced fingertip SpO2 models for premium connected projects, with rechargeable lithium battery architecture and BLE connectivity as the standard direction.",
-    keyInfo: [
-      "Lithium battery + BLE standard",
-      "PulseMatrix™ / 24-bit ADC AFE option",
-    ],
-    tags: ["Rechargeable", "BLE standard", "24-bit ADC AFE option"],
+    keyInfo: ["Lithium battery + BLE standard", "PulseMatrix™ option"],
+    tags: ["Rechargeable", "BLE standard", "PulseMatrix™ option"],
     models: ["YM401 Advanced", "YM503 Advanced BLE"],
     visuals: [
       {
@@ -291,6 +499,29 @@ const fingertipTracks = [
         note: "BLE advanced model",
         shape: "wide",
       },
+    ],
+    specId: "spec-advanced-fingertip",
+    specSummary:
+      "Advanced connected fingertip SpO2 specification reference for rechargeable, BLE-enabled and app-connected product programs.",
+    specRows: [
+      { label: "Model", value: "YM401 / YM503 series" },
+      { label: "Product Type", value: "Advanced Fingertip Pulse Oximeter" },
+      { label: "Measurement", value: "SpO₂, PR, PI / waveform options by model" },
+      { label: "Measurement Method", value: "Dual-wavelength optical PPG" },
+      { label: "SpO₂ Range", value: "70–100%" },
+      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
+      { label: "Pulse Rate Range", value: "30–250 bpm" },
+      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
+      { label: "Perfusion Index", value: "Supported by selected model" },
+      { label: "PI 0.1% Low-Perfusion", value: "Selected configuration discussion" },
+      { label: "Display", value: "OLED / TFT configuration by model" },
+      { label: "Connectivity", value: "BLE standard for connected model direction" },
+      { label: "Power Supply", value: "Rechargeable lithium battery configuration" },
+      { label: "Data Output", value: "SpO₂ / PR / PI app data by Bluetooth model" },
+      { label: "Signal Platform", value: "PulseMatrix™ option by configuration" },
+      { label: "OEM Options", value: "Logo / color / packaging / app data workflow discussion" },
+      { label: "MOQ", value: "From 500 pcs" },
+      { label: "Lead Time", value: "15–30 days" },
     ],
     icon: CpuIcon,
   },
@@ -317,6 +548,29 @@ const fingertipTracks = [
         shape: "compact",
       },
     ],
+    specId: "spec-pediatric-fingertip",
+    specSummary:
+      "Pediatric fingertip SpO2 specification reference for child-oriented family healthcare and mother-baby brand programs.",
+    specRows: [
+      { label: "Model", value: "YM603 / YM602 series" },
+      { label: "Product Type", value: "Pediatric Fingertip Pulse Oximeter" },
+      { label: "Measurement", value: "SpO₂, PR, PI" },
+      { label: "Measurement Method", value: "Dual-wavelength optical PPG" },
+      { label: "SpO₂ Range", value: "70–100%" },
+      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
+      { label: "Pulse Rate Range", value: "30–250 bpm" },
+      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
+      { label: "Perfusion Index", value: "Supported by selected model" },
+      { label: "PI 0.1% Low-Perfusion", value: "Selected configuration discussion" },
+      { label: "Display", value: "TFT / OLED configuration by model" },
+      { label: "Connectivity", value: "Bluetooth optional" },
+      { label: "Power Supply", value: "2 × AAA batteries or rechargeable option by project" },
+      { label: "Housing", value: "Child-friendly housing / smaller finger-cavity design" },
+      { label: "OEM Options", value: "Logo / color / packaging / labeling discussion" },
+      { label: "MOQ", value: "From 500 pcs" },
+      { label: "Lead Time", value: "15–30 days" },
+      { label: "Certification", value: "Model-dependent certification documentation review" },
+    ],
     icon: LayersIcon,
   },
 ];
@@ -330,7 +584,8 @@ const handheldModels = [
     display: "Standard / larger handheld display option",
     ble: "Optional BLE discussion",
     power: "Dry battery or rechargeable configuration by project",
-    scenario: "Point-of-care support, nursing support and distributor handheld SpO2 projects",
+    scenario:
+      "Point-of-care support, nursing support and distributor handheld SpO2 projects",
   },
   {
     model: "YH02",
@@ -340,7 +595,8 @@ const handheldModels = [
     display: "Larger UI / waveform display discussion",
     ble: "Optional BLE discussion",
     power: "Rechargeable lithium or dry-battery configuration by project",
-    scenario: "Projects requiring a more instrument-like handheld SpO2 form factor",
+    scenario:
+      "Projects requiring a more instrument-like handheld SpO2 form factor",
   },
 ];
 
@@ -369,8 +625,7 @@ const fingertipSelector = [
     display: "OLED / TFT",
     ble: "Standard BLE",
     voice: "Optional",
-    signal:
-      "PulseMatrix™ + 24-bit ADC AFE",
+    signal: "PulseMatrix™ option",
     projectFit:
       "Premium retail, app-connected and differentiated SpO2 programs",
   },
@@ -408,8 +663,7 @@ const faqs = [
     question:
       "Where can buyers learn more about PulseMatrix™ signal technology?",
     answer:
-      "This product page focuses on pulse oximeter model selection and configuration. Detailed topics such as low-perfusion tracking, motion-interference handling, SpO2 performance across skin pigmentation signal design and engineering reference areas are organized under the PulseMatrix™ Signal Platform on the Technology page.",
-
+      "This product page is kept focused on pulse oximeter product forms, model directions and fingertip configuration selection. Detailed content about PI 0.1% low-perfusion, performance under motion conditions and SpO₂ performance across diverse skin pigmentation is organized under the PulseMatrix™ Signal Platform.",
   },
   {
     question:
@@ -428,7 +682,7 @@ const structuredData = {
       url: "https://www.yimilife.com/products/pulse-oximeter",
       name: "Pulse Oximeter Product Family | YimiLife",
       description:
-        "YimiLife pulse oximeter product family page covering fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations with a product-focused selection matrix.",
+        "YimiLife pulse oximeter OEM/ODM product family page covering fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations for B2B procurement evaluation.",
       isPartOf: {
         "@type": "WebSite",
         name: "YimiLife",
@@ -498,6 +752,13 @@ const structuredData = {
 };
 
 export default function PulseOximeterProductPage() {
+  const [activeSpec, setActiveSpec] = useState<{
+    title: string;
+    rows: SpecRow[];
+  } | null>(null);
+
+  const closeModal = useCallback(() => setActiveSpec(null), []);
+
   return (
     <main className="bg-slate-50 text-slate-950">
       <script
@@ -505,12 +766,25 @@ export default function PulseOximeterProductPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
+      {/* Spec Detail Modal */}
+      {activeSpec && (
+        <SpecDetailModal
+          open={true}
+          onClose={closeModal}
+          title={activeSpec.title}
+          rows={activeSpec.rows}
+        />
+      )}
+
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-16">
         <div className="grid items-center gap-10 overflow-hidden rounded-[2.5rem] bg-slate-950 p-7 text-white shadow-2xl shadow-slate-900/20 md:p-12 lg:grid-cols-[1.02fr_0.98fr] lg:p-16">
           <div className="relative z-10 max-w-2xl">
             <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-400">
-              <Link href="/products/pulse-oximeter" className="hover:text-white">
+              <Link
+                href="/products/pulse-oximeter"
+                className="hover:text-white"
+              >
                 Products
               </Link>
               <span>/</span>
@@ -530,10 +804,16 @@ export default function PulseOximeterProductPage() {
             </p>
 
             <p className="mt-4 text-base leading-8 text-slate-400">
-              For private label medical device brands, YimiLife supports
-              structured product configuration discussions across display, power
-              supply, BLE option, user group and tiered signal-processing
-              architecture.
+              As a B2B OEM/ODM medical device manufacturer, YimiLife supports
+              overseas brands with structured product configuration discussions
+              across display, power supply, BLE option, user group and
+              signal-processing architecture.
+            </p>
+
+            <p className="mt-4 text-sm leading-7 text-slate-400">
+              Procurement reference: 3,000㎡ manufacturing site, 300,000 units
+              monthly capacity and 25+ FDA / MDR / NMPA certified models for
+              buyer evaluation.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -556,30 +836,76 @@ export default function PulseOximeterProductPage() {
           <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
             <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl" />
             <div className="absolute -bottom-20 -left-12 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
-            <div className="relative flex h-full min-h-[320px] items-center justify-center rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
+            <div className="relative h-full min-h-[320px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
               <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(#67e8f9_1px,transparent_1px)] [background-size:20px_20px]" />
-              <div className="relative w-full max-w-md rounded-[2rem] border border-cyan-300/20 bg-white/10 p-6 backdrop-blur-sm">
-                <div className="grid grid-cols-2 gap-4">
-                  {["Fingertip", "Pediatric", "Advanced", "Handheld"].map(
-                    (item) => (
-                      <div
-                        key={item}
-                        className="rounded-2xl border border-white/10 bg-white/10 p-4"
-                      >
-                        <div className="mb-4 h-24 rounded-xl bg-gradient-to-br from-white/70 to-cyan-100/40 shadow-inner" />
-                        <p className="text-sm font-semibold text-white">
-                          {item}
-                        </p>
-                        <p className="mt-1 text-xs text-slate-400">
-                          SpO2 product form
-                        </p>
-                      </div>
-                    ),
-                  )}
-                </div>
+              <Image
+                src="/homepage/pulse-oximeter.png"
+                alt="YimiLife pulse oximeter product family photo"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-x-6 bottom-6 rounded-3xl border border-white/10 bg-slate-950/70 p-4 text-white backdrop-blur-sm">
+                <p className="text-sm uppercase tracking-[0.18em] text-cyan-300">
+                  Pulse oximeter family
+                </p>
+                <p className="mt-2 text-sm leading-6 text-slate-200">
+                  Fingertip, handheld and pediatric SpO2 products for
+                  private-label OEM/ODM.
+                </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Key specifications */}
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div className="max-w-3xl">
+          <Badge tone="cyan">B2B Buyer Reference</Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+            Key Specifications & OEM Information
+          </h2>
+          <p className="mt-5 text-lg leading-9 text-slate-600">
+            A concise reference for buyer-side product selection, OEM/ODM
+            discussion and early project evaluation. Full model-specific
+            technical specifications remain available in the detailed modal for
+            each product track.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          {keySpecGroups.map((group) => (
+            <article
+              key={group.title}
+              className="flex h-full flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                {group.title}
+              </h3>
+              <dl className="mt-5 divide-y divide-slate-100">
+                {group.items.map((item) => (
+                  <div
+                    key={item.label}
+                    className="grid gap-3 py-3 text-sm"
+                    style={{ gridTemplateColumns: "40% 60%" }}
+                  >
+                    <dt className="text-xs font-semibold uppercase leading-5 tracking-[0.08em] text-slate-500">
+                      {item.label}
+                    </dt>
+                    <dd className="text-sm leading-6 text-slate-700">
+                      {item.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              {group.note && (
+                <p className="mt-auto rounded-2xl border border-cyan-100 bg-cyan-50 px-4 py-3 text-xs leading-5 text-cyan-900">
+                  {group.note}
+                </p>
+              )}
+            </article>
+          ))}
         </div>
       </section>
 
@@ -596,14 +922,18 @@ export default function PulseOximeterProductPage() {
                 Fingertip Pulse Oximeter Tracks
               </h2>
               <p className="mt-4 text-base leading-8 text-slate-300 md:text-lg">
-                Four compact product tracks connect buyer requirements with representative
-                model directions. Each row keeps the configuration logic on the left and
-                the linked model visuals on the right.
+                Four compact product tracks connect buyer requirements with
+                representative model directions. Each row keeps the
+                configuration logic on the left and the linked model visuals on
+                the right.
               </p>
             </div>
             <div className="rounded-3xl border border-cyan-300/25 bg-cyan-300/10 px-5 py-4 text-sm leading-6 text-cyan-100 lg:max-w-sm">
-              <span className="font-semibold text-cyan-200">Reading logic:</span> choose the track first,
-              then review the two linked model directions beside it.
+              <span className="font-semibold text-cyan-200">
+                Reading logic:
+              </span>{" "}
+              choose the track first, then review the two linked model
+              directions beside it.
             </div>
           </div>
 
@@ -643,6 +973,20 @@ export default function PulseOximeterProductPage() {
                         </div>
                       ))}
                     </div>
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActiveSpec({
+                          title: track.title,
+                          rows: track.specRows,
+                        })
+                      }
+                      className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-cyan-200 bg-cyan-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-950 shadow-sm shadow-cyan-950/10 transition hover:border-cyan-100 hover:bg-cyan-300 hover:text-slate-950 hover:shadow-cyan-300/30"
+                    >
+                      View Full Technical Specifications
+                      <ArrowIcon className="h-3.5 w-3.5" />
+                    </button>
                   </div>
 
                   <div className="grid gap-3 sm:grid-cols-2">
@@ -654,7 +998,9 @@ export default function PulseOximeterProductPage() {
                         <div className="flex h-36 items-center justify-center p-4 md:h-full md:min-h-[175px]">
                           <div
                             className={`relative rounded-[1.6rem] border border-slate-600 bg-slate-950 shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300 group-hover:shadow-cyan-300/50 ${
-                              visual.shape === "wide" ? "h-24 w-40" : "h-28 w-32"
+                              visual.shape === "wide"
+                                ? "h-24 w-40"
+                                : "h-28 w-32"
                             }`}
                           >
                             <div className="absolute left-1/2 top-3 h-9 w-20 -translate-x-1/2 rounded-lg bg-cyan-300/30" />
@@ -708,7 +1054,6 @@ export default function PulseOximeterProductPage() {
             "High-Volume",
             "App Integration",
             "PulseMatrix™",
-            "24-bit ADC AFE",
           ].map((tag) => (
             <span
               key={tag}
@@ -770,8 +1115,9 @@ export default function PulseOximeterProductPage() {
               Handheld Pulse Oximeter Models
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600 md:text-lg">
-              YH01 and YH02 belong to one focused handheld SpO2 family. The selection
-              difference is mainly display, BLE and battery configuration.
+              YH01 and YH02 belong to one focused handheld SpO2 family. The
+              selection difference is mainly display, BLE and battery
+              configuration.
             </p>
           </div>
         </div>
@@ -790,8 +1136,9 @@ export default function PulseOximeterProductPage() {
                   YH01 / YH02 Configuration Pair
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">
-                  A compact two-model handheld line for customers that need external-probe
-                  SpO2 form factors rather than a broad fingertip product pool.
+                  A compact two-model handheld line for customers that need
+                  external-probe SpO2 form factors rather than a broad fingertip
+                  product pool.
                 </p>
               </div>
             </div>
@@ -857,8 +1204,8 @@ export default function PulseOximeterProductPage() {
             <p className="mt-4 text-base leading-8 text-slate-700">
               This page is kept focused on pulse oximeter product forms, model
               directions and fingertip configuration selection. Detailed content
-              about low-perfusion tracking, motion-interference handling,
-              SpO2 performance across skin pigmentation signal design and engineering reference areas is
+              about PI 0.1% low-perfusion, performance under motion conditions
+              and SpO₂ performance across diverse skin pigmentation is
               organized under the PulseMatrix™ Signal Platform.
             </p>
           </div>

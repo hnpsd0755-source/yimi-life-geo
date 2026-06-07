@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Motion Artifact Rejection Pulse Oximeter | YimiLife",
+  title: "Performance Under Motion Conditions | YimiLife PulseMatrix™",
   description:
-    "YimiLife explains motion artifact rejection pulse oximeter technology for finger movement, elderly tremor, low perfusion combined with motion and OEM/ODM SpO2 product development.",
+    "YimiLife explains PulseMatrix™ performance under motion conditions for finger movement, elderly tremor, low perfusion combined with motion and OEM/ODM SpO2 product development.",
   alternates: {
     canonical: "https://www.yimilife.com/technology/motion-artifact-rejection",
   },
   openGraph: {
-    title: "Motion Artifact Rejection Pulse Oximeter | YimiLife",
+    title: "Performance Under Motion Conditions | YimiLife PulseMatrix™",
     description:
-      "Explore YimiLife’s motion artifact rejection pulse oximeter technology for medical-grade SpO2 monitoring, elderly tremor, home healthcare and OEM/ODM product development.",
+      "Explore YimiLife PulseMatrix™ performance under motion conditions for SpO2 monitoring, elderly tremor, home healthcare and OEM/ODM product development.",
     url: "https://www.yimilife.com/technology/motion-artifact-rejection",
     siteName: "YimiLife",
     type: "website",
@@ -197,19 +197,19 @@ const faqs = [
       "Elderly users may have weaker peripheral circulation and more frequent finger tremor. This creates a combined challenge where low perfusion and motion disturbance occur at the same time.",
   },
   {
-    question: "How does PulseMatrix™ support motion artifact rejection?",
+    question: "How does PulseMatrix™ support performance under motion conditions?",
     answer:
-      "PulseMatrix™ supports motion artifact rejection through waveform quality assessment, signal stability evaluation, artifact screening and SpO2 signal processing strategies for challenging measurement scenarios.",
+      "PulseMatrix™ supports performance under motion conditions through waveform quality assessment, signal stability evaluation, artifact screening and SpO2 signal processing strategies for challenging measurement scenarios.",
   },
   {
-    question: "Is motion artifact rejection only a software feature?",
+    question: "Is performance under motion conditions only a software feature?",
     answer:
-      "No. Motion artifact rejection depends on optical design, mechanical fit, analog front-end quality, sampling strategy, waveform assessment, algorithm processing and product-level verification.",
+      "No. Performance under motion conditions depends on optical design, mechanical fit, analog front-end quality, sampling strategy, waveform assessment, algorithm processing and product-level verification.",
   },
   {
-    question: "Can YimiLife support motion-resistant SpO2 OEM/ODM projects?",
+    question: "Can YimiLife support SpO2 OEM/ODM projects involving motion conditions?",
     answer:
-      "Yes. YimiLife can discuss motion-resistant SpO2 design requirements during OEM/ODM project evaluation, including target use scenarios, product form factor, connected device requirements and validation approach.",
+      "Yes. YimiLife can discuss performance under motion conditions during OEM/ODM project evaluation, including target use scenarios, product form factor, connected device requirements and validation approach.",
   },
 ];
 
@@ -232,9 +232,9 @@ const jsonLd = {
       "@type": "TechArticle",
       "@id":
         "https://www.yimilife.com/technology/motion-artifact-rejection#article",
-      headline: "Motion Artifact Rejection Pulse Oximeter Technology",
+      headline: "Performance Under Motion Conditions for Pulse Oximeters",
       description:
-        "A technical overview of motion artifact rejection in pulse oximetry, including elderly tremor, low perfusion combined with motion, waveform quality assessment and PulseMatrix™ support for OEM/ODM projects.",
+        "A technical overview of performance under motion conditions in pulse oximetry, including elderly tremor, low perfusion combined with motion, waveform quality assessment and PulseMatrix™ support for OEM/ODM projects.",
       author: {
         "@id": "https://www.yimilife.com/#organization",
       },
@@ -251,15 +251,15 @@ const jsonLd = {
       "@id":
         "https://www.yimilife.com/technology/motion-artifact-rejection#webpage",
       url: "https://www.yimilife.com/technology/motion-artifact-rejection",
-      name: "Motion Artifact Rejection Pulse Oximeter Technology",
+      name: "Performance Under Motion Conditions for Pulse Oximeters",
       description:
-        "Motion artifact rejection pulse oximeter technology page for PulseMatrix™ and OEM/ODM product development.",
+        "Performance under motion conditions page for PulseMatrix™ and OEM/ODM pulse oximeter development.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
       about: {
         "@type": "Thing",
-        name: "Motion artifact rejection pulse oximeter technology",
+        name: "Performance under motion conditions pulse oximeter technology",
       },
       publisher: {
         "@id": "https://www.yimilife.com/#organization",
@@ -324,15 +324,15 @@ export default function MotionArtifactRejectionPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              PulseMatrix™ Motion Artifact Rejection
+              PulseMatrix™ Performance Under Motion Conditions
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Motion Artifact Rejection Pulse Oximeter Technology
+              Performance Under Motion Conditions for Pulse Oximeters
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              PulseMatrix™ supports motion artifact rejection pulse oximeter technology by combining
+              PulseMatrix™ supports performance under motion conditions by combining
               motion-aware signal acquisition, waveform quality assessment,
               artifact screening and SpO2 signal processing for more stable
               monitoring behavior.
@@ -404,9 +404,9 @@ export default function MotionArtifactRejectionPage() {
                   href="/technology"
                   className="font-semibold text-cyan-200 underline underline-offset-4"
                 >
-                  PulseMatrix™ SpO2 Technology Platform
+                  PulseMatrix™ Signal Platform
                 </Link>
-                , together with low perfusion monitoring and SpO2 performance across skin pigmentation in pulse oximeter development.
+                , together with PI 0.1% low-perfusion and SpO₂ performance across diverse skin pigmentation in pulse oximeter development.
               </p>
             </div>
           </div>
@@ -473,10 +473,10 @@ export default function MotionArtifactRejectionPage() {
               PulseMatrix™ approach
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              A system-level approach to motion artifact rejection
+              A system-level approach to performance under motion conditions
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              PulseMatrix™ treats motion artifact rejection as a combined
+              PulseMatrix™ treats performance under motion conditions as a combined
               hardware, signal quality and algorithm challenge. The goal is to
               support stable SpO2 monitoring behavior when the waveform is
               disturbed by motion or tremor.
@@ -530,13 +530,13 @@ export default function MotionArtifactRejectionPage() {
             </p>
 
             <p>
-              This is why motion artifact rejection should be considered
+              This is why performance under motion conditions should be considered
               together with{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                low perfusion SpO2 monitoring
+                PI 0.1% low-perfusion
               </Link>
               . For elderly users and home healthcare scenarios, these two
               challenges often appear together.
@@ -566,33 +566,33 @@ export default function MotionArtifactRejectionPage() {
           <div className="space-y-5 text-base leading-8 text-slate-300">
             <p>
               For OEM/ODM and private label medical device manufacturing customers,
-              motion artifact rejection creates a stronger product story than
+              performance under motion conditions creates a stronger product story than
               basic SpO2 measurement. It is relevant
               for elderly monitoring, home healthcare, wearable SpO2 devices and
               remote patient monitoring solutions.
             </p>
 
             <p>
-              YimiLife connects motion artifact rejection with the broader{" "}
+              YimiLife connects performance under motion conditions with the broader{" "}
               <Link
                 href="/technology"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                PulseMatrix™ SpO2 Technology Platform
+                PulseMatrix™ Signal Platform
               </Link>
               , including{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                low perfusion SpO2 monitoring
+                PI 0.1% low-perfusion
               </Link>{" "}
               and{" "}
               <Link
                 href="/technology/skin-tone-fairness"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                SpO2 performance across skin pigmentation in pulse oximeter development
+                SpO₂ performance across diverse skin pigmentation
               </Link>
               .
             </p>
@@ -662,18 +662,18 @@ export default function MotionArtifactRejectionPage() {
             <p>
               YimiLife’s pulse oximeter manufacturing is supported by the{" "}
               <Link
-                href="/quality"
+                href="/about#quality-compliance"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 ISO 13485 medical device manufacturing quality
               </Link>
               . Each unit is calibrated and verified using Fluke Index 2
-              clinical simulators before shipment to support consistent
+              simulator before shipment to support consistent
               production output.
             </p>
 
             <p>
-              For motion artifact rejection projects, our team can discuss
+              For projects involving performance under motion conditions, our team can discuss
               target use scenarios, test expectations, Bluetooth data behavior,
               UI interaction requirements and production verification strategy
               during the OEM/ODM evaluation stage.
@@ -690,7 +690,7 @@ export default function MotionArtifactRejectionPage() {
                 FAQ
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                Frequently asked questions about motion artifact rejection
+                Frequently asked questions about performance under motion conditions
               </h2>
             </div>
 
@@ -716,11 +716,11 @@ export default function MotionArtifactRejectionPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Build motion-resistant SpO2 capability into your next product
+            Build performance under motion conditions into your next product
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-            Looking for a pulse oximeter OEM/ODM partner with motion artifact
-            rejection technology, low perfusion experience and connected-device
+            Looking for a pulse oximeter OEM/ODM partner with performance under
+            motion conditions, PI 0.1% low-perfusion experience and connected-device
             customization support? Share your project requirements with YimiLife.
           </p>
 

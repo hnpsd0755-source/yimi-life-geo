@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   },
 };
 
+const YIMI_STANDARD_BLUE = "#08A8AE";
+
 type IconProps = {
   className?: string;
 };
@@ -130,6 +132,169 @@ const Badge = ({
   );
 };
 
+type SpecRow = {
+  label: string;
+  value: string;
+};
+
+type SpecRowTone = {
+  category: string;
+  rowClass: string;
+  accentClass: string;
+  labelClass: string;
+  chipClass: string;
+};
+
+const getSpecRowTone = (label: string): SpecRowTone => {
+  const normalized = label.toLowerCase();
+
+  if (["model", "product type"].some((key) => normalized.includes(key))) {
+    return {
+      category: "Identity",
+      rowClass: "bg-slate-50/90 hover:bg-slate-100/90",
+      accentClass: "border-l-slate-400",
+      labelClass: "text-slate-900",
+      chipClass: "border-slate-200 bg-white text-slate-600",
+    };
+  }
+
+  if (
+    ["measurement", "range", "accuracy", "cuff", "memory"].some((key) =>
+      normalized.includes(key),
+    )
+  ) {
+    return {
+      category: "Performance",
+      rowClass: "bg-cyan-50/70 hover:bg-cyan-100/70",
+      accentClass: "border-l-cyan-500",
+      labelClass: "text-cyan-900",
+      chipClass: "border-cyan-200 bg-white text-cyan-700",
+    };
+  }
+
+  if (
+    ["display", "power", "connectivity", "bluetooth", "data", "app", "auto power"].some((key) =>
+      normalized.includes(key),
+    )
+  ) {
+    return {
+      category: "Configuration",
+      rowClass: "bg-blue-50/70 hover:bg-blue-100/70",
+      accentClass: "border-l-blue-500",
+      labelClass: "text-blue-900",
+      chipClass: "border-blue-200 bg-white text-blue-700",
+    };
+  }
+
+  if (
+    ["oem", "moq", "lead time", "certification"].some((key) =>
+      normalized.includes(key),
+    )
+  ) {
+    return {
+      category: "Project",
+      rowClass: "bg-emerald-50/70 hover:bg-emerald-100/70",
+      accentClass: "border-l-emerald-500",
+      labelClass: "text-emerald-900",
+      chipClass: "border-emerald-200 bg-white text-emerald-700",
+    };
+  }
+
+  return {
+    category: "General",
+    rowClass: "bg-white hover:bg-slate-50",
+    accentClass: "border-l-slate-300",
+    labelClass: "text-slate-900",
+    chipClass: "border-slate-200 bg-white text-slate-600",
+  };
+};
+
+const SpecDetailModal = ({
+  id,
+  title,
+  summary,
+  rows,
+}: {
+  id: string;
+  title: string;
+  summary: string;
+  rows: SpecRow[];
+}) => (
+  <div
+    id={id}
+    className="fixed inset-0 z-[80] hidden items-center justify-center overflow-y-auto bg-slate-900/45 p-3 backdrop-blur-sm target:flex sm:p-4"
+    aria-labelledby={`${id}-title`}
+    role="dialog"
+    aria-modal="true"
+  >
+    <a
+      href="#bp-platforms"
+      className="absolute inset-0 cursor-default"
+      aria-label="Close specification detail"
+    />
+
+    <div className="relative z-10 flex max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_24px_80px_-44px_rgba(15,23,42,0.6)] sm:rounded-[1.75rem]">
+      <div className="h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400" />
+
+      <div className="flex flex-none items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:px-5">
+        <h3
+          id={`${id}-title`}
+          className="text-base font-semibold tracking-tight text-slate-950 sm:text-lg"
+        >
+          Blood Pressure Monitor Specification
+          <span className="sr-only">: {title}. {summary}</span>
+        </h3>
+        <a
+          href="#bp-platforms"
+          className="flex h-9 w-9 flex-none items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-xl leading-none text-slate-500 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-800"
+          aria-label="Close specification detail"
+        >
+          ×
+        </a>
+      </div>
+
+      <div className="overflow-y-auto bg-slate-50/80 p-3 sm:p-4">
+        <div className="overflow-x-auto">
+          <div className="min-w-[360px] overflow-hidden rounded-[1.1rem] border border-slate-200 bg-white shadow-sm sm:rounded-[1.25rem]">
+            <div
+              className="grid border-b border-slate-200 px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-white sm:px-5 sm:text-[11px] sm:tracking-[0.16em]"
+              style={{
+                backgroundColor: YIMI_STANDARD_BLUE,
+                gridTemplateColumns: "40% 60%",
+              }}
+            >
+              <div>Item</div>
+              <div>Specification</div>
+            </div>
+
+            <dl className="divide-y divide-slate-200">
+              {rows.map((row) => {
+                const tone = getSpecRowTone(row.label);
+                return (
+                  <div
+                    key={row.label}
+                    className={`grid gap-2 border-l-[3px] px-3 py-3 text-sm transition sm:gap-3 sm:px-5 ${tone.accentClass} ${tone.rowClass}`}
+                    style={{ gridTemplateColumns: "40% 60%" }}
+                  >
+                    <dt
+                      className={`pr-1 text-[10px] font-semibold uppercase leading-5 tracking-[0.06em] sm:pr-2 sm:text-[13px] sm:tracking-[0.06em] ${tone.labelClass}`}
+                    >
+                      {row.label}
+                    </dt>
+                    <dd className="break-words text-[11px] leading-5 text-slate-700 sm:text-[13px] sm:leading-6">
+                      {row.value}
+                    </dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const platformOptions = [
   {
     title: "Standard Upper-Arm BP Monitors",
@@ -140,6 +305,29 @@ const platformOptions = [
     tags: ["Large display", "Simple operation", "Retail-ready configuration"],
     bestFor:
       "Buyers who need a practical home BP monitor with clear user interface, stable platform options and private-label readiness.",
+    specId: "spec-standard-upper-arm-bp",
+    specSummary:
+      "Standard upper-arm blood pressure monitor specification reference for private-label home healthcare and distributor programs.",
+    specRows: [
+      { label: "Model", value: "YP03 series" },
+      { label: "Product Type", value: "Upper-arm Blood Pressure Monitor" },
+      { label: "Measurement Method", value: "Oscillometric method" },
+      { label: "Measurement", value: "Systolic / diastolic blood pressure, PR" },
+      { label: "Pressure Range", value: "0–299 mmHg" },
+      { label: "Pulse Rate Range", value: "40–180 bpm" },
+      { label: "Pressure Accuracy", value: "±3 mmHg" },
+      { label: "Pulse Rate Accuracy", value: "±5%" },
+      { label: "Cuff Size", value: "22–32 cm standard adult cuff" },
+      { label: "Optional Cuff", value: "22–42 cm / larger cuff by project" },
+      { label: "Display", value: "LCD" },
+      { label: "Memory", value: "Single-user / multi-user by model" },
+      { label: "Power Supply", value: "Battery-powered" },
+      { label: "Auto Power-off", value: "Yes" },
+      { label: "OEM Options", value: "Logo / color / packaging / IFU" },
+      { label: "MOQ", value: "From 500 pcs" },
+      { label: "Lead Time", value: "15–30 days" },
+      { label: "Certification", value: "FDA / MDR / NMPA model experience available" },
+    ],
   },
   {
     title: "Bluetooth BP Monitors",
@@ -150,6 +338,29 @@ const platformOptions = [
     tags: ["BLE data transmission", "App workflow discussion", "Connected health use cases"],
     bestFor:
       "Digital health, home-care and distribution teams that need BP readings to connect with software or data-review workflows.",
+    specId: "spec-bluetooth-bp-monitor",
+    specSummary:
+      "Bluetooth upper-arm blood pressure monitor specification reference for app-connected and digital health product programs.",
+    specRows: [
+      { label: "Model", value: "Bluetooth BP Monitor series" },
+      { label: "Product Type", value: "Bluetooth Upper-arm Blood Pressure Monitor" },
+      { label: "Measurement Method", value: "Oscillometric method" },
+      { label: "Measurement", value: "Systolic / diastolic blood pressure, PR" },
+      { label: "Pressure Range", value: "0–299 mmHg" },
+      { label: "Pulse Rate Range", value: "40–180 bpm" },
+      { label: "Pressure Accuracy", value: "±3 mmHg" },
+      { label: "Pulse Rate Accuracy", value: "±5%" },
+      { label: "Cuff Size", value: "22–32 cm standard adult cuff" },
+      { label: "Optional Cuff", value: "22–42 cm / larger cuff by project" },
+      { label: "Display", value: "LCD" },
+      { label: "Connectivity", value: "Bluetooth Low Energy" },
+      { label: "Data Output", value: "BP / PR measurement records" },
+      { label: "Power Supply", value: "Battery / Type-C by selected model" },
+      { label: "App Workflow", value: "App data sync by project configuration" },
+      { label: "OEM Options", value: "Logo / packaging / IFU / app workflow" },
+      { label: "MOQ", value: "From 500 pcs" },
+      { label: "Lead Time", value: "15–30 days" },
+    ],
   },
   {
     title: "Platform-Based Customization",
@@ -160,6 +371,28 @@ const platformOptions = [
     tags: ["Logo and color direction", "Cuff and labeling options", "Packaging and IFU support"],
     bestFor:
       "Brands that want to start from a mature platform while adapting the product package and selected details for their market.",
+    specId: "spec-home-healthcare-monitor-platform",
+    specSummary:
+      "BP-based multi-parameter home healthcare monitor platform reference for deeper OEM/ODM configuration discussions.",
+    specRows: [
+      { label: "Model", value: "Home Healthcare Monitor platform" },
+      { label: "Product Type", value: "BP-based Multi-Parameter Monitor" },
+      { label: "Measurement Method", value: "Oscillometric BP measurement" },
+      { label: "Core Measurement", value: "Blood pressure, pulse rate" },
+      { label: "Optional Modules", value: "SpO₂ / temperature by project configuration" },
+      { label: "Pressure Range", value: "0–299 mmHg" },
+      { label: "Pulse Rate Range", value: "40–180 bpm" },
+      { label: "Pressure Accuracy", value: "±3 mmHg for BP module" },
+      { label: "Pulse Rate Accuracy", value: "±5% for BP module" },
+      { label: "Display", value: "Large LCD / TFT by selected configuration" },
+      { label: "Connectivity", value: "Bluetooth / Wi-Fi by project configuration" },
+      { label: "Power Supply", value: "Type-C / adapter-supported configuration" },
+      { label: "Data Workflow", value: "App / cloud workflow by project" },
+      { label: "OEM Options", value: "Housing / UI / packaging / IFU" },
+      { label: "MOQ", value: "Project confirmation required" },
+      { label: "Lead Time", value: "Project confirmation required" },
+      { label: "Certification Path", value: "Subject to configuration and target market" },
+    ],
   },
 ];
 
@@ -326,7 +559,7 @@ export default function BloodPressureMonitorProductPage() {
                 <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white">
                   <Image
                     src="/homepage/blood-pressure-monitor.png"
-                    alt="YimiLife private-label blood pressure monitor platform"
+                    alt="YimiLife blood pressure monitor product family photo"
                     width={900}
                     height={675}
                     className="aspect-[4/3] w-full object-cover"
@@ -354,7 +587,7 @@ export default function BloodPressureMonitorProductPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+      <section id="bp-platforms" className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
         <div className="max-w-3xl">
           <Badge>Product Platform Options</Badge>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
@@ -414,6 +647,19 @@ export default function BloodPressureMonitorProductPage() {
                   <span className="font-semibold text-slate-950">Best for:</span>{" "}
                   {option.bestFor}
                 </p>
+                <a
+                  href={`#${option.specId}`}
+                  className="mt-5 inline-flex items-center justify-center rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2.5 text-sm font-semibold text-cyan-800 transition hover:border-cyan-300 hover:bg-cyan-100"
+                >
+                  View Specification Detail
+                  <ArrowIcon className="ml-2 h-4 w-4" />
+                </a>
+                <SpecDetailModal
+                  id={option.specId}
+                  title={option.title}
+                  summary={option.specSummary}
+                  rows={option.specRows}
+                />
               </article>
             );
           })}

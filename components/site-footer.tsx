@@ -38,7 +38,7 @@ const footerColumns = [
     links: [
       ["Pulse Oximeters", "/products/pulse-oximeter"],
       ["Blood Pressure Monitors", "/products/blood-pressure-monitor"],
-      ["Wearable Monitoring", "/products/wearable-monitoring"],
+      ["Wearable Monitoring Devices", "/products/wearable-monitoring"],
     ],
   },
   {
@@ -54,10 +54,10 @@ const footerColumns = [
   {
     title: "Technology",
     links: [
-      ["PulseMatrix Signal Platform", "/technology"],
-      ["Low-Perfusion SpO2", "/technology#low-perfusion"],
-      ["Motion Artifact Rejection", "/technology#motion-artifact"],
-      ["SpO2 Performance Across Skin Pigmentation", "/technology#skin-pigmentation"],
+      ["PulseMatrix™ Signal Platform", "/technology"],
+      ["PI 0.1% Low-Perfusion", "/technology#low-perfusion"],
+      ["Motion Conditions", "/technology#motion-artifact"],
+      ["SpO₂ Performance Across Diverse Skin Pigmentation", "/technology#skin-pigmentation"],
     ],
   },
   {
@@ -73,8 +73,8 @@ const footerColumns = [
 
 const trustItems = [
   "ISO 13485 Quality Management System",
-  "3,000 m2 Production Facility",
-  "25+ Certified-Model Project Experience",
+  "3,000㎡ Production Facility",
+  "25+ FDA / MDR / NMPA certified models",
   "300,000 Units / Month Pulse Oximeter Capacity",
 ];
 
@@ -101,7 +101,7 @@ export function SiteFooter() {
               <Link href="/products/blood-pressure-monitor" className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 blood pressure monitor
               </Link>{" "}
-              platforms and a launch-ready wearable monitoring product line, with private-label customization and production verification under an ISO 13485 quality system.
+              platforms and a product line of wearable monitoring devices, with private-label customization and production verification under an ISO 13485 quality system.
             </p>
 
             <div className="mt-6 grid gap-2 text-sm text-slate-300">
@@ -179,7 +179,7 @@ export function SiteFooter() {
           </div>
 
           <p className="mt-4 max-w-4xl text-xs leading-6 text-slate-500">
-            Fluke Index 2 references on this website refer to pulse oximeter production-line calibration and verification workflows where applicable, under defined product and verification conditions. They are not clinical validation claims or guarantees of clinical accuracy for every product configuration.
+            Fluke Index 2 references on this website refer to pulse oximeter production-line calibration and verification workflows under defined product and verification conditions. They are not clinical validation claims or guarantees of clinical accuracy for every product configuration.
           </p>
         </div>
       </div>

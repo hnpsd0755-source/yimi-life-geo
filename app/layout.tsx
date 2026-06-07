@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "blood pressure monitor OEM manufacturer",
     "private label medical device manufacturer",
     "ISO 13485 medical device manufacturer",
-    "PulseMatrix SpO2 technology",
+    "PulseMatrix signal platform",
   ],
   robots: {
     index: true,
@@ -87,7 +87,7 @@ const siteJsonLd = {
         "SpO2 monitoring",
         "Low perfusion SpO2",
         "Motion artifact rejection",
-        "SpO2 performance across skin pigmentation",
+        "SpO₂ performance across diverse skin pigmentation",
         "Bluetooth SDK integration",
         "ISO 13485 quality management system",
       ],

@@ -28,7 +28,7 @@ const trustPoints = [
     href: "/about#quality-compliance",
   },
   {
-    title: "3,000 m2 Production Facility",
+    title: "3,000㎡ Production Facility",
     text: "Focused manufacturing space for pulse oximeter and blood pressure monitor project delivery.",
     href: "/about",
   },
@@ -38,13 +38,13 @@ const trustPoints = [
     href: "/about#manufacturing",
   },
   {
-    title: "25+ Certified-Model Experience",
-    text: "Certified-model-based project support for target-market-oriented evaluation.",
+    title: "25+ FDA / MDR / NMPA certified models",
+    text: "Certified-model experience for target-market-oriented OEM/ODM evaluation.",
     href: "/about#quality-compliance",
   },
   {
     title: "Product-Focused OEM/ODM",
-    text: "Pulse oximeters, blood pressure monitors and wearable monitoring platforms.",
+    text: "Pulse oximeters, blood pressure monitors and wearable monitoring devices.",
     href: "#product-families",
   },
 ];
@@ -53,7 +53,7 @@ const quickAnswers = [
   {
     question: "Are you a real manufacturer?",
     answer:
-      "YimiLife operates a 3,000 m2 production facility in Shenzhen focused on pulse oximeters and blood pressure monitors.",
+      "YimiLife operates a 3,000㎡ production facility in Shenzhen focused on pulse oximeters and blood pressure monitors.",
     proof: "Factory-based execution",
   },
   {
@@ -71,7 +71,7 @@ const quickAnswers = [
   {
     question: "How do you support production consistency?",
     answer:
-      "Pulse oximeter production includes 100% production-line calibration and verification using Fluke Index 2 where applicable.",
+      "Pulse oximeter production includes 100% calibrated with Fluke Index 2 simulator under defined product and verification conditions.",
     proof: "Production verification",
   },
   {
@@ -105,7 +105,7 @@ const productFamilies = [
     title: "Blood Pressure Monitors",
     status: "Mature / Customizable Product Line",
     description:
-      "Upper-arm blood pressure monitors, Bluetooth BP models and home healthcare platform directions for brand and distributor projects.",
+      "Upper-arm blood pressure monitors, Bluetooth BP models and home healthcare platform options for brand and distributor projects.",
     bullets: [
       "Standard upper-arm BP monitors",
       "Bluetooth connectivity options",
@@ -117,18 +117,18 @@ const productFamilies = [
     accent: "amber" as Tone,
   },
   {
-    title: "Wearable Monitoring",
-    status: "Wearable SpO2 Platform Support",
+    title: "Wearable Monitoring Devices",
+    status: "Wearable Product Line",
     description:
-      "Wearable temperature, SpO2 watch, infant foot SpO2 and sleep-related monitoring support for Bluetooth-connected OEM projects and product definition.",
+      "Wearable SpO2, temperature monitoring and Bluetooth-connected health data devices for OEM/ODM customers, with customization, software integration and production support.",
     bullets: [
-      "Wearable product platform support",
+      "Wearable monitoring devices",
       "Engineering feasibility and sample planning",
       "Bluetooth and low-power design",
       "Software integration readiness",
     ],
     href: "/products/wearable-monitoring",
-    cta: "Discuss Wearable Projects",
+    cta: "Explore Wearable Monitoring",
     accent: "emerald" as Tone,
   },
 ];
@@ -168,10 +168,10 @@ const comparisonRows = [
     stage: "Mature / customizable",
   },
   {
-    category: "Wearable Monitoring",
+    category: "Wearable Monitoring Devices",
     fit: "Selected SpO2 watch, infant foot SpO2, temperature and sleep monitoring concepts.",
     customization: "Engineering feasibility, low-power design, Bluetooth SDK and software integration.",
-    stage: "Wearable platform direction",
+    stage: "Wearable product options",
   },
 ];
 
@@ -244,7 +244,7 @@ const homepageFaqs = [
   {
     question: "Is wearable monitoring ready for mass OEM production?",
     answer:
-      "Wearable monitoring is handled as a targeted OEM platform direction, suitable for engineering feasibility and software integration review before production planning.",
+      "Wearable monitoring is handled as a product family for OEM/ODM project evaluation, with engineering feasibility and software integration reviewed before production planning.",
   },
 ];
 
@@ -414,7 +414,7 @@ export default function HomePage() {
               Pulse oximeter and blood pressure monitor manufacturing for global healthcare brands
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-              YimiLife develops and manufactures home healthcare monitoring devices for brand owners, distributors and product teams seeking reliable private-label and OEM/ODM support. Our core focus is pulse oximeters and blood pressure monitors, with wearable monitoring platforms available for OEM/ODM discussion.
+              YimiLife develops and manufactures home healthcare monitoring devices for brand owners, distributors and product teams seeking reliable private-label and OEM/ODM support. Our core focus is pulse oximeters and blood pressure monitors, with wearable monitoring devices available for OEM/ODM project evaluation.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
@@ -439,7 +439,7 @@ export default function HomePage() {
               <div className="overflow-hidden rounded-[1.5rem] bg-white/90 shadow-xl">
                 <img
                   src="/homepage/hero-devices.png"
-                  alt="YimiLife pulse oximeter and blood pressure monitor product family"
+                  alt="YimiLife product family photo showing pulse oximeter, blood pressure monitor and wearable devices"
                   className="h-auto w-full object-cover"
                 />
               </div>
@@ -481,7 +481,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Product Families"
           title="Product families for healthcare OEM/ODM projects"
-          text="Start from a mature product platform or discuss a wearable monitoring direction depending on your market, timeline and customization needs."
+          text="Start from a mature product platform or explore wearable monitoring devices depending on your market, timeline and customization needs."
           align="center"
         />
 
@@ -539,7 +539,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionHeading
           eyebrow="Product Comparison"
-          title="Choose the right OEM/ODM product direction"
+          title="Choose the right OEM/ODM project path"
           text="Compare the three main project paths before submitting requirements, especially if you are deciding between mature private-label platforms and wearable monitoring integration."
           align="center"
         />

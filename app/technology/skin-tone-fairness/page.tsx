@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "SpO2 Performance Across Skin Pigmentation | YimiLife PulseMatrix™",
+  title: "SpO₂ Performance Across Diverse Skin Pigmentation | YimiLife PulseMatrix™",
   description:
-    "Learn how YimiLife’s PulseMatrix™ platform considers skin-pigmentation-related optical signal differences in SpO2 product development through optical sensing, signal acquisition, algorithmic processing and defined engineering verification workflows.",
+    "Learn how YimiLife’s PulseMatrix™ platform considers SpO₂ performance across diverse skin pigmentation through optical sensing, signal acquisition, algorithmic processing and defined engineering verification workflows.",
   alternates: {
     canonical: "https://www.yimilife.com/technology/skin-tone-fairness",
   },
   openGraph: {
-    title: "SpO2 Performance Across Skin Pigmentation | YimiLife PulseMatrix™",
+    title: "SpO₂ Performance Across Diverse Skin Pigmentation | YimiLife PulseMatrix™",
     description:
-      "Learn how YimiLife’s PulseMatrix™ platform considers skin-pigmentation-related optical signal differences in SpO2 product development through optical sensing, signal acquisition, algorithmic processing and defined engineering verification workflows.",
+      "Learn how YimiLife’s PulseMatrix™ platform considers SpO₂ performance across diverse skin pigmentation through optical sensing, signal acquisition, algorithmic processing and defined engineering verification workflows.",
     url: "https://www.yimilife.com/technology/skin-tone-fairness",
     siteName: "YimiLife",
     type: "website",
@@ -126,10 +126,10 @@ function ShieldIcon({ className = "h-6 w-6" }: IconProps) {
   );
 }
 
-const fairnessChallenges = [
+const pigmentationChallenges = [
   {
     title: "Different Optical Responses",
-    text: "Skin pigmentation can influence how red and infrared light interact with tissue, which makes optical signal response an important consideration for SpO2 performance across skin pigmentation in pulse oximeter development.", 
+    text: "Skin pigmentation can influence how red and infrared light interact with tissue, which makes optical signal response an important consideration for SpO₂ performance across diverse skin pigmentation in pulse oximeter development.",
   },
   {
     title: "Fitzpatrick I–VI Validation Planning",
@@ -137,7 +137,7 @@ const fairnessChallenges = [
   },
   {
     title: "Regulated Market Expectations",
-    text: "For medical brands targeting international markets, SpO2 performance across skin pigmentation has become an important technical, quality and documentation discussion point.", 
+    text: "For medical brands targeting international markets, SpO₂ performance across diverse skin pigmentation has become an important technical, quality and documentation discussion point.",
   },
 ];
 
@@ -149,7 +149,7 @@ const engineeringLayers = [
   },
   {
     title: "Signal Response Assessment",
-    text: "PulseMatrix™ considers signal quality, waveform stability and skin-related response differences as part of SpO2 accuracy and OEM/ODM performance discussion.",
+    text: "PulseMatrix™ considers signal quality, waveform stability and skin-related response differences as part of SpO2 performance and OEM/ODM verification discussion.",
     icon: SignalIcon,
   },
   {
@@ -177,9 +177,9 @@ const useCases = [
 
 const faqs = [
   {
-    question: "What does SpO2 performance across skin pigmentation mean in pulse oximeter development?",
+    question: "What does SpO₂ performance across diverse skin pigmentation mean in pulse oximeter development?",
     answer:
-      "SpO2 performance across skin pigmentation means considering whether a pulse oximeter can maintain appropriate SpO2 behavior across users with different skin pigmentation conditions. It is a technical, validation and quality consideration for modern pulse oximeter design.",
+      "SpO₂ performance across diverse skin pigmentation means considering how a pulse oximeter behaves across users with different skin pigmentation conditions. It is a technical, validation and quality consideration for modern pulse oximeter design, not a universal accuracy claim.",
   },
   {
     question: "Why can skin pigmentation affect pulse oximeter performance?",
@@ -192,19 +192,19 @@ const faqs = [
       "Fitzpatrick skin types are commonly used categories for describing skin tone and skin response. In pulse oximeter validation discussions, Fitzpatrick I–VI can be used as one reference when considering diversity across skin pigmentation conditions.",
   },
   {
-    question: "How does PulseMatrix™ support SpO2 performance across skin pigmentation in pulse oximeters?",
+    question: "How does PulseMatrix™ support SpO₂ performance across diverse skin pigmentation in pulse oximeters?",
     answer:
-      "PulseMatrix™ supports SpO2 performance across skin pigmentation by connecting optical signal acquisition, signal response assessment, waveform quality evaluation, validation strategy and manufacturing quality discussion for OEM/ODM pulse oximeter projects.",
+      "PulseMatrix™ supports SpO₂ performance across diverse skin pigmentation by connecting optical signal acquisition, signal response assessment, waveform quality evaluation, validation strategy and manufacturing quality discussion for OEM/ODM pulse oximeter projects.",
   },
   {
-    question: "Is SpO2 performance across skin pigmentation only an algorithm issue?",
+    question: "Is SpO₂ performance across diverse skin pigmentation only an algorithm issue?",
     answer:
-      "No. SpO2 performance across skin pigmentation should be considered at the system level, including optical design, sensor configuration, signal processing, validation population planning, documentation and manufacturing consistency.",
+      "No. SpO₂ performance across diverse skin pigmentation should be considered at the system level, including optical design, sensor configuration, signal processing, validation population planning, documentation and manufacturing consistency.",
   },
   {
-    question: "Can YimiLife support SpO2 performance across skin pigmentation discussions for OEM/ODM projects?",
+    question: "Can YimiLife support SpO₂ performance across diverse skin pigmentation discussions for OEM/ODM projects?",
     answer:
-      "Yes. YimiLife can discuss SpO2 performance across skin pigmentation requirements during OEM/ODM project evaluation, including target market expectations, product configuration, validation strategy and documentation needs.",
+      "Yes. YimiLife can discuss SpO₂ performance across diverse skin pigmentation requirements during OEM/ODM project evaluation, including target market expectations, product configuration, validation strategy and documentation needs.",
   },
 ];
 
@@ -227,9 +227,9 @@ const jsonLd = {
       "@type": "TechArticle",
       "@id":
         "https://www.yimilife.com/technology/skin-tone-fairness#article",
-      headline: "SpO2 Performance Across Skin Pigmentation",
+      headline: "SpO₂ Performance Across Diverse Skin Pigmentation",
       description:
-        "A technical overview of SpO2 performance across skin pigmentation in pulse oximeter development, including optical signal response, Fitzpatrick I–VI validation planning and PulseMatrix™ support for OEM/ODM projects.",
+        "A technical overview of SpO₂ performance across diverse skin pigmentation in pulse oximeter development, including optical signal response, Fitzpatrick I–VI validation planning and PulseMatrix™ support for OEM/ODM projects.",
       author: {
         "@id": "https://www.yimilife.com/#organization",
       },
@@ -248,13 +248,13 @@ const jsonLd = {
       url: "https://www.yimilife.com/technology/skin-tone-fairness",
       name: "SpO2 Performance Across Skin Pigmentation",
       description:
-        "SpO2 performance across skin pigmentation technology page for PulseMatrix™ and OEM/ODM pulse oximeter development projects.",
+        "SpO₂ performance across diverse skin pigmentation technology page for PulseMatrix™ and OEM/ODM pulse oximeter development projects.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
       about: {
         "@type": "Thing",
-        name: "SpO2 performance across skin pigmentation pulse oximeter",
+        name: "SpO₂ performance across diverse skin pigmentation pulse oximeter",
       },
       publisher: {
         "@id": "https://www.yimilife.com/#organization",
@@ -292,7 +292,7 @@ const jsonLd = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "SpO2 Performance Across Skin Pigmentation",
+          name: "SpO₂ Performance Across Diverse Skin Pigmentation",
           item: "https://www.yimilife.com/technology/skin-tone-fairness",
         },
       ],
@@ -319,11 +319,11 @@ export default function SkinToneFairnessPage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-sm font-medium text-cyan-100 backdrop-blur">
-              PulseMatrix™ SpO2 Performance Across Skin Pigmentation
+              PulseMatrix™ SpO₂ Performance Across Diverse Skin Pigmentation
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              SpO2 Performance Across Skin Pigmentation
+              SpO₂ Performance Across Diverse Skin Pigmentation
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
@@ -338,7 +338,7 @@ export default function SkinToneFairnessPage() {
               >
                 pulse oximeter OEM/ODM manufacturing
               </Link>
-              , SpO2 performance across skin pigmentation is an important technical and quality topic
+              , SpO₂ performance across diverse skin pigmentation is an important technical and quality topic
               for medical brands targeting international markets.
             </p>
 
@@ -370,7 +370,7 @@ export default function SkinToneFairnessPage() {
                 "Skin Pigmentation Awareness",
                 "Fitzpatrick I–VI Validation Planning",
                 "Optical Signal Response",
-                "Pulse Oximeter Accuracy Review",
+                "SpO2 Performance Evaluation",
                 "OEM/ODM Documentation Support",
               ].map((item) => (
                 <div
@@ -395,9 +395,9 @@ export default function SkinToneFairnessPage() {
                   href="/technology"
                   className="font-semibold text-cyan-200 underline underline-offset-4"
                 >
-                  PulseMatrix™ SpO2 Technology Platform
+                  PulseMatrix™ Signal Platform
                 </Link>
-                , together with low perfusion monitoring and motion artifact
+                , together with PI 0.1% low-perfusion and performance under motion conditions
                 rejection.
               </p>
             </div>
@@ -412,7 +412,7 @@ export default function SkinToneFairnessPage() {
               Technical challenge
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              Why SpO2 performance across skin pigmentation matters in monitoring
+              Why SpO₂ performance across diverse skin pigmentation matters in monitoring
             </h2>
           </div>
 
@@ -433,7 +433,7 @@ export default function SkinToneFairnessPage() {
             </p>
 
             <p>
-              SpO2 performance across skin pigmentation should not be treated as a simple marketing
+              SpO₂ performance across diverse skin pigmentation should not be treated as a simple marketing
               claim. It requires system-level thinking across optical design,
               sensor configuration, waveform quality assessment, signal
               processing, validation population planning and manufacturing
@@ -443,7 +443,7 @@ export default function SkinToneFairnessPage() {
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {fairnessChallenges.map((card) => (
+          {pigmentationChallenges.map((card) => (
             <div
               key={card.title}
               className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
@@ -466,10 +466,10 @@ export default function SkinToneFairnessPage() {
               PulseMatrix™ approach
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              A system-level approach to SpO2 performance across skin pigmentation
+              A system-level approach to SpO₂ performance across diverse skin pigmentation
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">
-              PulseMatrix™ treats SpO2 performance across skin pigmentation as a combined optical,
+              PulseMatrix™ treats SpO₂ performance across diverse skin pigmentation as a combined optical,
               signal processing, validation and quality control challenge. The
               goal is to help OEM/ODM customers build stronger technical
               confidence for SpO2 products used across diverse populations.
@@ -508,13 +508,13 @@ export default function SkinToneFairnessPage() {
               Validation perspective
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              SpO2 performance across skin pigmentation starts with thoughtful validation planning
+              SpO₂ performance across diverse skin pigmentation starts with thoughtful validation planning
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              SpO2 performance across skin pigmentation cannot be demonstrated by a single claim. It
+              SpO₂ performance across diverse skin pigmentation cannot be demonstrated by a single claim. It
               should be considered in the way products are evaluated, including
               subject distribution, skin tone grouping, test condition
               definition, data review and documentation strategy.
@@ -529,13 +529,13 @@ export default function SkinToneFairnessPage() {
 
             <p>
               YimiLife can support project-level discussion around validation
-              approach, documentation needs and how SpO2 performance across skin pigmentation connects
+              approach, documentation needs and how SpO₂ performance across diverse skin pigmentation connects
               with the broader{" "}
               <Link
                 href="/technology"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
-                PulseMatrix™ SpO2 Technology Platform
+                PulseMatrix™ Signal Platform
               </Link>
               .
             </p>
@@ -550,35 +550,35 @@ export default function SkinToneFairnessPage() {
               OEM/ODM value
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              SpO2 performance across skin pigmentation strengthens trust for international SpO2
+              SpO₂ performance across diverse skin pigmentation strengthens trust for international SpO2
               products
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-300">
             <p>
-              For OEM/ODM customers, SpO2 performance across skin pigmentation helps create a stronger
+              For OEM/ODM customers, SpO₂ performance across diverse skin pigmentation helps create a stronger
               technical and compliance-oriented story for pulse oximeter
               products. It is especially relevant for brands entering diverse
               international markets.
             </p>
 
             <p>
-              YimiLife connects SpO2 performance across skin pigmentation with{" "}
+              YimiLife connects SpO₂ performance across diverse skin pigmentation with{" "}
               <Link
                 href="/technology/low-perfusion-spo2"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                low perfusion SpO2 technology
+                PI 0.1% low-perfusion
               </Link>{" "}
               and{" "}
               <Link
                 href="/technology/motion-artifact-rejection"
                 className="font-semibold text-cyan-300 underline underline-offset-4"
               >
-                motion artifact rejection pulse oximeter technology
+                performance under motion conditions
               </Link>{" "}
-              to form a more complete medical-grade SpO2 technology narrative.
+              to form a more complete SpO2 technology narrative for OEM/ODM projects.
             </p>
 
             <p>
@@ -601,7 +601,7 @@ export default function SkinToneFairnessPage() {
                 Suitable for diverse-market SpO2 monitoring applications
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-700">
-                SpO2 performance across skin pigmentation is especially relevant for medical brands
+                SpO₂ performance across diverse skin pigmentation is especially relevant for medical brands
                 serving diverse populations and regulated international markets.
               </p>
             </div>
@@ -636,7 +636,7 @@ export default function SkinToneFairnessPage() {
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              SpO2 performance across skin pigmentation should be connected with product-level
+              SpO₂ performance across diverse skin pigmentation should be connected with product-level
               validation and manufacturing control. For OEM/ODM projects, this
               means discussing target markets, product configuration, validation
               expectations, documentation and production consistency from the
@@ -646,18 +646,18 @@ export default function SkinToneFairnessPage() {
             <p>
               YimiLife’s pulse oximeter manufacturing is supported by the{" "}
               <Link
-                href="/quality"
+                href="/about#quality-compliance"
                 className="font-semibold text-cyan-700 underline underline-offset-4"
               >
                 ISO 13485 medical device manufacturing quality
               </Link>
               . Each unit is calibrated and verified using Fluke Index 2
-              clinical simulators before shipment to support consistent
+              simulator before shipment to support consistent
               production output.
             </p>
 
             <p>
-              This helps customers treat SpO2 performance across skin pigmentation not as a separate
+              This helps customers treat SpO₂ performance across diverse skin pigmentation not as a separate
               marketing topic, but as part of a structured engineering,
               validation and manufacturing workflow.
             </p>
@@ -673,7 +673,7 @@ export default function SkinToneFairnessPage() {
                 FAQ
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                Frequently asked questions about SpO2 performance across skin pigmentation
+                Frequently asked questions about SpO₂ performance across diverse skin pigmentation
               </h2>
             </div>
 
@@ -699,10 +699,10 @@ export default function SkinToneFairnessPage() {
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Build SpO2 performance across skin pigmentation into your next SpO2 product strategy
+            Build SpO₂ performance across diverse skin pigmentation into your next SpO2 product strategy
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300">
-              Looking for a pulse oximeter OEM/ODM partner with SpO2 performance across skin pigmentation awareness, PulseMatrix™ SpO2 technology and ISO 13485
+              Looking for a pulse oximeter OEM/ODM partner with SpO₂ performance across diverse skin pigmentation awareness, the PulseMatrix™ Signal Platform and ISO 13485
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">

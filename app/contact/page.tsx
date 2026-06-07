@@ -78,7 +78,7 @@ const projectTypes = [
   "Blood pressure monitor OEM project",
   "Packaging, label or IFU customization",
   "Mold update or product platform refinement",
-  "Wearable monitoring and Bluetooth-connected device discussion",
+  "Wearable Monitoring Devices",
   "Early supplier feasibility evaluation",
 ];
 
@@ -145,12 +145,12 @@ const faqs = [
   {
     question: "Can YimiLife help decide between product platforms?",
     answer:
-      "Yes. For pulse oximeters and blood pressure monitors, YimiLife can help compare mature platform directions against your market, cost, configuration and documentation needs.",
+      "Yes. For pulse oximeters and blood pressure monitors, YimiLife can help compare mature platform options against your market, cost, configuration and documentation needs.",
   },
   {
     question: "Can I ask about wearable monitoring?",
     answer:
-      "Yes. Wearable monitoring inquiries are handled as wearable platform or Bluetooth-connected device discussions, with feasibility review before confirming product scope.",
+      "Yes. Wearable monitoring inquiries can be reviewed as OEM/ODM projects covering wearable SpO2, temperature monitoring, Bluetooth data integration, software collaboration, customization, sample evaluation and production support.",
   },
 ];
 
