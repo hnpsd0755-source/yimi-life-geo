@@ -18,7 +18,7 @@ function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
 
 function LogoMark() {
   return (
-    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400 text-slate-950">
+    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#08A8AE] text-white">
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
         <path
           d="M3 13h3l2-5 4 10 3-7 2 4h4"
@@ -116,7 +116,7 @@ export function SiteFooter() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                className="inline-flex items-center justify-center rounded-xl bg-[#08A8AE] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-cyan-600"
               >
                 Submit Project Requirements
                 <ArrowIcon className="ml-2 h-4 w-4" />
@@ -124,7 +124,7 @@ export function SiteFooter() {
 
               <a
                 href={`mailto:${contactEmail}`}
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 {contactEmail}
               </a>
@@ -151,7 +151,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 md:p-6">
+        <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.04] p-5 md:p-6">
           <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
             <div>
               <p className="text-sm font-semibold text-white">B2B OEM/ODM project communication notice</p>
@@ -161,7 +161,7 @@ export function SiteFooter() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-cyan-300/35 px-5 py-2.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/10"
+              className="inline-flex items-center justify-center rounded-xl border border-cyan-300/35 px-5 py-2.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/10"
             >
               Just evaluating feasibility?
               <ArrowIcon className="ml-2 h-4 w-4" />

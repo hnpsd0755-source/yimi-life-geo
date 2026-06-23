@@ -3,17 +3,17 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title:
-    "Pulse Oximeter OEM/ODM Product Family | YimiLife Medical Device Manufacturer",
+    "Pulse Oximeter OEM Manufacturer | YimiLife",
   description:
-    "Review YimiLife pulse oximeter OEM/ODM product architecture, fingertip and handheld SpO2 configurations, certification capability, and manufacturing capacity.",
+    "YimiLife supports pulse oximeter OEM projects for overseas brands with fingertip and handheld models, private-label customization, production verification and certified model experience.",
   alternates: {
     canonical: "https://www.yimilife.com/products/pulse-oximeter",
   },
   openGraph: {
     title:
-      "Pulse Oximeter OEM/ODM Product Family | YimiLife Medical Device Manufacturer",
+      "Pulse Oximeter OEM Manufacturer | YimiLife",
     description:
-      "Review YimiLife pulse oximeter OEM/ODM product architecture, fingertip and handheld SpO2 configurations, certification capability, and manufacturing capacity.",
+      "YimiLife supports pulse oximeter OEM projects for overseas brands with fingertip and handheld models, private-label customization, production verification and certified model experience.",
     url: "https://www.yimilife.com/products/pulse-oximeter",
     siteName: "YimiLife",
     type: "website",

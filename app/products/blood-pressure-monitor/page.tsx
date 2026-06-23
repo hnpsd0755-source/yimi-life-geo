@@ -5,17 +5,17 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Blood Pressure Monitor OEM Manufacturer | Private Label BP Monitors | YimiLife",
+    "Blood Pressure Monitor Manufacturer | YimiLife OEM/ODM",
   description:
-    "YimiLife supports private-label and OEM/ODM blood pressure monitor projects with upper-arm BP monitor platforms, Bluetooth options, packaging, cuff, labeling, UI and documentation support.",
+    "YimiLife is a blood pressure monitor manufacturer supporting overseas brands with upper-arm BP monitors, Bluetooth options, cuff configuration, private-label packaging and OEM/ODM project support.",
   alternates: {
     canonical: "https://www.yimilife.com/products/blood-pressure-monitor",
   },
   openGraph: {
     title:
-      "Blood Pressure Monitor OEM Manufacturer | Private Label BP Monitors | YimiLife",
+      "Blood Pressure Monitor Manufacturer | YimiLife OEM/ODM",
     description:
-      "Private-label and OEM/ODM blood pressure monitor support for upper-arm BP platforms, Bluetooth options, packaging, cuff, labeling, UI and documentation.",
+      "YimiLife supports overseas brands with upper-arm BP monitors, Bluetooth options, cuff configuration, private-label packaging and OEM/ODM project support.",
     url: "https://www.yimilife.com/products/blood-pressure-monitor",
     siteName: "YimiLife",
     type: "website",
@@ -407,19 +407,19 @@ const configurationOptions = [
 
 const faqs = [
   {
-    question: "Can we add our brand and packaging?",
+    question: "Can YimiLife support a private label blood pressure monitor project?",
     answer:
-      "Yes. YimiLife can support private-label BP monitor projects with logo, color direction, retail packaging, label coordination, IFU discussion and selected product configuration details.",
+      "Yes. YimiLife can support private label blood pressure monitor projects with logo, color direction, retail packaging, label coordination, IFU discussion and selected product configuration details.",
   },
   {
-    question: "Do you support Bluetooth blood pressure monitor projects?",
+    question: "Can Bluetooth blood pressure monitor data output be discussed for app workflows?",
     answer:
       "Yes. Bluetooth BP monitor projects can be discussed for selected platforms, including BLE data transmission, app workflow needs and software handoff requirements.",
   },
   {
-    question: "Can cuff size and cuff labeling be customized?",
+    question: "What customization options are available for OEM blood pressure monitors?",
     answer:
-      "Cuff requirements can be reviewed during project evaluation, including cuff size direction, cuff labeling, packaging and market-specific presentation needs.",
+      "OEM blood pressure monitor customization can include logo, color direction, packaging, IFU, cuff size direction, cuff labeling and selected UI or Bluetooth workflow discussions by project scope.",
   },
   {
     question: "Can we start from an existing BP monitor platform?",
@@ -440,9 +440,9 @@ const structuredData = {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/products/blood-pressure-monitor#webpage",
       url: "https://www.yimilife.com/products/blood-pressure-monitor",
-      name: "Blood Pressure Monitor OEM Manufacturer | YimiLife",
+      name: "Blood Pressure Monitor Manufacturer | YimiLife OEM/ODM",
       description:
-        "YimiLife supports private-label and OEM/ODM blood pressure monitor projects with upper-arm BP platforms, Bluetooth options, packaging, cuff, labeling, UI and documentation support.",
+        "YimiLife is a blood pressure monitor manufacturer supporting overseas brands with upper-arm BP monitors, Bluetooth options, cuff configuration, private-label packaging and OEM/ODM project support.",
       isPartOf: {
         "@type": "WebSite",
         name: "YimiLife",
@@ -518,15 +518,14 @@ export default function BloodPressureMonitorProductPage() {
             </div>
 
             <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white md:text-6xl">
-              Blood Pressure Monitor Platforms for Private-Label Healthcare
-              Brands
+              Blood Pressure Monitor Manufacturer for OEM/ODM Projects
             </h1>
 
             <p className="mt-6 text-lg leading-9 text-slate-300">
-              YimiLife supports overseas healthcare brands and distributors with
-              upper-arm blood pressure monitor platforms, private-label
-              configuration, packaging support, cuff options and selected
-              Bluetooth configurations.
+              YimiLife supports overseas brands, distributors and healthcare
+              product companies with upper-arm blood pressure monitor
+              manufacturing, OEM customization, Bluetooth configuration
+              discussion and private-label project support.
             </p>
 
             <p className="mt-4 text-base leading-8 text-slate-400">

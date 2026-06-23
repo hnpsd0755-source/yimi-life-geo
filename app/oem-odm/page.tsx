@@ -3,17 +3,17 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Medical Device OEM/ODM Services | Private Label & Customization | YimiLife",
+    "Medical Device OEM Manufacturer | YimiLife OEM/ODM",
   description:
-    "YimiLife provides medical device OEM/ODM services for overseas healthcare brands, including private-label pulse oximeters, blood pressure monitors, customization levels, Bluetooth integration discussion and ISO 13485-based manufacturing execution.",
+    "YimiLife supports medical device OEM/ODM manufacturing for pulse oximeters, blood pressure monitors and selected wearable monitoring projects, including private-label customization, production verification and project support.",
   alternates: {
     canonical: "https://www.yimilife.com/oem-odm",
   },
   openGraph: {
     title:
-      "Medical Device OEM/ODM Services | Private Label & Customization | YimiLife",
+      "Medical Device OEM Manufacturer | YimiLife OEM/ODM",
     description:
-      "Private-label customization, product platform selection, engineering feasibility review and ISO 13485-based manufacturing execution for pulse oximeter and blood pressure monitor projects.",
+      "Medical device OEM/ODM manufacturing support for pulse oximeters, blood pressure monitors and selected wearable monitoring projects, including private-label customization and production verification.",
     url: "https://www.yimilife.com/oem-odm",
     siteName: "YimiLife",
     type: "website",
@@ -131,14 +131,14 @@ const requirementItems = [
 
 const faqs = [
   {
-    question: "Can YimiLife support small healthcare brands?",
+    question: "What should buyers prepare before starting a medical device OEM project?",
     answer:
-      "Yes. YimiLife can review early-stage project requirements and help customers clarify product platform, customization depth, documentation scope, sample plan and production feasibility.",
+      "Useful inputs include target market, product category, expected quantity, branding scope, packaging needs, Bluetooth or SDK requirements, documentation expectations, target price range and project timeline.",
   },
   {
-    question: "Does OEM/ODM mean a fully new device from scratch?",
+    question: "What is included in YimiLife OEM medical device manufacturing support?",
     answer:
-      "Not always. Many projects start from mature pulse oximeter or blood pressure monitor platforms, then add private-label, configuration, UI, Bluetooth or packaging requirements. Deeper ODM work depends on feasibility, target market and project volume.",
+      "YimiLife can support OEM medical device manufacturing work through product platform review, private-label customization, configuration discussion, documentation coordination, sample confirmation and controlled production planning.",
   },
   {
     question: "Can wearable monitoring projects be ordered as mature products?",
@@ -146,7 +146,7 @@ const faqs = [
       "Wearable monitoring device projects can be reviewed as OEM/ODM programs, including sample evaluation, customization, Bluetooth data workflow discussion, software integration, production planning and market-specific registration support.",
   },
   {
-    question: "How does YimiLife discuss production verification?",
+    question: "How does YimiLife control sample-to-mass-production consistency?",
     answer:
       "For applicable pulse oximeter projects, production-line calibration and verification workflows can use Fluke Index 2 simulator under defined product and verification conditions. This is not a clinical validation claim.",
   },
@@ -158,14 +158,14 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": "https://www.yimilife.com/oem-odm#service",
-      name: "Medical Device OEM/ODM Services",
+      name: "Medical Device OEM Manufacturer Services",
       provider: {
         "@id": "https://www.yimilife.com/#organization",
       },
       serviceType: "Medical Device OEM/ODM Manufacturing",
       areaServed: "Global",
       description:
-        "Private-label and OEM/ODM support for pulse oximeter and blood pressure monitor projects, including customization level review, Bluetooth integration discussion, documentation support and ISO 13485-based manufacturing execution.",
+        "Medical device OEM/ODM manufacturing support for pulse oximeter, blood pressure monitor and selected wearable monitoring projects, including private-label customization, production verification and structured project support.",
     },
     {
       "@type": "FAQPage",
@@ -194,13 +194,16 @@ export default function OemOdmPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.52fr_0.48fr] lg:px-8 lg:py-20">
           <div>
             <p className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100">
-              Medical device OEM/ODM services
+              Medical device OEM manufacturer
             </p>
             <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-              Private-label and custom manufacturing support for healthcare brands.
+              Medical Device OEM Manufacturer for Overseas Healthcare Brands
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300">
-              YimiLife helps overseas healthcare brands evaluate, customize and manufacture mature pulse oximeter and blood pressure monitor platforms. We support practical OEM/ODM work from private label setup to selected engineering adaptation, with clear boundaries for concept validation, software integration and production planning.
+              YimiLife helps overseas healthcare brands, distributors and
+              product teams start medical device OEM/ODM projects with mature
+              product platforms, private-label customization, production
+              verification and structured project support.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -311,7 +314,7 @@ export default function OemOdmPage() {
               From early evaluation to controlled production.
             </h2>
             <p className="mt-5 text-sm leading-7 text-slate-700">
-              OEM/ODM work should make risk visible early: product fit, customization depth, documentation expectations, sample confirmation and production controls.
+              For buyers comparing OEM contract manufacturing for medical devices, OEM/ODM work should make risk visible early: product fit, customization depth, documentation expectations, sample confirmation and production controls.
             </p>
           </div>
 

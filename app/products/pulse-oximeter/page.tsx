@@ -643,21 +643,21 @@ const fingertipSelector = [
 const faqs = [
   {
     question:
-      "How does YimiLife support pediatric pulse oximeter configurations for private label medical device brands?",
+      "Can I start a private label pulse oximeter project with an existing YimiLife model?",
     answer:
-      "YimiLife can discuss pediatric pulse oximeter configurations including child-friendly housing, smaller finger-cavity considerations, display options, packaging direction and project-specific labeling needs. Final specifications should be confirmed according to the selected model and target market requirements.",
+      "Yes. YimiLife can review existing fingertip, pediatric, handheld or Bluetooth model directions for private label pulse oximeter projects, then discuss logo, packaging, labeling, IFU and configuration needs according to the selected model and target market requirements.",
   },
   {
     question:
-      "Can YimiLife discuss BLE pulse oximeter SDK integration for iOS or Android apps?",
+      "Can Bluetooth pulse oximeter configurations be discussed for app integration?",
     answer:
       "Yes. For BLE-enabled pulse oximeter projects, YimiLife can discuss Bluetooth Low Energy protocol documentation, data transmission formats and iOS / Android SDK integration support depending on the selected hardware configuration and software scope.",
   },
   {
     question:
-      "What is the difference between fingertip and handheld pulse oximeter product forms?",
+      "What is the difference between a pulse oximeter OEM project and a fully custom ODM project?",
     answer:
-      "Fingertip pulse oximeters are compact, high-volume product forms for home healthcare, pharmacy and private label retail programs. Handheld pulse oximeters are more professional-oriented configurations with external probe options, larger displays and extended monitoring or data-review discussions.",
+      "A pulse oximeter OEM project usually starts from an existing YimiLife platform and adapts branding, packaging, labels, IFU or selected configurations. A deeper ODM project may involve wider engineering changes and should be reviewed by feasibility, target market and expected volume.",
   },
   {
     question:
@@ -680,9 +680,9 @@ const structuredData = {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/products/pulse-oximeter#webpage",
       url: "https://www.yimilife.com/products/pulse-oximeter",
-      name: "Pulse Oximeter Product Family | YimiLife",
+      name: "Pulse Oximeter OEM Manufacturer | YimiLife",
       description:
-        "YimiLife pulse oximeter OEM/ODM product family page covering fingertip, handheld, pediatric and advanced rechargeable BLE SpO2 configurations for B2B procurement evaluation.",
+        "YimiLife supports pulse oximeter OEM projects for overseas brands with fingertip and handheld models, private-label customization, production verification and certified model experience.",
       isPartOf: {
         "@type": "WebSite",
         name: "YimiLife",
@@ -794,20 +794,20 @@ export default function PulseOximeterProductPage() {
             </div>
 
             <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white md:text-6xl">
-              Pulse Oximeter Product Architecture
+              Pulse Oximeter OEM Manufacturing for Overseas Brands
             </h1>
 
             <p className="mt-6 text-lg leading-9 text-slate-300">
-              Explore YimiLife pulse oximeter categories across two product
-              disciplines: highly configurable fingertip pulse oximeter models
-              and focused handheld SpO2 monitoring instruments.
+              YimiLife supports overseas brands and distributors as a fingertip
+              pulse oximeter manufacturer with handheld SpO2 options,
+              private-label customization, Bluetooth-enabled configurations,
+              packaging support and production verification.
             </p>
 
             <p className="mt-4 text-base leading-8 text-slate-400">
               As a B2B OEM/ODM medical device manufacturer, YimiLife supports
-              overseas brands with structured product configuration discussions
-              across display, power supply, BLE option, user group and
-              signal-processing architecture.
+              pulse oximeter OEM discussions across display, power supply, BLE
+              option, user group and signal-processing architecture.
             </p>
 
             <p className="mt-4 text-sm leading-7 text-slate-400">
