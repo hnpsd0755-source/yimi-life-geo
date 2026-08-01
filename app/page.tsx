@@ -298,6 +298,20 @@ function CheckIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+function QuestionIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M9.2 9a3 3 0 1 1 4.7 2.5c-1.2.8-1.9 1.4-1.9 2.7M12 18h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function ProcessIcon({ type, className = "h-5 w-5" }: { type: string; className?: string }) {
   if (type === "search") {
     return (
@@ -452,7 +466,46 @@ function ProductImage({
   );
 }
 
-function ProductPlatformCard({
+function ProductPlatformLargeCard({
+  item,
+}: {
+  item: (typeof productFamilies)[number];
+}) {
+  return (
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/70 lg:col-span-2 lg:row-span-2">
+      <div className="relative aspect-[16/9] overflow-hidden border-b border-slate-200 bg-slate-100">
+        <Image
+          src={item.image}
+          alt={item.imageAlt}
+          fill
+          sizes="(min-width: 1024px) 66vw, 100vw"
+          className="origin-left scale-[1.7] object-cover transition duration-300 group-hover:scale-[1.76]"
+          style={{ objectPosition: item.imagePosition }}
+        />
+        <span className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/90 px-3 py-1 text-xs font-semibold text-slate-950 backdrop-blur">
+          {item.status}
+        </span>
+      </div>
+      <div className="flex flex-1 flex-col p-6 md:p-8">
+        <h3 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+          {item.title}
+        </h3>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">{item.description}</p>
+        <div className="mt-auto pt-6">
+          <Link
+            href={item.href}
+            className="inline-flex items-center rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:border-cyan-200 hover:bg-cyan-50 hover:text-cyan-800"
+          >
+            {item.cta}
+            <ArrowIcon className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function ProductPlatformCompactCard({
   item,
 }: {
   item: (typeof productFamilies)[number];
@@ -460,14 +513,13 @@ function ProductPlatformCard({
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/70">
       <ProductImage src={item.image} alt={item.imageAlt} position={item.imagePosition} />
-      <div className="flex flex-1 flex-col p-6 md:p-7">
-        <h3 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-          {item.title}
-        </h3>
-        <div className="mt-auto pt-6">
+      <div className="flex flex-1 flex-col p-5 md:p-6">
+        <p className="text-xs font-semibold uppercase leading-5 tracking-[0.12em] text-cyan-700">{item.status}</p>
+        <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
+        <div className="mt-auto pt-5">
           <Link
             href={item.href}
-            className="inline-flex items-center rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:border-cyan-200 hover:bg-cyan-50 hover:text-cyan-800"
+            className="inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
           >
             {item.cta}
             <ArrowIcon className="ml-2 h-4 w-4" />
@@ -556,9 +608,7 @@ export default function HomePage() {
                 className="group min-w-0 rounded-xl p-4 transition hover:bg-cyan-50"
               >
                 <div className="flex items-start gap-3">
-                  <span className="mt-2 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100 transition group-hover:bg-white">
-                    <CheckIcon className="h-3.5 w-3.5" />
-                  </span>
+                  <CheckIcon className="mt-2 h-4 w-4 shrink-0 text-cyan-700" />
                   <div className="min-w-0">
                     <p className="break-words text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{item.value}</p>
                     <p className="mt-1 text-xs font-semibold uppercase leading-5 tracking-[0.12em] text-slate-500">{item.label}</p>
@@ -581,8 +631,9 @@ export default function HomePage() {
         </div>
 
         <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-3">
-          {productFamilies.map((item) => (
-            <ProductPlatformCard key={item.title} item={item} />
+          <ProductPlatformLargeCard item={productFamilies[0]} />
+          {productFamilies.slice(1).map((item) => (
+            <ProductPlatformCompactCard key={item.title} item={item} />
           ))}
         </div>
       </section>
@@ -664,31 +715,56 @@ export default function HomePage() {
           align="center"
         />
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-3">
-          {productFitRows.map((row) => (
-            <article key={row.productLine} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
-              <div className="flex flex-col gap-3">
-                <StatusPill tone={row.statusTone}>{row.status}</StatusPill>
-                <h3 className="text-2xl font-semibold tracking-tight text-slate-950">{row.productLine}</h3>
-              </div>
-              <p className="mt-4 text-sm leading-7 text-slate-700">{row.conclusion}</p>
-              <div className="mt-5 space-y-4">
-                <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Fit signals</p>
-                  <TagList items={row.fitTags} />
+        <div className="mt-10 flex flex-col gap-5">
+          <div className="grid gap-5 md:grid-cols-2">
+            {productFitRows.slice(0, 2).map((row) => (
+              <article key={row.productLine} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/70 md:p-6">
+                <div className="flex flex-col gap-3">
+                  <StatusPill tone={row.statusTone}>{row.status}</StatusPill>
+                  <h3 className="text-2xl font-semibold tracking-tight text-slate-950">{row.productLine}</h3>
                 </div>
+                <p className="mt-4 text-sm leading-7 text-slate-700">{row.conclusion}</p>
+                <div className="mt-5 space-y-4">
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Fit signals</p>
+                    <TagList items={row.fitTags} />
+                  </div>
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Customization topics</p>
+                    <TagList items={row.customizationTags} tone="cyan" />
+                  </div>
+                </div>
+                <Link
+                  href={row.href}
+                  className="mt-auto inline-flex items-center pt-6 text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
+                >
+                  View Product Line
+                  <ArrowIcon className="ml-2 h-4 w-4" />
+                </Link>
+              </article>
+            ))}
+          </div>
+
+          {productFitRows.slice(2).map((row) => (
+            <article key={row.productLine} className="rounded-2xl border border-amber-200 bg-amber-50/40 p-5 shadow-sm md:p-6">
+              <div className="grid gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)_auto] lg:items-center">
                 <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Customization topics</p>
+                  <StatusPill tone={row.statusTone}>{row.status}</StatusPill>
+                  <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">{row.productLine}</h3>
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-700">{row.conclusion}</p>
+                </div>
+                <div className="space-y-4">
+                  <TagList items={row.fitTags} />
                   <TagList items={row.customizationTags} tone="cyan" />
                 </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#08A8AE]"
+                >
+                  Start a Feasibility Chat
+                  <ArrowIcon className="ml-2 h-4 w-4" />
+                </Link>
               </div>
-              <Link
-                href={row.href}
-                className="mt-auto inline-flex items-center pt-6 text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
-              >
-                View Product Line
-                <ArrowIcon className="ml-2 h-4 w-4" />
-              </Link>
             </article>
           ))}
         </div>
@@ -770,37 +846,60 @@ export default function HomePage() {
           align="center"
         />
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-3">
-          {sourcingQuestions.map((check, index) => (
-            <article key={check.question} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-700">
-                Buyer check {String(index + 1).padStart(2, "0")}
-              </p>
-              <div className="mt-5 grid grid-cols-[2.5rem,1fr] gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-lg font-semibold text-slate-500">
-                  ?
-                </span>
-                <h3 className="text-xl font-semibold tracking-tight text-slate-950">{check.question}</h3>
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-50 text-cyan-700">
-                  <CheckIcon className="h-4 w-4" />
-                </span>
-                <p className="text-sm font-semibold leading-6 text-slate-700">{check.answer}</p>
-              </div>
-              <details className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <summary className="cursor-pointer list-none text-sm font-semibold text-slate-950">
-                  Details
-                </summary>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{check.detail}</p>
-                <Link
-                  href={check.href}
-                  className="mt-4 inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
-                >
-                  {check.cta}
-                  <ArrowIcon className="ml-2 h-4 w-4" />
-                </Link>
-              </details>
-            </article>
-          ))}
+        <div className="mt-10 grid gap-5 lg:grid-cols-[2fr_1fr]">
+          <article className="flex flex-col self-start rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-700">Buyer check 01</p>
+            <div className="mt-6 flex items-start gap-3">
+              <QuestionIcon className="mt-1 h-6 w-6 shrink-0 text-cyan-700" />
+              <h3 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
+                {sourcingQuestions[0].question}
+              </h3>
+            </div>
+            <div className="mt-6 flex items-start gap-3 border-l-2 border-cyan-500 pl-4">
+              <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-cyan-700" />
+              <p className="text-base font-semibold leading-7 text-slate-700">{sourcingQuestions[0].answer}</p>
+            </div>
+            <details className="mt-8 border-t border-slate-200 pt-6">
+              <summary className="cursor-pointer list-none text-sm font-semibold text-slate-950">Details</summary>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">{sourcingQuestions[0].detail}</p>
+              <Link
+                href={sourcingQuestions[0].href}
+                className="mt-4 inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
+              >
+                {sourcingQuestions[0].cta}
+                <ArrowIcon className="ml-2 h-4 w-4" />
+              </Link>
+            </details>
+          </article>
+
+          <div className="grid gap-5">
+            {sourcingQuestions.slice(1).map((check, index) => (
+              <article key={check.question} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-700">
+                  Buyer check {String(index + 2).padStart(2, "0")}
+                </p>
+                <div className="mt-4 flex items-start gap-3">
+                  <QuestionIcon className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
+                  <h3 className="text-lg font-semibold tracking-tight text-slate-950">{check.question}</h3>
+                </div>
+                <div className="mt-4 flex items-start gap-3">
+                  <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-cyan-700" />
+                  <p className="text-sm font-semibold leading-6 text-slate-700">{check.answer}</p>
+                </div>
+                <details className="mt-5 border-t border-slate-200 pt-4">
+                  <summary className="cursor-pointer list-none text-sm font-semibold text-slate-950">Details</summary>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{check.detail}</p>
+                  <Link
+                    href={check.href}
+                    className="mt-4 inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
+                  >
+                    {check.cta}
+                    <ArrowIcon className="ml-2 h-4 w-4" />
+                  </Link>
+                </details>
+              </article>
+            ))}
+          </div>
         </div>
 
       </section>
