@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 type Tone = "cyan" | "amber" | "slate" | "emerald";
+type FitStatusTone = "ready" | "review";
 
 export const metadata: Metadata = {
   title: "Medical Device OEM/ODM Manufacturer | YimiLife",
@@ -34,13 +35,13 @@ const proofCards = [
     href: "/about",
   },
   {
-    value: "300,000 / month",
-    label: "Capacity",
+    value: "300,000",
+    label: "Units/month",
     href: "/about#manufacturing",
   },
   {
-    value: "25+ models",
-    label: "FDA / MDR / NMPA",
+    value: "25+",
+    label: "FDA / MDR / NMPA certified models",
     href: "/about#quality-compliance",
   },
   {
@@ -110,26 +111,29 @@ const productFamilies = [
 const productFitRows = [
   {
     productLine: "Pulse Oximeters",
-    bestFit:
-      "Mature fingertip, pediatric, Bluetooth and handheld pulse oximeter platforms for private-label evaluation and selected configuration discussion.",
-    customization:
-      "Logo, packaging, available color options, UI settings, Bluetooth options and product-track selection depend on the selected model.",
+    status: "Ready to customize",
+    statusTone: "ready" as FitStatusTone,
+    conclusion: "Best starting point for private-label pulse oximeter programs.",
+    fitTags: ["Fingertip", "Pediatric", "Bluetooth", "Handheld"],
+    customizationTags: ["Logo", "Packaging", "Color", "UI settings"],
     href: "/products/pulse-oximeter",
   },
   {
     productLine: "Blood Pressure Monitors",
-    bestFit:
-      "Upper-arm blood pressure monitor projects for brands and distributors evaluating home healthcare product lines.",
-    customization:
-      "Cuff, display, packaging, Bluetooth configuration and platform options are reviewed according to the selected model.",
+    status: "Ready to customize",
+    statusTone: "ready" as FitStatusTone,
+    conclusion: "Use this path for upper-arm BP monitor brand and distributor projects.",
+    fitTags: ["Upper-arm", "Home healthcare", "Bluetooth option"],
+    customizationTags: ["Cuff", "Display", "Packaging", "Platform options"],
     href: "/products/blood-pressure-monitor",
   },
   {
     productLine: "Wearable Monitoring Devices",
-    bestFit:
-      "Newer wearable monitoring concepts should start with project-specific feasibility review before production planning.",
-    customization:
-      "Engineering feasibility, power design, Bluetooth or software integration and verification planning are reviewed before quotation.",
+    status: "Feasibility review first",
+    statusTone: "review" as FitStatusTone,
+    conclusion: "Use this path when model readiness and software integration need project review.",
+    fitTags: ["Newer concepts", "Model readiness", "Software integration"],
+    customizationTags: ["Power design", "Bluetooth", "Verification planning"],
     href: "/products/wearable-monitoring",
   },
 ];
@@ -137,57 +141,49 @@ const productFitRows = [
 const oemSteps = [
   {
     number: "01",
-    title: "Tell Us Your Idea",
-    body:
-      "Share your product type, target market, estimated quantity, required changes and expected timeline so YimiLife can review project fit.",
-    footerLabel: "Buyer input",
-    footerValue: "Initial project requirements",
+    title: "Project Brief",
+    icon: "chat",
+    summary: "Share market, quantity, model direction and customization needs.",
+    outcome: "Project requirements",
   },
   {
     number: "02",
-    title: "Confirm What's Customizable",
-    body:
-      "Available logo, packaging and UI options are reviewed from the selected platform; new features or connectivity changes require separate evaluation.",
-    footerLabel: "YimiLife confirms",
-    footerValue: "Defined project scope",
+    title: "Scope Check",
+    icon: "search",
+    summary: "Review available platform options and separate engineering items.",
+    outcome: "Defined scope",
   },
   {
     number: "03",
-    title: "Review and Approve Samples",
-    body:
-      "Relevant samples are reviewed against agreed appearance, branding, packaging, label, IFU and functional requirements before production planning.",
-    footerLabel: "Buyer approves",
-    footerValue: "Sample review plan",
+    title: "Sample Review",
+    icon: "sample",
+    summary: "Check appearance, branding, packaging, label, IFU and functions.",
+    outcome: "Sample review plan",
   },
   {
     number: "04",
-    title: "Confirm Production and Shipment",
-    body:
-      "Approved specifications, inspection items, production records, traceability requirements and shipment planning are confirmed for the defined project.",
-    footerLabel: "Project result",
-    footerValue: "Production and shipment plan",
+    title: "Production Plan",
+    icon: "ship",
+    summary: "Align specifications, inspection items, records, traceability and shipment.",
+    outcome: "Production and shipment plan",
   },
 ];
 
 const confidenceChecks = [
   {
-    area: "Real factory, or a trading company in the middle?",
-    buyerRisk:
-      "First-time brands may lose time when sample review, quotation and production planning are handled through unclear supplier layers.",
-    signal:
-      "YimiLife operates a 3,000㎡ medical device production facility in Shenzhen focused on pulse oximeters and blood pressure monitors.",
-    clarify:
-      "Ask which team handles sample review, production planning and project documentation for the selected model.",
+    question: "Factory or trading layer?",
+    answer: "Shenzhen production facility, direct project coordination.",
+    detail:
+      "YimiLife operates a 3,000㎡ medical device production facility in Shenzhen focused on pulse oximeters and blood pressure monitors. Confirm who handles sample review, production planning and project documentation for the selected model.",
+    cta: "View manufacturing details",
     href: "/about#manufacturing",
   },
   {
-    area: "Does the certification match my target market?",
-    buyerRisk:
-      "A general certification claim may not match the specific model, configuration or market a brand plans to sell into.",
-    signal:
-      "YimiLife works under an ISO 13485 quality system, with 25+ certified models across FDA, MDR and NMPA pathways.",
-    clarify:
-      "Confirm the selected model, target market and available document scope before quotation or artwork confirmation.",
+    question: "Does certification match my market?",
+    answer: "Confirm model, market and document scope before artwork or quotation.",
+    detail:
+      "YimiLife works under an ISO 13485 quality system, with 25+ FDA / MDR / NMPA certified models. Certification discussions should be checked against the selected model, configuration and target market.",
+    cta: "Check quality scope",
     href: "/about#quality-compliance",
   },
 ];
@@ -198,6 +194,30 @@ const homepageFaqs = [
     answer:
       "New wearable monitoring concepts need a project-specific feasibility review before production planning. Model readiness, software integration, documentation scope and target-market requirements should be confirmed before quotation.",
   },
+];
+
+const sourcingQuestions = [
+  ...confidenceChecks,
+  {
+    question: homepageFaqs[0].question,
+    answer: "Feasibility review first, then quotation and production planning.",
+    detail: homepageFaqs[0].answer,
+    cta: "Explore wearable path",
+    href: "/products/wearable-monitoring",
+  },
+];
+
+const pulseMatrixTags = [
+  "PI 0.1% low-perfusion",
+  "performance under motion conditions",
+  "SpO₂ performance across diverse skin pigmentation",
+];
+
+const manufacturingTags = [
+  "Sample review",
+  "Production verification",
+  "Documentation scope",
+  "Labeling / packaging",
 ];
 
 const jsonLd = {
@@ -278,18 +298,112 @@ function CheckIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+function ProcessIcon({ type, className = "h-5 w-5" }: { type: string; className?: string }) {
+  if (type === "search") {
+    return (
+      <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M10.8 18.1a7.3 7.3 0 1 1 0-14.6 7.3 7.3 0 0 1 0 14.6ZM16 16l4 4"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "sample") {
+    return (
+      <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M7 3.8h10M8 3.8v6.4l-3.6 7.1A2 2 0 0 0 6.2 20h11.6a2 2 0 0 0 1.8-2.7L16 10.2V3.8M7 14h10"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "ship") {
+    return (
+      <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M4 7.5h10v9H4zM14 10h3.8l2.2 3v3.5h-6M7 19.5a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4ZM17 19.5a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M5 7.5h14v8H9l-4 3v-11Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function Badge({ children, tone = "cyan" }: { children: ReactNode; tone?: Tone }) {
   const toneClass = {
     cyan: "border-cyan-200 bg-cyan-50 text-cyan-800",
-    amber: "border-cyan-200 bg-cyan-50 text-cyan-800",
+    amber: "border-amber-200 bg-amber-50 text-amber-900",
     slate: "border-slate-200 bg-slate-100 text-slate-700",
-    emerald: "border-cyan-200 bg-cyan-50 text-cyan-800",
+    emerald: "border-emerald-200 bg-emerald-50 text-emerald-800",
   }[tone];
 
   return (
     <span className={`inline-flex max-w-full rounded-xl border px-3 py-1 text-left text-xs font-semibold uppercase leading-5 tracking-[0.12em] ${toneClass}`}>
       {children}
     </span>
+  );
+}
+
+function StatusPill({ children, tone }: { children: ReactNode; tone: FitStatusTone }) {
+  const toneClass =
+    tone === "ready"
+      ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+      : "border-amber-200 bg-amber-50 text-amber-900";
+  const dotClass = tone === "ready" ? "bg-emerald-500" : "bg-amber-500";
+
+  return (
+    <span className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold ${toneClass}`}>
+      <span className={`h-2 w-2 rounded-full ${dotClass}`} aria-hidden="true" />
+      {children}
+    </span>
+  );
+}
+
+function TagList({
+  items,
+  tone = "slate",
+}: {
+  items: string[];
+  tone?: "slate" | "cyan";
+}) {
+  const toneClass =
+    tone === "cyan"
+      ? "border-cyan-200 bg-cyan-50 text-cyan-800"
+      : "border-slate-200 bg-slate-50 text-slate-700";
+
+  return (
+    <div className="flex flex-wrap gap-2">
+      {items.map((item) => (
+        <span key={item} className={`rounded-full border px-3 py-1 text-xs font-semibold ${toneClass}`}>
+          {item}
+        </span>
+      ))}
+    </div>
   );
 }
 
@@ -434,18 +548,22 @@ export default function HomePage() {
               Supplier facts buyers scan first
             </h2>
           </div>
-          <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-5">
+          <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
             {proofCards.map((item) => (
               <Link
                 key={item.value}
                 href={item.href}
-                className="group min-w-0 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-cyan-200 hover:bg-cyan-50"
+                className="group min-w-0 rounded-xl p-4 transition hover:bg-cyan-50"
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-white text-cyan-700 ring-1 ring-slate-200 transition group-hover:ring-cyan-200">
-                  <CheckIcon className="h-4 w-4" />
+                <div className="flex items-start gap-3">
+                  <span className="mt-2 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100 transition group-hover:bg-white">
+                    <CheckIcon className="h-3.5 w-3.5" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="break-words text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{item.value}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase leading-5 tracking-[0.12em] text-slate-500">{item.label}</p>
+                  </div>
                 </div>
-                <p className="mt-4 break-words text-base font-semibold tracking-tight text-slate-950 md:text-xl">{item.value}</p>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">{item.label}</p>
               </Link>
             ))}
           </div>
@@ -458,7 +576,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Product Families"
             title="Browse product platform pages"
-            text="Use these product pages for model-level exploration after checking which product line fits your project."
+            text="Product pages carry model-level options after the homepage product-path scan."
           />
         </div>
 
@@ -488,8 +606,18 @@ export default function HomePage() {
                 Signal platform for difficult monitoring conditions
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-300">
-                PulseMatrix™ connects PI 0.1% low-perfusion, performance under motion conditions, and SpO₂ performance across diverse skin pigmentation for OEM/ODM product discussions under defined verification conditions.
+                A focused signal platform discussion for OEM/ODM product evaluation under defined verification conditions.
               </p>
+              <div className="mt-5">
+                <TagList items={pulseMatrixTags} tone="cyan" />
+              </div>
+              <Link
+                href="/technology"
+                className="mt-6 inline-flex items-center text-sm font-semibold text-cyan-100 transition hover:text-white"
+              >
+                View technology details
+                <ArrowIcon className="ml-2 h-4 w-4" />
+              </Link>
             </div>
           </article>
 
@@ -510,8 +638,18 @@ export default function HomePage() {
                 Manufacturing planning from sample review to production
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                Project discussions can cover sample evaluation, production verification, documentation scope, labeling, packaging, and customization boundaries before quotation.
+                Align the project workflow before quotation, artwork confirmation or production planning.
               </p>
+              <div className="mt-5">
+                <TagList items={manufacturingTags} />
+              </div>
+              <Link
+                href="/about#manufacturing"
+                className="mt-6 inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
+              >
+                Review manufacturing workflow
+                <ArrowIcon className="ml-2 h-4 w-4" />
+              </Link>
             </div>
           </article>
         </div>
@@ -522,60 +660,37 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Find Your Product Fit"
           title="Which product line fits your brand?"
-          text="Whether you want a mature platform with your branding or a newer wearable monitoring concept, start here to see which path matches your project."
+          text="Each path gives a quick product-fit conclusion before model-level configuration review."
           align="center"
         />
 
-        <div className="mt-10 grid gap-4 md:hidden">
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
           {productFitRows.map((row) => (
-            <article key={row.productLine} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <h3 className="text-xl font-semibold tracking-tight text-slate-950">{row.productLine}</h3>
-              <div className="mt-5 grid gap-4">
+            <article key={row.productLine} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+              <div className="flex flex-col gap-3">
+                <StatusPill tone={row.statusTone}>{row.status}</StatusPill>
+                <h3 className="text-2xl font-semibold tracking-tight text-slate-950">{row.productLine}</h3>
+              </div>
+              <p className="mt-4 text-sm leading-7 text-slate-700">{row.conclusion}</p>
+              <div className="mt-5 space-y-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Best fit</p>
-                  <p className="mt-2 text-sm leading-7 text-slate-700">{row.bestFit}</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Fit signals</p>
+                  <TagList items={row.fitTags} />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Customization discussion</p>
-                  <p className="mt-2 text-sm leading-7 text-slate-700">{row.customization}</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Customization topics</p>
+                  <TagList items={row.customizationTags} tone="cyan" />
                 </div>
               </div>
               <Link
                 href={row.href}
-                className="mt-5 inline-flex items-center rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:border-cyan-200 hover:bg-cyan-50 hover:text-cyan-800"
+                className="mt-auto inline-flex items-center pt-6 text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
               >
                 View Product Line
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
             </article>
           ))}
-        </div>
-
-        <div className="mt-10 hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm md:block">
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[760px] border-collapse text-left">
-              <thead>
-                <tr className="bg-[#08A8AE] text-xs font-semibold uppercase tracking-[0.12em] text-white">
-                  <th className="p-4">Product line</th>
-                  <th className="p-4">Best fit</th>
-                  <th className="p-4">Customization discussion</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 text-sm text-slate-700">
-                {productFitRows.map((row) => (
-                  <tr key={row.productLine}>
-                    <td className="p-4 font-semibold text-slate-950">
-                      <Link href={row.href} className="hover:text-cyan-800">
-                        {row.productLine}
-                      </Link>
-                    </td>
-                    <td className="p-4 leading-6">{row.bestFit}</td>
-                    <td className="p-4 leading-6">{row.customization}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </section>
 
@@ -589,7 +704,7 @@ export default function HomePage() {
                 Found your product fit? Here is what happens next.
               </h2>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300">
-                Start with a feasibility discussion, then move through model selection, customization scope, sample review and production planning.
+                Start with feasibility, then confirm scope, samples and production planning.
               </p>
             </div>
             <Link
@@ -606,7 +721,7 @@ export default function HomePage() {
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-200">Step 0</p>
               <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">Talk first, commit later</h3>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">
-                You can discuss your product idea and customization needs first, before submitting a formal quotation request or purchase order.
+                Discuss product fit and customization needs before a formal quotation request or purchase order.
               </p>
             </div>
             <Link
@@ -618,70 +733,73 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {oemSteps.map((step, index) => (
-              <article key={step.title} className="relative flex min-w-0 flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-4 md:p-6">
-                {index < oemSteps.length - 1 ? (
-                  <div className="absolute left-[calc(100%-0.5rem)] top-10 hidden h-px w-6 bg-cyan-300/35 lg:block" aria-hidden="true" />
-                ) : null}
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#08A8AE] text-xs font-semibold text-white md:h-12 md:w-12 md:rounded-2xl md:text-sm">
-                  {step.number}
-                </span>
-                <h3 className="mt-4 text-base font-semibold tracking-tight text-white md:text-xl">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-300">{step.body}</p>
-                <div className="mt-5 border-t border-white/10 pt-3">
-                  <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-cyan-200">{step.footerLabel}</p>
-                  <p className="mt-1 text-xs font-semibold leading-5 text-cyan-50">{step.footerValue}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-200">Wearable project note</p>
-            <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">{homepageFaqs[0].question}</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-300">{homepageFaqs[0].answer}</p>
+          <div className="relative mt-10">
+            <div className="pointer-events-none absolute left-0 right-0 top-10 hidden h-px bg-cyan-300/25 lg:block" aria-hidden="true" />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {oemSteps.map((step) => (
+                <article key={step.title} className="relative z-10 flex min-w-0 flex-col rounded-2xl border border-white/10 bg-slate-900 p-5 shadow-lg shadow-slate-950/20">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#08A8AE] text-sm font-semibold text-white ring-8 ring-slate-950">
+                      {step.number}
+                    </span>
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-cyan-100 ring-1 ring-white/10">
+                      <ProcessIcon type={step.icon} />
+                    </span>
+                  </div>
+                  <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">{step.title}</h3>
+                  <p className="mt-3 text-sm font-semibold text-cyan-100">Result: {step.outcome}</p>
+                  <details className="mt-5 rounded-xl border border-white/10 bg-white/[0.04] p-4">
+                    <summary className="cursor-pointer list-none text-sm font-semibold text-slate-200">
+                      What to confirm
+                    </summary>
+                    <p className="mt-3 text-sm leading-6 text-slate-300">{step.summary}</p>
+                  </details>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Sourcing confidence */}
+      {/* Sourcing confidence + FAQ */}
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <SectionHeading
           eyebrow="Sourcing Confidence"
-          title="2 things to confirm before you commit"
-          text="These are common blind spots for first-time brands sourcing OEM/ODM. Confirm them early before moving into sample, artwork or quotation work."
+          title="Procurement checks before you commit"
+          text="Confirm supplier layer, document scope and wearable readiness before sample or quotation work."
           align="center"
         />
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {confidenceChecks.map((check) => (
-            <Link
-              key={check.area}
-              href={check.href}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/70"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-700">Buyer check</p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">{check.area}</h3>
-              <div className="mt-5 grid gap-4 text-sm leading-7 text-slate-600">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Buyer risk</p>
-                  <p className="mt-2">{check.buyerRisk}</p>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">YimiLife signal</p>
-                  <p className="mt-2">{check.signal}</p>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Clarify early</p>
-                  <p className="mt-2">{check.clarify}</p>
-                </div>
-              </div>
-              <p className="mt-6 inline-flex items-center text-sm font-semibold text-slate-950 group-hover:text-cyan-800">
-                View details
-                <ArrowIcon className="ml-2 h-4 w-4" />
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {sourcingQuestions.map((check, index) => (
+            <article key={check.question} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-700">
+                Buyer check {String(index + 1).padStart(2, "0")}
               </p>
-            </Link>
+              <div className="mt-5 grid grid-cols-[2.5rem,1fr] gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-lg font-semibold text-slate-500">
+                  ?
+                </span>
+                <h3 className="text-xl font-semibold tracking-tight text-slate-950">{check.question}</h3>
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-50 text-cyan-700">
+                  <CheckIcon className="h-4 w-4" />
+                </span>
+                <p className="text-sm font-semibold leading-6 text-slate-700">{check.answer}</p>
+              </div>
+              <details className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <summary className="cursor-pointer list-none text-sm font-semibold text-slate-950">
+                  Details
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{check.detail}</p>
+                <Link
+                  href={check.href}
+                  className="mt-4 inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-cyan-800"
+                >
+                  {check.cta}
+                  <ArrowIcon className="ml-2 h-4 w-4" />
+                </Link>
+              </details>
+            </article>
           ))}
         </div>
 
