@@ -64,7 +64,6 @@ const footerColumns = [
     links: [
       ["About YimiLife", "/about"],
       ["Quality & Compliance", "/about#quality-compliance"],
-      ["Case Studies", "/case-studies"],
       ["Contact", "/contact"],
     ],
   },
@@ -72,9 +71,8 @@ const footerColumns = [
 
 const trustItems = [
   "ISO 13485 Quality Management System",
-  "3,000㎡ Production Facility",
-  "25+ FDA / MDR / NMPA certified models",
-  "300,000 Units / Month",
+  "B2B OEM/ODM Project Support",
+  "Pulse Oximeters · Blood Pressure Monitors · Wearable Monitoring Devices",
 ];
 
 export function SiteFooter() {

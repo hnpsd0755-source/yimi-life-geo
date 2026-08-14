@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Shenzhen Medical Device Manufacturer | About YimiLife",
   description:
-    "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with a 3,000㎡ facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
+    "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with ISO 13485 quality system, OEM/ODM project support and Shenzhen manufacturing operations.",
   alternates: {
     canonical: "https://www.yimilife.com/about",
   },
   openGraph: {
     title: "Shenzhen Medical Device Manufacturer | About YimiLife",
     description:
-      "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with a 3,000㎡ facility, ISO 13485 quality system and OEM/ODM manufacturing capabilities.",
+      "Learn about Shenzhen YimiLife Technology Co., Ltd., a Shenzhen medical device manufacturer with ISO 13485 quality system, OEM/ODM project support and Shenzhen manufacturing operations.",
     url: "https://www.yimilife.com/about",
     siteName: "YimiLife",
     type: "website",
@@ -130,7 +130,7 @@ function DocumentIcon({ className = "h-6 w-6" }: IconProps) {
 
 const companyFacts = [
   "ISO 13485 Quality Management System",
-  "3,000㎡ Medical Device Manufacturing Facility",
+  "Shenzhen Manufacturing Operations",
   "25+ FDA / MDR / NMPA certified models",
   "300,000 Units Monthly Pulse Oximeter Capacity",
   "PulseMatrix™ Signal Platform",
@@ -212,7 +212,7 @@ const faqs = [
   {
     question: "Where is YimiLife located?",
     answer:
-      "YimiLife is based in Shenzhen, China, a major electronics and medical device manufacturing center, with a 3,000㎡ medical device manufacturing facility.",
+      "YimiLife is based in Shenzhen, China, a major electronics and medical device manufacturing center.",
   },
   {
     question: "Can YimiLife support private label medical device customers?",
@@ -485,17 +485,17 @@ export default function AboutPage() {
               Manufacturing base
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-              3,000㎡ medical device manufacturing facility in Shenzhen
+              Manufacturing operations in Shenzhen
             </h2>
           </div>
 
           <div className="space-y-5 text-base leading-8 text-slate-700">
             <p>
-              YimiLife operates a 3,000㎡ medical device manufacturing facility in Shenzhen, supporting medical electronic device OEM/ODM projects from sample confirmation and pilot production to scalable mass production.
+              YimiLife operates in-house production and project execution in Shenzhen, with manufacturing planning reviewed according to product category, project scope and order requirements.
             </p>
 
             <p>
-              For pulse oximeter manufacturing, monthly capacity reaches up to 300,000 units. Each pulse oximeter unit is 100% calibrated with Fluke Index 2 simulator before shipment under defined product and verification conditions.
+              For pulse oximeter manufacturing, monthly capacity reaches up to 300,000 units. Production planning and delivery schedules depend on the selected product, project scope and order requirements.
             </p>
 
             <p>
@@ -515,9 +515,9 @@ export default function AboutPage() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            "3,000㎡ Medical Device Manufacturing Facility",
+            "Shenzhen Manufacturing Operations",
             "300,000 Units Monthly Pulse Oximeter Capacity",
-            "100% calibrated with Fluke Index 2 simulator",
+            "Fluke-based calibration and test workflow",
             "Batch Traceability and Quality Records",
           ].map((item) => (
             <div

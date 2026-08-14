@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Wearable Monitoring Devices for OEM/ODM Projects | YimiLife",
+  title: "YW01 Wearable Pulse Oximeter for OEM/ODM Projects | YimiLife",
   description:
-    "YimiLife provides wearable monitoring devices for OEM/ODM customers, including wearable temperature patches, wearable SpO2 watches and infant foot SpO2 monitors for connected home healthcare product programs.",
+    "YimiLife provides the YW01 wrist pulse oximeter for OEM/ODM wearable monitoring projects, with Bluetooth 5.3 BLE, OLED display, 300 mAh battery and source-confirmed product parameters.",
   alternates: {
     canonical: "https://www.yimilife.com/products/wearable-monitoring",
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const YIMI_STANDARD_BLUE = "#08A8AE";
 
-type ProductId = "temperature-patch" | "spo2-watch" | "infant-foot";
+type ProductId = "yw01";
 
 type SpecRow = {
   label: string;
@@ -43,7 +43,7 @@ const getSpecRowTone = (label: string): SpecRowTone => {
   }
 
   if (
-    ["measurement", "range", "accuracy", "temperature", "user group", "claim"].some((key) =>
+    ["measurement", "range", "accuracy", "standard", "claim"].some((key) =>
       normalized.includes(key),
     )
   ) {
@@ -57,7 +57,7 @@ const getSpecRowTone = (label: string): SpecRowTone => {
   }
 
   if (
-    ["wearing", "display", "power", "battery", "connectivity", "bluetooth", "data", "recording"].some((key) =>
+    ["wearing", "display", "power", "battery", "connectivity", "bluetooth", "data", "recording", "app", "storage"].some((key) =>
       normalized.includes(key),
     )
   ) {
@@ -111,127 +111,90 @@ type WearableProduct = {
 
 const products: WearableProduct[] = [
   {
-    id: "temperature-patch",
-    name: "Wearable Temperature Patch",
-    shortName: "Temperature Patch",
-    text: "A skin-contact wearable temperature patch for continuous temperature trend observation and Bluetooth-connected health data workflows.",
-    tags: ["Temperature Trend", "Patch Format", "Bluetooth Data"],
-    cta: "Request Temperature Patch Info",
-    focus: "Temperature trend",
-    format: "Skin-contact patch",
-    connectivity: "Bluetooth",
-    fit: "Fever trend / home health programs",
-    specId: "spec-wearable-temperature-patch",
-    specSummary:
-      "Reusable Bluetooth wearable temperature patch specification reference for temperature trend projects.",
-    specRows: [
-      { label: "Model", value: "YT01 series" },
-      { label: "Product Type", value: "Wearable Temperature Patch" },
-      { label: "Measurement", value: "Body temperature trend" },
-      { label: "Measurement Site", value: "Skin-contact temperature monitoring" },
-      { label: "Temperature Accuracy", value: "±0.2°C" },
-      { label: "Thermal Equilibrium Time", value: "≤2 min" },
-      { label: "Temperature Unit", value: "°C / °F" },
-      { label: "Wearing Format", value: "Reusable skin-contact patch" },
-      { label: "Connectivity", value: "Bluetooth Low Energy" },
-      { label: "Power Supply", value: "Low-power rechargeable battery design" },
-      { label: "Data Output", value: "Temperature trend data" },
-      { label: "Auto Recording", value: "Yes" },
-      { label: "OEM Options", value: "Logo / packaging / IFU / app workflow" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-      { label: "Certification Path", value: "Subject to intended use and target market" },
-    ],
-  },
-  {
-    id: "spo2-watch",
-    name: "Wearable SpO2 Watch",
-    shortName: "SpO2 Watch",
-    text: "A wrist-worn SpO2 and pulse rate monitoring device for connected home healthcare programs, supporting Bluetooth data workflows and product configuration discussion.",
-    tags: ["SpO2", "Pulse Rate", "Wrist-Worn"],
-    cta: "Request SpO2 Watch Info",
+    id: "yw01",
+    name: "YW01 Wrist Pulse Oximeter",
+    shortName: "YW01",
+    text:
+      "YW01 is the current public wearable monitoring product for OEM/ODM evaluation, with wrist-worn SpO2 measurement, Bluetooth 5.3 BLE, OLED display and rechargeable battery parameters confirmed by the product source.",
+    tags: ["YW01", "Bluetooth 5.3 BLE", "300 mAh battery"],
+    cta: "Request YW01 Information",
     focus: "SpO2 / pulse rate",
-    format: "Wrist-worn watch",
-    connectivity: "Bluetooth",
-    fit: "Connected SpO2 monitoring projects",
-    specId: "spec-wearable-spo2-watch",
+    format: "Wrist-worn pulse oximeter",
+    connectivity: "Bluetooth 5.3 BLE",
+    fit: "YW01 wearable SpO2 monitoring projects",
+    specId: "spec-yw01-wrist-pulse-oximeter",
     specSummary:
-      "Wearable SpO₂ watch specification reference for wrist-worn connected monitoring projects.",
+      "Confirmed YW01 wrist pulse oximeter specification reference for wearable monitoring OEM/ODM projects.",
     specRows: [
-      { label: "Model", value: "SpO₂ Watch series" },
-      { label: "Product Type", value: "Wearable SpO₂ Watch" },
-      { label: "Measurement", value: "SpO₂, PR" },
-      { label: "Measurement Method", value: "Optical PPG" },
-      { label: "SpO₂ Range", value: "70–100%" },
-      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
-      { label: "Pulse Rate Range", value: "30–250 bpm" },
-      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
-      { label: "Perfusion Index", value: "Supported by selected configuration" },
-      { label: "Motion Data", value: "Supported by selected configuration" },
-      { label: "Wearing Format", value: "Wrist-worn watch" },
-      { label: "Display", value: "OLED / TFT by selected model" },
-      { label: "Connectivity", value: "Bluetooth Low Energy" },
-      { label: "Power Supply", value: "Rechargeable lithium battery" },
-      { label: "Data Output", value: "SpO₂ / PR trend data" },
-      { label: "OEM Options", value: "Housing / strap / packaging / app workflow" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-      { label: "Certification Path", value: "Subject to intended use and target market" },
-    ],
-  },
-  {
-    id: "infant-foot",
-    name: "Infant Foot SpO2 Monitor",
-    shortName: "Infant Foot Monitor",
-    text: "A foot-worn infant SpO2 monitoring device for oxygen, pulse rate and sleep trend data applications. Intended use, user population and market claims should be reviewed according to target-market regulatory requirements.",
-    tags: ["Infant Foot-Worn", "SpO2 / Pulse Rate", "Sleep Trends"],
-    cta: "Request Infant Monitor Info",
-    focus: "SpO2 / pulse rate / sleep trends",
-    format: "Foot-worn soft device",
-    connectivity: "Bluetooth",
-    fit: "Infant monitoring product programs",
-    specId: "spec-infant-foot-spo2-monitor",
-    specSummary:
-      "Infant foot-worn SpO₂ monitor specification reference for cautious project evaluation and target-market review.",
-    specRows: [
-      { label: "Model", value: "Infant Foot SpO₂ Monitor series" },
-      { label: "Product Type", value: "Infant Foot SpO₂ Monitor" },
-      { label: "Measurement", value: "SpO₂, PR, sleep-related trend data" },
-      { label: "Measurement Method", value: "Optical PPG" },
-      { label: "SpO₂ Range", value: "70–100%" },
-      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
-      { label: "Pulse Rate Range", value: "30–250 bpm" },
-      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
-      { label: "Wearing Format", value: "Foot-worn soft wearable" },
-      { label: "User Group", value: "Healthy infants, 1–18 months, 6–30 lb" },
-      { label: "Connectivity", value: "Bluetooth Low Energy" },
-      { label: "Power Supply", value: "Rechargeable lithium battery" },
-      { label: "Data Output", value: "SpO₂ / PR / sleep-related trend data" },
-      { label: "OEM Options", value: "Soft structure / packaging / app workflow" },
-      { label: "Claim Boundary", value: "Not for SIDS prevention or disease diagnosis" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-      { label: "Certification Path", value: "Subject to intended use and target market" },
+      { label: "Model", value: "YW01" },
+      { label: "Product Type", value: "Wrist Pulse Oximeter" },
+      { label: "Electrical Safety Type", value: "Internally powered equipment" },
+      { label: "Applied Part", value: "Type BF" },
+      { label: "Protection Level", value: "IP22" },
+      { label: "Pollution Degree", value: "2" },
+      { label: "Operating Mode", value: "Continuous operation" },
+      { label: "Weight", value: "21g main unit" },
+      { label: "Display", value: "OLED" },
+      { label: "Wireless", value: "Bluetooth 5.3 BLE" },
+      { label: "Vibrator", value: "Main unit built-in" },
+      { label: "Battery Capacity", value: "300 mAh Li-ion battery" },
+      { label: "Charge Input", value: "DC 5V, 1A" },
+      { label: "Battery Type", value: "3.7V d.c., Li-ion rechargeable" },
+      {
+        label: "Operating Time",
+        value:
+          "≥16 hours with sensor connected, 4s recording interval, BLE off and display off",
+      },
+      { label: "Charge Time", value: "2~3 hours" },
+      { label: "Operating Environment", value: "5~40 degrees C, RH 15%~95%, 70.0kPa~106.0kPa" },
+      { label: "Storage Environment", value: "-20~60 degrees C, RH 10%~95%, 50.0kPa~106kPa" },
+      { label: "Standard", value: "ISO 80601-2-61" },
+      { label: "SpO2 Measurement Range", value: "35%~100%" },
+      {
+        label: "SpO2 Specified Accuracy Range",
+        value: "70%~100%: +/-2%; 35%~69%: not defined",
+      },
+      { label: "SpO2 Resolution", value: "0.01" },
+      { label: "Pulse Rate Range", value: "30 to 250 bpm" },
+      { label: "Pulse Rate Accuracy", value: "+/-2 bpm" },
+      { label: "Pulse Rate Resolution", value: "1bpm" },
+      { label: "Wavelength", value: "660~905nm" },
+      { label: "Red Light", value: "Approx. 660nm, 9-13mW" },
+      { label: "Infrared Light", value: "Approx. 905nm, 3-7mW" },
+      { label: "Local Storage", value: "4 records, 15 hours for each" },
+      { label: "Mobile App", value: "Android 6.0+; iOS 16.0+" },
+      { label: "Bluetooth Modulation", value: "GFSK" },
+      { label: "Bluetooth Frequency", value: "2402~2480MHz" },
+      { label: "RF Conducted Power", value: "Max 10 dBm" },
+      { label: "Transmission Distance", value: "Max 10m" },
+      { label: "Expected Service Life", value: "3 years" },
+      { label: "MOQ", value: "Project confirmation required." },
+      { label: "Lead Time", value: "Project confirmation required." },
+      {
+        label: "Certification",
+        value:
+          "Certification documentation is reviewed by selected model and target market.",
+      },
     ],
   },
 ];
 
 const heroTags = [
-  "Wearable Temperature Patch",
-  "Wearable SpO2 Watch",
-  "Infant Foot SpO2 Monitor",
-  "Bluetooth Data",
-  "Product Information Available",
-  "Sample Evaluation",
+  "YW01 Wrist Pulse Oximeter",
+  "Bluetooth 5.3 BLE",
+  "OLED Display",
+  "300 mAh Battery",
+  "≥16 Hours Operating Time",
+  "Project Confirmation Required",
 ];
 
 const configurationOptions = [
-  "Device type selection",
-  "Sensor configuration",
-  "Housing / strap / patch structure",
-  "Logo and packaging",
-  "Bluetooth data workflow",
+  "YW01 model confirmation",
+  "Logo and packaging discussion",
+  "Bluetooth data workflow review",
   "IFU / labeling support",
+  "Target-market documentation review",
+  "Sample evaluation planning",
 ];
 
 const structuredData = [
@@ -240,9 +203,9 @@ const structuredData = [
     "@type": "WebPage",
     "@id": "https://www.yimilife.com/products/wearable-monitoring#webpage",
     url: "https://www.yimilife.com/products/wearable-monitoring",
-    name: "Wearable Monitoring Devices for OEM/ODM Projects | YimiLife",
+    name: "YW01 Wearable Pulse Oximeter for OEM/ODM Projects | YimiLife",
     description:
-      "YimiLife provides wearable monitoring devices for OEM/ODM customers, including wearable temperature patches, wearable SpO2 watches and infant foot SpO2 monitors for connected home healthcare product programs.",
+      "YimiLife provides the YW01 wrist pulse oximeter for OEM/ODM wearable monitoring projects, with Bluetooth 5.3 BLE, OLED display, 300 mAh battery and source-confirmed product parameters.",
     isPartOf: {
       "@type": "WebSite",
       name: "YimiLife",
@@ -262,7 +225,7 @@ const structuredData = [
       {
         "@type": "ListItem",
         position: 2,
-        name: "Wearable Monitoring Devices",
+        name: "YW01 Wearable Pulse Oximeter",
         item: "https://www.yimilife.com/products/wearable-monitoring",
       },
     ],
@@ -270,7 +233,7 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Wearable Monitoring Device Options",
+    name: "YW01 Wearable Monitoring Product",
     itemListElement: products.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -342,63 +305,29 @@ function ArrowIcon() {
 }
 
 function ProductMockup({ type }: { type: ProductId }) {
-  if (type === "temperature-patch") {
-    return (
-      <div className="relative flex h-full min-h-[190px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-cyan-50 via-white to-slate-50">
-        <div className="absolute left-6 top-6 h-20 w-20 rounded-full bg-cyan-200/30 blur-2xl" />
-        <div className="absolute bottom-8 right-7 h-24 w-24 rounded-full bg-emerald-200/30 blur-2xl" />
-        <div className="relative h-28 w-52 rounded-[2.2rem] border border-cyan-100 bg-white shadow-2xl shadow-cyan-900/10">
-          <div className="absolute inset-3 rounded-[1.7rem] border border-slate-100 bg-slate-50" />
-          <div className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200 bg-white shadow-sm" />
-          <div className="absolute left-8 top-1/2 h-2 w-16 -translate-y-1/2 rounded-full bg-cyan-100" />
-          <div className="absolute right-8 top-1/2 h-2 w-16 -translate-y-1/2 rounded-full bg-emerald-100" />
-        </div>
-        <div className="absolute bottom-5 left-6 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-semibold text-slate-600 backdrop-blur">
-          Patch format
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "spo2-watch") {
-    return (
-      <div className="relative flex h-full min-h-[190px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-100 via-white to-cyan-50">
-        <div className="absolute left-10 top-5 h-24 w-24 rounded-full bg-cyan-200/25 blur-2xl" />
-        <div className="relative flex items-center justify-center">
-          <div className="h-44 w-12 rounded-full border border-slate-200 bg-slate-900 shadow-xl" />
-          <div className="absolute h-28 w-28 rounded-[2rem] border border-slate-700 bg-slate-950 p-3 shadow-2xl shadow-slate-900/20">
-            <div className="flex h-full flex-col justify-between rounded-[1.35rem] bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-950 p-4 text-white">
-              <div className="flex items-center justify-between text-[10px] text-cyan-200">
-                <span>SpO2</span>
-                <span>BT</span>
-              </div>
-              <div>
-                <div className="text-2xl font-semibold tracking-tight">98</div>
-                <div className="text-[10px] text-slate-300">Pulse 72</div>
-              </div>
-              <div className="h-1.5 rounded-full bg-cyan-300/80" />
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-5 right-6 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-semibold text-slate-600 backdrop-blur">
-          Wrist-worn
-        </div>
-      </div>
-    );
-  }
+  void type;
 
   return (
-    <div className="relative flex h-full min-h-[190px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-50 via-white to-cyan-50">
-      <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-emerald-200/20 blur-2xl" />
-      <div className="absolute left-8 bottom-8 h-24 w-24 rounded-full bg-cyan-200/25 blur-2xl" />
-      <div className="relative h-32 w-44 rounded-[2.4rem] border border-emerald-100 bg-white shadow-2xl shadow-emerald-900/10">
-        <div className="absolute left-5 top-5 h-20 w-28 rounded-[2rem] border border-slate-100 bg-slate-50" />
-        <div className="absolute bottom-5 right-5 h-12 w-12 rounded-full border border-cyan-200 bg-white shadow-sm" />
-        <div className="absolute left-9 top-10 h-2 w-16 rounded-full bg-emerald-100" />
-        <div className="absolute left-9 top-16 h-2 w-10 rounded-full bg-cyan-100" />
+    <div className="relative flex h-full min-h-[190px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-100 via-white to-cyan-50">
+      <div className="absolute left-10 top-5 h-24 w-24 rounded-full bg-cyan-200/25 blur-2xl" />
+      <div className="relative flex items-center justify-center">
+        <div className="h-44 w-12 rounded-full border border-slate-200 bg-slate-900 shadow-xl" />
+        <div className="absolute h-28 w-28 rounded-[2rem] border border-slate-700 bg-slate-950 p-3 shadow-2xl shadow-slate-900/20">
+          <div className="flex h-full flex-col justify-between rounded-[1.35rem] bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-950 p-4 text-white">
+            <div className="flex items-center justify-between text-[10px] text-cyan-200">
+              <span>SpO2</span>
+              <span>BLE</span>
+            </div>
+            <div>
+              <div className="text-2xl font-semibold tracking-tight">YW01</div>
+              <div className="text-[10px] text-slate-300">300 mAh</div>
+            </div>
+            <div className="h-1.5 rounded-full bg-cyan-300/80" />
+          </div>
+        </div>
       </div>
-      <div className="absolute bottom-5 left-6 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-semibold text-slate-600 backdrop-blur">
-        Foot-worn soft device
+      <div className="absolute bottom-5 right-6 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-semibold text-slate-600 backdrop-blur">
+        Wrist-worn
       </div>
     </div>
   );
@@ -413,7 +342,7 @@ function HeroProductBoard() {
         <div className="relative aspect-[4/3] w-full bg-slate-50">
           <Image
             src="/homepage/wearable-monitoring.png"
-            alt="YimiLife wearable monitoring devices including temperature patch, SpO2 watch and infant foot SpO2 monitor"
+            alt="YimiLife YW01 wrist pulse oximeter wearable monitoring product"
             fill
             className="object-cover"
             priority
@@ -421,10 +350,10 @@ function HeroProductBoard() {
         </div>
         <div className="border-t border-slate-100 bg-white p-4">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
-            Wearable product family
+            YW01 wearable product
           </p>
           <p className="mt-3 text-sm leading-6 text-slate-600">
-            A category image for temperature patch, SpO2 watch and infant foot monitor product discussions.
+            A YW01 wearable pulse oximeter image area for OEM/ODM product discussions.
           </p>
         </div>
       </div>
@@ -548,10 +477,10 @@ export default function WearableMonitoringPage() {
                 Wearable Monitoring Devices
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg md:leading-9">
-                YimiLife provides wearable monitoring devices for OEM/ODM
-                customers, including wearable temperature patches, wearable SpO2
-                watches and infant foot SpO2 monitors for connected home
-                healthcare product programs.
+                YimiLife currently publishes YW01 as the wearable monitoring
+                product for OEM/ODM evaluation, with Bluetooth 5.3 BLE, OLED
+                display, 300 mAh battery and source-confirmed SpO2 / pulse rate
+                parameters.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2.5">
@@ -562,14 +491,14 @@ export default function WearableMonitoringPage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/contact"
+                  href="/contact?product=yw01-wearable-pulse-oximeter"
                   className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300"
                 >
                   Request Wearable Product Information
                   <ArrowIcon />
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact?product=yw01-wearable-pulse-oximeter"
                   className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50"
                 >
                   Discuss a Wearable Device Project
@@ -586,15 +515,15 @@ export default function WearableMonitoringPage() {
         <div className="max-w-3xl">
           <Eyebrow tone="emerald">Product lineup</Eyebrow>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-            Wearable Device Lineup
+            YW01 Wearable Product Lineup
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            Three wearable device types are available for customer evaluation,
+            YW01 is the current public wearable product for customer evaluation,
             product configuration discussion and OEM/ODM project intake.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+        <div className="mt-8 grid gap-5 lg:grid-cols-1">
           {products.map((product) => (
             <article
               key={product.id}
@@ -629,7 +558,7 @@ export default function WearableMonitoringPage() {
 
                 <div className="mt-auto pt-6">
                   <Link
-                    href="/contact"
+                    href="/contact?product=yw01-wearable-pulse-oximeter"
                     className="inline-flex items-center rounded-full border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-800 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-800"
                   >
                     {product.cta}
@@ -668,7 +597,7 @@ export default function WearableMonitoringPage() {
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">
                 Lightweight configuration options can be discussed based on
-                selected wearable device type and project requirements. For
+                selected YW01 configuration and project requirements. For
                 deeper customization levels, software integration or ODM project
                 discussion, please visit the OEM/ODM page.
               </p>
@@ -712,14 +641,14 @@ export default function WearableMonitoringPage() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <Link
-                href="/contact"
+                href="/contact?product=yw01-wearable-pulse-oximeter"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
               >
                 Submit Project Requirements
                 <ArrowIcon />
               </Link>
               <Link
-                href="/contact"
+                href="/contact?product=yw01-wearable-pulse-oximeter"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Request Product Information

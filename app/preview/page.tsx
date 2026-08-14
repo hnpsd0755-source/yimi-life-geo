@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const heroMetrics = [
   { value: "ISO 13485", label: "quality system" },
-  { value: "3,000㎡", label: "production facility" },
+  { value: "Shenzhen", label: "manufacturing operations" },
   { value: "300k / month", label: "pulse oximeter capacity" },
   { value: "25+", label: "certified-model project experience" },
 ];
@@ -53,8 +53,8 @@ const productFamilies = [
   {
     title: "Pulse Oximeters",
     status: "Mature core line",
-    text: "Fingertip, pediatric, Bluetooth and handheld SpO2 product directions for private-label and OEM/ODM projects.",
-    details: ["Fingertip model tracks", "Bluetooth / lithium options", "Handheld YH01 / YH02"],
+    text: "Fingertip and handheld SpO2 product directions for private-label and OEM/ODM projects.",
+    details: ["YM model list", "AAA battery source", "Handheld YH01 / YH02"],
     href: "/products/pulse-oximeter",
     cta: "View pulse oximeters",
     tone: "cyan" as Tone,
@@ -62,8 +62,8 @@ const productFamilies = [
   {
     title: "Blood Pressure Monitors",
     status: "Mature / customizable line",
-    text: "Upper-arm BP monitors, Bluetooth models and home healthcare platform directions for brand and distributor projects.",
-    details: ["Upper-arm BP models", "Cuff / display options", "Advanced ODM discussion"],
+    text: "Upper-arm BP monitor models YP7101, YP7201 and YP7202 for brand and distributor projects.",
+    details: ["YP7101 / YP7201 / YP7202", "Cuff / display options", "Project confirmation"],
     href: "/products/blood-pressure-monitor",
     cta: "View BP monitors",
     tone: "amber" as Tone,
@@ -71,8 +71,8 @@ const productFamilies = [
   {
     title: "Wearable Monitoring",
     status: "Wearable product platform support",
-    text: "Wearable temperature, SpO2 watch, infant foot SpO2 and sleep-related monitoring support for Bluetooth-connected OEM projects.",
-    details: ["Platform support", "Bluetooth / low power", "Software integration readiness"],
+    text: "YW01 wrist pulse oximeter support for Bluetooth-connected wearable OEM projects.",
+    details: ["YW01", "Bluetooth 5.3 BLE", "300 mAh battery"],
     href: "/products/wearable-monitoring",
     cta: "Discuss wearable projects",
     tone: "emerald" as Tone,
@@ -484,7 +484,7 @@ export default function HomePage() {
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
               <Link href="/case-studies" className="inline-flex items-center justify-center rounded-full border border-white/35 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
-                View Case Studies
+                View Project Scenarios
               </Link>
             </div>
           </div>

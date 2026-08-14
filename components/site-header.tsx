@@ -301,15 +301,6 @@ export function SiteHeader() {
             Technology
           </Link>
 
-          <Link
-            href="/case-studies"
-            aria-current={isPathActive(pathname, "/case-studies") ? "page" : undefined}
-            onClick={closeAllMenus}
-            className="nav-item"
-          >
-            Case Studies
-          </Link>
-
           <DesktopDropdown
             label="About"
             links={aboutLinks}
@@ -382,13 +373,6 @@ export function SiteHeader() {
                   onNavigate={closeAllMenus}
                 >
                   Technology
-                </MobileLink>
-                <MobileLink
-                  href="/case-studies"
-                  active={isPathActive(pathname, "/case-studies")}
-                  onNavigate={closeAllMenus}
-                >
-                  Case Studies
                 </MobileLink>
               </MobileSection>
 

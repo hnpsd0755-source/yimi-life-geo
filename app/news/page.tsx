@@ -154,7 +154,7 @@ export default function NewsPage() {
                 href="/case-studies"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Explore OEM/ODM Case Studies
+                Explore OEM/ODM Project Scenarios
               </Link>
             </div>
           </div>

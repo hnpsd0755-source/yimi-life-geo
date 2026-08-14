@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Blood Pressure Monitor Manufacturer | YimiLife OEM/ODM",
   description:
-    "YimiLife is a blood pressure monitor manufacturer supporting overseas brands with upper-arm BP monitors, Bluetooth options, cuff configuration, private-label packaging and OEM/ODM project support.",
+    "YimiLife is a blood pressure monitor manufacturer supporting overseas brands with upper-arm BP monitor models YP7101, YP7201 and YP7202, cuff configuration, private-label packaging and OEM/ODM project support.",
   alternates: {
     canonical: "https://www.yimilife.com/products/blood-pressure-monitor",
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title:
       "Blood Pressure Monitor Manufacturer | YimiLife OEM/ODM",
     description:
-      "YimiLife supports overseas brands with upper-arm BP monitors, Bluetooth options, cuff configuration, private-label packaging and OEM/ODM project support.",
+      "YimiLife supports overseas brands with upper-arm BP monitor models YP7101, YP7201 and YP7202, cuff configuration, private-label packaging and OEM/ODM project support.",
     url: "https://www.yimilife.com/products/blood-pressure-monitor",
     siteName: "YimiLife",
     type: "website",
@@ -59,21 +59,6 @@ const PressureIcon = ({ className = "h-6 w-6" }: IconProps) => (
     <path d="M12 13.5 16 9" />
     <path d="M8 17h8" />
     <path d="M12 5V3" />
-  </svg>
-);
-
-const BluetoothIcon = ({ className = "h-6 w-6" }: IconProps) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    className={className}
-    aria-hidden="true"
-  >
-    <path d="m7 7 10 10-5 4V3l5 4L7 17" />
   </svg>
 );
 
@@ -295,104 +280,92 @@ const SpecDetailModal = ({
   </div>
 );
 
+const bpSpecRows = (model: string): SpecRow[] => [
+  { label: "Model", value: model },
+  { label: "Product Type", value: "Upper-arm Electronic Blood Pressure Monitor" },
+  { label: "Display Method", value: "Digital display" },
+  { label: "Measurement Method", value: "Oscillometric method" },
+  { label: "Measurement", value: "Systolic / diastolic blood pressure, pulse rate" },
+  { label: "Memory", value: "2 users, 120 records each" },
+  { label: "Software Version", value: "V1.0" },
+  { label: "Pressure Range", value: "0~290 mmHg (0~38.7 kPa)" },
+  { label: "Pressure Accuracy", value: "+/-3 mmHg (+/-0.4 kPa)" },
+  { label: "Pressure Resolution", value: "1 mmHg (0.1 kPa)" },
+  { label: "Pulse Rate Range", value: "40~199 bpm" },
+  { label: "Pulse Rate Accuracy", value: "+/-5%" },
+  { label: "Pulse Rate Resolution", value: "1 bpm" },
+  { label: "Battery Type", value: "Lithium battery, 18650" },
+  { label: "Rated Voltage", value: "DC 3.7V" },
+  { label: "Battery Capacity", value: "1200mAh" },
+  { label: "Type-C Input", value: "DC 5V, 1A" },
+  { label: "Operating Time", value: "Not less than 15 days under normal use and full charge" },
+  { label: "Charging Time", value: "Maximum approx. 7h" },
+  { label: "Host Dimensions", value: "Approx. 138 x 102 x 61.5 mm" },
+  { label: "Weight", value: "Approx. 340g without cuff" },
+  { label: "Cuff Pressure Rated Range", value: "0~290 mmHg (0~38.7 kPa)" },
+  { label: "Applicable Cuff Size", value: "Arm circumference 22~32 cm; arm circumference 22~36 cm" },
+  { label: "Electrical Safety Type", value: "Internally powered equipment" },
+  { label: "Applied Part", value: "Type BF applied part, no defibrillation protection" },
+  { label: "Protection Level", value: "IP22" },
+  { label: "Operating Mode", value: "Continuous operation" },
+  { label: "Operating Environment", value: "5~40 degrees C, RH 15%~85%, 70kPa~106kPa" },
+  { label: "Storage Environment", value: "-20~55 degrees C, RH 15%~90%, 70kPa~106kPa" },
+  { label: "OEM Options", value: "Logo / color / packaging / IFU / cuff labeling" },
+  { label: "MOQ", value: "Confirmed by selected model and project scope." },
+  {
+    label: "Lead Time",
+    value:
+      "Confirmed after product configuration, order quantity and project requirements are reviewed.",
+  },
+  {
+    label: "Certification",
+    value:
+      "Certification documentation is reviewed by selected model and target market.",
+  },
+];
+
 const platformOptions = [
   {
-    title: "Standard Upper-Arm BP Monitors",
-    eyebrow: "Core private-label platform",
+    title: "YP7101 Upper-Arm BP Monitor",
+    eyebrow: "Confirmed upper-arm model",
     description:
-      "Upper-arm blood pressure monitor platforms for home healthcare, distributor programs, pharmacy retail and branded BP monitor lines.",
+      "Upper-arm electronic blood pressure monitor model listed in the current product parameter source for private-label and OEM/ODM evaluation.",
     icon: PressureIcon,
-    tags: ["Large display", "Simple operation", "Retail-ready configuration"],
+    tags: ["Oscillometric method", "2 x 120 memory", "IP22"],
     bestFor:
-      "Buyers who need a practical home BP monitor with clear user interface, stable platform options and private-label readiness.",
-    specId: "spec-standard-upper-arm-bp",
+      "Buyers who need a source-confirmed upper-arm BP monitor model with clear user interface and private-label readiness.",
+    specId: "spec-yp7101-upper-arm-bp",
     specSummary:
-      "Standard upper-arm blood pressure monitor specification reference for private-label home healthcare and distributor programs.",
-    specRows: [
-      { label: "Model", value: "YP03 series" },
-      { label: "Product Type", value: "Upper-arm Blood Pressure Monitor" },
-      { label: "Measurement Method", value: "Oscillometric method" },
-      { label: "Measurement", value: "Systolic / diastolic blood pressure, PR" },
-      { label: "Pressure Range", value: "0–299 mmHg" },
-      { label: "Pulse Rate Range", value: "40–180 bpm" },
-      { label: "Pressure Accuracy", value: "±3 mmHg" },
-      { label: "Pulse Rate Accuracy", value: "±5%" },
-      { label: "Cuff Size", value: "22–32 cm standard adult cuff" },
-      { label: "Optional Cuff", value: "22–42 cm / larger cuff by project" },
-      { label: "Display", value: "LCD" },
-      { label: "Memory", value: "Single-user / multi-user by model" },
-      { label: "Power Supply", value: "Battery-powered" },
-      { label: "Auto Power-off", value: "Yes" },
-      { label: "OEM Options", value: "Logo / color / packaging / IFU" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-      { label: "Certification", value: "FDA / MDR / NMPA model experience available" },
-    ],
+      "Confirmed upper-arm blood pressure monitor specification reference for YP7101.",
+    specRows: bpSpecRows("YP7101"),
   },
   {
-    title: "Bluetooth BP Monitors",
-    eyebrow: "Connected BP option",
+    title: "YP7201 Upper-Arm BP Monitor",
+    eyebrow: "Confirmed upper-arm model",
     description:
-      "BLE blood pressure monitor options for brands building app-connected records, connected home-care programs or remote monitoring workflows.",
-    icon: BluetoothIcon,
-    tags: ["BLE data transmission", "App workflow discussion", "Connected health use cases"],
-    bestFor:
-      "Digital health, home-care and distribution teams that need BP readings to connect with software or data-review workflows.",
-    specId: "spec-bluetooth-bp-monitor",
-    specSummary:
-      "Bluetooth upper-arm blood pressure monitor specification reference for app-connected and digital health product programs.",
-    specRows: [
-      { label: "Model", value: "Bluetooth BP Monitor series" },
-      { label: "Product Type", value: "Bluetooth Upper-arm Blood Pressure Monitor" },
-      { label: "Measurement Method", value: "Oscillometric method" },
-      { label: "Measurement", value: "Systolic / diastolic blood pressure, PR" },
-      { label: "Pressure Range", value: "0–299 mmHg" },
-      { label: "Pulse Rate Range", value: "40–180 bpm" },
-      { label: "Pressure Accuracy", value: "±3 mmHg" },
-      { label: "Pulse Rate Accuracy", value: "±5%" },
-      { label: "Cuff Size", value: "22–32 cm standard adult cuff" },
-      { label: "Optional Cuff", value: "22–42 cm / larger cuff by project" },
-      { label: "Display", value: "LCD" },
-      { label: "Connectivity", value: "Bluetooth Low Energy" },
-      { label: "Data Output", value: "BP / PR measurement records" },
-      { label: "Power Supply", value: "Battery / Type-C by selected model" },
-      { label: "App Workflow", value: "App data sync by project configuration" },
-      { label: "OEM Options", value: "Logo / packaging / IFU / app workflow" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-    ],
-  },
-  {
-    title: "Platform-Based Customization",
-    eyebrow: "Configuration path",
-    description:
-      "Customization based on existing BP monitor platforms, covering brand appearance, cuff requirements, display details, packaging and selected function discussions.",
+      "Upper-arm electronic blood pressure monitor model sharing the confirmed pressure, pulse rate, cuff, battery and protection parameters in the current source.",
     icon: PlatformIcon,
-    tags: ["Logo and color direction", "Cuff and labeling options", "Packaging and IFU support"],
+    tags: ["0~290 mmHg", "1200mAh lithium battery", "Type-C input"],
     bestFor:
-      "Brands that want to start from a mature platform while adapting the product package and selected details for their market.",
-    specId: "spec-home-healthcare-monitor-platform",
+      "Brand and distributor teams comparing confirmed BP monitor models before quotation and packaging discussion.",
+    specId: "spec-yp7201-upper-arm-bp",
     specSummary:
-      "BP-based multi-parameter home healthcare monitor platform reference for deeper OEM/ODM configuration discussions.",
-    specRows: [
-      { label: "Model", value: "Home Healthcare Monitor platform" },
-      { label: "Product Type", value: "BP-based Multi-Parameter Monitor" },
-      { label: "Measurement Method", value: "Oscillometric BP measurement" },
-      { label: "Core Measurement", value: "Blood pressure, pulse rate" },
-      { label: "Optional Modules", value: "SpO₂ / temperature by project configuration" },
-      { label: "Pressure Range", value: "0–299 mmHg" },
-      { label: "Pulse Rate Range", value: "40–180 bpm" },
-      { label: "Pressure Accuracy", value: "±3 mmHg for BP module" },
-      { label: "Pulse Rate Accuracy", value: "±5% for BP module" },
-      { label: "Display", value: "Large LCD / TFT by selected configuration" },
-      { label: "Connectivity", value: "Bluetooth / Wi-Fi by project configuration" },
-      { label: "Power Supply", value: "Type-C / adapter-supported configuration" },
-      { label: "Data Workflow", value: "App / cloud workflow by project" },
-      { label: "OEM Options", value: "Housing / UI / packaging / IFU" },
-      { label: "MOQ", value: "Project confirmation required" },
-      { label: "Lead Time", value: "Project confirmation required" },
-      { label: "Certification Path", value: "Subject to configuration and target market" },
-    ],
+      "Confirmed upper-arm blood pressure monitor specification reference for YP7201.",
+    specRows: bpSpecRows("YP7201"),
+  },
+  {
+    title: "YP7202 Upper-Arm BP Monitor",
+    eyebrow: "Confirmed upper-arm model",
+    description:
+      "Upper-arm electronic blood pressure monitor model for projects that need source-confirmed public specifications before model and market review.",
+    icon: PressureIcon,
+    tags: ["22~32 / 22~36 cm cuffs", "+/-3 mmHg", "40~199 bpm"],
+    bestFor:
+      "Procurement teams that need confirmed BP parameters, cuff ranges and project-level certification document review.",
+    specId: "spec-yp7202-upper-arm-bp",
+    specSummary:
+      "Confirmed upper-arm blood pressure monitor specification reference for YP7202.",
+    specRows: bpSpecRows("YP7202"),
   },
 ];
 
@@ -401,7 +374,7 @@ const configurationOptions = [
   "Retail box, inner tray and shipping carton coordination",
   "Cuff size, cuff labeling and cuff packaging discussion",
   "Display layout, button language and UI label review",
-  "Bluetooth data transmission and app workflow discussion",
+  "Model-specific data workflow reviewed by project",
   "IFU, label and project documentation support",
 ];
 
@@ -414,12 +387,12 @@ const faqs = [
   {
     question: "Can Bluetooth blood pressure monitor data output be discussed for app workflows?",
     answer:
-      "Yes. Bluetooth BP monitor projects can be discussed for selected platforms, including BLE data transmission, app workflow needs and software handoff requirements.",
+      "Yes. Bluetooth or app data requirements are not listed as confirmed public specifications in the current source and should be reviewed separately by selected model and project scope.",
   },
   {
     question: "What customization options are available for OEM blood pressure monitors?",
     answer:
-      "OEM blood pressure monitor customization can include logo, color direction, packaging, IFU, cuff size direction, cuff labeling and selected UI or Bluetooth workflow discussions by project scope.",
+      "OEM blood pressure monitor customization can include logo, color direction, packaging, IFU, cuff size direction, cuff labeling and selected UI discussions by project scope.",
   },
   {
     question: "Can we start from an existing BP monitor platform?",
@@ -429,7 +402,7 @@ const faqs = [
   {
     question: "What should we prepare before requesting BP monitor specs?",
     answer:
-      "Useful inputs include target market, expected quantity, standard or Bluetooth direction, cuff requirements, branding scope, packaging needs, documentation expectations and project timeline.",
+      "Useful inputs include target market, expected quantity, selected model direction, cuff requirements, branding scope, packaging needs, documentation expectations and project timeline.",
   },
 ];
 
@@ -442,7 +415,7 @@ const structuredData = {
       url: "https://www.yimilife.com/products/blood-pressure-monitor",
       name: "Blood Pressure Monitor Manufacturer | YimiLife OEM/ODM",
       description:
-        "YimiLife is a blood pressure monitor manufacturer supporting overseas brands with upper-arm BP monitors, Bluetooth options, cuff configuration, private-label packaging and OEM/ODM project support.",
+        "YimiLife is a blood pressure monitor manufacturer supporting overseas brands with upper-arm BP monitor models YP7101, YP7201 and YP7202, cuff configuration, private-label packaging and OEM/ODM project support.",
       isPartOf: {
         "@type": "WebSite",
         name: "YimiLife",
@@ -566,7 +539,7 @@ export default function BloodPressureMonitorProductPage() {
                   />
                 </div>
                 <div className="mt-4 grid grid-cols-3 gap-3">
-                  {["Standard", "Bluetooth", "Customize"].map((item) => (
+                  {["YP7101", "YP7201", "YP7202"].map((item) => (
                     <div
                       key={item}
                       className="rounded-2xl border border-white/10 bg-white/10 p-3"
@@ -594,7 +567,7 @@ export default function BloodPressureMonitorProductPage() {
           </h2>
           <p className="mt-5 text-lg leading-9 text-slate-600">
             Start with the product direction that matches your sales channel,
-            connectivity needs and private-label customization scope.
+            model requirements and private-label customization scope.
           </p>
         </div>
 
@@ -706,7 +679,7 @@ export default function BloodPressureMonitorProductPage() {
             </h2>
             <p className="mt-5 text-lg leading-9 text-slate-600">
               Practical answers for buyers comparing private-label BP monitor
-              platforms, Bluetooth options and configuration requirements.
+              models, cuff options and configuration requirements.
             </p>
           </div>
 

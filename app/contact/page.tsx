@@ -280,7 +280,7 @@ export default function ContactPage() {
               Share the information needed for feasibility review.
             </h2>
             <p className="mt-5 text-sm leading-7 text-slate-700">
-              This temporary form opens your email client with the project details. A direct backend form can be added later when the website content and sales workflow are finalized.
+              Submit your project requirements or contact YimiLife directly by email. Share your target market, product category, estimated quantity, customization needs and expected timeline.
             </p>
           </div>
 

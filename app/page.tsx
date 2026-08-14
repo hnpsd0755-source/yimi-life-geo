@@ -30,8 +30,8 @@ const proofCards = [
     href: "/about#quality-compliance",
   },
   {
-    value: "3,000㎡",
-    label: "Production facility",
+    value: "Shenzhen",
+    label: "Manufacturing operations",
     href: "/about",
   },
   {
@@ -51,48 +51,15 @@ const proofCards = [
   },
 ];
 
-const marketProofCards = [
-  {
-    value: "50+",
-    label: "Brand Partners Served",
-  },
-  {
-    value: "3,000,000+",
-    label: "Devices Delivered",
-  },
-  {
-    value: "15+",
-    label: "Markets Reached",
-  },
-];
-
-const customerLogoCards = [
-  "/homepage/P2/customer-logos/selected/customer-logo-row-02.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-04.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-06.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-07.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-07-2.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-09.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-10.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-11.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-14.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-15.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-16.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-19.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-20.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-21.png",
-  "/homepage/P2/customer-logos/selected/customer-logo-row-22.png",
-];
-
 const productFamilies = [
   {
     title: "Pulse Oximeters",
     status: "Mature Core Product Line",
     description:
-      "Fingertip, pediatric, Bluetooth and handheld pulse oximeter directions for private-label and OEM/ODM projects.",
+      "Fingertip and handheld pulse oximeter model directions for private-label and OEM/ODM projects.",
     bullets: [
       "Fingertip",
-      "Bluetooth option",
+      "Model selection",
       "Handheld track",
       "SpO2 verification",
     ],
@@ -107,10 +74,10 @@ const productFamilies = [
     title: "Blood Pressure Monitors",
     status: "Mature / Customizable Product Line",
     description:
-      "Upper-arm blood pressure monitors, Bluetooth BP models and home healthcare platform options for brand and distributor projects.",
+      "Upper-arm blood pressure monitor models YP7101, YP7201 and YP7202 for brand and distributor projects.",
     bullets: [
       "Upper-arm",
-      "Bluetooth option",
+      "Model selection",
       "Cuff customization",
       "ODM platform",
     ],
@@ -125,7 +92,7 @@ const productFamilies = [
     title: "Wearable Monitoring Devices",
     status: "New Product Platforms",
     description:
-      "Wearable SpO2, temperature monitoring and Bluetooth-connected health data device directions for OEM/ODM evaluation, with model readiness, software integration and target-market requirements confirmed by project.",
+      "YW01 wrist pulse oximeter direction for OEM/ODM wearable monitoring evaluation, with Bluetooth 5.3 BLE, OLED display, 300 mAh battery and target-market requirements confirmed by project.",
     bullets: [
       "Project evaluation",
       "Model readiness",
@@ -147,7 +114,7 @@ const productFitRows = [
     status: "Ready to customize",
     statusTone: "ready" as FitStatusTone,
     conclusion: "Best starting point for private-label pulse oximeter programs.",
-    fitTags: ["Fingertip", "Pediatric", "Bluetooth", "Handheld"],
+    fitTags: ["Fingertip", "YM model list", "Handheld", "YH01 / YH02"],
     customizationTags: ["Logo", "Packaging", "Color", "UI settings"],
     href: "/products/pulse-oximeter",
   },
@@ -156,7 +123,7 @@ const productFitRows = [
     status: "Ready to customize",
     statusTone: "ready" as FitStatusTone,
     conclusion: "Use this path for upper-arm BP monitor brand and distributor projects.",
-    fitTags: ["Upper-arm", "Home healthcare", "Bluetooth option"],
+    fitTags: ["Upper-arm", "YP7101", "YP7201 / YP7202"],
     customizationTags: ["Cuff", "Display", "Packaging", "Platform options"],
     href: "/products/blood-pressure-monitor",
   },
@@ -165,8 +132,8 @@ const productFitRows = [
     status: "Feasibility review first",
     statusTone: "review" as FitStatusTone,
     conclusion: "Use this path when model readiness and software integration need project review.",
-    fitTags: ["Newer concepts", "Model readiness", "Software integration"],
-    customizationTags: ["Power design", "Bluetooth", "Verification planning"],
+    fitTags: ["YW01", "Model readiness", "Software integration"],
+    customizationTags: ["300 mAh battery", "Bluetooth 5.3 BLE", "Verification planning"],
     href: "/products/wearable-monitoring",
   },
 ];
@@ -174,70 +141,105 @@ const productFitRows = [
 const oemSteps = [
   {
     number: "01",
-    title: "Project Brief",
+    title: "Requirement Intake",
     icon: "chat",
-    summary: "Share market, quantity, model direction and customization needs.",
-    outcome: "Project requirements",
+    summary: "Share target market, model direction, quantity, brand logo and OEM/ODM customization needs.",
+    outcome: "Project brief",
   },
   {
     number: "02",
-    title: "Scope Check",
+    title: "Design / Feasibility Review",
     icon: "search",
-    summary: "Review available platform options and separate engineering items.",
-    outcome: "Defined scope",
+    summary: "For OEM projects, prepare artwork files for color box, IFU, labels, carton, lens and housing. For ODM projects, review shell, function and engineering feasibility with R&D.",
+    outcome: "Defined project scope",
   },
   {
     number: "03",
-    title: "Sample Review",
+    title: "Sampling and Review",
     icon: "sample",
-    summary: "Check appearance, branding, packaging, label, IFU and functions.",
-    outcome: "Sample review plan",
+    summary: "Arrange samples after document or solution confirmation, then review physical samples or detailed photos with the customer.",
+    outcome: "Sample confirmation",
   },
   {
     number: "04",
-    title: "Production Plan",
+    title: "Order and Production",
     icon: "ship",
-    summary: "Align specifications, inspection items, records, traceability and shipment.",
-    outcome: "Production and shipment plan",
+    summary: "After sample approval and purchase order confirmation, align inspection items, traceability records and shipment planning for mass production.",
+    outcome: "Mass production plan",
+  },
+];
+
+const projectPathCards = [
+  {
+    title: "OEM path",
+    text: "Customer requirement → Logo → OEM artwork → Document confirmation → Sampling → Sample confirmation → Mass production",
+  },
+  {
+    title: "ODM path",
+    text: "Customer requirement → R&D review → Internal feasibility discussion → Solution confirmation → Product development → Sample testing → Customer confirmation → Production order",
   },
 ];
 
 const confidenceChecks = [
   {
-    question: "Factory or trading layer?",
-    answer: "Shenzhen production facility, direct project coordination.",
+    question: "Do your products support CE MDR or FDA 510(k) market requirements?",
+    answer: "Selected models have MDR and FDA 510(k) experience; confirm the exact model and target market before quotation.",
     detail:
-      "YimiLife operates a 3,000㎡ medical device production facility in Shenzhen focused on pulse oximeters and blood pressure monitors. Confirm who handles sample review, production planning and project documentation for the selected model.",
-    cta: "View manufacturing details",
-    href: "/about#manufacturing",
-  },
-  {
-    question: "Does certification match my market?",
-    answer: "Confirm model, market and document scope before artwork or quotation.",
-    detail:
-      "YimiLife works under an ISO 13485 quality system, with 25+ FDA / MDR / NMPA certified models. Certification discussions should be checked against the selected model, configuration and target market.",
+      "Customers usually ask this first because certification status affects whether a product can enter their market. YimiLife exports mainly to the United States and Europe, but certification scope must be checked by model, configuration and target market.",
     cta: "Check quality scope",
     href: "/about#quality-compliance",
+  },
+  {
+    question: "Can Bluetooth pulse oximeters connect to our own app?",
+    answer: "Protocol integration can be discussed after selected hardware configuration and certification-status review.",
+    detail:
+      "For Bluetooth pulse oximeter projects, customers normally need protocol support for their own app. Software integration should be reviewed by product readiness, hardware configuration and target-market certification status.",
+    cta: "Explore Bluetooth options",
+    href: "/products/pulse-oximeter",
+  },
+  {
+    question: "What is the MOQ and can we customize our brand?",
+    answer: "Typical OEM discussion starts from 1,000 pcs, with brand and packaging customization by project.",
+    detail:
+      "Common OEM items include color box, IFU, carton, labels, lens and housing appearance. Final MOQ and customization scope depend on the selected model, artwork complexity and production plan.",
+    cta: "Start a feasibility chat",
+    href: "/contact",
   },
 ];
 
 const homepageFaqs = [
   {
-    question: "Can newer wearable monitoring concepts move directly to production?",
+    question: "Which countries or markets have you exported to?",
     answer:
-      "New wearable monitoring concepts need a project-specific feasibility review before production planning. Model readiness, software integration, documentation scope and target-market requirements should be confirmed before quotation.",
+      "YimiLife has supplied projects across Europe, the United States, Japan, South America, Southeast Asia and selected Middle East markets.",
+    detail:
+      "Market examples include Germany, France, Italy, the United Kingdom, Portugal, Spain, Brazil, Colombia, Mexico, Argentina, Thailand, Malaysia, Indonesia, Dubai and Turkey.",
+  },
+  {
+    question: "Have you worked with recognized brands or distributors?",
+    answer:
+      "YimiLife has experience supporting brand and distributor projects across multiple markets.",
+    detail:
+      "Customer names, logos and private-label packaging artwork are handled confidentially unless publication approval is confirmed for a specific use.",
+  },
+  {
+    question: "Which cost-effective pulse oximeter models should we evaluate first?",
+    answer:
+      "For value-focused pulse oximeter sourcing, buyers often start by reviewing YM202, YM212, YM111 and YM112.",
+    detail:
+      "Final model selection should match the target market, certification needs, display style, battery plan and customization scope.",
   },
 ];
 
 const sourcingQuestions = [
   ...confidenceChecks,
-  {
-    question: homepageFaqs[0].question,
-    answer: "Feasibility review first, then quotation and production planning.",
-    detail: homepageFaqs[0].answer,
-    cta: "Explore wearable path",
-    href: "/products/wearable-monitoring",
-  },
+  ...homepageFaqs.map((item) => ({
+    question: item.question,
+    answer: item.answer,
+    detail: item.detail,
+    cta: "Start a feasibility chat",
+    href: "/contact",
+  })),
 ];
 
 const pulseMatrixTags = [
@@ -633,37 +635,6 @@ export default function HomePage() {
               Supplier facts buyers scan first
             </h2>
           </div>
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
-            {marketProofCards.map((item) => (
-              <div key={item.label} className="rounded-xl bg-slate-950 p-5 text-white">
-                <p className="text-3xl font-semibold tracking-tight md:text-4xl">{item.value}</p>
-                <p className="mt-2 text-xs font-semibold uppercase leading-5 tracking-[0.12em] text-cyan-100">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-5 border-b border-slate-200 pb-6">
-            <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-              <p className="text-sm font-semibold text-slate-950">Selected customer logos</p>
-              <p className="max-w-2xl text-sm leading-6 text-slate-600">
-                Displayed with authorization; private-label packaging artwork remains confidential.
-              </p>
-            </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-              {customerLogoCards.map((src) => (
-                <div key={src} className="flex h-16 items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3">
-                  <Image
-                    src={src}
-                    alt="Authorized customer logo"
-                    width={180}
-                    height={64}
-                    className="max-h-10 w-auto max-w-full object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
           <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
             {proofCards.map((item) => (
               <Link
@@ -872,6 +843,15 @@ export default function HomePage() {
             </Link>
           </div>
 
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {projectPathCards.map((path) => (
+              <article key={path.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <h3 className="text-lg font-semibold tracking-tight text-white">{path.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{path.text}</p>
+              </article>
+            ))}
+          </div>
+
           <div className="relative mt-10">
             <div className="pointer-events-none absolute left-0 right-0 top-10 hidden h-px bg-cyan-300/25 lg:block" aria-hidden="true" />
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -904,8 +884,8 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <SectionHeading
           eyebrow="Sourcing Confidence"
-          title="Procurement checks before you commit"
-          text="Confirm supplier layer, document scope and wearable readiness before sample or quotation work."
+          title="Questions buyers ask before they commit"
+          text="Answer certification, app connection, MOQ, customization, export-market and model-selection questions before sample or quotation work."
           align="center"
         />
 

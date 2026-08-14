@@ -311,33 +311,33 @@ const SpecDetailModal = ({
 const keySpecGroups = [
   {
     title: "General Specs",
+    note: "",
     items: [
       {
         label: "Product type",
         value:
-          "Fingertip pulse oximeter configurations, with model directions for selected connected, pediatric or project-based options",
+          "Fingertip pulse oximeters and handheld pulse oximeters listed in the current product parameter source",
       },
       {
         label: "Measurement parameters",
-        value: "SpO₂, pulse rate and PI by selected model",
+        value:
+          "SpO2 and pulse rate for fingertip models; SpO2, pulse rate and PI for YH01 / YH02 handheld models",
       },
       {
         label: "Display options",
-        value: "LED, OLED or TFT options depending on model direction",
+        value:
+          "Fingertip: LED / OLED / TFT; handheld: YH01 3.5-inch LED, YH02 3.5-inch TFT",
       },
       {
         label: "Power options",
-        value: "AAA dry battery or rechargeable lithium battery by configuration",
-      },
-      {
-        label: "Connectivity options",
         value:
-          "Bluetooth / BLE optional or standard on selected connected models",
+          "Fingertip: 2 x AAA 1.5V alkaline batteries; handheld: 4 x AA 1.5V batteries",
       },
     ],
   },
   {
     title: "OEM/ODM Options",
+    note: "",
     items: [
       {
         label: "Logo customization",
@@ -349,294 +349,339 @@ const keySpecGroups = [
       },
       {
         label: "UI / firmware options",
-        value: "UI language, display direction and firmware options by model",
-      },
-      {
-        label: "Bluetooth SDK support",
         value:
-          "Available for Bluetooth / BLE model projects after technical scope confirmation",
+          "UI language, display direction and firmware options reviewed by selected model",
       },
     ],
   },
   {
     title: "Commercial & Quality Info",
+    note:
+      "Commercial and certification wording is project-level and should be reviewed by selected model and target market.",
     items: [
       {
         label: "MOQ",
-        value:
-          "MOQ starts from 500 pcs for selected models; project-based MOQ may vary by configuration",
+        value: "Confirmed by selected model and project scope.",
       },
       {
         label: "Lead time",
         value:
-          "Typical lead time: 15–30 days after order confirmation, depending on model, customization scope and order quantity",
+          "Confirmed after product configuration, order quantity and project requirements are reviewed.",
       },
       {
         label: "Certifications",
         value:
-          "25+ FDA / MDR / NMPA certified models available; documentation is model- and market-specific",
-      },
-      {
-        label: "Calibration",
-        value: "100% calibrated with Fluke Index 2 simulator",
+          "Certification documentation is reviewed by selected model and target market.",
       },
     ],
-    note:
-      "Calibration wording refers to production calibration, not clinical performance or guaranteed accuracy.",
+  },
+];
+
+const fingertipSpecRows = (
+  model: string,
+  productType = "Fingertip Pulse Oximeter",
+): SpecRow[] => [
+  { label: "Model", value: model },
+  { label: "Product Type", value: productType },
+  { label: "Measurement", value: "SpO2, pulse rate" },
+  { label: "SpO2 Measurement Range", value: "35%~100%" },
+  {
+    label: "SpO2 Specified Accuracy Range",
+    value: "70%~100%: +/-2%; 35%~69%: not defined",
+  },
+  { label: "SpO2 Resolution", value: "0.01" },
+  { label: "Pulse Rate Range", value: "30bpm~250bpm" },
+  { label: "Pulse Rate Accuracy", value: "+/-3bpm" },
+  { label: "Pulse Rate Resolution", value: "1bpm" },
+  { label: "Data Update Period", value: "<30 seconds" },
+  { label: "Display Type", value: "LED / OLED / TFT" },
+  {
+    label: "OLED / TFT Display Content",
+    value:
+      "SpO2, pulse rate, battery indicator, waveform and buzzer indication",
+  },
+  {
+    label: "LED Display Content",
+    value:
+      "SpO2, pulse rate, perfusion index on selected display direction and battery indicator",
+  },
+  { label: "Power Supply", value: "2 x AAA 1.5V alkaline batteries" },
+  { label: "Electrical Safety Type", value: "Internally powered equipment" },
+  {
+    label: "Applied Part",
+    value: "Type BF applied part, no defibrillation protection",
+  },
+  { label: "Protection Level", value: "IP22" },
+  { label: "Operating Mode", value: "Continuous mode" },
+  {
+    label: "Dimensions",
+    value:
+      "Approx. 57 x 30 x 31 mm (YM01 / YM02 type), 62 x 34 x 35 mm (YM03 type), 63 x 36 x 37 mm (YM04 type), 54 x 32 x 31 mm (YM06 type)",
+  },
+  { label: "Weight", value: "Approx. 35g without batteries" },
+  {
+    label: "Operating Environment",
+    value: "10~40 degrees C, RH 15%~95%, 70kPa~106kPa",
+  },
+  {
+    label: "Storage Environment",
+    value: "-20~60 degrees C, RH 10%~95%, 50kPa~107.4kPa",
+  },
+  { label: "Red Light", value: "Approx. 660nm, 9-13mW" },
+  { label: "Infrared Light", value: "Approx. 905nm, 3-6mW" },
+  { label: "OEM Options", value: "Logo / color / packaging / IFU" },
+  { label: "MOQ", value: "Confirmed by selected model and project scope." },
+  {
+    label: "Lead Time",
+    value:
+      "Confirmed after product configuration, order quantity and project requirements are reviewed.",
+  },
+  {
+    label: "Certification",
+    value:
+      "Certification documentation is reviewed by selected model and target market.",
   },
 ];
 
 const fingertipTracks = [
   {
-    title: "Economy Retail Fingertip Models",
-    eyebrow: "High-volume baseline",
+    title: "YM101 / YM102 / YM103 / YM104 Fingertip Models",
+    eyebrow: "AAA battery fingertip line",
     description:
-      "Cost-conscious finger-clip SpO2 models for pharmacy retail, distributor programs and high-volume private-label product lines.",
-    keyInfo: ["Standard Signal", "AAA dry battery / BLE optional"],
-    tags: ["High-volume", "Standard Signal", "BLE optional"],
-    models: ["YM101 Economy", "YM201 Retail"],
+      "Fingertip pulse oximeter models using the shared confirmed measurement, display, power and protection parameters from the current product parameter source.",
+    keyInfo: ["2 x AAA alkaline batteries", "IP22"],
+    tags: ["Fingertip", "LED / OLED / TFT", "Continuous mode"],
+    models: ["YM101", "YM102", "YM103", "YM104"],
     visuals: [
       {
         model: "YM101",
-        note: "Compact dry-battery baseline",
+        note: "Fingertip model listed in source",
         shape: "compact",
+        imageSrc: "/homepage/P2/products/Fingertip Oximeter/YM101.jpg",
       },
       {
-        model: "YM201",
-        note: "Retail display variant",
+        model: "YM102 / YM103 / YM104",
+        note: "Same public specification source family",
         shape: "wide",
       },
     ],
-    specId: "spec-economy-retail-fingertip",
+    specId: "spec-ym101-ym104-fingertip",
     specSummary:
-      "Compact retail-ready fingertip SpO2 specification reference for YM101-type high-volume private-label programs.",
-    specRows: [
-      { label: "Model", value: "YM101 / YM201 series" },
-      { label: "Product Type", value: "Fingertip Pulse Oximeter" },
-      { label: "Measurement", value: "SpO₂, PR, PI" },
-      { label: "Measurement Method", value: "Dual-wavelength optical PPG" },
-      { label: "SpO₂ Range", value: "70–100%" },
-      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
-      { label: "Pulse Rate Range", value: "30–250 bpm" },
-      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
-      { label: "Perfusion Index", value: "Supported by selected model" },
-      { label: "PI 0.1% Low-Perfusion", value: "Selected configuration discussion" },
-      { label: "Display", value: "OLED / LCD by selected model" },
-      { label: "Connectivity", value: "Bluetooth optional" },
-      { label: "Power Supply", value: "AAA battery / rechargeable option by model" },
-      { label: "Data Output", value: "Spot-check data / app data by Bluetooth model" },
-      { label: "OEM Options", value: "Logo / color / packaging / IFU" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-      { label: "Certification", value: "Model-dependent certification documentation review" },
-    ],
+      "Confirmed fingertip pulse oximeter specification reference for YM101 / YM102 / YM103 / YM104.",
+    specRows: fingertipSpecRows("YM101 / YM102 / YM103 / YM104"),
     icon: PulseIcon,
   },
   {
-    title: "Mainstream OLED Fingertip Models",
-    eyebrow: "Private-label mainstream",
+    title: "YM201 / YM202 / YM301 / YM302 Fingertip Models",
+    eyebrow: "Mainstream fingertip line",
     description:
-      "Balanced OLED fingertip configurations for medical device brands that need stronger usability, stable signal acquisition and retail-ready appearance.",
-    keyInfo: [
-      "OLED UI + voice option",
-      "Standard Signal / PulseMatrix™ option",
-    ],
-    tags: ["OLED UI", "PulseMatrix™ optional", "Voice option"],
-    models: ["YM202 OLED", "YM302 Display Plus"],
+      "Mainstream fingertip pulse oximeter models for private-label projects, with public specifications limited to the confirmed shared source values.",
+    keyInfo: ["SpO2 35%~100%", "PR 30bpm~250bpm"],
+    tags: ["Fingertip", "Shared YM specs", "Private-label ready"],
+    models: ["YM201", "YM202", "YM301", "YM302"],
     visuals: [
       {
-        model: "YM202",
-        note: "Dual-color OLED model",
+        model: "YM201",
+        note: "Fingertip model listed in source",
         shape: "wide",
+        imageSrc: "/homepage/P2/products/Fingertip Oximeter/YM201.jpg",
       },
       {
-        model: "YM302",
-        note: "Display-enhanced model",
+        model: "YM202 / YM301 / YM302",
+        note: "Same public specification source family",
         shape: "compact",
       },
     ],
-    specId: "spec-mainstream-oled-fingertip",
+    specId: "spec-ym201-ym302-fingertip",
     specSummary:
-      "Mainstream OLED fingertip SpO2 specification reference for retail-ready private-label programs requiring stronger usability.",
-    specRows: [
-      { label: "Model", value: "YM202 / YM302 series" },
-      { label: "Product Type", value: "OLED Fingertip Pulse Oximeter" },
-      { label: "Measurement", value: "SpO₂, PR, PI" },
-      { label: "Measurement Method", value: "Dual-wavelength optical PPG" },
-      { label: "SpO₂ Range", value: "70–100%" },
-      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
-      { label: "Pulse Rate Range", value: "30–250 bpm" },
-      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
-      { label: "Perfusion Index", value: "Supported by selected model" },
-      { label: "PI 0.1% Low-Perfusion", value: "Selected configuration discussion" },
-      { label: "Display", value: "Dual-color OLED / display-enhanced options" },
-      { label: "Connectivity", value: "Bluetooth optional" },
-      { label: "Power Supply", value: "2 × AAA batteries or rechargeable option by project" },
-      { label: "Data Output", value: "Spot-check data / app data by Bluetooth model" },
-      { label: "OEM Options", value: "Logo / color / packaging / IFU / UI language" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-      { label: "Certification", value: "Model-dependent certification documentation review" },
-    ],
+      "Confirmed fingertip pulse oximeter specification reference for YM201 / YM202 / YM301 / YM302.",
+    specRows: fingertipSpecRows("YM201 / YM202 / YM301 / YM302"),
     icon: ShieldIcon,
   },
   {
-    title: "Advanced Fingertip Models",
-    eyebrow: "Lithium battery + BLE standard",
+    title: "YM111 / YM112 / YM113 / YM114 / YM211 / YM212 / YM314 Fingertip Models",
+    eyebrow: "Expanded YM model group",
     description:
-      "Advanced fingertip SpO2 models for premium connected projects, with rechargeable lithium battery architecture and BLE connectivity as the standard direction.",
-    keyInfo: ["Lithium battery + BLE standard", "PulseMatrix™ option"],
-    tags: ["Rechargeable", "BLE standard", "PulseMatrix™ option"],
-    models: ["YM401 Advanced", "YM503 Advanced BLE"],
+      "Additional YM fingertip pulse oximeter models listed in the source file for OEM/ODM product selection and private-label discussion.",
+    keyInfo: ["+/-3bpm PR accuracy", "<30 seconds data update"],
+    tags: ["Fingertip", "OEM selection", "Confirmed source specs"],
+    models: ["YM111", "YM112", "YM113", "YM114", "YM211", "YM212", "YM314"],
+    visuals: [
+      {
+        model: "YM111 / YM112",
+        note: "Model group listed in source",
+        shape: "compact",
+      },
+      {
+        model: "YM113 / YM114 / YM211 / YM212 / YM314",
+        note: "Same public specification source family",
+        shape: "wide",
+      },
+    ],
+    specId: "spec-ym111-ym314-fingertip",
+    specSummary:
+      "Confirmed fingertip pulse oximeter specification reference for YM111 / YM112 / YM113 / YM114 / YM211 / YM212 / YM314.",
+    specRows: fingertipSpecRows(
+      "YM111 / YM112 / YM113 / YM114 / YM211 / YM212 / YM314",
+    ),
+    icon: LayersIcon,
+  },
+  {
+    title: "YM401 / YM402 / YM403 / YM501 / YM502 / YM503 / YM504 / YM601 / YM602 / YM603 Fingertip Models",
+    eyebrow: "Full listed YM extension group",
+    description:
+      "Full extension group of YM fingertip pulse oximeter models currently listed in the product parameter source, without adding unsupported BLE, rechargeable or pediatric performance claims.",
+    keyInfo: ["LED / OLED / TFT", "Type BF applied part"],
+    tags: ["Fingertip", "Model selection", "Confirmed source specs"],
+    models: [
+      "YM401",
+      "YM402",
+      "YM403",
+      "YM501",
+      "YM502",
+      "YM503",
+      "YM504",
+      "YM601",
+      "YM602",
+      "YM603",
+    ],
     visuals: [
       {
         model: "YM401",
-        note: "Rechargeable advanced model",
+        note: "Fingertip model listed in source",
         shape: "compact",
+        imageSrc: "/homepage/P2/products/Fingertip Oximeter/YM401.jpg",
       },
       {
-        model: "YM503",
-        note: "BLE advanced model",
+        model: "YM402 / YM403 / YM501 / YM502 / YM503 / YM504 / YM601 / YM602 / YM603",
+        note: "Same public specification source family",
         shape: "wide",
       },
     ],
-    specId: "spec-advanced-fingertip",
+    specId: "spec-ym401-ym603-fingertip",
     specSummary:
-      "Advanced connected fingertip SpO2 specification reference for rechargeable, BLE-enabled and app-connected product programs.",
-    specRows: [
-      { label: "Model", value: "YM401 / YM503 series" },
-      { label: "Product Type", value: "Advanced Fingertip Pulse Oximeter" },
-      { label: "Measurement", value: "SpO₂, PR, PI / waveform options by model" },
-      { label: "Measurement Method", value: "Dual-wavelength optical PPG" },
-      { label: "SpO₂ Range", value: "70–100%" },
-      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
-      { label: "Pulse Rate Range", value: "30–250 bpm" },
-      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
-      { label: "Perfusion Index", value: "Supported by selected model" },
-      { label: "PI 0.1% Low-Perfusion", value: "Selected configuration discussion" },
-      { label: "Display", value: "OLED / TFT configuration by model" },
-      { label: "Connectivity", value: "BLE standard for connected model direction" },
-      { label: "Power Supply", value: "Rechargeable lithium battery configuration" },
-      { label: "Data Output", value: "SpO₂ / PR / PI app data by Bluetooth model" },
-      { label: "Signal Platform", value: "PulseMatrix™ option by configuration" },
-      { label: "OEM Options", value: "Logo / color / packaging / app data workflow discussion" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-    ],
+      "Confirmed fingertip pulse oximeter specification reference for YM401 / YM402 / YM403 / YM501 / YM502 / YM503 / YM504 / YM601 / YM602 / YM603.",
+    specRows: fingertipSpecRows(
+      "YM401 / YM402 / YM403 / YM501 / YM502 / YM503 / YM504 / YM601 / YM602 / YM603",
+    ),
     icon: CpuIcon,
   },
+];
+
+const handheldSpecRows = (model: "YH01" | "YH02"): SpecRow[] => [
+  { label: "Model", value: model },
+  { label: "Product Type", value: "Handheld Pulse Oximeter" },
+  { label: "Display", value: model === "YH01" ? "3.5-inch LED screen" : "3.5-inch TFT screen" },
+  { label: "Sensor Interface", value: "1 x DB9 multifunction interface for SpO2 sensor connection" },
+  { label: "SpO2 Measurement Range", value: "35%~100%" },
   {
-    title: "Pediatric Fingertip Models",
-    eyebrow: "Child-oriented design",
-    description:
-      "Pediatric pulse oximeter configurations with child-friendly housing, smaller finger-cavity considerations, color display options and family healthcare branding potential.",
-    keyInfo: [
-      "Child housing + smaller cavity",
-      "TFT / OLED + signal tuning option",
-    ],
-    tags: ["Pediatric use", "Child housing", "Color display"],
-    models: ["YM603 Pediatric", "YM602 Child Display"],
-    visuals: [
-      {
-        model: "YM603",
-        note: "Pediatric TFT model",
-        shape: "wide",
-      },
-      {
-        model: "YM602",
-        note: "Child display model",
-        shape: "compact",
-      },
-    ],
-    specId: "spec-pediatric-fingertip",
-    specSummary:
-      "Pediatric fingertip SpO2 specification reference for child-oriented family healthcare and mother-baby brand programs.",
-    specRows: [
-      { label: "Model", value: "YM603 / YM602 series" },
-      { label: "Product Type", value: "Pediatric Fingertip Pulse Oximeter" },
-      { label: "Measurement", value: "SpO₂, PR, PI" },
-      { label: "Measurement Method", value: "Dual-wavelength optical PPG" },
-      { label: "SpO₂ Range", value: "70–100%" },
-      { label: "SpO₂ Accuracy", value: "±2% SpO₂" },
-      { label: "Pulse Rate Range", value: "30–250 bpm" },
-      { label: "Pulse Rate Accuracy", value: "±2 bpm or ±2%" },
-      { label: "Perfusion Index", value: "Supported by selected model" },
-      { label: "PI 0.1% Low-Perfusion", value: "Selected configuration discussion" },
-      { label: "Display", value: "TFT / OLED configuration by model" },
-      { label: "Connectivity", value: "Bluetooth optional" },
-      { label: "Power Supply", value: "2 × AAA batteries or rechargeable option by project" },
-      { label: "Housing", value: "Child-friendly housing / smaller finger-cavity design" },
-      { label: "OEM Options", value: "Logo / color / packaging / labeling discussion" },
-      { label: "MOQ", value: "From 500 pcs" },
-      { label: "Lead Time", value: "15–30 days" },
-      { label: "Certification", value: "Model-dependent certification documentation review" },
-    ],
-    icon: LayersIcon,
+    label: "SpO2 Accuracy",
+    value:
+      "70%~100%: +/-2% with RS201 / RS202 / SS201 sensors; +/-3% with SS102 sensor; 0%~69%: not defined",
+  },
+  { label: "SpO2 Resolution", value: "0.01" },
+  { label: "Pulse Rate Range", value: "30~250 bpm" },
+  { label: "Pulse Rate Accuracy", value: "+/-3 bpm" },
+  { label: "Pulse Rate Resolution", value: "1bpm" },
+  { label: "PI Range", value: "0.5%~20%" },
+  { label: "Data Update Period", value: "<30 seconds" },
+  { label: "Power Supply", value: "4 x 1.5V AA batteries" },
+  {
+    label: "Operating Time",
+    value:
+      "Approx. 15h for TFT and approx. 30h for LED under the listed typical source conditions",
+  },
+  { label: "Low Voltage", value: "2.35V +/-0.1V low-battery display" },
+  { label: "Shutdown Delay", value: "Up to 10 minutes after first low-battery prompt" },
+  { label: "Protection Level", value: "IPX2" },
+  { label: "Operating Mode", value: "Continuous operation" },
+  { label: "Dimensions", value: "70(W) x 150(H) x 30(D) mm" },
+  { label: "Maximum Weight", value: "<500g, full configuration including batteries" },
+  { label: "Operating Environment", value: "10~40 degrees C, RH 15%~95%, 70.0~106.0 kPa" },
+  { label: "Storage Environment", value: "-20~60 degrees C, RH 10%~95%, 50.0~107.4 kPa" },
+  { label: "Red Light", value: "650nm~667nm, output <13mW" },
+  { label: "Infrared Light", value: "885nm~915nm, output <6mW" },
+  { label: "Optical Radiation Safety", value: "No-risk class under GB/T20145-2006 classification" },
+  { label: "MOQ", value: "Confirmed by selected model and project scope." },
+  {
+    label: "Lead Time",
+    value:
+      "Confirmed after product configuration, order quantity and project requirements are reviewed.",
+  },
+  {
+    label: "Certification",
+    value:
+      "Certification documentation is reviewed by selected model and target market.",
   },
 ];
 
 const handheldModels = [
   {
     model: "YH01",
-    role: "Portable handheld configuration",
+    role: "LED handheld configuration",
     description:
-      "YH01 is positioned as a compact handheld SpO2 model direction with external probe configuration and a portable product structure.",
-    display: "Standard / larger handheld display option",
-    ble: "Optional BLE discussion",
-    power: "Dry battery or rechargeable configuration by project",
+      "YH01 is a handheld pulse oximeter model with a 3.5-inch LED screen and DB9 multifunction interface for SpO2 sensor connection.",
+    display: "3.5-inch LED screen",
+    ble: "Not listed in current source",
+    power: "4 x 1.5V AA batteries",
+    imageSrc: "/homepage/P2/products/handheld Oximeter/YH01-Oximeter.png",
     scenario:
-      "Point-of-care support, nursing support and distributor handheld SpO2 projects",
+      "Handheld SpO2 projects requiring external sensor connection and source-confirmed YH01 parameters",
+    specId: "spec-yh01-handheld",
+    specRows: handheldSpecRows("YH01"),
   },
   {
     model: "YH02",
-    role: "Enhanced handheld configuration",
+    role: "TFT handheld configuration",
     description:
-      "YH02 follows the same handheld SpO2 product family logic as YH01, with configuration differences mainly around display, BLE and power selection.",
-    display: "Larger UI / waveform display discussion",
-    ble: "Optional BLE discussion",
-    power: "Rechargeable lithium or dry-battery configuration by project",
+      "YH02 is a handheld pulse oximeter model with a 3.5-inch TFT screen and DB9 multifunction interface for SpO2 sensor connection.",
+    display: "3.5-inch TFT screen",
+    ble: "Not listed in current source",
+    power: "4 x 1.5V AA batteries",
+    imageSrc: "/homepage/P2/products/handheld Oximeter/handheld oximeter.jpg",
     scenario:
-      "Projects requiring a more instrument-like handheld SpO2 form factor",
+      "Handheld SpO2 projects requiring TFT display and source-confirmed YH02 parameters",
+    specId: "spec-yh02-handheld",
+    specRows: handheldSpecRows("YH02"),
   },
 ];
 
 const fingertipSelector = [
   {
-    configuration: "Basic Adult Fingertip Model",
-    bestFor: "Cost-sensitive distributor product line",
-    display: "LED / OLED",
-    ble: "Optional / not required",
-    voice: "Optional",
-    signal: "Standard Signal",
-    projectFit: "High-volume private label orders",
+    configuration: "YM101 / YM102 / YM103 / YM104",
+    bestFor: "Buyers comparing listed baseline fingertip model codes",
+    display: "LED / OLED / TFT",
+    ble: "2 x AAA 1.5V alkaline batteries",
+    voice: "Continuous mode",
+    signal: "Excel-confirmed shared YM specifications",
+    projectFit: "Private-label fingertip model selection",
   },
   {
-    configuration: "Mainstream OLED Fingertip Model",
-    bestFor: "Balanced retail and pharmacy product lines",
-    display: "Dual-color OLED",
-    ble: "Optional BLE",
-    voice: "Optional",
-    signal: "PulseMatrix™",
-    projectFit: "Mainstream medical device brands",
+    configuration: "YM201 / YM202 / YM301 / YM302",
+    bestFor: "Mainstream fingertip pulse oximeter sourcing",
+    display: "LED / OLED / TFT",
+    ble: "2 x AAA 1.5V alkaline batteries",
+    voice: "Continuous mode",
+    signal: "Excel-confirmed shared YM specifications",
+    projectFit: "Retail and distributor product programs",
   },
   {
-    configuration: "Advanced Fingertip Model",
-    bestFor: "Premium rechargeable and connected SpO2 projects",
-    display: "OLED / TFT",
-    ble: "Standard BLE",
-    voice: "Optional",
-    signal: "PulseMatrix™ option",
-    projectFit:
-      "Premium retail, app-connected and differentiated SpO2 programs",
+    configuration: "YM111 / YM112 / YM113 / YM114 / YM211 / YM212 / YM314",
+    bestFor: "Expanded YM model evaluation",
+    display: "LED / OLED / TFT",
+    ble: "2 x AAA 1.5V alkaline batteries",
+    voice: "Continuous mode",
+    signal: "Excel-confirmed shared YM specifications",
+    projectFit: "OEM model comparison and quotation preparation",
   },
   {
-    configuration: "Pediatric Fingertip Model",
-    bestFor: "Child-friendly family healthcare product",
-    display: "TFT / OLED",
-    ble: "Optional BLE",
-    voice: "Optional",
-    signal: "Standard Signal / PulseMatrix™ option",
-    projectFit: "Pediatric and mother-baby brand projects",
+    configuration: "YM401 / YM402 / YM403 / YM501 / YM502 / YM503 / YM504 / YM601 / YM602 / YM603",
+    bestFor: "Full listed extension group review",
+    display: "LED / OLED / TFT",
+    ble: "2 x AAA 1.5V alkaline batteries",
+    voice: "Continuous mode",
+    signal: "Excel-confirmed shared YM specifications",
+    projectFit: "Broader private-label model shortlist review",
   },
 ];
 
@@ -645,13 +690,13 @@ const faqs = [
     question:
       "Can I start a private label pulse oximeter project with an existing YimiLife model?",
     answer:
-      "Yes. YimiLife can review existing fingertip, pediatric, handheld or Bluetooth model directions for private label pulse oximeter projects, then discuss logo, packaging, labeling, IFU and configuration needs according to the selected model and target market requirements.",
+      "Yes. YimiLife can review existing YM fingertip models or YH01 / YH02 handheld models, then discuss logo, packaging, labeling, IFU and configuration needs according to the selected model and target market requirements.",
   },
   {
     question:
-      "Can Bluetooth pulse oximeter configurations be discussed for app integration?",
+      "Are Bluetooth pulse oximeter specifications listed on this page?",
     answer:
-      "Yes. For BLE-enabled pulse oximeter projects, YimiLife can discuss Bluetooth Low Energy protocol documentation, data transmission formats and iOS / Android SDK integration support depending on the selected hardware configuration and software scope.",
+      "No. This round keeps public specifications limited to the confirmed product parameter source. Bluetooth or app-integration requirements should be reviewed separately by selected hardware configuration and software scope.",
   },
   {
     question:
@@ -661,15 +706,15 @@ const faqs = [
   },
   {
     question:
-      "Where can buyers learn more about PulseMatrix™ signal technology?",
+      "Where can buyers learn more about PulseMatrix signal technology?",
     answer:
-      "This product page is kept focused on pulse oximeter product forms, model directions and fingertip configuration selection. Detailed content about PI 0.1% low-perfusion, performance under motion conditions and SpO₂ performance across diverse skin pigmentation is organized under the PulseMatrix™ Signal Platform.",
+      "This product page is kept focused on source-confirmed product specifications. Detailed technology content is organized under the PulseMatrix Signal Platform section.",
   },
   {
     question:
       "What fingertip pulse oximeter configuration is suitable for elderly users?",
     answer:
-      "For elderly users, projects can consider high-contrast display options, voice prompt configurations, accessible result reading and optional alarm settings. These choices can help improve readability and usability in home care scenarios.",
+      "For elderly-user-oriented projects, usability requirements should be reviewed against the selected model, target market and confirmed product configuration.",
   },
 ];
 
@@ -718,10 +763,9 @@ const structuredData = {
       itemListElement: [
         "Fingertip Pulse Oximeter",
         "Handheld Pulse Oximeter",
-        "Pediatric Pulse Oximeter",
-        "Advanced Fingertip Pulse Oximeter",
-        "BLE Optional Fingertip Pulse Oximeter",
-        "Voice-Enabled Fingertip Pulse Oximeter",
+        "YM Fingertip Pulse Oximeter",
+        "YH01 Handheld Pulse Oximeter",
+        "YH02 Handheld Pulse Oximeter",
       ].map((name, index) => ({
         "@type": "ListItem",
         position: index + 1,
@@ -799,21 +843,22 @@ export default function PulseOximeterProductPage() {
 
             <p className="mt-6 text-lg leading-9 text-slate-300">
               YimiLife supports overseas brands and distributors as a fingertip
-              pulse oximeter manufacturer with handheld SpO2 options,
-              private-label customization, Bluetooth-enabled configurations,
-              packaging support and production verification.
+              pulse oximeter manufacturer with YM fingertip models, YH01 / YH02
+              handheld SpO2 options, private-label customization, packaging
+              support and project documentation review.
             </p>
 
             <p className="mt-4 text-base leading-8 text-slate-400">
               As a B2B OEM/ODM medical device manufacturer, YimiLife supports
-              pulse oximeter OEM discussions across display, power supply, BLE
-              option, user group and signal-processing architecture.
+              pulse oximeter OEM discussions across display, power supply,
+              model selection and model-level documentation requirements.
             </p>
 
             <p className="mt-4 text-sm leading-7 text-slate-400">
-              Procurement reference: 3,000㎡ manufacturing site, 300,000 units
-              monthly capacity and 25+ FDA / MDR / NMPA certified models for
-              buyer evaluation.
+              Procurement reference: 300,000 units/month production capacity
+              and 25+ certified models across FDA, MDR and NMPA pathways for
+              buyer evaluation. Documentation availability depends on the
+              selected model, configuration and target market.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -839,10 +884,10 @@ export default function PulseOximeterProductPage() {
             <div className="relative h-full min-h-[320px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
               <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(#67e8f9_1px,transparent_1px)] [background-size:20px_20px]" />
               <Image
-                src="/homepage/pulse-oximeter.png"
+                src="/homepage/P2/selected/product-pulse-oximeter.jpg"
                 alt="YimiLife pulse oximeter product family photo"
                 fill
-                className="object-cover"
+                className="object-contain p-8"
                 priority
               />
               <div className="absolute inset-x-6 bottom-6 rounded-3xl border border-white/10 bg-slate-950/70 p-4 text-white backdrop-blur-sm">
@@ -850,7 +895,7 @@ export default function PulseOximeterProductPage() {
                   Pulse oximeter family
                 </p>
                 <p className="mt-2 text-sm leading-6 text-slate-200">
-                  Fingertip, handheld and pediatric SpO2 products for
+                  YM fingertip and YH01 / YH02 handheld SpO2 products for
                   private-label OEM/ODM.
                 </p>
               </div>
@@ -996,19 +1041,34 @@ export default function PulseOximeterProductPage() {
                         className="overflow-hidden rounded-[1.35rem] border border-slate-700 bg-gradient-to-br from-slate-900 via-slate-950 to-cyan-950/35 shadow-inner transition duration-300 group-hover:border-cyan-300 group-hover:from-cyan-950/60 group-hover:via-slate-950 group-hover:to-cyan-900/45 group-hover:shadow-[0_0_0_1px_rgba(103,232,249,0.16),0_18px_40px_-28px_rgba(34,211,238,0.9)]"
                       >
                         <div className="flex h-36 items-center justify-center p-4 md:h-full md:min-h-[175px]">
-                          <div
-                            className={`relative rounded-[1.6rem] border border-slate-600 bg-slate-950 shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300 group-hover:shadow-cyan-300/50 ${
-                              visual.shape === "wide"
-                                ? "h-24 w-40"
-                                : "h-28 w-32"
-                            }`}
-                          >
-                            <div className="absolute left-1/2 top-3 h-9 w-20 -translate-x-1/2 rounded-lg bg-cyan-300/30" />
-                            <div className="absolute bottom-4 left-1/2 h-2.5 w-14 -translate-x-1/2 rounded-full bg-white/20" />
-                            <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-cyan-300 text-[11px] font-semibold text-slate-950 shadow-md">
-                              {index + 1}
+                          {visual.imageSrc ? (
+                            <div className="relative h-full min-h-[140px] w-full overflow-hidden rounded-[1.2rem] border border-slate-700 bg-white transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300">
+                              <Image
+                                src={visual.imageSrc}
+                                alt={`${visual.model} fingertip pulse oximeter product image`}
+                                fill
+                                sizes="(min-width: 1024px) 260px, 50vw"
+                                className="object-contain p-3"
+                              />
+                              <div className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-cyan-300 text-[11px] font-semibold text-slate-950 shadow-md">
+                                {index + 1}
+                              </div>
                             </div>
-                          </div>
+                          ) : (
+                            <div
+                              className={`relative rounded-[1.6rem] border border-slate-600 bg-slate-950 shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300 group-hover:shadow-cyan-300/50 ${
+                                visual.shape === "wide"
+                                  ? "h-24 w-40"
+                                  : "h-28 w-32"
+                              }`}
+                            >
+                              <div className="absolute left-1/2 top-3 h-9 w-20 -translate-x-1/2 rounded-lg bg-cyan-300/30" />
+                              <div className="absolute bottom-4 left-1/2 h-2.5 w-14 -translate-x-1/2 rounded-full bg-white/20" />
+                              <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-cyan-300 text-[11px] font-semibold text-slate-950 shadow-md">
+                                {index + 1}
+                              </div>
+                            </div>
+                          )}
                         </div>
                         <div className="border-t border-slate-700 bg-slate-950/80 px-4 py-3">
                           <h4 className="text-base font-semibold tracking-tight text-white">
@@ -1046,14 +1106,12 @@ export default function PulseOximeterProductPage() {
           {[
             "All",
             "Adult",
-            "Pediatric",
-            "Advanced",
-            "BLE Optional",
-            "Voice",
+            "YM models",
+            "YH handheld",
             "TFT Display",
             "High-Volume",
-            "App Integration",
-            "PulseMatrix™",
+            "AAA Battery",
+            "IP22",
           ].map((tag) => (
             <span
               key={tag}
@@ -1072,9 +1130,9 @@ export default function PulseOximeterProductPage() {
                   <th className="p-5">Configuration</th>
                   <th className="p-5">Best For</th>
                   <th className="p-5">Display</th>
-                  <th className="p-5">BLE Option</th>
-                  <th className="p-5">Voice</th>
-                  <th className="p-5">Signal Technology</th>
+                  <th className="p-5">Power Supply</th>
+                  <th className="p-5">Operating Mode</th>
+                  <th className="p-5">Source Basis</th>
                   <th className="p-5">Project Fit</th>
                 </tr>
               </thead>
@@ -1145,10 +1203,10 @@ export default function PulseOximeterProductPage() {
 
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
               {[
-                "Display: standard or larger UI",
-                "Power: dry battery or lithium configuration",
-                "BLE: optional by project",
-                "Probe-based handheld form factor",
+                "Display: YH01 LED / YH02 TFT",
+                "Power: 4 x AA 1.5V batteries",
+                "Interface: DB9 for SpO2 sensor",
+                "Protection level: IPX2",
               ].map((item) => (
                 <div
                   key={item}
@@ -1167,14 +1225,15 @@ export default function PulseOximeterProductPage() {
                 className="overflow-hidden rounded-[1.35rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-emerald-50 shadow-inner transition duration-300 hover:border-emerald-300 hover:shadow-md"
               >
                 <div className="flex h-36 items-center justify-center p-4 md:h-full md:min-h-[175px]">
-                  <div
-                    className={`relative rounded-[1.6rem] border border-slate-200 bg-slate-950 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-emerald-200/60 ${
-                      index === 0 ? "h-28 w-32" : "h-24 w-40"
-                    }`}
-                  >
-                    <div className="absolute left-1/2 top-3 h-9 w-20 -translate-x-1/2 rounded-lg bg-emerald-300/25" />
-                    <div className="absolute bottom-4 left-1/2 h-2.5 w-14 -translate-x-1/2 rounded-full bg-white/20" />
-                    <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[11px] font-semibold text-emerald-700 shadow-md">
+                  <div className="relative h-full min-h-[140px] w-full overflow-hidden rounded-[1.2rem] border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-emerald-300">
+                    <Image
+                      src={model.imageSrc}
+                      alt={`${model.model} handheld pulse oximeter product image`}
+                      fill
+                      sizes="(min-width: 1024px) 260px, 50vw"
+                      className="object-contain p-3"
+                    />
+                    <div className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[11px] font-semibold text-emerald-700 shadow-md">
                       H{index + 1}
                     </div>
                   </div>
@@ -1184,7 +1243,7 @@ export default function PulseOximeterProductPage() {
                     {model.model}
                   </h4>
                   <p className="mt-0.5 text-xs leading-5 text-slate-600">
-                    Display / BLE / battery configuration option
+                    Display / battery / DB9 probe interface
                   </p>
                 </div>
               </div>
@@ -1259,7 +1318,7 @@ export default function PulseOximeterProductPage() {
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-9 text-cyan-50">
             Contact YimiLife to discuss fingertip pulse oximeter configurations,
-            handheld SpO2 model directions, BLE integration and product
+            handheld SpO2 model directions, source-confirmed specifications and product
             selection for your target market.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
