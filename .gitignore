@@ -40,3 +40,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private customer/source assets
+public/homepage/合作品牌统计.xls
+public/homepage/P2/*
+!public/homepage/P2/selected/
+!public/homepage/P2/selected/**
+!public/homepage/P2/customer-logos/
+public/homepage/P2/customer-logos/*
+!public/homepage/P2/customer-logos/selected/
+!public/homepage/P2/customer-logos/selected/**

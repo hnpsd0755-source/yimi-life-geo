@@ -1,29 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --yimi-brand-50: #edfafa;
+  --yimi-brand-100: #d8f3f4;
+  --yimi-brand-200: #aee5e7;
+  --yimi-brand-300: #70cdd1;
+  --yimi-brand-500: #08a8ae;
+  --yimi-brand-600: #087f85;
+  --yimi-brand-700: #075e63;
+  --yimi-brand-800: #064d52;
+  --yimi-canvas: #f7fafb;
+  --yimi-surface: #ffffff;
+  --yimi-ink: #0f172a;
+  --yimi-copy: #334155;
+  --yimi-muted: #64748b;
+  --yimi-line: #e2e8f0;
+  --yimi-content-max: 80rem;
+  --yimi-page-gutter: 1.5rem;
+  --yimi-page-gutter-wide: 2rem;
+  --yimi-section-space: 4rem;
+  --yimi-section-space-wide: 5rem;
+  --yimi-section-space-compact: 3rem;
+  --yimi-section-space-compact-wide: 4rem;
+  --yimi-radius-ui: 0.5rem;
+  --yimi-control-min-height: 2.75rem;
+  --background: var(--yimi-canvas);
+  --foreground: var(--yimi-ink);
+  --font-yimi-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-yimi-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 @theme inline {
+  --color-brand-50: var(--yimi-brand-50);
+  --color-brand-100: var(--yimi-brand-100);
+  --color-brand-200: var(--yimi-brand-200);
+  --color-brand-300: var(--yimi-brand-300);
+  --color-brand-500: var(--yimi-brand-500);
+  --color-brand-600: var(--yimi-brand-600);
+  --color-brand-700: var(--yimi-brand-700);
+  --color-brand-800: var(--yimi-brand-800);
+  --color-canvas: var(--yimi-canvas);
+  --color-surface: var(--yimi-surface);
+  --color-ink: var(--yimi-ink);
+  --color-copy: var(--yimi-copy);
+  --color-muted: var(--yimi-muted);
+  --color-line: var(--yimi-line);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-lg: var(--yimi-radius-ui);
+  --font-sans: var(--font-yimi-sans);
+  --font-mono: var(--font-yimi-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--font-yimi-sans);
   text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
 ::selection {
@@ -32,4 +72,195 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.site-container {
+  width: 100%;
+  max-width: var(--yimi-content-max);
+  margin-inline: auto;
+  padding-inline: var(--yimi-page-gutter);
+}
+
+.site-section {
+  padding-block: var(--yimi-section-space);
+}
+
+.site-section-compact {
+  padding-block: var(--yimi-section-space-compact);
+}
+
+.site-control {
+  min-height: var(--yimi-control-min-height);
+  border-radius: var(--yimi-radius-ui);
+}
+
+.nav-item,
+.nav-menu-item {
+  display: inline-flex;
+  min-height: var(--yimi-control-min-height);
+  align-items: center;
+  border-radius: var(--yimi-radius-ui);
+  color: var(--yimi-copy);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.nav-item {
+  padding: 0.5rem 1rem;
+}
+
+.nav-menu-item {
+  width: 100%;
+  padding: 0.75rem 1rem;
+}
+
+.nav-item:hover,
+.nav-menu-item:hover {
+  background: var(--yimi-canvas);
+  color: var(--yimi-ink);
+}
+
+.nav-item[aria-current="page"],
+.nav-item[data-active="true"],
+.nav-menu-item[aria-current="page"] {
+  background: var(--yimi-brand-50);
+  color: var(--yimi-brand-700);
+}
+
+.nav-item:focus-visible,
+.nav-menu-item:focus-visible {
+  outline: 3px solid var(--yimi-brand-300);
+  outline-offset: 1px;
+}
+
+.nav-item svg {
+  transition: transform 150ms ease;
+}
+
+.nav-item[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.button-primary,
+.button-secondary,
+.button-primary-inverse,
+.button-secondary-inverse {
+  display: inline-flex;
+  min-height: var(--yimi-control-min-height);
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--yimi-radius-ui);
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-align: center;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.button-primary {
+  border-color: var(--yimi-brand-700);
+  background: var(--yimi-brand-700);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  border-color: var(--yimi-brand-800);
+  background: var(--yimi-brand-800);
+}
+
+.button-secondary {
+  border-color: var(--yimi-line);
+  background: var(--yimi-surface);
+  color: var(--yimi-ink);
+}
+
+.button-secondary:hover {
+  border-color: var(--yimi-brand-200);
+  background: var(--yimi-brand-50);
+  color: var(--yimi-brand-700);
+}
+
+.button-primary-inverse {
+  border-color: var(--yimi-surface);
+  background: var(--yimi-surface);
+  color: var(--yimi-brand-700);
+}
+
+.button-primary-inverse:hover {
+  border-color: var(--yimi-brand-50);
+  background: var(--yimi-brand-50);
+}
+
+.button-secondary-inverse {
+  border-color: rgb(255 255 255 / 0.35);
+  background: transparent;
+  color: #ffffff;
+}
+
+.button-secondary-inverse:hover {
+  background: rgb(255 255 255 / 0.1);
+}
+
+.text-link,
+.text-link-inverse {
+  display: inline-flex;
+  min-height: var(--yimi-control-min-height);
+  align-items: center;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-underline-offset: 0.25rem;
+  transition: color 150ms ease;
+}
+
+.text-link {
+  color: var(--yimi-brand-700);
+}
+
+.text-link:hover {
+  color: var(--yimi-brand-800);
+  text-decoration: underline;
+}
+
+.text-link-inverse {
+  color: var(--yimi-brand-200);
+}
+
+.text-link-inverse:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.button-primary:focus-visible,
+.button-secondary:focus-visible,
+.button-primary-inverse:focus-visible,
+.button-secondary-inverse:focus-visible,
+.text-link:focus-visible,
+.text-link-inverse:focus-visible {
+  outline: 3px solid var(--yimi-brand-300);
+  outline-offset: 2px;
+}
+
+@media (min-width: 64rem) {
+  .site-container {
+    padding-inline: var(--yimi-page-gutter-wide);
+  }
+
+  .site-section {
+    padding-block: var(--yimi-section-space-wide);
+  }
+
+  .site-section-compact {
+    padding-block: var(--yimi-section-space-compact-wide);
+  }
 }

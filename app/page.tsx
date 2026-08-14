@@ -45,10 +45,43 @@ const proofCards = [
     href: "/about#quality-compliance",
   },
   {
-    value: "Fluke Index 2",
-    label: "Calibration workflow",
+    value: "Fluke-based",
+    label: "Calibration and test workflow",
     href: "/about#manufacturing",
   },
+];
+
+const marketProofCards = [
+  {
+    value: "50+",
+    label: "Brand Partners Served",
+  },
+  {
+    value: "3,000,000+",
+    label: "Devices Delivered",
+  },
+  {
+    value: "15+",
+    label: "Markets Reached",
+  },
+];
+
+const customerLogoCards = [
+  "/homepage/P2/customer-logos/selected/customer-logo-row-02.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-04.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-06.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-07.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-07-2.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-09.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-10.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-11.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-14.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-15.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-16.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-19.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-20.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-21.png",
+  "/homepage/P2/customer-logos/selected/customer-logo-row-22.png",
 ];
 
 const productFamilies = [
@@ -63,9 +96,9 @@ const productFamilies = [
       "Handheld track",
       "SpO2 verification",
     ],
-    image: "/homepage/ai-product-platforms.png",
-    imageAlt: "YimiLife pulse oximeter product platform for OEM and private-label projects",
-    imagePosition: "0% center",
+    image: "/homepage/P2/selected/product-pulse-oximeter.jpg",
+    imageAlt: "YimiLife fingertip pulse oximeter product for OEM and private-label projects",
+    imagePosition: "center center",
     href: "/products/pulse-oximeter",
     cta: "View Pulse Oximeter Options",
     accent: "cyan" as Tone,
@@ -81,9 +114,9 @@ const productFamilies = [
       "Cuff customization",
       "ODM platform",
     ],
-    image: "/homepage/ai-product-platforms.png",
+    image: "/homepage/P2/selected/product-blood-pressure-monitor.jpg",
     imageAlt: "YimiLife upper-arm blood pressure monitor product platform",
-    imagePosition: "50% center",
+    imagePosition: "center center",
     href: "/products/blood-pressure-monitor",
     cta: "View BP Monitor Options",
     accent: "cyan" as Tone,
@@ -99,9 +132,9 @@ const productFamilies = [
       "Target-market review",
       "Software integration",
     ],
-    image: "/homepage/ai-product-platforms.png",
-    imageAlt: "YimiLife wearable monitoring device options for OEM and ODM evaluation",
-    imagePosition: "100% center",
+    image: "/homepage/P2/selected/product-wearable-monitoring.jpg",
+    imageAlt: "YimiLife wearable SpO2 monitoring device for OEM and ODM evaluation",
+    imagePosition: "center center",
     href: "/products/wearable-monitoring",
     cta: "Explore Wearable Monitoring",
     accent: "cyan" as Tone,
@@ -208,9 +241,9 @@ const sourcingQuestions = [
 ];
 
 const pulseMatrixTags = [
-  "PI 0.1% low-perfusion",
-  "performance under motion conditions",
-  "SpO₂ performance across diverse skin pigmentation",
+  "PI 0.1% Low-Perfusion",
+  "Motion Conditions",
+  "Skin Pigmentation",
 ];
 
 const manufacturingTags = [
@@ -541,8 +574,8 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-[calc(100dvh-72px)] overflow-hidden border-b border-slate-200 bg-slate-950">
         <Image
-          src="/homepage/ai-hero-devices.png"
-          alt="AI-generated placeholder showing YimiLife-style monitoring device family for OEM and ODM presentation"
+          src="/homepage/P2/selected/home-hero-product-family.jpg"
+          alt="YimiLife monitoring device product family including pulse oximeters, blood pressure monitor and wearable SpO2 device"
           fill
           priority
           sizes="100vw"
@@ -566,7 +599,7 @@ export default function HomePage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-cyan-50"
               >
-                Submit Project Requirements
+                Start a Feasibility Chat
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
               <Link
@@ -599,6 +632,37 @@ export default function HomePage() {
             <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
               Supplier facts buyers scan first
             </h2>
+          </div>
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
+            {marketProofCards.map((item) => (
+              <div key={item.label} className="rounded-xl bg-slate-950 p-5 text-white">
+                <p className="text-3xl font-semibold tracking-tight md:text-4xl">{item.value}</p>
+                <p className="mt-2 text-xs font-semibold uppercase leading-5 tracking-[0.12em] text-cyan-100">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 border-b border-slate-200 pb-6">
+            <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+              <p className="text-sm font-semibold text-slate-950">Selected customer logos</p>
+              <p className="max-w-2xl text-sm leading-6 text-slate-600">
+                Displayed with authorization; private-label packaging artwork remains confidential.
+              </p>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+              {customerLogoCards.map((src) => (
+                <div key={src} className="flex h-16 items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3">
+                  <Image
+                    src={src}
+                    alt="Authorized customer logo"
+                    width={180}
+                    height={64}
+                    className="max-h-10 w-auto max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
             {proofCards.map((item) => (
@@ -644,8 +708,8 @@ export default function HomePage() {
           <article className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 text-white shadow-sm">
             <div className="relative aspect-[16/10]">
               <Image
-                src="/homepage/ai-pulsematrix-visual.png"
-                alt="AI-generated placeholder visualization of PulseMatrix signal processing for product engineering discussion"
+                src="/homepage/P2/selected/pulsematrix-technology.jpg"
+                alt="PulseMatrix signal platform visualization for low perfusion, motion conditions and skin pigmentation discussion"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
@@ -657,7 +721,7 @@ export default function HomePage() {
                 Signal platform for difficult monitoring conditions
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-300">
-                A focused signal platform discussion for OEM/ODM product evaluation under defined verification conditions.
+                Patients do not always stay still, and not every reading happens under ideal conditions. PulseMatrix™ supports OEM/ODM product evaluation for low perfusion, movement and skin pigmentation factors under defined verification conditions.
               </p>
               <div className="mt-5">
                 <TagList items={pulseMatrixTags} tone="cyan" />
@@ -674,10 +738,9 @@ export default function HomePage() {
 
           <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             <div className="relative aspect-[16/10]">
-              {/* TODO: Replace this AI-generated placeholder with an authorized real YimiLife factory or production image before production launch. */}
               <Image
-                src="/homepage/ai-factory-qc.png"
-                alt="AI-generated placeholder of medical device production and quality inspection for YimiLife manufacturing communication"
+                src="/homepage/P2/selected/manufacturing-production-line.jpg"
+                alt="YimiLife medical device production line for pulse oximeter manufacturing and project review"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
@@ -787,7 +850,7 @@ export default function HomePage() {
               href="/oem-odm"
               className="inline-flex items-center justify-center rounded-xl bg-[#08A8AE] px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600"
             >
-              Review the Full OEM/ODM Process
+              View Full OEM/ODM Process
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
           </div>
@@ -797,7 +860,7 @@ export default function HomePage() {
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-200">Step 0</p>
               <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">Talk first, commit later</h3>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">
-                Discuss product fit and customization needs before a formal quotation request or purchase order.
+                Discuss product fit, label, IFU and customization needs before a formal quotation request or purchase order.
               </p>
             </div>
             <Link
@@ -918,7 +981,7 @@ export default function HomePage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[#075e63] transition hover:bg-cyan-50"
             >
-              Submit Project Requirements
+              Start a Feasibility Chat
               <ArrowIcon className="ml-2 h-4 w-4" />
             </Link>
             <Link

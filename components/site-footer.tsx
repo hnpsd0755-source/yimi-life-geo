@@ -18,7 +18,7 @@ function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
 
 function LogoMark() {
   return (
-    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#08A8AE] text-white">
+    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white">
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
         <path
           d="M3 13h3l2-5 4 10 3-7 2 4h4"
@@ -48,7 +48,6 @@ const footerColumns = [
       ["Customization Levels", "/oem-odm#customization-levels"],
       ["Bluetooth / SDK Integration", "/oem-odm#bluetooth-sdk"],
       ["Project Workflow", "/oem-odm#project-workflow"],
-      ["Submit Project Requirements", "/contact"],
     ],
   },
   {
@@ -75,48 +74,48 @@ const trustItems = [
   "ISO 13485 Quality Management System",
   "3,000㎡ Production Facility",
   "25+ FDA / MDR / NMPA certified models",
-  "300,000 Units / Month Pulse Oximeter Capacity",
+  "300,000 Units / Month",
 ];
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-slate-950 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_2.2fr]">
+      <div className="site-container py-16 lg:py-20">
+        <div className="grid gap-12 xl:grid-cols-[0.9fr_1.6fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-3" aria-label="YimiLife homepage">
               <LogoMark />
               <div>
-                <p className="text-base font-semibold tracking-tight">YimiLife</p>
+                <p className="text-base font-semibold">YimiLife</p>
                 <p className="text-xs font-medium text-slate-400">Medical Device OEM/ODM Manufacturer</p>
               </div>
             </Link>
 
             <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">
               Shenzhen YimiLife Technology Co., Ltd. supports overseas healthcare brands with{" "}
-              <Link href="/products/pulse-oximeter" className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/products/pulse-oximeter" className="font-semibold text-brand-300 underline underline-offset-4 hover:text-brand-200">
                 pulse oximeter
               </Link>
               {", "}
-              <Link href="/products/blood-pressure-monitor" className="font-semibold text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/products/blood-pressure-monitor" className="font-semibold text-brand-300 underline underline-offset-4 hover:text-brand-200">
                 blood pressure monitor
               </Link>{" "}
-              platforms and a product line of wearable monitoring devices, with private-label customization and production verification under an ISO 13485 quality system.
+              and wearable monitoring device OEM/ODM projects under an ISO 13485 quality system.
             </p>
 
             <div className="mt-6 grid gap-2 text-sm text-slate-300">
               {trustItems.map((item) => (
                 <div key={item} className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-cyan-300" aria-hidden="true" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-300" aria-hidden="true" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 2xl:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-xl bg-[#08A8AE] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-cyan-600"
+                className="button-primary"
               >
                 Submit Project Requirements
                 <ArrowIcon className="ml-2 h-4 w-4" />
@@ -124,17 +123,17 @@ export function SiteFooter() {
 
               <a
                 href={`mailto:${contactEmail}`}
-                className="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="button-secondary-inverse"
               >
                 {contactEmail}
               </a>
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
             {footerColumns.map((column) => (
               <div key={column.title}>
-                <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">{column.title}</p>
+                <p className="text-sm font-semibold text-brand-200">{column.title}</p>
                 <div className="mt-5 grid gap-3">
                   {column.links.map(([label, href]) => (
                     <Link
@@ -151,25 +150,14 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.04] p-5 md:p-6">
-          <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
-            <div>
-              <p className="text-sm font-semibold text-white">B2B OEM/ODM project communication notice</p>
-              <p className="mt-2 max-w-4xl text-xs leading-6 text-slate-400">
-                Product information on this website is intended for B2B OEM/ODM project evaluation. Product configuration, documentation scope, verification items and target-market responsibilities should be confirmed according to each project agreement and applicable regulatory requirements.
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl border border-cyan-300/35 px-5 py-2.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/10"
-            >
-              Just evaluating feasibility?
-              <ArrowIcon className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
+        <div className="mt-12 border-y border-white/10 py-6">
+          <p className="text-sm font-semibold text-white">B2B project information</p>
+          <p className="mt-2 max-w-4xl text-xs leading-6 text-slate-400">
+            Product information on this website is intended for B2B OEM/ODM project evaluation. Product configuration, documentation scope, verification items and target-market responsibilities should be confirmed according to each project agreement and applicable regulatory requirements.
+          </p>
         </div>
 
-        <div className="mt-8 border-t border-white/10 pt-8">
+        <div className="mt-8">
           <div className="grid gap-4 text-xs leading-6 text-slate-400 md:grid-cols-[1fr_auto]">
             <p>© {new Date().getFullYear()} Shenzhen YimiLife Technology Co., Ltd. All rights reserved.</p>
             <div className="flex flex-wrap gap-4">
