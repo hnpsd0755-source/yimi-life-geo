@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.yimilife.com/",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title:
       "YimiLife Medical Device OEM/ODM Manufacturing for Overseas Healthcare Brands",

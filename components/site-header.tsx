@@ -50,6 +50,10 @@ function ChevronIcon() {
 
 const productLinks = [
   {
+    label: "Product Portfolio",
+    href: "/#products",
+  },
+  {
     label: "Pulse Oximeters",
     href: "/products/pulse-oximeter",
   },
@@ -58,23 +62,12 @@ const productLinks = [
     href: "/products/blood-pressure-monitor",
   },
   {
-    label: "Wearable Monitoring Devices",
+    label: "Wearable Monitoring",
     href: "/products/wearable-monitoring",
   },
 ];
 
-const aboutLinks = [
-  {
-    label: "Company Overview",
-    href: "/about",
-  },
-  {
-    label: "Quality & Compliance",
-    href: "/about#quality-compliance",
-  },
-];
-
-type DesktopMenu = "products" | "about" | null;
+type DesktopMenu = "products" | null;
 
 function isPathActive(pathname: string, href: string) {
   const [path, hash] = href.split("#");
@@ -235,7 +228,6 @@ export function SiteHeader() {
   }, []);
 
   const productsActive = pathname === "/products" || pathname.startsWith("/products/");
-  const aboutActive = pathname === "/about" || pathname === "/quality";
 
   return (
     <header
@@ -262,15 +254,6 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden items-center gap-1 xl:flex">
-          <Link
-            href="/"
-            aria-current={pathname === "/" ? "page" : undefined}
-            onClick={closeAllMenus}
-            className="nav-item"
-          >
-            Home
-          </Link>
-
           <DesktopDropdown
             label="Products"
             links={productLinks}
@@ -293,44 +276,30 @@ export function SiteHeader() {
           </Link>
 
           <Link
-            href="/technology"
-            aria-current={isPathActive(pathname, "/technology") ? "page" : undefined}
+            href="/manufacturing-quality"
+            aria-current={isPathActive(pathname, "/manufacturing-quality") ? "page" : undefined}
             onClick={closeAllMenus}
             className="nav-item"
           >
-            Technology
+            Manufacturing & Quality
           </Link>
 
-          <DesktopDropdown
-            label="About"
-            links={aboutLinks}
-            open={openMenu === "about"}
-            active={aboutActive}
-            align="right"
-            pathname={pathname}
-            onToggle={() =>
-              setOpenMenu((current) => (current === "about" ? null : "about"))
-            }
-            onNavigate={closeAllMenus}
-          />
+          <Link
+            href="/about"
+            aria-current={isPathActive(pathname, "/about") ? "page" : undefined}
+            onClick={closeAllMenus}
+            className="nav-item"
+          >
+            About
+          </Link>
 
           <Link
             href="/contact"
             aria-current={isPathActive(pathname, "/contact") ? "page" : undefined}
             onClick={closeAllMenus}
-            className="nav-item"
-          >
-            Contact
-          </Link>
-        </div>
-
-        <div className="hidden xl:block">
-          <Link
-            href="/contact"
-            onClick={closeAllMenus}
             className="button-primary whitespace-nowrap"
           >
-            Submit Project Requirements
+            Contact
             <ArrowIcon className="ml-2 h-4 w-4" />
           </Link>
         </div>
@@ -342,10 +311,6 @@ export function SiteHeader() {
 
           <div className="absolute right-0 top-12 z-50 max-h-[82vh] w-[calc(100vw-3rem)] max-w-[340px] overflow-y-auto rounded-lg border border-slate-200 bg-white p-4 shadow-xl">
             <div className="grid gap-2">
-              <MobileLink href="/" active={pathname === "/"} onNavigate={closeAllMenus}>
-                Home
-              </MobileLink>
-
               <MobileSection title="Products">
                 {productLinks.map((item) => (
                   <MobileLink
@@ -368,24 +333,18 @@ export function SiteHeader() {
                   OEM/ODM
                 </MobileLink>
                 <MobileLink
-                  href="/technology"
-                  active={isPathActive(pathname, "/technology")}
+                  href="/manufacturing-quality"
+                  active={isPathActive(pathname, "/manufacturing-quality")}
                   onNavigate={closeAllMenus}
                 >
-                  Technology
+                  Manufacturing & Quality
                 </MobileLink>
-              </MobileSection>
-
-              <MobileSection title="Company">
                 <MobileLink
                   href="/about"
                   active={pathname === "/about"}
                   onNavigate={closeAllMenus}
                 >
-                  Company Overview
-                </MobileLink>
-                <MobileLink href="/about#quality-compliance" onNavigate={closeAllMenus}>
-                  Quality & Compliance
+                  About
                 </MobileLink>
                 <MobileLink
                   href="/contact"
@@ -395,15 +354,6 @@ export function SiteHeader() {
                   Contact
                 </MobileLink>
               </MobileSection>
-
-              <Link
-                href="/contact"
-                onClick={closeAllMenus}
-                className="button-primary mt-3 w-full"
-              >
-                Submit Project Requirements
-                <ArrowIcon className="ml-2 h-4 w-4" />
-              </Link>
             </div>
           </div>
         </details>

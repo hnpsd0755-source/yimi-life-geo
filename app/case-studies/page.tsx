@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.yimilife.com/case-studies",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: "Typical OEM/ODM Project Scenarios | YimiLife",
     description:

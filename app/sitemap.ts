@@ -42,13 +42,13 @@ const routes: SitemapRoute[] = [
     changeFrequency: "monthly",
   },
   {
-    path: "/technology",
+    path: "/manufacturing-quality",
     priority: 0.85,
     changeFrequency: "monthly",
   },
   {
-    path: "/case-studies",
-    priority: 0.75,
+    path: "/technology",
+    priority: 0.85,
     changeFrequency: "monthly",
   },
   {

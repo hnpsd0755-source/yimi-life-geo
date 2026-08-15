@@ -38,33 +38,22 @@ const footerColumns = [
     links: [
       ["Pulse Oximeters", "/products/pulse-oximeter"],
       ["Blood Pressure Monitors", "/products/blood-pressure-monitor"],
-      ["Wearable Monitoring Devices", "/products/wearable-monitoring"],
-    ],
-  },
-  {
-    title: "OEM/ODM",
-    links: [
-      ["OEM/ODM Services", "/oem-odm"],
-      ["Customization Levels", "/oem-odm#customization-levels"],
-      ["Bluetooth / SDK Integration", "/oem-odm#bluetooth-sdk"],
-      ["Project Workflow", "/oem-odm#project-workflow"],
-    ],
-  },
-  {
-    title: "Technology",
-    links: [
-      ["PulseMatrix™ Signal Platform", "/technology"],
-      ["PI 0.1% Low-Perfusion", "/technology#low-perfusion"],
-      ["Motion Conditions", "/technology#motion-artifact"],
-      ["SpO₂ Performance Across Diverse Skin Pigmentation", "/technology#skin-pigmentation"],
+      ["Wearable Monitoring", "/products/wearable-monitoring"],
     ],
   },
   {
     title: "Company",
     links: [
-      ["About YimiLife", "/about"],
-      ["Quality & Compliance", "/about#quality-compliance"],
+      ["OEM/ODM", "/oem-odm"],
+      ["Manufacturing & Quality", "/manufacturing-quality"],
+      ["About", "/about"],
       ["Contact", "/contact"],
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      ["Technology", "/technology"],
     ],
   },
 ];
@@ -128,7 +117,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-3">
             {footerColumns.map((column) => (
               <div key={column.title}>
                 <p className="text-sm font-semibold text-brand-200">{column.title}</p>
