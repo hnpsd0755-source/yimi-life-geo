@@ -6,16 +6,16 @@ import type { ReactNode } from "react";
 type Tone = "cyan" | "amber" | "emerald" | "slate";
 
 export const metadata: Metadata = {
-  title: "Medical Device OEM/ODM Manufacturer | YimiLife",
+  title: "Medical Device OEM Manufacturer | YimiLife",
   description:
-    "YimiLife is an ISO 13485 medical device OEM/ODM manufacturer for pulse oximeters, blood pressure monitors, wearable monitoring devices, private label and overseas healthcare projects.",
+    "YimiLife provides pulse oximeters, blood pressure monitors and wearable SpO₂ monitoring devices for OEM, private-label and medical device projects.",
   alternates: {
     canonical: "https://www.yimilife.com/",
   },
   openGraph: {
-    title: "Medical Device OEM/ODM Manufacturer | YimiLife",
+    title: "Medical Device OEM Manufacturer | YimiLife",
     description:
-      "YimiLife product portfolio for pulse oximeters, blood pressure monitors and wearable monitoring device OEM/ODM projects, with manufacturing and quality-system support.",
+      "YimiLife provides pulse oximeters, blood pressure monitors and wearable SpO₂ monitoring devices for OEM, private-label and medical device projects.",
     url: "https://www.yimilife.com/",
     siteName: "YimiLife",
     type: "website",
@@ -27,8 +27,8 @@ const productFamilies = [
     title: "Pulse Oximeters",
     status: "Mature Core Product Line",
     description:
-      "Fingertip and handheld pulse oximeter model directions for private-label and OEM/ODM projects.",
-    bullets: ["Fingertip models", "Handheld direction", "Private-label support"],
+      "Fingertip and handheld pulse oximeters with model-level specifications and OEM options.",
+    bullets: ["Fingertip Models", "Handheld Models", "Private Label Options"],
     image: "/homepage/P2/selected/product-pulse-oximeter.jpg",
     imageAlt: "YimiLife fingertip pulse oximeter product for OEM and private-label projects",
     imagePosition: "center center",
@@ -40,8 +40,8 @@ const productFamilies = [
     title: "Blood Pressure Monitors",
     status: "Mature / Customizable Product Line",
     description:
-      "Upper-arm blood pressure monitor platforms for brand, distributor and private-label projects.",
-    bullets: ["Upper-arm models", "Cuff and packaging topics", "OEM/ODM discussion"],
+      "Upper-arm blood pressure monitors with model selection, cuff configuration and OEM options.",
+    bullets: ["Upper-arm Models", "Cuff Configuration", "OEM Options"],
     image: "/homepage/P2/selected/product-blood-pressure-monitor.jpg",
     imageAlt: "YimiLife upper-arm blood pressure monitor product platform",
     imagePosition: "center center",
@@ -50,51 +50,51 @@ const productFamilies = [
     tone: "amber" as Tone,
   },
   {
-    title: "Wearable Monitoring Devices",
+    title: "YW01 Wearable SpO₂ Monitor",
     status: "Project Review First",
     description:
-      "Wearable monitoring device directions for OEM/ODM evaluation, model readiness review and connected-device discussion.",
-    bullets: ["YW01 direction", "Software integration topics", "Target-market review"],
+      "A wrist-worn SpO₂ monitoring device with an external fingertip sensor, Bluetooth connectivity and OEM/ODM project evaluation.",
+    bullets: ["External SpO₂ Sensor", "Bluetooth Connectivity", "OEM/ODM Review"],
     image: "/homepage/P2/selected/product-wearable-monitoring.jpg",
     imageAlt: "YimiLife wearable SpO2 monitoring device for OEM and ODM evaluation",
     imagePosition: "center center",
     href: "/products/wearable-monitoring",
-    cta: "Explore Wearables",
+    cta: "View YW01 Wearable",
     tone: "emerald" as Tone,
   },
 ];
 
 const manufacturingCards = [
   {
-    title: "ISO 13485 Quality System Support",
+    title: "ISO 13485 Quality System",
     text: "YimiLife operates under an ISO 13485 quality management system for medical device project execution.",
   },
   {
-    title: "Manufacturing Operations in Shenzhen",
+    title: "Shenzhen Manufacturing Operations",
     text: "Manufacturing planning is reviewed according to product category, project scope and order requirements.",
   },
   {
-    title: "Product Verification Review",
+    title: "Product Verification Process",
     text: "Production verification requirements are reviewed by selected product and defined production procedure.",
   },
   {
-    title: "Certified-Model Document Scope",
+    title: "Certified Model Experience",
     text: "Document availability depends on selected model, configuration and target market.",
   },
 ];
 
 const oemCards = [
   {
-    title: "Private Label Setup",
-    text: "Logo, label, color box, IFU and packaging topics can be reviewed after product direction is selected.",
+    title: "Private Label Customization",
+    text: "Logo, packaging, labeling and IFU customization based on selected models.",
   },
   {
-    title: "Configuration Review",
-    text: "Model selection, accessories, display options and target-market document needs are confirmed by project.",
+    title: "Product Configuration",
+    text: "Display, accessories, connectivity and product options reviewed by model.",
   },
   {
     title: "ODM Feasibility Discussion",
-    text: "Engineering, Bluetooth or software integration topics are reviewed before sampling or production planning.",
+    text: "Engineering review for hardware, firmware and integration projects.",
   },
 ];
 
@@ -105,9 +105,9 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.yimilife.com/#webpage",
       url: "https://www.yimilife.com/",
-      name: "Medical Device OEM/ODM Manufacturer | YimiLife",
+      name: "Medical Device OEM Manufacturer | YimiLife",
       description:
-        "YimiLife homepage for medical device OEM/ODM manufacturing and product portfolio review across pulse oximeters, blood pressure monitors and wearable monitoring devices.",
+        "YimiLife homepage for medical device OEM manufacturing and product portfolio review across pulse oximeters, blood pressure monitors and wearable SpO₂ monitoring devices.",
       isPartOf: {
         "@id": "https://www.yimilife.com/#website",
       },
@@ -261,28 +261,28 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/82 to-slate-950/28" />
         <div className="site-container relative flex min-h-[calc(100dvh-72px)] items-center py-20 text-white">
           <div className="max-w-4xl">
-            <Badge>Product Portfolio</Badge>
+            <Badge>Medical Device OEM/ODM Manufacturer</Badge>
             <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
-              YimiLife Product Portfolio for Medical Device OEM/ODM Projects
+              Medical Device OEM/ODM Manufacturer
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-8 text-slate-200 md:text-xl">
-              Pulse oximeters, blood pressure monitors and wearable monitoring
-              devices for overseas healthcare brands reviewing product direction,
-              manufacturing support and private-label project options.
+              YimiLife supports overseas healthcare brands with pulse oximeters,
+              blood pressure monitors and wearable SpO₂ monitoring devices through
+              product selection, customization and manufacturing support.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="#products"
                 className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-cyan-50"
               >
-                Browse Product Portfolio
+                Explore Products
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-xl border border-white/35 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/18"
               >
-                Contact YimiLife
+                Discuss Your Project
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -295,8 +295,8 @@ export default function HomePage() {
       <section id="product-families" className="site-container py-16 lg:py-20">
         <SectionHeading
           eyebrow="Product Portfolio"
-          title="Choose the product path first"
-          text="Start with the product category that matches your brand, channel or OEM/ODM project direction."
+          title="Medical Device Product Portfolio"
+          text="Review the product categories YimiLife can provide for OEM, private-label and medical device projects."
         />
 
         <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-3">
@@ -313,8 +313,8 @@ export default function HomePage() {
             <div>
               <SectionHeading
                 eyebrow="Manufacturing & Quality"
-                title="Review production and document scope early"
-                text="Manufacturing, quality-system and document questions should be clarified before sampling, quotation or production planning."
+                title="Manufacturing & Quality Support"
+                text="YimiLife supports medical device projects with quality-system, manufacturing and document-scope review."
               />
               <Link
                 href="/manufacturing-quality"
@@ -345,7 +345,7 @@ export default function HomePage() {
           <div>
             <SectionHeading
               eyebrow="OEM/ODM"
-              title="Move from product selection to project scope"
+              title="From Product Selection to OEM/ODM Project"
               text="After a product direction is selected, YimiLife can review customization, documentation, engineering and production-planning needs by project."
             />
             <Link
@@ -392,7 +392,7 @@ export default function HomePage() {
               href="#products"
               className="inline-flex items-center justify-center rounded-xl border border-white/35 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Review Products Again
+              Request Product Specs
             </Link>
           </div>
         </div>

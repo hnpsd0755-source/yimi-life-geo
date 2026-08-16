@@ -50,10 +50,6 @@ function ChevronIcon() {
 
 const productLinks = [
   {
-    label: "Product Portfolio",
-    href: "/#products",
-  },
-  {
     label: "Pulse Oximeters",
     href: "/products/pulse-oximeter",
   },
