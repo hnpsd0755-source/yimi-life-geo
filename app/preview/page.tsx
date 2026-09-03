@@ -41,7 +41,7 @@ const trustPoints = [
   },
   {
     title: "Production verification workflow",
-    text: "100% production-line calibration and verification for pulse oximeters using Fluke Index 2 clinical simulators where applicable.",
+    text: "Production-line calibration and verification for pulse oximeters using Fluke testing equipment where applicable.",
   },
   {
     title: "Private-label and OEM/ODM support",

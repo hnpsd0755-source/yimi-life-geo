@@ -148,7 +148,7 @@ const faqs = [
   {
     question: "How does YimiLife control sample-to-mass-production consistency?",
     answer:
-      "For applicable pulse oximeter projects, production-line calibration and verification workflows can use Fluke Index 2 simulator under defined product and verification conditions. This is not a clinical validation claim.",
+      "For applicable pulse oximeter projects, production-line calibration and verification workflows can use Fluke testing equipment under defined product and verification conditions. This is not a clinical validation claim.",
   },
 ];
 

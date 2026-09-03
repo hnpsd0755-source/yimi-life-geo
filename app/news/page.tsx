@@ -75,7 +75,7 @@ const categories = [
     topics: [
       "ISO 13485 medical device manufacturer checklist for OEM buyers",
       "How certified model experience supports OEM/ODM discussions",
-      "Fluke Index 2 production verification in pulse oximeter manufacturing",
+      "Fluke testing equipment in pulse oximeter production verification",
     ],
   },
 ];

@@ -12,7 +12,7 @@ import { pulseOximeterImages } from "@/data/pulseOximeterImages";
 export const metadata: Metadata = {
   title: "Pulse Oximeter OEM/ODM Manufacturer | YimiLife",
   description:
-    "Explore YimiLife fingertip pulse oximeter models, configurations and OEM/ODM options for healthcare brands and distributors.",
+    "Explore YimiLife fingertip and handheld pulse oximeter solutions, product configurations and OEM/ODM options for healthcare brands and distributors.",
 };
 
 const appearanceOrder = [
@@ -35,6 +35,16 @@ const seriesIdMap: Record<string, string> = {
   "YM06 Child": "ym06-child",
 };
 
+const seriesDisplayNames: Record<string, string> = {
+  "YM01 Prime": "Prime",
+  "YM01 Neo": "Neo",
+  "YM01C Lite": "Lite",
+  "YM02 Pro": "Pro",
+  "YM03 Chic": "Chic",
+  "YM04 Male": "Male",
+  "YM06 Child": "Child",
+};
+
 const seriesNotes: Record<string, string> = {
   "YM01 Prime":
     "Classic fingertip direction for broad adult OEM and distributor projects.",
@@ -52,34 +62,12 @@ const seriesNotes: Record<string, string> = {
     "Child-oriented fingertip direction using enabled public child models.",
 };
 
-const heroFamilyImages = [
-  { model: "YM403", image: pulseOximeterImages.YM403 },
-  { model: "YM503", image: pulseOximeterImages.YM503 },
-  { model: "YM201", image: pulseOximeterImages.YM201 },
-].filter((item) => item.image);
+const heroFamilyImage = "/homepage/P2/product-family/Oximeter-family02.png";
 
 function getImageForModel(model: PulseOximeterModel) {
   return pulseOximeterImages[
     model.model as keyof typeof pulseOximeterImages
   ];
-}
-
-function getDisplaySummary(models: PulseOximeterModel[]) {
-  const displayTypes = new Set(models.map((model) => model.displayType));
-
-  if (displayTypes.has("LED") && displayTypes.has("OLED/TFT")) {
-    return "LED / OLED display options";
-  }
-
-  if (displayTypes.has("OLED/TFT") && displayTypes.has("TFT")) {
-    return "OLED/TFT and TFT display options";
-  }
-
-  if (displayTypes.has("LED") && displayTypes.has("OLED")) {
-    return "LED / OLED display options";
-  }
-
-  return Array.from(displayTypes).join(" / ");
 }
 
 function getSeriesGroups() {
@@ -103,7 +91,6 @@ function getSeriesGroups() {
 }
 
 const seriesGroups = getSeriesGroups();
-const defaultSeriesId = seriesGroups[0]?.id;
 
 const technologyPoints = [
   {
@@ -153,16 +140,16 @@ function HeroSection() {
         <div>
           <SectionLabel>Pulse Oximeters</SectionLabel>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
-            Fingertip Pulse Oximeters for OEM/ODM Projects
+            Pulse Oximeter Solutions for OEM/ODM Projects
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-            Explore YimiLife fingertip pulse oximeter platforms with different
-            appearance designs, display options and configuration possibilities
-            for healthcare brands and distributors.
+            Explore YimiLife fingertip and handheld pulse oximeter product
+            directions with different configuration possibilities for healthcare
+            brands and distributors.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="button-primary">
-              Request Product Specs
+            <Link href="#handheld-section" className="button-primary">
+              View Handheld Models
             </Link>
             <Link href="/contact" className="button-secondary">
               Discuss Your Project
@@ -171,39 +158,41 @@ function HeroSection() {
         </div>
 
         <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-5 shadow-sm">
-          <div className="grid gap-3 rounded-[1.5rem] bg-white p-4 sm:grid-cols-3">
-            {heroFamilyImages.map((item, index) => (
-              <div
-                key={item.model}
-                className={`relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 ${
-                  index === 0 ? "sm:col-span-1" : ""
-                }`}
-              >
-                <Image
-                  src={item.image}
-                  alt={`${item.model} fingertip pulse oximeter`}
-                  fill
-                  priority={index === 0}
-                  sizes="(min-width: 1024px) 180px, 33vw"
-                  className="object-contain p-4"
-                />
-                <span className="absolute left-3 top-3 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-brand-700 shadow-sm">
-                  {item.model}
-                </span>
-              </div>
-            ))}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-white">
+            <Image
+              src={heroFamilyImage}
+              alt="YimiLife pulse oximeter product family"
+              fill
+              priority
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className="object-cover"
+            />
           </div>
           <div className="mt-5 grid gap-3 sm:grid-cols-3">
             {[
-              "17 Configurable Models",
-              "7 Appearance Series",
-              "OEM/ODM Product Platforms",
+              {
+                title: "Fingertip Pulse Oximeters",
+                detail: "YM101–YM603 public models",
+              },
+              {
+                title: "Handheld Pulse Oximeters",
+                detail: "YH01 / YH02",
+              },
+              {
+                title: "OEM/ODM Configuration",
+                detail: "Model selection and project-specific options",
+              },
             ].map((item) => (
               <div
-                key={item}
-                className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700"
+                key={item.title}
+                className="rounded-xl border border-slate-200 bg-white px-4 py-3"
               >
-                {item}
+                <p className="text-sm font-semibold text-slate-900">
+                  {item.title}
+                </p>
+                <p className="mt-1 text-xs leading-5 text-slate-500">
+                  {item.detail}
+                </p>
               </div>
             ))}
           </div>
@@ -213,22 +202,26 @@ function HeroSection() {
   );
 }
 
-function PortfolioSection() {
+function FingertipPortfolioSection() {
   return (
-    <section className="site-section-compact bg-slate-50">
+    <section
+      id="fingertip-portfolio"
+      className="site-section-compact scroll-mt-24 bg-slate-50"
+    >
       <div className="site-container">
-        <div className="max-w-3xl">
-          <SectionLabel>Product portfolio</SectionLabel>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-            Fingertip Pulse Oximeter Portfolio
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-            Explore different fingertip pulse oximeter designs based on
-            appearance style, display configuration and functional options.
-          </p>
-        </div>
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm md:p-8">
+          <div className="max-w-3xl">
+            <SectionLabel>Product portfolio</SectionLabel>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Fingertip Pulse Oximeter Portfolio
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
+              Explore different fingertip pulse oximeter designs based on
+              appearance style, display configuration and functional options.
+            </p>
+          </div>
 
-        <div className="portfolio-selector mt-8">
+          <div className="portfolio-selector mt-8">
           <style>{`
             ${seriesGroups
               .map(
@@ -239,40 +232,37 @@ function PortfolioSection() {
                     color: #075e63;
                     box-shadow: 0 10px 24px -18px rgba(8, 168, 174, 0.65);
                   }
-                  #series-${group.id}:checked ~ .series-detail-panels [data-series-panel="${group.id}"] {
-                    display: grid;
-                  }
                 `,
               )
               .join("\n")}
           `}</style>
 
-          {seriesGroups.map((group, index) => (
+          {seriesGroups.map((group) => (
             <input
               key={group.id}
               id={`series-${group.id}`}
               type="radio"
               name="pulse-oximeter-series"
+              value={group.series}
               className="sr-only"
-              defaultChecked={group.id === defaultSeriesId || index === 0}
             />
           ))}
 
-          <div className="series-card-grid grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+          <div className="series-card-grid grid gap-3 md:grid-cols-4 lg:grid-cols-7">
             {seriesGroups.map((group) => (
               <label
                 key={group.id}
                 htmlFor={`series-${group.id}`}
-                className="cursor-pointer rounded-2xl border border-slate-200 bg-white p-4 text-slate-700 transition hover:border-brand-200 hover:bg-brand-50/70"
+                className="cursor-pointer rounded-2xl border border-slate-200 bg-white p-3 text-slate-700 transition hover:border-brand-200 hover:bg-brand-50/70"
               >
-                <span className="relative mb-4 block aspect-[4/3] overflow-hidden rounded-xl bg-slate-50">
+                <span className="relative mb-3 block aspect-[4/3] overflow-hidden rounded-xl bg-slate-50">
                   {group.image && group.imageModel ? (
                     <Image
                       src={group.image}
                       alt={`${group.imageModel.model} fingertip pulse oximeter`}
                       fill
                       sizes="(min-width: 1024px) 260px, 50vw"
-                      className="object-contain p-3"
+                      className="object-contain p-2"
                     />
                   ) : (
                     <span className="flex h-full items-center justify-center px-4 text-center text-xs font-semibold text-slate-400">
@@ -280,120 +270,101 @@ function PortfolioSection() {
                     </span>
                   )}
                 </span>
-                <span className="text-sm font-semibold text-brand-700">
-                  {group.series}
-                </span>
-                <span className="mt-2 block text-xl font-semibold text-slate-950">
-                  {group.appearanceName}
-                </span>
-                <span className="mt-3 block text-sm leading-6 text-slate-500">
-                  {getDisplaySummary(group.models)}
+                <span className="block text-base font-semibold text-slate-950">
+                  {seriesDisplayNames[group.series] ?? group.series}
                 </span>
               </label>
             ))}
           </div>
-
-          <div className="series-detail-panels mt-6">
-            {seriesGroups.map((group) => {
-              return (
-                <article
-                  key={group.id}
-                  data-series-panel={group.id}
-                  id={group.id === defaultSeriesId ? "model-matrix" : undefined}
-                  className="hidden gap-5 rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm md:p-6 lg:grid-cols-[0.7fr_0.85fr_1.15fr]"
-                >
-                  <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-3">
-                    <div className="relative aspect-square overflow-hidden rounded-[1.25rem] bg-white">
-                      {group.image && group.imageModel ? (
-                        <Image
-                          src={group.image}
-                          alt={`${group.imageModel.model} fingertip pulse oximeter`}
-                          fill
-                          sizes="(min-width: 1024px) 360px, 100vw"
-                          className="object-contain p-6"
-                        />
-                      ) : (
-                        <div className="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-slate-500">
-                          Product image pending
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div>
-                    <SectionLabel>Selected series</SectionLabel>
-                    <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">
-                      {group.series}
-                    </h3>
-                    <p className="mt-2 text-base font-semibold text-brand-700">
-                      {group.appearanceName}
-                    </p>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">
-                      {group.note}
-                    </p>
-
-                    <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      Available Models
-                    </p>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {group.models.map((model) => (
-                        <span
-                          key={model.model}
-                          className="rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-700"
-                        >
-                          {model.model}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="rounded-2xl bg-slate-50 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      Configuration Preview
-                    </p>
-                    <div className="mt-3 space-y-3">
-                      {group.models.map((model) => (
-                        <div
-                          key={model.model}
-                          className="rounded-xl border border-slate-200 bg-white p-3"
-                        >
-                          <p className="text-base font-semibold text-slate-950">
-                            {model.model}
-                          </p>
-                          <div className="mt-2 grid gap-1.5 text-sm leading-6 text-slate-600">
-                            <p>
-                              <span className="font-semibold text-slate-900">
-                                Display:
-                              </span>{" "}
-                              {model.displaySize ?? model.displayType}
-                            </p>
-                            <p>
-                              <span className="font-semibold text-slate-900">
-                                Bluetooth:
-                              </span>{" "}
-                              {model.bluetooth}
-                            </p>
-                            <p>
-                              <span className="font-semibold text-slate-900">
-                                Sound:
-                              </span>{" "}
-                              {model.sound}
-                            </p>
-                            <p>
-                              <span className="font-semibold text-slate-900">
-                                User:
-                              </span>{" "}
-                              {model.targetUser}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
           </div>
+
+          <PulseOximeterSelector embedded />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HandheldPortfolioSection() {
+  const handheldModels = [
+    {
+      model: "YH01",
+      image: "/homepage/P2/products/handheld Oximeter/YH01.jpg",
+      description:
+        "Handheld pulse oximeter direction for OEM/ODM projects that need a separate product format for healthcare applications.",
+      relevance:
+        "Suitable for appearance review, product configuration and private-label discussions.",
+    },
+    {
+      model: "YH02",
+      image: "/homepage/P2/products/handheld Oximeter/YH02.jpg",
+      description:
+        "Handheld pulse oximeter direction for OEM/ODM portfolio review and project-specific product configuration.",
+      relevance:
+        "Supports model comparison and project-specific OEM/ODM discussions.",
+    },
+  ];
+
+  return (
+    <section
+      id="handheld-section"
+      className="site-section-compact scroll-mt-24 bg-slate-50"
+    >
+      <div className="site-container">
+        <div className="max-w-3xl">
+          <SectionLabel>Handheld pulse oximeters</SectionLabel>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+            Handheld Pulse Oximeter Solutions
+          </h2>
+          <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
+            Review YimiLife handheld models as a separate product direction for
+            healthcare applications, product configuration and OEM/ODM planning.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          {handheldModels.map((item) => (
+            <article
+              key={item.model}
+              className="flex h-full flex-col rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-slate-50">
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={`${item.model} handheld pulse oximeter`}
+                    fill
+                    sizes="(min-width: 1024px) 520px, 100vw"
+                    className="object-contain p-6"
+                  />
+                ) : (
+                  <span className="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-slate-400">
+                    Product image pending
+                  </span>
+                )}
+              </div>
+              <div className="mt-5 flex items-center justify-between gap-4">
+                <SectionLabel>Handheld model</SectionLabel>
+                <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700">
+                  {item.model}
+                </span>
+              </div>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+                {item.model} Handheld Pulse Oximeter
+              </h3>
+              <p className="mt-3 text-base leading-7 text-slate-600">
+                {item.description}
+              </p>
+              <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+                  OEM/ODM relevance
+                </p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {item.relevance}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -473,8 +444,8 @@ export default function PulseOximeterProductPage() {
   return (
     <main className="bg-white">
       <HeroSection />
-      <PortfolioSection />
-      <PulseOximeterSelector />
+      <FingertipPortfolioSection />
+      <HandheldPortfolioSection />
       <TechnologyPreviewSection />
       <FinalCtaSection />
     </main>

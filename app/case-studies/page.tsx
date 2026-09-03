@@ -49,7 +49,7 @@ const caseCards = [
     outcomes: [
       "Private label product configuration",
       "Packaging and labeling coordination",
-      "Fluke Index 2 production verification planning",
+      "Fluke testing equipment workflow planning",
     ],
   },
   {

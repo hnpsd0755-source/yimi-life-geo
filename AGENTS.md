@@ -101,10 +101,10 @@ When working on the YimiLife website, SEO pages, product pages, OEM/ODM pages, s
 
 1. Company English name: YimiLife.
 2. Chinese company name: Shenzhen Yimi Life Technology Co., Ltd.
-3. Manufacturing site area: 3,000㎡.
+3. Manufacturing site area is not used as a public website claim unless explicitly approved by the user for a specific page or document.
 4. Monthly production capacity: 300,000 units.
 5. Certification wording: 25+ FDA / MDR / NMPA certified models.
-6. Calibration wording: 100% calibrated with Fluke Index 2 simulator.
+6. Calibration wording: use restrained wording such as "production calibration and verification with Fluke testing equipment under defined procedures." Do not publicly name specific Fluke model names, and do not present Fluke testing as a clinical validation claim or accuracy guarantee.
 7. Primary product keywords:
    - Pulse Oximeter
    - Blood Pressure Monitor

@@ -62,7 +62,7 @@ File: `app/products/pulse-oximeter/page.tsx`
 | MOQ | MOQ starts from 500 pcs for selected models | REMOVE | Not confirmed. Current business discussion mentioned MOQ 1000PCS; `500 pcs` appears template-like. |
 | Lead time | Typical lead time: 15-30 days after order confirmation | REMOVE | Not confirmed; likely template value. |
 | Certifications | 25+ FDA / MDR / NMPA certified models available; documentation is model- and market-specific | KEEP | Company-level wording is supported by `AGENTS.md`, but must not be applied to every model. |
-| Calibration | 100% calibrated with Fluke Index 2 simulator | VERIFY | Old project rule exists, but later business correction says Fluke equipment is broader than Index 2. Should be reviewed as Fluke-based workflow. |
+| Calibration | Production calibration and verification with Fluke testing equipment | KEEP WITH RESTRAINT | Use broad Fluke testing equipment wording rather than naming a specific Fluke model. Do not present this as clinical validation or an accuracy guarantee. |
 
 ## Economy Retail Fingertip Models
 
@@ -268,4 +268,3 @@ File: `app/products/wearable-monitoring/page.tsx`
 | P1 | BP specs | Build a model matrix for YP03 / BLE BP / multi-parameter platform covering cuff, power, memory and certification. |
 | P1 | Certification | Build a model-level FDA/MDR/NMPA document map. Avoid broad model claims. |
 | P1 | App/SDK | Confirm BLE protocol, data fields, SDK deliverables and customer/app responsibility boundaries. |
-

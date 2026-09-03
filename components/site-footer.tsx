@@ -154,7 +154,7 @@ export function SiteFooter() {
           </div>
 
           <p className="mt-4 max-w-4xl text-xs leading-6 text-slate-500">
-            Fluke Index 2 references on this website refer to pulse oximeter production-line calibration and verification workflows under defined product and verification conditions. They are not clinical validation claims or guarantees of clinical accuracy for every product configuration.
+            Fluke testing equipment references on this website refer to pulse oximeter production-line calibration and verification workflows under defined product and verification conditions. They are not clinical validation claims or guarantees of clinical accuracy for every product configuration.
           </p>
         </div>
       </div>

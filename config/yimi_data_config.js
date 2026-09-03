@@ -10,7 +10,7 @@ export const COMPANY_INFO = {
   phone: "+86 0755 89369909",
   email: "linda@yimilife.com",
   address: "广东省深圳市坪山区龙田街道老坑社区青松西路56号友利通科技工业厂区C栋",
-  factorySize: "3,000㎡",
+  factorySize: "Not used as a public website claim",
   certifications: ["ISO 13485:2016", "FDA 510(k)", "NMPA", "MDR (CE)"],
   copyright: "© 2026 亿米生命. All Rights Reserved. | ISO 13485:2016 Certified B2B Manufacturer"
 };
@@ -24,7 +24,7 @@ export const HOME_METRICS = [
 
 export const HOME_STRATEGIC = [
   ["PulseMatrix™ 算法中枢", "以 0.1% PI、全肤色公平性、多维参数提取作为核心技术资产。"],
-  ["合规医疗制造能力", "3,000㎡工厂，以标准化医疗器械质量控制体系构成可靠的执行基础设施。"],
+  ["合规医疗制造能力", "以标准化医疗器械质量控制体系和生产执行能力构成可靠的项目交付基础。"],
   ["端到端 B2B 项目交付", "从 ID 设计、PCBA、DHF 支持到全球准入对接，形成完整的医疗项目交付能力。"],
 ];
 
@@ -83,9 +83,9 @@ export const OEM_WORKFLOW_STEPS = [
   { id: 2, title: '人体工学 ID 与光学仿真', desc: '通过光学结构与佩戴形态讨论，帮助评估血氧/血压传感器在不同使用场景下的贴合、遮光与信号采集条件。' },
   { id: 3, title: 'PCBA 定制与算法植入', desc: '亿米生命自有硬件实验室将完成底层的电路布线（Layout），并将基于 PulseMatrix™ 平台的深度定制算法固化入芯。' },
   { id: 4, title: '建立设计历史文件 (DHF)', desc: '完全遵照 ISO 13485:2016 标准，从第一行代码到第一个打样，我们为您建立完整的 DHF（Design History File），为后续医疗注册铺平道路。' },
-  { id: 5, title: '模拟器与验证测试', desc: '样机阶段可使用 Fluke Index 2 simulator 进行 0.1% PI 低灌注与运动干扰相关验证讨论，具体项目按型号和验证范围确认。' },
+  { id: 5, title: '测试设备与验证讨论', desc: '样机阶段可使用 Fluke 测试设备进行 0.1% PI 低灌注与运动条件相关验证讨论，具体项目按型号和验证范围确认。' },
   { id: 6, title: '小批量试制 (Pilot Run)', desc: '在我们的标准化生产车间内启动 PP（产前试制）。验证模具的注塑精度、贴片一致性以及自动化组装流程的可行性。' },
-  { id: 7, title: '100% 出厂标定', desc: '血氧 OEM 设备按定义流程进行 100% calibrated with Fluke Index 2 simulator，以支持生产一致性与批次质量控制。' },
+  { id: 7, title: '出厂测试与标定', desc: '血氧 OEM 设备按定义流程进行生产测试、标定与验证，并可使用 Fluke 测试设备支持生产一致性与批次质量控制。' },
   { id: 8, title: '成品交付与合规移交', desc: '向您交付具备高质量一致性的成品批次，并同步移交用于医疗设备注册的完整测试报告与合规技术文档包。' }
 ];
 

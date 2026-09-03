@@ -163,7 +163,7 @@ const productLines = [
   {
     title: "Pulse Oximeter OEM/ODM",
     href: "/products/pulse-oximeter",
-    text: "Fingertip pulse oximeter OEM/ODM manufacturing supported by the PulseMatrix™ Signal Platform, certified model experience and full-unit Fluke Index 2 production calibration and verification.",
+    text: "Fingertip pulse oximeter OEM/ODM manufacturing supported by the PulseMatrix™ Signal Platform, certified model experience and production calibration and verification with Fluke testing equipment.",
   },
   {
     title: "Blood Pressure Monitor OEM",
@@ -517,7 +517,7 @@ export default function AboutPage() {
           {[
             "Shenzhen Manufacturing Operations",
             "300,000 Units Monthly Pulse Oximeter Capacity",
-            "Fluke-based calibration and test workflow",
+            "Fluke testing equipment workflow",
             "Batch Traceability and Quality Records",
           ].map((item) => (
             <div

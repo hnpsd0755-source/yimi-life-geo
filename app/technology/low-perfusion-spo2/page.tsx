@@ -160,7 +160,7 @@ const engineeringLayers = [
   },
   {
     title: "Verification and Manufacturing Control",
-    text: "Low perfusion performance must be connected with device-level testing, production calibration, Fluke Index 2 production verification and batch consistency control.",
+    text: "Low perfusion performance must be connected with device-level testing, production calibration, Fluke testing equipment workflows and batch consistency control.",
     icon: ShieldIcon,
   },
 ];
@@ -210,7 +210,7 @@ const faqs = [
   {
     question: "How is low perfusion performance connected to manufacturing quality?",
     answer:
-      "Low perfusion technology must be supported by production discipline. YimiLife connects SpO2 technology discussion with functional testing, production calibration, Fluke Index 2 production verification and batch traceability.",
+      "Low perfusion technology must be supported by production discipline. YimiLife connects SpO2 technology discussion with functional testing, production calibration, Fluke testing equipment workflows and batch traceability.",
   },
 ];
 
@@ -669,7 +669,7 @@ export default function LowPerfusionSpo2Page() {
                   ISO 13485 medical device manufacturing quality
                 </Link>
               . Each pulse oximeter unit is calibrated and verified using
-              Fluke Index 2 simulator during production before
+              Fluke testing equipment during production before
               shipment to support consistent production output.
             </p>
 

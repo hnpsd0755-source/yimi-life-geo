@@ -667,8 +667,8 @@ export default function MotionArtifactRejectionPage() {
               >
                 ISO 13485 medical device manufacturing quality
               </Link>
-              . Each unit is calibrated and verified using Fluke Index 2
-              simulator before shipment to support consistent
+              . Each unit is calibrated and verified using Fluke testing
+              equipment before shipment to support consistent
               production output.
             </p>
 

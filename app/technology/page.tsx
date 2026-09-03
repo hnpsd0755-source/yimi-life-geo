@@ -412,8 +412,8 @@ export default function TechnologyPage() {
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-slate-700">
                   Production-line calibration and verification are connected to
-                  the selected product configuration. Simulator-based workflows,
-                  including Fluke Index 2 where applicable, support consistent
+                  the selected product configuration. Testing-equipment workflows,
+                  including Fluke testing equipment where applicable, support consistent
                   production execution without turning verification into a
                   clinical validation claim.
                 </p>

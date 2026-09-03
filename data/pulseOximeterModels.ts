@@ -367,7 +367,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "Child-oriented TFT model under YM06 Child.",
     configurationTags: ["YM06 Child", "TFT", "No Bluetooth", "Optional Sound", "Child"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM603-03.png",
+    image: "/homepage/P2/products/Fingertip Oximeter/YM603.png",
   },
 ];
 
