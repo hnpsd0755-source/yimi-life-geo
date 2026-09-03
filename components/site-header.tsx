@@ -1,22 +1,20 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 function LogoMark() {
   return (
-    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white shadow-sm">
-      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
-        <path
-          d="M3 13h3l2-5 4 10 3-7 2 4h4"
-          stroke="currentColor"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </div>
+    <Image
+      src="/homepage/P2/Yimilife-logo.png"
+      alt="YimiLife"
+      width={176}
+      height={38}
+      priority
+      className="h-9 w-auto object-contain"
+    />
   );
 }
 
@@ -243,10 +241,6 @@ export function SiteHeader() {
           aria-label="YimiLife homepage"
         >
           <LogoMark />
-          <div>
-            <p className="text-base font-semibold text-slate-950">YimiLife</p>
-            <p className="text-xs font-medium text-slate-500">Medical Device OEM/ODM</p>
-          </div>
         </Link>
 
         <div className="hidden items-center gap-1 xl:flex">

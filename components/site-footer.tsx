@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const contactEmail = "info@yimilife.com";
@@ -18,17 +19,15 @@ function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
 
 function LogoMark() {
   return (
-    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white">
-      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
-        <path
-          d="M3 13h3l2-5 4 10 3-7 2 4h4"
-          stroke="currentColor"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </div>
+    <span className="inline-flex rounded-lg bg-white px-3 py-2">
+      <Image
+        src="/homepage/P2/Yimilife-logo.png"
+        alt="YimiLife"
+        width={176}
+        height={38}
+        className="h-9 w-auto object-contain"
+      />
+    </span>
   );
 }
 
@@ -72,10 +71,6 @@ export function SiteFooter() {
           <div>
             <Link href="/" className="inline-flex items-center gap-3" aria-label="YimiLife homepage">
               <LogoMark />
-              <div>
-                <p className="text-base font-semibold">YimiLife</p>
-                <p className="text-xs font-medium text-slate-400">Medical Device OEM/ODM Manufacturer</p>
-              </div>
             </Link>
 
             <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">
