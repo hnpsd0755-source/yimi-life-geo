@@ -308,25 +308,27 @@ export default function HomePage() {
           <div>
             <Badge accent="slate">Count on YimiLife</Badge>
             <h2 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-              You serve your customers. Your manufacturing partner should support the rest.
+              Reliable support for OEM/ODM medical device projects.
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-              Your team should spend more time building customer trust, channel service and
-              product adoption, and less time chasing product quality, delivery or
-              configuration issues. YimiLife supports B2B medical device projects with
-              controlled production, model-level review and practical OEM/ODM execution.
+              YimiLife supports overseas healthcare brands with controlled manufacturing,
+              model-level configuration review and quality-system execution from sampling
+              to production.
             </p>
 
-            <div className="mt-8 rounded-lg bg-brand-600 p-6 text-white md:p-8">
-              <h3 className="text-2xl font-semibold leading-tight">
-                A commitment to better product experience
-              </h3>
-              <p className="mt-4 text-base leading-8 text-brand-50">
-                We keep improving product platforms, usability details and manufacturing
-                discipline while following quality-system requirements. For YimiLife,
-                product quality is not a slogan; it is the operating baseline we protect
-                in development, sampling and production.
-              </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {[
+                "Product consistency",
+                "Documentation readiness",
+                "Supply reliability",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm"
+                >
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
 
