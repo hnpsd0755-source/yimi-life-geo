@@ -289,7 +289,7 @@ function HandheldPortfolioSection() {
   const handheldModels = [
     {
       model: "YH01",
-      image: "/homepage/P2/products/handheld Oximeter/YH01.jpg",
+      image: "/homepage/P2/products/handheld-oximeter/YH01.jpg",
       description:
         "Handheld pulse oximeter direction for OEM/ODM projects that need a separate product format for healthcare applications.",
       relevance:
@@ -297,7 +297,7 @@ function HandheldPortfolioSection() {
     },
     {
       model: "YH02",
-      image: "/homepage/P2/products/handheld Oximeter/YH02.jpg",
+      image: "/homepage/P2/products/handheld-oximeter/YH02.jpg",
       description:
         "Handheld pulse oximeter direction for OEM/ODM portfolio review and project-specific product configuration.",
       relevance:

@@ -36,7 +36,7 @@ const catalogProducts = [
     family: "Pulse Oximeter",
     format: "Handheld",
     direction: "Project Review",
-    image: "/homepage/P2/products/handheld Oximeter/handheld oximeter02.jpg",
+    image: "/homepage/P2/products/handheld-oximeter/handheld-oximeter-02.jpg",
     imageAlt: "YimiLife handheld pulse oximeter product format",
     href: "/products/pulse-oximeter#handheld-section",
   },

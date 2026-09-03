@@ -1,10 +1,10 @@
 export const pulseOximeterImageDirectory =
-  "/homepage/P2/products/Fingertip Oximeter";
+  "/homepage/P2/products/fingertip-oximeter";
 
 export const pulseOximeterImages = {
   YM101: `${pulseOximeterImageDirectory}/YM101.jpg`,
   YM102: `${pulseOximeterImageDirectory}/YM102.webp`,
-  YM103: `${pulseOximeterImageDirectory}/YM103 .jpg`,
+  YM103: `${pulseOximeterImageDirectory}/YM103.jpg`,
   YM111: `${pulseOximeterImageDirectory}/YM111.jpg`,
   YM112: `${pulseOximeterImageDirectory}/YM112.jpg`,
   YM201: `${pulseOximeterImageDirectory}/YM201.jpg`,

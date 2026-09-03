@@ -87,7 +87,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "Baseline LED model for adult fingertip pulse oximeter projects.",
     configurationTags: ["YM01 Prime", "LED", "No Bluetooth", "Adult"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM101.jpg",
+    image: "/homepage/P2/products/fingertip-oximeter/YM101.jpg",
   },
   {
     model: "YM102",
@@ -105,7 +105,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "Green LED configuration under the YM01 Prime appearance.",
     configurationTags: ["YM01 Prime", "LED", "No Bluetooth", "Adult"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM102.jpg",
+    image: "/homepage/P2/products/fingertip-oximeter/YM102.jpg",
   },
   {
     model: "YM103",
@@ -123,7 +123,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "White LED configuration under the YM01 Prime appearance.",
     configurationTags: ["YM01 Prime", "LED", "No Bluetooth", "Adult"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM103 .jpg",
+    image: "/homepage/P2/products/fingertip-oximeter/YM103.jpg",
   },
   {
     model: "YM201",
@@ -141,7 +141,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "Compact OLED/TFT display configuration under YM01 Prime.",
     configurationTags: ["YM01 Prime", "OLED/TFT", "No Bluetooth", "Adult"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM201.jpg",
+    image: "/homepage/P2/products/fingertip-oximeter/YM201.jpg",
   },
   {
     model: "YM301",
@@ -159,7 +159,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "Larger OLED display configuration under YM01 Prime.",
     configurationTags: ["YM01 Prime", "OLED", "No Bluetooth", "Adult"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM301.jpg",
+    image: "/homepage/P2/products/fingertip-oximeter/YM301.jpg",
   },
   {
     model: "YM111",
@@ -279,7 +279,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "Chic appearance configuration with optional Bluetooth and voice.",
     configurationTags: ["YM03 Chic", "OLED/TFT", "Optional Bluetooth", "Sound", "Optional Voice", "Adult"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM401.jpg",
+    image: "/homepage/P2/products/fingertip-oximeter/YM401.jpg",
   },
   {
     model: "YM403",
@@ -314,7 +314,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "YM04 Male appearance configuration with optional Bluetooth and voice.",
     configurationTags: ["YM04 Male", "OLED/TFT", "Optional Bluetooth", "Sound", "Optional Voice", "Adult"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM501.jpg",
+    image: "/homepage/P2/products/fingertip-oximeter/YM501.jpg",
   },
   {
     model: "YM503",
@@ -349,7 +349,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "Child-oriented TFT model under YM06 Child.",
     configurationTags: ["YM06 Child", "TFT", "No Bluetooth", "Optional Sound", "Child"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM601-01.jpg",
+    image: "/homepage/P2/products/fingertip-oximeter/YM601-01.jpg",
   },
   {
     model: "YM603",
@@ -367,7 +367,7 @@ export const pulseOximeterModels: PulseOximeterModel[] = [
     publicStatus: "public",
     marketPosition: "Child-oriented TFT model under YM06 Child.",
     configurationTags: ["YM06 Child", "TFT", "No Bluetooth", "Optional Sound", "Child"],
-    image: "/homepage/P2/products/Fingertip Oximeter/YM603.png",
+    image: "/homepage/P2/products/fingertip-oximeter/YM603.png",
   },
 ];
 
