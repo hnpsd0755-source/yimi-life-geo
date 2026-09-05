@@ -28,12 +28,12 @@ const faqs = [
   {
     question: "Which models and colors are available for OEM?",
     answer:
-      "The final selector will only show confirmed models and the existing colors available for each model. The model names, colors and illustrations in the current interactive demo are placeholders for layout and workflow review.",
+      "The final selector will only show confirmed models and the existing colors available for each model. The current interactive preview uses one pulse oximeter demo with three placeholder colors until the confirmed model list and product images are provided.",
   },
   {
     question: "What appears in the instant OEM preview?",
     answer:
-      "The instant preview shows the selected product, an available product color and the uploaded logo in a preset position. It is an early communication preview rather than a final artwork, material or production confirmation.",
+      "The instant preview shows the demo product, selected shell color and uploaded logo. The logo treatment, position, rotation, overall size, width and height can be adjusted for early communication; final artwork, material and production details require sample confirmation.",
   },
   {
     question:
