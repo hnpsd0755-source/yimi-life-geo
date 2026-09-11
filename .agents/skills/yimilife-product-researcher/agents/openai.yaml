@@ -1,0 +1,4 @@
+interface:
+  display_name: "YIMILIFE Product Researcher"
+  short_description: "Research and define product opportunities for YIMILIFE."
+  default_prompt: "Use $yimilife-product-researcher to evaluate a new product opportunity for YIMILIFE."

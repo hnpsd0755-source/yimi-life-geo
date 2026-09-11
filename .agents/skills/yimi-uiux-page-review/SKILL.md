@@ -9,6 +9,10 @@ If this skill conflicts with repository AGENTS.md, follow AGENTS.md first.
 
 Use this skill when reviewing or editing YimiLife page UI, section layout, product pages, modal tables, cards, CTAs, responsive behavior, or design consistency.
 
+## Before Proposing Design Changes
+
+Follow [Research Before Design Changes](../yimilife-website-growth-optimizer/SKILL.md#research-before-design-changes) for every proposed design change. Inspect the current page and buyer need, research relevant competitors, and explain what to adapt or reject before presenting the solution. A visual defect can be reported directly; proposing a new design direction requires this research. Do not implement a review-only request.
+
 ## Checklist
 
 Use `references/uiux-checklist.md` and report only actionable issues.

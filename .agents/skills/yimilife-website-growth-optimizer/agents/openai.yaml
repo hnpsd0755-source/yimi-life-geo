@@ -1,0 +1,4 @@
+interface:
+  display_name: "YIMILIFE Website Growth Optimizer"
+  short_description: "Optimize YIMILIFE sites for UX, SEO, GEO, CRO."
+  default_prompt: "Use $yimilife-website-growth-optimizer to plan and optimize a YIMILIFE website page for UX, SEO, GEO, and conversion."

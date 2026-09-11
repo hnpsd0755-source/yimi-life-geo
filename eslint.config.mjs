@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Standalone design snapshots include prebuilt third-party code.
+    "docs/design/website-templates-20260910/**",
   ]),
 ]);
 

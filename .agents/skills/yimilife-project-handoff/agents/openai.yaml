@@ -1,0 +1,4 @@
+interface:
+  display_name: "YIMILIFE Project Handoff"
+  short_description: "Prepare YIMILIFE site work for another computer."
+  default_prompt: "Use $yimilife-project-handoff to prepare this YIMILIFE website project so I can continue on my laptop."

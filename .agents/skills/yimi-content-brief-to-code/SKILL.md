@@ -15,9 +15,10 @@ Use this skill before turning a YimiLife content, product page review, UI/UX rev
 2. Identify likely target files and routes before editing.
 3. List confirmed facts from the user, AGENTS.md, or existing files.
 4. List uncertain facts that need confirmation.
-5. Propose the smallest useful change set.
-6. Ask before editing when the request affects medical claims, certification status, product maturity, launch status, or regulatory language.
-7. Avoid unrelated refactors, file moves, dependency changes, configuration changes, and architecture changes.
+5. For every design change, complete [Research Before Design Changes](../yimilife-website-growth-optimizer/SKILL.md#research-before-design-changes): study requirements and relevant competitors, compare the evidence with the current page, and explain the adaptations before proposing implementation.
+6. Propose the smallest useful change set with priorities, tradeoffs, mobile behavior, and acceptance checks. Research or proposal requests alone do not authorize page edits; honor design authorization already provided in the conversation.
+7. Ask before editing when the request affects medical claims, certification status, product maturity, launch status, or regulatory language.
+8. Avoid unrelated refactors, file moves, dependency changes, configuration changes, and architecture changes.
 
 ## Editing Boundaries
 

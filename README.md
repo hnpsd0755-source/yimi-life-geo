@@ -1,3 +1,11 @@
+## YimiLife 当前建站工作（2026-09-11）
+
+先阅读 [跨电脑继续工作说明](docs/workflows/handoff-20260911.md)。本轮内容规划、UI 预览和项目技能已保存在仓库内。
+
+- [全站页面内容与 UI 模板定义 V1.2](docs/plans/yimilife-site-content-and-ui-templates-v1.2.md)
+- [七页 UI 模板与启动方法](docs/design/website-templates-20260910/README.md)
+- [项目内建站技能](.agents/skills)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

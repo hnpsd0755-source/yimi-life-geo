@@ -1,0 +1,1 @@
+module.exports=function(source){const keys=[...source.matchAll(/\.([a-zA-Z_][a-zA-Z0-9_-]*)/g)].map(m=>m[1]);return 'export default '+JSON.stringify(Object.fromEntries(keys.map(k=>[k,k])))};
