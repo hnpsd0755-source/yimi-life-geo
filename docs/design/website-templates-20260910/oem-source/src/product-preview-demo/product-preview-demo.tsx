@@ -1,17 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import { type ChangeEvent, type ReactNode, useRef, useState } from "react";
+import { type ChangeEvent, type ReactNode, useEffect, useRef, useState } from "react";
 
 type ColorId = "white" | "aqua" | "navy";
 type LogoTone = "original" | "dark" | "light";
+
+export type LogoSelection = {
+  kind: "none" | "uploaded" | "sample";
+  name: string;
+  file: File | null;
+  processing: boolean;
+};
 
 type ProductPreviewDemoProps = {
   children?: ReactNode;
   embedded?: boolean;
   sectionId?: string;
   onColorChange?: (colorName: string) => void;
-  onLogoChange?: (fileName: string | null) => void;
+  onLogoChange?: (selection: LogoSelection) => void;
+  onAdjustmentChange?: () => void;
 };
 
 const defaultLogoAdjustments = {
@@ -391,8 +399,12 @@ export function ProductPreviewDemo({
   sectionId,
   onColorChange,
   onLogoChange,
+  onAdjustmentChange,
 }: ProductPreviewDemoProps = {}) {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const logoOperation = useRef(0);
+  const [processing, setProcessing] = useState(false);
+  useEffect(() => () => { logoOperation.current += 1; }, []);
   const [selectedColor, setSelectedColor] = useState<ColorId>("aqua");
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [logoFileName, setLogoFileName] = useState<string | null>(null);
@@ -407,51 +419,79 @@ export function ProductPreviewDemo({
 
   const activeColor = colors.find((color) => color.id === selectedColor) ?? colors[1];
 
+  function beginLogo() {
+    const operation = ++logoOperation.current;
+    setLogoPreview(null);
+    setLogoFileName(null);
+    setFileError(null);
+    setProcessing(true);
+    onLogoChange?.({ kind: "none", name: "", file: null, processing: true });
+    return operation;
+  }
+
+  function logoFailed(operation: number, message: string) {
+    if (operation !== logoOperation.current) return;
+    setProcessing(false);
+    setFileError(message);
+    onLogoChange?.({ kind: "none", name: "", file: null, processing: false });
+  }
+
+  async function displayLogo(source: string, selection: LogoSelection, operation: number) {
+    try {
+      const probe = new window.Image();
+      probe.src = source;
+      await probe.decode();
+      if (operation !== logoOperation.current) return;
+      const preparedPreview = await prepareLogoPreview(source);
+      const perspectivePreview = await warpLogoToProductSurface(preparedPreview);
+      if (operation !== logoOperation.current) return;
+      setLogoPreview(perspectivePreview);
+      setLogoFileName(selection.name);
+      setFileError(null);
+      setProcessing(false);
+      onLogoChange?.(selection);
+    } catch {
+      logoFailed(operation, "This image could not be read. Please choose another PNG or JPG/JPEG file.");
+    }
+  }
+
   function handleLogoChange(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
-
-    if (!file) {
+    event.target.value = "";
+    if (!file) return;
+    const operation = beginLogo();
+    if (!/\.(png|jpe?g)$/i.test(file.name) || (file.type && !["image/png", "image/jpeg"].includes(file.type))) {
+      logoFailed(operation, "Please upload a PNG, JPG or JPEG file.");
       return;
     }
-
-    if (!(["image/png", "image/jpeg"] as string[]).includes(file.type)) {
-      setFileError("Please upload a PNG, JPG or JPEG file.");
-      event.target.value = "";
+    if (!file.size || file.size > 2 * 1024 * 1024) {
+      logoFailed(operation, "The logo must be a non-empty file of 2 MB or smaller.");
       return;
     }
-
-    if (file.size > 2 * 1024 * 1024) {
-      setFileError("The logo file must be 2 MB or smaller.");
-      event.target.value = "";
-      return;
-    }
-
     const reader = new FileReader();
-    reader.onload = async () => {
-      if (typeof reader.result === "string") {
-        const preparedPreview = await prepareLogoPreview(reader.result);
-        const perspectivePreview = await warpLogoToProductSurface(preparedPreview);
-        setLogoPreview(perspectivePreview);
-        setLogoFileName(file.name);
-        setFileError(null);
-        onLogoChange?.(file.name);
-      }
+    reader.onerror = () => logoFailed(operation, "The file could not be read. Please select it again.");
+    reader.onabort = () => logoFailed(operation, "The file was not loaded. Please select it again.");
+    reader.onload = () => {
+      if (operation !== logoOperation.current) return;
+      if (typeof reader.result !== "string") { logoFailed(operation, "The file could not be read."); return; }
+      void displayLogo(reader.result, { kind: "uploaded", name: file.name, file, processing: false }, operation);
     };
     reader.readAsDataURL(file);
   }
 
   function removeLogo() {
+    logoOperation.current += 1;
+    setProcessing(false);
     setLogoPreview(null);
     setLogoFileName(null);
     setFileError(null);
     resetLogoAdjustments();
-    onLogoChange?.(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
+    onLogoChange?.({ kind: "none", name: "", file: null, processing: false });
+    if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
   function resetLogoAdjustments() {
+    onAdjustmentChange?.();
     setLogoOffsetX(defaultLogoAdjustments.offsetX);
     setLogoOffsetY(defaultLogoAdjustments.offsetY);
     setLogoRotation(defaultLogoAdjustments.rotation);
@@ -460,13 +500,9 @@ export function ProductPreviewDemo({
     setLogoHeight(defaultLogoAdjustments.height);
   }
 
-  async function useSampleLogo() {
-    const preparedPreview = await prepareLogoPreview("/homepage/P2/Yimilife-logo.png");
-    const perspectivePreview = await warpLogoToProductSurface(preparedPreview);
-    setLogoPreview(perspectivePreview);
-    setLogoFileName("YimiLife sample logo");
-    setFileError(null);
-    onLogoChange?.("YimiLife sample logo");
+  function useSampleLogo() {
+    const operation = beginLogo();
+    void displayLogo("/homepage/P2/Yimilife-logo.png", { kind: "sample", name: "YimiLife sample logo", file: null, processing: false }, operation);
   }
 
   const logoFilter =
@@ -587,6 +623,7 @@ export function ProductPreviewDemo({
 
               <input
                 ref={fileInputRef}
+                aria-label="Upload customer logo"
                 type="file"
                 accept=".png,.jpg,.jpeg,image/png,image/jpeg"
                 className="sr-only"
@@ -616,6 +653,7 @@ export function ProductPreviewDemo({
                 PNG, JPG or JPEG · 2 MB max · white backgrounds are reduced locally when detected
               </p>
 
+              {processing && <p className="mt-3 text-xs text-slate-500" role="status">Preparing logo preview… <button type="button" className="text-link" onClick={removeLogo}>Cancel</button></p>}
               {fileError ? (
                 <p className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-xs font-medium text-red-700" role="alert">
                   {fileError}
@@ -646,7 +684,7 @@ export function ProductPreviewDemo({
                           key={tone.id}
                           type="button"
                           aria-pressed={logoTone === tone.id}
-                          onClick={() => setLogoTone(tone.id)}
+                          onClick={() => { setLogoTone(tone.id); onAdjustmentChange?.(); }}
                           className={`min-h-10 border-r border-slate-200 px-2 text-xs font-semibold last:border-r-0 ${
                             logoTone === tone.id
                               ? "bg-brand-700 text-white"

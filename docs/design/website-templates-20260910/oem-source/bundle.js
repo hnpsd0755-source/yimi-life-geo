@@ -17461,6 +17461,105 @@ function OemOdmProcessFlow({ headingLevel = "h2", activePath: controlledPath, on
                                     : "text-slate-600 hover:bg-slate-50 hover:text-slate-950"}`, children: processPaths[path].tabLabel }, path))) })] }), (0,jsx_runtime.jsxs)("div", { id: "project-flow-panel", role: "tabpanel", "aria-labelledby": `${activePath}-process-tab`, className: `${oem_odm_process_flow_module.panel} mt-10`, children: [(0,jsx_runtime.jsxs)("div", { className: "flex flex-wrap items-center gap-3 border-y border-slate-200 py-4", children: [(0,jsx_runtime.jsx)("span", { className: "text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-700", children: "Project type" }), (0,jsx_runtime.jsx)("span", { className: "text-sm font-medium text-slate-700", children: activeContent.basis })] }), (0,jsx_runtime.jsxs)("div", { className: "relative mt-8", children: [(0,jsx_runtime.jsx)("div", { className: "absolute left-[12.5%] right-[12.5%] top-6 hidden h-px bg-gradient-to-r from-brand-300 via-brand-500 to-brand-700 lg:block", "aria-hidden": "true" }), (0,jsx_runtime.jsx)("ol", { className: "grid gap-7 lg:grid-cols-4 lg:gap-5", children: activeContent.steps.map((step, index) => ((0,jsx_runtime.jsxs)("li", { className: "relative grid grid-cols-[3rem_minmax(0,1fr)] gap-4 lg:flex lg:min-w-0 lg:flex-col lg:gap-0", children: [index < activeContent.steps.length - 1 ? ((0,jsx_runtime.jsx)("span", { className: "absolute bottom-[-1.75rem] left-[1.45rem] top-12 w-px bg-gradient-to-b from-brand-400 to-brand-200 lg:hidden", "aria-hidden": "true" })) : null, (0,jsx_runtime.jsx)("div", { className: "relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-500 bg-white font-mono text-sm font-semibold text-brand-800 shadow-sm lg:mx-auto", children: String(index + 1).padStart(2, "0") }), (0,jsx_runtime.jsx)("div", { className: `${oem_odm_process_flow_module["depth-card"]} min-w-0 lg:mt-5 lg:h-full`, children: (0,jsx_runtime.jsxs)("article", { className: `${oem_odm_process_flow_module["card-surface"]} flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 md:p-6`, children: [(0,jsx_runtime.jsxs)("div", { className: "flex items-start justify-between gap-4", children: [(0,jsx_runtime.jsxs)("span", { className: "font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-700", children: ["Stage ", String(index + 1).padStart(2, "0")] }), (0,jsx_runtime.jsx)("span", { className: "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700", children: (0,jsx_runtime.jsx)(StageIcon, { name: step.icon }) })] }), (0,jsx_runtime.jsx)("h3", { className: "mt-5 text-xl font-semibold leading-7 tracking-tight text-slate-950", children: step.title }), (0,jsx_runtime.jsxs)("dl", { className: "mt-6 grid gap-5 border-t border-slate-200 pt-5", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("dt", { className: "text-[10px] font-semibold uppercase tracking-[0.17em] text-slate-400", children: "Your input" }), (0,jsx_runtime.jsx)("dd", { className: "mt-2 text-sm leading-6 text-slate-600", children: step.input })] }), (0,jsx_runtime.jsxs)("div", { className: "mt-auto rounded-xl border border-brand-100 bg-brand-50 p-3.5", children: [(0,jsx_runtime.jsx)("dt", { className: "text-[10px] font-semibold uppercase tracking-[0.17em] text-brand-700", children: "Stage output" }), (0,jsx_runtime.jsx)("dd", { className: "mt-2 text-sm font-medium leading-6 text-slate-800", children: step.confirmation })] })] })] }) })] }, step.title))) })] })] }, activePath)] }) }));
 }
 
+;// ./src/inquiry-preview.tsx
+"use client";
+
+
+function useDemoSubmission(kind) {
+    const [state, setState] = (0,react.useState)("idle");
+    const [failNext, setFailNext] = (0,react.useState)(false);
+    const [receipt, setReceipt] = (0,react.useState)(null);
+    const busy = (0,react.useRef)(false);
+    const timer = (0,react.useRef)(null);
+    const requestId = (0,react.useRef)("");
+    (0,react.useEffect)(() => () => { if (timer.current)
+        clearTimeout(timer.current); }, []);
+    function clear() {
+        if (busy.current)
+            return;
+        setState("idle");
+        setReceipt(null);
+        requestId.current = "";
+    }
+    function onEdit(event) {
+        const target = event.target;
+        if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement)
+            target.setCustomValidity("");
+        clear();
+    }
+    function submit(form, extra) {
+        if (busy.current)
+            return;
+        for (const field of Array.from(form.elements)) {
+            if ((field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) && field.required && field.type !== "checkbox") {
+                field.setCustomValidity(field.value.trim() ? "" : "Please complete this field.");
+            }
+        }
+        if (!form.reportValidity())
+            return;
+        const fields = { ...extra };
+        for (const [name, value] of new FormData(form).entries()) {
+            if (typeof value === "string" && value.trim() && name !== "Project permission")
+                fields[name.replace(/^ODM /, "")] = value.trim();
+        }
+        requestId.current || (requestId.current = "DEMO-" + kind + "-" + crypto.randomUUID().slice(0, 8).toUpperCase());
+        busy.current = true;
+        setState("submitting");
+        setReceipt(null);
+        timer.current = setTimeout(() => {
+            busy.current = false;
+            if (failNext) {
+                setFailNext(false);
+                setState("error");
+            }
+            else {
+                setReceipt({ id: requestId.current, fields });
+                setState("success");
+            }
+        }, 900);
+    }
+    return { state, pending: state === "submitting", failNext, setFailNext, receipt, clear, onEdit, submit };
+}
+function DemoFeedback({ demo, onReset }) {
+    return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, { children: [demo.pending && (0,jsx_runtime.jsx)("div", { className: "inquiry-feedback", role: "status", children: "Simulating submission. Please wait\u2026" }), demo.state === "error" && (0,jsx_runtime.jsxs)("div", { className: "inquiry-feedback inquiry-error", role: "alert", children: [(0,jsx_runtime.jsx)("strong", { children: "Simulated submission failed." }), (0,jsx_runtime.jsx)("p", { children: "Your details and selected files are still here. Submit again to retry. Nothing was sent or saved to a server." })] }), demo.state === "success" && demo.receipt && (0,jsx_runtime.jsxs)("div", { className: "inquiry-feedback inquiry-success", role: "status", children: [(0,jsx_runtime.jsx)("strong", { children: "Demo submission complete" }), (0,jsx_runtime.jsxs)("p", { children: ["Demo reference: ", (0,jsx_runtime.jsx)("b", { children: demo.receipt.id })] }), (0,jsx_runtime.jsx)("p", { children: "This is a local preview. No request was saved to a server and no emails were sent." }), (0,jsx_runtime.jsxs)("details", { className: "inquiry-receipt", children: [(0,jsx_runtime.jsx)("summary", { children: "Review this demo request" }), (0,jsx_runtime.jsx)("dl", { children: Object.entries(demo.receipt.fields).map(([key, value]) => (0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("dt", { children: key }), (0,jsx_runtime.jsx)("dd", { children: value })] }, key)) })] }), (0,jsx_runtime.jsx)("button", { type: "button", className: "text-link inquiry-reset", onClick: onReset, children: "Start another demo request" })] }), (0,jsx_runtime.jsxs)("details", { className: "inquiry-review-tools", children: [(0,jsx_runtime.jsx)("summary", { children: "Internal preview testing" }), (0,jsx_runtime.jsxs)("label", { children: [(0,jsx_runtime.jsx)("input", { type: "checkbox", checked: demo.failNext, onChange: event => demo.setFailNext(event.target.checked) }), " Simulate a failed submission once"] }), (0,jsx_runtime.jsx)("p", { children: "Preview control only. The next retry will simulate success." })] })] });
+}
+const allowedTypes = {
+    pdf: ["application/pdf"],
+    docx: ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"],
+    png: ["image/png"],
+    jpg: ["image/jpeg"],
+    jpeg: ["image/jpeg"],
+};
+function AttachmentPicker({ files, onChange }) {
+    const [error, setError] = (0,react.useState)("");
+    const inputRef = (0,react.useRef)(null);
+    function addFiles(event) {
+        const incoming = Array.from(event.currentTarget.files ?? []);
+        event.currentTarget.value = "";
+        if (!incoming.length)
+            return;
+        if (files.length + incoming.length > 3) {
+            setError("Files were not added. Choose up to 3 files in total; remove an existing file first.");
+            return;
+        }
+        for (const file of incoming) {
+            const extension = file.name.split(".").pop()?.toLowerCase() ?? "";
+            const types = allowedTypes[extension];
+            if (!types || (file.type && !types.includes(file.type))) {
+                setError(file.name + ": not added. Use PDF, DOCX, PNG or JPG/JPEG.");
+                return;
+            }
+            if (!file.size || file.size > 5 * 1024 * 1024) {
+                setError(file.name + ": not added. Use a non-empty file of 5 MB or smaller.");
+                return;
+            }
+        }
+        setError("");
+        onChange([...files, ...incoming]);
+    }
+    return (0,jsx_runtime.jsxs)("div", { className: "inquiry-attachments", children: [(0,jsx_runtime.jsxs)("label", { htmlFor: "odm-project-files", children: ["Project files ", (0,jsx_runtime.jsx)("span", { children: "(optional)" })] }), (0,jsx_runtime.jsx)("p", { id: "odm-files-help", children: "PDF, DOCX, PNG or JPG/JPEG \u00B7 up to 3 files \u00B7 5 MB each. Files stay on this device in this preview." }), (0,jsx_runtime.jsx)("button", { type: "button", className: "button-secondary inquiry-file-select", onClick: () => inputRef.current?.click(), "aria-describedby": "odm-files-help", children: "Choose files" }), (0,jsx_runtime.jsx)("input", { ref: inputRef, id: "odm-project-files", type: "file", multiple: true, accept: ".pdf,.docx,.png,.jpg,.jpeg", onChange: addFiles, "aria-describedby": error ? "odm-files-help odm-files-error" : "odm-files-help", "aria-invalid": !!error }), error && (0,jsx_runtime.jsx)("p", { id: "odm-files-error", className: "inquiry-file-error", role: "alert", children: error }), (0,jsx_runtime.jsx)("ul", { "aria-label": "Selected project files", children: files.map((file, index) => (0,jsx_runtime.jsxs)("li", { children: [(0,jsx_runtime.jsxs)("span", { children: [(0,jsx_runtime.jsx)("b", { children: file.name }), (0,jsx_runtime.jsx)("small", { children: file.size < 1024 ? file.size + " bytes" : file.size < 1024 * 1024 ? Math.ceil(file.size / 1024) + " KB" : (file.size / (1024 * 1024)).toFixed(2) + " MB" })] }), (0,jsx_runtime.jsx)("button", { type: "button", "aria-label": "Remove " + file.name, onClick: () => { setError(""); onChange(files.filter((_, i) => i !== index)); }, children: "Remove" })] }, index + "-" + file.name)) }), (0,jsx_runtime.jsx)("p", { className: "inquiry-file-count", "aria-live": "polite", children: files.length ? files.length + " of 3 files selected" : "No files selected. You can submit without attachments." })] });
+}
+
 ;// ./src/product-preview-demo/product-preview-demo.tsx
 "use client";
 
@@ -17709,8 +17808,11 @@ function RemoveIcon() {
 function AdjustmentSlider({ id, label, value, min, max, step = 1, unit, onChange, }) {
     return ((0,jsx_runtime.jsxs)("label", { htmlFor: id, className: "block min-w-0", children: [(0,jsx_runtime.jsxs)("span", { className: "flex items-center justify-between gap-2 text-[0.7rem] font-semibold text-slate-700", children: [(0,jsx_runtime.jsx)("span", { children: label }), (0,jsx_runtime.jsxs)("output", { htmlFor: id, className: "font-normal tabular-nums text-slate-500", children: [value, unit] })] }), (0,jsx_runtime.jsx)("input", { id: id, type: "range", min: min, max: max, step: step, value: value, onChange: (event) => onChange(Number(event.target.value)), className: "mt-1.5 w-full accent-brand-700" })] }));
 }
-function ProductPreviewDemo({ children, embedded = false, sectionId, onColorChange, onLogoChange, } = {}) {
+function ProductPreviewDemo({ children, embedded = false, sectionId, onColorChange, onLogoChange, onAdjustmentChange, } = {}) {
     const fileInputRef = (0,react.useRef)(null);
+    const logoOperation = (0,react.useRef)(0);
+    const [processing, setProcessing] = (0,react.useState)(false);
+    (0,react.useEffect)(() => () => { logoOperation.current += 1; }, []);
     const [selectedColor, setSelectedColor] = (0,react.useState)("aqua");
     const [logoPreview, setLogoPreview] = (0,react.useState)(null);
     const [logoFileName, setLogoFileName] = (0,react.useState)(null);
@@ -17723,45 +17825,84 @@ function ProductPreviewDemo({ children, embedded = false, sectionId, onColorChan
     const [logoHeight, setLogoHeight] = (0,react.useState)(defaultLogoAdjustments.height);
     const [fileError, setFileError] = (0,react.useState)(null);
     const activeColor = colors.find((color) => color.id === selectedColor) ?? colors[1];
+    function beginLogo() {
+        const operation = ++logoOperation.current;
+        setLogoPreview(null);
+        setLogoFileName(null);
+        setFileError(null);
+        setProcessing(true);
+        onLogoChange?.({ kind: "none", name: "", file: null, processing: true });
+        return operation;
+    }
+    function logoFailed(operation, message) {
+        if (operation !== logoOperation.current)
+            return;
+        setProcessing(false);
+        setFileError(message);
+        onLogoChange?.({ kind: "none", name: "", file: null, processing: false });
+    }
+    async function displayLogo(source, selection, operation) {
+        try {
+            const probe = new window.Image();
+            probe.src = source;
+            await probe.decode();
+            if (operation !== logoOperation.current)
+                return;
+            const preparedPreview = await prepareLogoPreview(source);
+            const perspectivePreview = await warpLogoToProductSurface(preparedPreview);
+            if (operation !== logoOperation.current)
+                return;
+            setLogoPreview(perspectivePreview);
+            setLogoFileName(selection.name);
+            setFileError(null);
+            setProcessing(false);
+            onLogoChange?.(selection);
+        }
+        catch {
+            logoFailed(operation, "This image could not be read. Please choose another PNG or JPG/JPEG file.");
+        }
+    }
     function handleLogoChange(event) {
         const file = event.target.files?.[0];
-        if (!file) {
+        event.target.value = "";
+        if (!file)
+            return;
+        const operation = beginLogo();
+        if (!/\.(png|jpe?g)$/i.test(file.name) || (file.type && !["image/png", "image/jpeg"].includes(file.type))) {
+            logoFailed(operation, "Please upload a PNG, JPG or JPEG file.");
             return;
         }
-        if (!["image/png", "image/jpeg"].includes(file.type)) {
-            setFileError("Please upload a PNG, JPG or JPEG file.");
-            event.target.value = "";
-            return;
-        }
-        if (file.size > 2 * 1024 * 1024) {
-            setFileError("The logo file must be 2 MB or smaller.");
-            event.target.value = "";
+        if (!file.size || file.size > 2 * 1024 * 1024) {
+            logoFailed(operation, "The logo must be a non-empty file of 2 MB or smaller.");
             return;
         }
         const reader = new FileReader();
-        reader.onload = async () => {
-            if (typeof reader.result === "string") {
-                const preparedPreview = await prepareLogoPreview(reader.result);
-                const perspectivePreview = await warpLogoToProductSurface(preparedPreview);
-                setLogoPreview(perspectivePreview);
-                setLogoFileName(file.name);
-                setFileError(null);
-                onLogoChange?.(file.name);
+        reader.onerror = () => logoFailed(operation, "The file could not be read. Please select it again.");
+        reader.onabort = () => logoFailed(operation, "The file was not loaded. Please select it again.");
+        reader.onload = () => {
+            if (operation !== logoOperation.current)
+                return;
+            if (typeof reader.result !== "string") {
+                logoFailed(operation, "The file could not be read.");
+                return;
             }
+            void displayLogo(reader.result, { kind: "uploaded", name: file.name, file, processing: false }, operation);
         };
         reader.readAsDataURL(file);
     }
     function removeLogo() {
+        logoOperation.current += 1;
+        setProcessing(false);
         setLogoPreview(null);
         setLogoFileName(null);
         setFileError(null);
         resetLogoAdjustments();
-        onLogoChange?.(null);
-        if (fileInputRef.current) {
+        onLogoChange?.({ kind: "none", name: "", file: null, processing: false });
+        if (fileInputRef.current)
             fileInputRef.current.value = "";
-        }
     }
     function resetLogoAdjustments() {
+        onAdjustmentChange?.();
         setLogoOffsetX(defaultLogoAdjustments.offsetX);
         setLogoOffsetY(defaultLogoAdjustments.offsetY);
         setLogoRotation(defaultLogoAdjustments.rotation);
@@ -17769,13 +17910,9 @@ function ProductPreviewDemo({ children, embedded = false, sectionId, onColorChan
         setLogoWidth(defaultLogoAdjustments.width);
         setLogoHeight(defaultLogoAdjustments.height);
     }
-    async function useSampleLogo() {
-        const preparedPreview = await prepareLogoPreview("/homepage/P2/Yimilife-logo.png");
-        const perspectivePreview = await warpLogoToProductSurface(preparedPreview);
-        setLogoPreview(perspectivePreview);
-        setLogoFileName("YimiLife sample logo");
-        setFileError(null);
-        onLogoChange?.("YimiLife sample logo");
+    function useSampleLogo() {
+        const operation = beginLogo();
+        void displayLogo("/homepage/P2/Yimilife-logo.png", { kind: "sample", name: "YimiLife sample logo", file: null, processing: false }, operation);
     }
     const logoFilter = logoTone === "dark"
         ? "brightness(0)"
@@ -17790,7 +17927,7 @@ function ProductPreviewDemo({ children, embedded = false, sectionId, onColorChan
                                                             }, className: `min-h-20 rounded-lg border px-3 py-3 text-left transition focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-brand-300 ${isActive
                                                                 ? "border-brand-500 bg-brand-50 shadow-[inset_0_0_0_1px_var(--yimi-brand-500)]"
                                                                 : "border-slate-200 bg-white hover:border-brand-200 hover:bg-slate-50"}`, children: [(0,jsx_runtime.jsx)("span", { className: "block h-6 w-6 rounded-full border border-slate-300 shadow-sm", style: { backgroundColor: color.hex }, "aria-hidden": "true" }), (0,jsx_runtime.jsx)("span", { className: "mt-2 block text-xs font-semibold text-slate-700", children: color.name })] }, color.id));
-                                                    }) })] }), (0,jsx_runtime.jsxs)("div", { className: "mt-8 border-t border-slate-200 pt-8", children: [(0,jsx_runtime.jsxs)("div", { className: "flex items-center gap-3", children: [(0,jsx_runtime.jsx)("span", { className: "flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-semibold text-white", children: "3" }), embedded ? ((0,jsx_runtime.jsx)("h3", { className: "text-base font-semibold text-slate-950", children: "Brand artwork" })) : ((0,jsx_runtime.jsx)("h2", { className: "text-base font-semibold text-slate-950", children: "Brand artwork" }))] }), (0,jsx_runtime.jsx)("input", { ref: fileInputRef, type: "file", accept: ".png,.jpg,.jpeg,image/png,image/jpeg", className: "sr-only", onChange: handleLogoChange }), (0,jsx_runtime.jsxs)("button", { type: "button", className: "button-secondary mt-4 w-full gap-2", onClick: () => fileInputRef.current?.click(), children: [(0,jsx_runtime.jsx)(UploadIcon, {}), logoPreview ? "Replace logo" : "Upload logo"] }), !logoPreview ? ((0,jsx_runtime.jsx)("button", { type: "button", onClick: useSampleLogo, className: "mt-3 text-xs font-semibold text-brand-700 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300", children: "Preview with sample logo" })) : null, (0,jsx_runtime.jsx)("p", { className: "mt-2 text-xs leading-5 text-slate-500", children: "PNG, JPG or JPEG \u00B7 2 MB max \u00B7 white backgrounds are reduced locally when detected" }), fileError ? ((0,jsx_runtime.jsx)("p", { className: "mt-3 rounded-lg bg-red-50 px-3 py-2 text-xs font-medium text-red-700", role: "alert", children: fileError })) : null, logoPreview ? ((0,jsx_runtime.jsxs)("div", { className: "mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4", children: [(0,jsx_runtime.jsxs)("div", { className: "flex items-center justify-between gap-3", children: [(0,jsx_runtime.jsx)("span", { className: "min-w-0 truncate text-xs font-medium text-slate-700", children: logoFileName }), (0,jsx_runtime.jsxs)("button", { type: "button", onClick: removeLogo, className: "inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-slate-500 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300", children: [(0,jsx_runtime.jsx)(RemoveIcon, {}), "Remove"] })] }), (0,jsx_runtime.jsxs)("fieldset", { className: "mt-5", children: [(0,jsx_runtime.jsx)("legend", { className: "text-xs font-semibold text-slate-700", children: "Logo treatment" }), (0,jsx_runtime.jsx)("div", { className: "mt-2 grid grid-cols-3 overflow-hidden rounded-lg border border-slate-200 bg-white", children: logoTones.map((tone) => ((0,jsx_runtime.jsx)("button", { type: "button", "aria-pressed": logoTone === tone.id, onClick: () => setLogoTone(tone.id), className: `min-h-10 border-r border-slate-200 px-2 text-xs font-semibold last:border-r-0 ${logoTone === tone.id
+                                                    }) })] }), (0,jsx_runtime.jsxs)("div", { className: "mt-8 border-t border-slate-200 pt-8", children: [(0,jsx_runtime.jsxs)("div", { className: "flex items-center gap-3", children: [(0,jsx_runtime.jsx)("span", { className: "flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-semibold text-white", children: "3" }), embedded ? ((0,jsx_runtime.jsx)("h3", { className: "text-base font-semibold text-slate-950", children: "Brand artwork" })) : ((0,jsx_runtime.jsx)("h2", { className: "text-base font-semibold text-slate-950", children: "Brand artwork" }))] }), (0,jsx_runtime.jsx)("input", { ref: fileInputRef, "aria-label": "Upload customer logo", type: "file", accept: ".png,.jpg,.jpeg,image/png,image/jpeg", className: "sr-only", onChange: handleLogoChange }), (0,jsx_runtime.jsxs)("button", { type: "button", className: "button-secondary mt-4 w-full gap-2", onClick: () => fileInputRef.current?.click(), children: [(0,jsx_runtime.jsx)(UploadIcon, {}), logoPreview ? "Replace logo" : "Upload logo"] }), !logoPreview ? ((0,jsx_runtime.jsx)("button", { type: "button", onClick: useSampleLogo, className: "mt-3 text-xs font-semibold text-brand-700 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300", children: "Preview with sample logo" })) : null, (0,jsx_runtime.jsx)("p", { className: "mt-2 text-xs leading-5 text-slate-500", children: "PNG, JPG or JPEG \u00B7 2 MB max \u00B7 white backgrounds are reduced locally when detected" }), processing && (0,jsx_runtime.jsxs)("p", { className: "mt-3 text-xs text-slate-500", role: "status", children: ["Preparing logo preview\u2026 ", (0,jsx_runtime.jsx)("button", { type: "button", className: "text-link", onClick: removeLogo, children: "Cancel" })] }), fileError ? ((0,jsx_runtime.jsx)("p", { className: "mt-3 rounded-lg bg-red-50 px-3 py-2 text-xs font-medium text-red-700", role: "alert", children: fileError })) : null, logoPreview ? ((0,jsx_runtime.jsxs)("div", { className: "mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4", children: [(0,jsx_runtime.jsxs)("div", { className: "flex items-center justify-between gap-3", children: [(0,jsx_runtime.jsx)("span", { className: "min-w-0 truncate text-xs font-medium text-slate-700", children: logoFileName }), (0,jsx_runtime.jsxs)("button", { type: "button", onClick: removeLogo, className: "inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-slate-500 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300", children: [(0,jsx_runtime.jsx)(RemoveIcon, {}), "Remove"] })] }), (0,jsx_runtime.jsxs)("fieldset", { className: "mt-5", children: [(0,jsx_runtime.jsx)("legend", { className: "text-xs font-semibold text-slate-700", children: "Logo treatment" }), (0,jsx_runtime.jsx)("div", { className: "mt-2 grid grid-cols-3 overflow-hidden rounded-lg border border-slate-200 bg-white", children: logoTones.map((tone) => ((0,jsx_runtime.jsx)("button", { type: "button", "aria-pressed": logoTone === tone.id, onClick: () => { setLogoTone(tone.id); onAdjustmentChange?.(); }, className: `min-h-10 border-r border-slate-200 px-2 text-xs font-semibold last:border-r-0 ${logoTone === tone.id
                                                                             ? "bg-brand-700 text-white"
                                                                             : "text-slate-600 hover:bg-slate-50"}`, children: tone.name }, tone.id))) })] }), (0,jsx_runtime.jsxs)("div", { className: "mt-5 border-t border-slate-200 pt-4", children: [(0,jsx_runtime.jsxs)("div", { className: "flex items-center justify-between gap-3", children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold text-slate-700", children: "Placement & shape" }), (0,jsx_runtime.jsx)("button", { type: "button", onClick: resetLogoAdjustments, className: "text-[0.7rem] font-semibold text-brand-700 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300", children: "Reset" })] }), (0,jsx_runtime.jsxs)("div", { className: "mt-4 grid grid-cols-2 gap-x-4 gap-y-4", children: [(0,jsx_runtime.jsx)(AdjustmentSlider, { id: "logo-position-x", label: "Horizontal", value: logoOffsetX, min: -32, max: 32, unit: "px", onChange: setLogoOffsetX }), (0,jsx_runtime.jsx)(AdjustmentSlider, { id: "logo-position-y", label: "Vertical", value: logoOffsetY, min: -32, max: 32, unit: "px", onChange: setLogoOffsetY }), (0,jsx_runtime.jsx)(AdjustmentSlider, { id: "logo-scale", label: "Overall size", value: logoScale, min: 40, max: 180, unit: "%", onChange: setLogoScale }), (0,jsx_runtime.jsx)(AdjustmentSlider, { id: "logo-rotation", label: "Rotation", value: logoRotation, min: -12, max: 16, step: 0.5, unit: "\u00B0", onChange: setLogoRotation }), (0,jsx_runtime.jsx)(AdjustmentSlider, { id: "logo-width", label: "Width", value: logoWidth, min: 64, max: 136, unit: "%", onChange: setLogoWidth }), (0,jsx_runtime.jsx)(AdjustmentSlider, { id: "logo-height", label: "Height", value: logoHeight, min: 64, max: 136, unit: "%", onChange: setLogoHeight })] })] })] })) : null] })] }), (0,jsx_runtime.jsxs)("div", { className: "relative flex min-h-[32rem] flex-col bg-[radial-gradient(circle_at_50%_42%,#ffffff_0%,#f8fafc_58%,#eef3f5_100%)] p-5 md:min-h-[42rem] md:p-8", children: [(0,jsx_runtime.jsxs)("div", { className: "relative z-10 flex items-start justify-between gap-4", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: "Live preview" }), (0,jsx_runtime.jsxs)("p", { className: "mt-1 text-sm font-semibold text-slate-900", children: ["Pulse Oximeter \u00B7 ", activeColor.name] })] }), (0,jsx_runtime.jsx)("span", { className: "rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-500 backdrop-blur", children: "Demo model" })] }), (0,jsx_runtime.jsxs)("div", { className: "relative my-auto aspect-[1365/1152] w-full", children: [colors.map((color) => ((0,jsx_runtime.jsx)(Image, { src: color.image, alt: color.id === selectedColor ? `${color.name} fingertip pulse oximeter preview` : "", fill: true, priority: true, sizes: "(min-width: 1024px) 64vw, 100vw", "aria-hidden": color.id !== selectedColor, className: `object-contain transition-opacity duration-300 ${color.id === selectedColor ? "opacity-100" : "pointer-events-none opacity-0"}` }, color.id))), (0,jsx_runtime.jsx)("div", { className: "absolute left-[65.4%] top-[11.6%] z-10 h-[10%] w-[17.3%] origin-center", style: {
                                                         transform: `translate(${logoOffsetX}px, ${logoOffsetY}px) rotate(${logoRotation}deg) scale(${logoScale / 100}) scaleX(${logoWidth / 100}) scaleY(${logoHeight / 100})`,
@@ -17805,6 +17942,7 @@ function ProductPreviewDemo({ children, embedded = false, sectionId, onColorChan
 
 ;// ./src/oem-odm-experience.tsx
 "use client";
+
 
 
 
@@ -17873,13 +18011,20 @@ function Badge({ children, inverse = false }) {
 function OemOdmExperience({ faqs }) {
     const [selectedPath, setSelectedPath] = (0,react.useState)(null);
     const [selectedColorName, setSelectedColorName] = (0,react.useState)("Aqua");
-    const [logoName, setLogoName] = (0,react.useState)("");
+    const [logo, setLogo] = (0,react.useState)({ kind: "none", name: "", file: null, processing: false });
+    const [logoLater, setLogoLater] = (0,react.useState)(false);
+    const logoReady = !logo.processing && (logo.kind === "uploaded" || logoLater);
+    const logoName = logo.kind === "uploaded" ? logo.name : "";
+    const logoSummary = logo.processing ? "Preparing logo…" : logo.kind === "uploaded" ? logo.name : logoLater ? "Logo to follow" : "Choose a logo option";
     const [oemConfiguratorKey, setOemConfiguratorKey] = (0,react.useState)(0);
     const [selectedOemNeeds, setSelectedOemNeeds] = (0,react.useState)([]);
     const [selectedOdmNeeds, setSelectedOdmNeeds] = (0,react.useState)([]);
-    const [oemSubmitted, setOemSubmitted] = (0,react.useState)(false);
-    const [odmSubmitted, setOdmSubmitted] = (0,react.useState)(false);
+    const oem = useDemoSubmission("OEM");
+    const odm = useDemoSubmission("ODM");
     const oemFormRef = (0,react.useRef)(null);
+    const odmFormRef = (0,react.useRef)(null);
+    const [odmFiles, setOdmFiles] = (0,react.useState)([]);
+    const [odmFilesKey, setOdmFilesKey] = (0,react.useState)(0);
     function choosePath(path) {
         setSelectedPath(path);
         document
@@ -17888,42 +18033,66 @@ function OemOdmExperience({ faqs }) {
     }
     function handlePreviewColorChange(colorName) {
         setSelectedColorName(colorName);
-        setOemSubmitted(false);
+        oem.clear();
     }
-    function handlePreviewLogoChange(fileName) {
-        setLogoName(fileName ?? "");
-        setOemSubmitted(false);
+    function handlePreviewLogoChange(selection) {
+        setLogo(selection);
+        if (!selection.processing)
+            setLogoLater(selection.kind === "sample");
+        oem.clear();
     }
     function toggleOemNeed(id) {
         setSelectedOemNeeds((current) => current.includes(id)
             ? current.filter((item) => item !== id)
             : [...current, id]);
-        setOemSubmitted(false);
+        oem.clear();
     }
     function toggleOdmNeed(title) {
         setSelectedOdmNeeds((current) => current.includes(title)
             ? current.filter((item) => item !== title)
             : [...current, title]);
-        setOdmSubmitted(false);
+        odm.clear();
     }
     function submitOemDemo(event) {
         event.preventDefault();
-        if (!logoName) {
+        if (!logoReady)
             return;
-        }
-        setOemSubmitted(true);
+        const placements = Array.from(document.querySelectorAll("#oem-configurator input[type=range]"))
+            .map(input => input.id.replace("logo-", "") + ": " + input.value + (input.id.includes("position") ? "px" : input.id.includes("rotation") ? "°" : "%"));
+        const treatment = document.querySelector("#oem-configurator fieldset button[aria-pressed=true]")?.textContent?.trim();
+        oem.submit(event.currentTarget, {
+            Model: "Pulse Oximeter · Demo Model",
+            "Shell color": selectedColorName,
+            Logo: logoName || "Will be provided later",
+            "Logo source": logo.kind === "sample" ? "YimiLife sample — not customer artwork" : logo.kind === "uploaded" ? "Customer file selected locally" : "No file selected",
+            ...(logo.kind !== "none" ? { "Preview adjustments": [treatment, ...placements].filter(Boolean).join("; ") } : {}),
+            "OEM needs": selectedOemNeedLabels.join(", ") || "None selected",
+        });
     }
     function resetOemDemo() {
         oemFormRef.current?.reset();
         setSelectedOemNeeds([]);
         setSelectedColorName("Aqua");
-        setLogoName("");
-        setOemConfiguratorKey((current) => current + 1);
-        setOemSubmitted(false);
+        setLogo({ kind: "none", name: "", file: null, processing: false });
+        setLogoLater(false);
+        setOemConfiguratorKey(current => current + 1);
+        oem.setFailNext(false);
+        oem.clear();
     }
     function submitOdmDemo(event) {
         event.preventDefault();
-        setOdmSubmitted(true);
+        odm.submit(event.currentTarget, {
+            "Development services": selectedOdmNeeds.join(", ") || "To be discussed",
+            "Project files": odmFiles.length ? odmFiles.map(file => file.name + " (" + file.size + " bytes)").join("\n") : "No attachments",
+        });
+    }
+    function resetOdmDemo() {
+        odmFormRef.current?.reset();
+        setSelectedOdmNeeds([]);
+        setOdmFiles([]);
+        setOdmFilesKey(current => current + 1);
+        odm.setFailNext(false);
+        odm.clear();
     }
     const selectedOemNeedLabels = oemReviewOptions
         .filter((item) => selectedOemNeeds.includes(item.id))
@@ -17944,23 +18113,23 @@ function OemOdmExperience({ faqs }) {
                                                 return ((0,jsx_runtime.jsxs)("button", { type: "button", "aria-pressed": isSelected, onClick: () => choosePath(item.path), className: `group inline-flex min-h-14 items-center gap-3 rounded-full border px-4 py-3 text-left shadow-sm transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 sm:px-5 ${isSelected
                                                         ? "border-brand-700 bg-brand-700 text-white"
                                                         : "border-slate-200 bg-white/90 text-slate-900 hover:border-brand-300 hover:bg-white"}`, children: [(0,jsx_runtime.jsx)("span", { className: `text-[0.7rem] font-bold uppercase tracking-[0.14em] ${isSelected ? "text-brand-50" : "text-brand-700"}`, children: item.label }), (0,jsx_runtime.jsx)("span", { className: `h-5 w-px ${isSelected ? "bg-white/30" : "bg-slate-200"}`, "aria-hidden": "true" }), (0,jsx_runtime.jsx)("span", { className: "text-sm font-semibold", children: item.title }), (0,jsx_runtime.jsx)("span", { className: "ml-auto inline-flex h-7 w-7 items-center justify-center rounded-full border border-current/15 transition group-hover:translate-x-0.5", children: isSelected ? ((0,jsx_runtime.jsx)(CheckIcon, { className: "h-3.5 w-3.5" })) : ((0,jsx_runtime.jsx)(ArrowIcon, { className: "h-3.5 w-3.5" })) })] }, item.path));
-                                            }) })] }), (0,jsx_runtime.jsxs)("div", { className: "relative aspect-[11/7] overflow-hidden rounded-2xl border border-white/80 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.12)]", children: [(0,jsx_runtime.jsx)(Image, { src: "/homepage/P2/selected/home-hero-product-family.jpg", alt: "YimiLife medical device product family for OEM and ODM project evaluation", fill: true, preload: true, sizes: "(min-width: 1024px) 52vw, 100vw", className: "object-cover" }), (0,jsx_runtime.jsx)("div", { className: "pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/10 via-transparent to-white/10", "aria-hidden": "true" })] })] }) })] }), (0,jsx_runtime.jsx)(ProductPreviewDemo, { embedded: true, sectionId: "oem-configurator", onColorChange: handlePreviewColorChange, onLogoChange: handlePreviewLogoChange, children: (0,jsx_runtime.jsxs)("div", { className: "border-t border-slate-200 bg-white", children: [(0,jsx_runtime.jsxs)("div", { className: "p-6 md:p-8", children: [(0,jsx_runtime.jsxs)("div", { className: "flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsxs)("div", { className: "flex items-center gap-3", children: [(0,jsx_runtime.jsx)("span", { className: "flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-semibold text-white", children: "4" }), (0,jsx_runtime.jsx)("h3", { className: "text-base font-semibold text-slate-950", children: "Other OEM needs" }), (0,jsx_runtime.jsx)("span", { className: "rounded-full bg-slate-100 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-slate-500", children: "Optional" })] }), (0,jsx_runtime.jsx)("p", { className: "mt-2 text-xs leading-5 text-slate-500", children: "Add the items that should be included in the follow-up review." })] }), (0,jsx_runtime.jsxs)("button", { type: "button", onClick: () => choosePath("odm"), className: "text-link shrink-0", children: ["Need product development? View ODM Services", (0,jsx_runtime.jsx)(ArrowIcon, { className: "ml-2 h-4 w-4" })] })] }), (0,jsx_runtime.jsx)("div", { className: "mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4", children: oemReviewOptions.map((item) => {
-                                        const isSelected = selectedOemNeeds.includes(item.id);
-                                        return ((0,jsx_runtime.jsx)("button", { type: "button", "aria-pressed": isSelected, onClick: () => toggleOemNeed(item.id), className: `rounded-lg border p-3 text-left transition ${isSelected
-                                                ? "border-brand-500 bg-brand-50"
-                                                : "border-slate-200 bg-white hover:border-brand-200"}`, children: (0,jsx_runtime.jsxs)("span", { className: "flex items-center gap-2", children: [(0,jsx_runtime.jsx)("span", { className: `flex h-5 w-5 shrink-0 items-center justify-center rounded border ${isSelected
-                                                            ? "border-brand-600 bg-brand-600 text-white"
-                                                            : "border-slate-300 bg-white text-transparent"}`, children: (0,jsx_runtime.jsx)(CheckIcon, { className: "h-3.5 w-3.5" }) }), (0,jsx_runtime.jsx)("span", { className: "text-xs font-semibold text-slate-800", children: item.label })] }) }, item.id));
-                                    }) })] }), (0,jsx_runtime.jsxs)("div", { className: "border-t border-slate-200 bg-slate-50/80 p-6 md:p-8", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: "Your OEM configuration" }), (0,jsx_runtime.jsxs)("div", { className: "mt-3 flex flex-wrap gap-2", children: [(0,jsx_runtime.jsx)("span", { className: "rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700", children: "Pulse Oximeter \u00B7 Demo Model" }), (0,jsx_runtime.jsx)("span", { className: "rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700", children: selectedColorName }), (0,jsx_runtime.jsx)("span", { className: `rounded-full border px-3 py-1.5 text-xs font-semibold ${logoName
-                                                        ? "border-brand-200 bg-brand-50 text-brand-800"
-                                                        : "border-slate-200 bg-white text-slate-500"}`, children: logoName ? "Logo added" : "Logo needed" }), (selectedOemNeedLabels.length > 0
-                                                    ? selectedOemNeedLabels
-                                                    : ["No additional needs selected"]).map((label) => ((0,jsx_runtime.jsx)("span", { className: "rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600", children: label }, label)))] })] }), !logoName ? ((0,jsx_runtime.jsxs)("div", { className: "mt-6 flex items-center gap-3 rounded-xl border border-dashed border-slate-300 bg-white px-4 py-3 text-sm text-slate-600", role: "status", children: [(0,jsx_runtime.jsx)("span", { className: "flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-50 text-xs font-semibold text-brand-700", children: "3" }), "Upload your logo to continue to the contact details."] })) : null, (0,jsx_runtime.jsx)("div", { className: logoName ? "mt-8 block" : "hidden", "aria-hidden": !logoName, children: (0,jsx_runtime.jsxs)("div", { className: "grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:items-start", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: "Ready to request" }), (0,jsx_runtime.jsx)("h3", { className: "mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl", children: "Where should we send your preview?" }), (0,jsx_runtime.jsx)("p", { className: "mt-4 text-sm leading-7 text-slate-600", children: "Share your contact details and YimiLife will review the selected configuration before preparing the next preview step." }), (0,jsx_runtime.jsx)("p", { className: "mt-4 text-xs leading-5 text-slate-500", children: "Demo only \u2014 no information is sent or stored." })] }), (0,jsx_runtime.jsxs)("form", { ref: oemFormRef, onSubmit: submitOemDemo, className: "rounded-xl border border-slate-200 bg-white p-5 md:p-6", children: [(0,jsx_runtime.jsxs)("div", { className: "grid gap-4 sm:grid-cols-2", children: [(0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900 sm:col-span-2", children: ["Work Email *", (0,jsx_runtime.jsx)("input", { required: true, name: "Work Email", type: "email", className: inputClassName, placeholder: "name@company.com" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900", children: ["Company Name *", (0,jsx_runtime.jsx)("input", { required: true, name: "Company Name", type: "text", className: inputClassName, placeholder: "Company name" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900", children: ["Contact Name *", (0,jsx_runtime.jsx)("input", { required: true, name: "Contact Name", type: "text", className: inputClassName, placeholder: "Your name" })] })] }), (0,jsx_runtime.jsxs)("details", { className: "mt-5 rounded-lg border border-slate-200 bg-slate-50", children: [(0,jsx_runtime.jsx)("summary", { className: "cursor-pointer px-4 py-3 text-sm font-semibold text-slate-700", children: "Add project details (optional)" }), (0,jsx_runtime.jsxs)("div", { className: "grid gap-4 border-t border-slate-200 p-4 sm:grid-cols-2", children: [(0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900", children: ["Country or Target Market", (0,jsx_runtime.jsx)("input", { name: "Country or Target Market", type: "text", className: inputClassName, placeholder: "Country or sales region" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900", children: ["Expected Quantity", (0,jsx_runtime.jsx)("input", { name: "Expected Quantity", type: "text", className: inputClassName, placeholder: "Monthly or annual estimate" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900 sm:col-span-2", children: ["Additional Requirements", (0,jsx_runtime.jsx)("textarea", { name: "Additional Requirements", rows: 3, className: inputClassName, placeholder: "Add other project details." })] })] })] }), (0,jsx_runtime.jsxs)("label", { className: "mt-5 flex items-start gap-3 text-xs leading-5 text-slate-600", children: [(0,jsx_runtime.jsx)("input", { required: true, type: "checkbox", className: "mt-1 h-4 w-4 rounded border-slate-300 accent-[#087f85]" }), (0,jsx_runtime.jsx)("span", { children: "I agree that YimiLife may contact me about this project and use the uploaded logo only to prepare requested preview materials." })] }), (0,jsx_runtime.jsxs)("button", { type: "submit", className: "button-primary mt-6 w-full sm:w-auto", children: ["Request My Brand Preview", (0,jsx_runtime.jsx)(ArrowIcon, { className: "ml-2 h-4 w-4" })] }), oemSubmitted ? ((0,jsx_runtime.jsx)("div", { className: "mt-5 rounded-xl border border-brand-200 bg-brand-50 p-4", role: "status", children: (0,jsx_runtime.jsxs)("div", { className: "flex gap-3", children: [(0,jsx_runtime.jsx)("span", { className: "flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white", children: (0,jsx_runtime.jsx)(CheckIcon, { className: "h-4 w-4" }) }), (0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-sm font-semibold text-brand-800", children: "Demo request received" }), (0,jsx_runtime.jsxs)("p", { className: "mt-1 text-xs leading-5 text-brand-800", children: ["No data was sent. Selected:", ` Pulse Oximeter demo, ${selectedColorName}, ${logoName}.`] }), (0,jsx_runtime.jsx)("button", { type: "button", onClick: resetOemDemo, className: "mt-3 text-xs font-semibold text-brand-800 underline underline-offset-4", children: "Start another demo request" })] })] }) })) : null] })] }) })] })] }) }, oemConfiguratorKey), (0,jsx_runtime.jsx)("section", { id: "odm-services", className: "scroll-mt-20 border-y border-slate-200 bg-slate-100", children: (0,jsx_runtime.jsxs)("div", { className: "site-container py-16 lg:py-20", children: [(0,jsx_runtime.jsxs)("div", { className: "grid gap-10 lg:grid-cols-[0.34fr_0.66fr]", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)(Badge, { children: "ODM development services" }), (0,jsx_runtime.jsx)("h2", { className: "mt-4 text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-4xl", children: "Bring an engineering project into a focused feasibility review." }), (0,jsx_runtime.jsx)("p", { className: "mt-5 text-sm leading-7 text-slate-600 md:text-base md:leading-8", children: "YimiLife accepts ODM projects involving appearance design, structural modification, function development, tooling and engineering prototypes. Project results depend on the confirmed scope and feasibility review." })] }), (0,jsx_runtime.jsx)("div", { className: "grid gap-4 sm:grid-cols-2", children: odmServices.map((service, index) => {
-                                        const isSelected = selectedOdmNeeds.includes(service.title);
-                                        return ((0,jsx_runtime.jsxs)("button", { type: "button", "aria-pressed": isSelected, onClick: () => toggleOdmNeed(service.title), className: `flex h-full gap-4 rounded-xl border bg-white p-5 text-left transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${isSelected
-                                                ? "border-brand-500 bg-brand-50 shadow-sm"
-                                                : "border-slate-200 hover:border-brand-300 hover:shadow-sm"}`, children: [(0,jsx_runtime.jsx)("span", { className: "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-700 text-xs font-semibold text-white", children: String(index + 1).padStart(2, "0") }), (0,jsx_runtime.jsxs)("span", { children: [(0,jsx_runtime.jsxs)("span", { className: "flex items-start gap-2 text-base font-semibold text-slate-950", children: [service.title, isSelected ? (0,jsx_runtime.jsx)(CheckIcon, { className: "mt-0.5 h-4 w-4 shrink-0 text-brand-700" }) : null] }), (0,jsx_runtime.jsx)("span", { className: "mt-2 block text-sm leading-6 text-slate-600", children: service.text })] })] }, service.title));
-                                    }) })] }), (0,jsx_runtime.jsxs)("div", { className: "mt-12 grid gap-8 border-t border-slate-200 pt-12 lg:grid-cols-[0.34fr_0.66fr]", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: "Development brief" }), (0,jsx_runtime.jsx)("h3", { className: "mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl", children: "Submit the inputs needed for the first discussion." }), (0,jsx_runtime.jsx)("p", { className: "mt-4 text-sm leading-7 text-slate-600", children: "Selected services are added to the brief. The form demonstrates the intended content and confirmation state; it does not send data." }), selectedOdmNeeds.length > 0 ? ((0,jsx_runtime.jsx)("div", { className: "mt-5 flex flex-wrap gap-2", children: selectedOdmNeeds.map((item) => ((0,jsx_runtime.jsx)("span", { className: "rounded-full bg-brand-50 px-3 py-1.5 text-xs font-medium text-brand-800", children: item }, item))) })) : null] }), (0,jsx_runtime.jsxs)("form", { onSubmit: submitOdmDemo, className: "rounded-xl border border-slate-200 bg-white p-5 text-slate-900 shadow-sm md:p-6", children: [(0,jsx_runtime.jsxs)("div", { className: "grid gap-4 sm:grid-cols-2", children: [(0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Work Email *", (0,jsx_runtime.jsx)("input", { required: true, name: "ODM Work Email", type: "email", className: inputClassName, placeholder: "name@company.com" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Company Name *", (0,jsx_runtime.jsx)("input", { required: true, name: "ODM Company Name", type: "text", className: inputClassName, placeholder: "Company name" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Product Category *", (0,jsx_runtime.jsxs)("select", { required: true, name: "ODM Product Category", className: inputClassName, defaultValue: "", children: [(0,jsx_runtime.jsx)("option", { value: "", disabled: true, children: "Select product category" }), (0,jsx_runtime.jsx)("option", { children: "Pulse Oximeter" }), (0,jsx_runtime.jsx)("option", { children: "Blood Pressure Monitor" }), (0,jsx_runtime.jsx)("option", { children: "Wearable Monitoring Devices" }), (0,jsx_runtime.jsx)("option", { children: "Other Medical Device Project" })] })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Target Market", (0,jsx_runtime.jsx)("input", { name: "ODM Target Market", type: "text", className: inputClassName, placeholder: "Country or sales region" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold sm:col-span-2", children: ["Project Brief *", (0,jsx_runtime.jsx)("textarea", { required: true, name: "ODM Project Brief", rows: 5, className: inputClassName, placeholder: "Describe the appearance, structure, function, tooling or prototype requirement." })] })] }), (0,jsx_runtime.jsxs)("button", { type: "submit", className: "button-primary mt-6 w-full sm:w-auto", children: ["Submit Your Development Brief", (0,jsx_runtime.jsx)(ArrowIcon, { className: "ml-2 h-4 w-4" })] }), odmSubmitted ? ((0,jsx_runtime.jsxs)("div", { className: "mt-5 rounded-xl border border-brand-200 bg-brand-50 p-4 text-sm text-brand-800", role: "status", children: [(0,jsx_runtime.jsx)("strong", { children: "Demo brief received." }), " The feasibility-review success state is working; no information was sent or stored."] })) : null] })] })] }) }), (0,jsx_runtime.jsx)(OemOdmProcessFlow, { activePath: selectedPath ?? undefined, onPathChange: setSelectedPath }), (0,jsx_runtime.jsx)("section", { className: "bg-white", children: (0,jsx_runtime.jsx)("div", { className: "site-container py-16 lg:py-20", children: (0,jsx_runtime.jsxs)("div", { className: "mx-auto max-w-4xl", children: [(0,jsx_runtime.jsxs)("div", { className: "text-center", children: [(0,jsx_runtime.jsx)(Badge, { children: "OEM and ODM FAQ" }), (0,jsx_runtime.jsx)("h2", { className: "mt-4 text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-4xl", children: "Questions buyers usually clarify before submitting." })] }), (0,jsx_runtime.jsx)("div", { className: "mt-8 grid gap-4", children: faqs.map((faq) => ((0,jsx_runtime.jsxs)("details", { className: "group rounded-xl border border-slate-200 bg-slate-50 p-5", children: [(0,jsx_runtime.jsx)("summary", { className: "cursor-pointer list-none text-base font-semibold text-slate-950", children: (0,jsx_runtime.jsxs)("span", { className: "flex items-center justify-between gap-4", children: [faq.question, (0,jsx_runtime.jsx)("span", { className: "text-2xl font-normal text-brand-700 transition group-open:rotate-45", children: "+" })] }) }), (0,jsx_runtime.jsx)("p", { className: "mt-4 text-sm leading-7 text-slate-600", children: faq.answer })] }, faq.question))) })] }) }) }), (0,jsx_runtime.jsx)("section", { className: "site-container py-16 lg:py-20", children: (0,jsx_runtime.jsxs)("div", { className: "rounded-xl border border-slate-200 bg-white p-7 shadow-sm md:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: selectedPath ? `${selectedPath.toUpperCase()} next step` : "Choose your next step" }), (0,jsx_runtime.jsx)("h2", { className: "mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl", children: selectedPath === "oem"
+                                            }) })] }), (0,jsx_runtime.jsxs)("div", { className: "relative aspect-[11/7] overflow-hidden rounded-2xl border border-white/80 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.12)]", children: [(0,jsx_runtime.jsx)(Image, { src: "/homepage/P2/selected/home-hero-product-family.jpg", alt: "YimiLife medical device product family for OEM and ODM project evaluation", fill: true, preload: true, sizes: "(min-width: 1024px) 52vw, 100vw", className: "object-cover" }), (0,jsx_runtime.jsx)("div", { className: "pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/10 via-transparent to-white/10", "aria-hidden": "true" })] })] }) })] }), (0,jsx_runtime.jsx)("fieldset", { className: "inquiry-lock", disabled: oem.pending, "aria-busy": oem.pending, onChangeCapture: oem.onEdit, children: (0,jsx_runtime.jsx)(ProductPreviewDemo, { embedded: true, sectionId: "oem-configurator", onColorChange: handlePreviewColorChange, onLogoChange: handlePreviewLogoChange, onAdjustmentChange: oem.clear, children: (0,jsx_runtime.jsxs)("div", { className: "border-t border-slate-200 bg-white", children: [(0,jsx_runtime.jsxs)("div", { className: "p-6 md:p-8", children: [(0,jsx_runtime.jsxs)("div", { className: "flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsxs)("div", { className: "flex items-center gap-3", children: [(0,jsx_runtime.jsx)("span", { className: "flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-semibold text-white", children: "4" }), (0,jsx_runtime.jsx)("h3", { className: "text-base font-semibold text-slate-950", children: "Other OEM needs" }), (0,jsx_runtime.jsx)("span", { className: "rounded-full bg-slate-100 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-slate-500", children: "Optional" })] }), (0,jsx_runtime.jsx)("p", { className: "mt-2 text-xs leading-5 text-slate-500", children: "Add the items that should be included in the follow-up review." })] }), (0,jsx_runtime.jsxs)("button", { type: "button", onClick: () => choosePath("odm"), className: "text-link shrink-0", children: ["Need product development? View ODM Services", (0,jsx_runtime.jsx)(ArrowIcon, { className: "ml-2 h-4 w-4" })] })] }), (0,jsx_runtime.jsx)("div", { className: "mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4", children: oemReviewOptions.map((item) => {
+                                            const isSelected = selectedOemNeeds.includes(item.id);
+                                            return ((0,jsx_runtime.jsx)("button", { type: "button", "aria-pressed": isSelected, onClick: () => toggleOemNeed(item.id), className: `rounded-lg border p-3 text-left transition ${isSelected
+                                                    ? "border-brand-500 bg-brand-50"
+                                                    : "border-slate-200 bg-white hover:border-brand-200"}`, children: (0,jsx_runtime.jsxs)("span", { className: "flex items-center gap-2", children: [(0,jsx_runtime.jsx)("span", { className: `flex h-5 w-5 shrink-0 items-center justify-center rounded border ${isSelected
+                                                                ? "border-brand-600 bg-brand-600 text-white"
+                                                                : "border-slate-300 bg-white text-transparent"}`, children: (0,jsx_runtime.jsx)(CheckIcon, { className: "h-3.5 w-3.5" }) }), (0,jsx_runtime.jsx)("span", { className: "text-xs font-semibold text-slate-800", children: item.label })] }) }, item.id));
+                                        }) })] }), (0,jsx_runtime.jsxs)("div", { className: "border-t border-slate-200 bg-slate-50/80 p-6 md:p-8", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: "Your OEM configuration" }), (0,jsx_runtime.jsxs)("div", { className: "mt-3 flex flex-wrap gap-2", children: [(0,jsx_runtime.jsx)("span", { className: "rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700", children: "Pulse Oximeter \u00B7 Demo Model" }), (0,jsx_runtime.jsx)("span", { className: "rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700", children: selectedColorName }), (0,jsx_runtime.jsx)("span", { className: `rounded-full border px-3 py-1.5 text-xs font-semibold ${logoName
+                                                            ? "border-brand-200 bg-brand-50 text-brand-800"
+                                                            : "border-slate-200 bg-white text-slate-500"}`, children: logoSummary }), (selectedOemNeedLabels.length > 0
+                                                        ? selectedOemNeedLabels
+                                                        : ["No additional needs selected"]).map((label) => ((0,jsx_runtime.jsx)("span", { className: "rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600", children: label }, label)))] })] }), logo.kind !== "uploaded" && (0,jsx_runtime.jsxs)("div", { className: "inquiry-logo-choice", children: [(0,jsx_runtime.jsxs)("label", { children: [(0,jsx_runtime.jsx)("input", { type: "checkbox", checked: logoLater, disabled: logo.processing, onChange: event => { setLogoLater(event.target.checked); oem.clear(); } }), " Provide my logo later"] }), (0,jsx_runtime.jsx)("p", { children: logo.kind === "sample" ? "The YimiLife sample is for preview only. Your own logo will be provided later." : "You can send your project details now and share your logo during follow-up." })] }), !logoReady ? ((0,jsx_runtime.jsxs)("div", { className: "mt-6 flex items-center gap-3 rounded-xl border border-dashed border-slate-300 bg-white px-4 py-3 text-sm text-slate-600", role: "status", children: [(0,jsx_runtime.jsx)("span", { className: "flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-50 text-xs font-semibold text-brand-700", children: "3" }), logo.processing ? "Preparing your logo preview. Please wait…" : "Upload your logo or choose to provide it later to continue."] })) : null, (0,jsx_runtime.jsx)("div", { className: logoReady ? "mt-8 block" : "hidden", "aria-hidden": !logoReady, children: (0,jsx_runtime.jsxs)("div", { className: "grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:items-start", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: "Ready to request" }), (0,jsx_runtime.jsx)("h3", { className: "mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl", children: "Where can we follow up on your project?" }), (0,jsx_runtime.jsx)("p", { className: "mt-4 text-sm leading-7 text-slate-600", children: "Share your contact details and YimiLife will review the selected configuration before preparing the next preview step." }), (0,jsx_runtime.jsx)("p", { className: "mt-4 text-xs leading-5 text-slate-500", children: "Demo only \u2014 no information is sent or stored." })] }), (0,jsx_runtime.jsxs)("form", { ref: oemFormRef, onSubmit: submitOemDemo, className: "rounded-xl border border-slate-200 bg-white p-5 md:p-6", children: [(0,jsx_runtime.jsxs)("div", { className: "grid gap-4 sm:grid-cols-2", children: [(0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900 sm:col-span-2", children: ["Work Email *", (0,jsx_runtime.jsx)("input", { required: true, name: "Work Email", type: "email", className: inputClassName, placeholder: "name@company.com" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900", children: ["Company Name *", (0,jsx_runtime.jsx)("input", { required: true, name: "Company Name", type: "text", className: inputClassName, placeholder: "Company name" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900", children: ["Contact Name *", (0,jsx_runtime.jsx)("input", { required: true, name: "Contact Name", type: "text", className: inputClassName, placeholder: "Your name" })] })] }), (0,jsx_runtime.jsxs)("details", { className: "mt-5 rounded-lg border border-slate-200 bg-slate-50", children: [(0,jsx_runtime.jsx)("summary", { className: "cursor-pointer px-4 py-3 text-sm font-semibold text-slate-700", children: "Add project details (optional)" }), (0,jsx_runtime.jsxs)("div", { className: "grid gap-4 border-t border-slate-200 p-4 sm:grid-cols-2", children: [(0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900", children: ["Country or Target Market", (0,jsx_runtime.jsx)("input", { name: "Country or Target Market", type: "text", className: inputClassName, placeholder: "Country or sales region" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900", children: ["Expected Quantity", (0,jsx_runtime.jsx)("input", { name: "Expected Quantity", type: "text", className: inputClassName, placeholder: "Monthly or annual estimate" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold text-slate-900 sm:col-span-2", children: ["Additional Requirements", (0,jsx_runtime.jsx)("textarea", { name: "Additional Requirements", rows: 3, className: inputClassName, placeholder: "Add other project details." })] })] })] }), (0,jsx_runtime.jsxs)("label", { className: "mt-5 flex items-start gap-3 text-xs leading-5 text-slate-600", children: [(0,jsx_runtime.jsx)("input", { required: true, type: "checkbox", name: "Project permission", className: "mt-1 h-4 w-4 rounded border-slate-300 accent-[#087f85]" }), (0,jsx_runtime.jsx)("span", { children: "I agree that YimiLife may contact me about this project and use the uploaded logo only to prepare requested preview materials." })] }), (0,jsx_runtime.jsxs)("button", { type: "submit", disabled: !logoReady || oem.pending, className: "button-primary mt-6 w-full sm:w-auto", children: [oem.pending ? "Submitting…" : "Request My Brand Preview", (0,jsx_runtime.jsx)(ArrowIcon, { className: "ml-2 h-4 w-4" })] }), (0,jsx_runtime.jsx)(DemoFeedback, { demo: oem, onReset: resetOemDemo })] })] }) })] })] }) }, oemConfiguratorKey) }), (0,jsx_runtime.jsx)("section", { id: "odm-services", className: "scroll-mt-20 border-y border-slate-200 bg-slate-100", children: (0,jsx_runtime.jsx)("div", { className: "site-container py-16 lg:py-20", children: (0,jsx_runtime.jsxs)("fieldset", { className: "inquiry-lock", disabled: odm.pending, "aria-busy": odm.pending, onChangeCapture: odm.onEdit, children: [(0,jsx_runtime.jsxs)("div", { className: "grid gap-10 lg:grid-cols-[0.34fr_0.66fr]", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)(Badge, { children: "ODM development services" }), (0,jsx_runtime.jsx)("h2", { className: "mt-4 text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-4xl", children: "Bring an engineering project into a focused feasibility review." }), (0,jsx_runtime.jsx)("p", { className: "mt-5 text-sm leading-7 text-slate-600 md:text-base md:leading-8", children: "YimiLife accepts ODM projects involving appearance design, structural modification, function development, tooling and engineering prototypes. Project results depend on the confirmed scope and feasibility review." })] }), (0,jsx_runtime.jsx)("div", { className: "grid gap-4 sm:grid-cols-2", children: odmServices.map((service, index) => {
+                                            const isSelected = selectedOdmNeeds.includes(service.title);
+                                            return ((0,jsx_runtime.jsxs)("button", { type: "button", "aria-pressed": isSelected, onClick: () => toggleOdmNeed(service.title), className: `flex h-full gap-4 rounded-xl border bg-white p-5 text-left transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${isSelected
+                                                    ? "border-brand-500 bg-brand-50 shadow-sm"
+                                                    : "border-slate-200 hover:border-brand-300 hover:shadow-sm"}`, children: [(0,jsx_runtime.jsx)("span", { className: "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-700 text-xs font-semibold text-white", children: String(index + 1).padStart(2, "0") }), (0,jsx_runtime.jsxs)("span", { children: [(0,jsx_runtime.jsxs)("span", { className: "flex items-start gap-2 text-base font-semibold text-slate-950", children: [service.title, isSelected ? (0,jsx_runtime.jsx)(CheckIcon, { className: "mt-0.5 h-4 w-4 shrink-0 text-brand-700" }) : null] }), (0,jsx_runtime.jsx)("span", { className: "mt-2 block text-sm leading-6 text-slate-600", children: service.text })] })] }, service.title));
+                                        }) })] }), (0,jsx_runtime.jsxs)("div", { className: "mt-12 grid gap-8 border-t border-slate-200 pt-12 lg:grid-cols-[0.34fr_0.66fr]", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: "Development brief" }), (0,jsx_runtime.jsx)("h3", { className: "mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl", children: "Submit the inputs needed for the first discussion." }), (0,jsx_runtime.jsx)("p", { className: "mt-4 text-sm leading-7 text-slate-600", children: "Selected services are added to the brief. The form demonstrates the intended content and confirmation state; it does not send data." }), selectedOdmNeeds.length > 0 ? ((0,jsx_runtime.jsx)("div", { className: "mt-5 flex flex-wrap gap-2", children: selectedOdmNeeds.map((item) => ((0,jsx_runtime.jsx)("span", { className: "rounded-full bg-brand-50 px-3 py-1.5 text-xs font-medium text-brand-800", children: item }, item))) })) : null] }), (0,jsx_runtime.jsxs)("form", { ref: odmFormRef, onSubmit: submitOdmDemo, className: "rounded-xl border border-slate-200 bg-white p-5 text-slate-900 shadow-sm md:p-6", children: [(0,jsx_runtime.jsxs)("div", { className: "grid gap-4 sm:grid-cols-2", children: [(0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Work Email *", (0,jsx_runtime.jsx)("input", { required: true, name: "ODM Work Email", type: "email", className: inputClassName, placeholder: "name@company.com" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Company Name *", (0,jsx_runtime.jsx)("input", { required: true, name: "ODM Company Name", type: "text", className: inputClassName, placeholder: "Company name" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Contact Name *", (0,jsx_runtime.jsx)("input", { required: true, name: "ODM Contact Name", type: "text", className: inputClassName, placeholder: "Your name" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Expected Quantity", (0,jsx_runtime.jsx)("input", { name: "ODM Expected Quantity", type: "text", className: inputClassName, placeholder: "Initial or annual estimate (optional)" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Product Category *", (0,jsx_runtime.jsxs)("select", { required: true, name: "ODM Product Category", className: inputClassName, defaultValue: "", children: [(0,jsx_runtime.jsx)("option", { value: "", disabled: true, children: "Select product category" }), (0,jsx_runtime.jsx)("option", { children: "Pulse Oximeter" }), (0,jsx_runtime.jsx)("option", { children: "Blood Pressure Monitor" }), (0,jsx_runtime.jsx)("option", { children: "Wearable Monitoring Devices" }), (0,jsx_runtime.jsx)("option", { children: "Nebulizer" }), (0,jsx_runtime.jsx)("option", { children: "Thermometer" }), (0,jsx_runtime.jsx)("option", { children: "Other Medical Device Project" })] })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold", children: ["Target Market", (0,jsx_runtime.jsx)("input", { name: "ODM Target Market", type: "text", className: inputClassName, placeholder: "Country or sales region" })] }), (0,jsx_runtime.jsxs)("label", { className: "grid gap-2 text-sm font-semibold sm:col-span-2", children: ["Project Brief *", (0,jsx_runtime.jsx)("textarea", { required: true, name: "ODM Project Brief", rows: 5, className: inputClassName, placeholder: "Describe the appearance, structure, function, tooling or prototype requirement." })] })] }), (0,jsx_runtime.jsx)(AttachmentPicker, { files: odmFiles, onChange: files => { setOdmFiles(files); odm.clear(); } }, odmFilesKey), (0,jsx_runtime.jsxs)("label", { className: "mt-5 flex items-start gap-3 text-xs leading-5 text-slate-600", children: [(0,jsx_runtime.jsx)("input", { required: true, name: "Project permission", type: "checkbox", className: "mt-1 h-4 w-4 rounded border-slate-300 accent-[#087f85]" }), (0,jsx_runtime.jsx)("span", { children: "I agree that YimiLife may use my contact details and project files to review and follow up on this project." })] }), (0,jsx_runtime.jsxs)("button", { type: "submit", disabled: odm.pending, className: "button-primary mt-6 w-full sm:w-auto", children: [odm.pending ? "Submitting…" : "Submit Your Development Brief", (0,jsx_runtime.jsx)(ArrowIcon, { className: "ml-2 h-4 w-4" })] }), (0,jsx_runtime.jsx)(DemoFeedback, { demo: odm, onReset: resetOdmDemo })] })] })] }) }) }), (0,jsx_runtime.jsx)(OemOdmProcessFlow, { activePath: selectedPath ?? undefined, onPathChange: setSelectedPath }), (0,jsx_runtime.jsx)("section", { className: "bg-white", children: (0,jsx_runtime.jsx)("div", { className: "site-container py-16 lg:py-20", children: (0,jsx_runtime.jsxs)("div", { className: "mx-auto max-w-4xl", children: [(0,jsx_runtime.jsxs)("div", { className: "text-center", children: [(0,jsx_runtime.jsx)(Badge, { children: "OEM and ODM FAQ" }), (0,jsx_runtime.jsx)("h2", { className: "mt-4 text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-4xl", children: "Questions buyers usually clarify before submitting." })] }), (0,jsx_runtime.jsx)("div", { className: "mt-8 grid gap-4", children: faqs.map((faq) => ((0,jsx_runtime.jsxs)("details", { className: "group rounded-xl border border-slate-200 bg-slate-50 p-5", children: [(0,jsx_runtime.jsx)("summary", { className: "cursor-pointer list-none text-base font-semibold text-slate-950", children: (0,jsx_runtime.jsxs)("span", { className: "flex items-center justify-between gap-4", children: [faq.question, (0,jsx_runtime.jsx)("span", { className: "text-2xl font-normal text-brand-700 transition group-open:rotate-45", children: "+" })] }) }), (0,jsx_runtime.jsx)("p", { className: "mt-4 text-sm leading-7 text-slate-600", children: faq.answer })] }, faq.question))) })] }) }) }), (0,jsx_runtime.jsx)("section", { className: "site-container py-16 lg:py-20", children: (0,jsx_runtime.jsxs)("div", { className: "rounded-xl border border-slate-200 bg-white p-7 shadow-sm md:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10", children: [(0,jsx_runtime.jsxs)("div", { children: [(0,jsx_runtime.jsx)("p", { className: "text-xs font-semibold uppercase tracking-[0.16em] text-brand-700", children: selectedPath ? `${selectedPath.toUpperCase()} next step` : "Choose your next step" }), (0,jsx_runtime.jsx)("h2", { className: "mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl", children: selectedPath === "oem"
                                         ? "Review your OEM model and brand preview."
                                         : selectedPath === "odm"
                                             ? "Share the brief for your ODM project."

@@ -1,0 +1,40 @@
+
+/* Controls added for the approved local inquiry preview. */
+.inquiry-lock{border:0;padding:0;margin:0;min-width:0;width:100%}
+#oem-root>.inquiry-lock>section>.site-container{padding-top:64px;padding-bottom:64px}
+.inquiry-lock:disabled button,.inquiry-lock:disabled input,.inquiry-lock:disabled textarea,.inquiry-lock:disabled select{cursor:wait;opacity:.65}
+.inquiry-logo-choice,.inquiry-attachments,.inquiry-feedback,.inquiry-mini-summary{margin-top:24px;padding:18px;border:1px solid #bacdd2;border-radius:5px;background:#f7fafa;font-size:14px;line-height:1.6}
+.inquiry-logo-choice label{display:flex;align-items:flex-start;gap:10px;font-weight:600;color:#18343c}
+.inquiry-logo-choice input{margin-top:5px}
+.inquiry-logo-choice p,.inquiry-feedback p{margin:8px 0 0}
+.inquiry-attachments>label{font-weight:600;color:#18343c}
+.inquiry-attachments>label span{font-weight:400;color:#5a6c72}
+.inquiry-attachments>p{font-size:12px;margin:8px 0;color:#5a6c72}
+.inquiry-attachments input[type=file]{display:block;max-width:100%;width:100%;padding:10px 0;font-size:13px}
+.inquiry-attachments input::file-selector-button{padding:9px 12px;border:1px solid #a9c4c9;border-radius:5px;margin-right:10px;background:white;color:#075e63;cursor:pointer}
+.inquiry-attachments ul{padding:0;margin:8px 0;list-style:none}
+.inquiry-attachments li{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid #dce6e8}
+.inquiry-attachments li>span{min-width:0;flex:1}
+.inquiry-attachments li b{display:block;overflow-wrap:anywhere;font-size:13px;font-weight:500}
+.inquiry-attachments li small{display:block;color:#5a6c72}
+.inquiry-attachments li button{min-height:44px;padding:5px;color:#075e63;text-decoration:underline;flex-shrink:0}
+.inquiry-attachments .inquiry-file-error,.inquiry-error{color:#923726;border-color:#dfb4aa;background:#fff7f4}
+.inquiry-success{border-color:#a5c9c8;background:#eff8f6}
+.inquiry-feedback strong{display:block}
+.inquiry-feedback,.inquiry-receipt dd{overflow-wrap:anywhere}
+.inquiry-receipt{margin-top:12px}
+.inquiry-receipt summary{font-weight:600}
+.inquiry-receipt dl>div{display:grid;grid-template-columns:38% 1fr;gap:16px;padding:10px 0;border-top:1px solid #cfe0de}
+.inquiry-receipt dl{margin-top:12px}
+.inquiry-receipt dt{color:#425d66}.inquiry-receipt dd{margin:0;white-space:pre-wrap}
+.inquiry-reset{margin-top:14px;min-height:44px}
+.inquiry-review-tools{margin-top:18px;padding-top:12px;border-top:1px dashed #c9d7da;font-size:12px;color:#5a6c72}
+.inquiry-review-tools label{display:flex;align-items:center;gap:8px;margin-top:10px;min-height:36px}
+.inquiry-review-tools p{margin-top:5px;font-size:12px}
+.inquiry-mini-summary{font-size:13px}
+.inquiry-mini-summary p{margin:5px 0}
+.inquiry-lock[aria-busy=true] .button-primary{opacity:.65}
+@media(max-width:760px){#oem-root>.inquiry-lock>section>.site-container{padding-top:44px;padding-bottom:44px}.inquiry-logo-choice,.inquiry-attachments,.inquiry-feedback,.inquiry-mini-summary{padding:14px}.inquiry-receipt dl>div{grid-template-columns:1fr;gap:3px}}
+
+.inquiry-attachments input[type=file]{display:none}
+.inquiry-attachments .inquiry-file-select{margin:8px 0;font-size:13px;padding:9px 14px}

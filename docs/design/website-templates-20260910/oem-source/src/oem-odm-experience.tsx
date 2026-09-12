@@ -9,7 +9,8 @@ import {
 } from "react";
 
 import { OemOdmProcessFlow } from "./oem-odm-process-flow";
-import { ProductPreviewDemo } from "./product-preview-demo/product-preview-demo";
+import { AttachmentPicker, DemoFeedback, useDemoSubmission } from "./inquiry-preview";
+import { type LogoSelection, ProductPreviewDemo } from "./product-preview-demo/product-preview-demo";
 
 type ProjectPath = "oem" | "odm";
 
@@ -120,13 +121,20 @@ function Badge({ children, inverse = false }: { children: ReactNode; inverse?: b
 export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
   const [selectedPath, setSelectedPath] = useState<ProjectPath | null>(null);
   const [selectedColorName, setSelectedColorName] = useState("Aqua");
-  const [logoName, setLogoName] = useState("");
+  const [logo, setLogo] = useState<LogoSelection>({ kind: "none", name: "", file: null, processing: false });
+  const [logoLater, setLogoLater] = useState(false);
+  const logoReady = !logo.processing && (logo.kind === "uploaded" || logoLater);
+  const logoName = logo.kind === "uploaded" ? logo.name : "";
+  const logoSummary = logo.processing ? "Preparing logo…" : logo.kind === "uploaded" ? logo.name : logoLater ? "Logo to follow" : "Choose a logo option";
   const [oemConfiguratorKey, setOemConfiguratorKey] = useState(0);
   const [selectedOemNeeds, setSelectedOemNeeds] = useState<string[]>([]);
   const [selectedOdmNeeds, setSelectedOdmNeeds] = useState<string[]>([]);
-  const [oemSubmitted, setOemSubmitted] = useState(false);
-  const [odmSubmitted, setOdmSubmitted] = useState(false);
+  const oem = useDemoSubmission("OEM");
+  const odm = useDemoSubmission("ODM");
   const oemFormRef = useRef<HTMLFormElement>(null);
+  const odmFormRef = useRef<HTMLFormElement>(null);
+  const [odmFiles, setOdmFiles] = useState<File[]>([]);
+  const [odmFilesKey, setOdmFilesKey] = useState(0);
 
   function choosePath(path: ProjectPath) {
     setSelectedPath(path);
@@ -137,12 +145,13 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
 
   function handlePreviewColorChange(colorName: string) {
     setSelectedColorName(colorName);
-    setOemSubmitted(false);
+    oem.clear();
   }
 
-  function handlePreviewLogoChange(fileName: string | null) {
-    setLogoName(fileName ?? "");
-    setOemSubmitted(false);
+  function handlePreviewLogoChange(selection: LogoSelection) {
+    setLogo(selection);
+    if (!selection.processing) setLogoLater(selection.kind === "sample");
+    oem.clear();
   }
 
   function toggleOemNeed(id: string) {
@@ -151,7 +160,7 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
         ? current.filter((item) => item !== id)
         : [...current, id],
     );
-    setOemSubmitted(false);
+    oem.clear();
   }
 
   function toggleOdmNeed(title: string) {
@@ -160,29 +169,51 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
         ? current.filter((item) => item !== title)
         : [...current, title],
     );
-    setOdmSubmitted(false);
+    odm.clear();
   }
 
   function submitOemDemo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!logoName) {
-      return;
-    }
-    setOemSubmitted(true);
+    if (!logoReady) return;
+    const placements = Array.from(document.querySelectorAll<HTMLInputElement>("#oem-configurator input[type=range]"))
+      .map(input => input.id.replace("logo-", "") + ": " + input.value + (input.id.includes("position") ? "px" : input.id.includes("rotation") ? "°" : "%"));
+    const treatment = document.querySelector("#oem-configurator fieldset button[aria-pressed=true]")?.textContent?.trim();
+    oem.submit(event.currentTarget, {
+      Model: "Pulse Oximeter · Demo Model",
+      "Shell color": selectedColorName,
+      Logo: logoName || "Will be provided later",
+      "Logo source": logo.kind === "sample" ? "YimiLife sample — not customer artwork" : logo.kind === "uploaded" ? "Customer file selected locally" : "No file selected",
+      ...(logo.kind !== "none" ? { "Preview adjustments": [treatment, ...placements].filter(Boolean).join("; ") } : {}),
+      "OEM needs": selectedOemNeedLabels.join(", ") || "None selected",
+    });
   }
 
   function resetOemDemo() {
     oemFormRef.current?.reset();
     setSelectedOemNeeds([]);
     setSelectedColorName("Aqua");
-    setLogoName("");
-    setOemConfiguratorKey((current) => current + 1);
-    setOemSubmitted(false);
+    setLogo({ kind: "none", name: "", file: null, processing: false });
+    setLogoLater(false);
+    setOemConfiguratorKey(current => current + 1);
+    oem.setFailNext(false);
+    oem.clear();
   }
 
   function submitOdmDemo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setOdmSubmitted(true);
+    odm.submit(event.currentTarget, {
+      "Development services": selectedOdmNeeds.join(", ") || "To be discussed",
+      "Project files": odmFiles.length ? odmFiles.map(file => file.name + " (" + file.size + " bytes)").join("\n") : "No attachments",
+    });
+  }
+
+  function resetOdmDemo() {
+    odmFormRef.current?.reset();
+    setSelectedOdmNeeds([]);
+    setOdmFiles([]);
+    setOdmFilesKey(current => current + 1);
+    odm.setFailNext(false);
+    odm.clear();
   }
 
   const selectedOemNeedLabels = oemReviewOptions
@@ -280,12 +311,14 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
         </div>
       </section>
 
+      <fieldset className="inquiry-lock" disabled={oem.pending} aria-busy={oem.pending} onChangeCapture={oem.onEdit}>
       <ProductPreviewDemo
         key={oemConfiguratorKey}
         embedded
         sectionId="oem-configurator"
         onColorChange={handlePreviewColorChange}
         onLogoChange={handlePreviewLogoChange}
+        onAdjustmentChange={oem.clear}
       >
         <div className="border-t border-slate-200 bg-white">
           <div className="p-6 md:p-8">
@@ -370,7 +403,7 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                       : "border-slate-200 bg-white text-slate-500"
                   }`}
                 >
-                  {logoName ? "Logo added" : "Logo needed"}
+                  {logoSummary}
                 </span>
                 {(selectedOemNeedLabels.length > 0
                   ? selectedOemNeedLabels
@@ -386,7 +419,12 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
               </div>
             </div>
 
-            {!logoName ? (
+            {logo.kind !== "uploaded" && <div className="inquiry-logo-choice">
+              <label><input type="checkbox" checked={logoLater} disabled={logo.processing} onChange={event => { setLogoLater(event.target.checked); oem.clear(); }} /> Provide my logo later</label>
+              <p>{logo.kind === "sample" ? "The YimiLife sample is for preview only. Your own logo will be provided later." : "You can send your project details now and share your logo during follow-up."}</p>
+            </div>}
+
+            {!logoReady ? (
               <div
                 className="mt-6 flex items-center gap-3 rounded-xl border border-dashed border-slate-300 bg-white px-4 py-3 text-sm text-slate-600"
                 role="status"
@@ -394,18 +432,18 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-50 text-xs font-semibold text-brand-700">
                   3
                 </span>
-                Upload your logo to continue to the contact details.
+                {logo.processing ? "Preparing your logo preview. Please wait…" : "Upload your logo or choose to provide it later to continue."}
               </div>
             ) : null}
 
-            <div className={logoName ? "mt-8 block" : "hidden"} aria-hidden={!logoName}>
+            <div className={logoReady ? "mt-8 block" : "hidden"} aria-hidden={!logoReady}>
               <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:items-start">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
                     Ready to request
                   </p>
                   <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                    Where should we send your preview?
+                    Where can we follow up on your project?
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-slate-600">
                     Share your contact details and YimiLife will review the selected
@@ -493,6 +531,7 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                     <input
                       required
                       type="checkbox"
+                      name="Project permission"
                       className="mt-1 h-4 w-4 rounded border-slate-300 accent-[#087f85]"
                     />
                     <span>
@@ -501,48 +540,23 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                     </span>
                   </label>
 
-                  <button type="submit" className="button-primary mt-6 w-full sm:w-auto">
-                    Request My Brand Preview
+                  <button type="submit" disabled={!logoReady || oem.pending} className="button-primary mt-6 w-full sm:w-auto">
+                    {oem.pending ? "Submitting…" : "Request My Brand Preview"}
                     <ArrowIcon className="ml-2 h-4 w-4" />
                   </button>
 
-                  {oemSubmitted ? (
-                    <div
-                      className="mt-5 rounded-xl border border-brand-200 bg-brand-50 p-4"
-                      role="status"
-                    >
-                      <div className="flex gap-3">
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white">
-                          <CheckIcon className="h-4 w-4" />
-                        </span>
-                        <div>
-                          <p className="text-sm font-semibold text-brand-800">
-                            Demo request received
-                          </p>
-                          <p className="mt-1 text-xs leading-5 text-brand-800">
-                            No data was sent. Selected:
-                            {` Pulse Oximeter demo, ${selectedColorName}, ${logoName}.`}
-                          </p>
-                          <button
-                            type="button"
-                            onClick={resetOemDemo}
-                            className="mt-3 text-xs font-semibold text-brand-800 underline underline-offset-4"
-                          >
-                            Start another demo request
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
+                  <DemoFeedback demo={oem} onReset={resetOemDemo} />
                 </form>
               </div>
             </div>
           </div>
         </div>
       </ProductPreviewDemo>
+      </fieldset>
 
       <section id="odm-services" className="scroll-mt-20 border-y border-slate-200 bg-slate-100">
         <div className="site-container py-16 lg:py-20">
+          <fieldset className="inquiry-lock" disabled={odm.pending} aria-busy={odm.pending} onChangeCapture={odm.onEdit}>
           <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr]">
             <div>
               <Badge>ODM development services</Badge>
@@ -609,7 +623,7 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
               ) : null}
             </div>
 
-            <form onSubmit={submitOdmDemo} className="rounded-xl border border-slate-200 bg-white p-5 text-slate-900 shadow-sm md:p-6">
+            <form ref={odmFormRef} onSubmit={submitOdmDemo} className="rounded-xl border border-slate-200 bg-white p-5 text-slate-900 shadow-sm md:p-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-semibold">
                   Work Email *
@@ -620,12 +634,22 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                   <input required name="ODM Company Name" type="text" className={inputClassName} placeholder="Company name" />
                 </label>
                 <label className="grid gap-2 text-sm font-semibold">
+                  Contact Name *
+                  <input required name="ODM Contact Name" type="text" className={inputClassName} placeholder="Your name" />
+                </label>
+                <label className="grid gap-2 text-sm font-semibold">
+                  Expected Quantity
+                  <input name="ODM Expected Quantity" type="text" className={inputClassName} placeholder="Initial or annual estimate (optional)" />
+                </label>
+                <label className="grid gap-2 text-sm font-semibold">
                   Product Category *
                   <select required name="ODM Product Category" className={inputClassName} defaultValue="">
                     <option value="" disabled>Select product category</option>
                     <option>Pulse Oximeter</option>
                     <option>Blood Pressure Monitor</option>
                     <option>Wearable Monitoring Devices</option>
+                    <option>Nebulizer</option>
+                    <option>Thermometer</option>
                     <option>Other Medical Device Project</option>
                   </select>
                 </label>
@@ -644,18 +668,19 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                   />
                 </label>
               </div>
-              <button type="submit" className="button-primary mt-6 w-full sm:w-auto">
-                Submit Your Development Brief
+              <AttachmentPicker key={odmFilesKey} files={odmFiles} onChange={files => { setOdmFiles(files); odm.clear(); }} />
+              <label className="mt-5 flex items-start gap-3 text-xs leading-5 text-slate-600">
+                <input required name="Project permission" type="checkbox" className="mt-1 h-4 w-4 rounded border-slate-300 accent-[#087f85]" />
+                <span>I agree that YimiLife may use my contact details and project files to review and follow up on this project.</span>
+              </label>
+              <button type="submit" disabled={odm.pending} className="button-primary mt-6 w-full sm:w-auto">
+                {odm.pending ? "Submitting…" : "Submit Your Development Brief"}
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </button>
-              {odmSubmitted ? (
-                <div className="mt-5 rounded-xl border border-brand-200 bg-brand-50 p-4 text-sm text-brand-800" role="status">
-                  <strong>Demo brief received.</strong> The feasibility-review
-                  success state is working; no information was sent or stored.
-                </div>
-              ) : null}
+              <DemoFeedback demo={odm} onReset={resetOdmDemo} />
             </form>
           </div>
+          </fieldset>
         </div>
       </section>
 
