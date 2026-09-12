@@ -6,6 +6,17 @@
 .about-next-links{padding:28px 0;border-top:1px solid #dce6e8;background:#fff}.about-next-links .wrap{display:flex;justify-content:flex-end;gap:14px;flex-wrap:wrap}.about-next-links .btn{min-width:170px}
 @media(max-width:760px){.about-next-links{padding:24px 0}.about-next-links .wrap{flex-direction:column;gap:12px}.about-next-links .btn{width:100%;min-width:0}}
 
+/* About: confirmed company profile and restrained development evidence. */
+.about-page .about-hero-line{font-size:clamp(23px,2.3vw,30px);line-height:1.3;color:#18343c;margin-top:22px;letter-spacing:-.5px}
+.about-facts{display:grid;grid-template-columns:.7fr 1fr 1fr;gap:32px;border-top:1px solid #cedfe1;margin:36px 0 0;padding:24px 0 0}
+.about-facts>div{min-width:0}.about-facts dt{font-size:12px;color:#526d75;margin-bottom:8px}.about-facts dd{margin:0;font-size:22px;font-weight:500;line-height:1.3}.about-facts>div:first-child dd{color:#087f85}
+.about-page .intro-band{align-items:start}.about-page .about-profile-copy p{font-size:15px;line-height:1.8}.about-profile-copy p+p{margin-top:20px}
+.about-approach{margin-top:32px;padding:6px 0 6px 20px;border-left:3px solid #08a8ae}.about-approach .eyebrow{margin-bottom:10px}.about-approach h3{font-size:21px;line-height:1.45;letter-spacing:-.3px}
+.about-page .inline-links{margin-top:16px;gap:12px 25px}.about-page .inline-links a{display:inline-flex;align-items:center;min-height:44px}
+.about-page .role-list h3{font-size:19px;line-height:1.4}.about-page .about-pending{color:#536f77;font-size:13px;line-height:1.8}.about-page .role-list .textlink{margin-top:10px;min-height:44px}
+.about-platform{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:28px}.about-platform>div{min-width:0}.about-platform h3{font-size:19px;line-height:1.4}.about-platform p{margin-bottom:0}.about-platform .textlink{min-height:44px;flex-shrink:0}
+@media(max-width:760px){.about-facts{gap:16px;grid-template-columns:.55fr 1fr 1fr;margin-top:26px;padding-top:20px}.about-facts dd{font-size:16px}.about-facts dt{font-size:11px}.about-page .about-hero-line{font-size:24px;margin-top:16px}.about-page .about-profile-copy p{font-size:14px}.about-approach{margin-top:24px}.about-approach h3{font-size:20px}.about-platform{align-items:start;flex-direction:column;gap:10px}.about-platform .textlink{flex-shrink:1}.about-page .role-list .textlink{font-size:13px}.about-page .doc-row{align-items:start}}
+
 /* Manufacturing: production photographs and one system certificate. */
 .factory-gallery figure{margin:0;min-width:0}.factory-gallery figcaption{margin-top:14px;color:#425d66;font-size:14px}
 .factory-quality .demo-note{font-size:12px;color:#6b7c81}

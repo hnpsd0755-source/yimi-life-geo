@@ -5,9 +5,16 @@ function setPath(path){if(!workflows[path])path='oem';document.querySelectorAll(
 if(list){setPath('oem');document.querySelectorAll('[data-path]').forEach(b=>b.onclick=()=>setPath(b.dataset.path));}
 const form=document.querySelector('#project-form');if(!form)return;
 const category=document.querySelector('#category'),sub=document.querySelector('#subcategory'),subField=document.querySelector('#subcategory-field');
-const types={nebulizer:[['compressor','压缩雾化器'],['mesh','手持微网雾化器']],thermometer:[['forehead','红外额温枪'],['patch','体温贴'],['rapid','快速温度计']]};
+const types={pulse:[['fingertip','指夹式'],['handheld','手持式']],nebulizer:[['compressor','压缩雾化器'],['mesh','手持微网雾化器']],thermometer:[['forehead','红外额温枪'],['patch','体温贴'],['rapid','快速温度计']]};
 function updateSub(){const data=types[category.value];subField.hidden=!data;sub.disabled=!data;sub.innerHTML='<option value="">请选择（可选）</option>'+(data||[]).map(x=>'<option value="'+x[0]+'">'+x[1]+'</option>').join('');}
 category.onchange=updateSub;const query=new URLSearchParams(location.search);if(['pulse','bp','wearable','nebulizer','thermometer'].includes(query.get('category')))category.value=query.get('category');updateSub();if([...sub.options].some(o=>o.value===query.get('sub')))sub.value=query.get('sub');if(['oem','odm'].includes(query.get('path')))document.querySelector('#request').value=query.get('path')==='oem'?'希望讨论现有型号定制项目。':'希望讨论新产品或现有产品修改需求。';
+const selectedPulseModel=query.get('model');
+const publicPulseModels=['YM101','YM102','YM103','YM201','YM301','YM111','YM211','YM112','YM212','YM104','YM202','YM401','YM403','YM501','YM503','YM601','YM603','YH01','YH02'];
+if(category.value==='pulse'&&publicPulseModels.includes(selectedPulseModel)){
+  const modelForm=selectedPulseModel.startsWith('YH')?'handheld':'fingertip';
+  sub.value=modelForm;
+  document.querySelector('#request').value='希望讨论 '+selectedPulseModel+' '+(modelForm==='handheld'?'手持式':'指夹式')+'血氧仪的配置与 OEM/ODM 项目。';
+}
 const status=document.querySelector('#form-status'),submit=document.querySelector('#submit-project');const required=[...form.querySelectorAll('[required]')];
 function check(el){let message='';if(!el.value.trim())message='请填写此项。';else if(el.type==='email'&&el.validity.typeMismatch)message='请输入有效的邮箱地址。';el.setAttribute('aria-invalid',String(Boolean(message)));document.getElementById(el.id+'-error').textContent=message;return !message;}
 required.forEach(el=>el.addEventListener('input',()=>{if(el.getAttribute('aria-invalid')==='true')check(el)}));

@@ -18,10 +18,11 @@ node docs/design/website-templates-20260910/serve.cjs
 
 | 文件 | 用途与状态 |
 | --- | --- |
-| index.html | 八个模板及桌面、平板、手机切换入口 |
-| products.html | 产品总览：五大品类目录已制作，当前待确认 |
+| index.html | 九个模板及桌面、平板、手机切换入口 |
+| products.html | 产品总览：已获用户确认；血氧仪入口已接通 |
+| pulse.html / pulse.css / pulse.js | 血氧仪品类：系列与型号选择、页内配置详情、型号询盘，本轮待评审 |
 | home.html / category.html / detail.html | 第一批：首页、体温计品类、型号详情；视觉方向已确认 |
-| about.html | 公司与研发：内容结构与 UI 已确认，资料后填 |
+| about.html | 公司与研发：公司简介、自主研发定位及本轮设计已获用户确认，真实资料后填 |
 | manufacturing.html | 制造与质量：精简后的内容结构与 UI 已确认，照片与证书后填 |
 | contact.html | Contact：现有布局已确认；“尚未确定品类”和可选附件按本次确认列入待实施，当前仍为旧表单演示 |
 | oem.html / oem-source/ | OEM/ODM 本地页面与交互已获用户基本确认；真实询盘后台仍待接入 |
@@ -33,6 +34,10 @@ node docs/design/website-templates-20260910/serve.cjs
 内容定义见 [V1.2](../../plans/yimilife-site-content-and-ui-templates-v1.2.md)，跨电脑交接见 [2026-09-12 最新记录](../../workflows/handoff-20260912.md)。
 
 ## 当前页面评审
+
+用户已确认 About 及 Products 产品总览。本轮继续制作血氧仪品类页，入口为 http://127.0.0.1:8767/?page=pulse ，见 [制作与验证记录](delivery-pulse-category.md)。血氧仪本轮设计待评审；其他尚未制作的品类页继续排期。
+
+2026-09-12 后续更新：用户补充成立年份 2017、内部团队负责所有产品全流程开发，以及“高性价比的精品”定位，并确认继续输出 About 设计。已更新首屏事实栏、公司简介、团队和研发区文字；真实照片、实验室用途和专利证据仍待补充。当前 About 内容设计见 [本轮交付记录](delivery-about-content.md)。以下保留此前其他页面评审状态。
 
 2026-09-12：用户已确认 OEM/ODM 基本 OK，并确认精简后的 About 内容结构与 UI。用户随后确认制造与质量按精简版本推进，Contact 现有布局及推荐补充已获确认，当前进入 **Products 产品总览页** 评审。图片与真实资料继续后填。此次确认针对本地内容结构、UI 与演示交互，不代表真实后台、邮件或正式上线验收。
 
@@ -55,7 +60,7 @@ node docs/design/website-templates-20260910/oem-source/build.cjs
 
 ## 待处理
 
-- 产品总览已新增，待用户确认；其余品类、PulseMatrix™ 及案例/资讯等模板继续补齐。
+- 产品总览已确认，血氧仪品类模板已制作、待用户评审；其余品类、PulseMatrix™ 及案例/资讯等模板继续补齐。
 - Contact 的“尚未确定品类”和可选附件（沿用 ODM 格式与额度）已按本次确认列入待实施；真实接口需同时补充 Contact 类型和字段映射，当前尚未接通。
 - 真实图片、型号、参数、证书、联系信息、案例和最终英文后填；占位数量不代表实际型号数量。
 - OEM/ODM 已补齐 Logo 后补、姓名/公司/邮箱、ODM 可选附件和数量、提交状态及摘要；ODM 类别已增加 Nebulizer / Thermometer，仍为可调整的英文占位。见 [本轮交付记录](delivery-inquiry-preview.md)。
