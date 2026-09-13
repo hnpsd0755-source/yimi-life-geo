@@ -56,6 +56,11 @@
   function showModel(id, scroll = true) {
     const model = models.find(item => item.model === id);
     if (!model) return;
+    const familySection = document.getElementById(model.form);
+    familySection.after(panel);
+    const backLink = panel.querySelector('.back-row a');
+    backLink.href = '#' + model.form;
+    backLink.textContent = model.form === 'fingertip' ? 'Back to fingertip models ↑' : 'Back to handheld models ↑';
     panel.hidden = false;
     document.querySelectorAll('[data-model]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.model === model.model)));
     title.textContent = model.model + ' ' + model.productFamily;
@@ -72,10 +77,19 @@
         ['Bluetooth', values[model.bluetooth]],
         ['Sound & voice', 'Sound: ' + values[model.sound] + '\nVoice: ' + values[model.voice]],
       ]
-      : [['Model', model.model], ['Product form', 'Handheld'], ['Display', '[对应型号资料待补]'], ['Probe & accessories', '[对应型号资料待补]'], ['Power supply', '[对应型号资料待补]']];
+      : [
+        ['SpO₂', 'Range: 35–100%\nAccuracy: ±2% (70–100%)\nAccuracy unspecified below 70%\nResolution: 1%'],
+        ['Pulse rate', 'Range: 30–250 bpm\nAccuracy: ±3 bpm\nResolution: 1 bpm'],
+        ['Display', model.model === 'YH01' ? '3.5-inch LED' : '3.5-inch TFT'],
+        ['Power & battery life', '4 × AA 1.5 V batteries\nApprox. ' + (model.model === 'YH01' ? '30' : '15') + ' hours*\nLow-battery indication'],
+        ['Dimensions & weight', '70 × 150 × 30 mm (W × H × D)\n<500 g (fully configured, including batteries)'],
+        ['Optional sensors', 'RS201: reusable adult finger sleeve\nRS202: reusable adult finger clip\nSS201: disposable adult/pediatric nasal alar clip'],
+        ['Operating mode', 'Continuous operation'],
+        ['Ingress protection', 'IPX2'],
+      ];
     const specNote = document.getElementById('model-spec-note');
     specNote.hidden = model.form === 'fingertip';
-    specNote.textContent = model.form === 'fingertip' ? '' : '[测量参数、尺寸、探头配置和对应型号文件待补；选项按具体项目确认]';
+    specNote.textContent = model.form === 'fingertip' ? '' : '*Battery life under typical configuration: fresh batteries, 25°C ambient temperature, continuous SpO₂ measurement, minimum backlight brightness and sound off.';
     rows.replaceChildren(...specs.map(([label, value]) => {
       const tr = document.createElement('tr');
       const th = document.createElement('th');

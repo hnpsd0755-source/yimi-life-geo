@@ -4,13 +4,13 @@ Date: 2026-09-12. Products overview confirmed by the user; the workflow now proc
 
 ## Structure and sources
 
-Hero with fingertip and handheld product images; section navigation; seven compact fingertip series choices; one shared model-selection area and inline detail panel; two handheld models; a compact PulseMatrix referral; contextual inquiry links.
+Hero with fingertip and handheld product images; section navigation; seven compact fingertip series choices; one shared model-selection area; an inline detail panel positioned after the selected model's category; two handheld models; a compact PulseMatrix referral; contextual inquiry links.
 
 The 17 public fingertip models and configuration values are a static snapshot of `data/pulseOximeterModels.ts`. That file identifies the supplied YM20 model difference matrix as its source. Image mapping comes from `data/pulseOximeterImages.ts`; handheld YH01/YH02 identifiers and pictures follow the existing `app/products/pulse-oximeter/page.tsx`. No reserved model, measurement claim or certification claim was added. The source files themselves were not changed. Refresh the snapshot and Contact model allowlist together if the public model list changes.
 
 Images for YM104, YM401 and YM501 remain pending according to the image mapping. YM212 initially did not decode in the browser and image-viewing tool; this was resolved in the user-supplied-image update below. Original source files are preserved.
 
-Handheld configuration values, measurement specifications, accessories and model documents remain pending. YM202 voice remains “To be confirmed.” Display values with internal “not restricted” notes use only the recorded display type. Technical platform names from internal model data are not copied into specification tables.
+Handheld specifications were filled from the supplied technical requirements on 2026-09-13; see the source and verification record below. Handheld image-to-model correspondence awaits user confirmation. YM202 voice remains “To be confirmed.” Display values with internal “not restricted” notes use only the recorded display type. Technical platform names from internal model data are not copied into specification tables.
 
 ## Research and adaptation
 
@@ -52,7 +52,7 @@ node docs/design/website-templates-20260910/serve.cjs
 
 Open <http://127.0.0.1:8767/?page=pulse>. Check series-card rhythm, model selection, inline detail reading and handheld image proportions.
 
-Pending: user visual review, three model images, handheld specifications, measurement parameters/accessories/model documents and the actual PulseMatrix detail page. Formal Next.js integration, real inquiry submission and deployment remain separate tasks. No commit, push or deployment was performed; no Next.js build was run for these static prototype changes.
+Pending: user visual review, three fingertip model images, handheld image-to-model confirmation, public model documents and the actual PulseMatrix detail page. Formal Next.js integration, real inquiry submission and deployment remain separate tasks. The sections below record subsequent specification updates and their verification; the initial prototype did not include a Next.js build or deployment.
 
 ## Refinement: compact series selection
 
@@ -90,3 +90,25 @@ Following the user's instruction to use existing data directly, `pulse.js` now f
 The original parameter workbook and newly attached technical documents were not modified. New attachments were received but not parsed in this dimension update. See the research record for source cells and the user's clarification.
 
 Verification: JavaScript syntax and `git diff --check` passed. Browser checks covered all seven series, including YM104 and YM202 after the Lite clarification; both display approximately 57 × 30 × 31 mm and 35 g excluding batteries, with no horizontal overflow at the mobile test width.
+
+## Fill handheld specifications — 2026-09-13
+
+Read the user-supplied `4-手持脉搏血氧仪产品技术要求---(加鼻夹探头) .doc` read-only through Word. Source SHA256: `6C72BA772E987AA5431F14DFDDAE262E708A85D05E04896911FA94BECF978ED9`. The original document was neither modified nor copied into this repository.
+
+- Sections 1.2 and 2.1–2.3: YH01 uses a 3.5-inch LED display; YH02 uses a 3.5-inch TFT display. SpO₂ range is 35–100%, accuracy ±2% at 70–100%, unspecified below 70%, resolution 1%. Pulse rate is 30–250 bpm, accuracy ±3 bpm, resolution 1 bpm. Low-battery indication is supported.
+- Product features and optional accessory appendices: 4 × AA 1.5 V batteries, continuous operation, IPX2; RS201 reusable adult finger sleeve, RS202 reusable adult finger clip, SS201 disposable adult/pediatric nasal alar clip. The document also specifies 3 V DC; the public table states the battery configuration without inferring a 6 V total. No certification or clinical-validation claim was derived from its testing standards.
+- Supplementary physical and runtime data: `public/homepage/产品参数.xlsx`, sheet `手持血氧仪`, D11–D12 (70 × 150 × 30 mm, W × H × D; <500 g fully configured including batteries), D14–D16 (battery configuration; LED approx. 30 hours, TFT approx. 15 hours), D20 (display mapping). Runtime conditions remain visible: fresh batteries, 25°C, continuous SpO₂ measurement, minimum backlight and sound off. The older workbook's SS102 entry was not imported into the updated sensor list.
+
+Changes: `pulse.js` replaces handheld placeholders with eight groups: SpO₂, pulse rate, display, power/battery life, dimensions/weight, optional sensors, operating mode and ingress protection. `pulse.html` now summarizes the documented display type and measurement functions in both handheld cards. Fingertip fields and model image mappings remain unchanged.
+
+Verification: JavaScript syntax passed. Desktop 1440 px and mobile 390 px screenshots were inspected; both handheld models showed eight rows with the corresponding display/runtime and no horizontal overflow. YH02 inquiry navigation selected Pulse Oximeter / handheld and prefilled YH02; no form was submitted. YM202 retained eight fingertip rows, its confirmed Lite dimensions and pending voice value. No browser warning/error entries were captured in the test tab. This static prototype update does not require a Next.js build.
+
+Unresolved: the existing YH01 image appears to show a color waveform screen and YH02 a segmented screen, potentially conflicting with the document's LED/TFT mapping. Asked the user to confirm the image correspondence; kept both images and document-derived display values unchanged pending that reply.
+
+## Keep model details with their category — 2026-09-13
+
+The user reported that handheld details appeared between the fingertip and handheld cards, separating the selected model from its own category. Reused the September 12 research above: model-to-detail navigation and separate handheld grouping still match this buyer need. This fixes the existing reading order while preserving the approved cards, table styling and specification content; no new visual direction or competitor performance claim was introduced.
+
+Updated `pulse.js` to move the existing detail panel immediately after the selected model's category before displaying it or scrolling. Fingertip details follow `#fingertip`; handheld details follow `#handheld`. The back link now names and targets the corresponding category. The shared panel and existing model-query links remain in use.
+
+Verification: `node --check` and `git diff --check` passed. Browser checks confirmed YH01 and YM202 direct links use the correct section order, YH02 selection retains its inquiry URL, switching to a fingertip series hides the previous detail, and selecting YM202 moves the eight-row panel back after the fingertip cards. Desktop screenshots and the wrapper's 390 px phone mode were inspected. Mobile YH02 selection, return to handheld cards, and switching to YM212 worked. Table styles and numeric specifications were not changed. Only this script and this delivery record were edited for the placement fix; the preceding specification edits remain in the working tree.
