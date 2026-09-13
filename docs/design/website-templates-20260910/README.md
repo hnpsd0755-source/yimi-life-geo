@@ -1,6 +1,6 @@
 # YimiLife 当前 UI 模板预览
 
-更新日期：2026-09-12。此目录是内部静态评审成果，正式 Next.js 页面尚未套用这些模板。
+更新日期：2026-09-13。此目录是内部静态评审成果，正式 Next.js 页面尚未套用这些模板。
 
 ## 打开预览
 
@@ -18,9 +18,10 @@ node docs/design/website-templates-20260910/serve.cjs
 
 | 文件 | 用途与状态 |
 | --- | --- |
-| index.html | 九个模板及桌面、平板、手机切换入口 |
-| products.html | 产品总览：已获用户确认；血氧仪入口已接通 |
+| index.html | 十个模板及桌面、平板、手机切换入口 |
+| products.html | 产品总览：已获用户确认；血氧仪及血压计入口已接通 |
 | pulse.html / pulse.css / pulse.js | 血氧仪品类：系列与型号选择、页内配置详情、型号询盘，本轮待评审 |
+| bp.html / bp.css / bp.js | 臂式血压计：三个型号、八组规格与询盘预填；型号图片待对应，设计已获用户确认 |
 | home.html / category.html / detail.html | 第一批：首页、体温计品类、型号详情；视觉方向已确认 |
 | about.html | 公司与研发：公司简介、自主研发定位及本轮设计已获用户确认，真实资料后填 |
 | manufacturing.html | 制造与质量：精简后的内容结构与 UI 已确认，照片与证书后填 |
@@ -31,9 +32,13 @@ node docs/design/website-templates-20260910/serve.cjs
 | design-notes.html | 需求、竞品来源、视觉取舍与评审说明 |
 | delivery-*.md | 各阶段实际验证记录；OEM 最新记录优先 |
 
-内容定义见 [V1.2](../../plans/yimilife-site-content-and-ui-templates-v1.2.md)，跨电脑交接见 [2026-09-12 最新记录](../../workflows/handoff-20260912.md)。
+内容定义见 [V1.2](../../plans/yimilife-site-content-and-ui-templates-v1.2.md)，跨电脑交接见 [2026-09-13 保存记录](../../workflows/handoff-20260913.md)；本次血压计新增内容见 [交付记录](delivery-bp-category.md)。
 
 ## 当前页面评审
+
+2026-09-13 首页视觉精修已获确认：`home.html` 通过独立的 `home.css` 统一标题、产品图比例、卡片文字区、按钮与手机排版，其他页面尚未套用。已检查 360、390、768、1024、1280px，无横向溢出或失效图片。真实素材继续按清单补充，后续可将已确认的视觉标准逐页应用。
+
+2026-09-13 全站检查：已确认的布局继续保留；额温枪、体温贴因资料不完整暂缓填入规格，快速温度计保留未来产品坑位。见 [待补素材清单](materials-checklist.md) 和 [全站检查记录](site-review-20260913.md)。以下较早记录保留作过程追踪。
 
 用户已确认 About 及 Products 产品总览。本轮继续制作血氧仪品类页，入口为 http://127.0.0.1:8767/?page=pulse ，见 [制作与验证记录](delivery-pulse-category.md)。血氧仪本轮设计待评审；其他尚未制作的品类页继续排期。
 
