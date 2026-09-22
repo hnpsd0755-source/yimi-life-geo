@@ -1,6 +1,16 @@
 # YimiLife 当前 UI 模板预览
 
-更新日期：2026-09-13。此目录是内部静态评审成果，正式 Next.js 页面尚未套用这些模板。
+## 2026-09-22 导航重组（现行状态）
+主导航为 Products / OEM/ODM / Manufacturing & Quality / About / Contact；Logo 返回首页。
+About 下四项并列：Company Profile → about.html；Research & Development → about.html#research；News → news.html；Blogs → blogs.html。
+保留原有十页正文、产品参数及OEM/ODM交互；新增News和Blogs两页，当前无已确认文章正文，展示目录空态。
+navigation.js 统一桌面与手机菜单、当前栏目、点击外部/按Escape关闭；页脚采用相同归属。
+index.html 共十二个模板入口，并保留研发锚点及产品询盘上下文，刷新可还原。
+该更新仅用于本地静态预览；未迁移正式Next.js路由，未连接询盘后台。
+预览：http://127.0.0.1:18767/?page=home 。News与Blogs均可从About菜单进入。
+
+
+更新日期：2026-09-22。此目录是内部静态评审成果，正式 Next.js 页面尚未套用这些模板。
 
 ## 打开预览
 
@@ -18,7 +28,7 @@ node docs/design/website-templates-20260910/serve.cjs
 
 | 文件 | 用途与状态 |
 | --- | --- |
-| index.html | 十个模板及桌面、平板、手机切换入口 |
+| index.html | 十二个模板及桌面、平板、手机切换入口 |
 | products.html | 产品总览：已获用户确认；血氧仪及血压计入口已接通 |
 | pulse.html / pulse.css / pulse.js | 血氧仪品类：系列与型号选择、页内配置详情、型号询盘，本轮待评审 |
 | bp.html / bp.css / bp.js | 臂式血压计：三个型号、八组规格与询盘预填；型号图片待对应，设计已获用户确认 |
