@@ -9,9 +9,7 @@
     panel.hidden = false;
     title.textContent = model + ' Upper-Arm Blood Pressure Monitor';
     document.getElementById('model-series').textContent = 'Upper-arm / 臂式';
-    const placeholder = document.createElement('span');
-    placeholder.textContent = '[' + model + ' 产品图待对应]';
-    document.getElementById('model-photo').replaceChildren(placeholder);
+    window.YimiProductPhotos.render(document.getElementById('model-photo'), model);
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.bpModel === model)));
     const specs = [
       ['Measurement', 'Oscillometric method\nMeasurement during deflation\nUpper arm'],

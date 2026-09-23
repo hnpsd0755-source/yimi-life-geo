@@ -16,15 +16,7 @@
     'YM06 Child': '54 × 32 × 31',
   };
   function showPhoto(container, model) {
-    container.replaceChildren();
-    const element = document.createElement(model.image ? 'img' : 'span');
-    if (model.image) {
-      element.src = model.image;
-      element.alt = model.model + ' product image';
-    } else {
-      element.textContent = '[' + model.model + ' 产品图待补]';
-    }
-    container.append(element);
+    window.YimiProductPhotos.render(container, model.model, model.image);
   }
   function chooseSeries(series) {
     const group = models.filter(model => model.appearanceSeries === series);
