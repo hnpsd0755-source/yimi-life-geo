@@ -13,7 +13,7 @@ if(category.value==='bp'&&['YP7101','YP7201','YP7202'].includes(query.get('model
   sub.value='upper-arm';
   document.querySelector('#request').value='希望讨论 '+query.get('model')+' 臂式电子血压计的袖带配置与 OEM/ODM 项目。';
 }
-const publicPulseModels=['YM101','YM102','YM103','YM201','YM301','YM111','YM211','YM112','YM212','YM104','YM202','YM401','YM403','YM501','YM503','YM601','YM603','YH01','YH02'];
+const publicPulseModels=['YM101','YM103','YM201','YM301','YM302','YM111','YM211','YM112','YM212','YM401','YM403','YM501','YM503','YM603','YH01','YH02'];
 if(category.value==='pulse'&&publicPulseModels.includes(selectedPulseModel)){
   const modelForm=selectedPulseModel.startsWith('YH')?'handheld':'fingertip';
   sub.value=modelForm;

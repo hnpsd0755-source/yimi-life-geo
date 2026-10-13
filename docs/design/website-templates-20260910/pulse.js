@@ -5,12 +5,11 @@
   const photo = document.getElementById('model-photo');
   const rows = document.getElementById('model-specs');
   const values = {No: 'Not included', Yes: 'Included', Optional: 'Optional', TBD: 'To be confirmed'};
-  // Source: 产品参数.xlsx, 指夹血氧仪!B13:B17; Lite matches YM01 per user confirmation.
+  // Source: 产品参数.xlsx, 指夹血氧仪!B13:B17.
   const fingertipDimensions = {
     'YM01 Prime': '57 × 30 × 31',
     'YM01 Neo': '57 × 30 × 31',
-    'YM01C Lite': '57 × 30 × 31',
-    'YM02 Pro': '57 × 30 × 31',
+    'YM01 Pro': '57 × 30 × 31',
     'YM03 Chic': '62 × 34 × 35',
     'YM04 Male': '63 × 36 × 37',
     'YM06 Child': '54 × 32 × 31',
@@ -34,7 +33,7 @@
       const name = document.createElement('span');
       name.textContent = model.model;
       const display = document.createElement('small');
-      display.textContent = model.displayType;
+      display.textContent = model.displayOptions ? model.displayType + ' · Display options' : model.displayType;
       button.append(name, display);
       button.addEventListener('click', () => showModel(model.model));
       return button;
@@ -56,18 +55,18 @@
     panel.hidden = false;
     document.querySelectorAll('[data-model]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.model === model.model)));
     title.textContent = model.model + ' ' + model.productFamily;
-    document.getElementById('model-series').textContent = model.appearanceSeries || 'Handheld / 手持式';
+    document.getElementById('model-series').textContent = model.appearanceDetail || model.appearanceSeries || 'Handheld / 手持式';
     showPhoto(photo, model);
     const specs = model.form === 'fingertip'
       ? [
         ['SpO₂', 'Range: 35–100%\nAccuracy: ±2% (70–100%)\nAccuracy unspecified at 35–69%'],
         ['Pulse rate', 'Range: 30–250 bpm\nAccuracy: ±3 bpm'],
         ['Intended users', model.targetUser === 'Child' ? 'Pediatric' : 'Adult'],
-        ['Display', model.displaySize?.includes('inch') ? model.displaySize : model.displayType],
+        ['Display', model.displayOptions || model.displaySize || model.displayType],
         ['Power supply', '2 × AAA 1.5 V alkaline batteries'],
         ['Dimensions & weight', (fingertipDimensions[model.appearanceSeries] ? 'Approx. ' + fingertipDimensions[model.appearanceSeries] + ' mm (L × W × H)' : 'Dimensions: to be confirmed') + '\nApprox. 35 g (excluding batteries)'],
         ['Bluetooth', values[model.bluetooth]],
-        ['Sound & voice', 'Sound: ' + values[model.sound] + '\nVoice: ' + values[model.voice]],
+        ['Buzzer', values[model.sound]],
       ]
       : [
         ['SpO₂', 'Range: 35–100%\nAccuracy: ±2% (70–100%)\nAccuracy unspecified below 70%\nResolution: 1%'],

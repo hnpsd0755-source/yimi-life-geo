@@ -41,6 +41,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Local review output and generated static publication files
+/output/
+/.playwright-cli/
+/docs/design/website-templates-20260910/dist/
+
 # private customer/source assets
 public/homepage/合作品牌统计.xls
 public/homepage/P2/*

@@ -8,7 +8,7 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) {
   console.error('Use a port number between 1 and 65535.');
   process.exit(1);
 }
-const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.md':'text/plain; charset=utf-8'};
+const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.webp':'image/webp','.pdf':'application/pdf','.md':'text/plain; charset=utf-8'};
 const server = http.createServer(async (req, res) => {
   const finish = (status, text) => { res.writeHead(status, {'Content-Type':'text/plain; charset=utf-8'}); res.end(text); };
   if (!['GET', 'HEAD'].includes(req.method)) return finish(405, 'Read-only preview');

@@ -1,0 +1,12 @@
+**/*.md
+**/*.cjs
+!export-static-preview.cjs
+**/*.ts
+**/*.tsx
+oem-source/src/
+.vercel/
+dist/
+**/*.rar
+**/*.zip
+**/*.xlsx
+**/*.docx

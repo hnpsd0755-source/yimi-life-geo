@@ -26,3 +26,10 @@
 .factory-next-link{padding:28px 0;border-top:1px solid #dce6e8}.factory-next-link .wrap{display:flex;justify-content:flex-end}
 .factory-next-link .btn{min-width:170px}
 @media(max-width:760px){.factory-gallery figcaption{margin-top:10px;font-size:13px}.factory-quality .demo-note{margin-top:12px}.factory-certificate{max-width:240px}.factory-next-link{padding:24px 0}.factory-next-link .btn{width:100%;min-width:0}}
+
+/* Certificate preview keeps the full page visible and links to the original PDF. */
+.factory-certificate-sheet.certificate-image{display:block;padding:0;aspect-ratio:auto;overflow:hidden}
+.certificate-image img{width:100%;height:auto}
+.factory-certificate figcaption{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:12px;color:#075e63}
+.factory-certificate figcaption a{display:inline-flex;align-items:center;min-height:44px}
+.factory-certificate figcaption a:hover{text-decoration:underline;text-underline-offset:4px}
