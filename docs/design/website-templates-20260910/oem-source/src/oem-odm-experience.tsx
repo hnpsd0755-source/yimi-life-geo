@@ -231,13 +231,13 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
           <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
             <div className="max-w-2xl">
               <Badge>Medical Device OEM / ODM</Badge>
-              <h1 className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-slate-950 md:text-5xl lg:text-[3.45rem]">
-                Build Your Medical Device Project with YimiLife.
-              </h1>
+              <h2 className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-slate-950 md:text-5xl lg:text-[3.45rem]">
+                Choose the path for your project.
+              </h2>
               <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 md:text-base md:leading-8">
-                Start from an existing YimiLife model for branding and packaging,
-                or bring a new appearance, structure or function into an ODM
-                feasibility review.
+                Explore OEM branding with the interactive example below, or select
+                the development topics for an ODM discussion. Model options,
+                samples and production requirements are confirmed per project.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -421,7 +421,7 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
 
             {logo.kind !== "uploaded" && <div className="inquiry-logo-choice">
               <label><input type="checkbox" checked={logoLater} disabled={logo.processing} onChange={event => { setLogoLater(event.target.checked); oem.clear(); }} /> Provide my logo later</label>
-              <p>{logo.kind === "sample" ? "The YimiLife sample is for preview only. Your own logo will be provided later." : "You can send your project details now and share your logo during follow-up."}</p>
+              <p>{logo.kind === "sample" ? "The YimiLife sample is for preview only. Your own logo will be provided later." : "You can prepare the inquiry without a logo and provide artwork during follow-up."}</p>
             </div>}
 
             {!logoReady ? (
@@ -440,17 +440,18 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
               <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:items-start">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
-                    Ready to request
+                    YOUR PROJECT DETAILS
                   </p>
                   <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                    Where can we follow up on your project?
+                    Prepare your OEM inquiry.
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-slate-600">
-                    Share your contact details and YimiLife will review the selected
-                    configuration before preparing the next preview step.
+                    Add your contact details, target market and any requirements beyond
+                    the visual example. Review the configuration before completing
+                    this inquiry preview.
                   </p>
                   <p className="mt-4 text-xs leading-5 text-slate-500">
-                    Demo only — no information is sent or stored.
+                    Local preview only. Nothing is sent to YimiLife or saved to a server.
                   </p>
                 </div>
 
@@ -541,7 +542,7 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                   </label>
 
                   <button type="submit" disabled={!logoReady || oem.pending} className="button-primary mt-6 w-full sm:w-auto">
-                    {oem.pending ? "Submitting…" : "Request My Brand Preview"}
+                    {oem.pending ? "Previewing…" : "Preview OEM Inquiry"}
                     <ArrowIcon className="ml-2 h-4 w-4" />
                   </button>
 
@@ -564,10 +565,9 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                 Bring an engineering project into a focused feasibility review.
               </h2>
               <p className="mt-5 text-sm leading-7 text-slate-600 md:text-base md:leading-8">
-                YimiLife accepts ODM projects involving appearance design,
-                structural modification, function development, tooling and
-                engineering prototypes. Project results depend on the confirmed
-                scope and feasibility review.
+                Select the appearance, structure, function, tooling or prototype
+                requirements you would like to discuss. The development scope,
+                deliverables and next steps are subject to feasibility review.
               </p>
             </div>
 
@@ -606,11 +606,12 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">Development brief</p>
               <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                Submit the inputs needed for the first discussion.
+                Prepare your development brief.
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                Selected services are added to the brief. The form demonstrates
-                the intended content and confirmation state; it does not send data.
+                Selected services are included in your summary. Describe the intended
+                users, target market and requirements; add reference files if useful.
+                This preview does not send or save your inquiry to a server.
               </p>
               {selectedOdmNeeds.length > 0 ? (
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -648,8 +649,8 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                     <option>Pulse Oximeter</option>
                     <option>Blood Pressure Monitor</option>
                     <option>Wearable Monitoring Devices</option>
-                    <option>Nebulizer</option>
-                    <option>Thermometer</option>
+                    <option>Nebulizers</option>
+                    <option>Temperature Monitoring</option>
                     <option>Other Medical Device Project</option>
                   </select>
                 </label>
@@ -674,7 +675,7 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
                 <span>I agree that YimiLife may use my contact details and project files to review and follow up on this project.</span>
               </label>
               <button type="submit" disabled={odm.pending} className="button-primary mt-6 w-full sm:w-auto">
-                {odm.pending ? "Submitting…" : "Submit Your Development Brief"}
+                {odm.pending ? "Previewing…" : "Preview ODM Inquiry"}
                 <ArrowIcon className="ml-2 h-4 w-4" />
               </button>
               <DemoFeedback demo={odm} onReset={resetOdmDemo} />
@@ -695,7 +696,7 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
             <div className="text-center">
               <Badge>OEM and ODM FAQ</Badge>
               <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-4xl">
-                Questions buyers usually clarify before submitting.
+                Clarify the details before starting.
               </h2>
             </div>
             <div className="mt-8 grid gap-4">
@@ -732,12 +733,12 @@ export function OemOdmExperience({ faqs }: { faqs: readonly FaqItem[] }) {
           <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-0">
             {selectedPath !== "odm" ? (
               <button type="button" onClick={() => choosePath("oem")} className="button-primary">
-                Request My Brand Preview
+                Explore OEM configuration
               </button>
             ) : null}
             {selectedPath !== "oem" ? (
               <button type="button" onClick={() => choosePath("odm")} className="button-secondary">
-                Submit an ODM Brief
+                Prepare an ODM brief
               </button>
             ) : null}
           </div>

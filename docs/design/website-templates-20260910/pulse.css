@@ -7,7 +7,7 @@
 .pulse-page .spec-table tbody th{background:#f3f7f7;color:#18343c}.pulse-page .spec-table tbody td{background:#fff}
 
 /* Compact series selection follows the original portfolio hierarchy. */
-.pulse-page .series-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.pulse-page .series-choice{min-width:0;padding:10px;border:1px solid #dce6e8;border-radius:7px;background:white;color:#18343c;text-align:left;font-size:16px;font-weight:600;transition:background .15s,border-color .15s}.pulse-page .series-choice:hover{border-color:#08a8ae}.pulse-page .series-choice[aria-pressed=true]{border-color:#087f85;background:#edfafa}.pulse-page .series-photo{display:block;aspect-ratio:4/3;margin-bottom:10px;background:#f4f7f8;border-radius:4px;overflow:hidden}.pulse-page .series-photo img{width:100%;height:100%;object-fit:contain;padding:8px;mix-blend-mode:multiply}.pulse-page .series-config{margin-top:24px;border-top:1px solid #dce6e8;padding-top:22px}.pulse-page .series-config p{font-size:14px}.pulse-page .series-config h3{font-size:18px;margin-bottom:14px}.pulse-page .model-options{display:flex;flex-wrap:wrap;gap:10px}.pulse-page .model-option{display:flex;align-items:center;gap:12px;min-height:44px;border:1px solid #bacdd1;border-radius:4px;background:#fff;color:#18343c;padding:10px 14px;font-size:14px}.pulse-page .model-option small{color:#526d75;font-size:12px}.pulse-page .model-option[aria-pressed=true]{border-color:#087f85;background:#edfafa}.pulse-page .model-option:hover{border-color:#08a8ae}
+.pulse-page .series-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.pulse-page .series-choice{min-width:0;padding:10px;border:1px solid #dce6e8;border-radius:7px;background:white;color:#18343c;text-align:left;font-size:16px;font-weight:600;transition:background .15s,border-color .15s}.pulse-page .series-choice:hover{border-color:#08a8ae}.pulse-page .series-choice[aria-pressed=true]{border-color:#087f85;background:#edfafa}.pulse-page .series-photo{display:block;aspect-ratio:4/3;margin-bottom:10px;background:#f4f7f8;border-radius:4px;overflow:hidden}.pulse-page .series-photo img{width:100%;height:100%;object-fit:contain;padding:8px;mix-blend-mode:multiply}.pulse-page .series-config{margin-top:24px;border-top:1px solid #dce6e8;padding-top:22px}.pulse-page .series-config p{font-size:14px}.pulse-page .series-config h3{font-size:18px;margin-bottom:14px}.pulse-page .model-options{display:flex;flex-wrap:wrap;gap:10px}.pulse-page .model-option{display:flex;align-items:center;gap:12px;min-height:44px;border:1px solid #bacdd1;border-radius:4px;background:#fff;color:#18343c;padding:10px 14px;font-size:14px}.pulse-page .model-option small{color:#526d75;font-size:12px}.pulse-page .model-option[aria-current=true]{border-color:#087f85;background:#edfafa}.pulse-page .model-option:hover{border-color:#08a8ae}
 @media(max-width:1100px){.pulse-page .series-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:760px){.pulse-page .series-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pulse-page .series-choice{padding:10px;font-size:15px}.pulse-page .series-config{margin-top:20px;padding-top:18px}.pulse-page .model-options{gap:8px}.pulse-page .model-option{padding:10px 12px;flex:1 0 130px;justify-content:space-between}}
 
@@ -24,3 +24,17 @@
 .pulse-page .product-photo-options img{padding:0;width:100%;height:100%;object-fit:contain}
 .pulse-page .product-photo-caption{text-align:center;font-size:12px;color:#526d75;padding:12px 14px 16px}
 @media(max-width:760px){.pulse-page .product-photo-stage{height:280px}.pulse-page .product-photo-options button{width:56px;height:56px}}
+
+/* Model links retain the compact selector layout; purchasing answers are readable without scripts. */
+.pulse-page .model-series-group + .model-series-group{margin-top:24px}
+.pulse-page .model-series-group[hidden] + .model-series-group{margin-top:0}
+.pulse-page .model-option:focus-visible,.pulse-page .family-copy .textlink:focus-visible,.pulse-page .procurement-answers summary:focus-visible{outline:2px solid #087f85;outline-offset:4px}
+.pulse-page .procurement-answers{border-top:1px solid #dce6e8}
+.pulse-page .procurement-answers details{border-bottom:1px solid #dce6e8}
+.pulse-page .procurement-answers summary{position:relative;padding:20px 42px 20px 0;cursor:pointer;list-style:none;font-size:17px;font-weight:600;color:#18343c}
+.pulse-page .procurement-answers summary::-webkit-details-marker{display:none}
+.pulse-page .procurement-answers summary::after{content:'+';position:absolute;right:8px;top:18px;color:#087f85;font-size:22px;font-weight:400}
+.pulse-page .procurement-answers details[open] summary::after{content:'−'}
+.pulse-page .procurement-answers p{font-size:15px;max-width:850px;margin:0;padding:0 28px 22px 0;line-height:1.7}
+.pulse-page .faq-contact{margin-top:24px;min-height:44px}
+@media(max-width:760px){.pulse-page .procurement-answers summary{font-size:15px;padding-top:18px;padding-bottom:18px}.pulse-page .procurement-answers p{font-size:14px;padding-right:0}}

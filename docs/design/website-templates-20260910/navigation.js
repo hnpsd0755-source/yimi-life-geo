@@ -44,7 +44,7 @@
     const filename = location.pathname.split('/').pop();
     const aboutPage = ['about.html', 'news.html', 'blogs.html'].includes(filename);
     const research = filename === 'about.html' && ['#research', '#team', '#patents'].includes(location.hash);
-    const productsPage = ['products.html', 'pulse.html', 'bp.html', 'category.html', 'detail.html'].includes(filename);
+    const productsPage = ['products.html', 'pulse.html', 'bp.html', 'category.html', 'detail.html'].includes(filename) || Boolean(document.querySelector('[data-model-page]'));
     nav.querySelector('.about-drop > summary')?.classList.toggle('is-active', aboutPage);
     nav.querySelector('.navdrop:not(.about-drop) > summary')?.classList.toggle('is-active', productsPage);
     nav.querySelectorAll('a').forEach(link => {

@@ -2,15 +2,18 @@
   const models = {YP7101: 'LED', YP7201: 'LCD', YP7202: 'LCD with backlight'};
   const panel = document.getElementById('model-detail');
   const title = document.getElementById('model-title');
-  const buttons = [...document.querySelectorAll('[data-bp-model]')];
+  const links = [...document.querySelectorAll('[data-bp-model]')];
   // Technical requirements pp. 1, 3, 6, 10–11; workbook 血压计!B33 supplies weight.
   function showModel(model, scroll = true) {
     if (!Object.hasOwn(models, model)) return;
     panel.hidden = false;
     title.textContent = model + ' Upper-Arm Blood Pressure Monitor';
-    document.getElementById('model-series').textContent = 'Upper-arm / 臂式';
+    document.getElementById('model-series').textContent = 'Upper-arm';
     window.YimiProductPhotos.render(document.getElementById('model-photo'), model);
-    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.bpModel === model)));
+    links.forEach(link => {
+      if (link.dataset.bpModel === model) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
     const specs = [
       ['Measurement', 'Oscillometric method\nMeasurement during deflation\nUpper arm'],
       ['Static pressure', 'Range: 0–290 mmHg\nAccuracy: ±3 mmHg*\nResolution: 1 mmHg'],
@@ -33,6 +36,15 @@
     }));
     document.getElementById('model-spec-note').textContent = '*Static pressure accuracy under the specified test conditions: 10–40°C and 15–85% RH, non-condensing. This specification refers to static pressure testing; it is not a clinical blood pressure accuracy result.';
     document.getElementById('model-inquiry').href = 'contact.html?' + new URLSearchParams({category:'bp',sub:'upper-arm',model});
+    document.getElementById('documents-model').textContent = model;
+    for (const type of ['manual', 'regulatory']) {
+      document.getElementById('model-' + type).href = 'contact.html?' + new URLSearchParams({category:'bp',sub:'upper-arm',model:model,document:type});
+    }
+    const fullPage = document.getElementById('model-full-page');
+    const fullPageUrl = window.YimiModelPages[model];
+    fullPage.hidden = !fullPageUrl;
+    if (fullPageUrl) fullPage.href = fullPageUrl;
+    else fullPage.removeAttribute('href');
     const url = new URL(location.href);
     url.searchParams.set('model', model);
     history.replaceState(null, '', url);
@@ -41,7 +53,11 @@
       title.focus({preventScroll: true});
     }
   }
-  buttons.forEach(button => button.addEventListener('click', () => showModel(button.dataset.bpModel)));
+  links.forEach(link => link.addEventListener('click', event => {
+    if (event.button !== 0 || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    showModel(link.dataset.bpModel);
+  }));
   const selected = new URLSearchParams(location.search).get('model');
   if (selected) showModel(selected, false);
 })();

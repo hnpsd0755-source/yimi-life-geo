@@ -1,0 +1,31 @@
+.temperature-page .category-hero h1{font-size:clamp(36px,4vw,48px);line-height:1.15}
+.temperature-page .category-hero .eyebrow{line-height:1.7}
+.temperature-page .catalog-head{gap:20px}
+.temperature-page .catalog-head .muted{max-width:450px}
+.temperature-page .model-body{display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.temperature-page .model-body h3{font-size:24px;line-height:1.25}
+.temperature-page .model-body .textlink{margin-top:auto;padding-top:20px;min-height:44px}
+.temperature-page .temperature-availability{font-size:14px;color:#526970;line-height:1.7;margin-top:16px}
+.temperature-page .model-body .temperature-availability{margin-bottom:10px;font-size:13px}
+.temperature-page .temperature-types{display:flex;flex-wrap:wrap;gap:4px 24px;margin-top:20px;font-size:13px}
+.temperature-page .temperature-types a{display:inline-flex;align-items:center;min-height:44px;color:#075e63}
+.temperature-page .temperature-types a[aria-current=page]{font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.temperature-page .detail-head h1{font-size:clamp(34px,4vw,46px);line-height:1.15}
+.temperature-page .detail-section>p{font-size:15px;margin:16px 0}
+.temperature-page .spec-table caption{text-align:left;font-size:13px;color:#526970;line-height:1.6;padding:0 0 14px}
+.temperature-page .spec-table tbody{background:#fff}
+.temperature-page .spec-table th[scope=row]{width:38%;font-weight:500;background:transparent;color:#18343c}
+.temperature-page .doc-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px}
+.temperature-page .doc-row small{margin-top:6px;line-height:1.6}
+.temperature-page .doc-row .textlink{min-height:44px}
+@media(max-width:760px){
+  .temperature-page .subnav .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .temperature-page .filter{font-size:13px}
+  .temperature-page .catalog-head{gap:10px}
+  .temperature-page .category-hero .actions{gap:10px}
+  .temperature-page .model-body h3{font-size:23px}
+  .temperature-page .detail-head .actions{flex-direction:column;align-items:stretch}
+  .temperature-page .doc-row{grid-template-columns:1fr;gap:6px}
+  .temperature-page .doc-row .textlink{width:fit-content}
+  .temperature-page .spec-table th,.temperature-page .spec-table td{padding:12px 10px;overflow-wrap:break-word}
+}

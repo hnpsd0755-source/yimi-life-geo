@@ -1,0 +1,21 @@
+/* Purchasing content in the parent OEM page; the embedded demo is unchanged. */
+.oem-page .oem-checkpoints{padding:36px 0 40px;border-top:1px solid #dce6e8;background:#f7fafa}
+.oem-page .oem-checkpoints h2{font-size:30px;line-height:1.25;letter-spacing:-.7px}
+.oem-page .oem-section-intro{max-width:780px;margin:14px 0 26px;font-size:14px;line-height:1.7}
+.oem-page .process-strip{gap:24px}
+.oem-page .process-strip>div{padding-top:20px}
+.oem-page .process-strip span{font-size:21px;margin-bottom:12px}
+.oem-page .process-strip h3{font-size:18px;line-height:1.35}
+.oem-page .process-strip p{font-size:13px;line-height:1.7;margin-top:10px}
+.oem-page .process-strip strong{font-weight:600;color:#18343c}
+.oem-page .oem-purchasing-faq{margin-top:30px}
+.oem-page .oem-purchasing-faq h2{font-size:23px;margin-bottom:14px}
+.oem-page .oem-faq-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;align-items:start}
+.oem-page .oem-faq-grid details{min-width:0;border-bottom:1px solid #dce6e8}
+.oem-page .oem-faq-grid summary{padding:16px 0;cursor:pointer;font-size:15px;font-weight:600;line-height:1.5}
+.oem-page .oem-faq-grid summary::marker{color:#087f85}
+.oem-page .oem-faq-grid summary:focus-visible{outline:2px solid #08a8ae;outline-offset:2px}
+.oem-page .oem-faq-grid p{padding:0 0 18px;font-size:14px;line-height:1.75;overflow-wrap:break-word}
+.oem-page .oem-faq-grid a{color:#087f85;text-decoration:underline;text-underline-offset:3px}
+.oem-page .oem-preview-anchor{scroll-margin-top:100px}
+@media(max-width:760px){.oem-page .oem-checkpoints{padding:28px 0 32px}.oem-page .oem-checkpoints h2{font-size:25px}.oem-page .process-strip{gap:24px 18px}.oem-page .process-strip h3{font-size:17px}.oem-page .oem-purchasing-faq h2{font-size:22px}.oem-page .oem-faq-grid{grid-template-columns:1fr}}

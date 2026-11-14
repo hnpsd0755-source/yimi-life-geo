@@ -17,27 +17,18 @@
   function showPhoto(container, model) {
     window.YimiProductPhotos.render(container, model.model, model.image);
   }
+  function isPlainClick(event) {
+    return event.button === 0 && !event.defaultPrevented && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey;
+  }
   function chooseSeries(series, selectedModel) {
     const group = models.filter(model => model.appearanceSeries === series);
     if (!group.length) return;
     document.querySelectorAll('[data-series]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.series === series)));
     document.getElementById('series-prompt').hidden = true;
     document.getElementById('series-options').hidden = false;
-    document.getElementById('series-title').textContent = series.split(' ').pop() + ' models';
-    document.getElementById('series-models').replaceChildren(...group.map(model => {
-      const button = document.createElement('button');
-      button.className = 'model-option';
-      button.dataset.model = model.model;
-      button.setAttribute('aria-pressed', 'false');
-      button.setAttribute('aria-controls', 'model-detail');
-      const name = document.createElement('span');
-      name.textContent = model.model;
-      const display = document.createElement('small');
-      display.textContent = model.displayOptions ? model.displayType + ' · Display options' : model.displayType;
-      button.append(name, display);
-      button.addEventListener('click', () => showModel(model.model));
-      return button;
-    }));
+    document.querySelectorAll('[data-model-series]').forEach(groupElement => {
+      groupElement.hidden = groupElement.dataset.modelSeries !== series;
+    });
     const initialModel = group.find(model => model.model === selectedModel) || group[0];
     showModel(initialModel.model, false);
   }
@@ -51,9 +42,12 @@
     backLink.href = '#' + model.form;
     backLink.textContent = model.form === 'fingertip' ? 'Back to fingertip models ↑' : 'Back to handheld models ↑';
     panel.hidden = false;
-    document.querySelectorAll('[data-model]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.model === model.model)));
+    document.querySelectorAll('[data-model], [data-review-model]').forEach(link => {
+      if ((link.dataset.model || link.dataset.reviewModel) === model.model) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
     title.textContent = model.model + ' ' + model.productFamily;
-    document.getElementById('model-series').textContent = model.appearanceDetail || model.appearanceSeries || 'Handheld / 手持式';
+    document.getElementById('model-series').textContent = model.appearanceDetail || model.appearanceSeries || 'Handheld';
     showPhoto(photo, model);
     const specs = model.form === 'fingertip'
       ? [
@@ -90,6 +84,16 @@
       return tr;
     }));
     document.getElementById('model-inquiry').href = 'contact.html?' + new URLSearchParams({category:'pulse',sub:model.form,model:model.model});
+    document.getElementById('documents-model').textContent = model.model;
+    for (const type of ['manual', 'regulatory']) {
+      document.getElementById('model-' + type).href = 'contact.html?' + new URLSearchParams({category:'pulse',sub:model.form,model:model.model,document:type});
+    }
+    document.getElementById('model-fda-reference').hidden = !['YM101', 'YM201', 'YM301'].includes(model.model);
+    const fullPage = document.getElementById('model-full-page');
+    const fullPageUrl = window.YimiModelPages[model.model];
+    fullPage.hidden = !fullPageUrl;
+    if (fullPageUrl) fullPage.href = fullPageUrl;
+    else fullPage.removeAttribute('href');
     const url = new URL(location.href);
     url.searchParams.set('model', model.model);
     history.replaceState(null, '', url);
@@ -98,11 +102,15 @@
       title.focus({preventScroll:true});
     }
   }
-  document.querySelectorAll('[data-review-model]').forEach(button => {
-    button.addEventListener('click', () => {
-      showModel(button.dataset.reviewModel);
+  document.querySelectorAll('[data-model], [data-review-model]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (!isPlainClick(event)) return;
+      event.preventDefault();
+      showModel(link.dataset.model || link.dataset.reviewModel);
     });
   });
+  document.getElementById('series-prompt').hidden = false;
+  document.getElementById('series-options').hidden = true;
   const selected = models.find(model => model.model === new URLSearchParams(location.search).get('model'));
   if (selected) {
     if (selected.form === 'fingertip') chooseSeries(selected.appearanceSeries, selected.model);

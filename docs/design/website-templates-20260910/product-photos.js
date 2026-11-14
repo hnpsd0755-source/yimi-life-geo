@@ -6,7 +6,7 @@
     container.classList.toggle('has-product-gallery', items.length > 1);
     if (!items.length) {
       const pending = document.createElement('span');
-      pending.textContent = '[' + model + ' 产品图待补]';
+      pending.textContent = '[' + model + ' product image to follow]';
       container.append(pending);
       return;
     }

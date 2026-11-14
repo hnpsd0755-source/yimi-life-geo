@@ -184,3 +184,34 @@
   .home-refined .hero .actions { flex-direction: column; }
   .home-refined .hero .actions .btn { flex: auto; }
 }
+
+.home-refined .home-quality {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid #c9dadd;
+}
+.home-refined .home-quality-heading,
+.home-refined .home-quality-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 18px;
+}
+.home-refined .home-quality-heading strong { font-size: 19px; color: var(--home-ink); }
+.home-refined .home-quality a {
+  color: #075e63;
+  font-size: 13px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+}
+.home-refined .home-quality a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.home-refined .home-quality p { font-size: 13px; margin: 0; line-height: 1.6; }
+.home-refined .home-quality-details { font-size: 11px; color: var(--home-muted); }
+.home-refined .home-quality-details a { font-size: 12px; }
+@media(max-width:760px) {
+  .home-refined .home-quality { margin-top: 20px; padding-top: 12px; }
+  .home-refined .home-quality-heading strong { font-size: 18px; }
+}
