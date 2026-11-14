@@ -17,7 +17,7 @@
   function showPhoto(container, model) {
     window.YimiProductPhotos.render(container, model.model, model.image);
   }
-  function chooseSeries(series) {
+  function chooseSeries(series, selectedModel) {
     const group = models.filter(model => model.appearanceSeries === series);
     if (!group.length) return;
     document.querySelectorAll('[data-series]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.series === series)));
@@ -38,10 +38,8 @@
       button.addEventListener('click', () => showModel(model.model));
       return button;
     }));
-    panel.hidden = true;
-    const url = new URL(location.href);
-    url.searchParams.delete('model');
-    history.replaceState(null, '', url);
+    const initialModel = group.find(model => model.model === selectedModel) || group[0];
+    showModel(initialModel.model, false);
   }
   document.querySelectorAll('[data-series]').forEach(button => button.addEventListener('click', () => chooseSeries(button.dataset.series)));
   function showModel(id, scroll = true) {
@@ -107,7 +105,7 @@
   });
   const selected = models.find(model => model.model === new URLSearchParams(location.search).get('model'));
   if (selected) {
-    if (selected.form === 'fingertip') chooseSeries(selected.appearanceSeries);
-    showModel(selected.model, false);
+    if (selected.form === 'fingertip') chooseSeries(selected.appearanceSeries, selected.model);
+    else showModel(selected.model, false);
   }
 })();
